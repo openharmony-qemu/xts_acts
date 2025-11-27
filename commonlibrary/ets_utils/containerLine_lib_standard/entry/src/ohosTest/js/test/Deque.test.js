@@ -18,8 +18,12 @@ export default function DequeTest() {
 describe("DequeTest", function () {
 
   /**
-   * @tc.name: testConstructor001
-   * @tc.desc: Create an Deque instance. For example: let deque = new Deque().
+   * @tc.name   testConstructor001
+   * @tc.number testConstructor001
+   * @tc.desc   Create an Deque instance. For example: let deque = new Deque().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testConstructor001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     try {
@@ -32,8 +36,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront002
-   * @tc.desc: Add element to deque instance header. For example: deque.insertFront("一").
+   * @tc.name   testInsertFront002
+   * @tc.number testInsertFront002
+   * @tc.desc   Add element to deque instance header. For example: deque.insertFront("一").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsertFront002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -43,8 +51,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront003
-   * @tc.desc: Add element to deque instance header. For example: deque.insertFront(8).
+   * @tc.name   testInsertFront003
+   * @tc.number testInsertFront003
+   * @tc.desc   Add element to deque instance header. For example: deque.insertFront(8).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsertFront003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -54,9 +66,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront004
-   * @tc.desc: Add element to deque instance header. 
-   * For example: let a = {name: "lala", age: "15"}; deque.insertFront(a).
+   * @tc.name   testInsertFront004
+   * @tc.number testInsertFront004
+   * @tc.desc   Add element to deque instance header.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsertFront004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -67,8 +82,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront005
-   * @tc.desc: Add element to deque instance header. For example: let a = [1, 2, 3, 4]; deque.insertFront(a).
+   * @tc.name   testInsertFront005
+   * @tc.number testInsertFront005
+   * @tc.desc   Add element to deque instance header. For example: let a = [1, 2, 3, 4]; deque.insertFront(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsertFront005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -79,8 +98,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertEnd006
-   * @tc.desc: Add element to deque instance end. For example: deque.insertEnd(8).
+   * @tc.name   testInsertEnd006
+   * @tc.number testInsertEnd006
+   * @tc.desc   Add element to deque instance end. For example: deque.insertEnd(8).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsertEnd006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -90,8 +113,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertEnd007
-   * @tc.desc: Add element to deque instance end. For example: let a = ["a", "b", "c"];deque.insertEnd(a).
+   * @tc.name   testInsertEnd007
+   * @tc.number testInsertEnd007
+   * @tc.desc   Add element to deque instance end. For example: let a = ["a", "b", "c"];deque.insertEnd(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsertEnd007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -102,8 +129,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertEnd008
-   * @tc.desc: Add element to deque instance end. For example: let a = {class: "6班", say: "we"};deque.insertEnd(a).
+   * @tc.name   testInsertEnd008
+   * @tc.number testInsertEnd008
+   * @tc.desc   Add element to deque instance end. For example: let a = {class: "6班", say: "we"};deque.insertEnd(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsertEnd008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -114,8 +145,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testGetFirst009
-   * @tc.desc: Get the header element of the deque instance. For example: deque.getFirst().
+   * @tc.name   testGetFirst009
+   * @tc.number testGetFirst009
+   * @tc.desc   Get the header element of the deque instance. For example: deque.getFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetFirst009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -126,8 +161,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testGetLast010
-   * @tc.desc: Get the end element of the deque instance. For example: deque.getLast().
+   * @tc.name   testGetLast010
+   * @tc.number testGetLast010
+   * @tc.desc   Get the end element of the deque instance. For example: deque.getLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetLast010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -138,8 +177,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testHas011
-   * @tc.desc: Determine whether the deque instance contains the specified element. For example: deque.has(6).
+   * @tc.name   testHas011
+   * @tc.number testHas011
+   * @tc.desc   Determine whether the deque instance contains the specified element. For example: deque.has(6).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testHas011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -149,8 +192,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testHas012
-   * @tc.desc: Determine whether the deque instance contains the specified element. For example: deque.has(6).
+   * @tc.name   testHas012
+   * @tc.number testHas012
+   * @tc.desc   Determine whether the deque instance contains the specified element. For example: deque.has(6).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testHas012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -160,8 +207,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testPopFirst013
-   * @tc.desc: Delete the header element of a deque instance. For example: deque.popFirst().
+   * @tc.name   testPopFirst013
+   * @tc.number testPopFirst013
+   * @tc.desc   Delete the header element of a deque instance. For example: deque.popFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testPopFirst013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -172,8 +223,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testPopLast014
-   * @tc.desc: Delete the end element of a deque instance. For example: deque.popLast().
+   * @tc.name   testPopLast014
+   * @tc.number testPopLast014
+   * @tc.desc   Delete the end element of a deque instance. For example: deque.popLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testPopLast014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -185,8 +240,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testForEach015
-   * @tc.desc: Traversing elements in deque instances. For example: deque.forEach((item, index) => {arr.push(item);}).
+   * @tc.name   testForEach015
+   * @tc.number testForEach015
+   * @tc.desc   Traversing elements in deque instances. For example: deque.forEach((item, index) => {arr.push(item);}).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testForEach015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let deque = new Deque();
@@ -212,8 +271,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testIterator016
-   * @tc.desc: Iterate over all elements in the deque instance. For example: for (let item of deque) { arr.push(item);}.
+   * @tc.name   testIterator016
+   * @tc.number testIterator016
+   * @tc.desc   Iterate over all elements in the deque instance. For example: for (let item of deque) { arr.push(item);}.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIterator016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -235,8 +298,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront017
-   * @tc.desc: Add element to deque instance header. For example: deque.insertFront("$").
+   * @tc.name   testInsertFront017
+   * @tc.number testInsertFront017
+   * @tc.desc   Add element to deque instance header. For example: deque.insertFront("$").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertFront017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -246,8 +313,12 @@ describe("DequeTest", function () {
   });
     
   /**
-   * @tc.name: testInsertFront018
-   * @tc.desc: Add element to deque instance header. For example: deque.insertFront(" ").
+   * @tc.name   testInsertFront018
+   * @tc.number testInsertFront018
+   * @tc.desc   Add element to deque instance header. For example: deque.insertFront(" ").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertFront018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -257,8 +328,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront019
-   * @tc.desc: Add element to deque instance header. For example: deque.insertFront(null).
+   * @tc.name   testInsertFront019
+   * @tc.number testInsertFront019
+   * @tc.desc   Add element to deque instance header. For example: deque.insertFront(null).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertFront019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -268,8 +343,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront020
-   * @tc.desc: Add element to deque instance header. For example: deque.insertFront(undefined).
+   * @tc.name   testInsertFront020
+   * @tc.number testInsertFront020
+   * @tc.desc   Add element to deque instance header. For example: deque.insertFront(undefined).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertFront020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -279,8 +358,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront021
-   * @tc.desc: Add element to deque instance header. For example: for (let i = 0; i < 100; i++) {deque.insertFront(i)}.
+   * @tc.name   testInsertFront021
+   * @tc.number testInsertFront021
+   * @tc.desc   Add element to deque instance header. For example: for (let i = 0; i < 100; i++) {deque.insertFront(i)}.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertFront021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -294,8 +377,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertEnd022
-   * @tc.desc: Add element to deque instance end. For example: deque.insertEnd("$").
+   * @tc.name   testInsertEnd022
+   * @tc.number testInsertEnd022
+   * @tc.desc   Add element to deque instance end. For example: deque.insertEnd("$").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertEnd022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -305,8 +392,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertEnd023
-   * @tc.desc: Add element to deque instance end. For example: deque.insertEnd(" ").
+   * @tc.name   testInsertEnd023
+   * @tc.number testInsertEnd023
+   * @tc.desc   Add element to deque instance end. For example: deque.insertEnd(" ").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertEnd023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -316,8 +407,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertEnd024
-   * @tc.desc: Add element to deque instance end. For example: deque.insertEnd(null).
+   * @tc.name   testInsertEnd024
+   * @tc.number testInsertEnd024
+   * @tc.desc   Add element to deque instance end. For example: deque.insertEnd(null).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertEnd024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -327,8 +422,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertEnd025
-   * @tc.desc: Add element to deque instance end. For example: deque.insertEnd(undefined).
+   * @tc.name   testInsertEnd025
+   * @tc.number testInsertEnd025
+   * @tc.desc   Add element to deque instance end. For example: deque.insertEnd(undefined).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertEnd025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -338,8 +437,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testInsertFront026
-   * @tc.desc: Add element to deque instance end. For example: for (let i = 0; i < 100; i++) {deque.insertEnd(i);}.
+   * @tc.name   testInsertFront026
+   * @tc.number testInsertFront026
+   * @tc.desc   Add element to deque instance end. For example: for (let i = 0; i < 100; i++) {deque.insertEnd(i);}.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertFront026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -353,8 +456,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testHas027
-   * @tc.desc: Determine whether the deque instance contains the specified element. For example: deque.has(6).
+   * @tc.name   testHas027
+   * @tc.number testHas027
+   * @tc.desc   Determine whether the deque instance contains the specified element. For example: deque.has(6).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testHas027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -363,8 +470,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testPopFirst028
-   * @tc.desc: Delete the header element of a deque instance. For example: deque.popFirst().
+   * @tc.name   testPopFirst028
+   * @tc.number testPopFirst028
+   * @tc.desc   Delete the header element of a deque instance. For example: deque.popFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testPopFirst028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -373,8 +484,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testGetFirst029
-   * @tc.desc: Get the header element of the deque instance. For example: deque.getFirst().
+   * @tc.name   testGetFirst029
+   * @tc.number testGetFirst029
+   * @tc.desc   Get the header element of the deque instance. For example: deque.getFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGetFirst029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -383,8 +498,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testPopLast030
-   * @tc.desc: Delete the end element of a deque instance. For example: deque.popLast().
+   * @tc.name   testPopLast030
+   * @tc.number testPopLast030
+   * @tc.desc   Delete the end element of a deque instance. For example: deque.popLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testPopLast030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -393,8 +512,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testGetLast031
-   * @tc.desc: Get the end element of the deque instance. For example: deque.getLast().
+   * @tc.name   testGetLast031
+   * @tc.number testGetLast031
+   * @tc.desc   Get the end element of the deque instance. For example: deque.getLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGetLast031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -403,8 +526,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testForEach032
-   * @tc.desc: Traversing elements in deque instances. For example: deque.forEach((item, index) => {arr.push(item);}).
+   * @tc.name   testForEach032
+   * @tc.number testForEach032
+   * @tc.desc   Traversing elements in deque instances. For example: deque.forEach((item, index) => {arr.push(item);}).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testForEach032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -431,8 +558,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testIterator033
-   * @tc.desc: Iterate over all elements in the deque instance. For example: for (let item of deque) { arr.push(item);}.
+   * @tc.name   testIterator033
+   * @tc.number testIterator033
+   * @tc.desc   Iterate over all elements in the deque instance. For example: for (let item of deque) { arr.push(item);}.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIterator033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -458,8 +589,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testIterator034
-   * @tc.desc: Iterate over all elements in the deque instance. For example: deque[Symbol.iterator]().
+   * @tc.name   testIterator034
+   * @tc.number testIterator034
+   * @tc.desc   Iterate over all elements in the deque instance. For example: deque[Symbol.iterator]().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIterator034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -487,8 +622,12 @@ describe("DequeTest", function () {
   });
   
   /**
-   * @tc.name: testLength035
-   * @tc.desc: Get the number of elements in the deque instance. For example: deque.length.
+   * @tc.name   testLength035
+   * @tc.number testLength035
+   * @tc.desc   Get the number of elements in the deque instance. For example: deque.length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testLength035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -508,8 +647,12 @@ describe("DequeTest", function () {
   });
 
   /**
-   * @tc.name: testInsertFront036
-   * @tc.desc: Add element to deque instance header.For example: let a = [1, 2, 3, 4]; deque.insertFront.bind({}, "a")().
+   * @tc.name   testInsertFront036 
+   * @tc.number testInsertFront036 
+   * @tc.desc   Add element to deque instance header.For example: let a = [1, 2, 3, 4]; deque.insertFront.bind({}, "a")().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsertFront036 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
@@ -524,8 +667,12 @@ describe("DequeTest", function () {
   });
 
   /**
-   * @tc.name: testForEach037
-   * @tc.desc: Traversing elements in deque instances. For example: deque.forEach(123).
+   * @tc.name   testForEach037
+   * @tc.number testForEach037
+   * @tc.desc   Traversing elements in deque instances. For example: deque.forEach(123).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testForEach037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();

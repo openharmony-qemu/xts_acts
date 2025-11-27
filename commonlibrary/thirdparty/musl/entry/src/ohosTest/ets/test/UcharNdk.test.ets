@@ -25,12 +25,12 @@ export default function ucharNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UCHAR_C16RTOMB_0100
-     * @tc.name       : testMuslUcharC16rtomb001
-     * @tc.desc       : test c16rtomb
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUcharC16rtomb001
+     * @tc.number SUB_THIRDPARTY_MUSL_UCHAR_C16RTOMB_0100
+     * @tc.desc   test c16rtomb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUcharC16rtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -40,12 +40,12 @@ export default function ucharNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UCHAR_C32RTOMB_0100
-     * @tc.name       : testMuslUcharC32rtomb001
-     * @tc.desc       : test c32rtomb
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUcharC32rtomb001
+     * @tc.number SUB_THIRDPARTY_MUSL_UCHAR_C32RTOMB_0100
+     * @tc.desc   test c32rtomb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUcharC32rtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -54,12 +54,12 @@ export default function ucharNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_UCHAR_MBRTOC16_0100
-     * @tc.name     : testMuslUcharMbrtoc16001
-     * @tc.desc     : test mbrtoc16
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslUcharMbrtoc16001
+     * @tc.number SUB_THIRDPARTY_MUSL_UCHAR_MBRTOC16_0100
+     * @tc.desc   test mbrtoc16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUcharMbrtoc16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = uchar.mbrtoc16();
@@ -68,12 +68,12 @@ export default function ucharNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_UCHAR_MBRTOC32_0100
-     * @tc.name     : testMuslUcharMbrtoc32001
-     * @tc.desc     : test mbrtoc32
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslUcharMbrtoc32001
+     * @tc.number SUB_THIRDPARTY_MUSL_UCHAR_MBRTOC32_0100
+     * @tc.desc   test mbrtoc32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUcharMbrtoc32001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = uchar.mbrtoc32();

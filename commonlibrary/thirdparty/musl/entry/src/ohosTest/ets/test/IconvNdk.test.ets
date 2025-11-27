@@ -25,12 +25,12 @@ export default function muslIconvNdkTest() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_ICONV_ICONV_0100
-     * @tc.name     : testMuslIconvIconv001
-     * @tc.desc     : test iconv
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslIconvIconv001
+     * @tc.number SUB_THIRDPARTY_MUSL_ICONV_ICONV_0100
+     * @tc.desc   test iconv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIconvIconv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = iconv.iconv();
@@ -39,12 +39,12 @@ export default function muslIconvNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_ICONV_ICONV_OPEN_0100
-     * @tc.name     : testMuslIconvIconvOpen001
-     * @tc.desc     : test iconv_open
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslIconvIconvOpen001
+     * @tc.number SUB_THIRDPARTY_MUSL_ICONV_ICONV_OPEN_0100
+     * @tc.desc   test iconv_open
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIconvIconvOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = iconv.iconvOpen();
@@ -53,12 +53,12 @@ export default function muslIconvNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_ICONV_ICONV_CLOSE_0100
-     * @tc.name     : testMuslIconvIconvClose001
-     * @tc.desc     : test iconv_close
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslIconvIconvClose001
+     * @tc.number SUB_THIRDPARTY_MUSL_ICONV_ICONV_CLOSE_0100
+     * @tc.desc   test iconv_close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIconvIconvClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = iconv.iconvClose();

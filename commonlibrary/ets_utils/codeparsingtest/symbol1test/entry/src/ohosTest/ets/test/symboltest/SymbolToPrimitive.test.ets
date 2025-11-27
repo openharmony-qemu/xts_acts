@@ -45,12 +45,12 @@ export default function symbolToPrimitiveTestTest() {
 
 
     /**
+     * @tc.name   CustomToPrimitiveNumberHintTest001
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_001
-     * @tc.name CustomToPrimitiveNumberHintTest001
-     * @tc.desc Verify custom [Symbol.toPrimitive] returns number for "number" hint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.toPrimitive] returns number for "number" hint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomToPrimitiveNumberHintTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test001_CustomToPrimitiveNumberHint();
@@ -58,12 +58,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   CustomToPrimitiveStringHintTest002
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_002
-     * @tc.name CustomToPrimitiveStringHintTest002
-     * @tc.desc Verify custom [Symbol.toPrimitive] returns string for "string" hint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.toPrimitive] returns string for "string" hint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomToPrimitiveStringHintTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test002_CustomToPrimitiveStringHint();
@@ -71,12 +71,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   CustomToPrimitiveDefaultHintTest003
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_003
-     * @tc.name CustomToPrimitiveDefaultHintTest003
-     * @tc.desc Verify custom [Symbol.toPrimitive] returns primitive for "default" hint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.toPrimitive] returns primitive for "default" hint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomToPrimitiveDefaultHintTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test003_CustomToPrimitiveDefaultHint();
@@ -84,12 +84,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   ToPrimitiveReturnsObjectThrowsTest004
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_004
-     * @tc.name ToPrimitiveReturnsObjectThrowsTest004
-     * @tc.desc Verify [Symbol.toPrimitive] throws TypeError if returns object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.toPrimitive] throws TypeError if returns object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToPrimitiveReturnsObjectThrowsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test004_ToPrimitiveReturnsObjectThrows();
@@ -97,12 +97,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   ToPrimitiveIgnoresHintTest005
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_005
-     * @tc.name ToPrimitiveIgnoresHintTest005
-     * @tc.desc Verify [Symbol.toPrimitive] can ignore hint, return consistent primitive
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.toPrimitive] can ignore hint, return consistent primitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToPrimitiveIgnoresHintTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test005_ToPrimitiveIgnoresHint();
@@ -110,12 +110,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   NoToPrimitiveFallbackTest006
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_006
-     * @tc.name NoToPrimitiveFallbackTest006
-     * @tc.desc Verify object without [Symbol.toPrimitive] falls back to valueOf() → toString()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify object without [Symbol.toPrimitive] falls back to valueOf() → toString()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NoToPrimitiveFallbackTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test006_NoToPrimitiveFallback();
@@ -123,12 +123,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   DateDefaultToPrimitiveTest007
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_007
-     * @tc.name DateDefaultToPrimitiveTest007
-     * @tc.desc Verify Date's default [Symbol.toPrimitive] treats "default" as "string"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Date's default [Symbol.toPrimitive] treats "default" as "string"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DateDefaultToPrimitiveTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test007_DateDefaultToPrimitive();
@@ -136,12 +136,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   SymbolObjectToPrimitiveTest008
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_008
-     * @tc.name SymbolObjectToPrimitiveTest008
-     * @tc.desc Verify Symbol object's [Symbol.toPrimitive] ignores hint, returns symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol object's [Symbol.toPrimitive] ignores hint, returns symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolObjectToPrimitiveTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test008_SymbolObjectToPrimitive();
@@ -149,12 +149,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   NonFunctionToPrimitiveThrowsTest009
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_009
-     * @tc.name NonFunctionToPrimitiveThrowsTest009
-     * @tc.desc Verify non-function [Symbol.toPrimitive] throws TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify non-function [Symbol.toPrimitive] throws TypeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonFunctionToPrimitiveThrowsTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test009_NonFunctionToPrimitiveThrows();
@@ -162,12 +162,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   InheritedToPrimitiveTest010
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_010
-     * @tc.name InheritedToPrimitiveTest010
-     * @tc.desc Verify [Symbol.toPrimitive] can be inherited via prototype chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.toPrimitive] can be inherited via prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InheritedToPrimitiveTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test010_InheritedToPrimitive();
@@ -175,12 +175,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   DynamicModifyToPrimitiveTest011
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_011
-     * @tc.name DynamicModifyToPrimitiveTest011
-     * @tc.desc Verify runtime modification of [Symbol.toPrimitive] affects conversions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify runtime modification of [Symbol.toPrimitive] affects conversions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DynamicModifyToPrimitiveTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test011_DynamicModifyToPrimitive();
@@ -188,12 +188,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   FrozenObjectToPrimitiveTest012
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_012
-     * @tc.name FrozenObjectToPrimitiveTest012
-     * @tc.desc Verify frozen objects retain [Symbol.toPrimitive] functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify frozen objects retain [Symbol.toPrimitive] functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenObjectToPrimitiveTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test012_FrozenObjectToPrimitive();
@@ -202,12 +202,12 @@ export default function symbolToPrimitiveTestTest() {
 
 
     /**
+     * @tc.name   MultiLevelInheritanceToPrimitiveTest014
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_014
-     * @tc.name MultiLevelInheritanceToPrimitiveTest014
-     * @tc.desc Verify multi-level inheritance follows [Symbol.toPrimitive] priority (subclass highest)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify multi-level inheritance follows [Symbol.toPrimitive] priority (subclass highest)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultiLevelInheritanceToPrimitiveTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test014_MultiLevelInheritanceToPrimitive();
@@ -222,12 +222,12 @@ export default function symbolToPrimitiveTestTest() {
 
 
     /**
+     * @tc.name   EqualityOperatorTriggersDefaultHintTest019
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_019
-     * @tc.name EqualityOperatorTriggersDefaultHintTest019
-     * @tc.desc Verify == operator triggers "default" hint for [Symbol.toPrimitive]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify == operator triggers "default" hint for [Symbol.toPrimitive]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EqualityOperatorTriggersDefaultHintTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test019_EqualityOperatorTriggersDefaultHint();
@@ -237,12 +237,12 @@ export default function symbolToPrimitiveTestTest() {
 
 
     /**
+     * @tc.name   ArrowFunctionToPrimitiveThisBindingTest022
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_022
-     * @tc.name ArrowFunctionToPrimitiveThisBindingTest022
-     * @tc.desc Verify arrow function as [Symbol.toPrimitive] inherits external this binding
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify arrow function as [Symbol.toPrimitive] inherits external this binding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrowFunctionToPrimitiveThisBindingTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test022_ArrowFunctionToPrimitiveThisBinding();
@@ -250,12 +250,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   ClosureBasedToPrimitiveTest023
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_023
-     * @tc.name ClosureBasedToPrimitiveTest023
-     * @tc.desc Verify closure-based [Symbol.toPrimitive] retains private context
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify closure-based [Symbol.toPrimitive] retains private context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ClosureBasedToPrimitiveTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test023_ClosureBasedToPrimitive();
@@ -263,12 +263,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   DynamicStateToPrimitiveTest024
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_024
-     * @tc.name DynamicStateToPrimitiveTest024
-     * @tc.desc Verify [Symbol.toPrimitive] returns different values based on object state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.toPrimitive] returns different values based on object state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DynamicStateToPrimitiveTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test024_DynamicStateToPrimitive();
@@ -278,12 +278,12 @@ export default function symbolToPrimitiveTestTest() {
 
 
     /**
+     * @tc.name   ToPrimitiveReturnsSpecialNumbersTest026
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_026
-     * @tc.name ToPrimitiveReturnsSpecialNumbersTest026
-     * @tc.desc Verify [Symbol.toPrimitive] can return NaN/Infinity for "number" hint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.toPrimitive] can return NaN/Infinity for "number" hint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToPrimitiveReturnsSpecialNumbersTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test026_ToPrimitiveReturnsSpecialNumbers();
@@ -291,12 +291,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   ToPrimitiveReturnsEmptyStringTest027
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_027
-     * @tc.name ToPrimitiveReturnsEmptyStringTest027
-     * @tc.desc Verify [Symbol.toPrimitive] can return empty string for "string" hint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.toPrimitive] can return empty string for "string" hint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToPrimitiveReturnsEmptyStringTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test027_ToPrimitiveReturnsEmptyString();
@@ -304,12 +304,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   SubclassOverrideParentToPrimitiveTest028
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_028
-     * @tc.name SubclassOverrideParentToPrimitiveTest028
-     * @tc.desc Verify subclass overrides parent's [Symbol.toPrimitive]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass overrides parent's [Symbol.toPrimitive]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubclassOverrideParentToPrimitiveTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test028_SubclassOverrideParentToPrimitive();
@@ -317,12 +317,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   ManualCallToPrimitiveTest029
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_029
-     * @tc.name ManualCallToPrimitiveTest029
-     * @tc.desc Verify direct call to [Symbol.toPrimitive] with explicit hints
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify direct call to [Symbol.toPrimitive] with explicit hints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ManualCallToPrimitiveTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test029_ManualCallToPrimitive();
@@ -330,12 +330,12 @@ export default function symbolToPrimitiveTestTest() {
     });
 
     /**
+     * @tc.name   ArrayOverrideToPrimitiveTest030
      * @tc.number SUB_SYMBOL_TOPRIMITIVE_STANDALONE_TEST_030
-     * @tc.name ArrayOverrideToPrimitiveTest030
-     * @tc.desc Verify Array can override [Symbol.toPrimitive] for custom conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array can override [Symbol.toPrimitive] for custom conversion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayOverrideToPrimitiveTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolToPrimitiveStandaloneTestUtils.test030_ArrayOverrideToPrimitive();

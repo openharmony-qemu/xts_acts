@@ -52,12 +52,12 @@ export default function BuiltinsMultilineStringLiteralTest() {
     })
 
     /**
-     * @tc.number    : SUB_CHAR_MULTILINESSTRING_TEST_0100
-     * @tc.name      : BuiltinsMultilineStringLiteralTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsMultilineStringLiteralTest0100
+     * @tc.number SUB_CHAR_MULTILINESSTRING_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsMultilineStringLiteralTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -86,12 +86,12 @@ export default function BuiltinsMultilineStringLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_CHAR_MULTILINESSTRING_TEST_0200
-     * @tc.name      : BuiltinsMultilineStringLiteralTest1600
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsMultilineStringLiteralTest1600
+     * @tc.number SUB_CHAR_MULTILINESSTRING_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsMultilineStringLiteralTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

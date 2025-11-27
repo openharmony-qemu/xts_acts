@@ -10,12 +10,12 @@ export default function atomicsXorTest() {
     })
 
     /**
+     * @tc.name   atomicsXorTest001
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_001
-     * @tc.name atomicsXorTest001
-     * @tc.desc Basic Int32Array XOR operation, return old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic Int32Array XOR operation, return old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -27,12 +27,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest002
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_002
-     * @tc.name atomicsXorTest002
-     * @tc.desc BigInt64Array XOR with negative value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   BigInt64Array XOR with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -44,12 +44,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest003
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_003
-     * @tc.name atomicsXorTest003
-     * @tc.desc XOR with 0, keep original value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR with 0, keep original value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -61,12 +61,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest004
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_004
-     * @tc.name atomicsXorTest004
-     * @tc.desc XOR on Int32Array index 1 (multi-element buffer)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR on Int32Array index 1 (multi-element buffer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -80,12 +80,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest005
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_005
-     * @tc.name atomicsXorTest005
-     * @tc.desc XOR to flip all bits (value=0xFFFFFFFF for Int32)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR to flip all bits (value=0xFFFFFFFF for Int32)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -97,12 +97,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest006
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_006
-     * @tc.name atomicsXorTest006
-     * @tc.desc Throw TypeError for non-shared ArrayBuffer (Int32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-shared ArrayBuffer (Int32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ab = new ArrayBuffer(4);
@@ -115,12 +115,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest007
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_007
-     * @tc.name atomicsXorTest007
-     * @tc.desc Throw TypeError for non-shared ArrayBuffer (BigInt64Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-shared ArrayBuffer (BigInt64Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ab = new ArrayBuffer(8);
@@ -133,12 +133,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest008
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_008
-     * @tc.name atomicsXorTest008
-     * @tc.desc Throw TypeError for Float32Array (not allowed type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Float32Array (not allowed type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -176,12 +176,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest009
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_009
-     * @tc.name atomicsXorTest009
-     * @tc.desc Throw TypeError for Uint8ClampedArray (not allowed type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Uint8ClampedArray (not allowed type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -198,12 +198,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest010
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_010
-     * @tc.name atomicsXorTest010
-     * @tc.desc Throw RangeError for index >= array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for index >= array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -216,12 +216,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest011
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_011
-     * @tc.name atomicsXorTest011
-     * @tc.desc Throw RangeError for negative index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for negative index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -234,12 +234,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest012
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_012
-     * @tc.name atomicsXorTest012
-     * @tc.desc XOR with large value in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR with large value in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -251,12 +251,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest013
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_013
-     * @tc.name atomicsXorTest013
-     * @tc.desc XOR twice on same Int32Array index (return to original value)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR twice on same Int32Array index (return to original value)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -273,12 +273,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest014
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_014
-     * @tc.name atomicsXorTest014
-     * @tc.desc XOR on Int32Array with value=0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR on Int32Array with value=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -290,12 +290,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest015
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_015
-     * @tc.name atomicsXorTest015
-     * @tc.desc XOR on BigInt64Array with value=0n
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR on BigInt64Array with value=0n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -307,12 +307,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest016
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_016
-     * @tc.name atomicsXorTest016
-     * @tc.desc XOR non-integer value (coerced to integer) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR non-integer value (coerced to integer) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -324,12 +324,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest017
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_017
-     * @tc.name atomicsXorTest017
-     * @tc.desc XOR non-BigInt value (coerced to BigInt) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR non-BigInt value (coerced to BigInt) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -347,12 +347,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest018
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_018
-     * @tc.name atomicsXorTest018
-     * @tc.desc XOR on Int32Array maximum value (0x7FFFFFFF)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR on Int32Array maximum value (0x7FFFFFFF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -364,12 +364,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest019
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_019
-     * @tc.name atomicsXorTest019
-     * @tc.desc XOR on BigInt64Array maximum value (9223372036854775807n)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   XOR on BigInt64Array maximum value (9223372036854775807n)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsXorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -381,12 +381,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest020
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_020
-     * @tc.name atomicsXorTest020
-     * @tc.desc XOR with arrow function wrapper, return old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR with arrow function wrapper, return old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -399,12 +399,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest021
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_021
-     * @tc.name atomicsXorTest021
-     * @tc.desc Nested arrow functions: XOR inside inner function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: XOR inside inner function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -422,12 +422,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest022
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_022
-     * @tc.name atomicsXorTest022
-     * @tc.desc Throw TypeError for non-typed array object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-typed array object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -446,12 +446,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest023
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_023
-     * @tc.name atomicsXorTest023
-     * @tc.desc XOR on Uint32Array (allowed type), check unsigned result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on Uint32Array (allowed type), check unsigned result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -463,12 +463,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest024
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_024
-     * @tc.name atomicsXorTest024
-     * @tc.desc XOR on BigUint64Array (allowed type), check unsigned result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on BigUint64Array (allowed type), check unsigned result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -480,12 +480,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest025
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_025
-     * @tc.name atomicsXorTest025
-     * @tc.desc Arrow function to batch XOR on multiple indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to batch XOR on multiple indexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -504,12 +504,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest026
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_026
-     * @tc.name atomicsXorTest026
-     * @tc.desc XOR on Int8Array (allowed type), check byte range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on Int8Array (allowed type), check byte range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(1);
@@ -521,12 +521,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest027
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_027
-     * @tc.name atomicsXorTest027
-     * @tc.desc XOR on Uint16Array (allowed type), check 16-bit range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on Uint16Array (allowed type), check 16-bit range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(2);
@@ -538,12 +538,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest028
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_028
-     * @tc.name atomicsXorTest028
-     * @tc.desc Nested arrow functions: XOR with dynamic value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: XOR with dynamic value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -562,12 +562,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest029
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_029
-     * @tc.name atomicsXorTest029
-     * @tc.desc Throw RangeError for non-integer index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for non-integer index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -580,12 +580,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest030
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_030
-     * @tc.name atomicsXorTest030
-     * @tc.desc XOR value exceeding 32 bits (truncated) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR value exceeding 32 bits (truncated) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -597,12 +597,12 @@ export default function atomicsXorTest() {
       expect(ia[0]).assertEqual(4); // 0b0100 (1 ^ 5 = 4)
     });
     /**
+     * @tc.name   atomicsXorTest031
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_031
-     * @tc.name atomicsXorTest031
-     * @tc.desc XOR value exceeding 64 bits (truncated) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR value exceeding 64 bits (truncated) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -615,12 +615,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest032
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_032
-     * @tc.name atomicsXorTest032
-     * @tc.desc Arrow function wrapper for BigInt64Array XOR with dynamic value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function wrapper for BigInt64Array XOR with dynamic value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -639,12 +639,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest033
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_033
-     * @tc.name atomicsXorTest033
-     * @tc.desc XOR on Int32Array with value=0x80000000 (min Int32)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on Int32Array with value=0x80000000 (min Int32)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -656,12 +656,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest034
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_034
-     * @tc.name atomicsXorTest034
-     * @tc.desc XOR on BigInt64Array with value=0x8000000000000000n (min BigInt64)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on BigInt64Array with value=0x8000000000000000n (min BigInt64)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -673,12 +673,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest035
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_035
-     * @tc.name atomicsXorTest035
-     * @tc.desc Nested arrow functions: XOR with value from outer variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: XOR with value from outer variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -697,12 +697,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest036
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_036
-     * @tc.name atomicsXorTest036
-     * @tc.desc Arrow function to chain XOR operations on same index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to chain XOR operations on same index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -719,12 +719,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest037
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_037
-     * @tc.name atomicsXorTest037
-     * @tc.desc Arrow function to chain XOR operations on BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to chain XOR operations on BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -742,12 +742,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest038
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_038
-     * @tc.name atomicsXorTest038
-     * @tc.desc XOR NaN (coerced to 0) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR NaN (coerced to 0) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -759,12 +759,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest039
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_039
-     * @tc.name atomicsXorTest039
-     * @tc.desc XOR NaN (coerced to 0n) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR NaN (coerced to 0n) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -781,12 +781,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest040
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_040
-     * @tc.name atomicsXorTest040
-     * @tc.desc Nested arrow functions: XOR with conditional value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: XOR with conditional value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -804,12 +804,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest041
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_041
-     * @tc.name atomicsXorTest041
-     * @tc.desc XOR Infinity (coerced to 0) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR Infinity (coerced to 0) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -821,12 +821,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest042
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_042
-     * @tc.name atomicsXorTest042
-     * @tc.desc XOR Infinity (coerced to 0n) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR Infinity (coerced to 0n) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -844,12 +844,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest043
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_043
-     * @tc.name atomicsXorTest043
-     * @tc.desc XOR on Int16Array (allowed type), check 16-bit range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on Int16Array (allowed type), check 16-bit range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(2);
@@ -861,12 +861,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest044
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_044
-     * @tc.name atomicsXorTest044
-     * @tc.desc XOR on Uint8Array (allowed type), check 8-bit unsigned range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   XOR on Uint8Array (allowed type), check 8-bit unsigned range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(1);
@@ -878,12 +878,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest045
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_045
-     * @tc.name atomicsXorTest045
-     * @tc.desc Arrow function to XOR and return new value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to XOR and return new value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -900,12 +900,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest046
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_046
-     * @tc.name atomicsXorTest046
-     * @tc.desc Arrow function to XOR and return old+new value object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to XOR and return old+new value object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsXorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -924,12 +924,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest047
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_047
-     * @tc.name atomicsXorTest047
-     * @tc.desc Async XOR with Promise wrapper, resolve old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with Promise wrapper, resolve old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -951,12 +951,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest048
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_048
-     * @tc.name atomicsXorTest048
-     * @tc.desc Nested async: XOR inside inner Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR inside inner Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -984,12 +984,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest049
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_049
-     * @tc.name atomicsXorTest049
-     * @tc.desc Promise.all with multiple XOR operations on different indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with multiple XOR operations on different indexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1018,12 +1018,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest050
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_050
-     * @tc.name atomicsXorTest050
-     * @tc.desc Async XOR with arrow function closure, capture index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with arrow function closure, capture index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1051,12 +1051,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest051
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_051
-     * @tc.name atomicsXorTest051
-     * @tc.desc Nested async: XOR with retry on invalid value (coerce and retry)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with retry on invalid value (coerce and retry)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1084,12 +1084,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest052
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_052
-     * @tc.name atomicsXorTest052
-     * @tc.desc Promise.race between two XOR operations on same index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between two XOR operations on same index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1118,12 +1118,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest053
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_053
-     * @tc.name atomicsXorTest053
-     * @tc.desc Async XOR with finally block to log result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with finally block to log result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1152,12 +1152,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest054
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_054
-     * @tc.name atomicsXorTest054
-     * @tc.desc Nested arrow functions: async XOR with dynamic value from mock API
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with dynamic value from mock API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1185,12 +1185,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest055
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_055
-     * @tc.name atomicsXorTest055
-     * @tc.desc Promise.allSettled with valid and invalid XOR tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with valid and invalid XOR tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1221,12 +1221,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest056
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_056
-     * @tc.name atomicsXorTest056
-     * @tc.desc Async XOR with closure that tracks operation history
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that tracks operation history
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1267,12 +1267,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest057
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_057
-     * @tc.name atomicsXorTest057
-     * @tc.desc Nested async: XOR with pre-validation in outer Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with pre-validation in outer Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1306,12 +1306,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest058
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_058
-     * @tc.name atomicsXorTest058
-     * @tc.desc Async XOR with Promise chain: validate → XOR → log
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with Promise chain: validate → XOR → log
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1359,12 +1359,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest059
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_059
-     * @tc.name atomicsXorTest059
-     * @tc.desc Nested arrow functions: async XOR with dynamic index from closure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with dynamic index from closure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -1394,12 +1394,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest060
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_060
-     * @tc.name atomicsXorTest060
-     * @tc.desc Promise.race between XOR and timeout (XOR wins)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between XOR and timeout (XOR wins)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1423,12 +1423,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest061
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_061
-     * @tc.name atomicsXorTest061
-     * @tc.desc Async XOR with error handling for invalid index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with error handling for invalid index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1456,12 +1456,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest062
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_062
-     * @tc.name atomicsXorTest062
-     * @tc.desc Nested async: XOR with batch value application via Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with batch value application via Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -1492,12 +1492,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest063
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_063
-     * @tc.name atomicsXorTest063
-     * @tc.desc Async XOR with closure that enforces result bit limit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that enforces result bit limit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1537,12 +1537,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest064
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_064
-     * @tc.name atomicsXorTest064
-     * @tc.desc Nested arrow functions: async XOR with value from outer Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with value from outer Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1572,12 +1572,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest065
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_065
-     * @tc.name atomicsXorTest065
-     * @tc.desc Promise.all with XOR and state check tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with XOR and state check tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1606,12 +1606,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest066
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_066
-     * @tc.name atomicsXorTest066
-     * @tc.desc Async XOR with retry on detached buffer (fallback)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with retry on detached buffer (fallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1629,12 +1629,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest067
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_067
-     * @tc.name atomicsXorTest067
-     * @tc.desc Nested async: XOR with pre-XOR and post-XOR checks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with pre-XOR and post-XOR checks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1673,12 +1673,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest068
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_068
-     * @tc.name atomicsXorTest068
-     * @tc.desc Async XOR with closure that logs XOR value usage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that logs XOR value usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1708,12 +1708,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest069
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_069
-     * @tc.name atomicsXorTest069
-     * @tc.desc Nested arrow functions: async XOR with conditional value selection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with conditional value selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1748,12 +1748,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest070
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_070
-     * @tc.name atomicsXorTest070
-     * @tc.desc Promise.allSettled with XOR tasks on different typed arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with XOR tasks on different typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1784,12 +1784,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest071
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_071
-     * @tc.name atomicsXorTest071
-     * @tc.desc Async XOR with closure that enforces result range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that enforces result range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1829,12 +1829,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest072
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_072
-     * @tc.name atomicsXorTest072
-     * @tc.desc Nested async: XOR with value derived from previous XOR result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with value derived from previous XOR result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1867,12 +1867,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest073
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_073
-     * @tc.name atomicsXorTest073
-     * @tc.desc Promise.race between two XOR tasks with different values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between two XOR tasks with different values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1901,12 +1901,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest074
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_074
-     * @tc.name atomicsXorTest074
-     * @tc.desc Async XOR with error handling for non-shared buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with error handling for non-shared buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const ab = new ArrayBuffer(4); // Non-shared buffer
@@ -1934,12 +1934,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest075
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_075
-     * @tc.name atomicsXorTest075
-     * @tc.desc Nested arrow functions: async XOR with batch value validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with batch value validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1984,12 +1984,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest076
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_076
-     * @tc.name atomicsXorTest076
-     * @tc.desc Async XOR with closure that tracks operation success rate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that tracks operation success rate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2027,12 +2027,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest077
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_077
-     * @tc.name atomicsXorTest077
-     * @tc.desc Nested async: XOR with value from external async API
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with value from external async API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2061,12 +2061,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest078
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_078
-     * @tc.name atomicsXorTest078
-     * @tc.desc Promise.all with XOR and cleanup tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with XOR and cleanup tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2096,12 +2096,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest079
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_079
-     * @tc.name atomicsXorTest079
-     * @tc.desc Async XOR with closure that skips duplicate XOR values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that skips duplicate XOR values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2136,12 +2136,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest080
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_080
-     * @tc.name atomicsXorTest080
-     * @tc.desc Nested arrow functions: async XOR with value validation in inner function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with value validation in inner function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2173,12 +2173,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest081
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_081
-     * @tc.name atomicsXorTest081
-     * @tc.desc Promise.race between XOR and value change task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between XOR and value change task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2210,12 +2210,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest082
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_082
-     * @tc.name atomicsXorTest082
-     * @tc.desc Async XOR with error handling for invalid value type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with error handling for invalid value type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2247,12 +2247,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest083
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_083
-     * @tc.name atomicsXorTest083
-     * @tc.desc Nested async: XOR with batch value application and result aggregation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with batch value application and result aggregation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -2283,12 +2283,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest084
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_084
-     * @tc.name atomicsXorTest084
-     * @tc.desc Async XOR with closure that tracks cumulative XOR value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that tracks cumulative XOR value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2318,12 +2318,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest085
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_085
-     * @tc.name atomicsXorTest085
-     * @tc.desc Nested arrow functions: async XOR with value from closure state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with value from closure state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2354,12 +2354,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest086
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_086
-     * @tc.name atomicsXorTest086
-     * @tc.desc Promise.allSettled with XOR tasks on same index (different values)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with XOR tasks on same index (different values)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2383,12 +2383,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest087
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_087
-     * @tc.name atomicsXorTest087
-     * @tc.desc Async XOR with retry on value overflow (coerce and retry)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with retry on value overflow (coerce and retry)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2417,12 +2417,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest088
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_088
-     * @tc.name atomicsXorTest088
-     * @tc.desc Nested async: XOR with value validation and fallback value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with value validation and fallback value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2455,12 +2455,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest089
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_089
-     * @tc.name atomicsXorTest089
-     * @tc.desc Promise.race between XOR and timeout (timeout wins)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between XOR and timeout (timeout wins)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2487,12 +2487,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest090
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_090
-     * @tc.name atomicsXorTest090
-     * @tc.desc Async XOR with closure that enforces unique XOR values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that enforces unique XOR values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2530,12 +2530,12 @@ export default function atomicsXorTest() {
       expect(ia[0]).assertEqual(45); // Only first XOR is applied
     });
     /**
+     * @tc.name   atomicsXorTest091
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_091
-     * @tc.name atomicsXorTest091
-     * @tc.desc Nested arrow functions: async XOR with value from promise chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with value from promise chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2566,12 +2566,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest092
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_092
-     * @tc.name atomicsXorTest092
-     * @tc.desc Promise.all with XOR and state validation tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with XOR and state validation tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2600,12 +2600,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest093
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_093
-     * @tc.name atomicsXorTest093
-     * @tc.desc Async XOR with closure that logs operation timestamps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that logs operation timestamps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2638,12 +2638,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest094
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_094
-     * @tc.name atomicsXorTest094
-     * @tc.desc Nested async: XOR with value derived from array value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with value derived from array value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2675,12 +2675,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest095
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_095
-     * @tc.name atomicsXorTest095
-     * @tc.desc Promise.allSettled with XOR tasks on detached and valid buffers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with XOR tasks on detached and valid buffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2696,12 +2696,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest096
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_096
-     * @tc.name atomicsXorTest096
-     * @tc.desc Async XOR with closure that skips zero XOR values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that skips zero XOR values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2737,12 +2737,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest097
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_097
-     * @tc.name atomicsXorTest097
-     * @tc.desc Nested async: XOR with batch validation and error recovery
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: XOR with batch validation and error recovery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2777,12 +2777,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest098
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_098
-     * @tc.name atomicsXorTest098
-     * @tc.desc Async XOR with closure that tracks value change history
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async XOR with closure that tracks value change history
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2818,12 +2818,12 @@ export default function atomicsXorTest() {
       expect(ia[0]).assertEqual(55);
     });
     /**
+     * @tc.name   atomicsXorTest099
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_099
-     * @tc.name atomicsXorTest099
-     * @tc.desc Nested arrow functions: async XOR with dynamic value from closure state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async XOR with dynamic value from closure state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2855,12 +2855,12 @@ export default function atomicsXorTest() {
     });
 
     /**
+     * @tc.name   atomicsXorTest100
      * @tc.number SUB_BUILTINS_Atomics_xor_TEST_100
-     * @tc.name atomicsXorTest100
-     * @tc.desc Comprehensive async workflow: validate → batch XOR → log → cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive async workflow: validate → batch XOR → log → cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsXorTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);

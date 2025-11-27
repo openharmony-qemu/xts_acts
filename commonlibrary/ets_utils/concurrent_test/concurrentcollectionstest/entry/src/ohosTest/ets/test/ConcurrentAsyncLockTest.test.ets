@@ -59,12 +59,12 @@ export default function AsyncLockTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0100
-     * @tc.name      : test_concurrent_asynclock_001
-     * @tc.desc      : test_concurrent_asynclock_001 - test AsyncLock constructor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_001
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0100
+     * @tc.desc   test_concurrent_asynclock_001 - test AsyncLock constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -91,12 +91,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0200
-     * @tc.name      : test_concurrent_asynclock_002
-     * @tc.desc      : test_concurrent_asynclock_002 - test AsyncLock request method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_002
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0200
+     * @tc.desc   test_concurrent_asynclock_002 - test AsyncLock request method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -123,12 +123,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0300
-     * @tc.name      : test_concurrent_asynclock_003
-     * @tc.desc      : test_concurrent_asynclock_003 - test AsyncLock query method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_003
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0300
+     * @tc.desc   test_concurrent_asynclock_003 - test AsyncLock query method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -155,12 +155,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0400
-     * @tc.name      : test_concurrent_asynclock_004
-     * @tc.desc      : test_concurrent_asynclock_004 - test AsyncLock queryAll method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_004
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0400
+     * @tc.desc   test_concurrent_asynclock_004 - test AsyncLock queryAll method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -187,12 +187,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0500
-     * @tc.name      : test_concurrent_asynclock_005
-     * @tc.desc      : test_concurrent_asynclock_005 - test AsyncLock lockAsync basic usage
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_005
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0500
+     * @tc.desc   test_concurrent_asynclock_005 - test AsyncLock lockAsync basic usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -219,12 +219,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0600
-     * @tc.name      : test_concurrent_asynclock_006
-     * @tc.desc      : test_concurrent_asynclock_006 - test AsyncLock lockAsync with mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_006
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0600
+     * @tc.desc   test_concurrent_asynclock_006 - test AsyncLock lockAsync with mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -251,12 +251,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0700
-     * @tc.name      : test_concurrent_asynclock_007
-     * @tc.desc      : test_concurrent_asynclock_007 - test AsyncLock lockAsync with timeout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_007
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0700
+     * @tc.desc   test_concurrent_asynclock_007 - test AsyncLock lockAsync with timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -283,12 +283,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0800
-     * @tc.name      : test_concurrent_asynclock_008
-     * @tc.desc      : test_concurrent_asynclock_008 - test AsyncLock concurrent access
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_008
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0800
+     * @tc.desc   test_concurrent_asynclock_008 - test AsyncLock concurrent access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -315,12 +315,12 @@ export default function AsyncLockTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ASYNCLOCK_TEST_0900
-     * @tc.name      : test_concurrent_asynclock_009
-     * @tc.desc      : test_concurrent_asynclock_009 - test AsyncLock error handling
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_asynclock_009
+     * @tc.number SUB_CONCURRENT_ASYNCLOCK_TEST_0900
+     * @tc.desc   test_concurrent_asynclock_009 - test AsyncLock error handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_asynclock_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

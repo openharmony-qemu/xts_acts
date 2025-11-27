@@ -40,12 +40,12 @@ export default function builtinsArrayValuesTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayValuesTest0100
      * @tc.number SUB_BUILTINS_ARRAY_VALUES_TEST_0100
-     * @tc.name builtinsArrayValuesTest0100
-     * @tc.desc Testing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayValuesTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const caseName = 'builtinsArrayValuesTest0100';
@@ -65,12 +65,12 @@ export default function builtinsArrayValuesTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayValuesTest0200
      * @tc.number SUB_BUILTINS_ARRAY_VALUES_TEST_0200
-     * @tc.name builtinsArrayValuesTest0200
-     * @tc.desc Testing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayValuesTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayValuesTest0200';
@@ -88,12 +88,12 @@ export default function builtinsArrayValuesTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayValuesTest0300
      * @tc.number SUB_BUILTINS_ARRAY_VALUES_TEST_0300
-     * @tc.name builtinsArrayValuesTest0300
-     * @tc.desc Testing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayValuesTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayValuesTest0300';
@@ -113,12 +113,12 @@ export default function builtinsArrayValuesTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayValuesTest0400
      * @tc.number SUB_BUILTINS_ARRAY_VALUES_TEST_0400
-     * @tc.name builtinsArrayValuesTest0400
-     * @tc.desc Testing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayValuesTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayValuesTest0400';

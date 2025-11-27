@@ -34,12 +34,12 @@ export default function RegExpWorkerTest001() {
     })
 
     /**
+     * @tc.name   testRegCtr0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_WORKER_0001
-     * @tc.name testRegCtr0001
-     * @tc.desc Verify RegExp can be created from a string pattern with flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp can be created from a string pattern with flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let workerInstance = new worker.ThreadWorker('../workers/Worker001.ets');
@@ -54,12 +54,12 @@ export default function RegExpWorkerTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_WORKER_0002
-     * @tc.name testRegCtr0002
-     * @tc.desc Verify RegExp constructed from another RegExp copies source and flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from another RegExp copies source and flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let workerInstance = new worker.ThreadWorker('../workers/Worker001.ets');

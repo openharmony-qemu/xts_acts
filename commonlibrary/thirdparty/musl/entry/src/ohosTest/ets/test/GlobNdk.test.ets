@@ -26,13 +26,13 @@ export default function muslGlobdNdkTest() {
       await Utils.sleep(50)
     })
 
-    /**getopt
-     * @tc.number   : SUB_THIRDPARTY_MUSL_GLOB_GLOB_0100
-     * @tc.name     : testMuslGlobGlob001
-     * @tc.desc     : test glob
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+    /**
+     * @tc.name   testMuslGlobGlob001
+     * @tc.number SUB_THIRDPARTY_MUSL_GLOB_GLOB_0100
+     * @tc.desc   test glob
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGlobGlob001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = glob.glob();
@@ -40,13 +40,13 @@ export default function muslGlobdNdkTest() {
       done()
     });
 
-    /**getopt
-     * @tc.number   : SUB_THIRDPARTY_MUSL_GLOB_GLOBFREE_0100
-     * @tc.name     : testMuslGlobGlobfree001
-     * @tc.desc     : test globfree
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+    /**
+     * @tc.name   testMuslGlobGlobfree001
+     * @tc.number SUB_THIRDPARTY_MUSL_GLOB_GLOBFREE_0100
+     * @tc.desc   test globfree
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGlobGlobfree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = glob.globfree();

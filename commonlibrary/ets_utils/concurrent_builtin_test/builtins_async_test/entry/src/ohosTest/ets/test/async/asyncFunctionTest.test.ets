@@ -48,12 +48,12 @@ export default function asyncFunctionTest() {
       await sleep(10)
     })
     /**
+     * @tc.name   asyncFunctionTest001
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_001
-     * @tc.name asyncFunctionTest001
-     * @tc.desc Basic async function returns resolved value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic async function returns resolved value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const getValue = async (): Promise<number> => 42;
@@ -62,12 +62,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest002
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_002
-     * @tc.name asyncFunctionTest002
-     * @tc.desc Async function returns Promise object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns Promise object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const getPromise = async (): Promise<string> => Promise.resolve('test');
@@ -76,12 +76,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest003
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_003
-     * @tc.name asyncFunctionTest003
-     * @tc.desc Async function uses await with external Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function uses await with external Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const externalPromise: Promise<number> = Promise.resolve(15);
@@ -94,12 +94,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest004
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_004
-     * @tc.name asyncFunctionTest004
-     * @tc.desc Async function throws error, caught by try/catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function throws error, caught by try/catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const throwError = async (): Promise<void> => {
@@ -116,12 +116,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest005
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_005
-     * @tc.name asyncFunctionTest005
-     * @tc.desc Async function with no return returns Promise.resolve(undefined)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function with no return returns Promise.resolve(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const noReturn = async (): Promise<undefined> => {
@@ -132,12 +132,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest006
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_006
-     * @tc.name asyncFunctionTest006
-     * @tc.desc Async function with nested async arrow function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with nested async arrow function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const outerAsync = async (): Promise<number> => {
@@ -150,12 +150,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest007
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_007
-     * @tc.name asyncFunctionTest007
-     * @tc.desc Multiple awaits in single async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple awaits in single async function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const multiAwait = async (): Promise<number> => {
@@ -170,12 +170,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest008
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_008
-     * @tc.name asyncFunctionTest008
-     * @tc.desc Async function returns rejected Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function returns rejected Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const returnRejected = async (): Promise<never> => {
@@ -191,12 +191,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest009
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_009
-     * @tc.name asyncFunctionTest009
-     * @tc.desc Async function with parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function with parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const withParam = async (num: number): Promise<number> => num + 10;
@@ -205,12 +205,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest010
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_010
-     * @tc.name asyncFunctionTest010
-     * @tc.desc Async function with default parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with default parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const defaultParam = async (num: number = 3): Promise<number> => num * 4;
@@ -221,12 +221,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest011
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_011
-     * @tc.name asyncFunctionTest011
-     * @tc.desc Async function with rest parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with rest parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const restParam = async (...nums: number[]): Promise<number> => {
@@ -237,12 +237,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest012
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_012
-     * @tc.name asyncFunctionTest012
-     * @tc.desc Async function returns BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const returnBigInt = async (): Promise<bigint> => 100n;
@@ -251,12 +251,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest013
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_013
-     * @tc.name asyncFunctionTest013
-     * @tc.desc Async function uses await in try/catch block
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function uses await in try/catch block
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tryCatchAwait = async (): Promise<string> => {
@@ -273,12 +273,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest014
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_014
-     * @tc.name asyncFunctionTest014
-     * @tc.desc Async function with try/finally block
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with try/finally block
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let finallyExecuted = false;
@@ -294,12 +294,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest015
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_015
-     * @tc.name asyncFunctionTest015
-     * @tc.desc Async function assigned to variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function assigned to variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const asyncVar = async (): Promise<string> => 'assigned';
@@ -308,12 +308,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest016
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_016
-     * @tc.name asyncFunctionTest016
-     * @tc.desc Async function as object method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function as object method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await asyncFunctionTest016();
@@ -321,12 +321,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest017
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_017
-     * @tc.name asyncFunctionTest017
-     * @tc.desc Async function as class method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function as class method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class TestClass {
@@ -341,12 +341,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest018
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_018
-     * @tc.name asyncFunctionTest018
-     * @tc.desc Async function returns object literal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns object literal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const returnObj = async (): Promise<ResultObj> => ({ key: 'value', count: 3 });
@@ -356,12 +356,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest019
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_019
-     * @tc.name asyncFunctionTest019
-     * @tc.desc Async function with Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const usePromiseAll = async (): Promise<number> => {
@@ -378,12 +378,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest020
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_020
-     * @tc.name asyncFunctionTest020
-     * @tc.desc Async function with Promise.race (resolved first)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with Promise.race (resolved first)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const usePromiseRace = async (): Promise<string> => {
@@ -396,12 +396,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest021
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_021
-     * @tc.name asyncFunctionTest021
-     * @tc.desc Async function with Promise.allSettled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with Promise.allSettled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       type SettledStatus = 'fulfilled' | 'rejected';
@@ -418,12 +418,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest022
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_022
-     * @tc.name asyncFunctionTest022
-     * @tc.desc Async function calls another async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function calls another async function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const async1 = async (): Promise<number> => 4;
@@ -436,12 +436,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest023
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_023
-     * @tc.name asyncFunctionTest023
-     * @tc.desc Async function returns resolved Promise directly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns resolved Promise directly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const returnResolved = async (): Promise<string> => Promise.resolve('done');
@@ -450,12 +450,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest024
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_024
-     * @tc.name asyncFunctionTest024
-     * @tc.desc Async function returns array with typed elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns array with typed elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const returnArray = async (): Promise<number[]> => [1, 2, 3];
@@ -465,12 +465,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest025
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_025
-     * @tc.name asyncFunctionTest025
-     * @tc.desc Async function with conditional await (typed branches)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with conditional await (typed branches)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const conditionalAwait = async (useFast: boolean): Promise<string> => {
@@ -485,12 +485,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest026
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_026
-     * @tc.name asyncFunctionTest026
-     * @tc.desc Async function with nested conditional await (typed data flow)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested conditional await (typed data flow)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const nestedCondAwait = async (level: number): Promise<number> => {
@@ -510,12 +510,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest027
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_027
-     * @tc.name asyncFunctionTest027
-     * @tc.desc Async arrow function with typed parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async arrow function with typed parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const asyncArrow = async (str: string): Promise<string> => str.repeat(2);
@@ -524,12 +524,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest028
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_028
-     * @tc.name asyncFunctionTest028
-     * @tc.desc Async arrow function with no parameters (returns typed value)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async arrow function with no parameters (returns typed value)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const noParamAsyncArrow = async (): Promise<number> => new Date().getFullYear();
@@ -538,12 +538,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest029
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_029
-     * @tc.name asyncFunctionTest029
-     * @tc.desc Async function returns typed Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns typed Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -571,12 +571,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest030
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_030
-     * @tc.name asyncFunctionTest030
-     * @tc.desc Async function with await in loop (typed array result)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with await in loop (typed array result)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const awaitInLoop = async (): Promise<number[]> => {
@@ -593,12 +593,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest031
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_031
-     * @tc.name asyncFunctionTest031
-     * @tc.desc Async function with forEach and await (typed result sorting)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with forEach and await (typed result sorting)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const awaitInForEach = async (): Promise<number[]> => {
@@ -622,12 +622,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest032
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_032
-     * @tc.name asyncFunctionTest032
-     * @tc.desc Async function returns typed Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns typed Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const returnMap = async (): Promise<Map<string, number>> => {
@@ -642,12 +642,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest033
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_033
-     * @tc.name asyncFunctionTest033
-     * @tc.desc Async function returns typed Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function returns typed Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const returnSet = async (): Promise<Set<number>> => {
@@ -663,12 +663,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest034
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_034
-     * @tc.name asyncFunctionTest034
-     * @tc.desc Async function with async callback in array map (typed promises)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with async callback in array map (typed promises)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncMapCallback = async (): Promise<number[]> => {
@@ -683,12 +683,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest035
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_035
-     * @tc.name asyncFunctionTest035
-     * @tc.desc Async function with error propagation from nested async (typed error)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with error propagation from nested async (typed error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const nestedAsyncError = async (): Promise<void> => {
@@ -708,12 +708,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest036
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_036
-     * @tc.name asyncFunctionTest036
-     * @tc.desc Async function with typed custom Promise implementation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with typed custom Promise implementation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const asyncCalculate = async (base:number, shouldMultiply:boolean) => {
@@ -754,12 +754,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest037
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_037
-     * @tc.name asyncFunctionTest037
-     * @tc.desc Async function with typed Promise.resolve chaining
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with typed Promise.resolve chaining
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promiseChaining = async (): Promise<number> => {
@@ -772,12 +772,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest038
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_038
-     * @tc.name asyncFunctionTest038
-     * @tc.desc Async function with typed Promise.catch in chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with typed Promise.catch in chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promiseCatchChain = async (): Promise<string> => {
@@ -790,12 +790,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest039
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_039
-     * @tc.name asyncFunctionTest039
-     * @tc.desc Async function with await on typed non-Promise value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function with await on typed non-Promise value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const awaitNonPromise = async (): Promise<string> => {
@@ -807,12 +807,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest040
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_040
-     * @tc.name asyncFunctionTest040
-     * @tc.desc Async function with await on typed null value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function with await on typed null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const awaitNull = async (): Promise<null> => {
@@ -824,12 +824,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest041
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_041
-     * @tc.name asyncFunctionTest041
-     * @tc.desc Async function with await on typed undefined value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Async function with await on typed undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('asyncFunctionTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const awaitUndefined = async (): Promise<undefined> => {
@@ -841,12 +841,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest042
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_042
-     * @tc.name asyncFunctionTest042
-     * @tc.desc Async function with parallel async calls (typed Promise.all)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with parallel async calls (typed Promise.all)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const parallelAsync = async (): Promise<number> => {
@@ -860,12 +860,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest043
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_043
-     * @tc.name asyncFunctionTest043
-     * @tc.desc Async function with typed async generator call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with typed async generator call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result: number[] = await asyncFunctionTest043()
@@ -873,12 +873,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest044
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_044
-     * @tc.name asyncFunctionTest044
-     * @tc.desc Async function as typed event listener callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function as typed event listener callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Initialize shared memory (atomic operation carrier)
@@ -907,12 +907,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest045
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_045
-     * @tc.name asyncFunctionTest045
-     * @tc.desc Async function with return in finally block (overrides try/catch return)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Async function with return in finally block (overrides try/catch return)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('asyncFunctionTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const returnInFinally = async (shouldThrow: boolean): Promise<string> => {
@@ -934,12 +934,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest046
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_046
-     * @tc.name asyncFunctionTest046
-     * @tc.desc 3-level nested async functions with sequential awaits (typed data flow)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   3-level nested async functions with sequential awaits (typed data flow)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const level3 = async (num: number): Promise<number> => {
@@ -958,12 +958,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest047
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_047
-     * @tc.name asyncFunctionTest047
-     * @tc.desc Async function with parallel nested async calls via typed Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with parallel nested async calls via typed Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const nestedAsync1 = async (): Promise<number> => await Promise.resolve(5);
@@ -979,12 +979,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest048
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_048
-     * @tc.name asyncFunctionTest048
-     * @tc.desc Async function with conditional nested async (typed branch results)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with conditional nested async (typed branch results)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const branchA = async (num: number): Promise<number> => {
@@ -1007,12 +1007,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest049
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_049
-     * @tc.name asyncFunctionTest049
-     * @tc.desc Async function with nested async arrow functions in typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async arrow functions in typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const asyncTasks: Array<() => Promise<number>> = [
@@ -1033,12 +1033,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest050
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_050
-     * @tc.name asyncFunctionTest050
-     * @tc.desc Async function with error handling in nested async layers (typed errors)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with error handling in nested async layers (typed errors)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const level3 = async (shouldThrow: boolean): Promise<number> => {
@@ -1069,12 +1069,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest051
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_051
-     * @tc.name asyncFunctionTest051
-     * @tc.desc Async function with nested async that returns another async function (typed)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that returns another async function (typed)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const getAsyncFunc = async (multiplier: number): Promise<(num: number) => Promise<number>> => {
@@ -1093,12 +1093,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest052
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_052
-     * @tc.name asyncFunctionTest052
-     * @tc.desc 4-level async nested workflow with typed data passing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   4-level async nested workflow with typed data passing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Level 4: Final data processing (typed)
@@ -1126,12 +1126,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest053
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_053
-     * @tc.name asyncFunctionTest053
-     * @tc.desc Async function with nested async in typed object properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async in typed object properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = await asyncFunctionTest053();
@@ -1139,12 +1139,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest054
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_054
-     * @tc.name asyncFunctionTest054
-     * @tc.desc Async function with nested async that uses typed Promise.race
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed Promise.race
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const nestedRace = async (): Promise<string> => {
@@ -1162,12 +1162,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest055
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_055
-     * @tc.name asyncFunctionTest055
-     * @tc.desc Async function with nested async error recovery (typed fallback)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async error recovery (typed fallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const riskyAsync = async (shouldThrow: boolean): Promise<number> => {
@@ -1193,12 +1193,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest056
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_056
-     * @tc.name asyncFunctionTest056
-     * @tc.desc Async function with nested async in typed class hierarchy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async in typed class hierarchy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class Parent {
@@ -1226,12 +1226,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest057
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_057
-     * @tc.name asyncFunctionTest057
-     * @tc.desc Async function with nested async that returns typed Promise.allSettled results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that returns typed Promise.allSettled results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       type SettledResult = PromiseSettledResult<number>;
@@ -1256,12 +1256,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest058
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_058
-     * @tc.name asyncFunctionTest058
-     * @tc.desc Async function with nested async in loop (typed dynamic task count)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async in loop (typed dynamic task count)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const createAsyncTask = (num: number): (() => Promise<number>) => {
@@ -1286,12 +1286,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest059
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_059
-     * @tc.name asyncFunctionTest059
-     * @tc.desc Async function with nested async that returns typed tuple
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that returns typed tuple
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       type DataTuple = [string, number, boolean];
@@ -1313,12 +1313,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest060
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_060
-     * @tc.name asyncFunctionTest060
-     * @tc.desc Async function with nested async in typed interface implementation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async in typed interface implementation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface DataProcessor {
@@ -1356,12 +1356,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest061
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_061
-     * @tc.name asyncFunctionTest061
-     * @tc.desc Async function with nested async that handles typed optional values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that handles typed optional values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const getOptionalData = async (hasData: boolean): Promise<number | null> => {
@@ -1386,12 +1386,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest062
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_062
-     * @tc.name asyncFunctionTest062
-     * @tc.desc Async function with nested async that uses typed generic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed generic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const genericFetcher = async<T>(data: T): Promise<T> => {
@@ -1411,12 +1411,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest063
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_063
-     * @tc.name asyncFunctionTest063
-     * @tc.desc Async function with nested async in typed module-like object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async in typed module-like object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = await asyncFunctionTest063();
@@ -1425,12 +1425,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest064
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_064
-     * @tc.name asyncFunctionTest064
-     * @tc.desc Async function with nested async that chains typed transformations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that chains typed transformations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const transform1 = async (num: number): Promise<number> => {
@@ -1454,12 +1454,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest065
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_065
-     * @tc.name asyncFunctionTest065
-     * @tc.desc Async function with nested async that validates typed input
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that validates typed input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const fetchInitialData = async (value?:number) => {
@@ -1513,12 +1513,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest066
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_066
-     * @tc.name asyncFunctionTest066
-     * @tc.desc Async function with nested async that uses typed enum
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       enum Status {
@@ -1549,12 +1549,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest067
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_067
-     * @tc.name asyncFunctionTest067
-     * @tc.desc Async function with nested async that returns typed union
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that returns typed union
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       type UnionType = string | number | boolean;
@@ -1586,12 +1586,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest068
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_068
-     * @tc.name asyncFunctionTest068
-     * @tc.desc Async function with nested async that handles typed readonly data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that handles typed readonly data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = await asyncFunctionTest068();
@@ -1600,12 +1600,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest069
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_069
-     * @tc.name asyncFunctionTest069
-     * @tc.desc Async function with nested async that uses typed function overloads
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed function overloads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Typed function overloads
@@ -1622,12 +1622,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest070
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_070
-     * @tc.name asyncFunctionTest070
-     * @tc.desc Async function with nested async that processes typed array of objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that processes typed array of objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1657,12 +1657,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest071
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_071
-     * @tc.name asyncFunctionTest071
-     * @tc.desc Async function with nested async that uses typed WeakMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed WeakMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const useWeakMapCache = async () => {
@@ -1691,12 +1691,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest072
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_072
-     * @tc.name asyncFunctionTest072
-     * @tc.desc Async function with nested async that validates typed date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that validates typed date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const isFutureDate = async (date: Date): Promise<boolean> => {
@@ -1719,12 +1719,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest073
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_073
-     * @tc.name asyncFunctionTest073
-     * @tc.desc Async function with nested async that uses typed generator return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed generator return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1749,12 +1749,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest074
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_074
-     * @tc.name asyncFunctionTest074
-     * @tc.desc Async function with nested async that handles typed error objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that handles typed error objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class CustomError extends Error {
@@ -1791,12 +1791,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest075
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_075
-     * @tc.name asyncFunctionTest075
-     * @tc.desc Async function with nested async that uses typed Promise.withResolvers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed Promise.withResolvers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1822,12 +1822,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest076
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_076
-     * @tc.name asyncFunctionTest076
-     * @tc.desc Async function with nested async that processes typed tuple array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that processes typed tuple array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       type PointTuple = [number, number]; // [x, y]
@@ -1848,12 +1848,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest077
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_077
-     * @tc.name asyncFunctionTest077
-     * @tc.desc Async function with nested async that uses typed ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sumReadonlyArray = async (arr: ReadonlyArray<number>): Promise<number> => {
@@ -1870,12 +1870,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest078
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_078
-     * @tc.name asyncFunctionTest078
-     * @tc.desc Async function with nested async that handles typed nullable properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that handles typed nullable properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const getEmail = async (user: User): Promise<string> => {
@@ -1902,12 +1902,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest079
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_079
-     * @tc.name asyncFunctionTest079
-     * @tc.desc Async function with nested async that uses typed Record
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed Record
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1933,12 +1933,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest080
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_080
-     * @tc.name asyncFunctionTest080
-     * @tc.desc Async function with nested async that chains typed async validations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that chains typed async validations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const validateUsername = async (username: string): Promise<boolean> => {
@@ -1974,12 +1974,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest081
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_081
-     * @tc.name asyncFunctionTest081
-     * @tc.desc Async function with nested async that uses typed Promise.allSettled with filtering
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed Promise.allSettled with filtering
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const fetchData = async (id: number): Promise<ApiResponse> => {
@@ -2004,12 +2004,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest082
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_082
-     * @tc.name asyncFunctionTest082
-     * @tc.desc Async function with nested async that handles typed bigint values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that handles typed bigint values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const processBigInt = async (num: bigint): Promise<bigint> => {
@@ -2027,12 +2027,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest083
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_083
-     * @tc.name asyncFunctionTest083
-     * @tc.desc Async function with nested async that uses typed Set operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed Set operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       type UniqueNumbers = Set<number>;
@@ -2056,12 +2056,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest084
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_084
-     * @tc.name asyncFunctionTest084
-     * @tc.desc Async function with nested async that uses typed Map transformations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed Map transformations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       type StringMap = Map<string, number>;
@@ -2085,12 +2085,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest085
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_085
-     * @tc.name asyncFunctionTest085
-     * @tc.desc Async function with nested async that validates typed enum values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that validates typed enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       enum HttpMethod {
@@ -2116,12 +2116,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest086
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_086
-     * @tc.name asyncFunctionTest086
-     * @tc.desc Async function with nested async that uses typed Promise.race with timeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed Promise.race with timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const asyncTask = async (taskId:number, delayMs:number) => {
@@ -2162,12 +2162,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest087
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_087
-     * @tc.name asyncFunctionTest087
-     * @tc.desc Async function with nested async that processes typed optional chaining
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that processes typed optional chaining
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let res = await asyncFunctionTest087()
@@ -2176,12 +2176,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest088
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_088
-     * @tc.name asyncFunctionTest088
-     * @tc.desc Async function with nested async that uses typed nullish coalescing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed nullish coalescing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const getDefaultValue = async (value: string | null | undefined): Promise<string> => {
@@ -2204,12 +2204,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest089
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_089
-     * @tc.name asyncFunctionTest089
-     * @tc.desc Async function with nested async that uses typed class with async methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed class with async methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = await asyncFunctionTest089();
@@ -2218,12 +2218,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest090
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_090
-     * @tc.name asyncFunctionTest090
-     * @tc.desc Async function with nested async that uses typed function composition
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed function composition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = await asyncFunctionTest090();
@@ -2232,12 +2232,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest091
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_091
-     * @tc.name asyncFunctionTest091
-     * @tc.desc Async function with nested async that uses typed generator composition
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async that uses typed generator composition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result: number[] = await asyncFunctionTest091();
@@ -2245,12 +2245,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest092
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_092
-     * @tc.name asyncFunctionTest092
-     * @tc.desc Async function with nested async arrow function and BigInt return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested async arrow function and BigInt return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const calculateBigInt = async (a: bigint, b: bigint): Promise<bigint> => {
@@ -2264,12 +2264,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest093
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_093
-     * @tc.name asyncFunctionTest093
-     * @tc.desc Async function handling Promise.allSettled with mixed results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function handling Promise.allSettled with mixed results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const processTasks = async (): Promise<type93> => {
@@ -2291,12 +2291,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest094
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_094
-     * @tc.name asyncFunctionTest094
-     * @tc.desc Async function with closure state tracking async calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with closure state tracking async calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const createCounter = () => {
@@ -2316,12 +2316,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest095
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_095
-     * @tc.name asyncFunctionTest095
-     * @tc.desc Async function returning Promise.race between value and timeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function returning Promise.race between value and timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const raceTasks = async <T>(value: T, timeoutMs: number): Promise<T | 'timeout'> => {
@@ -2336,12 +2336,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest096
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_096
-     * @tc.name asyncFunctionTest096
-     * @tc.desc Async function with generic type and object transformation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with generic type and object transformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Simulate async data fetch operation
@@ -2383,12 +2383,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest097
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_097
-     * @tc.name asyncFunctionTest097
-     * @tc.desc Async function handling error recovery with retry logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function handling error recovery with retry logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2412,12 +2412,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest098
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_098
-     * @tc.name asyncFunctionTest098
-     * @tc.desc Async function with nested Promise chain and type coercion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function with nested Promise chain and type coercion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const processValue = async (initial: string): Promise<number> => {
@@ -2432,12 +2432,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest099
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_099
-     * @tc.name asyncFunctionTest099
-     * @tc.desc Async function returning async generator and consuming with for await...of
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async function returning async generator and consuming with for await...of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = await asyncFunctionTest099();
@@ -2445,12 +2445,12 @@ export default function asyncFunctionTest() {
     });
 
     /**
+     * @tc.name   asyncFunctionTest100
      * @tc.number SUB_BUILTINS_asyncFunction_TEST_100
-     * @tc.name asyncFunctionTest100
-     * @tc.desc Complex async function workflow: validate → process → finalize
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Complex async function workflow: validate → process → finalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('asyncFunctionTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const workflow = async (dataList: Data[]): Promise<type100> => {

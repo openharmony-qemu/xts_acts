@@ -39,12 +39,12 @@ export default function builtinsArrayBufferByteLengthTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayBufferByteLengthTest1001
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_BYTE_LENGTH_TEST_0100
-     * @tc.name buildinsArrayBufferByteLengthTest1001
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsArrayBufferByteLengthTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -56,12 +56,12 @@ export default function builtinsArrayBufferByteLengthTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferByteLengthTest1002
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_BYTE_LENGTH_TEST_0200
-     * @tc.name buildinsArrayBufferByteLengthTest1002
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferByteLengthTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

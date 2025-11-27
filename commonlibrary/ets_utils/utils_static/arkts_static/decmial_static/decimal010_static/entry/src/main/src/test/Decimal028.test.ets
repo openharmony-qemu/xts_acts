@@ -74,12 +74,12 @@ export default function DecimalTest028() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_toNumber_Func_001
-     * @tc.desc      : Test toNumber
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toNumber_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test toNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toNumber_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -104,12 +104,12 @@ export default function DecimalTest028() {
       test_toNumber_005('-1e-9000000000000000');
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_toNumber_Func_002
-     * @tc.desc      : Test toNumber
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toNumber_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test toNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toNumber_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -135,12 +135,12 @@ export default function DecimalTest028() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_003
-     * @tc.name      : Decimal_toNumber_Func_003
-     * @tc.desc      : Test toNumber
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toNumber_Func_003
+     * @tc.number DECIMAL_TEST_003
+     * @tc.desc   Test toNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toNumber_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toNumber_001('-1.0', -1);

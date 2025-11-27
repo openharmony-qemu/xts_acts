@@ -116,12 +116,12 @@ export default function bufferTest() {
     })
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0100
-     * @tc.name      : testAlloc0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAlloc0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -150,12 +150,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0200
-     * @tc.name      : testAlloc0002
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAlloc0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -184,12 +184,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0300
-     * @tc.name      : testAlloc0003
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAlloc0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -218,12 +218,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0400
-     * @tc.name      : testAllocUninitialized0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAllocUninitialized0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAllocUninitialized0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -253,12 +253,12 @@ export default function bufferTest() {
 
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0600
-     * @tc.name      : testAllocUninitializedFromPool0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAllocUninitializedFromPool0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAllocUninitializedFromPool0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -287,12 +287,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0700
-     * @tc.name      : testByteLength0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testByteLength0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testByteLength0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -321,12 +321,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0900
-     * @tc.name      : testIsBuffer0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIsBuffer0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_0900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIsBuffer0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -355,12 +355,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1000
-     * @tc.name      : testIsEncoding0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIsEncoding0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIsEncoding0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -389,12 +389,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1100
-     * @tc.name      : testStaticCompare0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticCompare0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testStaticCompare0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -423,12 +423,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1200
-     * @tc.name      : testConcat0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConcat0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testConcat0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -457,12 +457,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1400
-     * @tc.name      : testTranscode0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTranscode0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTranscode0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -490,12 +490,12 @@ export default function bufferTest() {
         done();
       });
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1500
-     * @tc.name      : testFill0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFill0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testFill0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -524,12 +524,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1600
-     * @tc.name      : testWrite0001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWrite0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWrite0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -558,12 +558,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1700
-     * @tc.name      : testBufferAlloc
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferAlloc
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -592,12 +592,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1800
-     * @tc.name      : testBufferByteLength
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferByteLength
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -627,12 +627,12 @@ export default function bufferTest() {
 
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1900
-     * @tc.name      : testBufferConcat
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferConcat
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_1900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferConcat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -661,12 +661,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2000
-     * @tc.name      : testBufferFromArrayBuffer
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferFromArrayBuffer
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferFromArrayBuffer', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -695,12 +695,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2100
-     * @tc.name      : testBufferFromString
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferFromString
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferFromString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -729,12 +729,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2200
-     * @tc.name      : testBufferCompare
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferCompare
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferCompare', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -763,12 +763,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2300
-     * @tc.name      : testBufferTranscode
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferTranscode
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferTranscode', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -797,12 +797,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2400
-     * @tc.name      : testBufferFill
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferFill
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferFill', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -831,12 +831,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number   : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2500
-     * @tc.name      : testBufferCopy
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferCopy
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferCopy', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -865,12 +865,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2600
-     * @tc.name      : testBufferEquals
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferEquals
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferEquals', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -899,12 +899,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2700
-     * @tc.name      : testBufferIncludes
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferIncludes
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIncludes', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -933,12 +933,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2800
-     * @tc.name      : testBufferIndexOf
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferIndexOf
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIndexOf', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -967,12 +967,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2900
-     * @tc.name      : testBufferLastIndexOf
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferLastIndexOf
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_2900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferLastIndexOf', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1002,12 +1002,12 @@ export default function bufferTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3000
-     * @tc.name      : testBufferReadBigInt64BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadBigInt64BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadBigInt64BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1036,12 +1036,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3100
-     * @tc.name      : testBufferReadBigInt64LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadBigInt64LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadBigInt64LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1070,12 +1070,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3200
-     * @tc.name      : testBufferReadBigUInt64BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadBigUInt64BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadBigUInt64BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1104,12 +1104,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3300
-     * @tc.name      : testBufferReadBigUInt64LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadBigUInt64LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadBigUInt64LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1138,12 +1138,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3400
-     * @tc.name      : testBufferReadDoubleBE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadDoubleBE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadDoubleBE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1172,12 +1172,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3500
-     * @tc.name      : testBufferReadDoubleLE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadDoubleLE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadDoubleLE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1206,12 +1206,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3600
-     * @tc.name      : testBufferReadFloatBE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadFloatBE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadFloatBE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1240,12 +1240,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3700
-     * @tc.name      : testBufferReadFloatLE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadFloatLE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadFloatLE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1274,12 +1274,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3800
-     * @tc.name      : testBufferReadInt8
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadInt8
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadInt8', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1308,12 +1308,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3900
-     * @tc.name      : testBufferReadInt16BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadInt16BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_3900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadInt16BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1342,12 +1342,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4000
-     * @tc.name      : testBufferReadInt16LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadInt16LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadInt16LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1376,12 +1376,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4100
-     * @tc.name      : testBufferReadInt32BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadInt32BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadInt32BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1410,12 +1410,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4200
-     * @tc.name      : testBufferReadInt32LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadInt32LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadInt32LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1444,12 +1444,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4300
-     * @tc.name      : testBufferReadUInt8
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadUInt8
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadUInt8', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1478,12 +1478,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4400
-     * @tc.name      : testBufferReadUInt32BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadUInt32BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadUInt32BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1512,12 +1512,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4500
-     * @tc.name      : testBufferReadUInt32LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadUInt32LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadUInt32LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1546,12 +1546,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4600
-     * @tc.name      : testBufferReadUInt16BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferReadUInt16BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferReadUInt16BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1580,12 +1580,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4700
-     * @tc.name      : testBufferSubarray
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferSubarray
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferSubarray', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1614,12 +1614,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4800
-     * @tc.name      : testBufferToString
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferToString
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferToString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1648,12 +1648,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4900
-     * @tc.name      : testBufferWrite
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWrite
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_4900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWrite', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1682,12 +1682,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5000
-     * @tc.name      : testBufferWriteBigInt64BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteBigInt64BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteBigInt64BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1716,12 +1716,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5100
-     * @tc.name      : testBufferWriteBigInt64LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteBigInt64LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteBigInt64LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1750,12 +1750,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5200
-     * @tc.name      : testBufferWriteBigUInt64BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteBigUInt64BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteBigUInt64BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1784,12 +1784,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5300
-     * @tc.name      : testBufferWriteBigUInt64LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteBigUInt64LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteBigUInt64LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1818,12 +1818,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5400
-     * @tc.name      : testBufferWriteDoubleBE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteDoubleBE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteDoubleBE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1852,12 +1852,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5500
-     * @tc.name      : testBufferWriteDoubleLE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteDoubleLE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteDoubleLE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1886,12 +1886,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5600
-     * @tc.name      : testBufferWriteFloatBE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteFloatBE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteFloatBE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1920,12 +1920,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5700
-     * @tc.name      : testBufferWriteFloatLE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteFloatLE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteFloatLE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1954,12 +1954,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5800
-     * @tc.name      : testWriteInt8
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteInt8
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteInt8', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1988,12 +1988,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5900
-     * @tc.name      : testWriteInt16BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteInt16BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_5900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteInt16BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2022,12 +2022,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6000
-     * @tc.name      : testWriteInt16LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteInt16LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteInt16LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2056,12 +2056,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6100
-     * @tc.name      : testWriteInt32BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteInt32BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteInt32BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2091,12 +2091,12 @@ export default function bufferTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6200
-     * @tc.name      : testWriteInt32LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteInt32LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteInt32LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2125,12 +2125,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6300
-     * @tc.name      : testWriteUInt8
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteUInt8
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteUInt8', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2159,12 +2159,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6400
-     * @tc.name      : testWriteUInt16BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteUInt16BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteUInt16BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2193,12 +2193,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6500
-     * @tc.name      : testWriteUInt16LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteUInt16LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteUInt16LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2227,12 +2227,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6600
-     * @tc.name      : testWriteUInt32BE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteUInt32BE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteUInt32BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2261,12 +2261,12 @@ export default function bufferTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6700
-     * @tc.name      : testWriteUInt32LE
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWriteUInt32LE
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_ALLOC_6700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteUInt32LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

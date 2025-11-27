@@ -43,12 +43,12 @@ export default function ArrayCombinationTest1() {
     })
 
     /**
+     * @tc.name   ArrayCombinationTest0001
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0001
-     * @tc.name ArrayCombinationTest0001
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0001';
@@ -67,12 +67,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0002
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0002
-     * @tc.name ArrayCombinationTest0002
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0002';
@@ -87,12 +87,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0003
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0003
-     * @tc.name ArrayCombinationTest0003
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0003';
@@ -107,12 +107,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0004
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0004
-     * @tc.name ArrayCombinationTest0004
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0004';
@@ -127,12 +127,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0005
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0005
-     * @tc.name ArrayCombinationTest0005
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0005';
@@ -147,12 +147,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0006
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0006
-     * @tc.name ArrayCombinationTest0006
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0006';
@@ -167,12 +167,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0007
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0007
-     * @tc.name ArrayCombinationTest0007
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0007';
@@ -187,12 +187,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0008
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0008
-     * @tc.name ArrayCombinationTest0008
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0008';
@@ -207,12 +207,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0009
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0009
-     * @tc.name ArrayCombinationTest0009
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0009';
@@ -227,12 +227,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0012
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0012
-     * @tc.name ArrayCombinationTest0012
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0012';
@@ -247,12 +247,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0013
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0013
-     * @tc.name ArrayCombinationTest0013
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0013';
@@ -271,12 +271,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0014
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0014
-     * @tc.name ArrayCombinationTest0014
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0014';
@@ -291,12 +291,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0015
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0015
-     * @tc.name ArrayCombinationTest0015
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0015';
@@ -311,12 +311,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0016
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0016
-     * @tc.name ArrayCombinationTest0016
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0016';
@@ -331,12 +331,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0017
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0017
-     * @tc.name ArrayCombinationTest0017
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0017';
@@ -351,12 +351,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0018
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0018
-     * @tc.name ArrayCombinationTest0018
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0018';
@@ -371,12 +371,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0019
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0019
-     * @tc.name ArrayCombinationTest0019
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0019';
@@ -391,12 +391,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0020
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0020
-     * @tc.name ArrayCombinationTest0020
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0020';
@@ -411,12 +411,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0021
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0021
-     * @tc.name ArrayCombinationTest0021
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0021';
@@ -432,12 +432,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0024
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0024
-     * @tc.name ArrayCombinationTest0024
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0024';
@@ -452,12 +452,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0025
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0025
-     * @tc.name ArrayCombinationTest0025
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0025';
@@ -476,12 +476,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0026
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0026
-     * @tc.name ArrayCombinationTest0026
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0026';
@@ -496,12 +496,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0027
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0027
-     * @tc.name ArrayCombinationTest0027
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0027';
@@ -516,12 +516,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0028
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0028
-     * @tc.name ArrayCombinationTest0028
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0028';
@@ -536,12 +536,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0029
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0029
-     * @tc.name ArrayCombinationTest0029
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0029';
@@ -556,12 +556,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0030
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0030
-     * @tc.name ArrayCombinationTest0030
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0030';
@@ -576,12 +576,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0031
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0031
-     * @tc.name ArrayCombinationTest0031
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0031';
@@ -596,12 +596,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0032
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0032
-     * @tc.name ArrayCombinationTest0032
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0032';
@@ -616,12 +616,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0033
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0033
-     * @tc.name ArrayCombinationTest0033
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0033';
@@ -637,12 +637,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0036
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0036
-     * @tc.name ArrayCombinationTest0036
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0036';
@@ -658,12 +658,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0037
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0037
-     * @tc.name ArrayCombinationTest0037
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0037';
@@ -678,12 +678,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0038
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0038
-     * @tc.name ArrayCombinationTest0038
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0038';
@@ -698,12 +698,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0039
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0039
-     * @tc.name ArrayCombinationTest0039
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0039';
@@ -718,12 +718,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0040
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0040
-     * @tc.name ArrayCombinationTest0040
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0040';
@@ -738,12 +738,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0041
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0041
-     * @tc.name ArrayCombinationTest0041
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0041';
@@ -758,12 +758,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0042
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0042
-     * @tc.name ArrayCombinationTest0042
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0042';
@@ -778,12 +778,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0043
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0043
-     * @tc.name ArrayCombinationTest0043
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0043';
@@ -798,12 +798,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0044
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0044
-     * @tc.name ArrayCombinationTest0044
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0044';
@@ -818,12 +818,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0045
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0045
-     * @tc.name ArrayCombinationTest0045
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0045';
@@ -839,12 +839,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0046
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0046
-     * @tc.name ArrayCombinationTest0046
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0046';
@@ -863,12 +863,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0047
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0047
-     * @tc.name ArrayCombinationTest0047
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0047';
@@ -883,12 +883,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0048
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0048
-     * @tc.name ArrayCombinationTest0048
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0048';
@@ -903,12 +903,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0049
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0049
-     * @tc.name ArrayCombinationTest0049
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0049';
@@ -923,12 +923,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0050
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0050
-     * @tc.name ArrayCombinationTest0050
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0050';
@@ -943,12 +943,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0051
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0051
-     * @tc.name ArrayCombinationTest0051
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0051';
@@ -963,12 +963,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0052
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0052
-     * @tc.name ArrayCombinationTest0052
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0052';
@@ -983,12 +983,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0053
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0053
-     * @tc.name ArrayCombinationTest0053
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0053';
@@ -1003,12 +1003,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0054
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0054
-     * @tc.name ArrayCombinationTest0054
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0054';
@@ -1024,12 +1024,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0057
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0057
-     * @tc.name ArrayCombinationTest0057
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0057';
@@ -1044,12 +1044,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0058
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0058
-     * @tc.name ArrayCombinationTest0058
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0058';
@@ -1068,12 +1068,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0059
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0059
-     * @tc.name ArrayCombinationTest0059
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0059';
@@ -1088,12 +1088,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0060
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0060
-     * @tc.name ArrayCombinationTest0060
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0060';
@@ -1108,12 +1108,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0061
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0061
-     * @tc.name ArrayCombinationTest0061
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0061';
@@ -1128,12 +1128,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0062
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0062
-     * @tc.name ArrayCombinationTest0062
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0062';
@@ -1148,12 +1148,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0063
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0063
-     * @tc.name ArrayCombinationTest0063
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0063';
@@ -1168,12 +1168,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0064
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0064
-     * @tc.name ArrayCombinationTest0064
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0064';
@@ -1188,12 +1188,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0065
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0065
-     * @tc.name ArrayCombinationTest0065
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0065';
@@ -1208,12 +1208,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0066
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0066
-     * @tc.name ArrayCombinationTest0066
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0066';
@@ -1229,12 +1229,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0069
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0069
-     * @tc.name ArrayCombinationTest0069
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0069';
@@ -1249,12 +1249,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0070
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0070
-     * @tc.name ArrayCombinationTest0070
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0070';
@@ -1273,12 +1273,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0071
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0071
-     * @tc.name ArrayCombinationTest0071
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0071';
@@ -1293,12 +1293,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0072
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0072
-     * @tc.name ArrayCombinationTest0072
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0072';
@@ -1313,12 +1313,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0073
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0073
-     * @tc.name ArrayCombinationTest0073
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0073';
@@ -1333,12 +1333,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0074
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0074
-     * @tc.name ArrayCombinationTest0074
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0074';
@@ -1353,12 +1353,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0075
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0075
-     * @tc.name ArrayCombinationTest0075
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0075';
@@ -1373,12 +1373,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0076
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0076
-     * @tc.name ArrayCombinationTest0076
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0076';
@@ -1393,12 +1393,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0077
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0077
-     * @tc.name ArrayCombinationTest0077
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0077';
@@ -1413,12 +1413,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0078
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0078
-     * @tc.name ArrayCombinationTest0078
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0078';
@@ -1434,12 +1434,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0081
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0081
-     * @tc.name ArrayCombinationTest0081
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0081';
@@ -1455,12 +1455,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0082
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0082
-     * @tc.name ArrayCombinationTest0082
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0082';
@@ -1478,12 +1478,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0083
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0083
-     * @tc.name ArrayCombinationTest0083
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0083';
@@ -1501,12 +1501,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0084
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0084
-     * @tc.name ArrayCombinationTest0084
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0084';
@@ -1520,12 +1520,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0085
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0085
-     * @tc.name ArrayCombinationTest0085
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0085';
@@ -1543,12 +1543,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0086
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0086
-     * @tc.name ArrayCombinationTest0086
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0086';
@@ -1566,12 +1566,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0087
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0087
-     * @tc.name ArrayCombinationTest0087
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0087';
@@ -1585,12 +1585,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0088
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0088
-     * @tc.name ArrayCombinationTest0088
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0088';
@@ -1608,12 +1608,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0089
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0089
-     * @tc.name ArrayCombinationTest0089
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0089';
@@ -1631,12 +1631,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0090
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0090
-     * @tc.name ArrayCombinationTest0090
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0090';
@@ -1651,12 +1651,12 @@ export default function ArrayCombinationTest1() {
     });
 
     /**
+     * @tc.name   ArrayCombinationTest0091
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0091
-     * @tc.name ArrayCombinationTest0091
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0091';
@@ -1668,12 +1668,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0092
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0092
-     * @tc.name ArrayCombinationTest0092
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0092';
@@ -1685,12 +1685,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0093
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0093
-     * @tc.name ArrayCombinationTest0093
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0093';
@@ -1702,12 +1702,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0094
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0094
-     * @tc.name ArrayCombinationTest0094
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0094';
@@ -1719,12 +1719,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0095
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0095
-     * @tc.name ArrayCombinationTest0095
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0095';
@@ -1736,12 +1736,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0096
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0096
-     * @tc.name ArrayCombinationTest0096
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0096';
@@ -1753,12 +1753,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0097
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0097
-     * @tc.name ArrayCombinationTest0097
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0097';
@@ -1770,12 +1770,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0098
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0098
-     * @tc.name ArrayCombinationTest0098
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0098';
@@ -1787,12 +1787,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0099
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0099
-     * @tc.name ArrayCombinationTest0099
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0099';
@@ -1804,12 +1804,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0100
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0100
-     * @tc.name ArrayCombinationTest0100
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0100';
@@ -1821,12 +1821,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0101
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0101
-     * @tc.name ArrayCombinationTest0101
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0101';
@@ -1838,12 +1838,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0102
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0102
-     * @tc.name ArrayCombinationTest0102
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0102';
@@ -1855,12 +1855,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0103
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0103
-     * @tc.name ArrayCombinationTest0103
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0103';
@@ -1872,12 +1872,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0104
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0104
-     * @tc.name ArrayCombinationTest0104
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0104';
@@ -1889,12 +1889,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0105
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0105
-     * @tc.name ArrayCombinationTest0105
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0105';
@@ -1906,12 +1906,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0106
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0106
-     * @tc.name ArrayCombinationTest0106
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0106';
@@ -1923,12 +1923,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0107
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0107
-     * @tc.name ArrayCombinationTest0107
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0107';
@@ -1940,12 +1940,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0108
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0108
-     * @tc.name ArrayCombinationTest0108
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0108';
@@ -1957,12 +1957,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0109
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0109
-     * @tc.name ArrayCombinationTest0109
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0109';
@@ -1973,12 +1973,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0110
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0110
-     * @tc.name ArrayCombinationTest0110
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0110';
@@ -1990,12 +1990,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0111
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0111
-     * @tc.name ArrayCombinationTest0111
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0111';
@@ -2007,12 +2007,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0112
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0112
-     * @tc.name ArrayCombinationTest0112
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0112';
@@ -2024,12 +2024,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0113
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0113
-     * @tc.name ArrayCombinationTest0113
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0113';
@@ -2041,12 +2041,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0114
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0114
-     * @tc.name ArrayCombinationTest0114
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0114';
@@ -2058,12 +2058,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0115
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0115
-     * @tc.name ArrayCombinationTest0115
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0115';
@@ -2075,12 +2075,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0116
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0116
-     * @tc.name ArrayCombinationTest0116
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0116';
@@ -2092,12 +2092,12 @@ export default function ArrayCombinationTest1() {
       console.info(`${caseName}, test end`);
     });
     /**
+     * @tc.name   ArrayCombinationTest0117
      * @tc.number BUILTINS_ARRAY_COMBINATION_TEST0117
-     * @tc.name ArrayCombinationTest0117
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayCombinationTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'ArrayCombinationTest0117';

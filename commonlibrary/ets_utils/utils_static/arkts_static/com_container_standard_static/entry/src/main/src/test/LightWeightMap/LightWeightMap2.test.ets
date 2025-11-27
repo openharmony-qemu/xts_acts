@@ -47,12 +47,12 @@ export default function LightWeightMapTest2() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CONSTRUCTOR_0100
-     * @tc.name      : testLightWeightMapConstructor0001
-     * @tc.desc      : Testing LightWeightMap constructor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CONSTRUCTOR_0100
+     * @tc.desc   Testing LightWeightMap constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapConstructor0001';
@@ -66,12 +66,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0100
-     * @tc.name      : testLightWeightMapIsEmpty0001
-     * @tc.desc      : Testing LightWeightMap is empty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIsEmpty0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0100
+     * @tc.desc   Testing LightWeightMap is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapIsEmpty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapIsEmpty0001';
@@ -85,12 +85,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0200
-     * @tc.name      : testLightWeightMapIsEmpty0002
-     * @tc.desc      : Testing LightWeightMap has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIsEmpty0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0200
+     * @tc.desc   Testing LightWeightMap has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapIsEmpty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapIsEmpty0002';
@@ -105,12 +105,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0300
-     * @tc.name      : testLightWeightMapIsEmpty0003
-     * @tc.desc      : Testing LightWeightMap has data and remove
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIsEmpty0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0300
+     * @tc.desc   Testing LightWeightMap has data and remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapIsEmpty0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapIsEmpty0003';
@@ -126,12 +126,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0400
-     * @tc.name      : testLightWeightMapIsEmpty0004--运行失败
-     * @tc.desc      : Testing LightWeightMap has large data and remove
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIsEmpty0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0400
+     * @tc.desc   Testing LightWeightMap has large data and remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapIsEmpty0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapIsEmpty0004';
@@ -148,12 +148,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0500
-     * @tc.name      : testLightWeightMapIsEmpty0005--运行失败
-     * @tc.desc      : Testing LightWeightMap has large data and clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIsEmpty0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0500
+     * @tc.desc   Testing LightWeightMap has large data and clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapIsEmpty0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapIsEmpty0005';
@@ -170,12 +170,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0100
-     * @tc.name      : testLightWeightMapHasAll0001
-     * @tc.desc      : Testing LightWeightMap contain other LightWeightMap data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasAll0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0100
+     * @tc.desc   Testing LightWeightMap contain other LightWeightMap data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasAll0001';
@@ -193,12 +193,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0200
-     * @tc.name      : testLightWeightMapHasAll0002
-     * @tc.desc      : Testing LightWeightMap contain null data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasAll0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0200
+     * @tc.desc   Testing LightWeightMap contain null data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapHasAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapHasAll0002';
@@ -215,12 +215,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0300
-     * @tc.name      : testLightWeightMapHasAll0003
-     * @tc.desc      : Testing LightWeightMap contain undefined data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasAll0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0300
+     * @tc.desc   Testing LightWeightMap contain undefined data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapHasAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapHasAll0003';
@@ -237,12 +237,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0100
-     * @tc.name      : testLightWeightMapHasKey0001
-     * @tc.desc      : Testing LightWeightMap has key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasKey0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0100
+     * @tc.desc   Testing LightWeightMap has key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasKey0001';
@@ -257,12 +257,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0200
-     * @tc.name      : testLightWeightMapHasKey0002
-     * @tc.desc      : Testing LightWeightMap has not existed key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasKey0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0200
+     * @tc.desc   Testing LightWeightMap has not existed key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasKey0002';
@@ -277,12 +277,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0300
-     * @tc.name      : testLightWeightMapHasKey0003
-     * @tc.desc      : Testing LightWeightMap has existed key with blank
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasKey0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0300
+     * @tc.desc   Testing LightWeightMap has existed key with blank
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasKey0003';
@@ -297,12 +297,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0400
-     * @tc.name      : testLightWeightMapHasKey0004
-     * @tc.desc      : Testing LightWeightMap has null or undefined key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasKey0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0400
+     * @tc.desc   Testing LightWeightMap has null or undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapHasKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapHasKey0004';
@@ -318,12 +318,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0100
-     * @tc.name      : testLightWeightMapHasValue0001
-     * @tc.desc      : Testing LightWeightMap has value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasValue0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0100
+     * @tc.desc   Testing LightWeightMap has value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasValue0001';
@@ -338,12 +338,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0200
-     * @tc.name      : testLightWeightMapHasValue0002
-     * @tc.desc      : Testing LightWeightMap has not existed value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasValue0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0200
+     * @tc.desc   Testing LightWeightMap has not existed value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasValue0002';
@@ -358,12 +358,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0300
-     * @tc.name      : testLightWeightMapHasValue0003
-     * @tc.desc      : Testing LightWeightMap has existed value with blank
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasValue0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0300
+     * @tc.desc   Testing LightWeightMap has existed value with blank
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasValue0003';
@@ -378,12 +378,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0400
-     * @tc.name      : testLightWeightMapHasValue0004
-     * @tc.desc      : Testing LightWeightMap has null or undefined value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasValue0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0400
+     * @tc.desc   Testing LightWeightMap has null or undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapHasValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapHasValue0004';
@@ -399,12 +399,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0500
-     * @tc.name      : testLightWeightMapHasValue0005
-     * @tc.desc      : Testing LightWeightMap has complex value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasValue0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0500
+     * @tc.desc   Testing LightWeightMap has complex value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasValue0005';
@@ -424,12 +424,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0600
-     * @tc.name      : testLightWeightMapHasValue0006
-     * @tc.desc      : Testing LightWeightMap has large string value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapHasValue0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0600
+     * @tc.desc   Testing LightWeightMap has large string value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapHasValue0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasValue0006';
@@ -445,12 +445,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0100
-     * @tc.name      : testLightWeightMapIncreaseCapacityTo0001
-     * @tc.desc      : Testing LightWeightMap capacity
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIncreaseCapacityTo0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0100
+     * @tc.desc   Testing LightWeightMap capacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapIncreaseCapacityTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapIncreaseCapacityTo0001';
@@ -465,12 +465,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0200
-     * @tc.name      : testLightWeightMapIncreaseCapacityTo0002
-     * @tc.desc      : Testing LightWeightMap capacity to 0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIncreaseCapacityTo0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0200
+     * @tc.desc   Testing LightWeightMap capacity to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapIncreaseCapacityTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapIncreaseCapacityTo0002';
@@ -485,12 +485,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0300
-     * @tc.name      : testLightWeightMapIncreaseCapacityTo0003
-     * @tc.desc      : Testing LightWeightMap capacity to negative number
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapIncreaseCapacityTo0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0300
+     * @tc.desc   Testing LightWeightMap capacity to negative number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapIncreaseCapacityTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapIncreaseCapacityTo0003';
@@ -505,12 +505,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0100
-     * @tc.name      : testLightWeightMapGet0001
-     * @tc.desc      : Testing LightWeightMap get value by key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0100
+     * @tc.desc   Testing LightWeightMap get value by key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0001';
@@ -526,12 +526,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0200
-     * @tc.name      : testLightWeightMapGet0002
-     * @tc.desc      : Testing LightWeightMap get value by not existed key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0200
+     * @tc.desc   Testing LightWeightMap get value by not existed key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0002';
@@ -546,12 +546,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0300
-     * @tc.name      : testLightWeightMapGet0003
-     * @tc.desc      : Testing LightWeightMap get value by existed key with blank
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0300
+     * @tc.desc   Testing LightWeightMap get value by existed key with blank
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0003';
@@ -566,12 +566,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0400
-     * @tc.name      : testLightWeightMapGet0004
-     * @tc.desc      : Testing LightWeightMap get value by null or undefined key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0400
+     * @tc.desc   Testing LightWeightMap get value by null or undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapGet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapGet0004';
@@ -587,12 +587,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0500
-     * @tc.name      : testLightWeightMapGet0005
-     * @tc.desc      : Testing LightWeightMap get complex value by key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0500
+     * @tc.desc   Testing LightWeightMap get complex value by key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0005';
@@ -612,12 +612,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0600
-     * @tc.name      : testLightWeightMapGet0006
-     * @tc.desc      : Testing LightWeightMap get large string value by key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0600
+     * @tc.desc   Testing LightWeightMap get large string value by key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0006';
@@ -633,12 +633,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0700
-     * @tc.name      : testLightWeightMapGet0007
-     * @tc.desc      : Testing LightWeightMap get value by complex key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0700
+     * @tc.desc   Testing LightWeightMap get value by complex key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0007';
@@ -658,12 +658,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0800
-     * @tc.name      : testLightWeightMapGet0008
-     * @tc.desc      : Testing LightWeightMap get value by large string key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0800
+     * @tc.desc   Testing LightWeightMap get value by large string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0008';
@@ -679,12 +679,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0900
-     * @tc.name      : testLightWeightMapGet0009
-     * @tc.desc      : Testing LightWeightMap get value by special string key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0900
+     * @tc.desc   Testing LightWeightMap get value by special string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0009';
@@ -699,12 +699,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_1000
-     * @tc.name      : testLightWeightMapGet0010
-     * @tc.desc      : Testing LightWeightMap set difference value by same key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_1000
+     * @tc.desc   Testing LightWeightMap set difference value by same key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0010';
@@ -720,12 +720,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_1100
-     * @tc.name      : testLightWeightMapGet0011
-     * @tc.desc      : Testing LightWeightMap set key with empty string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGet0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_1100
+     * @tc.desc   Testing LightWeightMap set key with empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGet0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0011';
@@ -740,12 +740,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0100
-     * @tc.name      : testLightWeightMapGetIndexOfKey0001
-     * @tc.desc      : Testing LightWeightMap set difference length string key and get index by key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfKey0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0100
+     * @tc.desc   Testing LightWeightMap set difference length string key and get index by key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetIndexOfKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetIndexOfKey0001';
@@ -767,12 +767,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0200
-     * @tc.name      : testLightWeightMapGetIndexOfKey0002
-     * @tc.desc      : Testing LightWeightMap get index by not existed key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfKey0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0200
+     * @tc.desc   Testing LightWeightMap get index by not existed key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetIndexOfKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetIndexOfKey0002';
@@ -787,12 +787,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0300
-     * @tc.name      : testLightWeightMapGetIndexOfKey0003
-     * @tc.desc      : Testing LightWeightMap get index by complex key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfKey0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0300
+     * @tc.desc   Testing LightWeightMap get index by complex key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetIndexOfKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetIndexOfKey0003';
@@ -812,12 +812,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0400
-     * @tc.name      : testLightWeightMapGetIndexOfKey0004--无效
-     * @tc.desc      : Testing LightWeightMap get index by null or undefined key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfKey0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0400
+     * @tc.desc   Testing LightWeightMap get index by null or undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapGetIndexOfKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapGetIndexOfKey0004';
@@ -834,12 +834,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0500
-     * @tc.name      : testLightWeightMapGetIndexOfKey0005
-     * @tc.desc      : Testing LightWeightMap get index by key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfKey0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0500
+     * @tc.desc   Testing LightWeightMap get index by key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetIndexOfKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetIndexOfKey0005';
@@ -855,12 +855,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0100
-     * @tc.name      : testLightWeightMapGetIndexOfValue0001
-     * @tc.desc      : Testing LightWeightMap set difference length string key and get index by value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfValue0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0100
+     * @tc.desc   Testing LightWeightMap set difference length string key and get index by value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetIndexOfValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetIndexOfValue0001';
@@ -882,12 +882,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0200
-     * @tc.name      : testLightWeightMapGetIndexOfValue0002--无效
-     * @tc.desc      : Testing LightWeightMap get index by null or undefined value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfValue0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0200
+     * @tc.desc   Testing LightWeightMap get index by null or undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapGetIndexOfValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapGetIndexOfValue0002';
@@ -903,12 +903,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0300
-     * @tc.name      : testLightWeightMapGetIndexOfValue0003
-     * @tc.desc      : Testing LightWeightMap get index by not existed value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfValue0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0300
+     * @tc.desc   Testing LightWeightMap get index by not existed value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetIndexOfValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetIndexOfValue0003';
@@ -923,12 +923,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0400
-     * @tc.name      : testLightWeightMapGetIndexOfValue0004
-     * @tc.desc      : Testing LightWeightMap get index by value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetIndexOfValue0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0400
+     * @tc.desc   Testing LightWeightMap get index by value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetIndexOfValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetIndexOfValue0004';
@@ -944,12 +944,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0100
-     * @tc.name      : testLightWeightMapGetKeyAt0001
-     * @tc.desc      : Testing LightWeightMap get key by index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetKeyAt0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0100
+     * @tc.desc   Testing LightWeightMap get key by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetKeyAt0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetKeyAt0001';
@@ -967,12 +967,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0200
-     * @tc.name      : testLightWeightMapGetKeyAt0002--无效
-     * @tc.desc      : Testing LightWeightMap get key by null or undefined index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetKeyAt0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0200
+     * @tc.desc   Testing LightWeightMap get key by null or undefined index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapGetKeyAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapGetKeyAt0002';
@@ -989,12 +989,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0300
-     * @tc.name      : testLightWeightMapGetKeyAt0003
-     * @tc.desc      : Testing LightWeightMap get key by outside length index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetKeyAt0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0300
+     * @tc.desc   Testing LightWeightMap get key by outside length index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetKeyAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetKeyAt0003';
@@ -1011,12 +1011,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0100
-     * @tc.name      : testLightWeightMapSetAll0001
-     * @tc.desc      : Testing LightWeightMap set data from other LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetAll0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0100
+     * @tc.desc   Testing LightWeightMap set data from other LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSetAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSetAll0001';
@@ -1034,12 +1034,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0200
-     * @tc.name      : testLightWeightMapSetAll0002
-     * @tc.desc      : Testing LightWeightMap set data from other empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetAll0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0200
+     * @tc.desc   Testing LightWeightMap set data from other empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSetAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSetAll0002';
@@ -1055,12 +1055,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0300
-     * @tc.name      : testLightWeightMapSetAll0003--无效
-     * @tc.desc      : Testing LightWeightMap set data from null or undefined LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetAll0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0300
+     * @tc.desc   Testing LightWeightMap set data from null or undefined LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapSetAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapSetAll0003';
@@ -1077,12 +1077,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0100
-     * @tc.name      : testLightWeightMapSet0001
-     * @tc.desc      : Testing LightWeightMap set string key and larger number value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0100
+     * @tc.desc   Testing LightWeightMap set string key and larger number value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSet0001';
@@ -1097,12 +1097,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0200
-     * @tc.name      : testLightWeightMapSet0002
-     * @tc.desc      : Testing LightWeightMap set large string key and number value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0200
+     * @tc.desc   Testing LightWeightMap set large string key and number value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSet0002';
@@ -1118,12 +1118,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0300
-     * @tc.name      : testLightWeightMapSet0003--无效
-     * @tc.desc      : Testing LightWeightMap set string key and null or undefined value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0300
+     * @tc.desc   Testing LightWeightMap set string key and null or undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapSet0003';
@@ -1140,12 +1140,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0400
-     * @tc.name      : testLightWeightMapSet0004
-     * @tc.desc      : Testing LightWeightMap set key and value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0400
+     * @tc.desc   Testing LightWeightMap set key and value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSet0004';
@@ -1160,12 +1160,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0100
-     * @tc.name      : testLightWeightMapRemove0001
-     * @tc.desc      : Testing LightWeightMap remove data by key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemove0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0100
+     * @tc.desc   Testing LightWeightMap remove data by key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemove0001';
@@ -1182,12 +1182,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0200
-     * @tc.name      : testLightWeightMapRemove0002
-     * @tc.desc      : Testing LightWeightMap remove data by null or undefined key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemove0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0200
+     * @tc.desc   Testing LightWeightMap remove data by null or undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapRemove0002';
@@ -1204,12 +1204,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0300
-     * @tc.name      : testLightWeightMapRemove0003
-     * @tc.desc      : Testing LightWeightMap remove data by not existed key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemove0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0300
+     * @tc.desc   Testing LightWeightMap remove data by not existed key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemove0003';
@@ -1224,12 +1224,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0400
-     * @tc.name      : testLightWeightMapRemove0004
-     * @tc.desc      : Testing LightWeightMap remove data by large string key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemove0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0400
+     * @tc.desc   Testing LightWeightMap remove data by large string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapRemove0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemove0004';
@@ -1246,12 +1246,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0500
-     * @tc.name      : testLightWeightMapRemove0005
-     * @tc.desc      : Testing LightWeightMap remove data by large number key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemove0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0500
+     * @tc.desc   Testing LightWeightMap remove data by large number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapRemove0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemove0005';
@@ -1267,12 +1267,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0100
-     * @tc.name      : testLightWeightMapRemoveAt0001
-     * @tc.desc      : Testing LightWeightMap remove data by index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemoveAt0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0100
+     * @tc.desc   Testing LightWeightMap remove data by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapRemoveAt0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemoveAt0001';
@@ -1291,12 +1291,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0200
-     * @tc.name      : testLightWeightMapRemoveAt0002
-     * @tc.desc      : Testing LightWeightMap remove data by negative number index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemoveAt0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0200
+     * @tc.desc   Testing LightWeightMap remove data by negative number index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapRemoveAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemoveAt0002';
@@ -1312,12 +1312,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0300
-     * @tc.name      : testLightWeightMapRemoveAt0003
-     * @tc.desc      : Testing LightWeightMap remove data by outside length index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapRemoveAt0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0300
+     * @tc.desc   Testing LightWeightMap remove data by outside length index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapRemoveAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemoveAt0003';
@@ -1333,12 +1333,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0100
-     * @tc.name      : testLightWeightMapSetValueAt0001
-     * @tc.desc      : Testing LightWeightMap set value by index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetValueAt0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0100
+     * @tc.desc   Testing LightWeightMap set value by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSetValueAt0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSetValueAt0001';
@@ -1357,12 +1357,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0200
-     * @tc.name      : testLightWeightMapSetValueAt0002--无效
-     * @tc.desc      : Testing LightWeightMap set null or undefined value by index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetValueAt0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0200
+     * @tc.desc   Testing LightWeightMap set null or undefined value by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapSetValueAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapSetValueAt0002';
@@ -1378,12 +1378,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0300
-     * @tc.name      : testLightWeightMapSetValueAt0003
-     * @tc.desc      : Testing LightWeightMap set value by negative number index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetValueAt0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0300
+     * @tc.desc   Testing LightWeightMap set value by negative number index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSetValueAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSetValueAt0003';
@@ -1399,12 +1399,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0400
-     * @tc.name      : testLightWeightMapSetValueAt0004--无效
-     * @tc.desc      : Testing LightWeightMap set value by null or undefined index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetValueAt0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0400
+     * @tc.desc   Testing LightWeightMap set value by null or undefined index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapSetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapSetValueAt0004';
@@ -1421,12 +1421,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0500
-     * @tc.name      : testLightWeightMapSetValueAt0005
-     * @tc.desc      : Testing LightWeightMap set large number value by index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetValueAt0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0500
+     * @tc.desc   Testing LightWeightMap set large number value by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSetValueAt0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSetValueAt0005';
@@ -1442,12 +1442,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0600
-     * @tc.name      : testLightWeightMapSetValueAt0006
-     * @tc.desc      : Testing LightWeightMap set large string value by index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSetValueAt0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0600
+     * @tc.desc   Testing LightWeightMap set large string value by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSetValueAt0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSetValueAt0006';
@@ -1464,12 +1464,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0100
-     * @tc.name      : testLightWeightMapGetValueAt0001
-     * @tc.desc      : Testing LightWeightMap get value by index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetValueAt0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0100
+     * @tc.desc   Testing LightWeightMap get value by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetValueAt0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetValueAt0001';
@@ -1487,12 +1487,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0200
-     * @tc.name      : testLightWeightMapGetValueAt0002--无效
-     * @tc.desc      : Testing LightWeightMap get value by null or undefined index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetValueAt0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0200
+     * @tc.desc   Testing LightWeightMap get value by null or undefined index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapGetValueAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapGetValueAt0002';
@@ -1510,12 +1510,12 @@ export default function LightWeightMapTest2() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0300
-     * @tc.name      : testLightWeightMapGetValueAt0003
-     * @tc.desc      : Testing LightWeightMap get value by outside length index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapGetValueAt0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0300
+     * @tc.desc   Testing LightWeightMap get value by outside length index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapGetValueAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGetValueAt0003';
@@ -1532,12 +1532,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0100
-     * @tc.name      : testLightWeightMapClear0001
-     * @tc.desc      : Testing LightWeightMap clear data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapClear0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0100
+     * @tc.desc   Testing LightWeightMap clear data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapClear0001';
@@ -1554,12 +1554,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0200
-     * @tc.name      : testLightWeightMapClear0002
-     * @tc.desc      : Testing LightWeightMap add data after clear data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapClear0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0200
+     * @tc.desc   Testing LightWeightMap add data after clear data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapClear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapClear0002';
@@ -1577,12 +1577,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0300
-     * @tc.name      : testLightWeightMapClear0003
-     * @tc.desc      : Testing LightWeightMap clear data for a empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapClear0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0300
+     * @tc.desc   Testing LightWeightMap clear data for a empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapClear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapClear0003';
@@ -1597,12 +1597,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0100
-     * @tc.name      : testLightWeightMapKeys0001
-     * @tc.desc      : Testing LightWeightMap get all key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapKeys0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0100
+     * @tc.desc   Testing LightWeightMap get all key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapKeys0001';
@@ -1626,12 +1626,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0200
-     * @tc.name      : testLightWeightMapKeys0002
-     * @tc.desc      : Testing LightWeightMap get all key for an empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapKeys0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0200
+     * @tc.desc   Testing LightWeightMap get all key for an empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapKeys0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapKeys0002';
@@ -1647,12 +1647,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0300
-     * @tc.name      : testLightWeightMapKeys0003
-     * @tc.desc      : Testing LightWeightMap get all key for a LightWeightMap contain large string key
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapKeys0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0300
+     * @tc.desc   Testing LightWeightMap get all key for a LightWeightMap contain large string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapKeys0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapKeys0003';
@@ -1671,12 +1671,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0100
-     * @tc.name      : testLightWeightMapValues0001
-     * @tc.desc      : Testing LightWeightMap get all value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapValues0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0100
+     * @tc.desc   Testing LightWeightMap get all value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapValues0001';
@@ -1700,12 +1700,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0200
-     * @tc.name      : testLightWeightMapValues0002
-     * @tc.desc      : Testing LightWeightMap get all value for an empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapValues0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0200
+     * @tc.desc   Testing LightWeightMap get all value for an empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapValues0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapValues0002';
@@ -1721,12 +1721,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0300
-     * @tc.name      : testLightWeightMapValues0003
-     * @tc.desc      : Testing LightWeightMap get all value for a LightWeightMap contain large string value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapValues0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0300
+     * @tc.desc   Testing LightWeightMap get all value for a LightWeightMap contain large string value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapValues0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapValues0003';
@@ -1745,12 +1745,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0100
-     * @tc.name      : testLightWeightMapForeach0001
-     * @tc.desc      : Testing LightWeightMap use forEach and remove function
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapForeach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0100
+     * @tc.desc   Testing LightWeightMap use forEach and remove function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapForeach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapForeach0001';
@@ -1773,12 +1773,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0200
-     * @tc.name      : testLightWeightMapForeach0002
-     * @tc.desc      : Testing LightWeightMap use forEach to iterate over each item
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapForeach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0200
+     * @tc.desc   Testing LightWeightMap use forEach to iterate over each item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapForeach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapForeach0002';
@@ -1803,12 +1803,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0300
-     * @tc.name      : testLightWeightMapForeach0003
-     * @tc.desc      : Testing LightWeightMap use forEach to iterate over each item for a LightWeightMap contain duplicate value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapForeach0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0300
+     * @tc.desc   Testing LightWeightMap use forEach to iterate over each item for a LightWeightMap contain duplicate value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapForeach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapForeach0003';
@@ -1829,12 +1829,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0400
-     * @tc.name      : testLightWeightMapForeach0004
-     * @tc.desc      : Testing LightWeightMap use forEach to iterate over each item for an empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapForeach0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0400
+     * @tc.desc   Testing LightWeightMap use forEach to iterate over each item for an empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapForeach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapForeach0004';
@@ -1850,12 +1850,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0500
-     * @tc.name      : testLightWeightMapForeach0005
-     * @tc.desc      : Testing LightWeightMap use forEach to check ArgThis
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapForeach0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0500
+     * @tc.desc   Testing LightWeightMap use forEach to check ArgThis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapForeach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapForeach0005';
@@ -1878,12 +1878,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0600
-     * @tc.name      : testLightWeightMapForeach0006--无效
-     * @tc.desc      : Testing LightWeightMap use forEach to check ArgThis
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapForeach0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0600
+     * @tc.desc   Testing LightWeightMap use forEach to check ArgThis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLightWeightMapForeach0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLightWeightMapForeach0006';
@@ -1908,12 +1908,12 @@ export default function LightWeightMapTest2() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0100
-     * @tc.name      : testLightWeightMapEntries0001
-     * @tc.desc      : Testing LightWeightMap use entries and remove function
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0100
+     * @tc.desc   Testing LightWeightMap use entries and remove function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapEntries0001';
@@ -1942,12 +1942,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0200
-     * @tc.name      : testLightWeightMapEntries0002
-     * @tc.desc      : Testing LightWeightMap use entries to iterate over each item
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapEntries0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0200
+     * @tc.desc   Testing LightWeightMap use entries to iterate over each item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapEntries0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapEntries0002';
@@ -1975,12 +1975,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0300
-     * @tc.name      : testLightWeightMapEntries0003
-     * @tc.desc      : Testing LightWeightMap use entries to iterate over each item for a LightWeightMap contain duplicate value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapEntries0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0300
+     * @tc.desc   Testing LightWeightMap use entries to iterate over each item for a LightWeightMap contain duplicate value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapEntries0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapEntries0003';
@@ -2005,12 +2005,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0400
-     * @tc.name      : testLightWeightMapEntries0004
-     * @tc.desc      : Testing LightWeightMap use entries to iterate over each item for an empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapEntries0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0400
+     * @tc.desc   Testing LightWeightMap use entries to iterate over each item for an empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapEntries0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapEntries0004';
@@ -2026,12 +2026,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0100
-     * @tc.name      : testLightWeightMapToString0001
-     * @tc.desc      : Testing LightWeightMap convert to string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapToString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0100
+     * @tc.desc   Testing LightWeightMap convert to string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapToString0001';
@@ -2047,12 +2047,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0200
-     * @tc.name      : testLightWeightMapToString0002
-     * @tc.desc      : Testing LightWeightMap convert to string for an empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapToString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0200
+     * @tc.desc   Testing LightWeightMap convert to string for an empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapToString0002';
@@ -2066,12 +2066,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0300
-     * @tc.name      : testLightWeightMapToString0003
-     * @tc.desc      : Testing LightWeightMap convert to string for a LightWeightMap contain duplicate value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapToString0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0300
+     * @tc.desc   Testing LightWeightMap convert to string for a LightWeightMap contain duplicate value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapToString0003';
@@ -2089,12 +2089,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0100
-     * @tc.name      : testLightWeightMapSymbolIterator0001
-     * @tc.desc      : Testing LightWeightMap use [Symbol.iterator] and remove function
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSymbolIterator0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0100
+     * @tc.desc   Testing LightWeightMap use [Symbol.iterator] and remove function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSymbolIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSymbolIterator0001';
@@ -2123,12 +2123,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0200
-     * @tc.name      : testLightWeightMapSymbolIterator0002
-     * @tc.desc      : Testing LightWeightMap use [Symbol.iterator] to iterate over each item
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSymbolIterator0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0200
+     * @tc.desc   Testing LightWeightMap use [Symbol.iterator] to iterate over each item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSymbolIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSymbolIterator0002';
@@ -2156,12 +2156,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0300
-     * @tc.name      : testLightWeightMapSymbolIterator0003
-     * @tc.desc      : Testing LightWeightMap use [Symbol.iterator] to iterate over each item for a LightWeightMap contain duplicate value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSymbolIterator0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0300
+     * @tc.desc   Testing LightWeightMap use [Symbol.iterator] to iterate over each item for a LightWeightMap contain duplicate value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSymbolIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSymbolIterator0003';
@@ -2185,12 +2185,12 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0400
-     * @tc.name      : testLightWeightMapSymbolIterator0004
-     * @tc.desc      : Testing LightWeightMap use [Symbol.iterator] to iterate over each item for an empty LightWeightMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLightWeightMapSymbolIterator0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0400
+     * @tc.desc   Testing LightWeightMap use [Symbol.iterator] to iterate over each item for an empty LightWeightMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLightWeightMapSymbolIterator0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSymbolIterator0004';

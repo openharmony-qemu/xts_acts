@@ -46,12 +46,12 @@ export default function PromiseAnySecondTest() {
     })
 
     /**
+     * @tc.name   PromiseAnySecondTest2700
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_2700
-     * @tc.name PromiseAnySecondTest2700
-     * @tc.desc Test execution order: p1.catch -> any([p1, p2]) -> any.catch. Both p1 and p2 reject.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1.catch -> any([p1, p2]) -> any.catch. Both p1 and p2 reject.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest2700';
@@ -136,12 +136,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest2800
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_2800
-     * @tc.name PromiseAnySecondTest2800
-     * @tc.desc Test execution order: p1.catch -> any([p1, p2]) -> any.catch. 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1.catch -> any([p1, p2]) -> any.catch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest2800';
@@ -226,12 +226,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest2900
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_2900
-     * @tc.name PromiseAnySecondTest2900
-     * @tc.desc Test execution order: p1.then -> p1.finally(throws) -> any([p1, p2]) -> any.then.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1.then -> p1.finally(throws) -> any([p1, p2]) -> any.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest2900';
@@ -328,12 +328,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3000
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3000
-     * @tc.name PromiseAnySecondTest3000
-     * @tc.desc Test execution order: p1.then -> p1.finally(throws) -> any([p1, p2]) -> any.then. 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1.then -> p1.finally(throws) -> any([p1, p2]) -> any.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3000';
@@ -430,12 +430,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3100
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3100
-     * @tc.name PromiseAnySecondTest3100
-     * @tc.desc Test execution order: p1.then -> p1.finally -> any([p1, p2]) -> any.then.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1.then -> p1.finally -> any([p1, p2]) -> any.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3100';
@@ -528,12 +528,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3200
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3200
-     * @tc.name PromiseAnySecondTest3200
-     * @tc.desc Test execution order: p1(rejects).finally(throws) -> any([p1, p2]) -> any.then.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1(rejects).finally(throws) -> any([p1, p2]) -> any.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3200';
@@ -624,12 +624,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3300
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3300
-     * @tc.name PromiseAnySecondTest3300
-     * @tc.desc Test execution order: p1(rejects).finally(throws) -> any([p1, p2]) -> any.then.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1(rejects).finally(throws) -> any([p1, p2]) -> any.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3300';
@@ -721,12 +721,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3400
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3400
-     * @tc.name PromiseAnySecondTest3400
-     * @tc.desc Test execution order: p1(rejects).finally -> any([p1, p2]) -> any.then.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1(rejects).finally -> any([p1, p2]) -> any.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3400';
@@ -817,12 +817,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3500
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3500
-     * @tc.name PromiseAnySecondTest3500
-     * @tc.desc Test execution order: p1 resolves immediately, then p1.then throws, then create any([p1, p2]), then any.then executes.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1 resolves immediately, then p1.then throws, then create any([p1, p2]), then any.then executes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3500';
@@ -911,12 +911,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3600
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3600
-     * @tc.name PromiseAnySecondTest3600
-     * @tc.desc Test execution order: p1 resolves -> any([p1, p2]) -> p1.then(throws) -> any.then.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1 resolves -> any([p1, p2]) -> p1.then(throws) -> any.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3600';
@@ -974,12 +974,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3700
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3700
-     * @tc.name PromiseAnySecondTest3700
-     * @tc.desc Test execution order: p1 resolves -> any([p1, p2]) -> any.then(throws) -> any.catch.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: p1 resolves -> any([p1, p2]) -> any.then(throws) -> any.catch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3700';
@@ -1063,12 +1063,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3800
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3800
-     * @tc.name PromiseAnySecondTest3800
-     * @tc.desc Test execution order: any([p1, p2]) -> p1 resolves -> any.then -> p2.then.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: any([p1, p2]) -> p1 resolves -> any.then -> p2.then.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3800';
@@ -1167,12 +1167,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest3900
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_3900
-     * @tc.name PromiseAnySecondTest3900
-     * @tc.desc Test execution order: any([p1, p2]) -> any.then/catch -> p1.then -> p2.catch. p1 resolves, p2 rejects.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: any([p1, p2]) -> any.then/catch -> p1.then -> p2.catch. p1 resolves, p2 rejects.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3900';
@@ -1278,12 +1278,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest4000
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_4000
-     * @tc.name PromiseAnySecondTest4000
-     * @tc.desc Test execution order: any([p1, p2]) -> any.then/catch -> p1.then -> p2.catch. p1 resolves, p2 rejects.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: any([p1, p2]) -> any.then/catch -> p1.then -> p2.catch. p1 resolves, p2 rejects.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest4000';
@@ -1389,12 +1389,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest4100
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_4100
-     * @tc.name PromiseAnySecondTest4100
-     * @tc.desc Test execution order: any([p1, p2]) -> p1.catch -> any.then/catch -> p2.then. p1 rejects, p2 resolves.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execution order: any([p1, p2]) -> p1.catch -> any.then/catch -> p2.then. p1 rejects, p2 resolves.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest4100';
@@ -1500,12 +1500,12 @@ export default function PromiseAnySecondTest() {
     });
 
     /**
+     * @tc.name   PromiseAnySecondTest4200
      * @tc.number SUB_PROMISE_ANY_SECOND_TEST_4200
-     * @tc.name PromiseAnySecondTest4200
-     * @tc.desc Test exec order: p1.catch/finally -> any([p1,p2]) -> p2.then -> any.then/catch -> p2.finally. p1 rej, p2 res.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test exec order: p1.catch/finally -> any([p1,p2]) -> p2.then -> any.then/catch -> p2.finally. p1 rej, p2 res.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest4200';

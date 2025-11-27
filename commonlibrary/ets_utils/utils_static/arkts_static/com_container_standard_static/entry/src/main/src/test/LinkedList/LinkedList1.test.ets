@@ -45,12 +45,12 @@ export default function LinkedListTest1() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_0100
-     * @tc.name      : testLinkedListAdd0001
-     * @tc.desc      : Testing LinkedList add different dataType data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_0100
+     * @tc.desc   Testing LinkedList add different dataType data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListAdd0001';
@@ -79,12 +79,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_0200
-     * @tc.name      : testLinkedListAdd0002
-     * @tc.desc      : Testing LinkedList add special string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_0200
+     * @tc.desc   Testing LinkedList add special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListAdd0002';
@@ -104,12 +104,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_FIRST_0100
-     * @tc.name      : testLinkedListAddFirst0001
-     * @tc.desc      : Testing LinkedList addFirst different dataType data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListAddFirst0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_FIRST_0100
+     * @tc.desc   Testing LinkedList addFirst different dataType data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListAddFirst0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListAddFirst0001';
@@ -137,12 +137,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_FIRST_0200
-     * @tc.name      : testLinkedListAddFirst0002
-     * @tc.desc      : Testing LinkedList addFirst special string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListAddFirst0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_FIRST_0200
+     * @tc.desc   Testing LinkedList addFirst special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListAddFirst0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListAddFirst0002';
@@ -162,12 +162,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_INSERT_0100
-     * @tc.name      : testLinkedListInsert0001
-     * @tc.desc      : Testing LinkedList insert->addFirst->getIndexOf->removeByIndex->has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListInsert0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_INSERT_0100
+     * @tc.desc   Testing LinkedList insert->addFirst->getIndexOf->removeByIndex->has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListInsert0001';
@@ -191,12 +191,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_INSERT_0200
-     * @tc.name      : testLinkedListInsert0002
-     * @tc.desc      : Testing LinkedList insert->add->getLastIndexOf->removeByIndex->has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListInsert0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_INSERT_0200
+     * @tc.desc   Testing LinkedList insert->add->getLastIndexOf->removeByIndex->has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListInsert0002';
@@ -220,12 +220,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_HAS_0100
-     * @tc.name      : testLinkedListHas0001
-     * @tc.desc      : Testing LinkedList has different dataType data check has result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_HAS_0100
+     * @tc.desc   Testing LinkedList has different dataType data check has result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListHas0001';
@@ -263,12 +263,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GET_0100
-     * @tc.name      : testLinkedListGet0001
-     * @tc.desc      : Testing LinkedList has different dataType data check get result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GET_0100
+     * @tc.desc   Testing LinkedList has different dataType data check get result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGet0001';
@@ -300,12 +300,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0100
-     * @tc.name      : testLinkedListGetIndexOf0001
-     * @tc.desc      : Testing LinkedList getIndexOf add same data check index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0100
+     * @tc.desc   Testing LinkedList getIndexOf add same data check index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetIndexOf0001';
@@ -326,12 +326,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0200
-     * @tc.name      : testLinkedListGetIndexOf0002
-     * @tc.desc      : Testing LinkedList getIndexOf add->getIndexOf->removeByIndex same data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0200
+     * @tc.desc   Testing LinkedList getIndexOf add->getIndexOf->removeByIndex same data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetIndexOf0002';
@@ -355,12 +355,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0300
-     * @tc.name      : testLinkedListGetIndexOf0003
-     * @tc.desc      : Testing LinkedList getIndexOf add->removeFirst->add->getIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0300
+     * @tc.desc   Testing LinkedList getIndexOf add->removeFirst->add->getIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetIndexOf0003';
@@ -381,12 +381,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0400
-     * @tc.name      : testLinkedListGetIndexOf0004
-     * @tc.desc      : Testing LinkedList getIndexOf add->removeLast->add->getIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0400
+     * @tc.desc   Testing LinkedList getIndexOf add->removeLast->add->getIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetIndexOf0004';
@@ -407,12 +407,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0100
-     * @tc.name      : testLinkedListGetLastIndexOf0001
-     * @tc.desc      : Testing LinkedList getIndexOf add same data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0100
+     * @tc.desc   Testing LinkedList getIndexOf add same data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetLastIndexOf0001';
@@ -433,12 +433,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0200
-     * @tc.name      : testLinkedListGetLastIndexOf0002
-     * @tc.desc      : Testing LinkedList getIndexOf add->getLastIndexOf->removeByIndex same data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0200
+     * @tc.desc   Testing LinkedList getIndexOf add->getLastIndexOf->removeByIndex same data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetLastIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetLastIndexOf0002';
@@ -462,12 +462,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0300
-     * @tc.name      : testLinkedListGetLastIndexOf0003
-     * @tc.desc      : Testing LinkedList getIndexOf add->removeFirst->add->getLastIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0300
+     * @tc.desc   Testing LinkedList getIndexOf add->removeFirst->add->getLastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetLastIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetLastIndexOf0003';
@@ -488,12 +488,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0400
-     * @tc.name      : testLinkedListGetLastIndexOf0004
-     * @tc.desc      : Testing LinkedList getIndexOf add->removeLast->add->getLastIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0400
+     * @tc.desc   Testing LinkedList getIndexOf add->removeLast->add->getLastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetLastIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetLastIndexOf0004';
@@ -514,12 +514,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0500
-     * @tc.name      : testLinkedListGetLastIndexOf0005
-     * @tc.desc      : Testing LinkedList getIndexOf add->get->removeFirstFound
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListGetLastIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0500
+     * @tc.desc   Testing LinkedList getIndexOf add->get->removeFirstFound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListGetLastIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListGetLastIndexOf0005';
@@ -540,12 +540,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVELASTFOUND_0100
-     * @tc.name      : testLinkedListRemoveLastFound0001
-     * @tc.desc      : Testing LinkedList removeLastFound add->getLastIndexOf->removeLastFound check is deleted success
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListRemoveLastFound0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVELASTFOUND_0100
+     * @tc.desc   Testing LinkedList removeLastFound add->getLastIndexOf->removeLastFound check is deleted success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListRemoveLastFound0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListRemoveLastFound0001';
@@ -568,12 +568,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0100
-     * @tc.name      : testLinkedListClone0001
-     * @tc.desc      : Testing LinkedList clone linkList to newLinkList and check linkList.value == newLinkList.value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListClone0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0100
+     * @tc.desc   Testing LinkedList clone linkList to newLinkList and check linkList.value == newLinkList.value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListClone0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListClone0001';
@@ -593,12 +593,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0200
-     * @tc.name      : testLinkedListClone0002
-     * @tc.desc      : Testing LinkedList clone linkList to newLinkList and insert newLinkList check length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListClone0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0200
+     * @tc.desc   Testing LinkedList clone linkList to newLinkList and insert newLinkList check length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListClone0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListClone0002';
@@ -620,12 +620,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0300
-     * @tc.name      : testLinkedListClone0003
-     * @tc.desc      : Testing LinkedList clone linkList to newLinkList and removeFirstFound newLinkList check length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListClone0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0300
+     * @tc.desc   Testing LinkedList clone linkList to newLinkList and removeFirstFound newLinkList check length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListClone0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListClone0003';
@@ -647,12 +647,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0400
-     * @tc.name      : testLinkedListClone0004
-     * @tc.desc      : Testing LinkedList clone linkList to newLinkList and addFirst newLinkList check length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListClone0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0400
+     * @tc.desc   Testing LinkedList clone linkList to newLinkList and addFirst newLinkList check length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListClone0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListClone0004';
@@ -674,12 +674,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0500
-     * @tc.name      : testLinkedListClone0005
-     * @tc.desc      : Testing LinkedList clone linkList to newLinkList and forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListClone0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0500
+     * @tc.desc   Testing LinkedList clone linkList to newLinkList and forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListClone0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListClone0005';
@@ -699,12 +699,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLEAR_0600
-     * @tc.name      : testLinkedListClear0006
-     * @tc.desc      : Testing LinkedList clear newLinkList and add
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListClear0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLEAR_0600
+     * @tc.desc   Testing LinkedList clear newLinkList and add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListClear0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListClear0006';
@@ -725,12 +725,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLEAR_0700
-     * @tc.name      : testLinkedListClear0007
-     * @tc.desc      : Testing LinkedList clear linkList and add
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListClear0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLEAR_0700
+     * @tc.desc   Testing LinkedList clear linkList and add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListClear0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListClear0007';
@@ -751,12 +751,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0100
-     * @tc.name      : testLinkedListSet0001
-     * @tc.desc      : Testing LinkedList set linkList and update data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0100
+     * @tc.desc   Testing LinkedList set linkList and update data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListSet0001';
@@ -787,12 +787,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0200
-     * @tc.name      : testLinkedListSet0002
-     * @tc.desc      : Testing LinkedList set getIndexOf->set->removeByIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0200
+     * @tc.desc   Testing LinkedList set getIndexOf->set->removeByIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListSet0002';
@@ -822,12 +822,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0300
-     * @tc.name      : testLinkedListSet0003
-     * @tc.desc      : Testing LinkedList set get->set->has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0300
+     * @tc.desc   Testing LinkedList set get->set->has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListSet0003';
@@ -856,12 +856,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0400
-     * @tc.name      : testLinkedListSet0004
-     * @tc.desc      : Testing LinkedList set set->convertToArray->instanceof
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0400
+     * @tc.desc   Testing LinkedList set set->convertToArray->instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListSet0004';
@@ -902,12 +902,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0500
-     * @tc.name      : testLinkedListSet0005
-     * @tc.desc      : Testing LinkedList set set->getFirst
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSet0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0500
+     * @tc.desc   Testing LinkedList set set->getFirst
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListSet0005';
@@ -944,12 +944,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0600
-     * @tc.name      : testLinkedListSet0006
-     * @tc.desc      : Testing LinkedList set set->getLast
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSet0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0600
+     * @tc.desc   Testing LinkedList set set->getLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testLinkedListSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testLinkedListSet0006';
@@ -986,12 +986,12 @@ export default function LinkedListTest1() {
     // });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0100
-     * @tc.name      : testLinkedListSymbolIterator0001
-     * @tc.desc      : Testing LinkedList Symbol.iterator for of
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSymbolIterator0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0100
+     * @tc.desc   Testing LinkedList Symbol.iterator for of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListSymbolIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListSymbolIterator0001';
@@ -1012,12 +1012,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0200
-     * @tc.name      : testLinkedListSymbolIterator0002
-     * @tc.desc      : Testing LinkedList Symbol.iterator next
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListSymbolIterator0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0200
+     * @tc.desc   Testing LinkedList Symbol.iterator next
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListSymbolIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListSymbolIterator0002';
@@ -1042,12 +1042,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0100
-     * @tc.name      : testLinkedListForEach0001
-     * @tc.desc      : Testing LinkedList forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0100
+     * @tc.desc   Testing LinkedList forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListForEach0001';
@@ -1068,12 +1068,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0200
-     * @tc.name      : testLinkedListForEach0002
-     * @tc.desc      : Testing LinkedList forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListForEach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0200
+     * @tc.desc   Testing LinkedList forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListForEach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListForEach0002';
@@ -1097,12 +1097,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0300
-     * @tc.name      : testLinkedListForEach0003
-     * @tc.desc      : Testing LinkedList forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListForEach0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0300
+     * @tc.desc   Testing LinkedList forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListForEach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListForEach0003';
@@ -1124,12 +1124,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0400
-     * @tc.name      : testLinkedListForEach0004
-     * @tc.desc      : Testing LinkedList forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListForEach0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0400
+     * @tc.desc   Testing LinkedList forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListForEach0004';
@@ -1149,12 +1149,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVELASTFOUND_0200
-     * @tc.name      : testLinkedListRemoveLastFound0002
-     * @tc.desc      : Testing LinkedList removeLastFound add->getLastIndexOf->removeLastFound check is deleted success
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLinkedListRemoveLastFound0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVELASTFOUND_0200
+     * @tc.desc   Testing LinkedList removeLastFound add->getLastIndexOf->removeLastFound check is deleted success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLinkedListRemoveLastFound0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLinkedListRemoveLastFound0002';
@@ -1168,12 +1168,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0100
-     * @tc.name      : LinkedListRemovetest001
-     * @tc.desc      : Testing LinkedList remove
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   LinkedListRemovetest001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0100
+     * @tc.desc   Testing LinkedList remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LinkedListRemovetest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<number> = new LinkedList<number>();
@@ -1186,12 +1186,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0200
-     * @tc.name      : LinkedListRemovetest002
-     * @tc.desc      : Testing LinkedList remove
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   LinkedListRemovetest002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0200
+     * @tc.desc   Testing LinkedList remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LinkedListRemovetest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<number> = new LinkedList<number>();
@@ -1204,12 +1204,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0300
-     * @tc.name      : LinkedListRemovetest003
-     * @tc.desc      : Testing LinkedList remove
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   LinkedListRemovetest003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0300
+     * @tc.desc   Testing LinkedList remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LinkedListRemovetest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<number> = new LinkedList<number>();
@@ -1220,12 +1220,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_0100
-     * @tc.name      : LinkedList001
-     * @tc.desc      : Testing LinkedList
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   LinkedList001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_0100
+     * @tc.desc   Testing LinkedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LinkedList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<number> = new LinkedList<number>();
@@ -1240,12 +1240,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_0200
-     * @tc.name      : LinkedList002
-     * @tc.desc      : Testing LinkedList
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   LinkedList002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_0200
+     * @tc.desc   Testing LinkedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LinkedList002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<number> = new LinkedList<number>();
@@ -1259,12 +1259,12 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_0300
-     * @tc.name      : LinkedList003
-     * @tc.desc      : Testing LinkedList
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   LinkedList003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_0300
+     * @tc.desc   Testing LinkedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LinkedList003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<number> = new LinkedList<number>();
@@ -1278,12 +1278,12 @@ export default function LinkedListTest1() {
     });
 
     /**
+     * @tc.name   testUtil3_004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_004
-     * @tc.name testUtil3_004
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<int> = new LinkedList<int>();
@@ -1297,12 +1297,12 @@ export default function LinkedListTest1() {
     })
 
     /**
+     * @tc.name   testUtil3_005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_005
-     * @tc.name testUtil3_005
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<int> = new LinkedList<int>();
@@ -1315,12 +1315,12 @@ export default function LinkedListTest1() {
     })
 
     /**
+     * @tc.name   testUtil3_006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_006
-     * @tc.name testUtil3_006
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<int> = new LinkedList<int>();
@@ -1333,12 +1333,12 @@ export default function LinkedListTest1() {
     })
 
     /**
+     * @tc.name   testUtil3_007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_007
-     * @tc.name testUtil3_007
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<int> = new LinkedList<int>();
@@ -1354,12 +1354,12 @@ export default function LinkedListTest1() {
     })
 
     /**
+     * @tc.name   testUtil3_008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_008
-     * @tc.name testUtil3_008
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<int> = new LinkedList<int>();
@@ -1375,12 +1375,12 @@ export default function LinkedListTest1() {
     })
 
     /**
+     * @tc.name   testUtil3_009
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_009
-     * @tc.name testUtil3_009
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<int | string> = new LinkedList<int | string>();

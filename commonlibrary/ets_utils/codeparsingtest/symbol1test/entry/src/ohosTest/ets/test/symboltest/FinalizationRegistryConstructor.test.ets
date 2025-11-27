@@ -45,12 +45,12 @@ export default function finalizationRegistryConstructorTest() {
 
 
     /**
+     * @tc.name   MustUseNewConstructorTest001
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_001
-     * @tc.name MustUseNewConstructorTest001
-     * @tc.desc Verify FinalizationRegistry must be constructed with new (direct call throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify FinalizationRegistry must be constructed with new (direct call throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MustUseNewConstructorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test001_MustUseNewConstructor();
@@ -58,12 +58,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   ConstructorParamMustBeFunctionTest002
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_002
-     * @tc.name ConstructorParamMustBeFunctionTest002
-     * @tc.desc Verify constructor parameter must be function (non-function throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify constructor parameter must be function (non-function throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ConstructorParamMustBeFunctionTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test002_ConstructorParamMustBeFunction();
@@ -71,12 +71,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   ConstructorCreatesValidInstanceTest003
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_003
-     * @tc.name ConstructorCreatesValidInstanceTest003
-     * @tc.desc Verify constructor creates valid FinalizationRegistry instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify constructor creates valid FinalizationRegistry instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ConstructorCreatesValidInstanceTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test003_ConstructorCreatesValidInstance();
@@ -84,12 +84,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   CallbackReceivesHeldValueTest004
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_004
-     * @tc.name CallbackReceivesHeldValueTest004
-     * @tc.desc Verify callback function receives heldValue parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify callback function receives heldValue parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CallbackReceivesHeldValueTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test004_CallbackReceivesHeldValue();
@@ -97,12 +97,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   CallbackReturnValueIgnoredTest005
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_005
-     * @tc.name CallbackReturnValueIgnoredTest005
-     * @tc.desc Verify callback function return value is ignored
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify callback function return value is ignored
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CallbackReturnValueIgnoredTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test005_CallbackReturnValueIgnored();
@@ -110,12 +110,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   NoParamConstructorThrowsTest006
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_006
-     * @tc.name NoParamConstructorThrowsTest006
-     * @tc.desc Verify constructor throws TypeError when no parameter is provided
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify constructor throws TypeError when no parameter is provided
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NoParamConstructorThrowsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test006_NoParamConstructorThrows();
@@ -123,12 +123,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   ArrowFunctionAsCallbackTest007
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_007
-     * @tc.name ArrowFunctionAsCallbackTest007
-     * @tc.desc Verify arrow function can be used as callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify arrow function can be used as callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrowFunctionAsCallbackTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test007_ArrowFunctionAsCallback();
@@ -136,12 +136,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   MultipleInstancesIndependentTest008
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_008
-     * @tc.name MultipleInstancesIndependentTest008
-     * @tc.desc Verify multiple FinalizationRegistry instances are independent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify multiple FinalizationRegistry instances are independent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleInstancesIndependentTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test008_MultipleInstancesIndependent();
@@ -150,12 +150,12 @@ export default function finalizationRegistryConstructorTest() {
 
 
     /**
+     * @tc.name   AsyncFunctionAsCallbackTest010
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_010
-     * @tc.name AsyncFunctionAsCallbackTest010
-     * @tc.desc Verify async function can be used as callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify async function can be used as callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AsyncFunctionAsCallbackTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test010_AsyncFunctionAsCallback();
@@ -164,12 +164,12 @@ export default function finalizationRegistryConstructorTest() {
 
 
     /**
+     * @tc.name   ObjectMethodAsCallbackTest013
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_013
-     * @tc.name ObjectMethodAsCallbackTest013
-     * @tc.desc Verify object method can be used as callback function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify object method can be used as callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectMethodAsCallbackTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test013_ObjectMethodAsCallback();
@@ -177,12 +177,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   ConstructorWithExtraParamsTest014
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_014
-     * @tc.name ConstructorWithExtraParamsTest014
-     * @tc.desc Verify constructor ignores extra parameters (only first param is effective)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify constructor ignores extra parameters (only first param is effective)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ConstructorWithExtraParamsTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test014_ConstructorWithExtraParams();
@@ -190,12 +190,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   CallbackModifiedAfterInstanceCreationTest015
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_015
-     * @tc.name CallbackModifiedAfterInstanceCreationTest015
-     * @tc.desc Verify modifying callback reference after instance creation doesn't affect registered logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify modifying callback reference after instance creation doesn't affect registered logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CallbackModifiedAfterInstanceCreationTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test015_CallbackModifiedAfterInstanceCreation();
@@ -203,12 +203,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   PrototypeMethodsNonEnumerableTest016
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_016
-     * @tc.name PrototypeMethodsNonEnumerableTest016
-     * @tc.desc Verify prototype methods (register/unregister) are non-enumerable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify prototype methods (register/unregister) are non-enumerable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PrototypeMethodsNonEnumerableTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test016_PrototypeMethodsNonEnumerable();
@@ -216,12 +216,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   ClassInstanceMethodAsCallbackTest017
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_017
-     * @tc.name ClassInstanceMethodAsCallbackTest017
-     * @tc.desc Verify ES6 class instance method can be used as callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify ES6 class instance method can be used as callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ClassInstanceMethodAsCallbackTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test017_ClassInstanceMethodAsCallback();
@@ -229,12 +229,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   GeneratorFunctionAsCallbackTest018
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_018
-     * @tc.name GeneratorFunctionAsCallbackTest018
-     * @tc.desc Verify generator function can be used as callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify generator function can be used as callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GeneratorFunctionAsCallbackTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test018_GeneratorFunctionAsCallback();
@@ -243,12 +243,12 @@ export default function finalizationRegistryConstructorTest() {
 
 
     /**
+     * @tc.name   RegisterMethodFromPrototypeTest020
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_020
-     * @tc.name RegisterMethodFromPrototypeTest020
-     * @tc.desc Verify instance's register method is from FinalizationRegistry.prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify instance's register method is from FinalizationRegistry.prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegisterMethodFromPrototypeTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test020_RegisterMethodFromPrototype();
@@ -256,12 +256,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   ConstructorNamePropertyTest021
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_021
-     * @tc.name ConstructorNamePropertyTest021
-     * @tc.desc Verify FinalizationRegistry constructor has correct name property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify FinalizationRegistry constructor has correct name property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ConstructorNamePropertyTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test021_ConstructorNameProperty();
@@ -269,12 +269,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   ClosureCallbackRetainsStateTest022
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_022
-     * @tc.name ClosureCallbackRetainsStateTest022
-     * @tc.desc Verify closure callback retains external variable state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify closure callback retains external variable state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ClosureCallbackRetainsStateTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test022_ClosureCallbackRetainsState();
@@ -283,12 +283,12 @@ export default function finalizationRegistryConstructorTest() {
 
 
     /**
+     * @tc.name   AsyncGeneratorFunctionAsCallbackTest025
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_025
-     * @tc.name AsyncGeneratorFunctionAsCallbackTest025
-     * @tc.desc Verify async generator function can be used as callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify async generator function can be used as callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AsyncGeneratorFunctionAsCallbackTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test025_AsyncGeneratorFunctionAsCallback();
@@ -297,12 +297,12 @@ export default function finalizationRegistryConstructorTest() {
 
 
     /**
+     * @tc.name   NamedFunctionExpressionAsCallbackTest027
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_027
-     * @tc.name NamedFunctionExpressionAsCallbackTest027
-     * @tc.desc Verify named function expression can be used as callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify named function expression can be used as callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NamedFunctionExpressionAsCallbackTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test027_NamedFunctionExpressionAsCallback();
@@ -310,12 +310,12 @@ export default function finalizationRegistryConstructorTest() {
     });
 
     /**
+     * @tc.name   CoreMethodsUndeletableTest028
      * @tc.number SUB_FINALIZATION_REGISTRY_CONSTRUCTOR_TEST_028
-     * @tc.name CoreMethodsUndeletableTest028
-     * @tc.desc Verify core methods (register/unregister) cannot be deleted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify core methods (register/unregister) cannot be deleted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CoreMethodsUndeletableTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryConstructorUtils.test028_CoreMethodsUndeletable();

@@ -42,12 +42,12 @@ export default function AtomicsMultithreadTest() {
     })
 
     /**
+     * @tc.name   AtomicsMultithreadTest0100
      * @tc.number SUB_ATOMICS_MULTITHREAD_TEST_0100
-     * @tc.name AtomicsMultithreadTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AtomicsMultithreadTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const sharedBuffer = new SharedArrayBuffer(4);
@@ -80,12 +80,12 @@ export default function AtomicsMultithreadTest() {
 
 
     /**
+     * @tc.name   AtomicsMultithreadTest0200
      * @tc.number SUB_ATOMICS_MULTITHREAD_TEST_0200
-     * @tc.name AtomicsMultithreadTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AtomicsMultithreadTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const sharedBuffer = new SharedArrayBuffer(4);
@@ -107,12 +107,12 @@ export default function AtomicsMultithreadTest() {
 
 
     /**
+     * @tc.name   AtomicsMultithreadTest0300
      * @tc.number SUB_ATOMICS_MULTITHREAD_TEST_0300
-     * @tc.name AtomicsMultithreadTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AtomicsMultithreadTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const sharedBuffer = new SharedArrayBuffer(4);
@@ -144,12 +144,12 @@ export default function AtomicsMultithreadTest() {
     });
 
     /**
+     * @tc.name   AtomicsMultithreadTest0400
      * @tc.number SUB_ATOMICS_MULTITHREAD_TEST_0400
-     * @tc.name AtomicsMultithreadTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AtomicsMultithreadTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const counter = new SharedCounter(10);

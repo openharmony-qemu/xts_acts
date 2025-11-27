@@ -38,12 +38,12 @@ export default function atomicsIsLockFreeTest() {
     })
 
     /**
+     * @tc.name   atomicsIsLockFreeTest001
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0001
-     * @tc.name atomicsIsLockFreeTest001
-     * @tc.desc Test Atomics.isLockFree with valid 1-byte (8-bit) element size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with valid 1-byte (8-bit) element size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = 1; // 8-bit (Int8Array/Uint8Array)
@@ -52,12 +52,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest002
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0002
-     * @tc.name atomicsIsLockFreeTest002
-     * @tc.desc Test Atomics.isLockFree with valid 2-byte (16-bit) element size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with valid 2-byte (16-bit) element size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = 2; // 16-bit (Int16Array/Uint16Array)
@@ -66,12 +66,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest003
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0003
-     * @tc.name atomicsIsLockFreeTest003
-     * @tc.desc Test Atomics.isLockFree with valid 4-byte (32-bit) element size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with valid 4-byte (32-bit) element size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = 4; // 32-bit (Int32Array/Uint32Array)
@@ -80,12 +80,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest004
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0004
-     * @tc.name atomicsIsLockFreeTest004
-     * @tc.desc Test Atomics.isLockFree with valid 8-byte (64-bit) element size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with valid 8-byte (64-bit) element size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = 8; // 64-bit (BigInt64Array/BigUint64Array)
@@ -94,12 +94,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest005
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0005
-     * @tc.name atomicsIsLockFreeTest005
-     * @tc.desc Test Atomics.isLockFree with 0-byte invalid element size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 0-byte invalid element size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = 0; // Invalid: 0 bytes
@@ -108,12 +108,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest006
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0006
-     * @tc.name atomicsIsLockFreeTest006
-     * @tc.desc Test Atomics.isLockFree with 3-byte non-power-of-two element size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 3-byte non-power-of-two element size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = 3; // Invalid: not power of two
@@ -122,12 +122,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest007
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0007
-     * @tc.name atomicsIsLockFreeTest007
-     * @tc.desc Test Atomics.isLockFree with 16-byte oversized element size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 16-byte oversized element size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = 16; // Invalid: larger than 8 bytes
@@ -136,12 +136,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest008
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0008
-     * @tc.name atomicsIsLockFreeTest008
-     * @tc.desc Test Atomics.isLockFree with negative element size (-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with negative element size (-1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = -1; // Invalid: negative
@@ -150,12 +150,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest009
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0009
-     * @tc.name atomicsIsLockFreeTest009
-     * @tc.desc Test Atomics.isLockFree with float element size (2.5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with float element size (2.5)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = 2.5; // Invalid: non-integer
@@ -164,12 +164,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest010
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0010
-     * @tc.name atomicsIsLockFreeTest010
-     * @tc.desc Test Atomics.isLockFree consistency for 4-byte size (multiple calls)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree consistency for 4-byte size (multiple calls)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = 4;
@@ -181,12 +181,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest011
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0011
-     * @tc.name atomicsIsLockFreeTest011
-     * @tc.desc Test Atomics.isLockFree with Int8Array element size (1 byte)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with Int8Array element size (1 byte)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = Int8Array.BYTES_PER_ELEMENT; // 1 byte
@@ -195,12 +195,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest012
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0012
-     * @tc.name atomicsIsLockFreeTest012
-     * @tc.desc Test Atomics.isLockFree with Uint16Array element size (2 bytes)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with Uint16Array element size (2 bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = Uint16Array.BYTES_PER_ELEMENT; // 2 bytes
@@ -209,12 +209,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest013
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0013
-     * @tc.name atomicsIsLockFreeTest013
-     * @tc.desc Test Atomics.isLockFree with Int32Array element size (4 bytes)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with Int32Array element size (4 bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = Int32Array.BYTES_PER_ELEMENT; // 4 bytes
@@ -223,12 +223,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest014
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0014
-     * @tc.name atomicsIsLockFreeTest014
-     * @tc.desc Test Atomics.isLockFree with BigUint64Array element size (8 bytes)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with BigUint64Array element size (8 bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = BigUint64Array.BYTES_PER_ELEMENT; // 8 bytes
@@ -237,12 +237,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest015
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0015
-     * @tc.name atomicsIsLockFreeTest015
-     * @tc.desc Test Atomics.isLockFree with string argument ("4")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with string argument ("4")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -261,12 +261,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest016
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0016
-     * @tc.name atomicsIsLockFreeTest016
-     * @tc.desc Test Atomics.isLockFree with null argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with null argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab32 = new SharedArrayBuffer(4);
@@ -288,12 +288,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest017
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0017
-     * @tc.name atomicsIsLockFreeTest017
-     * @tc.desc Test Atomics.isLockFree with undefined argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with undefined argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -314,12 +314,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest018
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0018
-     * @tc.name atomicsIsLockFreeTest018
-     * @tc.desc Test Atomics.isLockFree with object argument ({ value: 4 })
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with object argument ({ value: 4 })
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab32 = new SharedArrayBuffer(4);
@@ -343,12 +343,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest019
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0019
-     * @tc.name atomicsIsLockFreeTest019
-     * @tc.desc Test Atomics.isLockFree with array argument ([4])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with array argument ([4])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -374,12 +374,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest020
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0020
-     * @tc.name atomicsIsLockFreeTest020
-     * @tc.desc Test Atomics.isLockFree with boolean argument (true)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with boolean argument (true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -403,12 +403,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest021
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0021
-     * @tc.name atomicsIsLockFreeTest021
-     * @tc.desc Test Atomics.isLockFree with boolean argument (false)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with boolean argument (false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -428,24 +428,24 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest022
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0022
-     * @tc.name atomicsIsLockFreeTest022
-     * @tc.desc Test Atomics.isLockFree with BigInt argument (4n)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with BigInt argument (4n)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(Atomics.isLockFree(Number.MAX_VALUE)).assertEqual(false);
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest023
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0023
-     * @tc.name atomicsIsLockFreeTest023
-     * @tc.desc Test Atomics.isLockFree in async function (4-byte size)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree in async function (4-byte size)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncCheck = async (size: number): Promise<boolean> => {
@@ -458,12 +458,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest024
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0024
-     * @tc.name atomicsIsLockFreeTest024
-     * @tc.desc Test Atomics.isLockFree in Promise.resolve (8-byte size)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree in Promise.resolve (8-byte size)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await Promise.resolve(Atomics.isLockFree(8));
@@ -471,12 +471,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest025
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0025
-     * @tc.name atomicsIsLockFreeTest025
-     * @tc.desc Test Atomics.isLockFree comparison between 4-byte and 8-byte sizes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree comparison between 4-byte and 8-byte sizes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result4 = Atomics.isLockFree(4);
@@ -486,12 +486,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest026
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0026
-     * @tc.name atomicsIsLockFreeTest026
-     * @tc.desc Test Atomics.isLockFree with max safe integer (2^53 - 1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with max safe integer (2^53 - 1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const maxSafeInt = Number.MAX_SAFE_INTEGER; // 9007199254740991
@@ -500,12 +500,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest027
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0027
-     * @tc.name atomicsIsLockFreeTest027
-     * @tc.desc Test Atomics.isLockFree with min safe integer (-2^53 + 1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with min safe integer (-2^53 + 1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const minSafeInt = Number.MIN_SAFE_INTEGER; // -9007199254740991
@@ -514,12 +514,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest028
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0028
-     * @tc.name atomicsIsLockFreeTest028
-     * @tc.desc Test Atomics.isLockFree with NaN argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with NaN argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = Atomics.isLockFree(NaN);
@@ -527,12 +527,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest029
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0029
-     * @tc.name atomicsIsLockFreeTest029
-     * @tc.desc Test Atomics.isLockFree with Infinity argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with Infinity argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = Atomics.isLockFree(Infinity);
@@ -540,12 +540,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest030
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0030
-     * @tc.name atomicsIsLockFreeTest030
-     * @tc.desc Test Atomics.isLockFree with -Infinity argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with -Infinity argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = Atomics.isLockFree(-Infinity);
@@ -553,12 +553,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest031
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0031
-     * @tc.name atomicsIsLockFreeTest031
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in nested function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in nested function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const nestedCheck = (): boolean => {
@@ -571,12 +571,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest032
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0032
-     * @tc.name atomicsIsLockFreeTest032
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in async IIFE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in async IIFE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await (async () => {
@@ -588,12 +588,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest033
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0033
-     * @tc.name atomicsIsLockFreeTest033
-     * @tc.desc Test Atomics.isLockFree with typed array BYTES_PER_ELEMENT constant (Int8Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with typed array BYTES_PER_ELEMENT constant (Int8Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = Int8Array.BYTES_PER_ELEMENT; // 1
@@ -602,12 +602,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest034
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0034
-     * @tc.name atomicsIsLockFreeTest034
-     * @tc.desc Test Atomics.isLockFree with typed array BYTES_PER_ELEMENT constant (Uint32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with typed array BYTES_PER_ELEMENT constant (Uint32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = Uint32Array.BYTES_PER_ELEMENT; // 4
@@ -616,12 +616,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest035
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0035
-     * @tc.name atomicsIsLockFreeTest035
-     * @tc.desc Test Atomics.isLockFree with typed array BYTES_PER_ELEMENT constant (BigInt64Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Atomics.isLockFree with typed array BYTES_PER_ELEMENT constant (BigInt64Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsIsLockFreeTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const elementSize = BigInt64Array.BYTES_PER_ELEMENT; // 8
@@ -630,12 +630,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest036
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0036
-     * @tc.name atomicsIsLockFreeTest036
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in Promise.race
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in Promise.race
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const raceResult = await Promise.race([
@@ -647,12 +647,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest037
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0037
-     * @tc.name atomicsIsLockFreeTest037
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await Promise.all([
@@ -665,12 +665,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest038
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0038
-     * @tc.name atomicsIsLockFreeTest038
-     * @tc.desc Test Atomics.isLockFree with 1-byte size and post-validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size and post-validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = Atomics.isLockFree(1);
@@ -679,12 +679,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest039
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0039
-     * @tc.name atomicsIsLockFreeTest039
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in conditional check
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in conditional check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = 2;
@@ -700,12 +700,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest040
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0040
-     * @tc.name atomicsIsLockFreeTest040
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in loop (multiple iterations)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in loop (multiple iterations)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = 4;
@@ -725,12 +725,12 @@ export default function atomicsIsLockFreeTest() {
 
 
     /**
+     * @tc.name   atomicsIsLockFreeTest041
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0041
-     * @tc.name atomicsIsLockFreeTest041
-     * @tc.desc Test Atomics.isLockFree with mixed valid/invalid sizes in async loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with mixed valid/invalid sizes in async loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sizes = [1, 3, 4, 6, 8, -2]; // Valid:1/4/8; Invalid:3/6/-2
@@ -756,12 +756,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest042
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0042
-     * @tc.name atomicsIsLockFreeTest042
-     * @tc.desc Test nested async functions with Atomics.isLockFree (8-byte size)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested async functions with Atomics.isLockFree (8-byte size)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Outer async function
@@ -779,24 +779,24 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest043
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0043
-     * @tc.name atomicsIsLockFreeTest043
-     * @tc.desc Test Atomics.isLockFree with invalid string coercion in Promise.catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with invalid string coercion in Promise.catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(Atomics.isLockFree(Number.EPSILON)).assertEqual(false);
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest044
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0044
-     * @tc.name atomicsIsLockFreeTest044
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in Promise.allSettled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in Promise.allSettled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises = [
@@ -818,12 +818,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest045
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0045
-     * @tc.name atomicsIsLockFreeTest045
-     * @tc.desc Test Atomics.isLockFree with dynamic size from async API mock
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with dynamic size from async API mock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Mock async API to get element size
@@ -839,12 +839,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest046
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0046
-     * @tc.name atomicsIsLockFreeTest046
-     * @tc.desc Test nested conditional check with Atomics.isLockFree (1-byte size)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested conditional check with Atomics.isLockFree (1-byte size)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const checkLockFree = async (size: number): Promise<string> => {
@@ -866,12 +866,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest047
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0047
-     * @tc.name atomicsIsLockFreeTest047
-     * @tc.desc Test Atomics.isLockFree with BigInt coercion error handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with BigInt coercion error handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const asyncBigIntCheck = async () => {
@@ -890,12 +890,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest048
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0048
-     * @tc.name atomicsIsLockFreeTest048
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in async closure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in async closure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const createLockCheckClosure = (size: number) => {
@@ -912,12 +912,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest049
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0049
-     * @tc.name atomicsIsLockFreeTest049
-     * @tc.desc Test Atomics.isLockFree with mixed sizes in Promise.race
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with mixed sizes in Promise.race
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const racePromises = [
@@ -941,12 +941,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest050
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0050
-     * @tc.name atomicsIsLockFreeTest050
-     * @tc.desc Test Atomics.isLockFree with 8-byte size and async cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size and async cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let cleanupCalled = false;
@@ -968,12 +968,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest051
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0051
-     * @tc.name atomicsIsLockFreeTest051
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in async generator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in async generator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const results: type51[] = await atomicsIsLockFreeTest051();
@@ -990,12 +990,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest052
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0052
-     * @tc.name atomicsIsLockFreeTest052
-     * @tc.desc Test Atomics.isLockFree with invalid object coercion in nested try/catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with invalid object coercion in nested try/catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const nestedErrorCheck = async () => {
@@ -1019,12 +1019,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest053
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0053
-     * @tc.name atomicsIsLockFreeTest053
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in Promise chain with transform
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in Promise chain with transform
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await Promise.resolve(4) // Start with size 4
@@ -1042,12 +1042,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest054
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0054
-     * @tc.name atomicsIsLockFreeTest054
-     * @tc.desc Test Atomics.isLockFree with 2-byte size and async validation callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size and async validation callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const validateResult = async (isFree: boolean, callback: (valid: boolean) => void) => {
@@ -1067,12 +1067,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest055
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0055
-     * @tc.name atomicsIsLockFreeTest055
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in parallel with other checks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in parallel with other checks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const parallelTasks = [
@@ -1093,12 +1093,12 @@ export default function atomicsIsLockFreeTest() {
       expect(lockCheckResult?.result).assertEqual(true);
     });
     /**
+     * @tc.name   atomicsIsLockFreeTest056
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0056
-     * @tc.name atomicsIsLockFreeTest056
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in async retry logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in async retry logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let retryCount = 0;
@@ -1122,12 +1122,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest057
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0057
-     * @tc.name atomicsIsLockFreeTest057
-     * @tc.desc Test Atomics.isLockFree with 4-byte size and nested Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size and nested Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const nestedTasks = [
@@ -1144,12 +1144,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest058
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0058
-     * @tc.name atomicsIsLockFreeTest058
-     * @tc.desc Test Atomics.isLockFree with invalid array coercion and error logging
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with invalid array coercion and error logging
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let errorLogged = false;
@@ -1172,12 +1172,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest059
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0059
-     * @tc.name atomicsIsLockFreeTest059
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in async conditional chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in async conditional chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const size = 8;
@@ -1203,12 +1203,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest060
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0060
-     * @tc.name atomicsIsLockFreeTest060
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in async IIFE with validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in async IIFE with validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const validationResult = await (async () => {
@@ -1229,12 +1229,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest061
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0061
-     * @tc.name atomicsIsLockFreeTest061
-     * @tc.desc Test Atomics.isLockFree with mixed valid/invalid sizes in Promise.allSettled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with mixed valid/invalid sizes in Promise.allSettled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const promises = [
@@ -1257,12 +1257,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest062
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0062
-     * @tc.name atomicsIsLockFreeTest062
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in nested async closure chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in nested async closure chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const createOuterClosure = () => {
@@ -1285,12 +1285,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest063
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0063
-     * @tc.name atomicsIsLockFreeTest063
-     * @tc.desc Test Atomics.isLockFree with 1-byte size and async timeout fallback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size and async timeout fallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const raceResult = await Promise.race([
@@ -1312,12 +1312,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest064
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0064
-     * @tc.name atomicsIsLockFreeTest064
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in async loop with result caching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in async loop with result caching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const size = 8;
@@ -1340,12 +1340,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest065
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0065
-     * @tc.name atomicsIsLockFreeTest065
-     * @tc.desc Test Atomics.isLockFree with invalid NaN coercion in async error handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with invalid NaN coercion in async error handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const asyncNaNCheck = async () => {
@@ -1363,12 +1363,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest066
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0066
-     * @tc.name atomicsIsLockFreeTest066
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in Promise chain with cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in Promise chain with cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let cleanupExecuted = false;
@@ -1389,12 +1389,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest067
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0067
-     * @tc.name atomicsIsLockFreeTest067
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in async generator with validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in async generator with validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const results: type67[] = await atomicsIsLockFreeTest067();
@@ -1412,12 +1412,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest068
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0068
-     * @tc.name atomicsIsLockFreeTest068
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in parallel async tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in parallel async tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const taskCount = 3;
@@ -1436,12 +1436,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest069
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0069
-     * @tc.name atomicsIsLockFreeTest069
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in nested try/catch/finally
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in nested try/catch/finally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let tryExecuted = false;
@@ -1470,12 +1470,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest070
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0070
-     * @tc.name atomicsIsLockFreeTest070
-     * @tc.desc Test Atomics.isLockFree with mixed sizes and async result aggregation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with mixed sizes and async result aggregation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sizes = [1, 2, 3, 4, 6, 8];
@@ -1507,12 +1507,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest071
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0071
-     * @tc.name atomicsIsLockFreeTest071
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in async function with parameter validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in async function with parameter validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const validateAndCheck = async (size: number): Promise<typeLock71> => {
@@ -1539,12 +1539,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest072
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0072
-     * @tc.name atomicsIsLockFreeTest072
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in nested Promise.race
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in nested Promise.race
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const innerRace = () => {
@@ -1564,12 +1564,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest073
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0073
-     * @tc.name atomicsIsLockFreeTest073
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in async loop with early exit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in async loop with early exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sizes = [1, 1, 1, 5, 1]; // Early exit when invalid size is hit
@@ -1598,12 +1598,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest074
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0074
-     * @tc.name atomicsIsLockFreeTest074
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in async closure with state preservation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in async closure with state preservation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const createStatefulChecker = (initialSize: number) => {
@@ -1630,12 +1630,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest075
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0075
-     * @tc.name atomicsIsLockFreeTest075
-     * @tc.desc Test Atomics.isLockFree with invalid -Infinity coercion in async error flow
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with invalid -Infinity coercion in async error flow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const asyncInvalidInfinityCheck = async () => {
@@ -1659,12 +1659,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest076
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0076
-     * @tc.name atomicsIsLockFreeTest076
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in Promise.all with mixed tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in Promise.all with mixed tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mixedTasks = [
@@ -1695,12 +1695,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest077
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0077
-     * @tc.name atomicsIsLockFreeTest077
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in async generator with early return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in async generator with early return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const results: type77[] = await atomicsIsLockFreeTest077();
@@ -1713,12 +1713,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest078
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0078
-     * @tc.name atomicsIsLockFreeTest078
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in nested async validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in nested async validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const outerValidation = async (size: number) => {
@@ -1741,12 +1741,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest079
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0079
-     * @tc.name atomicsIsLockFreeTest079
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in async function with retries on invalid state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in async function with retries on invalid state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let simulateInvalidState = true;
@@ -1771,12 +1771,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest080
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0080
-     * @tc.name atomicsIsLockFreeTest080
-     * @tc.desc Test Atomics.isLockFree with mixed valid/invalid sizes in async result filtering
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with mixed valid/invalid sizes in async result filtering
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sizes = [1, 3, 4, 6, 8, -2];
@@ -1799,12 +1799,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest081
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0081
-     * @tc.name atomicsIsLockFreeTest081
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in Promise.race with error promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in Promise.race with error promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const raceResult = await Promise.race([
@@ -1826,12 +1826,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest082
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0082
-     * @tc.name atomicsIsLockFreeTest082
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in async closure with parameter capture
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in async closure with parameter capture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const createChecker = (baseSize: number) => {
@@ -1851,12 +1851,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest083
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0083
-     * @tc.name atomicsIsLockFreeTest083
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in async loop with result logging
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in async loop with result logging
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const iterations = 3;
@@ -1878,12 +1878,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest084
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0084
-     * @tc.name atomicsIsLockFreeTest084
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in nested Promise chain with validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in nested Promise chain with validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const finalValidation = await Promise.resolve(8)
@@ -1910,24 +1910,24 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest085
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0085
-     * @tc.name atomicsIsLockFreeTest085
-     * @tc.desc Test Atomics.isLockFree with invalid object coercion in async batch check
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with invalid object coercion in async batch check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(Atomics.isLockFree(Number.MIN_VALUE)).assertEqual(false);
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest086
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0086
-     * @tc.name atomicsIsLockFreeTest086
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in async function with state reset
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in async function with state reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let state: 'idle' | 'checking' | 'done' = 'idle';
@@ -1948,12 +1948,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest087
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0087
-     * @tc.name atomicsIsLockFreeTest087
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in Promise.allSettled with error simulation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in Promise.allSettled with error simulation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const promises = [
@@ -1980,12 +1980,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest088
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0088
-     * @tc.name atomicsIsLockFreeTest088
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in async generator with error handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in async generator with error handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const results: type88[] = await atomicsIsLockFreeTest088();
@@ -2003,12 +2003,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest089
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0089
-     * @tc.name atomicsIsLockFreeTest089
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in nested async closure with parameter validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in nested async closure with parameter validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const createOuterClosure = (minSize: number, maxSize: number) => {
@@ -2035,12 +2035,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest090
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0090
-     * @tc.name atomicsIsLockFreeTest090
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in async loop with result aggregation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in async loop with result aggregation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const iterations = 4;
@@ -2068,12 +2068,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest091
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0091
-     * @tc.name atomicsIsLockFreeTest091
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in Promise.race with multiple checkers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in Promise.race with multiple checkers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Create 3 identical checkers with different delays
@@ -2093,12 +2093,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest092
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0092
-     * @tc.name atomicsIsLockFreeTest092
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in async function with dynamic validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in async function with dynamic validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const dynamicValidate = async (size: number, validSizes: number[]): Promise<boolean> => {
@@ -2119,12 +2119,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest093
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0093
-     * @tc.name atomicsIsLockFreeTest093
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in nested Promise chain with cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in nested Promise chain with cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let cleanupCalled = false;
@@ -2149,12 +2149,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest094
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0094
-     * @tc.name atomicsIsLockFreeTest094
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in async batch check with progress tracking
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in async batch check with progress tracking
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const batchSize = 3;
@@ -2176,24 +2176,24 @@ export default function atomicsIsLockFreeTest() {
 
 
     /**
+     * @tc.name   atomicsIsLockFreeTest095
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0095
-     * @tc.name atomicsIsLockFreeTest095
-     * @tc.desc Test Atomics.isLockFree with 2-byte size in async closure with memory cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 2-byte size in async closure with memory cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(Atomics.isLockFree(Number.POSITIVE_INFINITY)).assertEqual(false);
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest096
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0096
-     * @tc.name atomicsIsLockFreeTest096
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in async loop with result validation callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in async loop with result validation callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const iterations = 3;
@@ -2218,12 +2218,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest097
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0097
-     * @tc.name atomicsIsLockFreeTest097
-     * @tc.desc Test Atomics.isLockFree with 8-byte size in nested Promise.race with fallback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 8-byte size in nested Promise.race with fallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const innerRace = (size: number) => {
@@ -2243,12 +2243,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest098
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0098
-     * @tc.name atomicsIsLockFreeTest098
-     * @tc.desc Test Atomics.isLockFree with 1-byte size in async function with dynamic size adjustment
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with 1-byte size in async function with dynamic size adjustment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const adjustSizeAndCheck = async (baseSize: number, offset: number) => {
@@ -2269,12 +2269,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest099
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0099
-     * @tc.name atomicsIsLockFreeTest099
-     * @tc.desc Test Atomics.isLockFree with 4-byte size in async generator with result filtering
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.isLockFree with 4-byte size in async generator with result filtering
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsIsLockFreeTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const filteredResults: type51[] = await atomicsIsLockFreeTest099();
@@ -2292,12 +2292,12 @@ export default function atomicsIsLockFreeTest() {
     });
 
     /**
+     * @tc.name   atomicsIsLockFreeTest0100
      * @tc.number SUB_BUILTINS_Atomics_isLockFree_TEST_0100
-     * @tc.name atomicsIsLockFreeTest0100
-     * @tc.desc Test Atomics.isLockFree with all valid sizes (1/2/4/8) in async batch validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree with all valid sizes (1/2/4/8) in async batch validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const validSizes = [1, 2, 4, 8];

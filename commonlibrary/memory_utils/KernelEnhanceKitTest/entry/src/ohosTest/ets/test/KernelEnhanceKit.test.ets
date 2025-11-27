@@ -43,12 +43,12 @@ export default function KernelEnhanceKitTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number    SUB_CstandardLibrary_calloc
-     * @tc.name      SUB_CstandardLibrary_calloc
-     * @tc.desc      test CstandardLibrary_calloc
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_calloc
+     * @tc.number SUB_CstandardLibrary_calloc
+     * @tc.desc   test CstandardLibrary_calloc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_calloc', Level.LEVEL1, () => {
       try {
@@ -61,12 +61,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_realloc
-     * @tc.name      SUB_CstandardLibrary_realloc
-     * @tc.desc      test CstandardLibrary_realloc
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_realloc
+     * @tc.number SUB_CstandardLibrary_realloc
+     * @tc.desc   test CstandardLibrary_realloc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_realloc', Level.LEVEL1, () => {
       try {
@@ -79,12 +79,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_valloc
-     * @tc.name      SUB_CstandardLibrary_valloc
-     * @tc.desc      test CstandardLibrary_valloc
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_valloc
+     * @tc.number SUB_CstandardLibrary_valloc
+     * @tc.desc   test CstandardLibrary_valloc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_valloc', Level.LEVEL1, () => {
       try {
@@ -97,12 +97,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_memalign
-     * @tc.name      SUB_CstandardLibrary_memalign
-     * @tc.desc      test CstandardLibrary_memalign
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_memalign
+     * @tc.number SUB_CstandardLibrary_memalign
+     * @tc.desc   test CstandardLibrary_memalign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_memalign', Level.LEVEL1, () => {
       try {
@@ -115,12 +115,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo
-     * @tc.name      SUB_CstandardLibrary_mallinfo
-     * @tc.desc      test CstandardLibrary_mallinfo
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_mallinfo
+     * @tc.number SUB_CstandardLibrary_mallinfo
+     * @tc.desc   test CstandardLibrary_mallinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_mallinfo', Level.LEVEL1, () => {
       try {
@@ -133,12 +133,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2
-     * @tc.name      SUB_CstandardLibrary_mallinfo2
-     * @tc.desc      test CstandardLibrary_mallinfo2
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_mallinfo2
+     * @tc.number SUB_CstandardLibrary_mallinfo2
+     * @tc.desc   test CstandardLibrary_mallinfo2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_mallinfo2', Level.LEVEL1, () => {
       try {
@@ -151,12 +151,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_malloc_check_from_ptr
-     * @tc.name      SUB_CstandardLibrary_malloc_check_from_ptr
-     * @tc.desc      test CstandardLibrary_mallinfo2_keepcost
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_malloc_check_from_ptr
+     * @tc.number SUB_CstandardLibrary_malloc_check_from_ptr
+     * @tc.desc   test CstandardLibrary_mallinfo2_keepcost
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_malloc_check_from_ptr', Level.LEVEL1, () => {
       try {
