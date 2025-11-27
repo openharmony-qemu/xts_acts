@@ -22,21 +22,22 @@ struct SwiperContentUpdateOne {
       })
       Swiper(this.swiperController) {
         Column() {
-          Text("SwiperItem1")
+          Text('SwiperItem1')
         }.width('100%').height('100%').backgroundColor('#00CB87')
 
         Column() {
-          Text("SwiperItem2")
+          Text('SwiperItem2')
         }.width('100%').height('100%').backgroundColor('#007DFF')
 
         Column() {
-          Text("SwiperItem3")
+          Text('SwiperItem3')
         }.width('100%').height('100%').backgroundColor('#FFBF00')
 
         Column() {
-          Text("SwiperItem4")
+          Text('SwiperItem4')
         }.width('100%').height('100%').backgroundColor('#E67C92')
       }
+      .id('swiperId')
       .width('100%')
       .height('80%')
     }

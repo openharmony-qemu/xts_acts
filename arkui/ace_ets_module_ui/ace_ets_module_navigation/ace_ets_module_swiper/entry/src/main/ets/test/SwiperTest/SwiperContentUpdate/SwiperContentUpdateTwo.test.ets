@@ -72,9 +72,15 @@ export default function SwiperContentUpdateTwo() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text('on'));
       await button.click();
+      console.info("SwiperContentUpdateTwo_0100 button click");
+      let swiperComponent = await driver.findComponent(ON.type('Swiper'));
+      let point = await swiperComponent.getBoundsCenter();
+      let x = point.x;
+      let y = point.y;
+      await driver.swipe(Math.round(x), Math.round(y), Math.round(x + 10), Math.round(y));
       await CommonFunc.sleep(2000);
       let value: SwiperContentInfo = AppStorage.get('swiperContentInfo') as SwiperContentInfo
-      expect(value !== null).assertTrue();
+      expect(value?.id === 'swiperId').assertTrue();
       AppStorage.delete('swiperContentInfo')
       await CommonFunc.sleep(1000);
 
@@ -82,7 +88,7 @@ export default function SwiperContentUpdateTwo() {
       await button2.click();
       await CommonFunc.sleep(2000);
       let value2: SwiperContentInfo | undefined = AppStorage.get('swiperContentInfo');
-      expect(value2 == null).assertTrue();
+      expect(value2 == undefined).assertTrue();
       console.info('SwiperContentUpdateTwo_0100 END');
       done();
     });
