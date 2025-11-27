@@ -2476,6 +2476,10 @@ export default function mdnsTest() {
         let discoveryService = mdns.createDiscoveryService(context, serviceType);
         discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
           console.log(`${caseName} result: ${JSON.stringify(data)}`);
+          console.log(`${caseName} serviceInfo: ${JSON.stringify(data.serviceInfo)}`);
+          if (data.errorCode !== undefined) {
+            console.log(`${caseName} errorCode: ${JSON.stringify(data.errorCode)}`);
+          }
           ExpectTrue(data !== null, caseName);
           done();
         });
