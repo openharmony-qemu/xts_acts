@@ -41,12 +41,12 @@ export default function APIScrollflingSpeedLimitJsunit() {
       done();
     });
     /**
+     * @tc.name   APIScrollflingSpeedLimitJsunit_0100
      * @tc.number APIScrollflingSpeedLimitJsunit_0100
-     * @tc.name testScrollFlingSpeedLimit
-     * @tc.desc set flingSpeedLimit to 10
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   set flingSpeedLimit to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('APIScrollflingSpeedLimitJsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);

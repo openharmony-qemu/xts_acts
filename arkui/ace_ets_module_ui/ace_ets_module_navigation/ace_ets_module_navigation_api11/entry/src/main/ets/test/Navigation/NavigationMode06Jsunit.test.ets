@@ -53,12 +53,14 @@ export default function NavigationMode06Jsunit() {
       }
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_MODE_0140
-   * @tc.name  : NavigationMode06Jsunit_0100
-   * @tc.desc  : When the sum of minNavBarWidth and minContentWidth is greater than the navigation width, change minNavBarWidth to make minNavBarWidth and minContentWidth less than the navigation width.
-   * @tc.level : Level 3
-   */
+    /**
+     * @tc.name   NavigationMode06Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_MODE_0140
+     * @tc.desc   When the sum of minNavBarWidth and minContentWidth is greater than the navigation width, change minNavBarWidth to make minNavBarWidth and minContentWidth less than the navigation width.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationMode06Jsunit_0100',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

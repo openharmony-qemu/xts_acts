@@ -46,10 +46,12 @@ export default function flex_Wrap_DisplayPriorityTest() {
       console.info("Flex_Wrap_DisplayPriority after each called");
     });
     /**
+     * @tc.name   testWrapWrapTextDisplayPriority
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_0100
-     * @tc.name testWrapWrapTextDisplayPriority
-     * @tc.desc The size of the parent component in the main axis direction meets the layout
-     *               of the child components,and displaypriority of the child components set different values
+     * @tc.desc   The size of the parent component in the main axis direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapTextDisplayPriority',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextDisplayPriority] START');

@@ -21,6 +21,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Component, Driver, On, ON } from '@ohos.UiTest';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
 
 const ExpectTrue = (n: boolean) => {
   try {
@@ -76,6 +77,10 @@ async function getComponent(driver: Driver, onType: On) {
 export default function SaveToExistingContactViaUITest() {
   describe('SaveToExistingContactViaUITest', () => {
 
+    let fileName = 'SaveToExistingContactViaUITest.jpg';
+    SavePhoto(fileName);
+    let uri = GetUri(fileName);
+
     let contactDataNull: contact.Contact = {
     };
     let contactData: contact.Contact = {
@@ -106,7 +111,7 @@ export default function SaveToExistingContactViaUITest() {
         phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
       }],
       portrait: {
-        uri: "content://head/0"
+        uri: uri
       },
       postalAddresses: [{
         city: "南京",

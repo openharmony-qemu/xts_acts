@@ -113,10 +113,10 @@ async function resetAndCallbackOff() {
   await avPlayer!!.reset().then(() => {
     console.info('case reset AVPlayer success');
   }).catch(mediaTestBase.catchCallback);
-  avPlayer!!.off('stateChange');
-  avPlayer!!.off('trackChange');
-  avPlayer!!.off('error');
-  avPlayer!!.off('endOfStream');
+  avPlayer!!.offStateChange();
+  avPlayer!!.offTrackChange();
+  avPlayer!!.offError();
+  avPlayer!!.offEndOfStream();
   console.info('case now stopped, to release');
   await avPlayer!!.release().then(() => {
     console.info('case release AVPlayer success');
@@ -184,17 +184,17 @@ async function testChangeTrack(fd: media.AVFileDescriptor, preparedOp: () => Pro
     }
   }).catch(mediaTestBase.catchCallback);
 
-  avPlayer!!.on('stateChange', (state, reason) => {
+  avPlayer!!.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     await handleState(state, preparedOp, playedOp, stoppedOp);
   });
-  avPlayer!!.on('trackChange', (index, isSelection) => {
+  avPlayer!!.onTrackChange((index, isSelection) => {
     console.info(`case trackChange called, index is ${index}, isSelection is ${isSelection}`);
   });
-  avPlayer!!.on('error', (err) => {
+  avPlayer!!.onError((err) => {
     console.error(`case error called, errMessage is ${err.message}`);
   });
-  avPlayer!!.on('endOfStream', () => {
+  avPlayer!!.onEndOfStream(() => {
     if (extraOp) {
       extraOp();
     }

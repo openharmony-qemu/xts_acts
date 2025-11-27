@@ -4414,5 +4414,90 @@ export default function audioNDK() {
         expect(true).assertTrue();
         done();
       })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_STREAMMANAGER_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_001
+     * @tc.name      : IsIntelligentNoiseReductionEnabledForCurrentDevice
+     * @tc.desc      : IsIntelligentNoiseReductionEnabledForCurrentDevice
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_STREAMMANAGER_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.isIntelligentNoiseReductionEnabledForCurrentDevice_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_STREAMMANAGER_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_002();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_003();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_004();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001
+     * @tc.name      : BluetoothAndNearlinkPreferredRecordCategory
+     * @tc.desc      : BluetoothAndNearlinkPreferredRecordCategory
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.bluetoothAndNearlinkPreferredRecordCategory_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
   })
 }

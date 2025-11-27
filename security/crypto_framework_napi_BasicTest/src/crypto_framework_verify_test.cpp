@@ -1824,4 +1824,66 @@ HWTEST_F(OHCryptoFrameworkVerifyNapiTest, SUB_Security_CryptoFramework_NAPI_Veri
     HcfBlobDataClearAndFree(&signData);
 }
 
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_Verify_Test_2700
+* @tc.name OHCryptoFrameworkVerifyNapiTest/VERIFY_PKCS1_TEST.SUB_Security_CryptoFramework_NAPI_Verify_Test_2700/x
+* @tc.desc algorithm is Verify
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_P(VERIFY_PKCS1_TEST, SUB_Security_CryptoFramework_NAPI_Verify_Test_2700, TestSize.Level0)
+{
+    VerifySpec verifyData = GetParam();
+    HcfSign *signObj = nullptr;
+    OH_CryptoAsymKeyGenerator *keyCtx = nullptr;
+    OH_CryptoKeyPair *keyPair = nullptr;
+    int32_t msgLen = verifyData.msgLen;
+    HcfRand *randomObj = nullptr;
+    HcfBlob msgBlob = {0};
+    HcfBlob signData = {.data = nullptr, .len = 0};
+    OH_CryptoVerify *verify = nullptr;
+    Crypto_DataBlob n = {.data = nullptr, .len = 0};
+
+    HcfRandCreate(&randomObj);
+    ASSERT_TRUE(randomObj != nullptr);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, msgLen, &msgBlob), HCF_SUCCESS);
+    ASSERT_EQ(OH_CryptoAsymKeyGenerator_Create((const char *)verifyData.keyAlgName, &keyCtx), CRYPTO_SUCCESS);
+    // keypair
+    if (strcmp((const char *)verifyData.keyAlgName, "RSA8192") == 0) {
+        Crypto_DataBlob priKeyBlob = { .data = g_rsa8192priKey, .len = sizeof(g_rsa8192priKey) };
+        ASSERT_EQ(OH_CryptoAsymKeyGenerator_Convert(keyCtx, CRYPTO_DER, nullptr, &priKeyBlob, &keyPair), CRYPTO_SUCCESS);
+    } else if (strcmp((const char *)verifyData.keyAlgName, "RSA4096") == 0) {
+        Crypto_DataBlob priKeyBlob = { .data = g_rsa4096priKey, .len = sizeof(g_rsa4096priKey) };
+        ASSERT_EQ(OH_CryptoAsymKeyGenerator_Convert(keyCtx, CRYPTO_DER, nullptr, &priKeyBlob, &keyPair), CRYPTO_SUCCESS);
+    } else if (strcmp((const char *)verifyData.keyAlgName, "RSA3072") == 0) {
+        Crypto_DataBlob priKeyBlob = { .data = g_rsa3072priKey, .len = sizeof(g_rsa3072priKey) };
+        ASSERT_EQ(OH_CryptoAsymKeyGenerator_Convert(keyCtx, CRYPTO_DER, nullptr, &priKeyBlob, &keyPair), CRYPTO_SUCCESS);
+    } else {
+        ASSERT_EQ(OH_CryptoAsymKeyGenerator_Generate(keyCtx, &keyPair), CRYPTO_SUCCESS);
+    }
+    OH_CryptoPubKey *pubKey = OH_CryptoKeyPair_GetPubKey(keyPair);
+    ASSERT_NE(pubKey, nullptr);
+    ASSERT_EQ(OH_CryptoPubKey_GetParam(pubKey, CRYPTO_RSA_N_DATABLOB, &n), CRYPTO_SUCCESS);
+    // sign
+    ASSERT_EQ(HcfSignCreate((const char *)verifyData.signAlgName, &signObj), HCF_SUCCESS);
+    ASSERT_EQ(signObj->init(signObj, nullptr, ((HcfKeyPair *)keyPair)->priKey), HCF_SUCCESS);
+    ASSERT_EQ(signObj->sign(signObj, &msgBlob, &signData), HCF_SUCCESS);
+    // verify
+    ASSERT_EQ(OH_CryptoVerify_Create((const char *)verifyData.verifyAlgName, &verify), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoVerify_Init(verify, pubKey), CRYPTO_SUCCESS);
+    ASSERT_TRUE(OH_CryptoVerify_Final(verify, (Crypto_DataBlob *)&msgBlob, (Crypto_DataBlob *)&signData));
+    const char * getVerifyAlgName = OH_CryptoVerify_GetAlgoName(verify);
+    ASSERT_TRUE(memcmp(getVerifyAlgName, (const char *)verifyData.verifyAlgName, strlen((const char *)verifyData.verifyAlgName)) == 0);
+
+    HcfObjDestroy(signObj);
+    OH_CryptoVerify_Destroy(verify);
+    HcfObjDestroy(randomObj);
+    OH_Crypto_FreeDataBlob(&n);
+    OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
+    OH_CryptoKeyPair_Destroy(keyPair);
+    HcfBlobDataClearAndFree(&msgBlob);
+    HcfBlobDataClearAndFree(&signData);
+}
+
 } // namespace Unittest::CryptoFrameworkVerifyNapiTest

@@ -42,12 +42,12 @@ export default function alphabetIndexerJsunit() {
     })
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0101
      * @tc.number ArkUI_AlphabetIndexer_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set font values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0101', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0101 start");
@@ -57,12 +57,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0102
      * @tc.number ArkUI_AlphabetIndexer_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0102', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0102 start");
@@ -73,12 +73,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0103
      * @tc.number ArkUI_AlphabetIndexer_0103
-     * @tc.name Test the properties of components
-     * @tc.desc Set color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set color values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0103', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0103 start");
@@ -89,12 +89,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0104
      * @tc.number ArkUI_AlphabetIndexer_0104
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0104', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0104 start");
@@ -105,12 +105,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0105
      * @tc.number ArkUI_AlphabetIndexer_0105
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedBackgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedBackgroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0105', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0105 start");
@@ -121,12 +121,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0106
      * @tc.number ArkUI_AlphabetIndexer_0106
-     * @tc.name Test the properties of components
-     * @tc.desc Set itemSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set itemSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0106', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0106 start");
@@ -137,12 +137,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0107
      * @tc.number ArkUI_AlphabetIndexer_0107
-     * @tc.name Test the properties of components
-     * @tc.desc Set usingPopup values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set usingPopup values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0107', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0107 start");
@@ -158,6 +158,14 @@ export default function alphabetIndexerJsunit() {
      * @tc.type Function
      * @tc.level 0
      */
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_0108
+     * @tc.number ArkUI_AlphabetIndexer_0108
+     * @tc.desc   ArkUI_AlphabetIndexer_0108
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUI_AlphabetIndexer_0108', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0108 start");
       let strJson = getInspectorByKey('alphabetIndexerTest1');
@@ -167,12 +175,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0109
      * @tc.number ArkUI_AlphabetIndexer_0109
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0109', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0109 start");
@@ -183,12 +191,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0110
      * @tc.number ArkUI_AlphabetIndexer_0110
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0110', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0110 start");
@@ -199,12 +207,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0111
      * @tc.number ArkUI_AlphabetIndexer_0111
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupBackground values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupBackground values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0111', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0111 start");
@@ -215,12 +223,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0112
      * @tc.number ArkUI_AlphabetIndexer_0112
-     * @tc.name Test the properties of components
-     * @tc.desc Set selected values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selected values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0112', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0112 start");
@@ -231,12 +239,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0113
      * @tc.number ArkUI_AlphabetIndexer_0113
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupPosition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupPosition values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0113', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0113 start");
@@ -247,12 +255,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0114
      * @tc.number ArkUI_AlphabetIndexer_0114
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupSelectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupSelectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0114', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0114 start");
@@ -263,12 +271,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0115
      * @tc.number ArkUI_AlphabetIndexer_0115
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupUnselectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupUnselectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0115', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0115 start");
@@ -279,12 +287,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0116
      * @tc.number ArkUI_AlphabetIndexer_0116
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupItemBackground values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupItemBackground values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0116', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0116 start");
@@ -295,12 +303,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0117
      * @tc.number ArkUI_AlphabetIndexer_0117
-     * @tc.name Test the properties of components
-     * @tc.desc Set popupItemFontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set popupItemFontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0117', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0117 start");
@@ -310,12 +318,12 @@ export default function alphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_AlphabetIndexer_0118
      * @tc.number ArkUI_AlphabetIndexer_0118
-     * @tc.name Test the properties of components
-     * @tc.desc Change selected values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change selected values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_AlphabetIndexer_0118', Level.LEVEL0, async (done: Function) => {
 

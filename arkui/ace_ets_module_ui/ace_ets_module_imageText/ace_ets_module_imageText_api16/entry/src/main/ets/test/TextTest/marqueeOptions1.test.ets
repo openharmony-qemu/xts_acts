@@ -49,12 +49,12 @@ export default function marqueeOptionsTest1() {
     });
 	
     /**
+     * @tc.name   marqueeOptionsTest1_001
      * @tc.number marqueeOptionsTest1
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('marqueeOptionsTest1_001', Level.LEVEL3, async (done: Function) => {
       console.info('[marqueeOptionsTest1_001] START');
@@ -74,6 +74,14 @@ export default function marqueeOptionsTest1() {
       done();
     });
     
+    /**
+     * @tc.name   onMarqueeStateChangeTest_001
+     * @tc.number onMarqueeStateChangeTest_001
+     * @tc.desc   onMarqueeStateChangeTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('onMarqueeStateChangeTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[onMarqueeStateChangeTest_001] START');
       await CommonFunc.sleep(1000);

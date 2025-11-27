@@ -64,6 +64,14 @@ export default function StateArrayJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   StateArrayJsunit_0100
+     * @tc.number StateArrayJsunit_0100
+     * @tc.desc   StateArrayJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0100 START');
@@ -76,6 +84,14 @@ export default function StateArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayJsunit_0200
+     * @tc.number StateArrayJsunit_0200
+     * @tc.desc   StateArrayJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0200 START');
@@ -92,6 +108,14 @@ export default function StateArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayJsunit_0300
+     * @tc.number StateArrayJsunit_0300
+     * @tc.desc   StateArrayJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0300 START');
@@ -108,6 +132,14 @@ export default function StateArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayJsunit_0400
+     * @tc.number StateArrayJsunit_0400
+     * @tc.desc   StateArrayJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0400 START');
@@ -124,6 +156,14 @@ export default function StateArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayJsunit_0500
+     * @tc.number StateArrayJsunit_0500
+     * @tc.desc   StateArrayJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayJsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0500 START');
@@ -136,6 +176,14 @@ export default function StateArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayJsunit_0600
+     * @tc.number StateArrayJsunit_0600
+     * @tc.desc   StateArrayJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0600 START');
@@ -152,6 +200,14 @@ export default function StateArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayJsunit_0700
+     * @tc.number StateArrayJsunit_0700
+     * @tc.desc   StateArrayJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayJsunit_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0700 START');

@@ -67,8 +67,9 @@ export default class SetMissionLabel extends EmbeddableUIAbility {
 
   onForeground(): void {
     hilog.info(0x0000, 'testTAG', '%{public}s', 'Ability onForeground');
-    this.context.terminateSelf(()=>{
-    });
+    setTimeout(() => { 
+      this.context.terminateSelf(); 
+    }, 500);
   }
 
   onBackground(): void {

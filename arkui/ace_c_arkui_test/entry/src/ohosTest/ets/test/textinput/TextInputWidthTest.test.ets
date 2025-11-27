@@ -26,39 +26,39 @@ export default function textInputWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WIDTH_0100
-     * @tc.name: testTextInputWidth001
-     * @tc.desc: testing width for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWidth001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WIDTH_0100
+     * @tc.desc   testing width for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WIDTH_0200
-     * @tc.name: testTextInputWidth002
-     * @tc.desc: testing width for textInput with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextInputWidth002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WIDTH_0200
+     * @tc.desc   testing width for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WIDTH_0300
-     * @tc.name: testTextInputWidth003
-     * @tc.desc: testing width for textInput with large value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWidth003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WIDTH_0300
+     * @tc.desc   testing width for textInput with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWidth003()).assertEqual(0)

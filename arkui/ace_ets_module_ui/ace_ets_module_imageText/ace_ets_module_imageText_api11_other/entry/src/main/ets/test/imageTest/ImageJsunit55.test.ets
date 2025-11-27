@@ -44,6 +44,14 @@ export default function imageJsunit55() {
       console.info("image after each called");
     });
 
+    /**
+     * @tc.name   imageTest_0100
+     * @tc.number imageTest_0100
+     * @tc.desc   imageTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('imageTest_0100 START');
       await CommonFunc.sleep(4000);
@@ -56,6 +64,14 @@ export default function imageJsunit55() {
       done();
     });
 
+    /**
+     * @tc.name   imageTest_0200
+     * @tc.number imageTest_0200
+     * @tc.desc   imageTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('imageTest_0200 START');
       await CommonFunc.sleep(3000);

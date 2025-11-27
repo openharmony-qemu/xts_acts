@@ -33,13 +33,13 @@ export default function lastExitReasonStaticTest() {
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 start EntryAbility');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
-     * @tc.name   : SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
-     * @tc.desc   : Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
+     * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7900`;
@@ -70,13 +70,13 @@ export default function lastExitReasonStaticTest() {
       }
     })
     
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
-     * @tc.name   : SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
-     * @tc.desc   : Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
+     * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7901', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7901`;

@@ -41,15 +41,15 @@ export default function RenderNodeShadowRadiusJsSuit() {
       done()
     });
 
-    /**
-     * @tc.number: SUB_ACE_COMPONENT_RenderNodeShadowRadiusJsSuit_0100
-     * @tc.name : RenderNodeShadowRadiusJsSuit_0100
-     * @tc.desc  : set api
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   RenderNodeShadowRadiusJsSuit_0100
+     * @tc.number RenderNodeShadowRadiusJsSuit_0100
+     * @tc.desc   RenderNodeShadowRadiusJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderNodeShadowRadiusJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RenderNodeShadowRadiusJsSuit_0100] START');
       let driver = await Driver.create()

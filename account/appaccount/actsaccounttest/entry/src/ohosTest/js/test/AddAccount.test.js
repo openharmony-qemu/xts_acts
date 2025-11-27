@@ -21,11 +21,14 @@ const LENGTHLIMIT = 1024;
 export default function ActsAccountAddAccount() {
   describe('ActsAccountAddAccount', function () {
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0100
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Add account in callback form without additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0100
+     * @tc.number ActsAccountAddAccount_0100
+     * @tc.desc   Add account in callback form without additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsAccountAddAccount_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsAccountAddAccount_0100 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -42,11 +45,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0200
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Add account in promise form without additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0200
+     * @tc.number ActsAccountAddAccount_0200
+     * @tc.desc   Add account in promise form without additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsAccountAddAccount_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsAccountAddAccount_0200 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -68,11 +74,14 @@ export default function ActsAccountAddAccount() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0300
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Add account in callback form with additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0300
+     * @tc.number ActsAccountAddAccount_0300
+     * @tc.desc   Add account in callback form with additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsAccountAddAccount_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsAccountAddAccount_0300 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -89,11 +98,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0400
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Add account in promise form with additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0400
+     * @tc.number ActsAccountAddAccount_0400
+     * @tc.desc   Add account in promise form with additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsAccountAddAccount_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsAccountAddAccount_0400 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -116,11 +128,14 @@ export default function ActsAccountAddAccount() {
     });
 
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0500
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Repeatedly add the same name account and the same additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0500
+     * @tc.number ActsAccountAddAccount_0500
+     * @tc.desc   Repeatedly add the same name account and the same additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_0500 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -140,11 +155,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0600
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Repeatedly add the same name account and the same additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0600
+     * @tc.number ActsAccountAddAccount_0600
+     * @tc.desc   Repeatedly add the same name account and the same additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_0600 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -162,11 +180,14 @@ export default function ActsAccountAddAccount() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0700
-    * @tc.name      : Add account callback form
-    * @tc.desc      : The account name exceeds the length limit of 512 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0700
+     * @tc.number ActsAccountAddAccount_0700
+     * @tc.desc   The account name exceeds the length limit of 512 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_0700 start====");
       var limitAccountName = '';
@@ -182,11 +203,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0800
-    * @tc.name      : Add account promise form
-    * @tc.desc      : The account name exceeds the length limit of 512 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0800
+     * @tc.number ActsAccountAddAccount_0800
+     * @tc.desc   The account name exceeds the length limit of 512 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_0800 start====");
       var limitAccountName = '';
@@ -206,11 +230,14 @@ export default function ActsAccountAddAccount() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_0900
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Additional information exceeds the length limit of 1024 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_0900
+     * @tc.number ActsAccountAddAccount_0900
+     * @tc.desc   Additional information exceeds the length limit of 1024 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_0900 start====");
       var limitAccountExtra = '';
@@ -226,11 +253,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1000
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Additional information exceeds the length limit of 1024 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1000
+     * @tc.number ActsAccountAddAccount_1000
+     * @tc.desc   Additional information exceeds the length limit of 1024 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1000 start====");
       var limitAccountExtra = '';
@@ -248,11 +278,14 @@ export default function ActsAccountAddAccount() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1100
-    * @tc.name      : Add account callback form
-    * @tc.desc      : The account name is an empty string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1100
+     * @tc.number ActsAccountAddAccount_1100
+     * @tc.desc   The account name is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1100 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -264,11 +297,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1200
-    * @tc.name      : Add account promise form
-    * @tc.desc      : The account name is an empty string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1200
+     * @tc.number ActsAccountAddAccount_1200
+     * @tc.desc   The account name is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1200 start====");
       console.info("====>ActsAccountAddAccount_1200 add account start====");
@@ -283,11 +319,14 @@ export default function ActsAccountAddAccount() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1300
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Additional information is an empty string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1300
+     * @tc.number ActsAccountAddAccount_1300
+     * @tc.desc   Additional information is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1300 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -303,11 +342,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1400
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Additional information is an empty string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1400
+     * @tc.number ActsAccountAddAccount_1400
+     * @tc.desc   Additional information is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1400 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -327,11 +369,14 @@ export default function ActsAccountAddAccount() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1500
-    * @tc.name      : Add account callback form
-    * @tc.desc      : The account name is a special character such as a space
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1500
+     * @tc.number ActsAccountAddAccount_1500
+     * @tc.desc   The account name is a special character such as a space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1500 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -344,11 +389,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1600
-    * @tc.name      : Add account promise form
-    * @tc.desc      : The account name is a special character such as a space
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1600
+     * @tc.number ActsAccountAddAccount_1600
+     * @tc.desc   The account name is a special character such as a space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1600 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -365,11 +413,14 @@ export default function ActsAccountAddAccount() {
     });
 
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1700
-    * @tc.name      : Add account callback form
-    * @tc.desc      : The account name is a special string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1700
+     * @tc.number ActsAccountAddAccount_1700
+     * @tc.desc   The account name is a special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1700 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -386,11 +437,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1800
-    * @tc.name      : Add account promise form
-    * @tc.desc      : The account name is a special string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1800
+     * @tc.number ActsAccountAddAccount_1800
+     * @tc.desc   The account name is a special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1800 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -412,11 +466,14 @@ export default function ActsAccountAddAccount() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_1900
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Additional information is a special character such as a space
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_1900
+     * @tc.number ActsAccountAddAccount_1900
+     * @tc.desc   Additional information is a special character such as a space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_1900 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -433,11 +490,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2000
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Additional information is a special character such as a space
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2000
+     * @tc.number ActsAccountAddAccount_2000
+     * @tc.desc   Additional information is a special character such as a space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_2000 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -459,11 +519,14 @@ export default function ActsAccountAddAccount() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2100
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Additional information is a special string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2100
+     * @tc.number ActsAccountAddAccount_2100
+     * @tc.desc   Additional information is a special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_2100 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -480,11 +543,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2200
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Additional information is a special string
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2200
+     * @tc.number ActsAccountAddAccount_2200
+     * @tc.desc   Additional information is a special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_2200 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -507,11 +573,14 @@ export default function ActsAccountAddAccount() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2300
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Repeatedly add accounts with the same name and different additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2300
+     * @tc.number ActsAccountAddAccount_2300
+     * @tc.desc   Repeatedly add accounts with the same name and different additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_2300 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -531,11 +600,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2400
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Repeatedly add accounts with the same name and different additional information
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2400
+     * @tc.number ActsAccountAddAccount_2400
+     * @tc.desc   Repeatedly add accounts with the same name and different additional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountAddAccount_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsAccountAddAccount_2400 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -553,11 +625,14 @@ export default function ActsAccountAddAccount() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2500
-    * @tc.name      : Add account callback form
-    * @tc.desc      : The account name reaches the limit of 512 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2500
+     * @tc.number ActsAccountAddAccount_2500
+     * @tc.desc   The account name reaches the limit of 512 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('ActsAccountAddAccount_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
       console.info("====>ActsAccountAddAccount_2500 start====");
       var limitName = '';
@@ -577,11 +652,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2600
-    * @tc.name      : Add account promise form
-    * @tc.desc      : The account name reaches the limit of 512 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2600
+     * @tc.number ActsAccountAddAccount_2600
+     * @tc.desc   The account name reaches the limit of 512 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('ActsAccountAddAccount_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
       console.info("====>ActsAccountAddAccount_2600 start====");
       var nameLimit = '';
@@ -606,11 +684,14 @@ export default function ActsAccountAddAccount() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2700
-    * @tc.name      : Add account callback form
-    * @tc.desc      : Additional information reaches the limit of 1024 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2700
+     * @tc.number ActsAccountAddAccount_2700
+     * @tc.desc   Additional information reaches the limit of 1024 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('ActsAccountAddAccount_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
       console.info("====>ActsAccountAddAccount_2700 start====");
       var limitExtra = '';
@@ -630,11 +711,14 @@ export default function ActsAccountAddAccount() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountAddAccount_2800
-    * @tc.name      : Add account promise form
-    * @tc.desc      : Additional information reaches the limit of 1024 characters
-    */
+    /**
+     * @tc.name   ActsAccountAddAccount_2800
+     * @tc.number ActsAccountAddAccount_2800
+     * @tc.desc   Additional information reaches the limit of 1024 characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('ActsAccountAddAccount_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
       console.info("====>ActsAccountAddAccount_2800 start====");
       var extraLimit = '';

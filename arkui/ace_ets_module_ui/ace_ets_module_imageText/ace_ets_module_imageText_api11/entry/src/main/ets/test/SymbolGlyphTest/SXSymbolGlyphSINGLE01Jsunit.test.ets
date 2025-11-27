@@ -41,6 +41,14 @@ export default function SXSymbolGlyphSINGLE01Jsunit() {
       done();
     });
     
+    /**
+     * @tc.name   SXSymbolGlyphSINGLE01Jsunit_0100
+     * @tc.number SXSymbolGlyphSINGLE01Jsunit_0100
+     * @tc.desc   SXSymbolGlyphSINGLE01Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SXSymbolGlyphSINGLE01Jsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('SXSymbolGlyphSINGLE01Jsunit_0100 START');

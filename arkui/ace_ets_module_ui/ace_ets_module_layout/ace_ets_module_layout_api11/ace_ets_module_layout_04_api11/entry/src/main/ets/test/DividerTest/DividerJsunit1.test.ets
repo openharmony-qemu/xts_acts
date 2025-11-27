@@ -48,12 +48,12 @@ export default function DividerJsunit() {
       console.info("divider after each called");
     })
     /**
+     * @tc.name   testDividerColor01
      * @tc.number testDividerColor01
-     * @tc.name   Test the color property of the divider component
      * @tc.desc   set the color property value is resourceColor
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDividerColor01',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testDividerColor01';

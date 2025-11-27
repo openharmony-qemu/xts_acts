@@ -40,13 +40,13 @@ export default function requirementPanGestureTest() {
 
     let PAGE_TAG = 'RequirementPanGestureTest';
 
-        /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0001
-     * @tc.name       : testRequirementPanGesture001
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture001
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0001
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -54,13 +54,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper1').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0002
-     * @tc.name       : testRequirementPanGesture002
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture002
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0002
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -68,13 +68,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper2').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0003
-     * @tc.name       : testRequirementPanGesture003
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture003
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0003
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -82,13 +82,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper3').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0004
-     * @tc.name       : testRequirementPanGesture004
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture004
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0004
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -96,13 +96,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper4').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0005
-     * @tc.name       : testRequirementPanGesture005
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture005
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0005
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture005', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -110,13 +110,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper5').$attrs.backgroundColor).assertEqual('#00000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0006
-     * @tc.name       : testRequirementPanGesture006
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture006
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0006
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -124,13 +124,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper6').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0007
-     * @tc.name       : testRequirementPanGesture007
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture007
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0007
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture007', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -138,13 +138,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper7').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0008
-     * @tc.name       : testRequirementPanGesture008
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture008
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0008
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture008', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -152,13 +152,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper8').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0009
-     * @tc.name       : testRequirementPanGesture009
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture009
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0009
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture009', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
@@ -166,13 +166,13 @@ export default function requirementPanGestureTest() {
       expect(Utils.getComponentInfoByKey('swiper9').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0010
-     * @tc.name       : testRequirementPanGesture010
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testRequirementPanGesture010
+     * @tc.number SUB_ARKUI_CAPI_REQUIREMENT_PAN_GESTURE_0010
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRequirementPanGesture010', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);

@@ -45,10 +45,13 @@ export default function gridColXlJsunit() {
       console.info("gridColXl after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testgridColXl0001
-     * @tc.desic         acegridColXlEtsTest0001
+    /**
+     * @tc.name   testgridColXl0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testgridColXl0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgridColXl0001', Level.LEVEL1, async (done: Function) => {
       console.info('gridColXl testgridColXl0001 START');
@@ -61,10 +64,13 @@ export default function gridColXlJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testgridColXl0002
-     * @tc.desic         acegridColXlEtsTest0002
+    /**
+     * @tc.name   testgridColXl0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testgridColXl0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgridColXl0002', Level.LEVEL1, async (done: Function) => {
       console.info('gridColXl testgridColXl0002 START');

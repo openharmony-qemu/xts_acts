@@ -58,13 +58,15 @@ export default function counterApi() {
       console.info("counterApi after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_CounterComponent_001
-     * @tc.desc onFocusIncrease test of CounterComponent
-     * @tc.level Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   counterApi_001
+     * @tc.number counterApi_001
+     * @tc.desc   counterApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('counterApi_001', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_001] START');
       await CommonFunc.sleep(1000);
@@ -84,13 +86,15 @@ export default function counterApi() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_CounterComponent_002
-     * @tc.desc onBlurIncrease and onFocusDecrease test of CounterComponent
-     * @tc.level Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   counterApi_002
+     * @tc.number counterApi_002
+     * @tc.desc   counterApi_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('counterApi_002', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_002] START');
       await CommonFunc.sleep(1000);
@@ -112,13 +116,15 @@ export default function counterApi() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_CounterComponent_003
-     * @tc.desc onBlurDecrease test of CounterComponent
-     * @tc.level Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   counterApi_003
+     * @tc.number counterApi_003
+     * @tc.desc   counterApi_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('counterApi_003', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_003] START');
       await CommonFunc.sleep(1000);

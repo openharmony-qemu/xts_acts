@@ -81,6 +81,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeNoProgressContent = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -134,6 +135,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeNoProgressContentArrayBuffer = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -180,6 +182,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeContent = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -234,6 +237,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeContentArrayBuffer = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -281,6 +285,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorDeliveryModeNull = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -313,6 +318,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorCompatibleModeNull = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -344,6 +350,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorProgressHandlerNull = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -375,6 +382,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorDeliveryModeUndefined = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -407,6 +415,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorCompatibleModeUndefined = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -439,6 +448,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorProgressHandlerUndefined = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -471,6 +481,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorDeliveryModeOutlier = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -503,6 +514,7 @@ export default function getMovingPhotoTranscodeTest() {
     
     const requestMovingPhotoErrorCompatibleModeOutlier = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -535,6 +547,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorProgressHandlerOutlier = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {

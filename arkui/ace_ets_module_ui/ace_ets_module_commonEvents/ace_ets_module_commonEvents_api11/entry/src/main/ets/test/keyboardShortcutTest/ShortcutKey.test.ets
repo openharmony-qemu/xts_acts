@@ -96,10 +96,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       await CommonFunc.sleep(2000)
     });
 
-    /*
-     *tc.number ArkUI_Shortcut_Key_0100
-     *tc.name   Custom keyboard shortcuts
-     *tc.desc   Custom keyboard shortcuts
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0100
+     * @tc.number ArkUI_Shortcut_Key_0100
+     * @tc.desc   Custom keyboard shortcuts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Shortcut_Key_0100', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0100'
@@ -120,10 +123,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info(`${SUITE} ${CASE} END`);
     });
 
-    /*
-     *tc.number ArkUI_Shortcut_Key_0200
-     *tc.name   Custom keyboard shortcuts
-     *tc.desc   Custom keyboard shortcuts
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0200
+     * @tc.number ArkUI_Shortcut_Key_0200
+     * @tc.desc   Custom keyboard shortcuts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Shortcut_Key_0200', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0200'
@@ -144,10 +150,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info(`${SUITE} ${CASE} END`);
     });
 
-    /*
-     *tc.number ArkUI_Shortcut_Key_0300
-     *tc.name   Custom keyboard shortcuts
-     *tc.desc   Custom keyboard shortcuts
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0300
+     * @tc.number ArkUI_Shortcut_Key_0300
+     * @tc.desc   Custom keyboard shortcuts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Shortcut_Key_0300', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0300'
@@ -168,10 +177,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info(`${SUITE} ${CASE} END`);
     });
 
-    /*
-     *tc.number ArkUI_Shortcut_Key_0400
-     *tc.name   Custom keyboard shortcuts
-     *tc.desc   Custom keyboard shortcuts
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0400
+     * @tc.number ArkUI_Shortcut_Key_0400
+     * @tc.desc   Custom keyboard shortcuts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Shortcut_Key_0400', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0400'

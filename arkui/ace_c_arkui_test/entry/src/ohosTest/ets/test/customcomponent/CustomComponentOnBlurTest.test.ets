@@ -26,14 +26,14 @@ export default function customComponentOnBlurTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONBLUR_0100
-    * @tc.name       : testCustomComponentOnBlur001
-    * @tc.desc       : test onBlur event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnBlur001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONBLUR_0100
+     * @tc.desc   test onBlur event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnBlur001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnBlurTestCustomComponentCompare')
       await Utils.sleep(2000)
@@ -44,14 +44,14 @@ export default function customComponentOnBlurTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONBLUR_0200
-    * @tc.name       : testCustomComponentOnBlur002
-    * @tc.desc       : test onBlur event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnBlur002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONBLUR_0200
+     * @tc.desc   test onBlur event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnBlur002', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnBlurTestCustomComponentDisable')
       await Utils.sleep(2000)

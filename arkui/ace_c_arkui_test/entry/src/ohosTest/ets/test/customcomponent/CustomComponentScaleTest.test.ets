@@ -26,65 +26,65 @@ export default function customComponentScaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0100
-     * @tc.name       : testCustomComponentScale001
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentScale001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0100
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentScale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0200
-     * @tc.name       : testCustomComponentScale002
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentScale002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0200
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentScale002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0300
-     * @tc.name       : testCustomComponentScale003
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentScale003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0300
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentScale003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0400
-     * @tc.name       : testCustomComponentScale004
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentScale004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0400
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentScale004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentScale004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0500
-     * @tc.name       : testCustomComponentScale005
-     * @tc.desc       : testing scale for flex with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentScale005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SCALE_0500
+     * @tc.desc   testing scale for flex with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentScale005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentScale005()).assertEqual(0)

@@ -26,49 +26,49 @@ export default function textInputTextSelectionTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0001
-     * @tc.name: testTextInputTextSelection001
-     * @tc.desc: testing textSelection for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputTextSelection001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0001
+     * @tc.desc   testing textSelection for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextSelection001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelection001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0002
-     * @tc.name: testTextInputTextSelection002
-     * @tc.desc: testing textSelection for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputTextSelection002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0002
+     * @tc.desc   testing textSelection for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextSelection002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelection002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0003
-     * @tc.name: testTextInputTextSelection003
-     * @tc.desc: testing textSelection for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputTextSelection003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0003
+     * @tc.desc   testing textSelection for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextSelection003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelection003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0004
-     * @tc.name: testTextInputTextSelection004
-     * @tc.desc: testing textSelection for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputTextSelection004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXT_SELECTION_0004
+     * @tc.desc   testing textSelection for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextSelection004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelection004()).assertEqual(0)

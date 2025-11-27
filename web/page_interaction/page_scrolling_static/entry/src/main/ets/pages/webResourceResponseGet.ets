@@ -19,7 +19,7 @@ import { Hypium } from '../../../hypium';
 import testsuite from '../../src/test/List.test';
 import webView from '@ohos.web.webview';
 import { Callback } from '@ohos.base'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
 import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
@@ -84,7 +84,7 @@ struct webResourceResponseGet {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

@@ -47,9 +47,12 @@ export default function flexHeightModify_EndJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignEndDefaultSize
      * @tc.number SUB_ACE_FLEXALIGNITEMS_END_0800
-     * @tc.name testFlexItemAlignEndDefaultSize
-     * @tc.desc Check the the default height of the first subcomponent.
+     * @tc.desc   Check the the default height of the first subcomponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignEndDefaultSize',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignEndDefaultSize START');
@@ -81,9 +84,12 @@ export default function flexHeightModify_EndJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignEndHeightModify
      * @tc.number SUB_ACE_FLEXALIGNITEMS_END_0900
-     * @tc.name testFlexItemAlignEndHeightModify
-     * @tc.desc Modify the first subcomponent's height.
+     * @tc.desc   Modify the first subcomponent's height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignEndHeightModify',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignEndHeightModify START');

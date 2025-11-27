@@ -53,12 +53,12 @@ export default function interstitialdialogactionTest() {
     });
 
     /**
+     * @tc.name   interstitialdialogactionTest_0100
      * @tc.number interstitialdialogaction
-     * @tc.name interstitialdialogactionTest_0100
-     * @tc.desc Test interstitialdialogaction
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test interstitialdialogaction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('interstitialdialogactionTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[interstitialdialogactionTest_0100] START');

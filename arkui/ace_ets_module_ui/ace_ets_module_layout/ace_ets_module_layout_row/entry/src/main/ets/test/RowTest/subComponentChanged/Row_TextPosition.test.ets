@@ -45,9 +45,12 @@ export default function row_TextPositionTest() {
       console.info("Row_TextSizeTest after each called");
     });
     /**
+     * @tc.name   testRowTextPosition
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1200
-     * @tc.name testRowTextPosition
-     * @tc.desc The position of first subcomponent changed
+     * @tc.desc   The position of first subcomponent changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextPosition',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextPosition] START');

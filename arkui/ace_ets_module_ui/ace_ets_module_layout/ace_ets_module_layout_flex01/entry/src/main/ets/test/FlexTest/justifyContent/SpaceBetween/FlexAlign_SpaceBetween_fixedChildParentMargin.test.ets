@@ -49,9 +49,12 @@ export default function flexAlign_SpaceBetween_fixedChildParentMargin() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapMargin
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_0500
-     * @tc.name testAlignSpaceBetweenRowNoWrapMargin
-     * @tc.desc The child component is fixed, and the parent component is bound with margin attributes
+     * @tc.desc   The child component is fixed, and the parent component is bound with margin attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapMargin',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapMargin START');

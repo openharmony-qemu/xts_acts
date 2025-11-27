@@ -48,12 +48,12 @@ export default function FrameNodeNullTest() {
     });
 
     /**
-     * @tc.number    FrameNodeNullTest_0100
-     * @tc.name      FrameNodeNullTest_0100
-     * @tc.desc      getFrameNode null test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   FrameNodeNullTest_0100
+     * @tc.number FrameNodeNullTest_0100
+     * @tc.desc   getFrameNode null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FrameNodeNullTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('FrameNodeNullTest_0100 START');

@@ -25,6 +25,14 @@ export default function mediaqueryTest() {
             test = "success"
         });
 
+        /**
+         * @tc.name   addListener
+         * @tc.number addListener
+         * @tc.desc   addListener
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('addListener', Level.LEVEL0, function() {
             console.info('MediaQuery addListener start');
             var mMediaQueryList = mediaquery.matchMedia('(min-height:0)');
@@ -47,6 +55,14 @@ export default function mediaqueryTest() {
             // }
         });
 
+        /**
+         * @tc.name   matchMedia
+         * @tc.number matchMedia
+         * @tc.desc   matchMedia
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('matchMedia', Level.LEVEL0, function() {
             console.info('matchMedia start');
             var mMediaQueryList = mediaquery.matchMedia('(min-height:0)');
@@ -71,6 +87,14 @@ export default function mediaqueryTest() {
             mMediaQueryList.addListener(minWidthMatch);
         });
 
+        /**
+         * @tc.name   orientation
+         * @tc.number orientation
+         * @tc.desc   orientation
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('orientation', Level.LEVEL0, function() {
             console.info('orientation test start');
             var mMediaQueryList = mediaquery.matchMedia('(orientation:landscape)');
@@ -92,6 +116,14 @@ export default function mediaqueryTest() {
             console.info('MediaQuery orientation test end')
         });
 
+        /**
+         * @tc.name   rmeoveListener
+         * @tc.number rmeoveListener
+         * @tc.desc   rmeoveListener
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('rmeoveListener', Level.LEVEL0, function() {
             console.info('rmeoveListener start');
             var mMediaQueryList = mediaquery.matchMedia('(max-width:466)');
@@ -111,6 +143,14 @@ export default function mediaqueryTest() {
             console.info('MediaQuery removeListener end')
         });
 
+        /**
+         * @tc.name   maxHeight
+         * @tc.number maxHeight
+         * @tc.desc   maxHeight
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('maxHeight', Level.LEVEL0, function() {
             console.info('maxHeight start');
             var mMediaQueryList = mediaquery.matchMedia('(max-width:10000)');
@@ -131,6 +171,14 @@ export default function mediaqueryTest() {
             console.info('MediaQuery maxHeight end')
         });
 
+        /**
+         * @tc.name   deviceType
+         * @tc.number deviceType
+         * @tc.desc   deviceType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('deviceType', Level.LEVEL0, function() {
             console.info('deviceType start');
             var mMediaQueryList = mediaquery.matchMedia('(deviceType:phone)');
@@ -149,6 +197,14 @@ export default function mediaqueryTest() {
             console.info('MediaQuery deviceType end')
         });
 
+        /**
+         * @tc.name   logicOnly
+         * @tc.number logicOnly
+         * @tc.desc   logicOnly
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('logicOnly', Level.LEVEL0, function() {
             console.info('MediaQuery logicOnly start');
             var mMediaQueryList = mediaquery.matchMedia('only screen and(deviceType:phone)and(max-height:100000)');
@@ -168,6 +224,14 @@ export default function mediaqueryTest() {
                 //}
         });
 
+        /**
+         * @tc.name   logicNot
+         * @tc.number logicNot
+         * @tc.desc   logicNot
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('logicNot', Level.LEVEL0, function() {
             console.info('logicOnly start');
             var mMediaQueryList = mediaquery.matchMedia('not screen and(deviceType:tv)');
@@ -187,6 +251,14 @@ export default function mediaqueryTest() {
                 //}
         });
 
+        /**
+         * @tc.name   logicAnd
+         * @tc.number logicAnd
+         * @tc.desc   logicAnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('logicAnd', Level.LEVEL0, function() {
             console.info('MediaQuery logicAnd start');
             var mMediaQueryList = mediaquery.matchMedia('screen and(deviceType:phone)');
@@ -207,6 +279,14 @@ export default function mediaqueryTest() {
             console.info('MediaQuery logicAnd end')
         });
 
+        /**
+         * @tc.name   logicComma
+         * @tc.number logicComma
+         * @tc.desc   logicComma
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('logicComma', Level.LEVEL0, function() {
             console.info('MediaQuery logicComma start');
             var mMediaQueryList = mediaquery.matchMedia('screen and(min-height:0),(round-screen:true)');
@@ -227,6 +307,14 @@ export default function mediaqueryTest() {
             console.info('MediaQuery logicComma end')
         });
 
+        /**
+         * @tc.name   logicOr
+         * @tc.number logicOr
+         * @tc.desc   logicOr
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('logicOr', Level.LEVEL0, function() {
             console.info('MediaQuery logicOr start');
             var mMediaQueryList = mediaquery.matchMedia('screen and(max-device-height:2000)or(round-screen:true)');
@@ -247,6 +335,14 @@ export default function mediaqueryTest() {
             console.info('MediaQuery logicOr end')
         });
 
+        /**
+         * @tc.name   logic1
+         * @tc.number logic1
+         * @tc.desc   logic1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('logic1', Level.LEVEL0, function() {
             console.info('MediaQuery logic>= start');
             var mMediaQueryList = mediaquery.matchMedia('screen and(height>=0)');

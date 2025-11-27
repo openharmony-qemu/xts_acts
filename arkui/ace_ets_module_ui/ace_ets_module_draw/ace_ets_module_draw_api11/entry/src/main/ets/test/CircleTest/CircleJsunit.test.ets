@@ -45,6 +45,14 @@ export default function circleJsunit() {
       console.info("circle after each called");
     });
 
+    /**
+     * @tc.name   circleTest_0100
+     * @tc.number circleTest_0100
+     * @tc.desc   circleTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('circleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('circleTest_0100 START');
       let strJson = getInspectorByKey('circle');
@@ -56,6 +64,14 @@ export default function circleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   circleTest_0200
+     * @tc.number circleTest_0200
+     * @tc.desc   circleTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('circleTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[circleTest_0200] START');
       try {
@@ -84,6 +100,14 @@ export default function circleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   circleTest_0300
+     * @tc.number circleTest_0300
+     * @tc.desc   circleTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('circleTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[circleTest_0300] START');
       try {

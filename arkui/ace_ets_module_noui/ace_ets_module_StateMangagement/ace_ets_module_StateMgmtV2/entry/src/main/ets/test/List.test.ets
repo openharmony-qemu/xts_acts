@@ -65,7 +65,9 @@ import ASV20010Test from './appstoragev2/ASV20010Test.test';
 import persistenceV2 from './StorageTest/persistenceV2.test';
 import EventTest from './EventTest/Event.test';
 import LocalTest0140 from './local/LocalTest0140.test';
-
+import Consumer0130Test from './consumerTest/Consumer0130Test.test';
+import Consumer0140Test from './consumerTest/Consumer0140Test.test';
+import Consumer0170Test from './consumerTest/Consumer0170Test.test';
 export default function testsuite() {
 	ArrayLikeStringTest();
     PerGlobalConnectTest();
@@ -118,6 +120,8 @@ export default function testsuite() {
     persistenceV2();
     EventTest();
     LocalTest0140();
-
+    Consumer0130Test();
+    Consumer0140Test();
+    Consumer0170Test();
 
 }

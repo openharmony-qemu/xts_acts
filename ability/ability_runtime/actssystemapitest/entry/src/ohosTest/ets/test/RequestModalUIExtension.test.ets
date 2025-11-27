@@ -23,10 +23,13 @@ export default function RequestModalUIExtension() {
   describe('ACTS_RequestModalUIExtension', () => {
     let TAG = "";
 
-    /*
-     * @tc.number  : ACTS_UIExtension_RequestModalUIExtension001
-     * @tc.name    : test request Modal UIExtension
-     * @tc.desc    : request Modal UIExtension by want
+    /**
+     * @tc.name   ACTS_RequestModalUIExtension001
+     * @tc.number ACTS_UIExtension_RequestModalUIExtension001
+     * @tc.desc   request Modal UIExtension by want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RequestModalUIExtension001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_RequestModalUIExtension001 == ';
@@ -56,10 +59,13 @@ export default function RequestModalUIExtension() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_RequestModalUIExtension002
-     * @tc.name    : test request Modal UIExtension
-     * @tc.desc    : request Modal UIExtension by want
+    /**
+     * @tc.name   ACTS_RequestModalUIExtension002
+     * @tc.number ACTS_UIExtension_RequestModalUIExtension002
+     * @tc.desc   request Modal UIExtension by want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RequestModalUIExtension002', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_RequestModalUIExtension002 == ';

@@ -41,12 +41,12 @@ export default function qrCodeJsunit() {
     });
 
     /**
+     * @tc.name   test_qrCode_001
      * @tc.number test_qrCode_001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_001', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_001] START');
@@ -59,12 +59,12 @@ export default function qrCodeJsunit() {
     });
 
     /**
+     * @tc.name   test_qrCode_002
      * @tc.number test_qrCode_002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_002', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_002] START');
@@ -79,12 +79,12 @@ export default function qrCodeJsunit() {
     });
 
     /**
+     * @tc.name   test_qrCode_003
      * @tc.number test_qrCode_003
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_003', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_003] START');

@@ -26,65 +26,65 @@ export default function textInputStopEditingTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0100
-     * @tc.name: testTextInputStopEditing001
-     * @tc.desc: testing stopEditing for textInput with 'true'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputStopEditing001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0100
+     * @tc.desc   testing stopEditing for textInput with 'true'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputStopEditing001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputStopEditing001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0200
-     * @tc.name: testTextInputStopEditing002
-     * @tc.desc: testing stopEditing for textInput with 'false'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputStopEditing002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0200
+     * @tc.desc   testing stopEditing for textInput with 'false'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputStopEditing002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputStopEditing002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0300
-     * @tc.name: testTextInputStopEditing003
-     * @tc.desc: testing stopEditing for textInput with 'false'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputStopEditing003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0300
+     * @tc.desc   testing stopEditing for textInput with 'false'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputStopEditing003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputStopEditing003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0400
-     * @tc.name: testTextInputStopEditing004
-     * @tc.desc: testing stopEditing for textInput with 'false'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextInputStopEditing004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0400
+     * @tc.desc   testing stopEditing for textInput with 'false'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputStopEditing004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputStopEditing004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0500
-     * @tc.name: testTextInputStopEditing005
-     * @tc.desc: testing stopEditing for textInput with 'false'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextInputStopEditing005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_STOPEDITING_0500
+     * @tc.desc   testing stopEditing for textInput with 'false'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputStopEditing005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputStopEditing005()).assertEqual(0)

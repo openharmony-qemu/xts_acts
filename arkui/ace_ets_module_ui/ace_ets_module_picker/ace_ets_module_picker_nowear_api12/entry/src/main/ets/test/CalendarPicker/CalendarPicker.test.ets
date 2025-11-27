@@ -42,12 +42,12 @@ export default function calendarPickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_0100
      * @tc.number ArkUI_Stage_CalendarPicker_attributeModifier_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_Stage_CalendarPicker_0100] START');
@@ -64,12 +64,12 @@ export default function calendarPickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_attributeModifier_0101
      * @tc.number ArkUI_Stage_CalendarPicker_attributeModifier_0101
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_attributeModifier_0101', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_Stage_CalendarPicker_attributeModifier_0101] START');

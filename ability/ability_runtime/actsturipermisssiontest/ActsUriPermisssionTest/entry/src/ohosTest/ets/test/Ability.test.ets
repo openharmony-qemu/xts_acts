@@ -21,11 +21,13 @@ let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    /*
-     * @tc.number: Acts_UriPermisssion_0100
-     * @tc.name: UriPermission on demand start and stop
-     * @tc.desc: UriPermission on demand start and stop
-     * @tc.level:1
+    /**
+     * @tc.name   Acts_UriPermisssion_0100
+     * @tc.number Acts_UriPermisssion_0100
+     * @tc.desc   UriPermission on demand start and stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_UriPermisssion_0100', Level.LEVEL0, async (done: Function) => {
       console.log('Acts_UriPermisssion_0100 start.');

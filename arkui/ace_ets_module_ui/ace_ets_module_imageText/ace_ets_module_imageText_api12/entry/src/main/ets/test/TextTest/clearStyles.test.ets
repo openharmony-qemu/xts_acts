@@ -45,12 +45,12 @@ export default function clearStyles() {
       console.info("clearStyles after each called");
     });
     /**
-     * @tc.number    clearStyles_0100
-     * @tc.name      clearStyles_0100
-     * @tc.desc      A buttonclearStyles drops 6,5
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   clearStyles_0100
+     * @tc.number clearStyles_0100
+     * @tc.desc   A buttonclearStyles drops 6,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('clearStyles_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[clearStyles_0100] START');

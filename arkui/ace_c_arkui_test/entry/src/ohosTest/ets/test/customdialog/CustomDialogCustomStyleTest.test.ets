@@ -26,26 +26,26 @@ export default function customDialogCustomStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_CUSTOMSTYLE_0100
-     * @tc.name       : testCustomDialogCustomStyle001
-     * @tc.desc       : testing customStyle for customDialog with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomDialogCustomStyle001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_CUSTOMSTYLE_0100
+     * @tc.desc   testing customStyle for customDialog with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogCustomStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogCustomStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_CUSTOMSTYLE_0200
-     * @tc.name       : testCustomDialogCustomStyle002
-     * @tc.desc       : testing customStyle for customDialog with abnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomDialogCustomStyle002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_CUSTOMSTYLE_0200
+     * @tc.desc   testing customStyle for customDialog with abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogCustomStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogCustomStyle002()).assertEqual(0)

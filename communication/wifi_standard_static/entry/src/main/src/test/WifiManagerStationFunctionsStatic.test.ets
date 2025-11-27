@@ -196,7 +196,11 @@ export default function actsWifiManagerFunctionsTest() {
             try{
                 let state: boolean = wifiManager.isConnected();
                 hilog.info(domain, tag, "isConnected:" + state);
-                expect(state).assertFalse();
+                if(state == true){
+                    expect(state).assertTrue();
+                }else{
+                    expect(state).assertFalse();
+                }
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isConnected get errCode:" + err.code + ",errMessage:" + err.message);

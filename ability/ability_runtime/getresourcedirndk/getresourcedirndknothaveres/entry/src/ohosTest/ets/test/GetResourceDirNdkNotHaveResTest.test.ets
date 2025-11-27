@@ -32,13 +32,13 @@ export default function getResourceDirNdkNotHaveResTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700
-     * @tc.desc: Obtain the resource path of the entry module (no resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700
+     * @tc.desc   Obtain the resource path of the entry module (no resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700';
@@ -52,13 +52,13 @@ export default function getResourceDirNdkNotHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1800
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1800
-     * @tc.desc: Obtain the resource path of the feature module (no resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1800
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1800
+     * @tc.desc   Obtain the resource path of the feature module (no resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1800', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1800';
@@ -72,13 +72,13 @@ export default function getResourceDirNdkNotHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900
-     * @tc.desc: Obtain the resource path of the shared module (no resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900
+     * @tc.desc   Obtain the resource path of the shared module (no resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900';

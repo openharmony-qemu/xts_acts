@@ -26,52 +26,52 @@ export default function commonAttrsRadialGradientTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0100
-     * @tc.name       : testCommonAttrsRadialGradient001
-     * @tc.desc       : testing radialGradient for button with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsRadialGradient001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0100
+     * @tc.desc   testing radialGradient for button with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRadialGradient001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRadialGradient001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0200
-     * @tc.name       : testCommonAttrsRadialGradient002
-     * @tc.desc       : testing radialGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsRadialGradient002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0200
+     * @tc.desc   testing radialGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRadialGradient002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRadialGradient002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0300
-     * @tc.name       : testCommonAttrsRadialGradient003
-     * @tc.desc       : testing radialGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsRadialGradient003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0300
+     * @tc.desc   testing radialGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRadialGradient003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRadialGradient003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0400
-     * @tc.name       : testCommonAttrsRadialGradient004
-     * @tc.desc       : testing radialGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsRadialGradient004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_RADIALGRADIENT_0400
+     * @tc.desc   testing radialGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRadialGradient004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRadialGradient004()).assertEqual(0)

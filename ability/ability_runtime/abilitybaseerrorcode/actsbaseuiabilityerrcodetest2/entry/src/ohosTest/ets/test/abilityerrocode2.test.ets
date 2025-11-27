@@ -54,13 +54,13 @@ export default function errorCodeTest2() {
       console.info("errorCodeTest after");
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_ErrorCode_0001
-     * @tc.name   : To verify the errcode 16000077 when assithap "multiAppMode" with ability & startability three times
-     * @tc.desc   : Expect: the errcode 16000077
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0001
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0001
+     * @tc.desc   Expect: the errcode 16000077
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_ErrorCode_0001', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_ErrorCode_0001 start');
@@ -115,13 +115,13 @@ export default function errorCodeTest2() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_ErrorCode_0002
-     * @tc.name   : To verify the errcode 16000076 when The APP_INSTANCE_KEY is invalid.
-     * @tc.desc   : Expect: the errcode 16000076
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0002
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0002
+     * @tc.desc   Expect: the errcode 16000076
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_ErrorCode_0002', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_ErrorCode_0002 start');
@@ -161,13 +161,13 @@ export default function errorCodeTest2() {
         done();
       }
     })
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_ErrorCode_0003
-     * @tc.name   : To verify the errcode 16000079 when The APP_INSTANCE_KEY is invalid.
-     * @tc.desc   : Expect: the errcode 16000079
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0003
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0003
+     * @tc.desc   Expect: the errcode 16000079
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_ErrorCode_0003', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_ErrorCode_0003 start');
@@ -210,13 +210,13 @@ export default function errorCodeTest2() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_ErrorCode_0004
-     * @tc.name:  To verify the errcode 16000076  when The APP_INSTANCE_KEY is invalid.
-     * @tc.desc: When StartAbility In UIExtension, an error code is 16000076 .
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0004
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0004
+     * @tc.desc   When StartAbility In UIExtension, an error code is 16000076 .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_ErrorCode_0004', Level.LEVEL0, async (done: Function) => {
       let tag:string = 'SUB_Ability_AbilityBase_ErrorCode_0004';
@@ -267,13 +267,13 @@ export default function errorCodeTest2() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_ErrorCode_0005
-     * @tc.name:  To verify the errcode 16000077 when assithap "multiAppMode" with ability & startability three times
-     * @tc.desc: When StartAbility In UIExtension, an error code is 16000077 .
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0005
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0005
+     * @tc.desc   When StartAbility In UIExtension, an error code is 16000077 .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_ErrorCode_0005', Level.LEVEL0, async (done: Function) => {
       if (mpExtensionEnable == 'true') {
@@ -326,14 +326,14 @@ export default function errorCodeTest2() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_ErrorCode_0006
-     * @tc.name:  To verify the errcode 16000079 when The APP_INSTANCE_KEY is invalid.
-     * @tc.desc: When StartAbility In UIExtension, an error code is 16000079 .
-     * @tc.size: MediumTest
-     * @tc.type: Function
-    * @tc.level: Level 0
-   */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0006
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0006
+     * @tc.desc   When StartAbility In UIExtension, an error code is 16000079 .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_ErrorCode_0006', Level.LEVEL0, async (done: Function) => {
       let tag:string = 'SUB_Ability_AbilityBase_UIExtensionStartAbilityCallBackCode_16000079';
       if (mpExtensionEnable == 'true') {
@@ -383,14 +383,14 @@ export default function errorCodeTest2() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_ErrorCode_0007
-     * @tc.name:  To verify the errcode 16000077 when assithap "multiAppMode" with ability & startability three times
-     * @tc.desc: When StartAbility In UIExtension, an error code is 16000077 .
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-   */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0007
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0007
+     * @tc.desc   When StartAbility In UIExtension, an error code is 16000077 .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_ErrorCode_0007', Level.LEVEL0, async (done: Function) => {
       let tag:string = 'SUB_Ability_AbilityBase_UIExtensionStartAbilityCallBackCodeOptions_16000077';
       if (mpExtensionEnable == 'true') {
@@ -441,13 +441,13 @@ export default function errorCodeTest2() {
       }
     })
 
-     /*
-      * @tc.number: SUB_Ability_AbilityBase_ErrorCode_0008
-      * @tc.name:  To verify the errcode 16000079 when The APP_INSTANCE_KEY is invalid.
-      * @tc.desc: When StartAbility In UIExtension, an error code is 16000079 .
-      * @tc.size: MediumTest
-      * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0008
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0008
+     * @tc.desc   When StartAbility In UIExtension, an error code is 16000079 .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_ErrorCode_0008', Level.LEVEL0, async (done: Function) => {
       let tag:string = 'SUB_Ability_AbilityBase_UIExtensionStartAbilityCallBackCode_16000079';
@@ -498,14 +498,14 @@ export default function errorCodeTest2() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_ErrorCode_0008
-      * @tc.name:  To verify the errcode 16000076  when The APP_INSTANCE_KEY is invalid.
-      * @tc.desc: When StartAbility In UIExtension, an error code is 16000076 .
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0009
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0008
+     * @tc.desc   When StartAbility In UIExtension, an error code is 16000076 .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_ErrorCode_0009', Level.LEVEL0, async (done: Function) => {
       let tag:string = 'SUB_Ability_AbilityBase_UIExtensionStartAbilityCallBackCodeOptions_16000076';
       if (mpExtensionEnable == 'true') {

@@ -46,6 +46,14 @@ export default function ButtonAlignTest() {
     });
 
     
+     /**
+      * @tc.name   ButtonAlignTest_0100
+      * @tc.number ButtonAlignTest_0100
+      * @tc.desc   ButtonAlignTest_0100
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('ButtonAlignTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ButtonAlignTest_0100] START');
       console.info('[ButtonAlignTest_0100] START000');

@@ -50,13 +50,13 @@ export default function TextPickerPage() {
       done();
     });
 
-    /* *
-     * @tc.number: textPickerselectedBackgroundStyle001
-     * @tc.name  : textPickerselectedBackgroundStyle001
-     * @tc.desc  : To test the selectedBackgroundStyle interface color
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textPickerselectedBackgroundStyle001
+     * @tc.number textPickerselectedBackgroundStyle001
+     * @tc.desc   To test the selectedBackgroundStyle interface color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerselectedBackgroundStyle001', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000);
@@ -68,13 +68,13 @@ export default function TextPickerPage() {
       done();
     });
 
-    /* *
-     * @tc.number: textPickerselectedBackgroundStyle002
-     * @tc.name  : textPickerselectedBackgroundStyle002
-     * @tc.desc  : To test the selectedBackgroundStyle color type is string and borderRadius type is number
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textPickerselectedBackgroundStyle002
+     * @tc.number textPickerselectedBackgroundStyle002
+     * @tc.desc   To test the selectedBackgroundStyle color type is string and borderRadius type is number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerselectedBackgroundStyle002', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000);
@@ -87,13 +87,13 @@ export default function TextPickerPage() {
       expect(obj2).assertEqual("#FFFFFFFF");
       done();
     });
-    /* *
-     * @tc.number: textPickerselectedBackgroundStyle003
-     * @tc.name  : textPickerselectedBackgroundStyle003
-     * @tc.desc  : To test the selectedBackgroundStyle color type is number and borderRadius type is string
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textPickerselectedBackgroundStyle003
+     * @tc.number textPickerselectedBackgroundStyle003
+     * @tc.desc   To test the selectedBackgroundStyle color type is number and borderRadius type is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerselectedBackgroundStyle003', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000);
@@ -106,13 +106,13 @@ export default function TextPickerPage() {
       expect(obj2).assertEqual("#FFFFFFFF");
       done();
     });
-    /* *
-     * @tc.number: textPickerselectedBackgroundStyle004
-     * @tc.name  : textPickerselectedBackgroundStyle004
-     * @tc.desc  : To test the selectedBackgroundStyle color and borderRadius type is resource
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textPickerselectedBackgroundStyle004
+     * @tc.number textPickerselectedBackgroundStyle004
+     * @tc.desc   To test the selectedBackgroundStyle color and borderRadius type is resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerselectedBackgroundStyle004', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000);
@@ -125,13 +125,13 @@ export default function TextPickerPage() {
       expect(obj2).assertEqual("#FFFFFFFF");
       done();
     });
-    /* *
-     * @tc.number: textPickerselectedBackgroundStyle005
-     * @tc.name  : textPickerselectedBackgroundStyle005
-     * @tc.desc  : To test the selectedBackgroundStyle color and borderRadius type is undefine
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   textPickerselectedBackgroundStyle005
+     * @tc.number textPickerselectedBackgroundStyle005
+     * @tc.desc   To test the selectedBackgroundStyle color and borderRadius type is undefine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerselectedBackgroundStyle005', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000);

@@ -231,7 +231,7 @@ export default function bluetoothAccessTest() {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo stateChange:" + changeInfo);
             }
             try{
-                access.on('stateChange', onReceiveEvent);
+                access.onStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -243,7 +243,7 @@ export default function bluetoothAccessTest() {
             }
             await Utils.msSleep(1000);
             try{
-                access.off('stateChange');
+                access.offStateChange();
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -270,7 +270,7 @@ export default function bluetoothAccessTest() {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo stateChange:" + changeInfo);
             }
             try{
-                access.on('stateChange', onReceiveEvent);
+                access.onStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -282,7 +282,7 @@ export default function bluetoothAccessTest() {
             }
             await Utils.msSleep(1000);
             try{
-                access.off('stateChange', onReceiveEvent);
+                access.offStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {

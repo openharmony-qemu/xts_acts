@@ -27,12 +27,12 @@ export default function FileButtonDownloadAndShareTest() {
       console.info('FileButtonDownloadAndShareTest after each called');
     })
     /**
+     * @tc.name   FileButtonDownloadAndShareTest_0100
      * @tc.number FileButtonDownloadAndShareTest
-     * @tc.name FileButtonDownloadAndShareTest_0100
-     * @tc.desc Test FileButtonDownloadAndShareTest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test FileButtonDownloadAndShareTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileButtonDownloadAndShareTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

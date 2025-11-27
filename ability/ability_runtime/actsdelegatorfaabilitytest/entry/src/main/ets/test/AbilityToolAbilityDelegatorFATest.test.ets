@@ -37,12 +37,12 @@ export default function abilityToolAbilityDelegatorFATest() {
     }
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_FA_0900
-     * @tc.name      : Call getArguments to obtain the unit test parameters of the test framework and redefine the parameter type
-     * @tc.desc      : Get unit test parameters
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_FA_0900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_FA_0900
+     * @tc.desc   Get unit test parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_FA_0900', Level.LEVEL3, async (done) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityTools_AbilityDelegator_FA_0900';
@@ -71,17 +71,12 @@ export default function abilityToolAbilityDelegatorFATest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_FA_0600
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest interface in Promise mode,
-     *                 msg parameter is valid (including Chinese and special characters) and code parameter
-     *                 is invalid (non-number)
-     * @tc.desc      : Call the operation finishTest with the following parameters:
-     *                 msg parameter: 测试日志!@#$%^&*()_+QWE{}|?><Fafq3146
-     *                 code parameter: 'ABCD'.The result is that code parameter is invalid,  return error, no log
-     *                 information output and the process of the test framework has not been stopped.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_FA_0600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_FA_0600
+     * @tc.desc   Call the operation finishTest with the following parameters:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_FA_0600', Level.LEVEL3, (done) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityTools_AbilityDelegator_FA_0600';
@@ -102,12 +97,12 @@ export default function abilityToolAbilityDelegatorFATest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_FA_0700
-     * @tc.name      : Call getAbilityDelegator to get the AbilityDelegator object of the test framework
-     * @tc.desc      : Get the AbilityDelegator object successfully
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_FA_0700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_FA_0700
+     * @tc.desc   Get the AbilityDelegator object successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_FA_0700', Level.LEVEL1, (done) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityTools_AbilityDelegator_FA_0700';
@@ -123,12 +118,12 @@ export default function abilityToolAbilityDelegatorFATest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_FA_0800
-     * @tc.name      : Call getArguments to get the unit test parameters of the test framework
-     * @tc.desc      : Call getArguments to get the unit test parameters
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_FA_0800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_FA_0800
+     * @tc.desc   Call getArguments to get the unit test parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_FA_0800', Level.LEVEL3, (done) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityTools_AbilityDelegator_FA_0800';
@@ -144,12 +139,12 @@ export default function abilityToolAbilityDelegatorFATest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_FA_0300
-     * @tc.name      : Execute a shell command without a timeout parameter (AsyncCallback)
-     * @tc.desc      : Call the executeShellCommand operation, where the shell command parameter is aa help
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_FA_0300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_FA_0300
+     * @tc.desc   Call the executeShellCommand operation, where the shell command parameter is aa help
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_FA_0300', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityTools_AbilityDelegator_FA_0300';
@@ -170,13 +165,12 @@ export default function abilityToolAbilityDelegatorFATest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_FA_0400
-     * @tc.name      : Execute a shell command with a timeout parameter (AsyncCallback)
-     * @tc.desc      : Call the executeShellCommand operation, where the shell command parameter:
-     *                 aa start [-d <device>] -a <ability-name> -b <bundle-name> timeout 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_FA_0400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_FA_0400
+     * @tc.desc   Call the executeShellCommand operation, where the shell command parameter:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_FA_0400', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityTools_AbilityDelegator_FA_0400';
@@ -201,16 +195,12 @@ export default function abilityToolAbilityDelegatorFATest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_FA_0500
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest API in AsyncCallback mode,
-     *                 the msg parameter is valid (including Chinese and special characters) and the code parameter
-     *                 is valid 1
-     * @tc.desc      : Call the operation finishTest with the following parameters:
-     *                 msg parameter: 测试日志!@#$%^&*()_+QWE{}|?><Fafq3146
-     *                 code parameter: 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_FA_0500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_FA_0500
+     * @tc.desc   Call the operation finishTest with the following parameters:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_FA_0500', Level.LEVEL3, (done) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityTools_AbilityDelegator_FA_0500';

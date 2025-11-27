@@ -1610,6 +1610,24 @@ export default function imageNdkTest() {
           done();
       }
     }
+    
+    const testGetImagePropertyAllKey = async (TAG: string, imageSourceApi: image.ImageSource, key: string, compareValue: string | undefined) => {
+      let result = true
+      const imagePropertyRes: String | number = ndkTest.GetImageProperty(imageSourceApi, key)
+      if(typeof imagePropertyRes === "string"){
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`image info success: ${imagePropertyRes}`)
+        if(imagePropertyRes === compareValue){
+          result = true
+        }else{
+          hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`compare value error, getValue: ${imagePropertyRes}, compareValue: ${compareValue}`)
+          result = false
+        }
+      }else{
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`image info fail: ${imagePropertyRes}`)
+        result = false
+      }
+      return result
+    }
 
     /*
      * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0100
@@ -5875,6 +5893,101 @@ export default function imageNdkTest() {
     })
 
     /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.GetImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100';
+      const filename = 'test_exif_v2.webp'
+      const filename1 = 'test_webp_exif.webp'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      let imageSourceApi1: image.ImageSource = await getImageSource(filename1, 'Fd')
+      let testData: string | undefined;
+      let imageSource: image.ImageSource;
+      try {
+        for(let j = 0; j < Data.length; j++){
+          if(Data[j].webpData){
+            testData = Data[j].webpData
+            imageSource = imageSourceApi
+          }else{
+            testData = Data[j].webpData0
+            imageSource = imageSourceApi1
+          }
+          const checkResult = await testGetImagePropertyAllKey(testTag, imageSource, Data[j].key, testData);
+          if(!checkResult){
+            closeFile(fileFd)
+            ndkTest.SourceRelease(imageSourceApi)
+            ndkTest.SourceRelease(imageSourceApi1)
+            expect().assertFail()
+            done()
+            return
+          }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        ndkTest.SourceRelease(imageSourceApi1)
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+    
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.GetImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200';
+      const filename = 'test_exif_v2.webp'
+      const filename1 = 'test_webp_exif.webp'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
+      let imageSourceApi1: image.ImageSource = await getImageSource(filename1, 'Uri')
+      let testData: string | undefined;
+      let imageSource: image.ImageSource;
+      try {
+        for(let j = 0; j < Data.length; j++){
+          if(Data[j].webpData){
+            testData = Data[j].webpData
+            imageSource = imageSourceApi
+          }else{
+            testData = Data[j].webpData0
+            imageSource = imageSourceApi1
+          }
+          const checkResult = await testGetImagePropertyAllKey(testTag, imageSource, Data[j].key, testData);
+          if(!checkResult){
+            ndkTest.SourceRelease(imageSourceApi)
+            ndkTest.SourceRelease(imageSourceApi1)
+            expect().assertFail()
+            done()
+            return
+          }
+        }
+        ndkTest.SourceRelease(imageSourceApi)
+        ndkTest.SourceRelease(imageSourceApi1)
+        done()
+      } catch (e) {
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
      * @tc.desc      : 1.createImageSource（by Fd/Uri）
@@ -6045,6 +6158,42 @@ export default function imageNdkTest() {
         ndkTest.SourceRelease(imageSourceApi)
         done()
       } catch (e) {
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700';
+      const filename = 'test_exif_v3.webp'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              closeFile(fileFd)
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        done()
+      } catch (e) {
+        closeFile(fileFd)
         hilog.info(0x0000, testTag, `createImageSource error ` + e);
         expect().assertFail();
         done();

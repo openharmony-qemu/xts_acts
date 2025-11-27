@@ -44,6 +44,14 @@ export default function gradientHeight() {
       console.info("gradientHeight after each called");
     });
 
+    /**
+     * @tc.name   gradientHeightTest_0100
+     * @tc.number gradientHeightTest_0100
+     * @tc.desc   gradientHeightTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gradientHeightTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('gradientHeightText_0100 START');
       let strJson = getInspectorByKey('gradientHeightXTS');

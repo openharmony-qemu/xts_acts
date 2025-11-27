@@ -49,9 +49,12 @@ export default function flexWrapReverse_fixedParentChildDisplayPriority() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedDisplayPriority
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1700
-     * @tc.name testWrapReverseParentfixedDisplayPriority
-     * @tc.desc The layout space of the parent component is fixed, and displayPriority is set for child component
+     * @tc.desc   The layout space of the parent component is fixed, and displayPriority is set for child component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedDisplayPriority',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedDisplayPriority START');

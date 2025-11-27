@@ -33,7 +33,7 @@ let abilityFlags8 = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_SKILL;
 
 let userId = 100;
 let want: Want = {
-  bundleName: "ohos.acts.bms.getabilityinfo.test.static",
+  bundleName: "com.example.orientationtest.static",
   abilityName: "EntryAbility"
 };
 
@@ -44,12 +44,12 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
 
     /**
-     * @tc.number     Acts_OrientationTest_static_001
-     * @tc.name       Acts_OrientationTest_static_001
-     * @tc.desc       Query if the orientation value is FOLLOW_RECENT.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   Acts_OrientationTest_static_001
+     * @tc.number Acts_OrientationTest_static_001
+     * @tc.desc   Query if the orientation value is FOLLOW_RECENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Acts_OrientationTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -60,6 +60,7 @@ export default function abilityTest() {
             if (err) {
               hilog.info(domain, tag, 'Acts_OrientationTest_static_001  ====> err' + JSON.stringify(err));
               expect().assertFail();
+              done();
             } else if (data !== undefined) {
               expect(data!.hapModulesInfo[0].abilitiesInfo[1].orientation).assertEqual(bundleManager.DisplayOrientation.UNSPECIFIED);
               expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION_LANDSCAPE_RESTRICTED);
@@ -78,6 +79,7 @@ export default function abilityTest() {
             } else {
               hilog.info(domain, tag, 'Acts_OrientationTest_static_001  ====> Fail');
               expect().assertFail();
+              done();
             }
             hilog.info(domain, tag, 'Acts_OrientationTest_static_001  ====> end');
             done();
@@ -85,31 +87,33 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number  TestAbilityDisable_static_014
-    * @tc.name    TestAbilityDisable_static_014
-    * @tc.desc    test enumeration bundleManager.AbilityFlag
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+     * @tc.name   TestAbilityDisable_static_014
+     * @tc.number TestAbilityDisable_static_014
+     * @tc.desc   test enumeration bundleManager.AbilityFlag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestAbilityDisable_static_014', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         bundleManager.queryAbilityInfo(want, abilityFlags | abilityFlags1 | abilityFlags2 | abilityFlags3 |abilityFlags4
           | abilityFlags5 |abilityFlags6 |abilityFlags7 | abilityFlags8, userId, (err: BusinessError<void> | null, data) => {
           if (err) {
             hilog.error(domain, tag, 'TestAbilityDisable_static_014 failed: %{public}s', err?.message);
-            expect(err.code).assertEqual(201);
+            expect(err.code).assertEqual(202);
+            done();
           } else {
             hilog.info(domain, tag, 'TestAbilityDisable_static_014 successfully: %{public}s', JSON.stringify(data));
             expect(data).not().assertUndefined();
             expect(data != null).assertTrue();
+            done();
           }
         });
       } catch (err: BusinessError) {
         hilog.error(domain, tag, 'TestAbilityDisable_static_014 failed: %{public}s' + err.message);
         expect().assertFail();
+        done();
       }
-      done();
     });
 
   })

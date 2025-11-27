@@ -47,12 +47,12 @@ export default function TapGestureBasicDoubleClickMouseTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      TapGestureBasicDoubleClickMouseTest_0010
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TapGestureBasicDoubleClickMouseTest_0010
+     * @tc.number TapGestureBasicDoubleClickMouseTest_0010
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TapGestureBasicDoubleClickMouseTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TapGestureBasicDoubleClickMouseTest_0010 START');

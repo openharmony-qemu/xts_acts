@@ -55,12 +55,12 @@ export default function stageActionSheet() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    testShowActionShee001
-     * @tc.name      testShowActionShee001
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   testShowActionShee001
+     * @tc.number testShowActionShee001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testShowActionShee001', Level.LEVEL2, async (done: Function) => {
       console.info('testShowActionShee001 START');
@@ -90,12 +90,12 @@ export default function stageActionSheet() {
       }, 500)
     });
     /**
-     * @tc.number    testShowActionShee002
-     * @tc.name      testShowActionShee002
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   testShowActionShee002
+     * @tc.number testShowActionShee002
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testShowActionShee002', Level.LEVEL2, async (done: Function) => {
       console.info('testShowActionShee002 START');
@@ -125,12 +125,12 @@ export default function stageActionSheet() {
       }, 500)
     });
     /**
-     * @tc.number    testShowActionShee003
-     * @tc.name      testShowActionShee003
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   testShowActionShee003
+     * @tc.number testShowActionShee003
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testShowActionShee003', Level.LEVEL2, async (done: Function) => {
       console.info('testShowActionShee003 START');

@@ -18,6 +18,7 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
 import fs from '@ohos.file.fs';
+import { ConflictFiles } from '@ohos.file.fs';
 import buffer from '@ohos.buffer';
 import { BusinessError } from '@ohos.base';
 
@@ -1468,6 +1469,73 @@ export default function fileIOMoveDir() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_024 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900032 && e.message == 'Directory not empty').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2500
+     * @tc.name fileIO_test_moveDir_async_static_025
+     * @tc.desc Test moveDir() interface.Promise.
+     * There is no target folder(src) under path dest. Mode is undefined.
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_moveDir_async_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath: Dir = await readyFiles('fileIO_test_moveDir_async_static_025');
+      let callfalg = 0;
+
+      try {
+        fs.moveDirWithConflictFiles(dpath.srcDir, dpath.destDir, DIRMODE_FILE_THROW_ERR, (err: BusinessError<Array<ConflictFiles>>|null) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_025 copyDirWithConflictFiles start ');
+          callfalg = 1;
+          if (err && err.data && err.code == 13900015 && err.data?.length !== undefined) {
+            let errData = err?.data;
+            if(errData != null){
+              for(let i=0; i<errData.length; i++){
+                hilog.info(domain, tag, '%{public}s', "fileIO_test_moveDir_async_static_025 failed with conflicting files: " + err?.data![i].srcFile + " " + err?.data![i].destFile);
+              }
+            }
+            expect(callfalg).assertEqual(1);
+            done();
+          }
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_025 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_2600
+     * @tc.name fileIO_test_moveDir_async_static_026
+     * @tc.desc Test moveDir() interface.Promise.
+     * There is no target folder(src) under path dest. Mode is undefined.
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_moveDir_async_static_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath: Dir = await readyFiles('fileIO_test_moveDir_async_static_026');
+      let callfalg = 0;
+
+      try {
+        fs.moveDirWithConflictFiles(dpath.srcDir, dpath.destDir, (err: BusinessError<Array<ConflictFiles>>|null) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_026 copyDirWithConflictFiles start ');
+          callfalg = 1;
+          if (err && err.code == 13900032) {
+            hilog.info(domain, tag, '%{public}s', "fileIO_test_moveDir_async_static_026 failed with conflicting files:");
+            expect(callfalg).assertEqual(1);
+            done();
+          }
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_026 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
         done();
       }
     });

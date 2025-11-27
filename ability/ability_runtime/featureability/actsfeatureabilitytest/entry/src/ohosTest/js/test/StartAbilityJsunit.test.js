@@ -42,11 +42,14 @@ describe('StartAbilityTest', function () {
         }, 500);
     })
     
-    /*
-    * @tc.number: SUB_AA_JsApi_StartAbility_0100
-    * @tc.name: testAbility0100.
-    * @tc.desc: StartAbility fail with want nothing.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_StartAbility_0100
+     * @tc.number SUB_AA_JsApi_StartAbility_0100
+     * @tc.desc   StartAbility fail with want nothing.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_StartAbility_0100", Level.LEVEL0, async function (done) {
         let parameter = {
             'want': {}
@@ -61,11 +64,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-   * @tc.number: SUB_AA_JsApi_Ability_0200
-   * @tc.name: testAblity0200.
-   * @tc.desc: StartAbility fail with want nothing.(by callback)
-   */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_0200
+     * @tc.number SUB_AA_JsApi_Ability_0200
+     * @tc.desc   StartAbility fail with want nothing.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_0200", Level.LEVEL0, async function (done) {
         let parameter = {
             'want': {}
@@ -78,11 +84,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_StartAbility_0300
-    * @tc.name: testAbility0300.
-    * @tc.desc: StartAbility fail with error parameter.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_StartAbility_0300
+     * @tc.number SUB_AA_JsApi_StartAbility_0300
+     * @tc.desc   StartAbility fail with error parameter.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_StartAbility_0300", Level.LEVEL0, async function (done) {
         let startAbilityParameter = {
             'want': {}
@@ -97,11 +106,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_StartAbility_0400
-    * @tc.name: testAbility0400.
-    * @tc.desc: StartAbility fail with error parameter.(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_StartAbility_0400
+     * @tc.number SUB_AA_JsApi_StartAbility_0400
+     * @tc.desc   StartAbility fail with error parameter.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_StartAbility_0400", Level.LEVEL0, async function (done) {
         let startAbilityParameter = {
             'want': {}
@@ -114,11 +126,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_0500
-    * @tc.name: testAblity0500.
-    * @tc.desc: startAbility-want configure action+entities- there is no Ability corresponding to entities.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_0500
+     * @tc.number SUB_AA_JsApi_Ability_0500
+     * @tc.desc   startAbility-want configure action+entities- there is no Ability corresponding to entities.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_0500", Level.LEVEL0, async function (done) {
         let parameter = {
             'want': {
@@ -138,11 +153,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_0600
-    * @tc.name: testAblity0600.
-    * @tc.desc: startAbility-want configure action+entities- there is no Ability corresponding to entities.(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_0600
+     * @tc.number SUB_AA_JsApi_Ability_0600
+     * @tc.desc   startAbility-want configure action+entities- there is no Ability corresponding to entities.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_0600", Level.LEVEL0, async function (done) {
         let parameter = {
             'want': {
@@ -160,11 +178,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_0900
-    * @tc.name: testAblity0900.
-    * @tc.desc: startAbility-want configure action+entities- entities is configurd as a string.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_0900
+     * @tc.number SUB_AA_JsApi_Ability_0900
+     * @tc.desc   startAbility-want configure action+entities- entities is configurd as a string.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_0900", Level.LEVEL0, async function (done) {
         let startAbilityParameter = {
             'want': {
@@ -182,11 +203,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1000
-    * @tc.name: testAblity1000.
-    * @tc.desc: startAbility-want configure action+entities- entities is configurd as a string.(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1000
+     * @tc.number SUB_AA_JsApi_Ability_1000
+     * @tc.desc   startAbility-want configure action+entities- entities is configurd as a string.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1000", Level.LEVEL0, async function (done) {
         let startAbilityParameter = {
             'want': {
@@ -202,11 +226,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1100
-    * @tc.name: testAblity1100.
-    * @tc.desc: startAbility: The input parameter want is not configured (the value is {}).(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1100
+     * @tc.number SUB_AA_JsApi_Ability_1100
+     * @tc.desc   startAbility: The input parameter want is not configured (the value is {}).(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1100", Level.LEVEL0, async function (done) {
         let parameter = {}
         await featureAbility.startAbility(parameter).then((data) => {
@@ -219,11 +246,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1200
-    * @tc.name: testAblity1200.
-    * @tc.desc: startAbility: The input parameter want is not configured (the value is {}).(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1200
+     * @tc.number SUB_AA_JsApi_Ability_1200
+     * @tc.desc   startAbility: The input parameter want is not configured (the value is {}).(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1200", Level.LEVEL0, async function (done) {
         let parameter = {}
         featureAbility.startAbility(parameter, (error, data) => {
@@ -234,11 +264,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1300
-    * @tc.name: testAblity1300.
-    * @tc.desc: startAbility: The input parameter is uddefined.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1300
+     * @tc.number SUB_AA_JsApi_Ability_1300
+     * @tc.desc   startAbility: The input parameter is uddefined.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1300", Level.LEVEL0, async function (done) {
         await featureAbility.startAbility(undefined).then((data) => {
             console.log('testAblity1300 data: ' + JSON.stringify(data))
@@ -250,11 +283,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1400
-    * @tc.name: testAblity1400.
-    * @tc.desc: startAbility: The input parameter is uddefined.(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1400
+     * @tc.number SUB_AA_JsApi_Ability_1400
+     * @tc.desc   startAbility: The input parameter is uddefined.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1400", Level.LEVEL0, async function (done) {
         featureAbility.startAbility(undefined, (error, data) => {
             console.log('testAblity1400 data: ' + JSON.stringify(data))
@@ -264,11 +300,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1500
-    * @tc.name: testAblity1500.
-    * @tc.desc: startAbilityForResult: The input parameter want is not configured (the value is {}).(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1500
+     * @tc.number SUB_AA_JsApi_Ability_1500
+     * @tc.desc   startAbilityForResult: The input parameter want is not configured (the value is {}).(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1500", Level.LEVEL0, async function (done) {
         let parameter = {}
         await featureAbility.startAbilityForResult(parameter).then((data) => {
@@ -281,11 +320,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1600
-    * @tc.name: testAblity1600.
-    * @tc.desc: startAbilityForResult: The input parameter want is not configured (the value is {}).(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1600
+     * @tc.number SUB_AA_JsApi_Ability_1600
+     * @tc.desc   startAbilityForResult: The input parameter want is not configured (the value is {}).(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1600", Level.LEVEL0, async function (done) {
         let parameter = {}
         featureAbility.startAbilityForResult(parameter, (error, data) => {
@@ -297,11 +339,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1700
-    * @tc.name: testAblity1700.
-    * @tc.desc: startAbilityForResult: The input parameter optParam is undefined.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1700
+     * @tc.number SUB_AA_JsApi_Ability_1700
+     * @tc.desc   startAbilityForResult: The input parameter optParam is undefined.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1700", Level.LEVEL0, async function (done) {
         await featureAbility.startAbilityForResult(undefined).then((data) => {
             console.log('testAblity1700 data: ' + JSON.stringify(data))
@@ -313,11 +358,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1800
-    * @tc.name: testAblity1800.
-    * @tc.desc: startAbilityForResult: The input parameter optParam is undefined.(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1800
+     * @tc.number SUB_AA_JsApi_Ability_1800
+     * @tc.desc   startAbilityForResult: The input parameter optParam is undefined.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1800", Level.LEVEL0, async function (done) {
         featureAbility.startAbilityForResult(undefined, (error) => {
             console.log('testAblity1800' + JSON.stringify(error));
@@ -326,11 +374,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_1900
-    * @tc.name: testAblity1900.
-    * @tc.desc: startAbilityForResult-wrong input parameter format want a layer outside.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_1900
+     * @tc.number SUB_AA_JsApi_Ability_1900
+     * @tc.desc   startAbilityForResult-wrong input parameter format want a layer outside.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_1900", Level.LEVEL0, async function (done) {
         let startAbilityParameter = {
             'want': {
@@ -352,11 +403,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_2000
-    * @tc.name: testAblity2000.
-    * @tc.desc: startAbilityForResult-wrong input parameter format want a layer outside.(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_2000
+     * @tc.number SUB_AA_JsApi_Ability_2000
+     * @tc.desc   startAbilityForResult-wrong input parameter format want a layer outside.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_2000", Level.LEVEL0, async function (done) {
         let startAbilityParameter = {
             'want': {
@@ -375,11 +429,14 @@ describe('StartAbilityTest', function () {
         })
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_2100
-    * @tc.name: testAblity2100.
-    * @tc.desc: startAbilityForResult-want-Set bundleName and abilityName+flag-flag to character strings.(by promise)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_2100
+     * @tc.number SUB_AA_JsApi_Ability_2100
+     * @tc.desc   startAbilityForResult-want-Set bundleName and abilityName+flag-flag to character strings.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_2100", Level.LEVEL0, async function (done) {
         let parameter = {
             'want': {
@@ -402,11 +459,14 @@ describe('StartAbilityTest', function () {
         done()
     })
 
-    /*
-    * @tc.number: SUB_AA_JsApi_Ability_2200
-    * @tc.name: testAblity2200.
-    * @tc.desc: startAbilityForResult-want-Set bundleName and abilityName+flag-flag to character strings.(by callback)
-    */
+    /**
+     * @tc.name   SUB_AA_JsApi_Ability_2200
+     * @tc.number SUB_AA_JsApi_Ability_2200
+     * @tc.desc   startAbilityForResult-want-Set bundleName and abilityName+flag-flag to character strings.(by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_AA_JsApi_Ability_2200", Level.LEVEL0, async function (done) {
         let parameter = {
             'want': {

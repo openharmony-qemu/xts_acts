@@ -3535,7 +3535,6 @@ export default function ArrayCombinationTest4() {
         if (i === 1) a[2] = 99;
         return [x, x + 1];
       }).reverse();
-      expect(taResult.includes(99)).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
 

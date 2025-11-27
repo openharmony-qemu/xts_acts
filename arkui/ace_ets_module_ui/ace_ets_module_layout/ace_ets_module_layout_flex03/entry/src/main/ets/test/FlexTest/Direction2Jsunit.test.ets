@@ -45,12 +45,12 @@ export default function direction2Jsunit(){
     });
 
     /**
-     * @tc.number direction2Test_0200
      * @tc.name   direction2Test_0200
+     * @tc.number direction2Test_0200
      * @tc.desc   test Direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('direction2Test_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('direction2Test_0200 START');
@@ -78,14 +78,14 @@ export default function direction2Jsunit(){
       done();
     });
 
-    /**
-     * @tc.number direction2Test_0100
-     * @tc.name   direction2Test_0100
-     * @tc.desc   test Direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
-     */
+   /**
+    * @tc.name   direction2Test_0100
+    * @tc.number direction2Test_0100
+    * @tc.desc   test Direction
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('direction2Test_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('direction2Test_0100 START');
       let strJson = getInspectorByKey('direction_2');
@@ -97,12 +97,12 @@ export default function direction2Jsunit(){
     });
 
     /**
-     * @tc.number direction2Test_0300
      * @tc.name   direction2Test_0300
+     * @tc.number direction2Test_0300
      * @tc.desc   test Direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('direction2Test_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('direction2Test_0300 START');

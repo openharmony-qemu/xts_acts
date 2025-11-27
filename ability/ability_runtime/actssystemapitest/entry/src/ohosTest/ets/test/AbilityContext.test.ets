@@ -30,10 +30,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0100
-     * @tc.name: callback form startAbilityWithAccount system interface interception test
-     * @tc.desc: Test third-party applications calling startAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0100
+     * @tc.number System_API_Test_AbilityContext_0100
+     * @tc.desc   Test third-party applications calling startAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0100';
@@ -52,10 +54,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0200
-     * @tc.name: Multi-parameter startAbilityWithAccount system interface interception test in the form of callback
-     * @tc.desc: Test third-party applications calling startAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0200
+     * @tc.number System_API_Test_AbilityContext_0200
+     * @tc.desc   Test third-party applications calling startAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0200';
@@ -77,10 +81,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0300
-     * @tc.name: The promise form startAbilityWithAccount system interface interception test
-     * @tc.desc: Test third-party applications calling startAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0300
+     * @tc.number System_API_Test_AbilityContext_0300
+     * @tc.desc   Test third-party applications calling startAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0300';
@@ -100,10 +106,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0400
-     * @tc.name: Multiple input arguments in the form of promise, startAbilityWithAccount system interface interception test
-     * @tc.desc: Test third-party applications calling startAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0400
+     * @tc.number System_API_Test_AbilityContext_0400
+     * @tc.desc   Test third-party applications calling startAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0400';
@@ -126,10 +134,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0500
-     * @tc.name: callback form startAbilityForResultWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call startAbilityForResultWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0500
+     * @tc.number System_API_Test_AbilityContext_0500
+     * @tc.desc   Test the third-party application call startAbilityForResultWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0500';
@@ -150,10 +160,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0600
-     * @tc.name: Multi-parameter startAbilityForResultWithAccount system interface interception test in the form of callback
-     * @tc.desc: Test the third-party application call startAbilityForResultWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0600
+     * @tc.number System_API_Test_AbilityContext_0600
+     * @tc.desc   Test the third-party application call startAbilityForResultWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0600';
@@ -177,10 +189,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0700
-     * @tc.name: promise form startAbilityForResultWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call startAbilityForResultWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0700
+     * @tc.number System_API_Test_AbilityContext_0700
+     * @tc.desc   Test the third-party application call startAbilityForResultWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0700';
@@ -204,10 +218,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0800
-     * @tc.name: Multi-parameter startAbilityForResultWithAccount system interface interception test in the form of promise
-     * @tc.desc: Test the third-party application call startAbilityForResultWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0800
+     * @tc.number System_API_Test_AbilityContext_0800
+     * @tc.desc   Test the third-party application call startAbilityForResultWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0800';
@@ -234,10 +250,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_0900
-     * @tc.name: callback form startServiceExtensionAbility system interface interception test
-     * @tc.desc: Test the third-party application call startServiceExtensionAbility will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_0900
+     * @tc.number System_API_Test_AbilityContext_0900
+     * @tc.desc   Test the third-party application call startServiceExtensionAbility will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_0900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0900';
@@ -255,10 +273,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1000
-     * @tc.name: promise form startServiceExtensionAbility system interface interception test
-     * @tc.desc: Test the third-party application call startServiceExtensionAbility will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1000
+     * @tc.number System_API_Test_AbilityContext_1000
+     * @tc.desc   Test the third-party application call startServiceExtensionAbility will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1000', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1000';
@@ -277,10 +297,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1100
-     * @tc.name: callback form startServiceExtensionAbilityWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call startServiceExtensionAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1100
+     * @tc.number System_API_Test_AbilityContext_1100
+     * @tc.desc   Test the third-party application call startServiceExtensionAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1100';
@@ -299,10 +321,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1200
-     * @tc.name: promise form startServiceExtensionAbilityWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call startServiceExtensionAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1200
+     * @tc.number System_API_Test_AbilityContext_1200
+     * @tc.desc   Test the third-party application call startServiceExtensionAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1200';
@@ -322,10 +346,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1300
-     * @tc.name: callback form stopServiceExtensionAbility system interface interception test
-     * @tc.desc: Test the third-party application call stopServiceExtensionAbility will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1300
+     * @tc.number System_API_Test_AbilityContext_1300
+     * @tc.desc   Test the third-party application call stopServiceExtensionAbility will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1300';
@@ -343,10 +369,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1400
-     * @tc.name: promise form stopServiceExtensionAbility system interface interception test
-     * @tc.desc: Test the third-party application call stopServiceExtensionAbility will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1400
+     * @tc.number System_API_Test_AbilityContext_1400
+     * @tc.desc   Test the third-party application call stopServiceExtensionAbility will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1400';
@@ -365,10 +393,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1500
-     * @tc.name: calback form stopServiceExtensionAbilityWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call stopServiceExtensionAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1500
+     * @tc.number System_API_Test_AbilityContext_1500
+     * @tc.desc   Test the third-party application call stopServiceExtensionAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1500';
@@ -387,10 +417,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1600
-     * @tc.name: promise form stopServiceExtensionAbilityWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call stopServiceExtensionAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1600
+     * @tc.number System_API_Test_AbilityContext_1600
+     * @tc.desc   Test the third-party application call stopServiceExtensionAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1600';
@@ -412,10 +444,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1700
-     * @tc.name: promise form connectServiceExtensionAbilityWithAccount system interface interception test
-     * @tc.desc: Test the third-party application call connectServiceExtensionAbilityWithAccount will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1700
+     * @tc.number System_API_Test_AbilityContext_1700
+     * @tc.desc   Test the third-party application call connectServiceExtensionAbilityWithAccount will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1700';
@@ -446,10 +480,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1800
-     * @tc.name: callback form setMissionIcon system interface interception test
-     * @tc.desc: Test the third-party application call setMissionIcon will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1800
+     * @tc.number System_API_Test_AbilityContext_1800
+     * @tc.desc   Test the third-party application call setMissionIcon will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1800';
@@ -476,10 +512,12 @@ export default function abilityContextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_AbilityContext_1900
-     * @tc.name: promise form setMissionIcon system interface interception test
-     * @tc.desc: Test the third-party application call setMissionIcon will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_AbilityContext_1900
+     * @tc.number System_API_Test_AbilityContext_1900
+     * @tc.desc   Test the third-party application call setMissionIcon will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_AbilityContext_1900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1900';

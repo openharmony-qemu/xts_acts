@@ -26,65 +26,65 @@ export default function imageMatrixTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0100
-     * @tc.name       : testImageMatrix001
-     * @tc.desc       : testing imageMatrix for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatrix001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0100
+     * @tc.desc   testing imageMatrix for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatrix001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatrix001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0200
-     * @tc.name       : testImageMatrix002
-     * @tc.desc       : testing imageMatrix for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatrix002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0200
+     * @tc.desc   testing imageMatrix for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatrix002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatrix002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0300
-     * @tc.name       : testImageMatrix003
-     * @tc.desc       : testing imageMatrix for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatrix003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0300
+     * @tc.desc   testing imageMatrix for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatrix003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatrix003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0400
-     * @tc.name       : testImageMatrix004
-     * @tc.desc       : testing imageMatrix for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatrix004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0400
+     * @tc.desc   testing imageMatrix for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatrix004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatrix004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0500
-     * @tc.name       : testImageMatrix005
-     * @tc.desc       : testing imageMatrix for image with set/reset attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatrix005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATRIX_0500
+     * @tc.desc   testing imageMatrix for image with set/reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatrix005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatrix005()).assertEqual(0)

@@ -54,12 +54,12 @@ export default function stageTimePickerDialog() {
     })
 
     /**
-     * @tc.number: TimePickerDialog001
-     * @tc.name  : TimePickerDialog001
-     * @tc.desc  : To test the timePicker eventData
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog001
+     * @tc.number TimePickerDialog001
+     * @tc.desc   To test the timePicker eventData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerDialog001', Level.LEVEL1, async (done: Function) => {
       console.info('TimePickerDialog001 START');
@@ -90,12 +90,12 @@ export default function stageTimePickerDialog() {
     });
 
     /**
-     * @tc.number: TimePickerDialog002
-     * @tc.name  : TimePickerDialog002
-     * @tc.desc  : To test the timePicker eventData
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog002
+     * @tc.number TimePickerDialog002
+     * @tc.desc   To test the timePicker eventData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerDialog002', Level.LEVEL1, async (done: Function) => {
       console.info('TimePickerDialog002 START');
@@ -127,12 +127,12 @@ export default function stageTimePickerDialog() {
     });
 
     /**
-     * @tc.number: TimePickerDialog003
-     * @tc.name  : TimePickerDialog003
-     * @tc.desc  : To test the timePicker eventData
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog003
+     * @tc.number TimePickerDialog003
+     * @tc.desc   To test the timePicker eventData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerDialog003', Level.LEVEL1, async (done: Function) => {
       console.info('TimePickerDialog003 START');

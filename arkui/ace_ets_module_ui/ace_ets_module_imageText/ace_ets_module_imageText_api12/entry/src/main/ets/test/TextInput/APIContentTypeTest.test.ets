@@ -42,13 +42,15 @@ export default function APIContentTypeTest() {
       console.info("APIContentTypeTest after each called");
     });
 
-    /**
-     * @tc.number    APIContentTypeTest_001
-     * @tc.desc      api
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   APIContentTypeTest_001
+     * @tc.number APIContentTypeTest_001
+     * @tc.desc   APIContentTypeTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIContentTypeTest_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[APIContentTypeTest_001] START');
       await CommonFunc.sleep(1000);
@@ -66,14 +68,14 @@ export default function APIContentTypeTest() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TEXTINPUT_CONTENTTYPE_0200
-    * @tc.name  : APIContentTypeTest_002
-    * @tc.desc  : ContentType setting NICKNAME
-    * @tc.level : Level 3
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   APIContentTypeTest_0200
+     * @tc.number SUB_ACE_TEXTINPUT_CONTENTTYPE_0200
+     * @tc.desc   ContentType setting NICKNAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIContentTypeTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('APIContentTypeTest_0200 START');
       await CommonFunc.sleep(1000);
@@ -91,14 +93,14 @@ export default function APIContentTypeTest() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TEXTINPUT_CONTENTTYPE_0300
-    * @tc.name  : APIContentTypeTest_003
-    * @tc.desc  : ContentType setting DETAIL_INFO_WITHOUT_STREET
-    * @tc.level : Level 3
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   APIContentTypeTest_0300
+     * @tc.number SUB_ACE_TEXTINPUT_CONTENTTYPE_0300
+     * @tc.desc   ContentType setting DETAIL_INFO_WITHOUT_STREET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIContentTypeTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('APIContentTypeTest_0300 START');
       await CommonFunc.sleep(1000);
@@ -116,14 +118,14 @@ export default function APIContentTypeTest() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TEXTINPUT_CONTENTTYPE_0400
-    * @tc.name  : APIContentTypeTest_004
-    * @tc.desc  : ContentType setting FORMAT_ADDRESS
-    * @tc.level : Level 3
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   APIContentTypeTest_0400
+     * @tc.number SUB_ACE_TEXTINPUT_CONTENTTYPE_0400
+     * @tc.desc   ContentType setting FORMAT_ADDRESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIContentTypeTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('APIContentTypeTest_0400 START');
       await CommonFunc.sleep(1000);

@@ -79,9 +79,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRichtextIdProp
-         * @tc.desc      ACE
+         * @tc.name   testRichtextIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRichtextIdProp', Level.LEVEL0, async function(done) {
             console.info('testRichtextIdProp START');
@@ -97,9 +100,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRichtextClassProp
-         * @tc.desc      ACE
+         * @tc.name   testRichtextClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRichtextClassProp', Level.LEVEL0, async function(done) {
             console.info('testRichtextClassProp START');
@@ -115,9 +121,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRichtextClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRichtextClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRichtextClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testRichtextClassPropNone START');
@@ -135,9 +144,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRichtextStyleProp
-         * @tc.desc      ACE
+         * @tc.name   testRichtextStyleProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRichtextStyleProp', Level.LEVEL0, async function(done) {
             console.info('testRichtextStyleProp START');

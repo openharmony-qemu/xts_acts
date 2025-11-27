@@ -25,7 +25,7 @@ struct NavigationExample {
     if(name == 'pageOne'){
       PageOneInterception()
     }else{
-      PageTwo()
+      PageTwo199()
     }
   }
   registerInterception() {
@@ -93,7 +93,7 @@ struct PageOneInterception {
 }
 
 @Component
-struct PageTwo {
+struct PageTwo199 {
   @Consume('pageInfos') pageInfos: NavPathStack;
   @State text: string = 'text';
   build() {

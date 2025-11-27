@@ -47,12 +47,12 @@ export default function RichEditor5() {
       console.info("RichEditor5 after each called");
     });
     /**
-     * @tc.number RichEditor5_0100
      * @tc.name   RichEditor5_0100
+     * @tc.number RichEditor5_0100
      * @tc.desc   Test text change callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor5_0100', Level.LEVEL2, async (done: Function) => {
       // Test stop

@@ -42,12 +42,12 @@ export default function tabsCallBack7() {
     });
 
     /**
-     * @tc.number    tabsCallBack7_001
-     * @tc.name      tabsCallBack7_0100
-     * @tc.desc      Set scrollable to false, sliding the page will not trigger a callback.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsCallBack7_0100
+     * @tc.number tabsCallBack7_001
+     * @tc.desc   Set scrollable to false, sliding the page will not trigger a callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsCallBack7_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsCallBack7_0100] START');

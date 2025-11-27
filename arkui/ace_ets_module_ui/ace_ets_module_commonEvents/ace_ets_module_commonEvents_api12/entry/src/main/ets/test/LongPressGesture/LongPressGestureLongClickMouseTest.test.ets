@@ -47,12 +47,12 @@ export default function LongPressGestureLongClickMouseTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      LongPressGestureLongClickMouseTest_0010
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   LongPressGestureLongClickMouseTest_0010
+     * @tc.number LongPressGestureLongClickMouseTest_0010
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LongPressGestureLongClickMouseTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('LongPressGestureLongClickMouseTest_0010 START');

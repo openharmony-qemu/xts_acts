@@ -41,6 +41,7 @@
     "MainAbility/pages/FreezeV1/Freeze001",
     "MainAbility/pages/FreezeV1/Freeze002",
     "MainAbility/pages/FreezeV1/Freeze003",
+    "MainAbility/pages/FreezeV1/freezeInactive",
     "MainAbility/pages/twoWayBind/bind",
     "MainAbility/pages/twoWayBind/bindContentCover",
     "MainAbility/pages/twoWayBind/bindSheet",
@@ -52,7 +53,12 @@
     "MainAbility/pages/twoWayBind/textInput",
     "MainAbility/pages/twoWayBind/toggle",
     "MainAbility/pages/twoWayBind/twoWayBind",
-    "MainAbility/pages/useRes/Rawfile0140"
-
+    "MainAbility/pages/useRes/Rawfile0140",
+    "MainAbility/pages/Environment/Environment0040",
+    "MainAbility/pages/Environment/EnvironmentReturnValue",
+    "MainAbility/pages/Environment/StorageDeprecated",
+    "MainAbility/pages/GetSharedLocal/getSharedLocalStorage",
+    "MainAbility/pages/GetSharedLocal/useSharedStorage",
+    "MainAbility/pages/GetSharedLocal/persistStorageA"
   ]
 }

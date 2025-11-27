@@ -28,10 +28,13 @@ const ABILITIY_NAME_ERROR = "com.ohos.packagemag.MainAbility";
 export default function getAbilityIcon() {
     describe('ActsBmsGetAbilityIconTest', function () {
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Icon_2800
-         * @tc.name: test getAbilityIcon
-         * @tc.desc: get the abilityIcon
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Icon_2800
+         * @tc.number Sub_Bms_Framework_Query_Icon_2800
+         * @tc.desc   get the abilityIcon
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Sub_Bms_Framework_Query_Icon_2800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await bundle.getAbilityIcon(BUNDLE_NAME_OTHER, ABILITIY_NAME_OTHER).then(pixelmap => {
@@ -48,10 +51,13 @@ export default function getAbilityIcon() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Icon_2700
-         * @tc.name: test getAbilityIcon
-         * @tc.desc: get the abilityIcon
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Icon_2700
+         * @tc.number Sub_Bms_Framework_Query_Icon_2700
+         * @tc.desc   get the abilityIcon
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Sub_Bms_Framework_Query_Icon_2700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await bundle.getAbilityIcon(BUNDLE_NAME, ABILITIY_NAME).then(pixelmap => {
@@ -68,10 +74,13 @@ export default function getAbilityIcon() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Icon_2900
-         * @tc.name: test getAbilityIcon
-         * @tc.desc: get the abilityIcon
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Icon_2900
+         * @tc.number Sub_Bms_Framework_Query_Icon_2900
+         * @tc.desc   get the abilityIcon
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_Icon_2900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await bundle.getAbilityIcon(BUNDLE_NAME, SERVICE_NAME).then(pixelmap => {
@@ -86,10 +95,13 @@ export default function getAbilityIcon() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Icon_3200
-         * @tc.name: test getAbilityIcon
-         * @tc.desc: get the abilityIcon
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Icon_3200
+         * @tc.number Sub_Bms_Framework_Query_Icon_3200
+         * @tc.desc   get the abilityIcon
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_Icon_3200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await bundle.getAbilityIcon(BUNDLE_NAME, ABILITIY_NAME_ERROR).then(pixelmap => {
@@ -123,10 +135,13 @@ export default function getAbilityIcon() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Icon_3000
-         * @tc.name: test getAbilityIcon
-         * @tc.desc: get the abilityIcon
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Icon_3000
+         * @tc.number Sub_Bms_Framework_Query_Icon_3000
+         * @tc.desc   get the abilityIcon
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_Icon_3000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await bundle.getAbilityIcon(BUNDLE_NAME, undefined).then(pixelmap => {

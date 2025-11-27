@@ -49,10 +49,12 @@ export default function EnableShowHideWithContentCoverPage() {
 
 
     /**
-     * @tc.number    EnableShowHideWithContentCoverPage_0100
-     * @tc.name      EnableShowHideWithContentCoverPage_0100
-     * @tc.desc      Test EnableShowHideWithContentCover and VisibilityChangeReason.TRANSITION
-     * @tc.level     Level 0
+     * @tc.name   EnableShowHideWithContentCoverPage_0100
+     * @tc.number EnableShowHideWithContentCoverPage_0100
+     * @tc.desc   Test EnableShowHideWithContentCover and VisibilityChangeReason.TRANSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableShowHideWithContentCoverPage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('EnableShowHideWithContentCoverPage_0100 START');
@@ -80,10 +82,12 @@ export default function EnableShowHideWithContentCoverPage() {
     });
 
     /**
-     * @tc.number    EnableShowHideWithContentCoverPage_0200
-     * @tc.name      EnableShowHideWithContentCoverPage_0200
-     * @tc.desc      Test EnableShowHideWithContentCover and VisibilityChangeReason.CONTENT_COVER
-     * @tc.level     Level 0
+     * @tc.name   EnableShowHideWithContentCoverPage_0200
+     * @tc.number EnableShowHideWithContentCoverPage_0200
+     * @tc.desc   Test EnableShowHideWithContentCover and VisibilityChangeReason.CONTENT_COVER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableShowHideWithContentCoverPage_0200', Level.LEVEL0, async (done: Function) => {
       console.info('EnableShowHideWithContentCoverPage_0200 START');
@@ -121,10 +125,12 @@ export default function EnableShowHideWithContentCoverPage() {
     });
 
     /**
-     * @tc.number    EnableShowHideWithContentCoverPage_0300
-     * @tc.name      EnableShowHideWithContentCoverPage_0300
-     * @tc.desc      Test EnableShowHideWithContentCover false and VisibilityChangeReason.CONTENT_COVER
-     * @tc.level     Level 0
+     * @tc.name   EnableShowHideWithContentCoverPage_0300
+     * @tc.number EnableShowHideWithContentCoverPage_0300
+     * @tc.desc   Test EnableShowHideWithContentCover false and VisibilityChangeReason.CONTENT_COVER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableShowHideWithContentCoverPage_0300', Level.LEVEL0, async (done: Function) => {
       console.info('EnableShowHideWithContentCoverPage_0300 START');

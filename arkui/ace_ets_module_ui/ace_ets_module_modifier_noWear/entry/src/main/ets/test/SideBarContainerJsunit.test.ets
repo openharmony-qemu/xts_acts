@@ -40,12 +40,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0002
      * @tc.number sideBarContainerTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc set divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set divider values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0002 START');
@@ -61,12 +61,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0003
      * @tc.number sideBarContainerTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc set minContentWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set minContentWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0003 START');
@@ -79,12 +79,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0004
      * @tc.number sideBarContainerTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc set sideBarWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set sideBarWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0004 START');
@@ -97,12 +97,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0005
      * @tc.number sideBarContainerTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc set minSideBarWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set minSideBarWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0005 START');
@@ -115,12 +115,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0006
      * @tc.number sideBarContainerTest_0006
-     * @tc.name Test the properties of components
-     * @tc.desc set maxSideBarWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set maxSideBarWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0006 START');
@@ -133,12 +133,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0007
      * @tc.number sideBarContainerTest_0007
-     * @tc.name Test the properties of components
-     * @tc.desc set showSideBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set showSideBar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0007', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0007 START');
@@ -151,12 +151,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0008
      * @tc.number sideBarContainerTest_0008
-     * @tc.name Test the properties of components
-     * @tc.desc set controlButton values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set controlButton values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0008', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0008 START');
@@ -172,12 +172,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0009
      * @tc.number sideBarContainerTest_0009
-     * @tc.name Test the properties of components
-     * @tc.desc set showControlButton values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set showControlButton values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0009', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0009 START');
@@ -190,12 +190,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0010
      * @tc.number sideBarContainerTest_0010
-     * @tc.name Test the properties of components
-     * @tc.desc set autoHide values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set autoHide values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0010 START');
@@ -208,12 +208,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0011
      * @tc.number sideBarContainerTest_0011
-     * @tc.name Test the properties of components
-     * @tc.desc set sideBarPosition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set sideBarPosition values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0011', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0011 START');
@@ -226,12 +226,12 @@ export default function sideBarContainerJsunit() {
     });
 
     /**
+     * @tc.name   sideBarContainerTest_0012
      * @tc.number sideBarContainerTest_0012
-     * @tc.name Test the properties of components
-     * @tc.desc Change autoHide values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change autoHide values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sideBarContainerTest_0012', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0012 START');

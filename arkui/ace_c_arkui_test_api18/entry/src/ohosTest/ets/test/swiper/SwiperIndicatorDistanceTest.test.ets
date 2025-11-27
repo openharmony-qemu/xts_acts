@@ -27,15 +27,15 @@ export default function swiperIndicatorDistanceTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testSwiperIndicatorDistanceTest001
-     * @tc.desc       : testing Swiper
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   DigitIndicator_0100
+     * @tc.number DigitIndicator_0100
+     * @tc.desc   DigitIndicator_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DigitIndicator_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let PAGE_TAG = 'SwiperIndicatorDistanceTest';
       await Utils.pushPage(`swiper/${PAGE_TAG}`,() => setTimeout(() => {}, 20000));

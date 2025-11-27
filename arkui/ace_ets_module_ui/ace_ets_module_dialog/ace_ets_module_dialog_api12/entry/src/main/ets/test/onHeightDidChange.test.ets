@@ -47,16 +47,16 @@ export default function onHeightDidChange() {
       console.info("onHeightDidChange after each called");
     });
 
+
+
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name      testGetImageAttr010
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onHeightDidChange_0100
+     * @tc.number onHeightDidChange_0100
+     * @tc.desc   onHeightDidChange_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-
-
     it('onHeightDidChange_0100', Level.LEVEL2, async (done: Function) => {
       console.info('onHeightDidChange_0100 START');
       let driver = await Driver.create()

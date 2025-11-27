@@ -42,13 +42,15 @@ export default function APIUnderlineColorTest() {
       console.info("APIUnderlineColorTest after each called");
     });
 
-    /**
-     * @tc.number    APIUnderlineColorTest_001
-     * @tc.desc      api
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   APIUnderlineColorTest_001
+     * @tc.number APIUnderlineColorTest_001
+     * @tc.desc   APIUnderlineColorTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIUnderlineColorTest_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[APIUnderlineColorTest_001] START');
       await CommonFunc.sleep(1000);

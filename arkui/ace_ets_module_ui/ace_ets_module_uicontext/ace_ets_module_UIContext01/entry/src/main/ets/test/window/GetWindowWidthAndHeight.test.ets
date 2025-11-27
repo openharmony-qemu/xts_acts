@@ -40,12 +40,12 @@ export default function GetWindowWidthAndHeightTest() {
       done();
     });
     /**
-     * @tc.number    GetWindowWidthBreakpoint_0100
-     * @tc.name      GetWindowWidthBreakpoint_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetWindowWidthBreakpoint_0100
+     * @tc.number GetWindowWidthBreakpoint_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetWindowWidthBreakpoint_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GetWindowWidthBreakpoint_0100 START');
@@ -69,12 +69,12 @@ export default function GetWindowWidthAndHeightTest() {
     });
 
     /**
-     * @tc.number    GetWindowHeightBreakpoint_0200
-     * @tc.name      GetWindowHeightBreakpoint_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetWindowHeightBreakpoint_0200
+     * @tc.number GetWindowHeightBreakpoint_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetWindowHeightBreakpoint_0200', Level.LEVEL0, async (done: Function) => {
       console.info('GetWindowHeightBreakpoint_0200 START');

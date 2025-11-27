@@ -47,9 +47,12 @@ export default function flexVisibility_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexVisibilityNone
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_1100
-     * @tc.name testFlexItemAlignAutoFlexVisibilityNone
-     * @tc.desc The first subcomponent set Visibility.None attribute.
+     * @tc.desc   The first subcomponent set Visibility.None attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexVisibilityNone',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexVisibilityNone START');
@@ -93,9 +96,12 @@ export default function flexVisibility_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexVisibilityHidden
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_1200
-     * @tc.name testFlexItemAlignAutoFlexVisibilityHidden
-     * @tc.desc The first subcomponent set Visibility.Hidden attribute.
+     * @tc.desc   The first subcomponent set Visibility.Hidden attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexVisibilityHidden START');

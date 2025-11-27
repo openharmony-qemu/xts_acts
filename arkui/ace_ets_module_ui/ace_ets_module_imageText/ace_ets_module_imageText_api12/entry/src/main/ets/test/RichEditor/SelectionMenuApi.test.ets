@@ -42,13 +42,15 @@ export default function SelectionMenuApi() {
       console.info("SelectionMenuApi after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_IMAGE_001
-     * @tc.desc      dynamicRangeMode test of image
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   SelectionMenuApi_001
+     * @tc.number SelectionMenuApi_001
+     * @tc.desc   SelectionMenuApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SelectionMenuApi_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[SelectionMenuApi_001] START');
 

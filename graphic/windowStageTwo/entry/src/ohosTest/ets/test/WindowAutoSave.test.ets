@@ -275,6 +275,9 @@ export default function windowAutoSaveTest() {
           await driver.click(2340, 977);
           await terminateAbility(message)
           await sleep(1000)
+          if(isFreeWindowMode == true){
+            await mainWindowClass.recover();
+          }
           // 重新拉起Ability
           windowStageStart = await startAbility(message, context)
           let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
@@ -725,6 +728,9 @@ export default function windowAutoSaveTest() {
           await driver.click(2340, 977);
           await terminateAbility(message)
           await sleep(1000)
+          if(isFreeWindowMode == true){
+            await mainWindowClass.recover();
+          }
           // 重新拉起Ability
           windowStageStart = await startAbility(message, context)
           let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
@@ -1238,6 +1244,9 @@ export default function windowAutoSaveTest() {
           // 关闭Ability&退出分屏
           await driver.click(2340, 977);
           await terminateAbility2(caseName)
+          if(isFreeWindowMode == true){
+            await mainWindowClass.recover();
+          }
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
           let windowRect2 = mainWindow2.getWindowProperties().windowRect
@@ -1503,6 +1512,9 @@ export default function windowAutoSaveTest() {
           // 关闭Ability&退出分屏
           await driver.click(2340, 977);
           await terminateAbility2(caseName)
+          if(isFreeWindowMode == true){
+            await mainWindowClass.recover();
+          }
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
           let windowRect2 = mainWindow2.getWindowProperties().windowRect

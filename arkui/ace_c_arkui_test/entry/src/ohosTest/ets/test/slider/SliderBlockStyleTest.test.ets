@@ -26,156 +26,156 @@ export default function sliderBlockStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0100
-     * @tc.name: testSliderBlockStyle001
-     * @tc.desc: testing blockStyle for slider with default value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockStyle001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0100
+     * @tc.desc   testing blockStyle for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0200
-     * @tc.name: testSliderBlockStyle002
-     * @tc.desc: testing blockStyle for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockStyle002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0200
+     * @tc.desc   testing blockStyle for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0300
-     * @tc.name: testSliderBlockStyle003
-     * @tc.desc: testing blockStyle for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockStyle003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0300
+     * @tc.desc   testing blockStyle for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0400
-     * @tc.name: testSliderBlockStyle004
-     * @tc.desc: testing blockStyle for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockStyle004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0400
+     * @tc.desc   testing blockStyle for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0500
-     * @tc.name: testSliderBlockStyle005
-     * @tc.desc: testing blockStyle for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockStyle005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0500
+     * @tc.desc   testing blockStyle for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0600
-     * @tc.name: testSliderBlockStyle006
-     * @tc.desc: testing blockStyle for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockStyle006
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0600
+     * @tc.desc   testing blockStyle for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0700
-     * @tc.name: testSliderBlockstyle007
-     * @tc.desc: testing blockStyle for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockStyle007
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0700
+     * @tc.desc   testing blockStyle for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0800
-     * @tc.name: testSliderBlockstyle008
-     * @tc.desc: testing blockStyle for slider with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSliderBlockStyle008
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0800
+     * @tc.desc   testing blockStyle for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0900
-     * @tc.name: testSliderBlockstyle009
-     * @tc.desc: testing blockStyle for slider with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSliderBlockStyle009
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_0900
+     * @tc.desc   testing blockStyle for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_1000
-     * @tc.name: testSliderBlockstyle010
-     * @tc.desc: testing blockStyle for slider with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSliderBlockStyle010
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_1000
+     * @tc.desc   testing blockStyle for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_1100
-     * @tc.name: testSliderBlockstyle011
-     * @tc.desc: testing blockStyle for slider with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSliderBlockStyle011
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_1100
+     * @tc.desc   testing blockStyle for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_1200
-     * @tc.name: testSliderBlockstyle012
-     * @tc.desc: testing blockStyle for slider with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSliderBlockStyle012
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKSTYLE_1200
+     * @tc.desc   testing blockStyle for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockStyle012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockStyle012()).assertEqual(0)

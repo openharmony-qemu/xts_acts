@@ -22,13 +22,13 @@ export default function textAreaSelectionMenuHiddenTest() {
 
   describe('TextAreaSelectionMenuHiddenTest', () => {
     let PAGE_TAG = 'TextAreaSelectionMenuHiddenTest';
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_SELECTIONMENUHIDDEN_0001
-     * @tc.name: testTextAreaSelectionMenuHidden001
-     * @tc.desc: testing SelectionMenuHidden for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaSelectionMenuHidden001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_SELECTIONMENUHIDDEN_0001
+     * @tc.desc   testing SelectionMenuHidden for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaSelectionMenuHidden001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`textarea/${PAGE_TAG}`);

@@ -71,5 +71,39 @@ export default function GraphicTextAPI22() {
       done();
     })
 
+    /**
+     * @tc.number     GetFontDescriptorsFromPath_0100
+     * @tc.name       GetFontDescriptorsFromPath_0100
+     * @tc.desc       test getFontDescriptorsFromPath
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('GetFontDescriptorsFromPath_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontDescriptorsFromPath("file:///system/fonts/HarmonyOS_Sans.ttf").then((fontFullDescriptors) => {
+        console.info('www data 111 fontFullDescriptors', fontFullDescriptors);
+        console.info('www data 111 fontFullDescriptors length', fontFullDescriptors.length);
+        expect(fontFullDescriptors.length > 0).assertTrue();
+      })
+      done();
+    })
+
+    /**
+     * @tc.number     GetFontDescriptorsFromPath_0200
+     * @tc.name       GetFontDescriptorsFromPath_0200
+     * @tc.desc       test getFontDescriptorsFromPath
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('GetFontDescriptorsFromPath_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontDescriptorsFromPath("file:///system/fonts/HarmonyOS_Sans123.ttf").then((fontFullDescriptors) => {
+        console.info('www data 111 fontFullDescriptors', fontFullDescriptors);
+        console.info('www data 111 fontFullDescriptors length', fontFullDescriptors.length);
+        expect(fontFullDescriptors.length == 0).assertTrue();
+      })
+      done();
+    })
+
   })
 }

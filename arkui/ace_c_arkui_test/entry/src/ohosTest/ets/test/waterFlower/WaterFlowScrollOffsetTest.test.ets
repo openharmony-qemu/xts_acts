@@ -27,14 +27,14 @@ export default function waterFlowScrollOffsetTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_OFFSET_2000
-    * @tc.name       : testWaterFlowScrollOffset020
-    * @tc.desc       : scroll offset
-    * @tc.size       : MediumTest
-    * @tc.type       : Render
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollOffset020
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_OFFSET_2000
+     * @tc.desc   scroll offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollOffset020', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(1000)
       await Utils.pushPage(`waterflow/WaterFlowScrollOffsetTest`, () => setTimeout(() => {

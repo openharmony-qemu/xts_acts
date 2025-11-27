@@ -16,6 +16,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 
 export default function abilityTest() {
     describe('ActsAbilityTest', () => {
+        /**
+         * @tc.name   assertContain
+         * @tc.number assertContain
+         * @tc.desc   assertContain
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('assertContain', Level.LEVEL0, () => {
             console.info("it begin")
             let a = 'abc'

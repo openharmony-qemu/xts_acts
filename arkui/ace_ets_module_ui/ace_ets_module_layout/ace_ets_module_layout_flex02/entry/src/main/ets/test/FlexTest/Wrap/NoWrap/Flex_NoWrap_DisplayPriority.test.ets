@@ -46,10 +46,12 @@ export default function flex_NoWrap_DisplayPriorityTest() {
       console.info("Flex_NoWrap_DisplayPriority after each called");
     });
     /**
+     * @tc.name   testWrapNoWrapTextDisplayPriority
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_0100
-     * @tc.name testWrapNoWrapTextDisplayPriority
-     * @tc.desc The size of the parent component in the main axis direction is not enough for the layout
-     *               of the child components when display_priority of the child components set different values
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapNoWrapTextDisplayPriority',  Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapTextDisplayPriority] START');

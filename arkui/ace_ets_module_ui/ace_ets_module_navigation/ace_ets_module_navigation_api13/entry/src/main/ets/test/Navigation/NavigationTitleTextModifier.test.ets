@@ -49,10 +49,12 @@ export default function NavigationTitleTextModifier() {
 
 
     /**
-     * @tc.number    NavigationTitleTextModifier_0100
-     * @tc.name      NavigationTitleTextModifier_0100
-     * @tc.desc      Test NavigationTitleTextModifier
-     * @tc.level     Level 2
+     * @tc.name   NavigationTitleTextModifier_0100
+     * @tc.number NavigationTitleTextModifier_0100
+     * @tc.desc   Test NavigationTitleTextModifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationTitleTextModifier_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationTitleTextModifier_0100 START');

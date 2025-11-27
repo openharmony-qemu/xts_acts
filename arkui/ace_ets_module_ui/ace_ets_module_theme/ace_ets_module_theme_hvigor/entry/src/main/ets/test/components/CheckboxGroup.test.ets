@@ -69,13 +69,13 @@ export default function checkboxGroupThemeTest() {
       }
     })
     /**
-      * @tc.number    : ActsCheckBoxGroupThemeColors_0100
-      * @tc.name      : ActsCheckBoxGroupThemeColors_0100
-      * @tc.desc      : Check checkboxGroup system colors
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsCheckBoxGroupThemeColors_0100
+     * @tc.number ActsCheckBoxGroupThemeColors_0100
+     * @tc.desc   Check checkboxGroup system colors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsCheckBoxGroupThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsCheckBoxGroupThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -94,13 +94,13 @@ export default function checkboxGroupThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-      * @tc.number    : ActsCheckBoxGroupThemeColors_0200
-      * @tc.name      : ActsCheckBoxGroupThemeColors_0200
-      * @tc.desc      : Check checkboxGroup theme colors
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsCheckBoxGroupThemeColors_0200
+     * @tc.number ActsCheckBoxGroupThemeColors_0200
+     * @tc.desc   Check checkboxGroup theme colors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsCheckBoxGroupThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsCheckBoxGroupThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -123,13 +123,13 @@ export default function checkboxGroupThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-      * @tc.number    : ActsCheckBoxGroupThemeColors_0300
-      * @tc.name      : ActsCheckBoxGroupThemeColors_0300
-      * @tc.desc      : Check checkboxGroup theme colors after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsCheckBoxGroupThemeColors_0300
+     * @tc.number ActsCheckBoxGroupThemeColors_0300
+     * @tc.desc   Check checkboxGroup theme colors after change theme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsCheckBoxGroupThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsCheckBoxGroupThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

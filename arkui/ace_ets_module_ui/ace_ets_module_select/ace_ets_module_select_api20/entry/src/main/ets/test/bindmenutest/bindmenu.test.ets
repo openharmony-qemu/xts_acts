@@ -42,13 +42,13 @@
        done();
      });
  
-     /* *
-      * @tc.number: bindmenu_001
-      * @tc.name  : bindmenu_001
-      * @tc.desc  : To test the outlineColor interface color.Red
-      * @tc.level : Level 0
-      * @tc.type
-      * @tc.size
+     /**
+      * @tc.name   bindmenu_001
+      * @tc.number bindmenu_001
+      * @tc.desc   To test the outlineColor interface color.Red
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
       */
      it('bindmenu_001', Level.LEVEL0, async (done: Function) => {
        let tagName = 'bindmenu_001';

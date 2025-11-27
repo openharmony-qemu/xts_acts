@@ -58,13 +58,15 @@ export default function btnClick() {
       console.info("btnClick after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_JUDGE_0260_btnMonoTouch_001
-     * @tc.desc button click test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   btnClick_001
+     * @tc.number btnClick_001
+     * @tc.desc   btnClick_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('btnClick_001', Level.LEVEL0, async (done: Function) => {
       console.info('[btnClick_001] START');
       await CommonFunc.sleep(1000);

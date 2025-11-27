@@ -12,11 +12,14 @@ const VENDOR = "example";
 export default function getBundleInfo() {
   describe('getBundleInfo', (): void => {
 
-    /*
-      * @tc.number: Sub_Bms_GetBundleInfoWithUserIdCallBack_static_201
-      * @tc.name:  getBundleInfoTestWithUserIdCallBack201
-      * @tc.desc: test errCode 201 when call getBundleInfo with userID
-      */
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdCallBack201
+     * @tc.number Sub_Bms_GetBundleInfoWithUserIdCallBack_static_201
+     * @tc.desc   test errCode 201 when call getBundleInfo with userID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoTestWithUserIdCallBack201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100,
@@ -33,11 +36,14 @@ export default function getBundleInfo() {
           });
       })
 
-    /*
-      * @tc.number: Sub_Bms_GetBundleInfoCallBack_static_201
-      * @tc.name:  getBundleInfoTestCallBack201
-      * @tc.desc: test errCode 201 when call getBundleInfo
-      */
+    /**
+     * @tc.name   getBundleInfoTestCallBack201
+     * @tc.number Sub_Bms_GetBundleInfoCallBack_static_201
+     * @tc.desc   test errCode 201 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoTestCallBack201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT,
@@ -54,10 +60,13 @@ export default function getBundleInfo() {
           });
       })
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_static_201
-     * @tc.name:  getBundleInfoTestWithUserIdPromise201
-     * @tc.desc: test errCode 201 when call getBundleInfo
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdPromise201
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_static_201
+     * @tc.desc   test errCode 201 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestWithUserIdPromise201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -81,10 +90,13 @@ export default function getBundleInfo() {
         }
       });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoSync_static_201
-     * @tc.name:  getBundleInfoTestSync201
-     * @tc.desc: test errCode 201 when call getBundleInfoSync
+    /**
+     * @tc.name   getBundleInfoTestSync201
+     * @tc.number Sub_Bms_GetBundleInfoSync_static_201
+     * @tc.desc   test errCode 201 when call getBundleInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestSync201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -105,10 +117,13 @@ export default function getBundleInfo() {
         hilog.info(domain, tag, 'getBundleInfoTestSync201 end');
       })
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoSyncWithUserID_static_201
-     * @tc.name:  getBundleInfoTestSyncWithUserID201
-     * @tc.desc: test errCode 201 when call getBundleInfoSync with userID
+    /**
+     * @tc.name   getBundleInfoTestSyncWithUserID201
+     * @tc.number Sub_Bms_GetBundleInfoSyncWithUserID_static_201
+     * @tc.desc   test errCode 201 when call getBundleInfoSync with userID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestSyncWithUserID201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

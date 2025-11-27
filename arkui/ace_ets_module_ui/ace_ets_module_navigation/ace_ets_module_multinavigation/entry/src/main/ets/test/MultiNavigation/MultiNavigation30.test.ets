@@ -45,9 +45,12 @@ export default function MultiNavigation30() {
     });
 
     /**
+     * @tc.name   MultiNavigation30_0100
      * @tc.number MultiNavigation30_0100
-     * @tc.name testMultiNavigation
-     * @tc.desc
+     * @tc.desc   MultiNavigation30_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiNavigation30_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('MultiNavigation30_0100 START');

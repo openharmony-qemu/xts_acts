@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
 import emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, Callback } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -43,7 +43,7 @@ export default function ActsNotificationEmitterPublishTest() {
         eventId: 1
       };
       let num : int = 0
-      let callback01 = (): void => {
+      let callback01:Callback<emitter.EventData> = (eventData: emitter.EventData) => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback01 success');
         num++;
         expect(false).assertTrue();
@@ -93,7 +93,7 @@ export default function ActsNotificationEmitterPublishTest() {
         eventId: 2
       };
       let num : int = 0
-      let callback02 = (): void => {
+      let callback02: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback02 success');
         num++;
         expect(false).assertTrue();
@@ -109,7 +109,7 @@ export default function ActsNotificationEmitterPublishTest() {
       }
       try{
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'off callback begin');
-        emitter.off(2);
+        emitter.off(2, callback02);
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'off callback success');
       }catch(err:BusinessError){
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on failed,data is: ', JSON.stringify(err));
@@ -145,11 +145,10 @@ export default function ActsNotificationEmitterPublishTest() {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' eventId03 on success');
         num++;
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
-        done();
       }
       try{
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case begin');
-        emitter.on(eventId03, callback03);
+        emitter.onEventData(eventId03, callback03);
       }catch(err:BusinessError){
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on failed,data is: ', JSON.stringify(err));
         expect(false).assertTrue();
@@ -192,11 +191,10 @@ export default function ActsNotificationEmitterPublishTest() {
       let callback04 = (): void => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback04 success');
         num++;
-        done();
       }
       try{
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case begin');
-        emitter.once(eventId04, callback04);
+        emitter.onceEventData(eventId04, callback04);
       }catch(err:BusinessError){
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on failed,data is: ', JSON.stringify(err));
         expect(false).assertTrue();

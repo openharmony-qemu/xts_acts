@@ -41,11 +41,14 @@ export default function RefreshTest() {
       done()
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0010
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0010
+     * @tc.number ArkUX_Refresh_Visual_0010
+     * @tc.desc   Sets the promptText property parameter to different text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Refresh_Visual_0010', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0010 START');
       try {
@@ -63,11 +66,14 @@ export default function RefreshTest() {
       done();
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0020
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0020
+     * @tc.number ArkUX_Refresh_Visual_0020
+     * @tc.desc   Sets the promptText property parameter to different text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Refresh_Visual_0020', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0020 START');
       try {
@@ -85,11 +91,14 @@ export default function RefreshTest() {
       done();
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0030
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0030
+     * @tc.number ArkUX_Refresh_Visual_0030
+     * @tc.desc   Sets the promptText property parameter to different text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Refresh_Visual_0030', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0030 START');
       try {
@@ -107,11 +116,14 @@ export default function RefreshTest() {
       done();
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0040
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0040
+     * @tc.number ArkUX_Refresh_Visual_0040
+     * @tc.desc   Sets the promptText property parameter to different text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Refresh_Visual_0040', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0040 START');
       try {
@@ -129,10 +141,13 @@ export default function RefreshTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Refresh_Visual_0050
-     *@tc.name   Support modifying the refresh promptText change of refresh component
-     *@tc.desc   Sets the promptText property parameter to different text
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0050
+     * @tc.number ArkUX_Refresh_Visual_0050
+     * @tc.desc   Sets the promptText property parameter to different text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Refresh_Visual_0050', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0050 START');

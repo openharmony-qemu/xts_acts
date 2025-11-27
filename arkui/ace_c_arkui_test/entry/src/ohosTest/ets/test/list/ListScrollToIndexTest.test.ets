@@ -26,14 +26,14 @@ export default function listScrollToIndex() {
       await Utils.pushPage(`list/ListEmptyTest`)
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0001
-    * @tc.name       : testListScrollToIndex001
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0001
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex001', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest001', 30, ScrollAlign.START)
@@ -48,14 +48,14 @@ export default function listScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0002
-    * @tc.name       : testListScrollToIndex002
-    * @tc.desc       : test scrollToIndex downOverflow index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0002
+     * @tc.desc   test scrollToIndex downOverflow index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex002', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest002', -100, ScrollAlign.START)
@@ -70,14 +70,14 @@ export default function listScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0003
-    * @tc.name       : testListScrollToIndex003
-    * @tc.desc       : test scrollToIndex upOverflow index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0003
+     * @tc.desc   test scrollToIndex upOverflow index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex003', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest003', 100, ScrollAlign.START)
@@ -92,14 +92,14 @@ export default function listScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0004
-    * @tc.name       : testListScrollToIndex004
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0004
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex004', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest004', 40, ScrollAlign.CENTER)
@@ -114,14 +114,14 @@ export default function listScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0005
-    * @tc.name       : testListScrollToIndex005
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex005
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0005
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex005', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest005', 20, ScrollAlign.END)
@@ -136,14 +136,14 @@ export default function listScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0006
-    * @tc.name       : testListScrollToIndex006
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex006
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0006
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex006', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest006', 40, ScrollAlign.AUTO)
@@ -158,14 +158,14 @@ export default function listScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0007
-    * @tc.name       : testListScrollToIndex007
-    * @tc.desc       : test scrollToIndex normal index and downOverflow align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex007
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0007
+     * @tc.desc   test scrollToIndex normal index and downOverflow align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex007', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData = new ListScrollToIndexData('ListScrollToIndexTest007', 20, -1)
       await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
@@ -179,14 +179,14 @@ export default function listScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0008
-    * @tc.name       : testListScrollToIndex008
-    * @tc.desc       : test scrollToIndex normal index and upOverflow align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListScrollToIndex008
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_INDEX_0008
+     * @tc.desc   test scrollToIndex normal index and upOverflow align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListScrollToIndex008', Level.LEVEL1, async (done: Function) => {
       let option: ListScrollToIndexData = new ListScrollToIndexData('ListScrollToIndexTest008', 40, 4)
       await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)

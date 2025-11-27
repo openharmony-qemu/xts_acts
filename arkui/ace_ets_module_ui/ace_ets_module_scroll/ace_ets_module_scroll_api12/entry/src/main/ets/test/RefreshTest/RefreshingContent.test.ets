@@ -47,14 +47,14 @@ export default function RefreshingContent() {
       console.info(" RefreshingContent after each called");
     });
 
-    /* *
-    * @tc.number: RefreshingContent_0100
-    * @tc.name  : RefreshingContent_0100
-    * @tc.desc  : RefreshingContent_test
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   RefreshingContent_0100
+     * @tc.number RefreshingContent_0100
+     * @tc.desc   RefreshingContent_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RefreshingContent_0100', Level.LEVEL1, async (done: Function) => {
       console.info('RefreshingContent_0100 START');
       await CommonFunc.sleep(1000);

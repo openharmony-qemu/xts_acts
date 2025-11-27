@@ -25,13 +25,13 @@ export default function swiperOnSelectTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SWIPER_EVENT_ON_SELECT_0100
-     * @tc.name: testSwiperOnSelect001
-     * @tc.desc: testing OnSelect for swiper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSwiperOnSelect001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_EVENT_ON_SELECT_0100
+     * @tc.desc   testing OnSelect for swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperOnSelect001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'SwiperOnSelectTest';

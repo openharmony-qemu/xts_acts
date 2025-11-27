@@ -51,12 +51,15 @@ export default function Row_Size() {
       console.info("Row_Size after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0100
-     * @tc.name testRowSizeBothSatisfy
-     * @tc.desc The height and width of the row component meet the requirements of the subcomponent
-     */
 
+    /**
+     * @tc.name   testRowSizeBothSatisfy
+     * @tc.number testRowSizeBothSatisfy
+     * @tc.desc   testRowSizeBothSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowSizeBothSatisfy',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowSizeBothSatisfy START');
       globalThis.value.message.notify({
@@ -98,13 +101,15 @@ export default function Row_Size() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0200
-     * @tc.name testRowSizeWidthNOSatisfy
-     * @tc.desc Set the height and width of the row component. The width of the row component does not meet the
-     *               requirements of the subcomponent
-     */
 
+    /**
+     * @tc.name   testRowSizeWidthNOSatisfy
+     * @tc.number testRowSizeWidthNOSatisfy
+     * @tc.desc   testRowSizeWidthNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowSizeWidthNOSatisfy',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowSizeWidthNOSatisfy START');
       globalThis.value.message.notify({
@@ -143,13 +148,15 @@ export default function Row_Size() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0300
-     * @tc.name testRowSizeHeightNOSatisfy
-     * @tc.desc Set the height and width of the row component. The height of the row component does not meet the
-     *               requirements of the subcomponent
-     */
 
+    /**
+     * @tc.name   testRowSizeHeightNOSatisfy
+     * @tc.number testRowSizeHeightNOSatisfy
+     * @tc.desc   testRowSizeHeightNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowSizeHeightNOSatisfy',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowSizeHeightNOSatisfy START');
       globalThis.value.message.notify({

@@ -40,12 +40,12 @@ export default function AttachDetachTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      AttachDetachTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   AttachDetachTest_0100
+     * @tc.number AttachDetachTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AttachDetachTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('AttachDetachTest_0100 START');

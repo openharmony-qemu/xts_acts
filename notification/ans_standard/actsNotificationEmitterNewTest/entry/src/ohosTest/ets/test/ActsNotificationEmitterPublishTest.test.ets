@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
-import { Callback } from '@kit.BasicServicesKit';
+import { Callback } from '@ohos.base';
 
 const TAG = 'Notification';
 const TEST_SUITE_NAME = 'ActsEmitterPublishTest'

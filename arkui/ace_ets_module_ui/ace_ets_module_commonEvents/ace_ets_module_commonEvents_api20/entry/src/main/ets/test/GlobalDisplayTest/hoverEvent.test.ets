@@ -47,12 +47,12 @@ export default function hoverEventTest() {
     });
 
     /**
-     * @tc.number    hoverEventTest_0010
-     * @tc.name      hoverEventTest_0010
-     * @tc.desc      hoverEvent get globalDisplay coordinates
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   hoverEventTest_0010
+     * @tc.number hoverEventTest_0010
+     * @tc.desc   hoverEvent get globalDisplay coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('hoverEventTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[hoverEventTest_0010] START');

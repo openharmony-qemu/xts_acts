@@ -40,12 +40,12 @@ export default function createNodeSearch() {
       done();
     });
     /**
-     * @tc.number    createNodeSearch_0100
-     * @tc.name      createNodeSearch_0100
-     * @tc.desc      frameNode: createNodeSearchToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeSearch_0100
+     * @tc.number createNodeSearch_0100
+     * @tc.desc   frameNode: createNodeSearchToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeSearch_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeSearch_0100 START');

@@ -46,12 +46,12 @@ export default function columnWidthsTest() {
       console.info('columnWidthTest after each called');
     })
     /**
-     * @tc.number: columnWidthsText_0100
-     * @tc.name  : columnWidthsText_0100
-     * @tc.desc  : Test the columnWidths interface when the range parameter is set to a single column
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   columnWidthsText_0100
+     * @tc.number columnWidthsText_0100
+     * @tc.desc   Test the columnWidths interface when the range parameter is set to a single column
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('columnWidthsText_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.info('columnWidthsText_0100 START');
@@ -66,12 +66,12 @@ export default function columnWidthsTest() {
       });
   
       /**
-       * @tc.number: columnWidthsText_0101
-       * @tc.name  : columnWidthsText_0101
-       * @tc.desc  : Test the columnWidths interface when the range parameter is set to multi column
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
+       * @tc.name   columnWidthsText_0101
+       * @tc.number columnWidthsText_0101
+       * @tc.desc   Test the columnWidths interface when the range parameter is set to multi column
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('columnWidthsText_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.info("columnWidthsText_0101 start");
@@ -89,12 +89,12 @@ export default function columnWidthsTest() {
       })
   
       /**
-       * @tc.number: columnWidthsText_0102
-       * @tc.name  : columnWidthsText_0102
-       * @tc.desc  : Test the columnWidths interface when the range parameter is set to multi column
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
+       * @tc.name   columnWidthsText_0102
+       * @tc.number columnWidthsText_0102
+       * @tc.desc   Test the columnWidths interface when the range parameter is set to multi column
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('columnWidthsText_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.info("columnWidthsText_0102 start");
@@ -112,12 +112,12 @@ export default function columnWidthsTest() {
       })
   
       /**
-       * @tc.number: columnWidthsText_0103
-       * @tc.name  : columnWidthsText_0103
-       * @tc.desc  : Test the columnWidths interface when the range parameter is set to multi column
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
+       * @tc.name   columnWidthsText_0103
+       * @tc.number columnWidthsText_0103
+       * @tc.desc   Test the columnWidths interface when the range parameter is set to multi column
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('columnWidthsText_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.info("columnWidthsText_0103 start");

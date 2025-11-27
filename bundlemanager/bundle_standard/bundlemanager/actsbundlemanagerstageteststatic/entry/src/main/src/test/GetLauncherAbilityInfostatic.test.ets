@@ -40,11 +40,12 @@ export default function abilityTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number  Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.name    Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.desc    Test getLauncherAbilityInfoSync with valid value.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.desc   Test getLauncherAbilityInfoSync with valid value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -88,8 +89,8 @@ export default function abilityTest() {
         expect(data![0].elementName.abilityName).assertEqual("EntryAbility");
         expect(data![0].elementName.uri).assertEqual(URI);
         expect(data![0].elementName.shortName).assertEqual("");
-        done();
         hilog.info(domain, tag,"data is " + JSON.stringify(data));
+        done();
       } catch (errData) {
         let code = (errData as BusinessError).code;
         let message = (errData as BusinessError).message;

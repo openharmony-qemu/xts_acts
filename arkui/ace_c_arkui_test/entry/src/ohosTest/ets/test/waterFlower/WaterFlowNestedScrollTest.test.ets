@@ -45,13 +45,13 @@ export default function waterFlowNestedScrollTest() {
 
   describe('WaterFlowNestedScrollTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_NESTED_SCROLL_0100
-     * @tc.name       : testWaterFlowNestedScroll001
-     * @tc.desc       : testing nested scroll info
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowNestedScroll001
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_NESTED_SCROLL_0100
+     * @tc.desc   testing nested scroll info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowNestedScroll001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowNestedScroll1Test`, ()=>{
@@ -99,13 +99,13 @@ export default function waterFlowNestedScrollTest() {
       expect(state2Data[11] == 0).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_NESTED_SCROLL_0200
-     * @tc.name       : testWaterFlowNestedScroll002
-     * @tc.desc       : testing nested scroll info
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowNestedScroll002
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_NESTED_SCROLL_0200
+     * @tc.desc   testing nested scroll info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowNestedScroll002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowNestedScroll2Test`, ()=>{
@@ -153,13 +153,13 @@ export default function waterFlowNestedScrollTest() {
       expect(state2Data[11] == 0).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_NESTED_SCROLL_0300
-     * @tc.name       : testWaterFlowNestedScroll003
-     * @tc.desc       : testing nested scroll info
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowNestedScroll003
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_NESTED_SCROLL_0300
+     * @tc.desc   testing nested scroll info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowNestedScroll003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowNestedScroll3Test`, ()=>{

@@ -78,7 +78,7 @@ let photoOutput: cameraObj.PhotoOutput;
 let videoOutput: cameraObj.VideoOutput;
 let metadataOutput: cameraObj.MetadataOutput | null = null;
 let videoSurfaceId: string | undefined;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let videoProfilesArray: Array<cameraObj.VideoProfile>;
 let mMetadataObjectTypeArray: Array<cameraObj.MetadataObjectType>;
 let mMetadataObjectArray: Array<cameraObj.MetadataObject> | undefined = undefined;
@@ -90,7 +90,7 @@ let getPhotoReceiverSurface = async () => {
   hilog.info(domain, tag, 'before receiver check')
   if (receiver !== undefined) {
     hilog.info(domain, tag, 'Photo receiver is created successfully')
-    mPhotoSurface = await receiver.getReceivingSurfaceId()
+    mPhotoSurface = await receiver!.getReceivingSurfaceId()
     hilog.info(domain, tag, 'Photo received id: ' + JSON.stringify(mPhotoSurface))
   } else {
     hilog.info(domain, tag, 'Photo receiver is created failed')
@@ -357,7 +357,7 @@ export default function cameraJSUnitOutput() {
     hilog.info(domain, tag, 'before receiver check')
     if (receiver !== undefined) {
       hilog.info(domain, tag, 'Receiver is ok')
-      surfaceIds = await receiver.getReceivingSurfaceId()
+      surfaceIds = await receiver!.getReceivingSurfaceId()
       hilog.info(domain, tag, 'Received id: ' + JSON.stringify(surfaceIds))
     } else {
       hilog.info(domain, tag, 'Receiver is not ok')

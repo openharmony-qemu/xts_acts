@@ -46,9 +46,12 @@ export default function list_ListFrictionTest() {
       console.info("ListFrictionPage after each called");
     });
     /**
-     * @tc.number    SUB_ACE_LIST_LISTFRICTION_001
-     * @tc.name      testListFriction
-     * @tc.desc      set friction to -1
+     * @tc.name   testListFriction
+     * @tc.number SUB_ACE_LIST_LISTFRICTION_001
+     * @tc.desc   set friction to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListFriction',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testListFriction] START');
@@ -65,9 +68,12 @@ export default function list_ListFrictionTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_LIST_LISTFRICTION_002
-     * @tc.name      testListFriction
-     * @tc.desc      set friction to 10
+     * @tc.name   testListFriction
+     * @tc.number SUB_ACE_LIST_LISTFRICTION_002
+     * @tc.desc   set friction to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListFriction',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testListFriction] START');

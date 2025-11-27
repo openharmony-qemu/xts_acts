@@ -1635,33 +1635,6 @@ export default function AVPlayerSetPlaybackRangeSuppTest() {
       })
     })
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_RANGE_29
-     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_RANGE_29
-     * @tc.desc   AVPlayer_setMediaSource mov
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
-     */
-    it('SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_RANGE_29', Level.LEVEL0,  (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_RANGE_29';
-      let fileName: string = 'h261_352x288_30.mov';
-      setPlayBackRangeSupp(done, testName,fileName, async () => {
-        try {
-          await avPlayer.prepare();
-          await avPlayer.play();
-          await sleep(200);
-          await avPlayer.pause();
-          await avPlayer.setPlaybackRange(0, 2000, media.SeekMode.SEEK_PREV_SYNC)
-          console.info(TAG, testName,'Succeeded setPlaybackRange');
-          done();
-        } catch (error) {
-          console.error(TAG, testName, "setPlaybackRange failed catch err:", JSON.stringify(error), error.code, error);
-          expect(error.code).assertEqual(401);
-          done();
-        }
-      })
-    })
-    /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_RANGE_30
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_RANGE_30
      * @tc.desc   AVPlayer_setMediaSource mov

@@ -26,39 +26,39 @@ export default function textInputMaxLengthTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAXLENGTH_0100
-     * @tc.name: testTextInputMaxLength001
-     * @tc.desc: testing MaxLength for textInput with number value of 30vp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxLength001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAXLENGTH_0100
+     * @tc.desc   testing MaxLength for textInput with number value of 30vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxLength001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxLength001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAXLENGTH_0200
-     * @tc.name: testTextInputMaxLength002
-     * @tc.desc: testing MaxLength for textInput with number value of 0vp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxLength002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAXLENGTH_0200
+     * @tc.desc   testing MaxLength for textInput with number value of 0vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxLength002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxLength002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAXLENGTH_0300
-     * @tc.name: testTextInputMaxLength003
-     * @tc.desc: testing MaxLength for textInput with number value of -100vp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxLength003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAXLENGTH_0300
+     * @tc.desc   testing MaxLength for textInput with number value of -100vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxLength003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxLength003()).assertEqual(0)

@@ -40,12 +40,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0001
      * @tc.number patternLockTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set sideLength values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set sideLength values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0001 START');
@@ -59,12 +59,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0002
      * @tc.number patternLockTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set circleRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set circleRadius values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0002 START');
@@ -78,12 +78,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0003
      * @tc.number patternLockTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0003 START');
@@ -97,12 +97,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0004
      * @tc.number patternLockTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set regularColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set regularColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0004 START');
@@ -116,12 +116,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0005
      * @tc.number patternLockTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc Set activeColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set activeColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0005 START');
@@ -135,12 +135,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0006
      * @tc.number patternLockTest_0006
-     * @tc.name Test the properties of components
-     * @tc.desc Set pathColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set pathColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0006 START');
@@ -154,12 +154,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0007
      * @tc.number patternLockTest_0007
-     * @tc.name Test the properties of components
-     * @tc.desc Set pathStrokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set pathStrokeWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0007', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0007 START');
@@ -173,12 +173,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0008
      * @tc.number patternLockTest_0008
-     * @tc.name Test the properties of components
-     * @tc.desc Set autoReset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set autoReset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0008', Level.LEVEL0, async (done: Function) => {
       console.info('patternLockTest_0008 START');
@@ -192,12 +192,12 @@ export default function patternLockJsunit() {
     });
 
     /**
+     * @tc.name   patternLockTest_0009
      * @tc.number patternLockTest_0009
-     * @tc.name Test the properties of components
-     * @tc.desc Change sideLength values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change sideLength values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('patternLockTest_0009', Level.LEVEL0, async (done: Function) => {
 

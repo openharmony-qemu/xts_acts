@@ -41,11 +41,13 @@ export default function TimePickerDialogShadowTest() {
       await CommonFunc.sleep(1000);
       console.info("TimePickerDialogShadow after each called");
     });
-    /* *
-     * @tc.number: TimePickerDialogShadowTest_001
-     * @tc.name  : TimePickerDialogShadowTest_001
-     * @tc.desc  : To test the TimePickerDialog shadow color: Color.Red
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogShadowTest_001
+     * @tc.number TimePickerDialogShadowTest_001
+     * @tc.desc   To test the TimePickerDialog shadow color: Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogShadowTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -61,11 +63,13 @@ export default function TimePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogShadowTest_002
-     * @tc.name  : TimePickerDialogShadowTest_002
-     * @tc.desc  : To test the TimePickerDialog shadow
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogShadowTest_002
+     * @tc.number TimePickerDialogShadowTest_002
+     * @tc.desc   To test the TimePickerDialog shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogShadowTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -81,11 +85,13 @@ export default function TimePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogShadowTest_003
-     * @tc.name  : TimePickerDialogShadowTest_003
-     * @tc.desc  : To test the TimePickerDialog shadow
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogShadowTest_003
+     * @tc.number TimePickerDialogShadowTest_003
+     * @tc.desc   To test the TimePickerDialog shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogShadowTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -101,11 +107,13 @@ export default function TimePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogShadowTest_004
-     * @tc.name  : TimePickerDialogShadowTest_004
-     * @tc.desc  : To test the TimePickerDialog shadow
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogShadowTest_004
+     * @tc.number TimePickerDialogShadowTest_004
+     * @tc.desc   To test the TimePickerDialog shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogShadowTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -121,11 +129,13 @@ export default function TimePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogShadowTest_005
-     * @tc.name  : TimePickerDialogShadowTest_005
-     * @tc.desc  : To test the TimePickerDialog shadow
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogShadowTest_005
+     * @tc.number TimePickerDialogShadowTest_005
+     * @tc.desc   To test the TimePickerDialog shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogShadowTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -141,11 +151,13 @@ export default function TimePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogShadowTest_006
-     * @tc.name  : TimePickerDialogShadowTest_006
-     * @tc.desc  : To test the TimePickerDialog shadow
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogShadowTest_006
+     * @tc.number TimePickerDialogShadowTest_006
+     * @tc.desc   To test the TimePickerDialog shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogShadowTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -161,11 +173,13 @@ export default function TimePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogShadowTest_007
-     * @tc.name  : TimePickerDialogShadowTest_007
-     * @tc.desc  : To test the TimePickerDialog shadow
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogShadowTest_007
+     * @tc.number TimePickerDialogShadowTest_007
+     * @tc.desc   To test the TimePickerDialog shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogShadowTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

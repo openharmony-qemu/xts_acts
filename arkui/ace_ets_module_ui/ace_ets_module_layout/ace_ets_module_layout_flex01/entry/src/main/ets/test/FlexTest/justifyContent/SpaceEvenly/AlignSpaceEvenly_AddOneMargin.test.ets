@@ -47,10 +47,12 @@ export default function AlignSpaceEvenly_AddOneMargin() {
     });
 
     /**
+     * @tc.name   testFlexAlignSpaceEvenlyTextMarginMeet
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1500
-     * @tc.name testFlexAlignSpaceEvenlyTextMarginMeet
-     * @tc.desc After setting margin for the first subcomponent, the layout of the parent component's spindle
-     * meets the interface display of the subcomponent's layout
+     * @tc.desc   After setting margin for the first subcomponent, the layout of the parent component's spindle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignSpaceEvenlyTextMarginMeet',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignSpaceEvenlyTextMarginMeet] START');
@@ -95,10 +97,12 @@ export default function AlignSpaceEvenly_AddOneMargin() {
 
     })
     /**
+     * @tc.name   testFlexAlignSpaceEvenlyTextMarginOverflow
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1600
-     * @tc.name testFlexAlignSpaceEvenlyTextMarginOverflow
-     * @tc.desc After setting margin for the first subcomponent, the layout of the parent component's spindle does
-     * not meet the interface display of the subcomponent's layout
+     * @tc.desc   After setting margin for the first subcomponent, the layout of the parent component's spindle does
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignSpaceEvenlyTextMarginOverflow',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignSpaceEvenlyTextMarginOverflow] START');

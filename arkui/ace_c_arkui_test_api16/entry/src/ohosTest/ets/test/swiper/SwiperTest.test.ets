@@ -25,13 +25,13 @@ export default function swiperTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : swiperAutoPlayTest001
-     * @tc.desc       : testing Swiper AutoPlay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   swiperAutoPlayTest001
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0100
+     * @tc.desc   testing Swiper AutoPlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperAutoPlayTest001', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAutoPlayTest001 START');

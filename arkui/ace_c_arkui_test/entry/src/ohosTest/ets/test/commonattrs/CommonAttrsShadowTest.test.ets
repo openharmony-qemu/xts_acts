@@ -26,78 +26,78 @@ export default function commonAttrsShadowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0100
-     * @tc.name       : testCommonAttrsShadow001
-     * @tc.desc       : testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_XS
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsShadow001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0100
+     * @tc.desc   testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_XS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsShadow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsShadow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0200
-     * @tc.name       : testCommonAttrsShadow002
-     * @tc.desc       : testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_SM
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsShadow002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0200
+     * @tc.desc   testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsShadow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsShadow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0300
-     * @tc.name       : testCommonAttrsShadow003
-     * @tc.desc       : testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_MD
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsShadow003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0300
+     * @tc.desc   testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsShadow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsShadow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0400
-     * @tc.name       : testCommonAttrsShadow004
-     * @tc.desc       : testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_LG
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsShadow004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0400
+     * @tc.desc   testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_LG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsShadow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsShadow004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0500
-     * @tc.name       : testCommonAttrsShadow005
-     * @tc.desc       : testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_FLOATING_SM
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsShadow005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0500
+     * @tc.desc   testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_FLOATING_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsShadow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsShadow005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0600
-     * @tc.name       : testCommonAttrsShadow006
-     * @tc.desc       : testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_FLOATING_MD
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsShadow006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SHADOW_0600
+     * @tc.desc   testing shadow for flex with ARKUI_SHADOW_STYLE_OUTER_FLOATING_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsShadow006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsShadow006()).assertEqual(0)

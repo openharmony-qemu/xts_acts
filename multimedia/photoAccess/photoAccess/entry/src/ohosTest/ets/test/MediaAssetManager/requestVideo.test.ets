@@ -2034,6 +2034,12 @@ export default function requestVideoTest() {
      */
     it('request_hdr_video_fileUri_imageUri_photoAsset_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_hdr_video_compatible_onprogress';
+      let isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so')
+      if (!isSupportHdr) {
+        console.info('device unsupport hdr');
+        done();
+        return
+      }
       try {
         let fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, "test_hdr_1.mp4");
         let fetchResult = await helper.getAssets(fetchOps);

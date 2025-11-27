@@ -45,12 +45,12 @@ export default function GridItemOnSelectJsunit() {
     });
 
     /**
-     * @tc.number    testgridItemOnSelect0001
-     * @tc.name      testgridItemOnSelect0001
-     * @tc.desc      The GridItem OnSelect.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testgridItemOnSelect0001
+     * @tc.number testgridItemOnSelect0001
+     * @tc.desc   The GridItem OnSelect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgridItemOnSelect0001', Level.LEVEL0, async () => {
       console.info('testgridItemOnSelect testgridItemOnSelect0001 START');

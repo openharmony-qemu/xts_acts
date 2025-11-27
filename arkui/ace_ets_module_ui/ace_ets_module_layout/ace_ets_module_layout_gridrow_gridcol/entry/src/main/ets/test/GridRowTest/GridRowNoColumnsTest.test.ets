@@ -211,12 +211,12 @@ export default function GridRowNoColumnsTest() {
     });
 
     /**
-     * @tc.number    GridRowNoColumnsTest_0100
-     * @tc.name      GridRowNoColumnsTest_0100
-     * @tc.desc      test Flex LayoutPolicy
-     * @tc.level:    Level 1
-     * @tc.type :    GridRowNoColumns
-     * @tc.size :
+     * @tc.name   GridRowNoColumnsTest_0100
+     * @tc.number GridRowNoColumnsTest_0100
+     * @tc.desc   test Flex LayoutPolicy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridRowNoColumnsTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[GridRowNoColumnsTest_0100] START');

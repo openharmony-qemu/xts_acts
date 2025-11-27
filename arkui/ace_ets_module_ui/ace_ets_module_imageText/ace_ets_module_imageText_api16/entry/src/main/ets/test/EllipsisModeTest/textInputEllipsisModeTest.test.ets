@@ -45,12 +45,13 @@ export default function textInputEllipsisModeTest() {
       console.info("textInputEllipsisModeTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         textInputEllipsisModeTest0001
-     * @tc.desic        Test textInputEllipsisModeTest Normal value :EllipsisMode.END
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
+    /**
+     * @tc.name   textInputEllipsisModeTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   textInputEllipsisModeTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEllipsisModeTest0001',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -63,13 +64,13 @@ export default function textInputEllipsisModeTest() {
         console.info("[textInputEllipsisModeTest0001] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         textInputEllipsisModeTest0002
-     * @tc.desic        Test textInputEllipsisModeTest Normal value :EllipsisMode.START
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputEllipsisModeTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   textInputEllipsisModeTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEllipsisModeTest0002',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -82,13 +83,13 @@ export default function textInputEllipsisModeTest() {
         console.info("[textInputEllipsisModeTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         textInputEllipsisModeTest0003
-     * @tc.desic        Test textInputEllipsisModeTest Normal value :EllipsisMode.CENTER
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputEllipsisModeTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   textInputEllipsisModeTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEllipsisModeTest0003',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -101,13 +102,13 @@ export default function textInputEllipsisModeTest() {
         console.info("[textInputEllipsisModeTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         textInputEllipsisModeTest0004
-     * @tc.desic        Test textInputEllipsisModeTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputEllipsisModeTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   textInputEllipsisModeTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEllipsisModeTest0004',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -120,13 +121,13 @@ export default function textInputEllipsisModeTest() {
         console.info("[textInputEllipsisModeTest0004] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         textInputEllipsisModeTest0005
-     * @tc.desic        Test textInputEllipsisModeTest abnormal value :null
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputEllipsisModeTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   textInputEllipsisModeTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputEllipsisModeTest0005',  Level.LEVEL0, async () => {
         let driver = Driver.create();

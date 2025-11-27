@@ -54,14 +54,14 @@ export default function StateSet() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_STATESet_0010
-    * @tc.name  : StateSet_0100
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   StateSet_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_STATESet_0010
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateSet_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StateSet_0100 START');
       let driver: Driver = await Driver.create()
@@ -79,14 +79,14 @@ export default function StateSet() {
       console.info('[StateSet_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_STATESet_0020
-    * @tc.name  : StateSet_0200
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   StateSet_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_STATESet_0020
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateSet_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StateSet_0200 START');
       let driver: Driver = await Driver.create()
@@ -104,14 +104,14 @@ export default function StateSet() {
       console.info('[StateSet_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_STATESet_0030
-    * @tc.name  : StateSet_0300
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   StateSet_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_STATESet_0030
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateSet_0300', Level.LEVEL0, async (done: Function) => {
       console.info('StateSet_0300 START');
       let driver: Driver = await Driver.create()

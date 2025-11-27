@@ -37,6 +37,8 @@ struct WebResourceType {
   @State webResourceTypeImage: number = -1;
   @State webResourceTypeFontResource: number = -1;
   @State webResourceTypeMedia: number = -1;
+  @State webResourceTypeObject: number = -1;
+  @State webResourceTypePrefetch: number = -1;
   @State webResourceFavicon: number = -1;
   @State webResourceTypeXhr: number = -1;
   @State webResourceTypePing: number = -1;
@@ -162,6 +164,18 @@ struct WebResourceType {
               }
               break;
             }
+            case 'testWebResourceTypeObject': {
+              this.isPageEnd = 0
+              try {
+                this.controller.loadUrl($rawfile('webResourceType.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, 'testWebResourceTypeObject', 2, 1000);
+                await Utils.waitForExist(()=>this.webResourceTypeObject, 'webResourceTypeObject', 7, 1000);
+                Utils.emitEvent(this.webResourceTypeObject, 25110707)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
             case 'testWebResourceTypeMedia': {
               this.isPageEnd = 0
               try {
@@ -181,6 +195,18 @@ struct WebResourceType {
                 await Utils.waitForExist(()=>this.isPageEnd, 'testWebResourceTypePing', 2, 1000);
                 await Utils.waitForExist(()=>this.webResourceTypePing, 'webResourceTypePing', 14, 1000);
                 Utils.emitEvent(this.webResourceTypePing, 25110714)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceTypePrefetch': {
+              this.isPageEnd = 0
+              try {
+                this.controller.loadUrl($rawfile('webResourceType.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, 'testWebResourceTypePrefetch', 2, 1000);
+                await Utils.waitForExist(()=>this.webResourceTypePrefetch, 'webResourceTypePrefetch', 11, 1000);
+                Utils.emitEvent(this.webResourceTypePrefetch, 25110711)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -225,9 +251,17 @@ struct WebResourceType {
                     console.log('[schemeHandler] onRequestStart webview.WebResourceType.FONT_RESOURCE')
                     this.webResourceTypeFontResource = request.getRequestResourceType()
                 }
+                if (request.getRequestResourceType() === webview.WebResourceType.OBJECT) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.OBJECT')
+                    this.webResourceTypeObject = request.getRequestResourceType()
+                }
                 if (request.getRequestResourceType() === webview.WebResourceType.MEDIA) {
                     console.log('[schemeHandler] onRequestStart webview.WebResourceType.MEDIA')
                     this.webResourceTypeMedia = request.getRequestResourceType()
+                }
+                if (request.getRequestResourceType() === webview.WebResourceType.PREFETCH) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.PREFETCH')
+                    this.webResourceTypePrefetch = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.FAVICON) {
                     console.log('[schemeHandler] onRequestStart webview.WebResourceType.FAVICON')

@@ -26,78 +26,78 @@ export default function customComponentInvertTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0100
-     * @tc.name       : testCustomComponentInvert001
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentInvert001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0100
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentInvert001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentInvert001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0200
-     * @tc.name       : testCustomComponentInvert002
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentInvert002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0200
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentInvert002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentInvert002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0300
-     * @tc.name       : testCustomComponentInvert003
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentInvert003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0300
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentInvert003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentInvert003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0400
-     * @tc.name       : testCustomComponentInvert004
-     * @tc.desc       : testing invert for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentInvert004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0400
+     * @tc.desc   testing invert for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentInvert004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentInvert004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0500
-     * @tc.name       : testCustomComponentInvert005
-     * @tc.desc       : testing invert for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentInvert005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0500
+     * @tc.desc   testing invert for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentInvert005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentInvert005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0600
-     * @tc.name       : testCustomComponentInvert006
-     * @tc.desc       : testing invert for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentInvert006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_INVERT_0600
+     * @tc.desc   testing invert for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentInvert006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentInvert006()).assertEqual(0)

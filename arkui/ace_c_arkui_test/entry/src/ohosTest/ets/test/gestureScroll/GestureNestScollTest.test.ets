@@ -50,13 +50,13 @@ export default function gestureNestScrollTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE001
-     * @tc.name       : testGestureNestScroll001
-     * @tc.desc       : testing scene test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll001
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE001
+     * @tc.desc   testing scene test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -85,116 +85,116 @@ export default function gestureNestScrollTest() {
    
     });
    
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE002
-     * @tc.name       : testGestureNestScroll002
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll002
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE002
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter001()).assertEqual(0)
       done();
     });
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE003
-     * @tc.name       : testGestureNestScroll003
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll003
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE003
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE004
-     * @tc.name       : testGestureNestScroll004
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll004
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE004
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter003()).assertEqual(0)
       done();
     });
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE005
-     * @tc.name       : testGestureNestScroll005
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll005
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE005
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE006
-     * @tc.name       : testGestureNestScroll006
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll006
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE006
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter005()).assertEqual(0)
       done();
     });
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE007
-     * @tc.name       : testGestureNestScroll007
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll007
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE007
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter006()).assertEqual(0)
       done();
     });
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE008
-     * @tc.name       : testGestureNestScroll008
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll008
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE008
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter007()).assertEqual(0)
       done();
     });
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE009
-     * @tc.name       : testGestureNestScroll009
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll009
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE009
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter008()).assertEqual(0)
       done();
     });
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE010
-     * @tc.name       : testGestureNestScroll010
-     * @tc.desc       : test parameter and return value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureNestScroll010
+     * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE010
+     * @tc.desc   test parameter and return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureNestScroll010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.gestureTestParaMeter009()).assertEqual(0)

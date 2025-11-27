@@ -57,9 +57,12 @@ export default function Grid_ScrollStartandStop4() {
 
 
     /**
+     * @tc.name   Grid_ScrollStartandStop4_0500
      * @tc.number SUB_ACE_Grid_ScrollStartandStop4_0500
-     * @tc.name testGrid
-     * @tc.desc Trigger onScrollStart when the grid quickly slides, and onScrollStop when the slide stops
+     * @tc.desc   Trigger onScrollStart when the grid quickly slides, and onScrollStop when the slide stops
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollStartandStop4_0500',  Level.LEVEL0, async (done: Function) => {
 

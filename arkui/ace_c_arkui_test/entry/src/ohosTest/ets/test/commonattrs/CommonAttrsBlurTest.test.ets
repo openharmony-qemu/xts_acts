@@ -26,78 +26,78 @@ export default function commonAttrsBlurTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0100
-     * @tc.name       : testCommonAttrsBlur001
-     * @tc.desc       : testing blur for commonAttrs with valid value 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBlur001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0100
+     * @tc.desc   testing blur for commonAttrs with valid value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBlur001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBlur001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0200
-     * @tc.name       : testCommonAttrsBlur002
-     * @tc.desc       : testing blur for commonAttrs with valid value 30
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBlur002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0200
+     * @tc.desc   testing blur for commonAttrs with valid value 30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBlur002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBlur002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0300
-     * @tc.name       : testCommonAttrsBlur003
-     * @tc.desc       : testing blur for commonAttrs with valid value 50
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBlur003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0300
+     * @tc.desc   testing blur for commonAttrs with valid value 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBlur003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBlur003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0400
-     * @tc.name       : testCommonAttrsBlur004
-     * @tc.desc       : testing blur for commonAttrs with valid value 100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBlur004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0400
+     * @tc.desc   testing blur for commonAttrs with valid value 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBlur004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBlur004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0500
-     * @tc.name       : testCommonAttrsBlur005
-     * @tc.desc       : testing blur for commonAttrs with invalid value -100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBlur005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0500
+     * @tc.desc   testing blur for commonAttrs with invalid value -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBlur005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBlur005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0600
-     * @tc.name       : testCommonAttrsBlur006
-     * @tc.desc       : testing resetAttribute blur for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBlur006
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0600
+     * @tc.desc   testing resetAttribute blur for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBlur006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBlur006()).assertEqual(0)

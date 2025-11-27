@@ -47,14 +47,14 @@ export default function swiperCountJsunit() {
       console.info(" swiperCountJsunit after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_Swiper_MAXDISPLAYCOUNT_0100
-    * @tc.name  : swiperCountJsunit_0100
-    * @tc.desc  : Set the Indicator maxDisplayCount when selected.
-    * @tc.level : Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   swiperCountJsunit_0100
+     * @tc.number SUB_ACE_Swiper_MAXDISPLAYCOUNT_0100
+     * @tc.desc   Set the Indicator maxDisplayCount when selected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperCountJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('swiperCountJsunit_0100 START');
       await CommonFunc.sleep(1000);

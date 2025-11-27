@@ -50,12 +50,12 @@ export default function progressButtonV2PageTest() {
     })
 
     /**
-     * @tc.number progressButtonV2PageTest
      * @tc.name   progressButtonV2PageTest_0100
+     * @tc.number progressButtonV2PageTest
      * @tc.desc   Test progressButtonV2Page
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('progressButtonV2PageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[progressButtonV2PageTest_0100] START');

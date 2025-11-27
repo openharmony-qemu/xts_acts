@@ -49,12 +49,12 @@ export default function editableTitleBarSafeAreaTypes() {
     })
 
     /**
+     * @tc.name   editableTitleBarSafeAreaTypes_0100
      * @tc.number editableTitleBarSafeAreaTypes
-     * @tc.name   editableTitleBarSafeAreaTypes
      * @tc.desc   Test editableTitleBarSafeAreaTypes
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editableTitleBarSafeAreaTypes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

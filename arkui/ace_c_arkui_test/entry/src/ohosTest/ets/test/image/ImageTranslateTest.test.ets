@@ -26,65 +26,65 @@ export default function imageTranslateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0100
-     * @tc.name       : testImageTranslate001
-     * @tc.desc       : testing translate for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTranslate001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0100
+     * @tc.desc   testing translate for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTranslate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTranslate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0200
-     * @tc.name       : testImageTranslate002
-     * @tc.desc       : testing translate for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTranslate002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0200
+     * @tc.desc   testing translate for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTranslate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTranslate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0300
-     * @tc.name       : testImageTranslate003
-     * @tc.desc       : testing translate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTranslate003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0300
+     * @tc.desc   testing translate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTranslate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTranslate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0400
-     * @tc.name       : testImageTranslate004
-     * @tc.desc       : testing translate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTranslate004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0400
+     * @tc.desc   testing translate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTranslate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTranslate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0500
-     * @tc.name       : testImageTranslate005
-     * @tc.desc       : testing translate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTranslate005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSLATE_0500
+     * @tc.desc   testing translate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTranslate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTranslate005()).assertEqual(0)

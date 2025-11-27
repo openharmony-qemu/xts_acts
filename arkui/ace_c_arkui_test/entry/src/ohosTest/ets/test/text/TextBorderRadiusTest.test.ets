@@ -26,65 +26,65 @@ export default function textBorderRadiusTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0100
-     * @tc.name       : testTextBorderRadius001
-     * @tc.desc       : testing borderradius for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBorderRadius001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0100
+     * @tc.desc   testing borderradius for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderRadius001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderRadius001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0200
-     * @tc.name       : testTextBorderRadius002
-     * @tc.desc       : testing borderradius for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBorderRadius002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0200
+     * @tc.desc   testing borderradius for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderRadius002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderRadius002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0300
-     * @tc.name       : testTextBorderRadius003
-     * @tc.desc       : testing borderradius for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBorderRadius003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0300
+     * @tc.desc   testing borderradius for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderRadius003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderRadius003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0400
-     * @tc.name       : testTextBorderRadius004
-     * @tc.desc       : testing borderradius for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBorderRadius004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0400
+     * @tc.desc   testing borderradius for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderRadius004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderRadius004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0500
-     * @tc.name       : testTextBorderRadius005
-     * @tc.desc       : testing borderradius for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextBorderRadius005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERRADIUS_0500
+     * @tc.desc   testing borderradius for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderRadius005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderRadius005()).assertEqual(0)

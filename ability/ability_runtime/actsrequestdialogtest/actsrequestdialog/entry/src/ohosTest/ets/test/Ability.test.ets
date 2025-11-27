@@ -33,11 +33,14 @@ function sleep(time: number) {
 export default function abilityTest() {
   describe('ActsRequestDialogTest', () => {
     console.info("====>in ActsRequestDialogTest====>");
-    /*
-    * @tc.number: ACTS_requestDialog_0100
-    * @tc.name: Start Recent Ability with no callback.
-    * @tc.desc: reguest dialog service
-    */
+    /**
+     * @tc.name   ACTS_requestDialog_0100
+     * @tc.number ACTS_requestDialog_0100
+     * @tc.desc   reguest dialog service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_requestDialog_0100', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_requestDialog_0100====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -83,11 +86,14 @@ export default function abilityTest() {
       console.log('Start  ACTS_requestDialog_0100 timer id : ' + id);
     })
 
-    /*
-    * @tc.number: ACTS_requestDialog_0200
-    * @tc.name: Start Recent Ability with no permission.
-    * @tc.desc: reguest dialog service
-    */
+    /**
+     * @tc.name   ACTS_requestDialog_0200
+     * @tc.number ACTS_requestDialog_0200
+     * @tc.desc   reguest dialog service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_requestDialog_0200', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_requestDialog_0200====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;

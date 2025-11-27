@@ -42,7 +42,7 @@ export default function abilityTest() {
      * @tc.desc   assertContain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('assertContain',0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

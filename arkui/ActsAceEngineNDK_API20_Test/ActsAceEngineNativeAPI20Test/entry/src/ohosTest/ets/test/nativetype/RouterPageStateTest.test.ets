@@ -26,12 +26,12 @@ export default function RouterPageStateTest() {
       await Utils.replacePageStandard("NativeType/RouterPage", done);
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_RouterPageState_0300
-     * @tc.name    : testArkUIACERouterPageState0300
-     * @tc.desc    : testing ArkUI_RouterPageState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACERouterPageState0300
+     * @tc.number SUB_ArkUI_ACE_RouterPageState_0300
+     * @tc.desc   testing ArkUI_RouterPageState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACERouterPageState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -53,12 +53,12 @@ export default function RouterPageStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_RouterPageState_0400
-     * @tc.name    : testArkUIACERouterPageState0400
-     * @tc.desc    : testing ArkUI_RouterPageState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACERouterPageState0400
+     * @tc.number SUB_ArkUI_ACE_RouterPageState_0400
+     * @tc.desc   testing ArkUI_RouterPageState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACERouterPageState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -80,12 +80,12 @@ export default function RouterPageStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_RouterPageState_0500
-     * @tc.name    : testArkUIACERouterPageState0500
-     * @tc.desc    : testing ArkUI_RouterPageState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACERouterPageState0500
+     * @tc.number SUB_ArkUI_ACE_RouterPageState_0500
+     * @tc.desc   testing ArkUI_RouterPageState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACERouterPageState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

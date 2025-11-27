@@ -42,12 +42,12 @@ export default function SubAbstractPropertyLinkTest() {
       done();
     });
     /**
-     * @tc.number: SubAbstractPropertyLinkTest_0100
-     * @tc.name: SubAbstractPropertyLinkTest_0100
-     * @tc.desc: aceEtsTest_ref
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   SubAbstractPropertyLinkTest_0100
+     * @tc.number SubAbstractPropertyLinkTest_0100
+     * @tc.desc   aceEtsTest_ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubAbstractPropertyLinkTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('SubAbstractPropertyLinkTest001 START');

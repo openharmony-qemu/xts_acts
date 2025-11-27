@@ -41,10 +41,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number  Context_getGroupDir_Static_002
-         * @tc.name    Context_getGroupDir_Static_002
-         * @tc.desc    Function test,getGroupDir
-         * @tc.level   0
+         * @tc.name   Context_getGroupDir_Static_002
+         * @tc.number Context_getGroupDir_Static_002
+         * @tc.desc   Function test,getGroupDir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Context_getGroupDir_Static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_002 =====>");
@@ -60,10 +62,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number  Context_getGroupDir_Static_003
-         * @tc.name    Context_getGroupDir_Static_003
-         * @tc.desc    Function test,getGroupDir
-         * @tc.level   0
+         * @tc.name   Context_getGroupDir_Static_003
+         * @tc.number Context_getGroupDir_Static_003
+         * @tc.desc   Function test,getGroupDir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Context_getGroupDir_Static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_003 =====>");
@@ -79,10 +83,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number  Context_getGroupDir_Static_005
-         * @tc.name    Context_getGroupDir_Static_005
-         * @tc.desc    Function test,getGroupDir
-         * @tc.level   0
+         * @tc.name   Context_getGroupDir_Static_005
+         * @tc.number Context_getGroupDir_Static_005
+         * @tc.desc   Function test,getGroupDir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Context_getGroupDir_Static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_005 =====>");
@@ -97,10 +103,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number  Context_getGroupDir_Static_006
-         * @tc.name    Context_getGroupDir_Static_006
-         * @tc.desc    Function test,getGroupDir
-         * @tc.level   0
+         * @tc.name   Context_getGroupDir_Static_006
+         * @tc.number Context_getGroupDir_Static_006
+         * @tc.desc   Function test,getGroupDir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Context_getGroupDir_Static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_006 =====>");

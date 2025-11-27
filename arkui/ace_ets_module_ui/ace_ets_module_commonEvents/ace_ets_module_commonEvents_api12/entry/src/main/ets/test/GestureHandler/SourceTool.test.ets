@@ -48,12 +48,12 @@ export default function SourceToolTest() {
     });
 
     /**
-     * @tc.number    SourceTool_0010
-     * @tc.name      SourceTool: SourceTool.MOUSE
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SourceTool_0010
+     * @tc.number SourceTool_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SourceTool_0010', Level.LEVEL0, async (done: Function) => {
       console.info('SourceTool_0010 START');
@@ -74,12 +74,12 @@ export default function SourceToolTest() {
     });
 
     /**
-     * @tc.number    SourceTool_0020
-     * @tc.name      SourceTool: SourceTool.TOUCHPAD
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SourceTool_0020
+     * @tc.number SourceTool_0020
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SourceTool_0020', Level.LEVEL0, async (done: Function) => {
       console.info('SourceTool_0020 START');
@@ -101,12 +101,12 @@ export default function SourceToolTest() {
     });
 
     /**
-     * @tc.number    SourceTool_0030
-     * @tc.name      SourceTool: SourceTool.JOYSTICK
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SourceTool_0030
+     * @tc.number SourceTool_0030
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SourceTool_0030', Level.LEVEL0, async (done: Function) => {
       console.info('SourceTool_0030 START');
@@ -123,12 +123,12 @@ export default function SourceToolTest() {
     });
 
     /**
-     * @tc.number    axisHorizontal_0040
-     * @tc.name      axisHorizontal
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   axisHorizontal_0040
+     * @tc.number axisHorizontal_0040
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('axisHorizontal_0040', Level.LEVEL0, async (done: Function) => {
       console.info('axisHorizontal_0040 START');
@@ -150,12 +150,12 @@ export default function SourceToolTest() {
     });
 
     /**
-     * @tc.number    axisVertical_0050
-     * @tc.name      axisVertical
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   axisVertical_0050
+     * @tc.number axisVertical_0050
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('axisVertical_0050', Level.LEVEL0, async (done: Function) => {
       console.info('axisVertical_0050 START');

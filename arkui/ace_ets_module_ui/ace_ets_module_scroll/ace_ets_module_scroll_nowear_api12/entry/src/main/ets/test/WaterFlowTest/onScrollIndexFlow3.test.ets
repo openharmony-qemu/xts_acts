@@ -46,12 +46,12 @@ export default function onScrollIndexFlow3() {
     });
 
     /**
-     * @tc.number    onScrollIndexFlow3_001
-     * @tc.name      onScrollIndexFlow3_001
-     * @tc.desc      Slide FlowItem through the controller
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   onScrollIndexFlow3_0100
+     * @tc.number onScrollIndexFlow3_001
+     * @tc.desc   Slide FlowItem through the controller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('onScrollIndexFlow3_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[onScrollIndexFlow3_0100] START');

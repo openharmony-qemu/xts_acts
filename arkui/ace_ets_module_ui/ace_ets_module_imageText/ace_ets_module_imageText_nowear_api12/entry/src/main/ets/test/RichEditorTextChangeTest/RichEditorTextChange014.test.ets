@@ -55,12 +55,12 @@ export default function RichEditorTextChange014() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0003
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0003
-     * @tc.desc  : Non editing state to editing state (drag and drop content) _onEditingChange callback query eisEditing state query to test RichEditor TextChange
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0003
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0003
+     * @tc.desc   Non editing state to editing state (drag and drop content) _onEditingChange callback query eisEditing state query to test RichEditor TextChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0003 START');
@@ -87,12 +87,12 @@ export default function RichEditorTextChange014() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0010
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0010
-     * @tc.desc  : From editing state to non editing state (drag and drop content) _onEditingChange callback query tisEditing state query to test RichEditor TextChange
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0010
+     * @tc.desc   From editing state to non editing state (drag and drop content) _onEditingChange callback query tisEditing state query to test RichEditor TextChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_0010 START');

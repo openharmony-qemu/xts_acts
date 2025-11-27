@@ -62,13 +62,13 @@ export default function isVisible() {
     });
 
     /**
+     * @tc.name   isVisible_0100
      * @tc.number SUB_ACE_isVisible_0100
-     * @tc.name isVisible_0100
-     * @tc.desc To test PopupStateChangeParam isVisible
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test PopupStateChangeParam isVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('isVisible_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('isVisible_0100 START');
       let driver = await Driver.create()

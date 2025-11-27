@@ -46,10 +46,13 @@ export default function list_item_groupJsunit() {
       console.info("list_item_group after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testlist_itemOnSelect0001
-     * @tc.desic         acelist_itemOnSelectEtsTest0001
+    /**
+     * @tc.name   testlist_item_group0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testlist_item_group0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_item_group0001', Level.LEVEL1, async (done: Function) => {
       console.info('testcase testlist_item_group0001 START');
@@ -61,10 +64,13 @@ export default function list_item_groupJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testlist_itemOnSelect0002
-     * @tc.desic         acelist_itemOnSelectEtsTest0002
+    /**
+     * @tc.name   testlist_item_group0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testlist_item_group0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_item_group0002', Level.LEVEL1, async (done: Function) => {
       console.info('testcase testlist_item_group0002 START');
@@ -76,10 +82,13 @@ export default function list_item_groupJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testlist_itemOnSelect0003
-     * @tc.desic         acelist_itemOnSelectEtsTest0002
+    /**
+     * @tc.name   testlist_item_group0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testlist_item_group0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_item_group0003', Level.LEVEL1, async (done: Function) => {
       console.info('testcase testlist_item_group0003 START');
@@ -92,10 +101,13 @@ export default function list_item_groupJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testlist_itemSwipeAction0004
-     * @tc.desic         acelist_itemSwipeActionEtsTest0004
+    /**
+     * @tc.name   testlist_item_group0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testlist_item_group0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_item_group0004', Level.LEVEL1, async (done: Function) => {
       console.info('testcase testlist_item_group0004 START');

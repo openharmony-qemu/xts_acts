@@ -45,12 +45,14 @@ export default function ActsAccountChangeOnOff() {
             )
         }
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0100
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to change
-        *                 the additional information
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0100
+         * @tc.number ActsAccountChangeOnOff_0100
+         * @tc.desc   Received the account information change to the authorized account of the subscription to change
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountChangeOnOff_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await testInit(); 
             await sleep(500)
@@ -122,12 +124,14 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0200
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to change
-        *                 the associatal data
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0200
+         * @tc.number ActsAccountChangeOnOff_0200
+         * @tc.desc   Received the account information change to the authorized account of the subscription to change
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountChangeOnOff_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await testInit();
             await sleep(500)
@@ -190,12 +194,14 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0300
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to change
-        *                 the credential
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0300
+         * @tc.number ActsAccountChangeOnOff_0300
+         * @tc.desc   Received the account information change to the authorized account of the subscription to change
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountChangeOnOff_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             await testInit();
             await sleep(500)
@@ -258,12 +264,14 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0400
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to delete
-        *                 authorized account
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0400
+         * @tc.number ActsAccountChangeOnOff_0400
+         * @tc.desc   Received the account information change to the authorized account of the subscription to delete
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountChangeOnOff_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             await testInit();
             await sleep(500)
@@ -330,12 +338,14 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0500
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to delete
-        *                 the only authorized account
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0500
+         * @tc.number ActsAccountChangeOnOff_0500
+         * @tc.desc   Received the account information change to the authorized account of the subscription to delete
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountChangeOnOff_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             await testInit();
             await sleep(500)
@@ -393,12 +403,14 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0600
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to cancel
-        *                 authorized account   
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0600
+         * @tc.number ActsAccountChangeOnOff_0600
+         * @tc.desc   Received the account information change to the authorized account of the subscription to cancel
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountChangeOnOff_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             await testInit();
             await sleep(500)
@@ -473,12 +485,14 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0700
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to cancel
-        *                 the only authorized account
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0700
+         * @tc.number ActsAccountChangeOnOff_0700
+         * @tc.desc   Received the account information change to the authorized account of the subscription to cancel
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountChangeOnOff_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             await testInit();
             await sleep(500)
@@ -542,13 +556,13 @@ export default function ActsAccountChangeOnOff() {
         });
 
         /**
-        * @tc.number   ActsAccountChangeOnOff_0800
-        * @tc.name     ActsAccountChangeOnOff_0800
-        * @tc.desc     Receive account information after the app subscribes to itself and changes additional information
-        * @tc.level    Level3
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        */
+         * @tc.name   ActsAccountChangeOnOff_0800
+         * @tc.number ActsAccountChangeOnOff_0800
+         * @tc.desc   Receive account information after the app subscribes to itself and changes additional information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountChangeOnOff_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_0800 start====");
             let dataMap = new Map();
@@ -603,12 +617,14 @@ export default function ActsAccountChangeOnOff() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0900
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Receiving account information after adding two accounts to the app, subscribing to itself,
-        *                 and changing one of the associatal data
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_0900
+         * @tc.number ActsAccountChangeOnOff_0900
+         * @tc.desc   Receiving account information after adding two accounts to the app, subscribing to itself,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountChangeOnOff_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_0900 start====");
             let dataMap = new Map();
@@ -679,11 +695,14 @@ export default function ActsAccountChangeOnOff() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_1000
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Repeat subscription account information changes, the subscription behavior is independent
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_1000
+         * @tc.number ActsAccountChangeOnOff_1000
+         * @tc.desc   Repeat subscription account information changes, the subscription behavior is independent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountChangeOnOff_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_1000 start====");
             let dataMapFir = new Map();
@@ -757,12 +776,14 @@ export default function ActsAccountChangeOnOff() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_1100
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Subscription account information changes, where the bundleName in the parameter owners is
-        *                 duplicated
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_1100
+         * @tc.number ActsAccountChangeOnOff_1100
+         * @tc.desc   Subscription account information changes, where the bundleName in the parameter owners is
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountChangeOnOff_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_1100 start====");
             let dataMap = new Map();
@@ -821,11 +842,14 @@ export default function ActsAccountChangeOnOff() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_1200
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Repeatedly cancel the subscription after the subscription account information is changed
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_1200
+         * @tc.number ActsAccountChangeOnOff_1200
+         * @tc.desc   Repeatedly cancel the subscription after the subscription account information is changed
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountChangeOnOff_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_1200 start====");
             let dataMap = new Map();
@@ -885,12 +909,14 @@ export default function ActsAccountChangeOnOff() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_1300
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : There is an unauthorized bundleName in the subscription parameter owners array, and the
-        *                 subscription fails
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_1300
+         * @tc.number ActsAccountChangeOnOff_1300
+         * @tc.desc   There is an unauthorized bundleName in the subscription parameter owners array, and the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountChangeOnOff_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -933,12 +959,14 @@ export default function ActsAccountChangeOnOff() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_1400
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : There is a bundleName that does not exist in the subscription parameter owners array, and the
-        *                 subscription fails
-        */
+        /**
+         * @tc.name   ActsAccountChangeOnOff_1400
+         * @tc.number ActsAccountChangeOnOff_1400
+         * @tc.desc   There is a bundleName that does not exist in the subscription parameter owners array, and the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountChangeOnOff_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_1400 start====");
             var appAccountManager = account.createAppAccountManager();

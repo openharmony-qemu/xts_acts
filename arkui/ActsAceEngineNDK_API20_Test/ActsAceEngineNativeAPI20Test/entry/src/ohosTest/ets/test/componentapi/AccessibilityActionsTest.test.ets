@@ -24,12 +24,12 @@ export default function AccessibilityActionsTest() {
       done();
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_ACCESSIBILITY_ACTION_CUT_0100
-     * @tc.name    : testAccessibilityActionType0100
-     * @tc.desc    : Test ArkUI_AccessibilityActionType.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testAccessibilityActionType0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_ACCESSIBILITY_ACTION_CUT_0100
+     * @tc.desc   Test ArkUI_AccessibilityActionType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAccessibilityActionType0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -42,12 +42,12 @@ export default function AccessibilityActionsTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_ACCESSIBILITY_ACTION_COPY_0100
-     * @tc.name    : testAccessibilityActionType0200
-     * @tc.desc    : Test ArkUI_AccessibilityActionType.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testAccessibilityActionType0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_ACCESSIBILITY_ACTION_COPY_0100
+     * @tc.desc   Test ArkUI_AccessibilityActionType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAccessibilityActionType0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

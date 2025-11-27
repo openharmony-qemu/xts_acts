@@ -47,10 +47,12 @@ export default function ColumnCNodeTest() {
     });
 
     /**
-     * @tc.number    ColumnCNodeTest_0100
-     * @tc.name      ColumnCNodeTest_0100
-     * @tc.desc      Test ColumnCNode
-     * @tc.level     Level 1
+     * @tc.name   ColumnCNodeTest_0100
+     * @tc.number ColumnCNodeTest_0100
+     * @tc.desc   Test ColumnCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ColumnCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnCNodeTest_0100] START');

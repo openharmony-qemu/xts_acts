@@ -19,14 +19,14 @@ import Utils from '../common/Utils';
 export default function listItemHitTestBehaviorTest() {
 
   describe('ListItemHitTestBehaviorTest', () => {
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0100
-    * @tc.name       : testListHitTestBehavior001
-    * @tc.desc       : test listItem hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListItemHitTestBehavior001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0100
+     * @tc.desc   test listItem hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListItemHitTestBehavior001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ListItemHitTestBehaviorDefaultTest';
       await Utils.pushPage(`listitem/${PAGE_TAG}`);
@@ -39,14 +39,14 @@ export default function listItemHitTestBehaviorTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0200
-    * @tc.name       : testListItemHitTestBehavior002
-    * @tc.desc       : test listItem hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListItemHitTestBehavior002
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0200
+     * @tc.desc   test listItem hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListItemHitTestBehavior002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ListItemHitTestBehaviorBlockTest';
       await Utils.pushPage(`listitem/${PAGE_TAG}`);
@@ -59,14 +59,14 @@ export default function listItemHitTestBehaviorTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0300
-    * @tc.name       : testListItemHitTestBehavior003
-    * @tc.desc       : test listItem hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListItemHitTestBehavior003
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0300
+     * @tc.desc   test listItem hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListItemHitTestBehavior003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ListItemHitTestBehaviorTransparentTest';
       await Utils.pushPage(`listitem/${PAGE_TAG}`);
@@ -79,14 +79,14 @@ export default function listItemHitTestBehaviorTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0400
-    * @tc.name       : testListItemHitTestBehavior004
-    * @tc.desc       : test listItem hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListItemHitTestBehavior004
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_HITTESTBEHAVIOR_0400
+     * @tc.desc   test listItem hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListItemHitTestBehavior004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ListItemHitTestBehaviorNoneTest';
       await Utils.pushPage(`listitem/${PAGE_TAG}`);

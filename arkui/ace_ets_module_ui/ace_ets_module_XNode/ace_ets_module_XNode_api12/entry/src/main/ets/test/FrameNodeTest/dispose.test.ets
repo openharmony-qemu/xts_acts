@@ -40,12 +40,12 @@ export default function disposeTest() {
       done();
     });
     /**
-     * @tc.number    disposeTest_0100
-     * @tc.name      disposeTest_0100
-     * @tc.desc      frameNode: dispose
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   disposeTest_0100
+     * @tc.number disposeTest_0100
+     * @tc.desc   frameNode: dispose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('disposeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('disposeTest_0100 START');

@@ -40,12 +40,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0121
      * @tc.number testGauge0121
-     * @tc.name Test the properties of components
-     * @tc.desc Set strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set strokeWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0121', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0121] START');
@@ -60,12 +60,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0122
      * @tc.number testGauge0122
-     * @tc.name Test the properties of components
-     * @tc.desc Set endAngle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set endAngle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0122', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0122] START');
@@ -80,12 +80,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0123
      * @tc.number testGauge0123
-     * @tc.name Test the properties of components
-     * @tc.desc Set startAngle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set startAngle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0123', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0123] START');
@@ -100,12 +100,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0124
      * @tc.number testGauge0124
-     * @tc.name Test the properties of components
-     * @tc.desc Set value values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set value values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0124', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0124] START');
@@ -120,12 +120,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0125
      * @tc.number testGauge0125
-     * @tc.name Test the properties of components
-     * @tc.desc Set colors values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set colors values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0125', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0125] START');
@@ -140,12 +140,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0126
      * @tc.number testGauge0126
-     * @tc.name Test the properties of components
-     * @tc.desc Set indicator values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set indicator values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0126', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0126] START');
@@ -161,12 +161,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0127
      * @tc.number testGauge0127
-     * @tc.name Test the properties of components
-     * @tc.desc Set shadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set shadow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0127', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0127] START');
@@ -183,12 +183,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0128
      * @tc.number testGauge0128
-     * @tc.name Test the properties of components
-     * @tc.desc Set shadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set shadow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0128', Level.LEVEL0, async (done: Function) => {
       console.info('[testGauge0128] START');
@@ -203,12 +203,12 @@ export default function gaugeJsunit() {
     });
 
     /**
+     * @tc.name   testGauge0129
      * @tc.number testGauge0129
-     * @tc.name Test the properties of components
-     * @tc.desc Change strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change strokeWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge0129', Level.LEVEL0, async (done: Function) => {
       console.info('testGauge0129 START');

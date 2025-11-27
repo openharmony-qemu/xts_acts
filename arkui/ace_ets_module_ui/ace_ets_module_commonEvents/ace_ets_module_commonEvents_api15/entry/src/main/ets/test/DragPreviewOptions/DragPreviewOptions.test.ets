@@ -47,12 +47,12 @@ export default function DragPreviewOptions() {
     });
 
     /**
+     * @tc.name   DDragPreviewOptions_0010
      * @tc.number DragPreviewOptions_0010
-     * @tc.name DragPreviewOptions
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DDragPreviewOptions_0010', Level.LEVEL0, async (done: Function) => {
       console.info('DragPreviewOptions_0010 START');

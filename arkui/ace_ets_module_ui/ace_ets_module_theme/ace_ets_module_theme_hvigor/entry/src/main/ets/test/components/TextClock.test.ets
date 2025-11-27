@@ -80,13 +80,13 @@ export default function textClockThemeTest() {
     })
 
     /**
-      * @tc.number    : ActsTextClockThemeColors_0100 
-      * @tc.name      : ActsTextClockThemeColors_0100
-      * @tc.desc      : Check system colors values of TextClock component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsTextClockThemeColors_0100
+     * @tc.number ActsTextClockThemeColors_0100
+     * @tc.desc   Check system colors values of TextClock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsTextClockThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsTextClockThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -103,13 +103,13 @@ export default function textClockThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsTextClockThemeColors_0200 
-      * @tc.name      : ActsTextClockThemeColors_0200
-      * @tc.desc      : Check custom colors values of TextClock component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsTextClockThemeColors_0200
+     * @tc.number ActsTextClockThemeColors_0200
+     * @tc.desc   Check custom colors values of TextClock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsTextClockThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsTextClockThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -126,14 +126,13 @@ export default function textClockThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsTextClockThemeColors_0300 
-      * @tc.name      : ActsTextClockThemeColors_0300
-      * @tc.desc      : Check custom colors values of TextClock component
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsTextClockThemeColors_0300
+     * @tc.number ActsTextClockThemeColors_0300
+     * @tc.desc   Check custom colors values of TextClock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsTextClockThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextClockThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);
@@ -151,14 +150,13 @@ export default function textClockThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsTextClockThemeColors_0400 
-      * @tc.name      : ActsTextClockThemeColors_0400
-      * @tc.desc      : Check system colors values of TextClock component
-      *                 after resetting the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsTextClockThemeColors_0400
+     * @tc.number ActsTextClockThemeColors_0400
+     * @tc.desc   Check system colors values of TextClock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsTextClockThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextClockThemeColors_0400`;
       console.info(`${SUITE} ${CASE} START`);

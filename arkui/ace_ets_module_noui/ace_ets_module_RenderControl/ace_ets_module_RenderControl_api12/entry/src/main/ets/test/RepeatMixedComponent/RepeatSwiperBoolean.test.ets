@@ -59,12 +59,12 @@ export default function RepeatSwiperBoolean() {
     });
 
     /**
+     * @tc.name   RepeatSwiperBoolean_001
      * @tc.number RepeatSwiperBoolean_001
-     * @tc.name RepeatSwiperBoolean_001
-     * @tc.desc Test RepeatSwiperBoolean component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatSwiperBoolean component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatSwiperBoolean_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatSwiperBoolean_001] START');

@@ -44,9 +44,12 @@ export default function swiperAutoPlay_4() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SWIPER_VERTICALCHANGED_0400
-     * @tc.name      testSwiperAutoPlaySetting_4
-     * @tc.desc      Set swiper's  AutoPlay  value ' false ' and interval values '-1000'.
+     * @tc.name   testSwiperAutoPlaySetting_4
+     * @tc.number SUB_ACE_SWIPER_VERTICALCHANGED_0400
+     * @tc.desc   Set swiper's  AutoPlay  value ' false ' and interval values '-1000'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAutoPlaySetting_4', Level.LEVEL1, async  (done:Function)=> {
       console.info('new testSwiperAutoPlaySetting_4 START');

@@ -26,52 +26,52 @@ export default function textTransformTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TRANSFORM_0100
-     * @tc.name       : testTextTransform001
-     * @tc.desc       : testing transform for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTransform001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TRANSFORM_0100
+     * @tc.desc   testing transform for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTransform001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTransform001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TRANSFORM_0200
-     * @tc.name       : testTextTransform002
-     * @tc.desc       : testing transform for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTransform002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TRANSFORM_0200
+     * @tc.desc   testing transform for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTransform002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTransform002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TRANSFORM_0300
-     * @tc.name       : testTextTransform003
-     * @tc.desc       : testing transform for text with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTransform003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TRANSFORM_0300
+     * @tc.desc   testing transform for text with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTransform003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTransform003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TRANSFORM_0400
-     * @tc.name       : testTextTransform004
-     * @tc.desc       : testing transform for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTransform004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TRANSFORM_0400
+     * @tc.desc   testing transform for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTransform004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTransform004()).assertEqual(0)

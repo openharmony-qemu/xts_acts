@@ -79,12 +79,12 @@ export default function adsTest() {
   describe('ActsAdsTest', () => {
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_GET_BODY_0100
-     * @tc.name: testGetAdRequestBody
-     * @tc.desc: callback data is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   testGetAdRequestBody
+     * @tc.number SUB_CLOUD_ADS_GET_BODY_0100
+     * @tc.desc   callback data is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it("testGetAdRequestBody", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -114,12 +114,12 @@ export default function adsTest() {
     }];
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_0200
-     * @tc.name: testMultiLoadAdByCallback_21800001
-     * @tc.desc: Load ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testMultiLoadAdByCallback_21800001
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_0200
+     * @tc.desc   Load ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testMultiLoadAdByCallback_21800001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       let adLoaderListener: advertising.MultiSlotsAdLoadListener = {
@@ -156,12 +156,12 @@ export default function adsTest() {
     };
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_0300
-     * @tc.name: testLoadAdByCallback_21800001
-     * @tc.desc: Load ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadAdByCallback_21800001
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_0300
+     * @tc.desc   Load ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadAdByCallback_21800001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       let adLoaderListener: advertising.AdLoadListener = {
@@ -188,12 +188,12 @@ export default function adsTest() {
 
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_0400
-     * @tc.name: testLoadAdByCallback
-     * @tc.desc: Load ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadAdByCallback
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_0400
+     * @tc.desc   Load ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadAdByCallback", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -222,12 +222,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_AD_SHOW_AD_0500
-     * @tc.name: testShowAd
-     * @tc.desc: start show ability success.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testShowAd
+     * @tc.number SUB_CLOUD_AD_SHOW_AD_0500
+     * @tc.desc   start show ability success.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testShowAd", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -245,12 +245,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_MULTI_AD_0600
-     * @tc.name: testLoadMultiAdByCallback
-     * @tc.desc: Load multi ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadMultiAdByCallback
+     * @tc.number SUB_CLOUD_ADS_LOAD_MULTI_AD_0600
+     * @tc.desc   Load multi ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadMultiAdByCallback", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -281,12 +281,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_INTERACTION_LISTENER_0700
-     * @tc.name: testAdInteractionListener
-     * @tc.desc: callback data is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testAdInteractionListener
+     * @tc.number SUB_CLOUD_ADS_INTERACTION_LISTENER_0700
+     * @tc.desc   callback data is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testAdInteractionListener", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -333,12 +333,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_0800
-     * @tc.name: testLoadAd_401
-     * @tc.desc: Load ad by err code 401.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadAd_401
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_0800
+     * @tc.desc   Load ad by err code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadAd_401", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       let adLoaderListener: advertising.AdLoadListener = {
@@ -365,12 +365,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_0900
-     * @tc.name: testLoadAdMulti_401
-     * @tc.desc: Load multi ad by err code 401.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadAdMulti_401
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_0900
+     * @tc.desc   Load multi ad by err code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadAdMulti_401", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       let adLoaderListener: advertising.MultiSlotsAdLoadListener = {
@@ -399,12 +399,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_AD_SHOW_AD_1000
-     * @tc.name: testShowAd_401
-     * @tc.desc: testShowAd_401.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testShowAd_401
+     * @tc.number SUB_CLOUD_AD_SHOW_AD_1000
+     * @tc.desc   testShowAd_401.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testShowAd_401", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -420,12 +420,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_1100
-     * @tc.name: testLoadAdByCallback_01
-     * @tc.desc: Load ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadAdByCallback01
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_1100
+     * @tc.desc   Load ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadAdByCallback01", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       let adLoaderListener: advertising.AdLoadListener = {
@@ -447,12 +447,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_MULTI_AD_1200
-     * @tc.name: testLoadMultiAdByCallback01
-     * @tc.desc: Load multi ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadMultiAdByCallback01
+     * @tc.number SUB_CLOUD_ADS_LOAD_MULTI_AD_1200
+     * @tc.desc   Load multi ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadMultiAdByCallback01", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       let adLoaderListener: advertising.MultiSlotsAdLoadListener = {
@@ -493,12 +493,12 @@ export default function adsTest() {
     };
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_1300
-     * @tc.name: testLoadAdByCallback_21800003
-     * @tc.desc: Load ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testLoadAdByCallback_21800003
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_1300
+     * @tc.desc   Load ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testLoadAdByCallback_21800003", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       let adLoaderListener: advertising.AdLoadListener = {
@@ -537,12 +537,12 @@ export default function adsTest() {
     };
 
     /**
-     * @tc.number: SUB_CLOUD_AD_SHOW_AD_1400
-     * @tc.name: testShowAd_21800001
-     * @tc.desc: testShowAd_21800001.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testShowAd_21800001
+     * @tc.number SUB_CLOUD_AD_SHOW_AD_1400
+     * @tc.desc   testShowAd_21800001.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testShowAd_21800001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -569,12 +569,12 @@ export default function adsTest() {
     };
 
     /**
-     * @tc.number: SUB_CLOUD_AD_SHOW_AD_1500
-     * @tc.name: testShowAd_21800004
-     * @tc.desc: testShowAd_21800004.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testShowAd_21800004
+     * @tc.number SUB_CLOUD_AD_SHOW_AD_1500
+     * @tc.desc   testShowAd_21800004.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testShowAd_21800004", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -589,12 +589,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_AD_SHOW_AD_1600
-     * @tc.name: testShowAd_two_params
-     * @tc.desc: start show ability success.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testShowAd_two_params
+     * @tc.number SUB_CLOUD_AD_SHOW_AD_1600
+     * @tc.desc   start show ability success.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testShowAd_two_params", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -609,12 +609,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_AD_DELETE_WEB_INTERFACE_1700
-     * @tc.name: testDeleteWebAdInterface
-     * @tc.desc: testDeleteWebAdInterface.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testDeleteWebAdInterface_401
+     * @tc.number SUB_CLOUD_AD_DELETE_WEB_INTERFACE_1700
+     * @tc.desc   testDeleteWebAdInterface.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testDeleteWebAdInterface_401", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -629,12 +629,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_AD_DELETE_WEB_INTERFACE_1800
-     * @tc.name: testDeleteWebAdInterface_21800001
-     * @tc.desc: testDeleteWebAdInterface_21800001.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testDeleteWebAdInterface_21800001
+     * @tc.number SUB_CLOUD_AD_DELETE_WEB_INTERFACE_1800
+     * @tc.desc   testDeleteWebAdInterface_21800001.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testDeleteWebAdInterface_21800001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -651,12 +651,12 @@ export default function adsTest() {
 
 
     /**
-     * @tc.number: SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_1900
-     * @tc.name: tesRegisterWebAdInterface_three_param
-     * @tc.desc: tesRegisterWebAdInterface_three_param.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   tesRegisterWebAdInterface_three_param
+     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_1900
+     * @tc.desc   tesRegisterWebAdInterface_three_param.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("tesRegisterWebAdInterface_three_param", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -670,12 +670,12 @@ export default function adsTest() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_AD_DELETE_WEB_INTERFACE_2000
-     * @tc.name: testDeleteWebAdInterface
-     * @tc.desc: testDeleteWebAdInterface.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   testDeleteWebAdInterface
+     * @tc.number SUB_CLOUD_AD_DELETE_WEB_INTERFACE_2000
+     * @tc.desc   testDeleteWebAdInterface.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("testDeleteWebAdInterface", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
       try {

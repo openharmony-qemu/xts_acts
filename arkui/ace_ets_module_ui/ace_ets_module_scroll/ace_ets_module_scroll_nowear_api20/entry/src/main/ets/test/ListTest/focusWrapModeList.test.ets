@@ -43,12 +43,12 @@ export default function focusWrapModeList() {
     });
 
     /**
-     * @tc.number    focusWrapModeList_001
-     * @tc.name      focusWrapModeList_0100
-     * @tc.desc      Set the focusWrapMode of the List component. Value is FocusWrapMode.WRAP_WITH_ARROW
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusWrapModeList_0100
+     * @tc.number focusWrapModeList_001
+     * @tc.desc   Set the focusWrapMode of the List component. Value is FocusWrapMode.WRAP_WITH_ARROW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('focusWrapModeList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapModeList_0100] START');
@@ -61,12 +61,12 @@ export default function focusWrapModeList() {
     });
 
     /**
-     * @tc.number    focusWrapModeList_002
-     * @tc.name      focusWrapModeList_0200
-     * @tc.desc      Set the focusWrapMode of the List component. Value is FocusWrapMode.DEFAULT
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusWrapModeList_0200
+     * @tc.number focusWrapModeList_002
+     * @tc.desc   Set the focusWrapMode of the List component. Value is FocusWrapMode.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('focusWrapModeList_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapModeList_0200] START');
@@ -79,12 +79,12 @@ export default function focusWrapModeList() {
     });
 
     /**
-     * @tc.number    focusWrapModeList_003
-     * @tc.name      focusWrapModeList_0300
-     * @tc.desc      Set the focusWrapMode of the List component. Value is undefined
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusWrapModeList_0300
+     * @tc.number focusWrapModeList_003
+     * @tc.desc   Set the focusWrapMode of the List component. Value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('focusWrapModeList_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapModeList_0300] START');
@@ -97,12 +97,12 @@ export default function focusWrapModeList() {
     });
 
     /**
-     * @tc.number    focusWrapModeList_004
-     * @tc.name      focusWrapModeList_0400
-     * @tc.desc      Set the focusWrapMode of the List component. Value is null
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusWrapModeList_0400
+     * @tc.number focusWrapModeList_004
+     * @tc.desc   Set the focusWrapMode of the List component. Value is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('focusWrapModeList_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapModeList_0400] START');
@@ -115,12 +115,12 @@ export default function focusWrapModeList() {
     });
 
     /**
-     * @tc.number    focusWrapModeList_005
-     * @tc.name      focusWrapModeList_0500
-     * @tc.desc      Set the focusWrapMode of the List component. Value is WRAP_WITH_ARROW
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusWrapModeList_0500
+     * @tc.number focusWrapModeList_005
+     * @tc.desc   Set the focusWrapMode of the List component. Value is WRAP_WITH_ARROW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('focusWrapModeList_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapModeList_0500] START');

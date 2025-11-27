@@ -26,39 +26,39 @@ export default function listItemGroupNodeAdapterTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_NODE_ADAPTER_0001
-     * @tc.name       : testListItemGroupNodeAdapter001
-     * @tc.desc       : testing width for listItemGroup with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupNodeAdapter001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_NODE_ADAPTER_0001
+     * @tc.desc   testing width for listItemGroup with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupNodeAdapter001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupNodeAdapter001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_NODE_ADAPTER_0002
-     * @tc.name       : testListItemGroupNodeAdapter002
-     * @tc.desc       : testing width for listItemGroup with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupNodeAdapter002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_NODE_ADAPTER_0002
+     * @tc.desc   testing width for listItemGroup with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupNodeAdapter002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupNodeAdapter002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_NODE_ADAPTER_0003
-     * @tc.name       : testListItemGroupNodeAdapter003
-     * @tc.desc       : testing width for listItemGroup with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListItemGroupNodeAdapter003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_NODE_ADAPTER_0003
+     * @tc.desc   testing width for listItemGroup with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupNodeAdapter003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupNodeAdapter003()).assertEqual(0)
