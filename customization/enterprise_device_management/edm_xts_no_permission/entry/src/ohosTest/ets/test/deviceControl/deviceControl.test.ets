@@ -30,12 +30,12 @@ export default function deviceControlTest() {
 
 function testOperateDevice() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0001
-   * @tc.name      : test_operate_device_0001
-   * @tc.desc      : test deviceControl operateDevice with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0001
+   * @tc.desc   test deviceControl operateDevice with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -51,12 +51,12 @@ function testOperateDevice() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0002
-   * @tc.name      : test_operate_device_0002
-   * @tc.desc      : test deviceControl operateDevice with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_operate_device_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0002
+   * @tc.desc   test deviceControl operateDevice with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_operate_device_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);

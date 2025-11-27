@@ -41,12 +41,12 @@ export default function systemManagerTest() {
 
 function testSetNTPSever() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0100
-   * @tc.name      : test_set_ntp_sever_0100
-   * @tc.desc      : test systemManager setNTPServer without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ntp_sever_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0100
+   * @tc.desc   test systemManager setNTPServer without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ntp_sever_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -59,12 +59,12 @@ function testSetNTPSever() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0101
-   * @tc.name      : test_set_ntp_sever_0101
-   * @tc.desc      : test systemManager setNTPServer with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ntp_sever_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0101
+   * @tc.desc   test systemManager setNTPServer with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ntp_sever_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -80,12 +80,12 @@ function testSetNTPSever() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0102
-   * @tc.name      : test_set_ntp_sever_0102
-   * @tc.desc      : test systemManager setNTPServer with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ntp_sever_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0102
+   * @tc.desc   test systemManager setNTPServer with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ntp_sever_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -101,12 +101,12 @@ function testSetNTPSever() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0103
-   * @tc.name      : test_set_ntp_sever_0103
-   * @tc.desc      : test systemManager setNTPServer with invalid server
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ntp_sever_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0103
+   * @tc.desc   test systemManager setNTPServer with invalid server
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ntp_sever_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -122,12 +122,12 @@ function testSetNTPSever() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0104
-   * @tc.name      : test_set_ntp_sever_0104
-   * @tc.desc      : test systemManager setNTPServer
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ntp_sever_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NTP_SERVER_JS_0104
+   * @tc.desc   test systemManager setNTPServer
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ntp_sever_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -152,12 +152,12 @@ function testSetNTPSever() {
 
 function testGetNTPSever() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_NTP_SERVER_JS_0100
-   * @tc.name      : test_get_ntp_sever_0100
-   * @tc.desc      : test systemManager getNTPServer without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_ntp_sever_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_NTP_SERVER_JS_0100
+   * @tc.desc   test systemManager getNTPServer without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_ntp_sever_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -170,12 +170,12 @@ function testGetNTPSever() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_NTP_SERVER_JS_0101
-   * @tc.name      : test_get_ntp_sever_0101
-   * @tc.desc      : test systemManager getNTPServer with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_ntp_sever_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_NTP_SERVER_JS_0101
+   * @tc.desc   test systemManager getNTPServer with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_ntp_sever_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -191,12 +191,12 @@ function testGetNTPSever() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_NTP_SERVER_JS_0102
-   * @tc.name      : test_get_ntp_sever_0102
-   * @tc.desc      : test systemManager getNTPServer with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_ntp_sever_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_NTP_SERVER_JS_0102
+   * @tc.desc   test systemManager getNTPServer with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_ntp_sever_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -214,12 +214,12 @@ function testGetNTPSever() {
 
 function testSetOtaUpdatePolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0001
-   * @tc.name      : test_set_ota_update_policy_0001
-   * @tc.desc      : test systemManager setOtaUpdatePolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0001
+   * @tc.desc   test systemManager setOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0001", Level.LEVEL2, async (done: Function) => {
     let policy: systemManager.OtaUpdatePolicy = {
@@ -236,12 +236,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0002
-   * @tc.name      : test_set_ota_update_policy_0002
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0002
+   * @tc.desc   test systemManager setOtaUpdatePolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -261,12 +261,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0003
-   * @tc.name      : test_set_ota_update_policy_0003
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0003
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -289,12 +289,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0004
-   * @tc.name      : test_set_ota_update_policy_0004
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0004
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -314,12 +314,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0005
-   * @tc.name      : test_set_ota_update_policy_0005
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0005
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -339,12 +339,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0006
-   * @tc.name      : test_set_ota_update_policy_0006
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0006
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -366,12 +366,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0007
-   * @tc.name      : test_set_ota_update_policy_0007
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0007
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -391,12 +391,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0008
-   * @tc.name      : test_set_ota_update_policy_0008
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0008
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0008", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -417,12 +417,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0009
-   * @tc.name      : test_set_ota_update_policy_0009
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0009
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0009", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -443,12 +443,12 @@ function testSetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0010
-   * @tc.name      : test_set_ota_update_policy_0010
-   * @tc.desc      : test systemManager setOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_ota_update_policy_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0010
+   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_ota_update_policy_0010", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -477,12 +477,12 @@ function testSetOtaUpdatePolicy() {
 
 function testGetOtaUpdatePolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_OTA_UPDATE_POLICY_JS_0001
-   * @tc.name      : test_get_ota_update_policy_0001
-   * @tc.desc      : test systemManager getOtaUpdatePolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_ota_update_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OTA_UPDATE_POLICY_JS_0001
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_ota_update_policy_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -495,12 +495,12 @@ function testGetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_OTA_UPDATE_POLICY_JS_0002
-   * @tc.name      : test_get_ota_update_policy_0002
-   * @tc.desc      : test systemManager getOtaUpdatePolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_ota_update_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OTA_UPDATE_POLICY_JS_0002
+   * @tc.desc   test systemManager getOtaUpdatePolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_ota_update_policy_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -516,12 +516,12 @@ function testGetOtaUpdatePolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_OTA_UPDATE_POLICY_JS_0003
-   * @tc.name      : test_get_ota_update_policy_0003
-   * @tc.desc      : test systemManager getOtaUpdatePolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_ota_update_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OTA_UPDATE_POLICY_JS_0003
+   * @tc.desc   test systemManager getOtaUpdatePolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_ota_update_policy_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -539,12 +539,12 @@ function testGetOtaUpdatePolicy() {
 
 function testNotifyUpdatePackages() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0001
-   * @tc.name      : test_notify_update_packages_0001
-   * @tc.desc      : test systemManager notifyUpdatePackages without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_notify_update_packages_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0001
+   * @tc.desc   test systemManager notifyUpdatePackages without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_notify_update_packages_0001", Level.LEVEL2, async (done: Function) => {
     let updatePaskageInfo: Array<systemManager.Package> = [{
@@ -565,12 +565,12 @@ function testNotifyUpdatePackages() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0002
-   * @tc.name      : test_notify_update_packages_0002
-   * @tc.desc      : test systemManager notifyUpdatePackages without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_notify_update_packages_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0002
+   * @tc.desc   test systemManager notifyUpdatePackages without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_notify_update_packages_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -592,12 +592,12 @@ function testNotifyUpdatePackages() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0003
-   * @tc.name      : test_notify_update_packages_0003
-   * @tc.desc      : test systemManager notifyUpdatePackages without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_notify_update_packages_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0003
+   * @tc.desc   test systemManager notifyUpdatePackages without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_notify_update_packages_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -628,12 +628,12 @@ function testNotifyUpdatePackages() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0002
-   * @tc.name      : test_notify_update_packages_0002
-   * @tc.desc      : test systemManager notifyUpdatePackages without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_notify_update_packages_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0002
+   * @tc.desc   test systemManager notifyUpdatePackages without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_notify_update_packages_0004", Level.LEVEL2, async (done: Function) => {
     let updatePaskageInfo: Array<systemManager.Package> = [{
@@ -655,12 +655,12 @@ function testNotifyUpdatePackages() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0005
-   * @tc.name      : test_notify_update_packages_0005
-   * @tc.desc      : test systemManager notifyUpdatePackages with invalid authinfo
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_notify_update_packages_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_NOTIFY_UPDATE_PACKAGES_JS_0005
+   * @tc.desc   test systemManager notifyUpdatePackages with invalid authinfo
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_notify_update_packages_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -694,12 +694,12 @@ function testNotifyUpdatePackages() {
 
 function testGetUpdateResult() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0001
-   * @tc.name      : test_get_update_result_0001
-   * @tc.desc      : test systemManager getOtaUpdatePolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_result_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0001
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_result_0001", Level.LEVEL2, async (done: Function) => {
     await systemManager.getUpdateResult(SELFWANT, UPDATE_VERSION).then((data: systemManager.UpdateResult) => {
@@ -711,12 +711,12 @@ function testGetUpdateResult() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0002
-   * @tc.name      : test_get_update_result_0002
-   * @tc.desc      : test systemManager getOtaUpdatePolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_result_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0002
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_result_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -730,12 +730,12 @@ function testGetUpdateResult() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0003
-   * @tc.name      : test_get_update_result_0003
-   * @tc.desc      : test systemManager getOtaUpdatePolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_result_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0003
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_result_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -757,12 +757,12 @@ function testGetUpdateResult() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0002
-   * @tc.name      : test_get_update_result_0002
-   * @tc.desc      : test systemManager getOtaUpdatePolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_result_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0002
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_result_0004", Level.LEVEL2, async (done: Function) => {
     try {
@@ -778,12 +778,12 @@ function testGetUpdateResult() {
 
 function testGetUpdateAuthData() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0001
-   * @tc.name      : test_get_update_auth_data_0001
-   * @tc.desc      : test systemManager getUpdateAuthData without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_auth_data_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0001
+   * @tc.desc   test systemManager getUpdateAuthData without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_auth_data_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -795,12 +795,12 @@ function testGetUpdateAuthData() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0002
-   * @tc.name      : test_get_update_auth_data_0002
-   * @tc.desc      : test systemManager getUpdateAuthData without invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_auth_data_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0002
+   * @tc.desc   test systemManager getUpdateAuthData without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_auth_data_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -815,12 +815,12 @@ function testGetUpdateAuthData() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0003
-   * @tc.name      : test_get_update_auth_data_0003
-   * @tc.desc      : test systemManager getUpdateAuthData with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_auth_data_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0003
+   * @tc.desc   test systemManager getUpdateAuthData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_auth_data_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -835,12 +835,12 @@ function testGetUpdateAuthData() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0003
-   * @tc.name      : test_get_update_auth_data_0004
-   * @tc.desc      : test systemManager getUpdateAuthData success
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_update_auth_data_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0003
+   * @tc.desc   test systemManager getUpdateAuthData success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_update_auth_data_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -859,12 +859,12 @@ function testGetUpdateAuthData() {
 
 function testSetAutoUnlockAfterReboot() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0001
-   * @tc.name      : test_set_auto_unlock_after_reboot_0001
-   * @tc.desc      : test systemManager setAutoUnlockAfterReboot without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_auto_unlock_after_reboot_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0001
+   * @tc.desc   test systemManager setAutoUnlockAfterReboot without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_auto_unlock_after_reboot_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -877,12 +877,12 @@ function testSetAutoUnlockAfterReboot() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0002
-   * @tc.name      : test_set_auto_unlock_after_reboot_0002
-   * @tc.desc      : test systemManager setAutoUnlockAfterReboot with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_auto_unlock_after_reboot_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0002
+   * @tc.desc   test systemManager setAutoUnlockAfterReboot with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_auto_unlock_after_reboot_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -898,12 +898,12 @@ function testSetAutoUnlockAfterReboot() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0003
-   * @tc.name      : test_set_auto_unlock_after_reboot_0003
-   * @tc.desc      : test systemManager setAutoUnlockAfterReboot true
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_auto_unlock_after_reboot_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0003
+   * @tc.desc   test systemManager setAutoUnlockAfterReboot true
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_auto_unlock_after_reboot_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -925,12 +925,12 @@ function testSetAutoUnlockAfterReboot() {
   });
   
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0004
-   * @tc.name      : test_set_auto_unlock_after_reboot_0004
-   * @tc.desc      : test systemManager setAutoUnlockAfterReboot false
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_auto_unlock_after_reboot_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0004
+   * @tc.desc   test systemManager setAutoUnlockAfterReboot false
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_auto_unlock_after_reboot_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -947,12 +947,12 @@ function testSetAutoUnlockAfterReboot() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0005
-   * @tc.name      : test_set_auto_unlock_after_reboot_0005
-   * @tc.desc      : test systemManager setAutoUnlockAfterReboot with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_auto_unlock_after_reboot_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0005
+   * @tc.desc   test systemManager setAutoUnlockAfterReboot with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_auto_unlock_after_reboot_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -970,12 +970,12 @@ function testSetAutoUnlockAfterReboot() {
 
 function testGetAutoUnlockAfterReboot() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0001
-   * @tc.name      : test_get_auto_unlock_after_reboot_0001
-   * @tc.desc      : test systemManager getAutoUnlockAfterReboot without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_auto_unlock_after_reboot_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0001
+   * @tc.desc   test systemManager getAutoUnlockAfterReboot without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_auto_unlock_after_reboot_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -988,12 +988,12 @@ function testGetAutoUnlockAfterReboot() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0002
-   * @tc.name      : test_get_auto_unlock_after_reboot_0002
-   * @tc.desc      : test systemManager getAutoUnlockAfterReboot with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_auto_unlock_after_reboot_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0002
+   * @tc.desc   test systemManager getAutoUnlockAfterReboot with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_auto_unlock_after_reboot_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1009,12 +1009,12 @@ function testGetAutoUnlockAfterReboot() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0003
-   * @tc.name      : test_get_auto_unlock_after_reboot_0003
-   * @tc.desc      : test systemManager getAutoUnlockAfterReboot with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_auto_unlock_after_reboot_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0003
+   * @tc.desc   test systemManager getAutoUnlockAfterReboot with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_auto_unlock_after_reboot_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1032,12 +1032,12 @@ function testGetAutoUnlockAfterReboot() {
 
 function testGetDisallowedNearLinkProtocols() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0001
-   * @tc.name      : test_get_disallowed_near_link_protocols_0001
-   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_near_link_protocols_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0001
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_get_disallowed_near_link_protocols_0001', Level.LEVEL2, async (done: Function) => {
     try {
@@ -1050,12 +1050,12 @@ function testGetDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0002
-   * @tc.name      : test_get_disallowed_near_link_protocols_0002
-   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols without invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_near_link_protocols_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0002
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_get_disallowed_near_link_protocols_0002', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1071,12 +1071,12 @@ function testGetDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0003
-   * @tc.name      : test_get_disallowed_near_link_protocols_0003
-   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_near_link_protocols_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0003
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_get_disallowed_near_link_protocols_0003', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1092,12 +1092,12 @@ function testGetDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0004
-   * @tc.name      : test_get_disallowed_near_link_protocols_0004
-   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols success
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_near_link_protocols_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0004
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_get_disallowed_near_link_protocols_0004', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1125,12 +1125,12 @@ function testGetDisallowedNearLinkProtocols() {
 
 function testAddDisallowedNearLinkProtocols() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0001
-   * @tc.name      : test_add_disallowed_nearlink_protocols_0001
-   * @tc.desc      : test systemManager addDisallowedNearLinkProtocols without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_nearlink_protocols_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0001
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_add_disallowed_nearlink_protocols_0001', Level.LEVEL2, async (done: Function) => {
     let nearlinkProtocols: Array<number> = new Array();
@@ -1146,12 +1146,12 @@ function testAddDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0002
-   * @tc.name      : test_add_disallowed_nearlink_protocols_0002
-   * @tc.desc      : test systemManager addDisallowedNearLinkProtocols with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_nearlink_protocols_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0002
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_add_disallowed_nearlink_protocols_0002', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1170,12 +1170,12 @@ function testAddDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0003
-   * @tc.name      : test_add_disallowed_nearlink_protocols_0003
-   * @tc.desc      : test systemManager addDisallowedNearLinkProtocols with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_nearlink_protocols_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0003
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_add_disallowed_nearlink_protocols_0003', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1197,12 +1197,12 @@ function testAddDisallowedNearLinkProtocols() {
 
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0004
-   * @tc.name      : test_add_disallowed_nearlink_protocols_0004
-   * @tc.desc      : test systemManager addDisallowedNearLinkProtocols with empty param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_nearlink_protocols_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0004
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with empty param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_add_disallowed_nearlink_protocols_0004', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1218,12 +1218,12 @@ function testAddDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0005
-   * @tc.name      : test_add_disallowed_nearlink_protocols_0005
-   * @tc.desc      : test systemManager addDisallowedNearLinkProtocols with over length param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_nearlink_protocols_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0005
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with over length param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_add_disallowed_nearlink_protocols_0005', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1241,12 +1241,12 @@ function testAddDisallowedNearLinkProtocols() {
 
 function testRemoveDisallowedNearLinkProtocols() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0001
-   * @tc.name      : test_remove_disallowed_nearlink_protocols_0001
-   * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0001
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_remove_disallowed_nearlink_protocols_0001', Level.LEVEL2, async (done: Function) => {
     let nearlinkProtocols: Array<number> = new Array();
@@ -1262,12 +1262,12 @@ function testRemoveDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0002
-   * @tc.name      : test_remove_disallowed_nearlink_protocols_0002
-   * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0002
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_remove_disallowed_nearlink_protocols_0002', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1286,12 +1286,12 @@ function testRemoveDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0003
-   * @tc.name      : test_remove_disallowed_nearlink_protocols_0003
-   * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0003
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_remove_disallowed_nearlink_protocols_0003', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1312,12 +1312,12 @@ function testRemoveDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0004
-   * @tc.name      : test_remove_disallowed_nearlink_protocols_0004
-   * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols with empty param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0004
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with empty param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_remove_disallowed_nearlink_protocols_0004', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1333,12 +1333,12 @@ function testRemoveDisallowedNearLinkProtocols() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0005
-   * @tc.name      : test_remove_disallowed_nearlink_protocols_0005
-   * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols with over length param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0005
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with over length param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it('test_remove_disallowed_nearlink_protocols_0005', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1356,12 +1356,12 @@ function testRemoveDisallowedNearLinkProtocols() {
 
 function testSetInstallLocalEnterpriseAppEnabled() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_001
-   * @tc.name      : test_set_install_local_enterprise_app_enabled_001
-   * @tc.desc      : test systemManager setInstallLocalEnterpriseAppEnabled without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_install_local_enterprise_app_enabled_001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_001
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabled without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_install_local_enterprise_app_enabled_001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1374,12 +1374,12 @@ function testSetInstallLocalEnterpriseAppEnabled() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_002
-   * @tc.name      : test_set_install_local_enterprise_app_enabled_002
-   * @tc.desc      : test systemManager setInstallLocalEnterpriseAppEnabled with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_install_local_enterprise_app_enabled_002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_002
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabled with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_install_local_enterprise_app_enabled_002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1395,12 +1395,12 @@ function testSetInstallLocalEnterpriseAppEnabled() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_003
-   * @tc.name      : test_set_install_local_enterprise_app_enabled_003
-   * @tc.desc      : test systemManager setInstallLocalEnterpriseAppEnabled with invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_install_local_enterprise_app_enabled_003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_003
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabled with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_install_local_enterprise_app_enabled_003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1416,12 +1416,12 @@ function testSetInstallLocalEnterpriseAppEnabled() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_004
-   * @tc.name      : test_set_install_local_enterprise_app_enabled_004
-   * @tc.desc      : test systemManager setInstallLocalEnterpriseAppEnabled
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_install_local_enterprise_app_enabled_004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_004
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabled
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_install_local_enterprise_app_enabled_004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1443,13 +1443,13 @@ function testSetInstallLocalEnterpriseAppEnabled() {
 }
 
 function testGetInstallLocalEnterpriseAppEnabled() {
-   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0001
-   * @tc.name      : test_is_install_local_enterprise_app_enable_0001
-   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+  /**
+   * @tc.name   test_is_install_local_enterprise_app_enable_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0001
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabled without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_install_local_enterprise_app_enable_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1461,12 +1461,12 @@ function testGetInstallLocalEnterpriseAppEnabled() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0002
-   * @tc.name      : test_is_install_local_enterprise_app_enable_0002
-   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled without invalid admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_install_local_enterprise_app_enable_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0002
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabled without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_install_local_enterprise_app_enable_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1481,12 +1481,12 @@ function testGetInstallLocalEnterpriseAppEnabled() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0003
-   * @tc.name      : test_is_install_local_enterprise_app_enable_0003
-   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_install_local_enterprise_app_enable_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0003
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabled with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_install_local_enterprise_app_enable_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -1501,12 +1501,12 @@ function testGetInstallLocalEnterpriseAppEnabled() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0004
-   * @tc.name      : test_is_install_local_enterprise_app_enable_0004
-   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled success
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_install_local_enterprise_app_enable_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0004
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabled success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_install_local_enterprise_app_enable_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
