@@ -38,7 +38,6 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   assertContain
      * @tc.number assertContain
      * @tc.desc   assertContain
