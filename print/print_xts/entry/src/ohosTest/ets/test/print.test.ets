@@ -808,28 +808,6 @@ export default function printTest() {
     })
 
     /**
-     * @tc.number print_function_1100
-     * @tc.name Test print
-     * @tc.desc check the getAddedPrinters function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('print_function_1100', Level.LEVEL1, async (done: Function) => {
-      // Permissions required: ohos.permission.PRINT
-      await print.getAddedPrinters().then((printers : Array<string>) => {
-        console.log('getAddedPrinters expect succeed, data: ' + JSON.stringify(printers));
-        expect(printers.length).assertEqual(0);
-        expect(!!printers).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
-        console.log('getAddedPrinters failed, error: ' + JSON.stringify(error));
-        expect().assertFalse();
-        done();
-      })
-    })
-
-    /**
      * @tc.number print_function_1200
      * @tc.name Test print
      * @tc.desc check the printerChange event registration and unregistration functions
@@ -889,6 +867,28 @@ export default function printTest() {
         expect().assertFalse();
         done();
       }
+    })
+
+    /**
+     * @tc.number print_function_1100
+     * @tc.name Test print
+     * @tc.desc check the getAddedPrinters function
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('print_function_1100', Level.LEVEL1, async (done: Function) => {
+      // Permissions required: ohos.permission.PRINT
+      await print.getAddedPrinters().then((printers : Array<string>) => {
+        console.log('getAddedPrinters expect succeed, data: ' + JSON.stringify(printers));
+        expect(!printers.length).assertFalse();
+        expect(!!printers).assertTrue();
+        done();
+      }).catch((error: BusinessError) => {
+        console.log('getAddedPrinters failed, error: ' + JSON.stringify(error));
+        expect().assertFalse();
+        done();
+      })
     })
 
     /**
