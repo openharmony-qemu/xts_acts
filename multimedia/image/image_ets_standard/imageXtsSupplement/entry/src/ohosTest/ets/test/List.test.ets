@@ -73,6 +73,8 @@ import modifyImagePropertyTest from './image/ModifyImageProperty.test';
 import modifyImagePropertyTests from './image/ModifyImagePropertyKey.test';
 import ImageImagePackerPackingSupp from './image/ImagePackerPackingSupp.test';
 import ImageSourceGetImagePropertyTest from "./image/ImageSourceGetImageProperty.test";
+import photoGetBurstAssets from './Picture/GetBurstAssets.test';
+import GetPhotoAccessHelper from './Picture/GetPhotoAccessHelper.test';
 
 
 export default function testsuite() {
@@ -136,4 +138,8 @@ export default function testsuite() {
   modifyImagePropertyTests();
   ImageImagePackerPackingSupp();
   ImageSourceGetImagePropertyTest();
+  photoGetBurstAssets();
+  GetPhotoAccessHelper();
 }
+
+
