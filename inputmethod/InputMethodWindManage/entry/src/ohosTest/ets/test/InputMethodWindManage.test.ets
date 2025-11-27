@@ -86,7 +86,6 @@ export default function inputMethodWindManageAbility() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_createPanelCallback_0010
      * @tc.number Sub_Misc_inputMethod_Panel_createPanelCallback_0010
      * @tc.desc   Function test
@@ -157,7 +156,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_createPanelPromise_0020
      * @tc.number Sub_Misc_inputMethod_Panel_createPanelPromise_0020
      * @tc.desc   Function test
@@ -228,7 +226,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelCallback_0030
      * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelCallback_0030
      * @tc.desc   Function test
@@ -299,7 +296,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelPromise_0040
      * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelPromise_0040
      * @tc.desc   Function test
@@ -370,7 +366,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0050
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0050
      * @tc.desc   Function test
@@ -441,7 +436,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0060
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0060
      * @tc.desc   Function test
@@ -512,7 +506,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0070
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0070
      * @tc.desc   Function test
@@ -583,7 +576,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0080
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0080
      * @tc.desc   Function test
@@ -654,7 +646,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_resizeCallback_0090
      * @tc.number Sub_Misc_inputMethod_Panel_resizeCallback_0090
      * @tc.desc   Function test
@@ -725,7 +716,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_resizePromise_0100
      * @tc.number Sub_Misc_inputMethod_Panel_resizePromise_0100
      * @tc.desc   Function test
@@ -796,7 +786,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_moveToCallback_0110
      * @tc.number Sub_Misc_inputMethod_Panel_moveToCallback_0110
      * @tc.desc   Function test
@@ -867,7 +856,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_moveToPromise_0120
      * @tc.number Sub_Misc_inputMethod_Panel_moveToPromise_0120
      * @tc.desc   Function test
@@ -938,7 +926,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_showCallback_0130
      * @tc.number Sub_Misc_inputMethod_Panel_showCallback_0130
      * @tc.desc   Function test
@@ -1009,7 +996,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_hideCallback_0150
      * @tc.number Sub_Misc_inputMethod_Panel_hideCallback_0150
      * @tc.desc   Function test
@@ -1080,7 +1066,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_showPromise_0140
      * @tc.number Sub_Misc_inputMethod_Panel_showPromise_0140
      * @tc.desc   Function test
@@ -1157,7 +1142,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_hidePromise_0160
      * @tc.number Sub_Misc_inputMethod_Panel_hidePromise_0160
      * @tc.desc   Function test
@@ -1228,7 +1212,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_onShow_0170
      * @tc.number Sub_Misc_inputMethod_Panel_onShow_0170
      * @tc.desc   Function test
@@ -1305,7 +1288,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_onHide_0180
      * @tc.number Sub_Misc_inputMethod_Panel_onHide_0180
      * @tc.desc   Function test
@@ -1382,7 +1364,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_offShow_0190
      * @tc.number Sub_Misc_inputMethod_Panel_offShow_0190
      * @tc.desc   Function test
@@ -1459,7 +1440,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_offHide_0200
      * @tc.number Sub_Misc_inputMethod_Panel_offHide_0200
      * @tc.desc   Function test
@@ -1536,7 +1516,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_inputWindowInfo_0201
      * @tc.number Sub_Misc_inputMethod_inputWindowInfo_0201
      * @tc.desc   Function test
@@ -1567,7 +1546,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_changeFlag_0210
      * @tc.number Sub_Misc_inputMethod_Panel_changeFlag_0210
      * @tc.desc   Function test
@@ -1638,7 +1616,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_changeFlag_0211
      * @tc.number Sub_Misc_inputMethod_Panel_changeFlag_0211
      * @tc.desc   Function test
@@ -1709,7 +1686,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IMF_panelInfo_0400
      * @tc.number SUB_InputMethod_IMF_panelInfo_0400
      * @tc.desc   Function test
@@ -1746,7 +1722,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_SecurityKeyboard_0600
      * @tc.number Sub_InputMethod_IMF_SecurityKeyboard_0600
      * @tc.desc   setPrivacyMode(),parameter is true
@@ -1817,7 +1792,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_SecurityKeyboard_0700
      * @tc.number Sub_InputMethod_IMF_SecurityKeyboard_0700
      * @tc.desc   setPrivacyMode(),parameter is false
@@ -1888,7 +1862,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_SecurityKeyboard_0800
      * @tc.number Sub_InputMethod_IMF_SecurityKeyboard_0800
      * @tc.desc   setPrivacyMode(),parameter is undefined
@@ -1959,7 +1932,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_getSecurityMode_0100
      * @tc.number Sub_InputMethod_IMF_getSecurityMode_0100
      * @tc.desc   getSecurityMode()
@@ -2030,7 +2002,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IME_SplitScreen_0100
      * @tc.number SUB_InputMethod_IME_SplitScreen_0100
      * @tc.desc   getSecurityMode()
@@ -2102,7 +2073,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_ScreenRotation_0100
      * @tc.number Sub_InputMethod_IME_ScreenRotation_0100
      * @tc.desc   Function test
@@ -2174,7 +2144,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_ScreenRotation_0200
      * @tc.number Sub_InputMethod_IME_ScreenRotation_0200
      * @tc.desc   Function test
@@ -2246,7 +2215,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_onSizeChange_0100
      * @tc.number Sub_Misc_inputMethod_Panel_onSizeChange_0100
      * @tc.desc   Function test
@@ -2317,7 +2285,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_onSizeChange_0200
      * @tc.number Sub_Misc_inputMethod_Panel_onSizeChange_0200
      * @tc.desc   Function test
@@ -2388,7 +2355,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_InputMethodState_0900
      * @tc.number Sub_InputMethod_IME_InputMethodState_0900
      * @tc.desc   Function test
@@ -2412,7 +2378,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Dragging_1100
      * @tc.number Sub_InputMethod_IME_Dragging_1100
      * @tc.desc   Function test
@@ -2483,7 +2448,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Dragging_0800
      * @tc.number Sub_InputMethod_IME_Dragging_0800
      * @tc.desc   Function test
@@ -2554,7 +2518,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Dragging_0900
      * @tc.number Sub_InputMethod_IME_Dragging_0900
      * @tc.desc   Function test
@@ -2626,7 +2589,6 @@ export default function inputMethodWindManageAbility() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0700
      * @tc.number Sub_InputMethod_IME_Custom_0700
      * @tc.desc   Function test
@@ -2659,7 +2621,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0500
      * @tc.number Sub_InputMethod_IME_Custom_0500
      * @tc.desc   Function test
@@ -2685,7 +2646,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0600
      * @tc.number Sub_InputMethod_IME_Custom_0600
      * @tc.desc   Function test
@@ -2718,7 +2678,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0900
      * @tc.number Sub_InputMethod_IME_Custom_0900
      * @tc.desc   Function test
@@ -2818,7 +2777,6 @@ export default function inputMethodWindManageAbility() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0200
      * @tc.number Sub_InputMethod_IME_Custom_0200
      * @tc.desc   Function test
@@ -2921,7 +2879,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0800
      * @tc.number Sub_InputMethod_IME_Custom_0800
      * @tc.desc   Function test
@@ -3022,7 +2979,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0400
      * @tc.number Sub_InputMethod_IME_Custom_0400
      * @tc.desc   Function test
@@ -3120,7 +3076,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0300
      * @tc.number Sub_InputMethod_IME_Custom_0300
      * @tc.desc   Function test
@@ -3218,7 +3173,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_1100
      * @tc.number Sub_InputMethod_IME_Custom_1100
      * @tc.desc   Function test
@@ -3319,7 +3273,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Attach_0100
      * @tc.number Sub_InputMethod_IME_Attach_0100
      * @tc.desc   Function test
@@ -3394,7 +3347,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Attach_0200
      * @tc.number Sub_InputMethod_IME_Attach_0200
      * @tc.desc   Function test
@@ -3469,7 +3421,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Attach_0300
      * @tc.number Sub_InputMethod_IME_Attach_0300
      * @tc.desc   Function test
@@ -3544,7 +3495,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Attach_0400
      * @tc.number Sub_InputMethod_IME_Attach_0400
      * @tc.desc   Function test
@@ -3628,7 +3578,6 @@ export default function inputMethodWindManageAbility() {
     };
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_ShowTextInput_0100
      * @tc.number Sub_InputMethod_IME_ShowTextInput_0100
      * @tc.desc   Function test
@@ -3704,7 +3653,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_ShowTextInput_0200
      * @tc.number Sub_InputMethod_IME_ShowTextInput_0200
      * @tc.desc   Function test
@@ -3780,7 +3728,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_ShowTextInput_0300
      * @tc.number Sub_InputMethod_IME_ShowTextInput_0300
      * @tc.desc   Function test
@@ -3856,7 +3803,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_ShowTextInput_0400
      * @tc.number Sub_InputMethod_IME_ShowTextInput_0400
      * @tc.desc   Function test
@@ -3932,7 +3878,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0100
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0100
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal ,Rect is null
@@ -4005,7 +3950,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0200
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0200
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,Rect is null
@@ -4077,7 +4021,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0500
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0500
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,Rect oversize
@@ -4149,7 +4092,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0400
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0400
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,inputRegion.length=5
@@ -4221,7 +4163,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0300
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0300
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,inputRegion;[]
@@ -4293,7 +4234,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_1200
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_1200
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:CANDIDATE(2)
@@ -4365,7 +4305,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0700
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0700
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,flag:0,AvoidY>70%
@@ -4437,7 +4376,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0600
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0600
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:0,AvoidY>70%
@@ -4509,7 +4447,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0800
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0800
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:1,AvoidY>100%
@@ -4581,7 +4518,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0900
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0900
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,flag:1,AvoidY>100%
@@ -4653,7 +4589,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_1000
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_1000
      * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is FALSR,AvoidY>panel.height
@@ -4725,7 +4660,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenUR_0200
      * @tc.number Sub_InputMethod_IME_FullScreenUR_0200
      * @tc.desc   updateRegion(),parameter PanelFlag:CANDIDATE(2)
@@ -4797,7 +4731,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenUR_0300
      * @tc.number Sub_InputMethod_IME_FullScreenUR_0300
      * @tc.desc   updateRegion(),parameter is []
@@ -4869,7 +4802,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenUR_0400
      * @tc.number Sub_InputMethod_IME_FullScreenUR_0400
      * @tc.desc   updateRegion(),parameter Region.length=5
@@ -4942,7 +4874,6 @@ export default function inputMethodWindManageAbility() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_1100
      * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_1100
      * @tc.desc   adjustPanelRect(),parameter PanelType is STATUS_BAR
@@ -5014,7 +4945,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenUR_0100
      * @tc.number Sub_InputMethod_IME_FullScreenUR_0100
      * @tc.desc   updateRegion(),parameter PanelType is STATUS_BAR
@@ -5086,7 +5016,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_FullScreenUR_0700
      * @tc.number Sub_InputMethod_IME_FullScreenUR_0700
      * @tc.desc   updateRegion(),parameter oversize
@@ -5158,7 +5087,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Immersive_1200
      * @tc.number Sub_InputMethod_IME_Immersive_1200
      * @tc.desc   getImmersiveMode()
@@ -5231,7 +5159,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Immersive_0900
      * @tc.number Sub_InputMethod_IME_Immersive_0900
      * @tc.desc   setImmersiveMode(0)
@@ -5303,7 +5230,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Immersive_1000
      * @tc.number Sub_InputMethod_IME_Immersive_1000
      * @tc.desc   setImmersiveMode(2)
@@ -5375,7 +5301,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Immersive_1100
      * @tc.number Sub_InputMethod_IME_Immersive_1100
      * @tc.desc   setImmersiveMode(3)
@@ -5447,7 +5372,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Immersive_0500
      * @tc.number Sub_InputMethod_IME_Immersive_0500
      * @tc.desc   setImmersiveMode(1)
@@ -5519,7 +5443,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_createPanelCallback_0011
      * @tc.number Sub_Misc_inputMethod_Panel_createPanelCallback_0011
      * @tc.desc   Function test
@@ -5590,7 +5513,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_createPanelPromise_0021
      * @tc.number Sub_Misc_inputMethod_Panel_createPanelPromise_0021
      * @tc.desc   Function test
@@ -5661,7 +5583,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelCallback_0031
      * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelCallback_0031
      * @tc.desc   Function test
@@ -5732,7 +5653,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelPromise_0041
      * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelPromise_0041
      * @tc.desc   Function test
@@ -5803,7 +5723,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0051
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0051
      * @tc.desc   Function test
@@ -5874,7 +5793,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0061
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0061
      * @tc.desc   Function test
@@ -5945,7 +5863,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0071
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0071
      * @tc.desc   Function test
@@ -6016,7 +5933,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0081
      * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0081
      * @tc.desc   Function test
@@ -6087,7 +6003,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_resizeCallback_0091
      * @tc.number Sub_Misc_inputMethod_Panel_resizeCallback_0091
      * @tc.desc   Function test
@@ -6158,7 +6073,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_resizePromise_0101
      * @tc.number Sub_Misc_inputMethod_Panel_resizePromise_0101
      * @tc.desc   Function test
@@ -6229,7 +6143,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_moveToCallback_0111
      * @tc.number Sub_Misc_inputMethod_Panel_moveToCallback_0111
      * @tc.desc   Function test
@@ -6300,7 +6213,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_moveToPromise_0121
      * @tc.number Sub_Misc_inputMethod_Panel_moveToPromise_0121
      * @tc.desc   Function test
@@ -6371,7 +6283,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_inputMethod_Panel_changeFlag_0212
      * @tc.number Sub_Misc_inputMethod_Panel_changeFlag_0212
      * @tc.desc   Function test
@@ -6442,7 +6353,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_ScreenRotation_0101
      * @tc.number Sub_InputMethod_IME_ScreenRotation_0101
      * @tc.desc   Function test
@@ -6514,7 +6424,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0101
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0101
      * @tc.desc   12800011
@@ -6587,7 +6496,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0201
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0201
      * @tc.desc   12800011
@@ -6659,7 +6567,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0301
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0301
      * @tc.desc   12800011
@@ -6731,7 +6638,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0401
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0401
      * @tc.desc   12800011
@@ -6803,7 +6709,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IME_SplitScreen_0101
      * @tc.number SUB_InputMethod_IME_SplitScreen_0101
      * @tc.desc   12800012
@@ -6876,7 +6781,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100
      * @tc.number Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100
      * @tc.desc   on callingDisplayDidChange
@@ -6949,7 +6853,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200
      * @tc.number Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200
      * @tc.desc   off callingDisplayDidChange()
@@ -7021,7 +6924,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0100
      * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0100
      * @tc.desc   setImmersiveEffect(0,0,0)
@@ -7093,7 +6995,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0200
      * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0200
      * @tc.desc   setImmersiveEffect(1,0,0)
@@ -7165,7 +7066,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0300
      * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0300
      * @tc.desc   setImmersiveEffect(0,1,0)
@@ -7237,7 +7137,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0400
      * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0400
      * @tc.desc   setImmersiveEffect(0,1,1)
@@ -7309,7 +7208,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0500
      * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0500
      * @tc.desc   setImmersiveEffect(1,1,0)
@@ -7381,7 +7279,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100
      * @tc.number Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100
      * @tc.desc   AttachOptions.isSimpleKeyboardEnabled
@@ -7453,7 +7350,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_setKeepScreenOn_0100
      * @tc.number Sub_InputMethod_IME_setKeepScreenOn_0100
      * @tc.desc   setKeepScreenOn(true)
@@ -7525,7 +7421,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_setKeepScreenOn_0200
      * @tc.number Sub_InputMethod_IME_setKeepScreenOn_0200
      * @tc.desc   setKeepScreenOn(false)
@@ -7597,7 +7492,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0901
      * @tc.number Sub_InputMethod_IME_Custom_0901
      * @tc.desc   Function test
@@ -7683,7 +7577,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Custom_0902
      * @tc.number Sub_InputMethod_IME_Custom_0902
      * @tc.desc   Function test
@@ -7756,7 +7649,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_Immersive_0600
      * @tc.number Sub_InputMethod_IME_Immersive_0600
      * @tc.desc   off callingDisplayDidChange()
@@ -7828,7 +7720,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_OffsetArea_0100
      * @tc.number Sub_InputMethod_IME_OffsetArea_0100
      * @tc.desc   getSystemPanelCurrentInsets()
@@ -7900,7 +7791,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_OffsetArea_1200
      * @tc.number Sub_InputMethod_IME_OffsetArea_1200
      * @tc.desc   getSystemPanelCurrentInsets()
@@ -7972,7 +7862,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_OffsetArea_1000
      * @tc.number Sub_InputMethod_IME_OffsetArea_1000
      * @tc.desc   getSystemPanelCurrentInsets()
@@ -8044,7 +7933,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_OffsetArea_1100
      * @tc.number Sub_InputMethod_IME_OffsetArea_1100
      * @tc.desc   getSystemPanelCurrentInsets()
@@ -8116,7 +8004,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_InputMethodState_0901
      * @tc.number Sub_InputMethod_IME_InputMethodState_0901
      * @tc.desc   Function test
@@ -8144,7 +8031,6 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_InputMethodState_0902
      * @tc.number Sub_InputMethod_IME_InputMethodState_0902
      * @tc.desc   Function test

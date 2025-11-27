@@ -76,7 +76,6 @@ export default function inputMethodTest() {
         );
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_showTextInput_Async_static_0100
          * @tc.number SUB_Misc_inputMethod_showTextInput_Async_static_0100
          * @tc.desc   Async mode calls the showTextInput interface without input parameters
@@ -105,7 +104,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_showTextInput_Async_static_0400
          * @tc.number SUB_Misc_inputMethod_showTextInput_Async_static_0400
          * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Async mode
@@ -146,7 +144,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_showTextInput_Promise_static_0100
          * @tc.number SUB_Misc_inputMethod_showTextInput_Promise_static_0100
          * @tc.desc   Promise mode calls the showTextInput interface without input parameters
@@ -169,7 +166,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_showTextInput_Promise_static_0400
          * @tc.number SUB_Misc_inputMethod_showTextInput_Promise_static_0400
          * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
@@ -203,7 +199,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_hideTextInput_Async_static_0100
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Async_static_0100
          * @tc.desc   Async mode calls the hideTextInput interface without input parameters
@@ -233,7 +228,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_hideTextInput_Async_static_0400
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Async_static_0400
          * @tc.desc   The input method keyboard is not bound, and the hideTextInput interface is called in Async mode
@@ -276,7 +270,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_hideTextInput_Promise_static_0100
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Promise_static_0100
          * @tc.desc   Promise mode calls the hideTextInput interface without input parameters
@@ -307,7 +300,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_hideTextInput_Promise_static_0400
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Promise_static_0400
          * @tc.desc   The input method keyboard is not bound, and the hideTextInput interface is called in Promise mode
@@ -341,7 +333,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_detach_Async_static_0100
          * @tc.number SUB_Misc_inputMethod_detach_Async_static_0100
          * @tc.desc   Async mode calls the detach interface without input parameters
@@ -371,7 +362,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_detach_Promise_static_0100
          * @tc.number SUB_Misc_inputMethod_detach_Promise_static_0100
          * @tc.desc   Promise mode calls the detach interface without input parameters
@@ -396,7 +386,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_showTextInput_Promise_static_0101
          * @tc.number SUB_Misc_inputMethod_showTextInput_Promise_static_0101
          * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
