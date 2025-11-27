@@ -77,7 +77,7 @@ export default function Grid_Col_Offset_GridColColumnOption() {
      */
 it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0100] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addWidth', value: '40vp'
       });
 
@@ -93,7 +93,6 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0100', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
       let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
-      const uiContext = new UIContext();
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_02.top - Grid_Col_Offset_GridColColumnOption_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -126,7 +125,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0100', Level.LEVEL0,
      */
 it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0200] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addWidth', value: '80vp'
       });
 
@@ -142,7 +141,6 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0200', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
       let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
-      const uiContext = new UIContext();
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - (Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left + UIContext.getFocusedUIContext()!.vp2px(10)))) <= 2)
         .assertTrue();
@@ -203,10 +201,10 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0200', Level.LEVEL0,
      */
 it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0300] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addWidth', value: '130vp'
       });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addSpan', value: 1
       });
 
@@ -222,7 +220,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0300', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
       let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
-      const uiContext = new UIContext();
+
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 3 + UIContext.getFocusedUIContext()!.vp2px(30)))) <= 2)
         .assertTrue();
@@ -284,10 +282,10 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0300', Level.LEVEL0,
      */
 it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0400] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addWidth', value: '180vp'
       });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addSpan', value: 2
       });
 
@@ -304,7 +302,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0400', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
       let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
-      const uiContext = new UIContext();
+
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 2 + UIContext.getFocusedUIContext()!.vp2px(20)))) <= 2)
         .assertTrue();
@@ -355,10 +353,10 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0400', Level.LEVEL0,
      */
 it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0500] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addWidth', value: '230vp'
       });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addSpan', value: 1
       });
 
@@ -374,7 +372,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0500', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
       let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
-      const uiContext = new UIContext();
+
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 5 + UIContext.getFocusedUIContext()!.vp2px(50)))) <= 2)
         .assertTrue();
@@ -426,10 +424,10 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0500', Level.LEVEL0,
      */
 it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0600] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addWidth', value: '330vp'
       });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|string>>('messageManager')?.notify({
         name: 'addSpan', value: 1
       });
 
@@ -445,7 +443,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0600', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
       let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
-      const uiContext = new UIContext();
+
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 3 + UIContext.getFocusedUIContext()!.vp2px(30)))) <= 2)
         .assertTrue();

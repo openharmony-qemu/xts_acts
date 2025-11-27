@@ -18,13 +18,14 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
+import { LinearGradientOptions, SweepGradientOptions, RadialGradientOptions } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { ResourceColor, GradientDirection } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -32,32 +33,6 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-class SweepGradientValue {
-  center!: [number, number];
-  start!: number;
-  colors!: Array<[ResourceColor, number]>;
-  end!: number;
-  repeating!: boolean;
-}
-
-class RadialGradientValue {
-  center!: [number, number];
-  radius!: number | string;
-  colors!: Array<[ResourceColor, number]>;
-  repeating!: boolean;
-}
-
-class LinearGradientValue {
-  angle!: number;
-  direction!: GradientDirection;
-  colors!: Array<[ResourceColor, number]>;
-  repeating!: boolean;
-}
-interface AttrContent {
-  linearGradient: LinearGradientValue;
-  sweepGradient: SweepGradientValue;
-  radialGradient: RadialGradientValue;
-}
 export default function colorGradientJsunit() {
   describe('borderTest_five_2', () => {
     beforeAll(() => {
@@ -127,7 +102,7 @@ it('testColorGradient001_static_001', Level.LEVEL0, async (done: () => void): Pr
 it('testColorGradient002_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColorGradient002_static_02] START');
       await CommonFunc.sleep(1000);
-      let linearGradientValue: LinearGradientValue = {
+      let linearGradientValue: LinearGradientOptions = {
         angle: 80,
         direction: GradientDirection.Top,
         colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]],
@@ -136,8 +111,8 @@ it('testColorGradient002_static_02', Level.LEVEL0, async (done: () => void): Pro
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "linearGradientValue": JSON.stringify(linearGradientValue)
-          } as Record<String, RecordData>
+            "linearGradientValue": linearGradientValue as LinearGradientOptions
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 5,
@@ -194,7 +169,7 @@ it('testColorGradient003_static_03', Level.LEVEL0, async (done: () => void): Pro
 it('testColorGradient004_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColorGradient004_static_04] START');
       await CommonFunc.sleep(1000);
-      let sweepGradientValue: SweepGradientValue = {
+      let sweepGradientValue: SweepGradientOptions = {
         center: [50, 50],
         start: 10,
         end: 356,
@@ -204,8 +179,8 @@ it('testColorGradient004_static_04', Level.LEVEL0, async (done: () => void): Pro
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "sweepGradientValue": JSON.stringify(sweepGradientValue)
-          } as Record<String, RecordData>
+            "sweepGradientValue": sweepGradientValue as SweepGradientOptions
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6,
@@ -244,8 +219,8 @@ it('testColorGradient005_static_05', Level.LEVEL0, async (done: () => void): Pro
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testColorGradient005_static_05] component JSON.parse(strJson) is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getElement('radialGradient').getString('radius')).assertEqual('60.00vp');
-      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[0]).assertEqual('50.00vp');
-      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[1]).assertEqual('50.00vp');
+      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[0].asString()).assertEqual('50.00vp');
+      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[1].asString()).assertEqual('50.00vp');
       expect(obj.getElement('$attrs').getElement('radialGradient').getString('repeating')).assertEqual('true');
       console.info('[testColorGradient005_static_05] END');
       done();
@@ -263,7 +238,7 @@ it('testColorGradient005_static_05', Level.LEVEL0, async (done: () => void): Pro
 it('testColorGradient006_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColorGradient006_static_06] START');
       await CommonFunc.sleep(1000);
-      let radialGradientValue: RadialGradientValue = {
+      let radialGradientValue: RadialGradientOptions = {
         center: [60, 60],
         radius: 70,
         colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]],
@@ -272,8 +247,8 @@ it('testColorGradient006_static_06', Level.LEVEL0, async (done: () => void): Pro
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "radialGradientValue": JSON.stringify(radialGradientValue)
-          } as Record<String, RecordData>
+            "radialGradientValue": radialGradientValue as RadialGradientOptions
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 7,
@@ -289,8 +264,8 @@ it('testColorGradient006_static_06', Level.LEVEL0, async (done: () => void): Pro
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info("[testColorGradient006_static_06] component JSON.parse(strJsonNew) is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getElement('radialGradient').getString('radius')).assertEqual('70.00vp');
-      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[0]).assertEqual('60.00vp');
-      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[1]).assertEqual('60.00vp');
+      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[0].asString()).assertEqual('60.00vp');
+      expect(obj.getElement('$attrs').getElement('radialGradient').getArray('center')[1].asString()).assertEqual('60.00vp');
       expect(obj.getElement('$attrs').getElement('radialGradient').getString('repeating')).assertEqual('false');
       console.info('[testColorGradient006_static_06] END');
       done();

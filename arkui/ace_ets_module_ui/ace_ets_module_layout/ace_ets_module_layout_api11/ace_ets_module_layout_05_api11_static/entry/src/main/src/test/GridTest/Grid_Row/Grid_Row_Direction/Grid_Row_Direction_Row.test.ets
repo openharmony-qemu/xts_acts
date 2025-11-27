@@ -87,7 +87,7 @@ it('SUB_ACE_GridRowDirection_Row_static_0100', Level.LEVEL0, async (done: () => 
 
       expect(Math.abs(firstDirectionRow.top - DirectionRow_1.top) <= 1).assertTrue();
       expect(Math.abs(firstDirectionRow.left - DirectionRow_1.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondDirectionRow.left - firstDirectionRow.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdDirectionRow.top - firstDirectionRow.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 

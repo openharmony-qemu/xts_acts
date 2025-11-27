@@ -103,7 +103,7 @@ it('testGridRowColTemplateChange01_static_01', Level.LEVEL0, async (done: () => 
 
       expect(Math.abs(GridTemplateChange_Grid_013.bottom - GridTemplateChange_Grid_01.bottom) <= 1).assertTrue();
       expect(Math.abs(GridTemplateChange_Grid_014.bottom - GridTemplateChange_Grid_01.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(GridTemplateChange_Grid_011.right - GridTemplateChange_Grid_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
       expect(Math.abs(GridTemplateChange_Grid_012.right - GridTemplateChange_Grid_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
@@ -166,7 +166,7 @@ it('testGridRowColTemplateChange02_static_02', Level.LEVEL0, async (done: () => 
       expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_014.top) <= 1).assertTrue();
       expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_012.bottom) <= 1).assertTrue();
       expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_013.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(GridTemplateChange_Grid_011.right - GridTemplateChange_Grid_011.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
       expect(Math.abs(GridTemplateChange_Grid_012.right - GridTemplateChange_Grid_012.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)

@@ -102,7 +102,7 @@ it('testGridRowColGridCellLength_static_01', Level.LEVEL0, async (done: () => vo
 
       expect(Math.abs(Grid_RowCol_cellLength_013.bottom - Grid_RowCol_cellLength_01.bottom) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_cellLength_014.bottom - Grid_RowCol_cellLength_01.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
 
       expect(Math.abs(Grid_RowCol_cellLength_011.right - Grid_RowCol_cellLength_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();

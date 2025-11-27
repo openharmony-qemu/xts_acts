@@ -90,7 +90,7 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0100', Level.LEVEL0, async (done:
 
       expect(Math.abs(firstGutterOption.top - GutterOption_1.top) <= 1).assertTrue();
       expect(Math.abs(firstGutterOption.left - GutterOption_1.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(secondGutterOption.left - firstGutterOption.right - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
       expect(Math.abs(thirdGutterOption.top - firstGutterOption.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
 
@@ -125,7 +125,7 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0200', Level.LEVEL0, async (done:
 
       expect(Math.abs(firstGutterOption.top - GutterOption_1.top) <= 1).assertTrue();
       expect(Math.abs(firstGutterOption.left - GutterOption_1.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(secondGutterOption.left - firstGutterOption.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(thirdGutterOption.top - firstGutterOption.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
 
@@ -163,7 +163,7 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0300', Level.LEVEL0, async (done:
 
       expect(Math.abs(firstGutterOption.top - GutterOption_1.top) <= 1).assertTrue();
       expect(Math.abs(firstGutterOption.left - GutterOption_1.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.abs(secondGutterOption.left - firstGutterOption.right) - Math.abs(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
       expect(Math.abs(Math.abs(thirdGutterOption.top - firstGutterOption.bottom) - Math.abs(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 

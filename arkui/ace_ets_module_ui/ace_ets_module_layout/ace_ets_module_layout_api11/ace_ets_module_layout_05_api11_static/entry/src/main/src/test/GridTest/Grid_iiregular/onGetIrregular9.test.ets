@@ -90,14 +90,14 @@ it('onGetIrregular9Jsunit_static_0001', Level.LEVEL0, async (done: () => void): 
       let GridItem0: RectValue = CommonFunc.getComponentRect('GridCenter0');
       let GridItem1: RectValue = CommonFunc.getComponentRect('GridCenter1');
       let GridItem4: RectValue = CommonFunc.getComponentRect('GridCenter4');
-
+      let context = AppStorage.get<UIContext>('context') as UIContext
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
-      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem0.right - GridItem0.left) - 80) <= 1).assertTrue();
-      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem4.right - GridItem4.left) - 80) <= 1).assertTrue();
 
-      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem0.bottom - GridItem0.top) - 260) <= 1).assertTrue();
-      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem4.bottom - GridItem4.top) - 260) <= 1).assertTrue();
+      expect(Math.abs(context.px2vp(GridItem0.right - GridItem0.left) - 80) <= 1).assertTrue();
+      expect(Math.abs(context.px2vp(GridItem4.right - GridItem4.left) - 80) <= 1).assertTrue();
+
+      expect(Math.abs(context.px2vp(GridItem0.bottom - GridItem0.top) - 260) <= 1).assertTrue();
+      expect(Math.abs(context.px2vp(GridItem4.bottom - GridItem4.top) - 260) <= 1).assertTrue();
 
       console.info('[onGetIrregular9Jsunit_static_0001] END');
       done();

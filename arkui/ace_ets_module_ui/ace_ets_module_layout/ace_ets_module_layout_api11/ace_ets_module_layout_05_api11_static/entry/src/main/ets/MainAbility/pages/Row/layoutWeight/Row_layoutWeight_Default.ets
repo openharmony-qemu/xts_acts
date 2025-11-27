@@ -22,17 +22,17 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 struct Row_layoutWeight_Default {
   @State layoutWeight1: number = 0;
   @State layoutWeight2: string = '0';
-  messageManager: MessageManager<string> = new MessageManager<string>();
+  messageManager: MessageManager<number|string> = new MessageManager<number|string>();
 
   onPageShow() {
     console.info('Row_layoutWeight_Default onPageShow');
-    AppStorage.setOrCreate<MessageManager<string>>('messageManager', this.messageManager);
-    let callback: Callback<string> = (message: Message<string>) => {
+    AppStorage.setOrCreate<MessageManager<number|string>>('messageManager', this.messageManager);
+    let callback: Callback<number|string> = (message: Message<number|string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'layoutWeight1') {
-        this.layoutWeight1 = Number.parseInt(message.value);
+        this.layoutWeight1 = message.value as number;
       } else if (message.name == 'layoutWeight2') {
-        this.layoutWeight2 = message.value;
+        this.layoutWeight2 = message.value as string;
       }
     };
     this.messageManager.registerCallback(callback);

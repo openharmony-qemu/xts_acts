@@ -84,7 +84,7 @@ struct scrollBy {
       .onScrollIndex((first: int,last: int):void => {
         console.info(String(first))
       })
-      .onScrollBarUpdate((index: int, offset: double):ComputedBarAttribute => {
+      .onScrollBarUpdate((index: int, offset: number):ComputedBarAttribute => {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 }
       })
       .width('90%')

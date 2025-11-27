@@ -79,7 +79,8 @@ it('SUB_ACE_GridRowBreakpoints_Quantity_static_0100', Level.LEVEL0, async (done:
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Quantity2');
       let fourthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Quantity3');
       let fifthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Quantity4');
-      const uiContext = new UIContext();
+      console.log('-----' + Math.round(secondBreakpoints.top - firstBreakpoints.bottom))
+      console.log('-----' + Math.round(fifthBreakpoints.top - fourthBreakpoints.bottom))
       expect(Math.abs(Math.round(secondBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(thirdBreakpoints.top - secondBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)

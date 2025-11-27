@@ -47,6 +47,7 @@ import {
   State,
   AppStorage
 } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct GridIrregular2 {

@@ -32,7 +32,7 @@ struct datePickerDialog2 {
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
-            showTime: true,
+            // showTime: true,
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
             // backgroundEffect: {

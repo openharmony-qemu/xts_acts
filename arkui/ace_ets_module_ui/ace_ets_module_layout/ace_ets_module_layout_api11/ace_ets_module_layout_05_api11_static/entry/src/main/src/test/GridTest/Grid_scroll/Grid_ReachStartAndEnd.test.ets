@@ -37,7 +37,6 @@ export default function Grid_ReachStartAndEnd() {
   describe('Grid_ReachStartAndEnd', () => {
     beforeAll(() => {
       console.log("Grid_ReachStartAndEnd beforeAll start111")
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -50,7 +49,7 @@ export default function Grid_ReachStartAndEnd() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get Grid_ReachStartAndEnd state pages: " + JSON.stringify(pages));
         if (!("Grid_ReachStartAndEnd" == pages.name)) {
@@ -64,14 +63,12 @@ export default function Grid_ReachStartAndEnd() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
-
-      
+      await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
       let btn = await driver.findComponent(ON.id('grid_Reset_bt'));
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(1000);
 
       console.info("Grid_ReachStartAndEnd after each called");
     });
@@ -102,6 +99,7 @@ it('Grid_ReachStartAndEnd_static_0100', Level.LEVEL0, async (done: () => void): 
       let strJson1 = inspector.getInspectorByKey('Grid_ReachStartAndEnd_tex2')
 
      console.info("[Grid_ReachStartAndEnd_static_0100] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)))
+  console.info("[Grid_ReachStartAndEnd_static_0100] obj1 content is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onReachEnd');
 
       driver.swipe(
@@ -115,6 +113,7 @@ it('Grid_ReachStartAndEnd_static_0100', Level.LEVEL0, async (done: () => void): 
       let strJson2 = inspector.getInspectorByKey('Grid_ReachStartAndEnd_tex1')
 
      console.info("[Grid_ReachStartAndEnd_static_0100] component obj2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2)))
+  console.info("[Grid_ReachStartAndEnd_static_0100] obj2 content is: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('onReachStart2');
 
       console.info('[Grid_ReachStartAndEnd_static_0100] END');
@@ -135,7 +134,7 @@ it('Grid_ReachStartAndEnd_static_0600', Level.LEVEL0, async (done: () => void): 
       console.info('[Grid_ReachStartAndEnd_static_0100] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_grid')
       let driver = Driver.create()
-      await driver.fling({
+      driver.fling({
         x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt()
       },
@@ -148,12 +147,10 @@ it('Grid_ReachStartAndEnd_static_0600', Level.LEVEL0, async (done: () => void): 
       let strJson1 = inspector.getInspectorByKey('Grid_ReachStartAndEnd_tex2')
 
      console.info("[Grid_ReachStartAndEnd_static_0600] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)))
+  console.info("[Grid_ReachStartAndEnd_static_0600] obj1 content is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
     expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onReachEnd');
-
       console.info('[Grid_ReachStartAndEnd_static_0600] END');
       done();
     });
-
-
   })
 }

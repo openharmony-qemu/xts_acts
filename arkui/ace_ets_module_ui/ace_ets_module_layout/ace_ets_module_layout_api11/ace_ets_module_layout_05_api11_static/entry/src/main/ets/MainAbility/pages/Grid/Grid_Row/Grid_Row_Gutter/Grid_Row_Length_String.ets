@@ -49,15 +49,15 @@ struct Grid_Row_Length_String {
   @State addLength: string = '0';
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown];
   @State currentBp: string = 'unknown';
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  messageManager: MessageManager<string> = new MessageManager<string>();
 
   onPageShow() {
     console.info('Grid_Row_Length_String  onPageShow');
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager", this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<string>>("messageManager", this.messageManager);
+    let callback: Callback<string> = (message: Message<string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addLength') {
-        this.addLength = String(message.value);
+        this.addLength = message.value;
       }
     };
     this.messageManager.registerCallback(callback);

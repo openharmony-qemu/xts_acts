@@ -85,7 +85,7 @@ it('GridRowCol_static_001', Level.LEVEL0, async (done: () => void): Promise<void
       let GridItem11 = CommonFunc.getComponentRect('GridItem11');
       console.info("[GridRowCol_static_001] component obj is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
 	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(GridItem02.left - GridItem01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(GridItem03.top - GridItem00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
@@ -166,7 +166,7 @@ it('GridRowCol_static_004', Level.LEVEL0, async (done: () => void): Promise<void
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
 	  expect(Math.abs(Math.round(GridItem01.top - GridItem00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridRowCol_static_004] END');
@@ -192,7 +192,7 @@ it('GridRowCol_static_005', Level.LEVEL0, async (done: () => void): Promise<void
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
 	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridRowCol_static_005] END');

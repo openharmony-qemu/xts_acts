@@ -88,8 +88,8 @@ it('onGetIrregular7Jsunit_static_0001', Level.LEVEL0, async (done: () => void): 
       await CommonFunc.sleep(1000);
       let GridItem0: RectValue = CommonFunc.getComponentRect('onTextTemplate0');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
-      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem0.right - GridItem0.left))).assertEqual(400);
+      let context = AppStorage.get<UIContext>('context') as UIContext
+      expect(Math.round(context.px2vp(GridItem0.right - GridItem0.left))).assertEqual(400);
       await CommonFunc.sleep(1000);
       console.info('[onGetIrregular7Jsunit_static_0001] END');
       done();

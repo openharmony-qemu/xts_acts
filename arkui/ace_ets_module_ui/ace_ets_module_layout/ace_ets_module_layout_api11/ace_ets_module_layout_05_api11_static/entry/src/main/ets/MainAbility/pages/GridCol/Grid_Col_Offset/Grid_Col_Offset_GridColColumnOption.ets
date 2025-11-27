@@ -24,17 +24,17 @@ struct Grid_Col_Offset_GridColColumnOption {
   @State addSpan: int = 2;
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown];
   @State currentBp: string = 'unknown';
-  messageManager: MessageManager<string> = new MessageManager<string>();
+  messageManager: MessageManager<int|string> = new MessageManager<int|string>();
 
   onPageShow() {
     console.info('Grid_Col_Offset_GridColColumnOption onPageShow');
-    AppStorage.setOrCreate<MessageManager<string>>('messageManager', this.messageManager);
-    let callback: Callback<string> = (message: Message<string>) => {
+    AppStorage.setOrCreate<MessageManager<int|string>>('messageManager', this.messageManager);
+    let callback: Callback<int|string> = (message: Message<int|string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addWidth') {
-        this.addWidth = message.value;
+        this.addWidth = message.value as string;
       } else if (message.name == 'addSpan') {
-        this.addSpan = (Number.parseInt(message.value)).toInt();
+        this.addSpan = message.value as int;
       }
     };
     this.messageManager.registerCallback(callback);

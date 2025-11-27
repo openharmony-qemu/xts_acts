@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Row, Text, GradientDirection, ResourceColor, Column, ColumnOptions, Padding, LinearGradientOptions, SweepGradientOptions, RadialGradientOptions } from '@ohos.arkui.component'
+import { Entry, Component, Color, Row, Text, GradientDirection, ResourceColor, Column, ColumnOptions, Padding, LinearGradientOptions, SweepGradientOptions, RadialGradientOptions } from '@ohos.arkui.component'
 import { State  } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
@@ -61,20 +61,25 @@ struct ColorGradientExample {
     colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]],
     repeating: true
   } as RadialGradientOptions;
+
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
     console.info("[ColorGradient] page stateChangCallBack");
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      console.info("[ColorGradient] page state change called:" + JSON.stringify(data));
+      console.info("[ColorGradient] page linearGradientValue change called:" + JSON.stringify(data['linearGradientValue']));
+      if (data['linearGradientValue'] != null) {
+        console.info("[ColorGradient] ---------")
+        this.linearGradientValue = data['linearGradientValue'] as LinearGradientOptions;
+        console.info("[ColorGradient] page state linearGradientValue change called:" + JSON.stringify(this.linearGradientValue));
+      }
+      if (data['sweepGradientValue'] != null) {
+        this.sweepGradientValue = data['sweepGradientValue'] as SweepGradientOptions;
+      }
+      if (data['radialGradientValue'] != null) {
+        this.radialGradientValue = data['radialGradientValue'] as RadialGradientOptions;
+      }
+    }
   }
 
   onPageShow() {

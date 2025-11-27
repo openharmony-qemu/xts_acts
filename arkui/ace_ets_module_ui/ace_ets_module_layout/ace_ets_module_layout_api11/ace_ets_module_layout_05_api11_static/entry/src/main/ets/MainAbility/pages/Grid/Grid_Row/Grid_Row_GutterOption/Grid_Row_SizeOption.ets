@@ -45,15 +45,15 @@ struct Grid_Row_SizeOption {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown];
   @State currentBp: string = 'unknown';
   @State gridRowSize: string = '0';
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  messageManager: MessageManager<string> = new MessageManager<string>();
 
   onPageShow() {
     console.info('Grid_Row_SizeOption');
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager", this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<string>>("messageManager", this.messageManager);
+    let callback: Callback<string> = (message: Message<string>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'size') {
-        this.gridRowSize = String(message.value);
+        this.gridRowSize = message.value;
       }
     };
     this.messageManager.registerCallback(callback);

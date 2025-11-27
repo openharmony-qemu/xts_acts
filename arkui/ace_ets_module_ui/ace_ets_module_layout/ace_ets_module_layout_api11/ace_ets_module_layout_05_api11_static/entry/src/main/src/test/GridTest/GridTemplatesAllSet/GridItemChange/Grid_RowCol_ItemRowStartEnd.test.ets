@@ -102,7 +102,7 @@ it('testGridRowColItemRowStartToZeroEndToThree_static_01', Level.LEVEL0, async (
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemRowStartEnd_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      const uiContext = new UIContext();
+
       expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(75)) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.left - gridContainer.left) <= 1).assertTrue();
@@ -200,7 +200,7 @@ it('testGridRowColItemRowStartToOneEndToThree_static_02', Level.LEVEL0, async (d
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemRowStartEnd_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      const uiContext = new UIContext();
+
       expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(75)) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(225)) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.left - gridContainer.left) <= 1).assertTrue();

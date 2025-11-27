@@ -91,6 +91,8 @@ it('List_scrollToIndex3_static_0100', Level.LEVEL0, async (done: () => void): Pr
       let List: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_List');
       let ListItemGroup: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_ListItemGroup');
       expect(Math.abs(ListItemGroup.top - List.top) <= 1).assertTrue();
+      console.log('------' + Math.round(ListItemGroup.bottom))
+      console.log('------' + Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(40)))
       expect(Math.abs(Math.round(ListItemGroup.bottom) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex3_0100] END');
       done();

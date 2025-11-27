@@ -71,7 +71,7 @@ struct Grid_Row_Breakpoints_Incremental {
             lg: 20,
             xl: 25,
             xxl: 30
-          } as GridRowSizeOption as GridRowSizeOption
+          } as GridRowSizeOption
         } as GutterOption,
         breakpoints: { value: ["50vp", "100vp", "200vp", "100vp", "300vp"],
           reference: BreakpointsReference.ComponentSize } as BreakPoints,

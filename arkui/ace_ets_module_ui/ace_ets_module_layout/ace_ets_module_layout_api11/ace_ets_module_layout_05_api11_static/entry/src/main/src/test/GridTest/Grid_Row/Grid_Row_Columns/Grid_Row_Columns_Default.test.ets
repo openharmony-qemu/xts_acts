@@ -111,7 +111,7 @@ it('SUB_ACE_GridRowColumns_static_0100', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(twelfthColumns.top - Columns_1.top) <= 1).assertTrue();
 
       expect(Math.abs(firstColumns.left - Columns_1.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.floor(secondColumns.left - firstColumns.right) - Math.floor(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowColumns_static_0100 END');

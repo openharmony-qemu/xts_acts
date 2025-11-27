@@ -149,7 +149,7 @@ struct List_divider_number {
       .height(700)
       .listDirection(Axis.Vertical)
       .scrollBar(BarState.On)
-      // .backgroundColor(0xAFEEEE)
+      .backgroundColor(0xAFEEEE)
       .divider({ strokeWidth: this.strokeWidth, color: Color.Pink })
     }
     .width(350)

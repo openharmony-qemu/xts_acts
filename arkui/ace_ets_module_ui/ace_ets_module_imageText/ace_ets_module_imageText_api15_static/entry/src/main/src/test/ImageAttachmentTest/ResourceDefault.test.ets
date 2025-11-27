@@ -225,21 +225,21 @@ it('ResourceDefaultTest_static_0060', Level.LEVEL2, async (done: () => void): Pr
      * @tc.level    Level.LEVEL2
      */
 it('ResourceDefaultTest_static_0070', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ResourceDefaultTest_0070] START');
-      let driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
-      await Button.click()
-      await CommonFunc.sleep(1000);
-      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
-      await Button1.click()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('default_colorFilter');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ResourceDefaultTest_0070] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('[1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0]');
-      console.info('[ResourceDefaultTest_0070] END');
-      done();
+  console.info('[ResourceDefaultTest_static_0070] START');
+  let driver = Driver.create();
+  await CommonFunc.sleep(500);
+  let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
+  await Button.click()
+  await CommonFunc.sleep(1000);
+  let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+  await Button1.click()
+  await CommonFunc.sleep(1000);
+  let strJson = inspector.getInspectorByKey('imageColorFilter');
+  let obj = JSON.parseJsonElement(strJson);
+  console.info("[ResourceDefaultTest_static_0070] component obj is: " + obj.getElement('$attrs').getString('colorFilter'));
+  expect(obj.getElement('$attrs').getString('colorFilter')).assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+  console.info('[ResourceDefaultTest_static_0070] END');
+  done();
     });
 
     
@@ -355,21 +355,21 @@ it('ResourceDefaultTest_static_0110', Level.LEVEL2, async (done: () => void): Pr
      * @tc.level    Level.LEVEL2
      */
 it('ResourceDefaultTest_static_0120', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ResourceDefaultTest_0120] START');
-      let driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let Button:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
-      await Button.click()
-      await CommonFunc.sleep(1000);
-      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
-      await Button1.click()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('default_colorFilter');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ResourceDefaultTest_0120] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('[1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0]');
-      console.info('[ResourceDefaultTest_0120] END');
-      done();
+  console.info('[ResourceDefaultTest_static_0120] START');
+  await CommonFunc.sleep(500);
+  let driver = Driver.create();
+  let btn:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
+  await btn.click()
+  await CommonFunc.sleep(1000);
+  let btn1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+  await btn1.click()
+  await CommonFunc.sleep(1000);
+  let strJson = inspector.getInspectorByKey('imageColorFilter');
+  let obj = JSON.parseJsonElement(strJson);
+  console.info("[ResourceDefaultTest_static_0120] component obj is: " + obj.getElement('$attrs').getString('colorFilter'));
+  expect(obj.getElement('$attrs').getString('colorFilter')).assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+  console.info('[ResourceDefaultTest_static_0070] END');
+  done();
     });
   })
 }

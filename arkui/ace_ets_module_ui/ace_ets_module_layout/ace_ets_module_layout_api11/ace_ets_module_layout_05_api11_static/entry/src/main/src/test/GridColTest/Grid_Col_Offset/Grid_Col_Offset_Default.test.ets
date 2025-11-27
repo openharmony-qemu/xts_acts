@@ -88,7 +88,6 @@ it('SUB_ACE_Grid_Col_Offset_Default_TEST_static_0100', Level.LEVEL0, async (done
       let Grid_Col_Offset_Default_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Default_05');
       let Grid_Col_Offset_Default_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Default_06');
       let Grid_Col_Offset_Default_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Default_07');
-      const uiContext = new UIContext();
       console.log('assert space')
       expect(Math.abs((Grid_Col_Offset_Default_01.left - Grid_Col_Offset_Default_00.right) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();

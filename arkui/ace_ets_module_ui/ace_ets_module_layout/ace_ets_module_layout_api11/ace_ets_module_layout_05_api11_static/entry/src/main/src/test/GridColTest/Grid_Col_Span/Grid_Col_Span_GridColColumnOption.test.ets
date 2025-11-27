@@ -94,7 +94,7 @@ it('SUB_ACE_Grid_Col_Span_GridColColumnOption_TEST_static_0100', Level.LEVEL0, a
       let Grid_Col_Span_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_06');
       let Grid_Col_Span_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_07');
 
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_GridColColumnOption_06.top - Grid_Col_Span_GridColColumnOption_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -132,7 +132,7 @@ it('SUB_ACE_Grid_Col_Span_GridColColumnOption_TEST_static_0200', Level.LEVEL0, a
       let Grid_Col_Span_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_05');
       let Grid_Col_Span_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_06');
       let Grid_Col_Span_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_GridColColumnOption_01.left - Grid_Col_Span_GridColColumnOption_00.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -189,7 +189,7 @@ it('SUB_ACE_Grid_Col_Span_GridColColumnOption_TEST_static_0300', Level.LEVEL0, a
       let Grid_Col_Span_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_05');
       let Grid_Col_Span_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_06');
       let Grid_Col_Span_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_GridColColumnOption_01.left - Grid_Col_Span_GridColColumnOption_00.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -245,7 +245,7 @@ it('SUB_ACE_Grid_Col_Span_GridColColumnOption_TEST_static_0400', Level.LEVEL0, a
       let Grid_Col_Span_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_05');
       let Grid_Col_Span_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_06');
       let Grid_Col_Span_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_GridColColumnOption_01.top - Grid_Col_Span_GridColColumnOption_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -293,7 +293,7 @@ it('SUB_ACE_Grid_Col_Span_GridColColumnOption_TEST_static_0500', Level.LEVEL0, a
       let Grid_Col_Span_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_05');
       let Grid_Col_Span_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_06');
       let Grid_Col_Span_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_GridColColumnOption_01.top - Grid_Col_Span_GridColColumnOption_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -342,7 +342,7 @@ it('SUB_ACE_Grid_Col_Span_GridColColumnOption_TEST_static_0600', Level.LEVEL0, a
       let Grid_Col_Span_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_05');
       let Grid_Col_Span_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_06');
       let Grid_Col_Span_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_GridColColumnOption_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_GridColColumnOption_01.top - Grid_Col_Span_GridColColumnOption_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();

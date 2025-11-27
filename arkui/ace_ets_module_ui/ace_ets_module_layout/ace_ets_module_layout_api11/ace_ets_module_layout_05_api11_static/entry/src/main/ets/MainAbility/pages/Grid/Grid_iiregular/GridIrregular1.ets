@@ -47,6 +47,7 @@ import {
   State,
   AppStorage
 } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct GridIrregular1 {
@@ -62,6 +63,10 @@ struct GridIrregular1 {
       return [1, index % 6 + 1] as [int, int];
     }
   } as GridLayoutOptions;
+
+  onPageShow() {
+    AppStorage.setOrCreate<UIContext>('context', this.getUIContext())
+  }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {

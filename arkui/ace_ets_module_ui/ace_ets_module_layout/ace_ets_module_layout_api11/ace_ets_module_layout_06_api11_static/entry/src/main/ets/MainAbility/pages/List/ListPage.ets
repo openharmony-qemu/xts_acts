@@ -84,7 +84,7 @@ struct ListPage {
     let callback: Callback<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle | Axis | int> = (message: Message<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle | Axis | int>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'space') {
-        this.space = Number.parseInt(message.value as string)
+        this.space = message.value as number
       }
       if (message.name == 'initialIndex') {
         this.initialIndex = message.value as int

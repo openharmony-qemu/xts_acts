@@ -19,11 +19,12 @@ import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
+import { RotateOptions, ScaleOptions } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -31,24 +32,10 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-class ScaleValue {
-  x: number = 0;
-  y: number = 0;
-}
-
-class RotateValue {
-  x: number = 0;
-  y: number = 0;
-  z: number = 0;
-  centerX: string = "";
-  centerY: string = "";
-  angle: number = 0;
-}
 export default function transFormJsunit() {
   describe('appInfoTest_five_4', () => {
     beforeAll(() => {
       console.info("appInfoTest_five_4 beforeAll start");
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -116,7 +103,7 @@ it('testTransForm001_static_01', Level.LEVEL0, async (done: () => void): Promise
 it('testTransForm002_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTransForm002_static_02] START');
       await CommonFunc.sleep(1000);
-      let rotateValue: RotateValue = {
+      let rotateValue: RotateOptions = {
         x: 2,
         y: 2,
         z: 2,
@@ -127,8 +114,8 @@ it('testTransForm002_static_02', Level.LEVEL0, async (done: () => void): Promise
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rotateValue": JSON.stringify(rotateValue)
-          } as Record<String, RecordData>
+            "rotateValue": rotateValue as RotateOptions
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 45,
@@ -142,7 +129,7 @@ it('testTransForm002_static_02', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(2000);
       let strJsonNew: string = inspector.getInspectorByKey('rotate');
       let obj = JSON.parseJsonElement(strJsonNew)
-     console.info("[testTransForm002_static_02] component objNew is: " + JSON.stringify(obj));
+     console.info("[testTransForm002_static_02] component objNew is: " + JSON.stringifyJsonElement(obj));
      expect(obj.getElement('$attrs').getElement('rotate').getString('x')).assertEqual('2.000000');
      expect(obj.getElement('$attrs').getElement('rotate').getString('y')).assertEqual('2.000000');
      expect(obj.getElement('$attrs').getElement('rotate').getString('z')).assertEqual('2.000000');
@@ -184,14 +171,14 @@ it('testTransForm003_static_03', Level.LEVEL0, async (done: () => void): Promise
 it('testTransForm004_staic_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTransForm004_staic_04] START');
       await CommonFunc.sleep(1000);
-      let scaleValue: ScaleValue = {
+      let scaleValue: ScaleOptions = {
         x: 1, y: 1
       }
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "scaleValue": JSON.stringify(scaleValue)
-          } as Record<String, RecordData>
+            "scaleValue": scaleValue as ScaleOptions
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 46,

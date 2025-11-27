@@ -35,7 +35,6 @@ export default function Grid_Col_Span_Number() {
   describe('Grid_Col_Span_Number', () => {
     beforeAll(() => {
       console.info("Grid_Col_Span_Number beforeAll start");
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -94,7 +93,7 @@ it('SUB_ACE_Grid_Col_Span_Number_TEST_static_0100', Level.LEVEL0, async (done: (
       let Grid_Col_Span_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_06');
       let Grid_Col_Span_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_07');
 
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.left - Grid_Col_Span_Number_00.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.left - Grid_Col_Span_Number_01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
@@ -174,7 +173,7 @@ it('SUB_ACE_Grid_Col_Span_Number_TEST_static_0300', Level.LEVEL0, async (done: (
       let Grid_Col_Span_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_06');
       let Grid_Col_Span_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_07');
 
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.left - Grid_Col_Span_Number_00.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.left - Grid_Col_Span_Number_01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
@@ -221,7 +220,7 @@ it('SUB_ACE_Grid_Col_Span_Number_TEST_static_0400', Level.LEVEL0, async (done: (
       let Grid_Col_Span_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_05');
       let Grid_Col_Span_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_06');
       let Grid_Col_Span_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.top - Grid_Col_Span_Number_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.top - Grid_Col_Span_Number_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();

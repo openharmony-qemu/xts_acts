@@ -129,25 +129,25 @@ struct ParagraphSpacingTest {
 
    onPageShow():void {
     this.controller.setStyledString(this.paragraphStyledString1)
-    let styles = this.paragraphStyledString1.getStyles(0, this.paragraphStyledString1.length)!
-    if (styles.length !== 0) {
-      for (let i = 0; i < styles.length; i++) {
-        console.info('paragraphStyledString1 style object start:' + styles[i].start)
-        console.info('paragraphStyledString1 style object length:' + styles[i].length)
-        console.info('paragraphStyledString1 style object key:' + styles[i].styledKey)
-        if (styles[i].styledKey === 200) {
-          let paraAttr = styles[i].styledValue as ParagraphStyle;
+    let styles = this.paragraphStyledString1.getStyles(0, this.paragraphStyledString1.length)
+    if (styles!.length !== 0) {
+      for (let i = 0; i < styles!.length; i++) {
+        console.info('paragraphStyledString1 style object start:' + styles![i]!.start!)
+        console.info('paragraphStyledString1 style object length:' + styles![i]!.length!)
+        console.info('paragraphStyledString1 style object key:' + styles![i]!.styledKey!)
+        if (styles![i]!.styledKey! === 200) {
+          let paraAttr = styles![i]!.styledValue! as ParagraphStyle;
           console.info('paragraphStyledString1 paragraphSpacing:' + paraAttr.paragraphSpacing)
-          if (styles[i].start == 0){
+          if (styles![i]!.start! == 0){
             AppStorage.setOrCreate('paragraphSpacing1', paraAttr.paragraphSpacing)
             console.info('paragraphStyledString666 paragraphSpacing1:' + paraAttr.paragraphSpacing)
-          }else if (styles[i].start == 5){
+          }else if (styles![i]!.start! == 5){
             AppStorage.setOrCreate('paragraphSpacing2', paraAttr.paragraphSpacing)
             console.info('paragraphStyledString666 paragraphSpacing2:' + paraAttr.paragraphSpacing)
-          }else if (styles[i].start == 32){
+          }else if (styles![i]!.start! == 32){
             AppStorage.setOrCreate('paragraphSpacing3', paraAttr.paragraphSpacing)
             console.info('paragraphStyledString666 paragraphSpacing3:' + paraAttr.paragraphSpacing)
-          }else if (styles[i].start == 60){
+          }else if (styles![i]!.start! == 60){
             AppStorage.setOrCreate('paragraphSpacing4', paraAttr.paragraphSpacing)
             console.info('paragraphStyledString666 paragraphSpacing4:' + paraAttr.paragraphSpacing)
           }

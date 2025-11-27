@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import GlobalContext from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
+
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import {
   Entry,

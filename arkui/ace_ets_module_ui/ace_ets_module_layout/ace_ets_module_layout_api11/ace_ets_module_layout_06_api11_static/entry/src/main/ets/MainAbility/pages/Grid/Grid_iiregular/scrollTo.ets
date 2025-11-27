@@ -53,7 +53,7 @@ struct scrollTo {
             GridItem() {
               Text(day)
                 .fontSize(16)
-                // .backgroundColor(0xF9CF93)
+                .backgroundColor(0xF9CF93)
                 .width('100%')
                 .height(80)
                 .textAlign(TextAlign.Center)
@@ -76,7 +76,7 @@ struct scrollTo {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 }
       })
       .width('90%')
-      // .backgroundColor(0xFAEEE0)
+      .backgroundColor(0xFAEEE0)
       .height(80)
 
       Button('scrollTo+90')

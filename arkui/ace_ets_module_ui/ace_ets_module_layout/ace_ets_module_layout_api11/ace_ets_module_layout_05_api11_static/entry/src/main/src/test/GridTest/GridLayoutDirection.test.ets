@@ -76,12 +76,12 @@ it('GridLayoutDirection_static_001', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('[GridLayoutDirection_static_001] START');
       await CommonFunc.sleep(1000);
-     AppStorage.get<MessageManager<GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.ColumnReverse });
+      AppStorage.get<MessageManager<number | GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.ColumnReverse });
       await CommonFunc.sleep(1000);
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
 	  expect(Math.abs(Math.round(GridItem00.top - GridItem01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_001] END');
@@ -102,12 +102,12 @@ it('GridLayoutDirection_static_002', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('[GridLayoutDirection_static_002] START');
       await CommonFunc.sleep(200);
-     AppStorage.get<MessageManager<GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.ColumnReverse });
+     AppStorage.get<MessageManager<number | GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.Column });
       await CommonFunc.sleep(200);
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
 	  expect(Math.abs(Math.round(GridItem01.top - GridItem00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_002] END');
@@ -128,12 +128,12 @@ it('GridLayoutDirection_static_003', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('[GridLayoutDirection_static_003] START');
       await CommonFunc.sleep(200);
-     AppStorage.get<MessageManager<GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.RowReverse });
+     AppStorage.get<MessageManager<number | GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.RowReverse });
       await CommonFunc.sleep(200);
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
 	  expect(Math.abs(Math.round(GridItem00.left - GridItem01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_003] END');
@@ -154,12 +154,12 @@ it('GridLayoutDirection_static_004', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('[GridLayoutDirection_static_004] START');
       await CommonFunc.sleep(200);
-     AppStorage.get<MessageManager<GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.Row });
+     AppStorage.get<MessageManager<number | GridDirection>>('messageManager')?.notify({name:'layoutDirection', value: GridDirection.Row });
       await CommonFunc.sleep(200);
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
 	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_004] END');
@@ -180,12 +180,12 @@ it('GridLayoutDirection_static_005', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('[GridLayoutDirection_static_005] START');
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'gridPadding', value: 50 });
+      AppStorage.get<MessageManager<number | GridDirection>>('messageManager')?.notify({name:'gridPadding', value: 50 });
       await CommonFunc.sleep(200);
       let GridLayoutDirKey = CommonFunc.getComponentRect('GridLayoutDirKey');
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(GridItem00.top - GridLayoutDirKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_005] END');
@@ -206,12 +206,12 @@ it('GridLayoutDirection_static_006', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('[GridLayoutDirection_static_006] START');
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'gridMargin', value: 50 });
+      AppStorage.get<MessageManager<number | GridDirection>>('messageManager')?.notify({name:'gridMargin', value: 50 });
       await CommonFunc.sleep(200);
       let GridLayoutDirKey = CommonFunc.getComponentRect('GridLayoutDirKey');
       let ColumnKey = CommonFunc.getComponentRect('ColumnKey');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(GridLayoutDirKey.top - ColumnKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_006] END');

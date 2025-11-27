@@ -90,8 +90,15 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0100', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
 
-      const uiContext = new UIContext();
+
       console.log('assert space')
+  console.log('-----Grid_Col_Order_GridColColumnOption_01' + JSON.stringify(Grid_Col_Order_GridColColumnOption_01))
+  console.log('-----Grid_Col_Order_GridColColumnOption_02' + JSON.stringify(Grid_Col_Order_GridColColumnOption_02))
+  console.log('-----Grid_Col_Order_GridColColumnOption_03' + JSON.stringify(Grid_Col_Order_GridColColumnOption_03))
+  console.log('-----Grid_Col_Order_GridColColumnOption_04' + JSON.stringify(Grid_Col_Order_GridColColumnOption_04))
+  console.log('-----' + (Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom))
+  console.log('-----' + (Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom))
+  console.log('-----' + (Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_03.bottom))
       expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
       expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
@@ -127,7 +134,7 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0200', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
 
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
@@ -163,7 +170,7 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0300', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
       let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
@@ -199,7 +206,7 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0400', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
       let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
@@ -235,7 +242,7 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0500', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
       let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
@@ -271,7 +278,7 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0600', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
       let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();

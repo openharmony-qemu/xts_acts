@@ -100,7 +100,7 @@ it('testGridRowColItemVisibilityNone_static_01', Level.LEVEL0, async (done: () =
       expect(Math.abs(thirdGridItem.top - firstGridItem.bottom) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - thirdGridItem.top) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
@@ -125,7 +125,7 @@ it('testGridRowColItemVisibilityNone_static_01', Level.LEVEL0, async (done: () =
      */
 it('testGridRowColItemVisibilityHidden_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColItemVisibilityHidden_static_02] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<Visibility>>('messageManager')?.notify({
         name: 'secondGridItemVisibility', value: Visibility.Hidden
       });
       await CommonFunc.sleep(3000);
@@ -146,7 +146,7 @@ it('testGridRowColItemVisibilityHidden_static_02', Level.LEVEL0, async (done: ()
       expect(Math.abs(thirdGridItem.top - firstGridItem.bottom) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - firstGridItem.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
@@ -174,7 +174,7 @@ it('testGridRowColItemVisibilityHidden_static_02', Level.LEVEL0, async (done: ()
      */
 it('testGridRowColItemVisibilityVisible_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColItemVisibilityVisible_static_03] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<Visibility>>('messageManager')?.notify({
         name: 'secondGridItemVisibility', value: Visibility.Visible
       });
       await CommonFunc.sleep(3000);
@@ -197,7 +197,7 @@ it('testGridRowColItemVisibilityVisible_static_03', Level.LEVEL0, async (done: (
       expect(Math.abs(thirdGridItem.top - firstGridItem.bottom) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - firstGridItem.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 

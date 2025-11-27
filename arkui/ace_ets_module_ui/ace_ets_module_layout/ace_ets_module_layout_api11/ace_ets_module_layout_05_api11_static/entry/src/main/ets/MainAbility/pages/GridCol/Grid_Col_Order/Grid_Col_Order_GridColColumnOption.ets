@@ -15,8 +15,6 @@
  */
 import { Entry, Component, Column, Color, GridRow, GutterOption, GridColColumnOption, BreakPoints, GridRowDirection, GridCol, BreakpointsReference } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-import GlobalContext from './../../../common/GlobalContext'
-import { ValueT } from './../../../common/Value';
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
 
 @Entry

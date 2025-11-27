@@ -131,34 +131,36 @@ struct ObjectFit1 {
       Row() {
         Button('append resource').height('5%').id('set_ObjectFit_append')
           .onClick((e:ClickEvent) => {
-            // this.mutableStyledString1.appendStyledString(new MutableStyledString(new ImageAttachment({
-            //   resourceValue: $r('app.media.icon'),
-            //   size: { width: 50, height: '50px' },
-            //   layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-            //   verticalAlign: ImageSpanAlignment.CENTER,
-            //   objectFit: this.ImageFit,
-            //   colorFilter: drawing.ColorFilter.createBlendModeColorFilter(this.color, drawing.BlendMode.DST_OVER)
-            // } as ResourceImageAttachmentOptions)))
-            // this.update()
+            this.mutableStyledString1.appendStyledString(new MutableStyledString(new ImageAttachment({
+              resourceValue: $r('app.media.icon'),
+              size: { width: 50, height: '50px' },
+              layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+              verticalAlign: ImageSpanAlignment.CENTER,
+              objectFit: this.ImageFit,
+              colorFilter: drawing.ColorFilter.createBlendModeColorFilter(this.color, drawing.BlendMode.DST_OVER)
+            } as ResourceImageAttachmentOptions)))
+            this.update()
           })
         Button('getStyles').width('50%').height('5%').id('get_ObjectFit_styles')
-          .onClick(() => {
-            // let imageArray = this.mutableStyledString1.getStyles(0,  this.mutableStyledString1.length)
-            // for (let i = 0; i < imageArray.length; ++i) {
-            //   if (imageArray[i].styledKey === 300) {
-            //     let attachment = imageArray[i].styledValue as ImageAttachment
-            //     console.info('ImageAttachment value  ' + JSON.stringify(attachment.value))
-            //     console.info('ImageAttachment size  ' + JSON.stringify(attachment.size))
-            //     console.info('ImageAttachment verticalAlign  ' + JSON.stringify(attachment.verticalAlign))
-            //     this.objectFit = '' + JSON.stringify(attachment.objectFit)
-            //     console.info('ImageAttachment objectFit  ' + JSON.stringify(attachment.objectFit))
-            //     console.info('ImageAttachment layoutStyle  ' + JSON.stringify(attachment.layoutStyle))
-            //     if (attachment.colorFilter) {
-            //       this.DrawingColorFilterFirst = attachment.colorFilter as ColorFilter
-            //       console.info('ImageAttachment colorFilter  ' + JSON.stringify(attachment.colorFilter))
-            //     }
-            //   }
-            // }
+          .onClick((e:ClickEvent) => {
+            console.log('--------' + this.mutableStyledString1.length)
+            let imageArray = this.mutableStyledString1.getStyles(0,  this.mutableStyledString1.length)
+            console.info('imageArray.length: ' + imageArray!.length)
+            for (let i = 0; i < imageArray!.length; ++i) {
+              if (imageArray![i].styledKey === 300) {
+                let attachment = imageArray![i].styledValue as ImageAttachment
+                console.info('ImageAttachment value  ' + JSON.stringify(attachment.value))
+                console.info('ImageAttachment size  ' + JSON.stringify(attachment.size))
+                console.info('ImageAttachment verticalAlign  ' + attachment.verticalAlign)
+                this.objectFit = '' + attachment.objectFit
+                console.info('ImageAttachment objectFit  ' + attachment.objectFit)
+                console.info('ImageAttachment layoutStyle  ' + JSON.stringify(attachment.layoutStyle))
+                if (attachment.colorFilter) {
+                  this.DrawingColorFilterFirst = attachment.colorFilter as ColorFilter
+                  console.info('ImageAttachment colorFilter  ' + attachment.colorFilter)
+                }
+              }
+            }
           }).height(35).padding(8).margin({top:10,right:10} as Margin)
       }
       Text(this.objectFit).id('get_ObjectFit').height('5%')

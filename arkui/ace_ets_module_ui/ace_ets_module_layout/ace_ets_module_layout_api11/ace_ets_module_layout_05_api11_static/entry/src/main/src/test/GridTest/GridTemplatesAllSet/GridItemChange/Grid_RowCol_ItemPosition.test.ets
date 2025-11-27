@@ -93,7 +93,7 @@ it('testGridRowColItemPosition_static_01', Level.LEVEL0, async (done: () => void
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPosition_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      const uiContext = new UIContext();
+
       expect(Math.round(secondGridItem.left - gridContainer.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
       expect(Math.round(secondGridItem.top - gridContainer.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20)) <= 1)
         .assertTrue(); 

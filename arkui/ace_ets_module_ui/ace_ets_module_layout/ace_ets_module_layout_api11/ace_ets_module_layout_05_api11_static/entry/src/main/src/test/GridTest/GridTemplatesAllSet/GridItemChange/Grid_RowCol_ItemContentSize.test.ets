@@ -94,7 +94,7 @@ it('testGridRowColItemContentSize_static_01', Level.LEVEL0, async (done: () => v
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemContentSize_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      const uiContext = new UIContext();
+
       expect(Math.round(secondGridItemText.right - secondGridItemText.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(75)) <= 1).assertTrue();
       expect(Math.round(secondGridItemText.bottom - secondGridItemText.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(75)) <= 1).assertTrue();
       expect(Math.round(secondGridItemText.left - secondGridItem.left) - Math.round(secondGridItem.right -

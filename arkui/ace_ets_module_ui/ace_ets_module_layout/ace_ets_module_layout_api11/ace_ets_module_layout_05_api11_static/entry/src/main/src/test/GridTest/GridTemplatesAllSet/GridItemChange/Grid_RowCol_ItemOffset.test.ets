@@ -96,7 +96,7 @@ it('testGridRowColItemOffset_static_01', Level.LEVEL0, async (done: () => void):
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemOffset_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      const uiContext = new UIContext();
+
       expect(Math.abs(secondGridItem.left - secondGridItemLeft - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
       expect(Math.abs(secondGridItem.top - secondGridItemTop - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue(); 
 

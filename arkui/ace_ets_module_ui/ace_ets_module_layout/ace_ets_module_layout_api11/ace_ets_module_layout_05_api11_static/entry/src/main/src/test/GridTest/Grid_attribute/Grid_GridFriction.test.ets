@@ -80,10 +80,10 @@ it('testGridFriction_static_01', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(2000);
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_GridFriction');
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-     console.info('[testGridFriction] gridContainerStrJson friction: ' + JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getString('friction'));
+     console.info('[testGridFriction] gridContainerStrJson friction: ' + JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getDouble('friction'));
       let gridDefJson = inspector.getInspectorByKey('grid_friction_default');
-     console.info('[testGridFriction] gridDefJson friction: ' + JSON.parseJsonElement(gridDefJson).getElement('$attrs').getString('friction'));
-     expect(JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getString('friction')).assertEqual(JSON.parseJsonElement(gridDefJson).getElement('$attrs').getString('friction'));
+     console.info('[testGridFriction] gridDefJson friction: ' + JSON.parseJsonElement(gridDefJson).getElement('$attrs').getDouble('friction'));
+     expect(JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getDouble('friction')).assertEqual(JSON.parseJsonElement(gridDefJson).getElement('$attrs').getDouble('friction'));
       console.info('[testGridFriction_static_01] END');
       done();
     });
@@ -106,7 +106,7 @@ it('testGridFriction_static_02', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(2000);
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_GridFriction');
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-     expect(JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getString('friction')).assertEqual(10);
+     expect(JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getDouble('friction')).assertEqual(10);
       console.info('[testGridFriction_static_02] END');
       done();
     });

@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { GridDirection } from '@ohos.arkui.component'
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -76,7 +78,7 @@ it('GridRowCol02_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('[GridRowCol02_static_001] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,10%)' });
+      AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,10%)' });
       await CommonFunc.sleep(200);
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -102,7 +104,7 @@ it('GridRowCol02_static_002', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('[GridRowCol02_static_002] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
+      AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
       await CommonFunc.sleep(200);
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -128,7 +130,7 @@ it('GridRowCol02_static_003', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('[GridRowCol02_static_003] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,-1)' });
+      AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,-1)' });
       await CommonFunc.sleep(200);
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -154,12 +156,12 @@ it('GridRowCol02_static_004', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('[GridRowCol02_static_004] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
+      AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
       await CommonFunc.sleep(1000);
       let Column02 = CommonFunc.getComponentRect('Column02');
       let GridRowCol02 = CommonFunc.getComponentRect('GridRowCol02');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(GridRowCol02.top - Column02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -185,12 +187,12 @@ it('GridRowCol02_static_005', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('[GridRowCol02_static_005] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
+      AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
       await CommonFunc.sleep(1000);
       let GridRowCol02 = CommonFunc.getComponentRect('GridRowCol02');
       let Item00 = CommonFunc.getComponentRect('Item00');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(Item00.top - GridRowCol02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -216,12 +218,12 @@ it('GridRowCol02_static_006', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('[GridRowCol02_static_006] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
+      AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
       await CommonFunc.sleep(1000);
       let Item00 = CommonFunc.getComponentRect('Item00');
       let Item03 = CommonFunc.getComponentRect('Item03');
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.abs(Item03.top - Item00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);

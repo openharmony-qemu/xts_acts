@@ -36,8 +36,8 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct Grid_RowCol_ItemContentSize {
-  @State secondGridItemContentHeight: string = '%100';
-  @State secondGridItemContentWidth: string = '%100';
+  @State secondGridItemContentHeight: string = '100%';
+  @State secondGridItemContentWidth: string = '100%';
   messageManager: MessageManager<string> = new MessageManager<string>();
 
   onPageShow() {

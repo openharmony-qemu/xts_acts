@@ -97,7 +97,7 @@ it('SUB_ACE_GridRow_onBreakPointChange_static_0100', Level.LEVEL0, async (done: 
       expect(Math.abs(secondBreakpoint.top - secondBreakpoint.top) <= 1).assertTrue();
       expect(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top) <= 1).assertTrue();
       expect(Math.abs(firstBreakpoint.left - Breakpoint_1.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(secondBreakpoint.left - firstBreakpoint.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
       expect(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
       expect(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();

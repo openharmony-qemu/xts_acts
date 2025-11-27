@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import GlobalContext from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
+
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import {
   Entry,
@@ -54,18 +53,17 @@ struct GridColOffSetExample {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
   @State  gridColoffsetValue : int = -3;
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<int> = new MessageManager<int>()
   onPageShow() {
     console.info('GridColOffset onPageShow')
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>("messageManager",  this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'gridColoffset') {
-          this.gridColoffsetValue = message.value as int
+          this.gridColoffsetValue = message.value
       }
     }
     this.messageManager.registerCallback(callback)
-
   }
   build() {
     Column() {

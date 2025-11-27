@@ -46,7 +46,8 @@ import {
   Margin,
   GridItem,
   TextAlign,
-  ScrollBarDirection
+  ScrollBarDirection,
+  ScrollState
 } from '@ohos.arkui.component'
 import {
   State,
@@ -101,9 +102,9 @@ struct Grid_ScrollAndScrollIndex {
         .onScrollIndex((first: int,last: int):void => {
           this.index++
         })
-        
-        
-        
+        .onDidScroll((scrollOffset:number,scrollState:ScrollState) => {
+          this.text2 = 'onScroll'
+        })
 
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.On }) {
           Text()
