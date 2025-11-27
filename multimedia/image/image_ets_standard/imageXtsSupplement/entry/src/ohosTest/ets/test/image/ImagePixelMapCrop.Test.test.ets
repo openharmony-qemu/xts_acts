@@ -22,7 +22,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const TAG = LOG_TAG + 'ImagePixelMapCropTestSupp';
 
 
-
 export default function ImagePixelMapCropTest() {
   describe('ImagePixelMapCropTest', () => {
     beforeAll(async () => {

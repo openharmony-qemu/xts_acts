@@ -70,6 +70,7 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
+
     it('PICTURE_SET_AUXILIARY_PICTURE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_001';
       const path = 'test_large.webp';

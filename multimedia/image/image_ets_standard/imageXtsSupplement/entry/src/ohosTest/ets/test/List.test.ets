@@ -107,7 +107,6 @@ import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImage
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 
-
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
