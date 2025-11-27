@@ -1264,5 +1264,65 @@ export default function preferenceTest() {
         done();
       }
     })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType001
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType001_basis_EtsApiTest_3500
+     * @tc.desc   Preferences Base DataType test int
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      await mPreferences.clear();
+      mPreferences.flushSync();
+      let baseInt: int = 123;
+      await mPreferences.put("base_int", baseInt);
+      await mPreferences.flush();
+      const ret = mPreferences.getSync("base_int", 0);
+      expect(123).assertEqual(ret);
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType002
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType002_basis_EtsApiTest_3600
+     * @tc.desc   Preferences Base DataType test number/double
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      await mPreferences.clear();
+      mPreferences.flushSync();
+      let baseDouble: double = 1239999999.1;
+      await mPreferences.put("base_double", baseDouble);
+      await mPreferences.flush();
+      const ret = mPreferences.getSync("base_double", 0.0);
+      expect(1239999999.1).assertEqual(ret);
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType003
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType003_basis_EtsApiTest_3700
+     * @tc.desc   Preferences Base DataType test long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      await mPreferences.clear();
+      mPreferences.flushSync();
+      let baseLong: long = 123888888888;
+      await mPreferences.put("base_long", baseLong);
+      await mPreferences.flush();
+      const ret = mPreferences.getSync("base_long", 0);
+      expect(123888888888).assertEqual(ret);
+      done();
+    })
   })
 }
