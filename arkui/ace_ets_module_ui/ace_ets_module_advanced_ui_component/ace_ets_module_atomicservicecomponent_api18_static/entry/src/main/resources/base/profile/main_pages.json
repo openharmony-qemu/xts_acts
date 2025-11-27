@@ -1,9 +1,0 @@
-{
-  "src": [
-    "MainAbility/pages/index/index",
-    "MainAbility/pages/atomicservicenavigation/AtomicServiceNavigationTest",
-    "MainAbility/pages/atomicservicesearch/AtomicServiceSearchTest",
-    "MainAbility/pages/atomicservicetabs/AtomicServiceTabsTest",
-    "MainAbility/pages/halfscreenlaunchcomponent/HalfScreenLaunchComponentTest"
-  ]
-}

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +41,8 @@ export default function ListTest() {
         console.info("get List state pages: " + JSON.stringify(pages));
         if (!("List" == pages.name)) {
           console.info("get List state pages.name: " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push List page result: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push List page error: " + err);
@@ -70,7 +69,7 @@ export default function ListTest() {
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0100] START');
       // Verify the functions of onDigitalCrown
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let listDigitalCrown = await driver.findComponent(ON.id('listitem01'));
       let text = await (listDigitalCrown?.getText() as Promise<string>);
       console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0100] listDigitalCrown: " + text);
@@ -178,11 +177,6 @@ export default function ListTest() {
     it('ArkUI_Stage_List_OnDigitalCrown_Static_0600',  Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of the text component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0600] START');
-
-      //let strJson = getInspectorByKey('text02');
-      //let obj: Record<string, ESObject> = JSON.parse(strJson);
-      //console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0600] attr: " + JSON.stringify(obj.$attrs));
-      //console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0600] digitalCrownSensitivity: " + JSON.stringify(obj.$attrs.digitalCrownSensitivity));
 
       // Verify the functions of onDigitalCrown
       let driver = Driver.create()
