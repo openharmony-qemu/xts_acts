@@ -59,7 +59,7 @@ export default function PopupAlphaTest() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get PopupAlphaTest state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/AlphabetIndexer/PopupAlpha" == pages.name)) {
+        if (!("PopupAlpha" == pages.name)) {
           console.info("get PopupAlphaTest state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -70,18 +70,14 @@ export default function PopupAlphaTest() {
       }
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
-
-    /*
-       * @tc.number   PopupAlphaTest_static_0100
-       * @tc.name     PopupAlphaTest_static_0100
-       * @tc.desc     PopupAlphaTest_static_0100
-       * @tc.level    Level.LEVEL0
-       */
+    /**
+     * @tc.number    PopupAlpha
+     * @tc.name      PopupAlphaTest_static_0100
+     * @tc.desc      api
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
     it('PopupAlphaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PopupAlphaTest_static_0100 START');
       await CommonFunc.sleep(1000);

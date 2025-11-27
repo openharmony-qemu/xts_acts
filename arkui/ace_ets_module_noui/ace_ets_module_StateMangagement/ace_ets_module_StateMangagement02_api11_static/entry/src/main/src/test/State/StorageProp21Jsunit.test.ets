@@ -66,9 +66,10 @@ export default function StorageProp21Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageProp21Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StorageProp21" == pages.name)) {
+        if (!("StorageProp21" == pages.name)) {
           console.info("get StorageProp21Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -81,10 +82,7 @@ export default function StorageProp21Jsunit() {
       console.info("StorageProp21Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   StorageProp21Jsunit_static_0200

@@ -64,7 +64,7 @@ export default function ListScrollTest1() {
         router.clear();
         let pages = router.getState();
         console.info("get ListScrollTest state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/ListScroll" == pages.name)) {
+        if (!("ListScroll" == pages.name)) {
           console.info("get ListScrollTest state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

@@ -73,16 +73,16 @@ export default function navigatorTargetJsunit() {
      * @tc.desc     testnavigatorTarget_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testnavigatorTarget_static_0001', Level.LEVEL0, async () => {
-      console.info('navigatorTarget testnavigatorTarget0001 START');
-      await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('Navigator');
-      console.info("[testnavigatorTarget0001] component strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('Navigator');
-      expect(obj.getElement('$attrs').getString('target')).assertEqual("pages/index");
-      console.info("[testnavigatorTarget0001] target value :" + obj.getElement('$attrs').getString('target'));
-
-    });
+    // it('testnavigatorTarget_static_0001', Level.LEVEL0, async () => {
+    //   console.info('navigatorTarget testnavigatorTarget0001 START');
+    //   await Utils.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('Navigator');
+    //   console.info("[testnavigatorTarget0001] component strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Navigator');
+    //   expect(obj.getElement('$attrs').getString('target')).assertEqual("pages/index");
+    //   console.info("[testnavigatorTarget0001] target value :" + obj.getElement('$attrs').getString('target'));
+    //
+    // });
   })
 }

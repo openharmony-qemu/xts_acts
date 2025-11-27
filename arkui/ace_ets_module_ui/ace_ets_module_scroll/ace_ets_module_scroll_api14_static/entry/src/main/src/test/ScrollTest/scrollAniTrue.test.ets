@@ -54,11 +54,8 @@ export default function scrollAniTrue() {
         console.info("get scrollAniTrue state pages:" + JSON.stringify(pages));
         if (!("scrollAniTrue" == pages.name)) {
           console.info("get scrollAniTrue pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push scrollAniTrue page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollAniTrue page error:" + err);

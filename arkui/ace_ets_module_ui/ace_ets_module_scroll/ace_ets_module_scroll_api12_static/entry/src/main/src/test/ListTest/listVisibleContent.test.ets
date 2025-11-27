@@ -46,9 +46,10 @@ export default function listVisibleContent() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get listVisibleContent state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/listVisibleContent" == pages.name)) {
+        if (!("listVisibleContent" == pages.name)) {
           console.info("get listVisibleContent pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -64,10 +65,6 @@ export default function listVisibleContent() {
       console.info("listVisibleContent after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
 
     /*

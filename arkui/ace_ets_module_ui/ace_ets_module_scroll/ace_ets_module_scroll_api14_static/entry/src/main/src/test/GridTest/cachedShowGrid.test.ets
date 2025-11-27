@@ -47,9 +47,10 @@ export default function cachedShowGrid() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear()
         let pages = router.getState();
         console.info("get cachedShowGrid state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Grid/cachedShowGrid" == pages.name)) {
+        if (!("cachedShowGrid" == pages.name)) {
           console.info("get cachedShowGrid pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -62,10 +63,6 @@ export default function cachedShowGrid() {
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("listLevel1 after each called");
-    });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
     });
 
 

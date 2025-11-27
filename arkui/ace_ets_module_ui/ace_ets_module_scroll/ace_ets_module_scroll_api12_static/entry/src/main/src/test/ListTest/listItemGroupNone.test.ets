@@ -48,7 +48,7 @@ export default function listItemGroupNone() {
         router.clear();
         let pages = router.getState();
         console.info("get listItemGroupNone state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/listItemGroupNone" == pages.name)) {
+        if (!("listItemGroupNone" == pages.name)) {
           console.info("get listItemGroupNone pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

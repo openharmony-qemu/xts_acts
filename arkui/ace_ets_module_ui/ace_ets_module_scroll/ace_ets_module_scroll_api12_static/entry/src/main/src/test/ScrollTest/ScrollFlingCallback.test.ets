@@ -50,9 +50,10 @@ export default function ScrollFlingCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info('get ScrollFlingCallback state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/Scroll/ScrollFlingCallback' == pages.name)) {
+        if (!('ScrollFlingCallback' == pages.name)) {
           console.info('get ScrollFlingCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -67,10 +68,6 @@ export default function ScrollFlingCallbackJsunit() {
       console.info('ScrollFlingCallback after each called');
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
 
     /*

@@ -65,9 +65,10 @@ export default function LinkClassArrJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LinkClassArrJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/LinkClassArr" == pages.name)) {
+        if (!("LinkClassArr" == pages.name)) {
           console.info("get LinkClassArrJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -89,10 +90,7 @@ export default function LinkClassArrJsunit() {
       await CommonFunc.sleep(1000);
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+ 
 
     /*
      * @tc.number   LinkClassArrJsunit_static_0100

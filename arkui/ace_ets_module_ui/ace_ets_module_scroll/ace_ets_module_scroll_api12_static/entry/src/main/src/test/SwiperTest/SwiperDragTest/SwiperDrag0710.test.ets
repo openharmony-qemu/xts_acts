@@ -53,10 +53,11 @@ export default function SwiperDrag0710() {
       console.info("SwiperDrag0710 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperDrag0710 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperDrag/SwiperDrag0710" == pages.name)) {
-          console.info("get Context pages.name:" + JSON.stringify(pages.name));
+        if (!("SwiperDrag0710" == pages.name)) {
+	          console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperDrag/SwiperDrag0710'
           })
@@ -72,11 +73,7 @@ export default function SwiperDrag0710() {
       await CommonFunc.sleep(1000);
       console.info("SwiperDrag0710 after each called");
     });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-    
+
       
   /*
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710

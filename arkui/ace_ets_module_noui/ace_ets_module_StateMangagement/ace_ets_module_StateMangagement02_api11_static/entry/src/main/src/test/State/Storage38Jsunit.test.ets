@@ -65,9 +65,10 @@ export default function Storage38Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Storage38Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/Storage38" == pages.name)) {
+        if (!("Storage38" == pages.name)) {
           console.info("get Storage38Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function Storage38Jsunit() {
       console.info("Storage38Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
     /*
      * @tc.number   Storage38Jsunit_static_0300

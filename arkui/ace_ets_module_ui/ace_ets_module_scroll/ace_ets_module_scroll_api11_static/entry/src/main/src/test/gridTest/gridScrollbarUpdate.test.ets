@@ -41,7 +41,7 @@ export default function gridScrollbarUpdateTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get gridScrollBar state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/grid/gridScrollBar" == pages.name)) {
+        if (!("gridScrollBar" == pages.name)) {
           console.info("get gridScrollBar state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);

@@ -59,9 +59,10 @@ export default function ScrollScrollEdgeCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info('get ScrollScrollEdgeCallback state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/Scroll/ScrollScrollEdgeCallback' == pages.name)) {
+        if (!('ScrollScrollEdgeCallback' == pages.name)) {
           console.info('get ScrollScrollEdgeCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -77,10 +78,7 @@ export default function ScrollScrollEdgeCallbackJsunit() {
       console.info('ScrollScrollEdgeCallback after each called');
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
     
       
   /*

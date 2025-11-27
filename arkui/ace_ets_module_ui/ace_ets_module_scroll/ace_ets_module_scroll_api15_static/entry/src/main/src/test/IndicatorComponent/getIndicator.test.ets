@@ -42,9 +42,10 @@ export default function getIndicator() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get getIndicator state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/IndicatorComponent/getIndicator" == pages.name)) {
+        if (!("getIndicator" == pages.name)) {
           console.info("get getIndicator pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -58,10 +59,6 @@ export default function getIndicator() {
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("getIndicator after each called");
-    });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
     });
 
 

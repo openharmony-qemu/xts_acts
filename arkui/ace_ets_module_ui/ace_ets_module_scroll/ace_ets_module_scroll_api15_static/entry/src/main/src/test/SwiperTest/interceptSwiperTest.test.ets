@@ -55,13 +55,14 @@ export default function interceptSwiperTest() {
     beforeEach(async (): Promise<void> => {
       console.info("interceptSwiperTest beforeEach start");
       const interceptSwiperTest = AppStorage.get<Router>("router") as Router
+      interceptSwiperTest.clear();
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Swiper/interceptSwiper",
       }
       try {
         let pages = interceptSwiperTest.getState();
         console.info("get interceptSwiperTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/interceptSwiper" == pages.name)) {
+        if (!("interceptSwiper" == pages.name)) {
           console.info("get interceptSwiperTest pages.name:" + JSON.stringify(pages.name));
           interceptSwiperTest.pushUrl(options);
         }
@@ -75,10 +76,6 @@ export default function interceptSwiperTest() {
       console.info("interceptSwiperTest after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
 
     /*

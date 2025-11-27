@@ -62,7 +62,7 @@ export default function singleHozList() {
         router.clear();
         let pages = router.getState();
         console.info("get singleHozList state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/singleHozList" == pages.name)) {
+        if (!("singleHozList" == pages.name)) {
           console.info("get singleHozList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

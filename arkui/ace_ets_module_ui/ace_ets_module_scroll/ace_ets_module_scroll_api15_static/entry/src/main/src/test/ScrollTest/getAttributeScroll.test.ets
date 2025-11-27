@@ -49,6 +49,7 @@ export default function getAttributeScroll() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear()
         let pages = routerInstance.getState();
         console.info("get getAttributeScroll state pages:" + JSON.stringify(pages));
         if (!("getAttributeScroll" == pages.name)) {

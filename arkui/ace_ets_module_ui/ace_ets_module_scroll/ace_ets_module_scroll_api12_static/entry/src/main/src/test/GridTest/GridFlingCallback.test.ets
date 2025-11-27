@@ -46,9 +46,10 @@ export default function GridFlingCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info('get GridFlingCallback state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/Grid/GridFlingCallback' == pages.name)) {
+        if (!('GridFlingCallback' == pages.name)) {
           console.info('get GridFlingCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -64,18 +65,14 @@ export default function GridFlingCallbackJsunit() {
       console.info('GridFlingCallback after each called');
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
-
-    /*
-       * @tc.number   GridFlingCallbackTest_0100
-       * @tc.name     GridFlingCallbackTest_0100
-       * @tc.desc     GridFlingCallbackTest_0100
-       * @tc.level    Level.LEVEL0
-       */
+    /**
+     * @tc.number GridFlingCallbackTest_0100
+     * @tc.name Test the properties of components
+     * @tc.desc Set attribute values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
+     */
     it('GridFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridFlingCallbackTest_0100 START');
       let driver1 = Driver.create();

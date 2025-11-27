@@ -59,7 +59,7 @@ export default function tabsAnimationDuration() {
         router.clear();
         let pages = router.getState();
         console.info("get tabsAnimationDuration state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabsAnimationDuration" == pages.name)) {
+        if (!("tabsAnimationDuration" == pages.name)) {
           console.info("get tabsAnimationDuration state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

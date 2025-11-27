@@ -55,7 +55,6 @@ export default function groupAnimation() {
           console.info("get groupAnimation pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push groupAnimation page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push groupAnimation page error:" + err);

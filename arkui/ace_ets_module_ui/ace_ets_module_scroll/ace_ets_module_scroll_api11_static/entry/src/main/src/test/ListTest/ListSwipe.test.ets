@@ -64,7 +64,7 @@ export default function ListSwipeTest() {
         router.clear();
         let pages: router.RouterState = router.getState();
         if (pages == null || !("ListSwipe" == pages.name)) {
-          router.pushUrl(options).then(() => {
+          router.replaceUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }

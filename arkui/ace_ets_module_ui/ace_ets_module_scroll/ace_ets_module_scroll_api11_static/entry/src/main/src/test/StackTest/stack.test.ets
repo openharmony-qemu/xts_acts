@@ -59,7 +59,7 @@ export default function stackAlignContentJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get stack state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Stack/stack" == pages.name)) {
+        if (!("stack" == pages.name)) {
           console.info("get stack state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

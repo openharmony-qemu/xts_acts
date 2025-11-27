@@ -59,7 +59,7 @@ export default function onSelectedTabs() {
       try {
         let pages = onSelectedTabs.getState();
         console.info("get onSelectedTabs state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/onSelectedTabs" == pages.name)) {
+        if (!("onSelectedTabs" == pages.name)) {
           console.info("get onSelectedTabs pages.name:" + JSON.stringify(pages.name));
           onSelectedTabs.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -70,10 +70,7 @@ export default function onSelectedTabs() {
       console.info("onSelectedTabs beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
     
     /*
      * @tc.number   onSelectedTabs_static_0100

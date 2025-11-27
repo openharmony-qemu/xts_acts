@@ -40,7 +40,7 @@ export default function GridTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get grid state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/grid/GridTestPage" == pages.name)) {
+        if (!("GridTestPage" == pages.name)) {
           console.info("get grid state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)

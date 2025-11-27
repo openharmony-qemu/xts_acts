@@ -68,7 +68,7 @@ export default function textAreaTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateTrackTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textArea" == pages.name)) {
           console.info("get StateTrackTest pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

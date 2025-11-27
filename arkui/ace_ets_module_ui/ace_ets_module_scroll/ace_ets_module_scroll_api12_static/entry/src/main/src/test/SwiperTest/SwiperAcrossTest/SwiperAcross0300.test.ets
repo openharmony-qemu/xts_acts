@@ -53,9 +53,10 @@ export default function SwiperAcross0300() {
       console.info("SwiperAcross0300 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperAcross0300 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperAcross/SwiperAcross0300" == pages.name)) {
+        if (!("SwiperAcross0300" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAcross/SwiperAcross0300"
@@ -73,11 +74,7 @@ export default function SwiperAcross0300() {
     });
 
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-    
+ 
       
   /*
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300

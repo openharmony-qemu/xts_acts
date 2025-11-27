@@ -51,7 +51,7 @@ export default function alphabetIndexerOnSelectJsunit() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get alphabetIndexer state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/AlphabetIndexer/alphabetIndexerAPI" == pages.name)) {
+        if (!("alphabetIndexerAPI" == pages.name)) {
           console.info("get alphabetIndexer state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);

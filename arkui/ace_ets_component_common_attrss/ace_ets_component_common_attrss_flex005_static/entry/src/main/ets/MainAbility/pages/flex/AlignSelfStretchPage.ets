@@ -349,13 +349,12 @@ struct AlignSelfStretchPage {
     } else if (this.targetView == 'Row') {
       Row().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Panel') {
-      // Panel(true) {
-      //   Column() {
-      //     Text('Panel')
-      //   }
-      // }
-      // .mode(PanelMode.Half)
-      //.applyStyles(this.commonStyle)
+      Column() {
+        Column() {
+          Text('Panel')
+        }
+      }
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {
         Text('Refresh').fontSize(30)

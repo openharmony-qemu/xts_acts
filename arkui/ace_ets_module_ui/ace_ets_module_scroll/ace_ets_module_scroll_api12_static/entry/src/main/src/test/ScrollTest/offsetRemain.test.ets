@@ -60,7 +60,7 @@ export default function offsetRemain() {
         router.clear();
         let pages = router.getState();
         console.info("get offsetRemain state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/offsetRemain" == pages.name)) {
+        if (!("offsetRemain" == pages.name)) {
           console.info("get offsetRemain state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

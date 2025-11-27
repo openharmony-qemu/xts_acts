@@ -46,9 +46,10 @@ export default function ListFlingCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info('get ListFlingCallback state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/List/ListFlingCallback' == pages.name)) {
+        if (!('ListFlingCallback' == pages.name)) {
           console.info('get ListFlingCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -57,11 +58,6 @@ export default function ListFlingCallbackJsunit() {
       } catch (err: Error) {
         console.error('push ListFlingCallback page error:' + JSON.stringify(err));
       }
-    });
-
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
     });
 
     afterEach(async () => {

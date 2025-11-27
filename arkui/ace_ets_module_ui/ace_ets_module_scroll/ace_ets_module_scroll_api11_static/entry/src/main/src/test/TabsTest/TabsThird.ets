@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 function tabsDefaultFontSize(sysWidth: Resource) {
   const context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
   let resourceFontSize = context?.resourceManager.getDouble(sysWidth.id)
-  const uiContext = new UIContext();
+  const uiContext = AppStorage.get<UIContext>('uiContext')!;
   let newFontSize: string = Math.round(uiContext.px2vp(resourceFontSize ?? 0)) + '.00vp'
   return newFontSize;
 }

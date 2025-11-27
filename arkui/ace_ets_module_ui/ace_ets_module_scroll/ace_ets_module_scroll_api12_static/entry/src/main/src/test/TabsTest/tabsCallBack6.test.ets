@@ -47,9 +47,10 @@ export default function tabsCallBack6() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get tabsCallBack6 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabsCallBack6" == pages.name)) {
+        if (!("tabsCallBack6" == pages.name)) {
           console.info("get tabsCallBack6 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -61,10 +62,7 @@ export default function tabsCallBack6() {
       console.info("tabsCallBack6 beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     
       

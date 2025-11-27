@@ -55,13 +55,14 @@ export default function swiperPageMode() {
     beforeEach(async (): Promise<void> => {
       console.info("swiperPageMode beforeEach start");
       const swiperPageMode = AppStorage.get<Router>("router") as Router
+      swiperPageMode.clear()
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Swiper/swiperPageMode",
       }
       try {
         let pages = swiperPageMode.getState();
         console.info("get swiperPageMode state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/swiperPageMode" == pages.name)) {
+        if (!("swiperPageMode" == pages.name)) {
           console.info("get swiperPageMode pages.name:" + JSON.stringify(pages.name));
           swiperPageMode.pushUrl(options);
           await CommonFunc.sleep(1000);
@@ -78,10 +79,6 @@ export default function swiperPageMode() {
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info("swiperPageMode after each called");
-    });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
     });
 
 

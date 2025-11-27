@@ -73,18 +73,18 @@ export default function panelBackgroundMaskJsunit() {
      * @tc.desc     testpanelBackgroundMask_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async () => {
-      console.info('panelBackgroundMask testpanelBackgroundMask0001 START');
-      await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('panel');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("get inspector value is: " + JSON.stringify(obj));
-      console.log(JSON.stringify(obj.getString('$type')))
-      expect(obj.getString('$type')).assertEqual('Panel')
-      console.log('Panel‘s backgroundMask is ' + JSON.stringify(obj.getElement('$attrs').getString('backgroundMask')))
-      expect(obj.getElement('$attrs').getString('backgroundMask')).assertEqual('#FF00FF00');
-
-    });
+    // it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async () => { // 组件废弃
+    //   console.info('panelBackgroundMask testpanelBackgroundMask0001 START');
+    //   await Utils.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('panel');
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info("get inspector value is: " + JSON.stringify(obj));
+    //   console.log(JSON.stringify(obj.getString('$type')))
+    //   expect(obj.getString('$type')).assertEqual('Panel')
+    //   console.log('Panel‘s backgroundMask is ' + JSON.stringify(obj.getElement('$attrs').getString('backgroundMask')))
+    //   expect(obj.getElement('$attrs').getString('backgroundMask')).assertEqual('#FF00FF00');
+    //
+    // });
 
     
     

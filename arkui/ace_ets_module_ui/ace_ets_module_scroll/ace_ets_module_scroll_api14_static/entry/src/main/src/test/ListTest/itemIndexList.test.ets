@@ -55,7 +55,6 @@ export default function itemIndexList() {
           console.info("get itemIndexList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push itemIndexList page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push itemIndexList page error:" + err);

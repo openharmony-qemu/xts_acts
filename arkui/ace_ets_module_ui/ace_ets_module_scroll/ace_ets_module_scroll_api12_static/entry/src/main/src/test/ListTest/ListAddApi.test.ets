@@ -45,7 +45,7 @@ export default function ListAddApi() {
         router.clear();
         let pages = router.getState();
         console.info("get ListAddApi state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/ListAddApi" == pages.name)) {
+        if (!("ListAddApi" == pages.name)) {
           console.info("get  Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/List/ListAddApi" })
           await UtilsTest.msSleep(4000)

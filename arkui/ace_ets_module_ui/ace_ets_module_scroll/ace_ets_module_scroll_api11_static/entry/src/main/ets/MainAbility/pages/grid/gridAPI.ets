@@ -56,8 +56,10 @@ struct GridMaxCount {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("grid page state change called:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data !== null) {
-      if ((eventData.data as Record<String,undefined|null|Object>)['alwaysEnabled'] != null) {
-        this.alwaysEnabled = (eventData.data as Record<String,undefined|null|Object>)['alwaysEnabled'] as boolean;
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['alwaysEnabled'] != null) {
+        this.alwaysEnabled = data['alwaysEnabled'] as boolean;
+        console.log(`this.alwaysEnabled is` + this.alwaysEnabled)
       }
     }
   }
@@ -112,7 +114,7 @@ struct GridMaxCount {
         .backgroundColor(0xFAEEE0)
         .height(300)
         .maxCount(5)
-        .edgeEffect(this.edgeEffect, { alwaysEnabled: true })
+        .edgeEffect(this.edgeEffect, { alwaysEnabled: this.alwaysEnabled })
         .key("maxCountTest")
 
       }

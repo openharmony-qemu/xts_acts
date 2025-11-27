@@ -62,7 +62,7 @@ export default function conSizeGroup2() {
         router.clear();
         let pages = router.getState();
         console.info("get conSizeGroup2 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/conSizeGroup2" == pages.name)) {
+        if (!("conSizeGroup2" == pages.name)) {
           console.info("get conSizeGroup2 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

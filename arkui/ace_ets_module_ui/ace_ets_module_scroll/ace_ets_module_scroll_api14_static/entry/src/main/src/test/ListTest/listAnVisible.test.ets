@@ -55,7 +55,6 @@ export default function listAnVisible() {
           console.info("get listAnVisible pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push listAnVisible page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push listAnVisible page error:" + err);

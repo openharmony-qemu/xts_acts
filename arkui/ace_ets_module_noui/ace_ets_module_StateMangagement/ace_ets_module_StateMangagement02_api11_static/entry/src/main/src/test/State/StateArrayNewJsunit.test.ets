@@ -65,9 +65,10 @@ export default function StateArrayNewJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateArrayNewJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StateArrayNew" == pages.name)) {
+        if (!("StateArrayNew" == pages.name)) {
           console.info("get StateArrayNewJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,11 +81,7 @@ export default function StateArrayNewJsunit() {
       console.info("StateArrayNewJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
+  
     /*
      * @tc.number   StateArrayNewJsunit_static_0200
      * @tc.name     StateArrayNewJsunit_static_0200

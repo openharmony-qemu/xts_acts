@@ -54,8 +54,8 @@ export default function SwiperInterface01() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get SwiperInterface01 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperInterface/SwiperInterface" == pages.name)) {
-          console.info("get Context pages.name:" + JSON.stringify(pages.name));
+        if (!("SwiperInterface" == pages.name)) {
+	          console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperInterface/SwiperInterface'
           })
@@ -71,11 +71,7 @@ export default function SwiperInterface01() {
       await CommonFunc.sleep(1000);
       console.info("SwiperInterface01 after each called");
     });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-    
+
       
   /*
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070

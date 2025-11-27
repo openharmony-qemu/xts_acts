@@ -55,11 +55,8 @@ export default function scrollAniUn() {
         console.info("get scrollAniUn state pages:" + JSON.stringify(pages));
         if (!("scrollAniUn" == pages.name)) {
           console.info("get scrollAniUn pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push scrollAniUn page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollAniUn page error:" + err);

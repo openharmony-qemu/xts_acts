@@ -54,13 +54,14 @@ export default function barBackground() {
     beforeEach(async (): Promise<void> => {
       console.info("barBackground beforeEach start");
       const barBackground = AppStorage.get<Router>("router") as Router
+      barBackground.clear()
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Tabs/barBackground",
       }
       try {
         let pages = barBackground.getState();
         console.info("get barBackground state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/barBackground" == pages.name)) {
+        if (!("barBackground" == pages.name)) {
           console.info("get barBackground pages.name:" + JSON.stringify(pages.name));
           barBackground.pushUrl(options);
           await CommonFunc.sleep(1000);
@@ -70,10 +71,7 @@ export default function barBackground() {
       }
       console.info("barBackground beforeEach end");
     });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
     
     /*
      * @tc.number   barBackground_static_0100

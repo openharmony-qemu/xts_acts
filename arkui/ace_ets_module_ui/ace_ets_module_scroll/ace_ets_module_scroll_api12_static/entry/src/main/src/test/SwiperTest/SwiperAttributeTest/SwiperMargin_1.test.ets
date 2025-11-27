@@ -52,9 +52,10 @@ export default function SwiperMargin_1() {
       console.info("SwiperMargin_1 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperMargin_1 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_1" == pages.name)) {
+        if (!("SwiperMargin_1" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_1"
@@ -71,10 +72,7 @@ export default function SwiperMargin_1() {
       console.info("SwiperMargin_1 after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     
       

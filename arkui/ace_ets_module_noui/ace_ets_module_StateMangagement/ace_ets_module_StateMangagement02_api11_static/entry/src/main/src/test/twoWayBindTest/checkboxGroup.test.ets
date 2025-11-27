@@ -68,7 +68,7 @@ export default function checkboxGroupTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateTrackTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("checkboxGroup" == pages.name)) {
           console.info("get StateTrackTest pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

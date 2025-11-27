@@ -60,7 +60,7 @@ export default function tabsPageMode() {
       try {
         let pages = tabsPageMode.getState();
         console.info("get tabsPageMode state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabsPageMode" == pages.name)) {
+        if (!("tabsPageMode" == pages.name)) {
           console.info("get tabsPageMode pages.name:" + JSON.stringify(pages.name));
           tabsPageMode.pushUrl(options);
           await CommonFunc.sleep(1000);
@@ -79,10 +79,7 @@ export default function tabsPageMode() {
       console.info("tabsPageMode after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
 
     /*

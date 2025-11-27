@@ -48,7 +48,7 @@ export default function listOffsetJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get listOffsetJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/listOffset" == pages.name)) {
+        if (!("listOffset" == pages.name)) {
           console.info("get listOffsetJsunit pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await UtilsTest.msSleep(2000)

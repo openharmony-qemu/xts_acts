@@ -65,9 +65,10 @@ export default function PropClassObjectJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropClassObjectJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/PropClassObject" == pages.name)) {
+        if (!("PropClassObject" == pages.name)) {
           console.info("get PropClassObjectJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function PropClassObjectJsunit() {
       console.info("PropClassObjectJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
     /*
      * @tc.number   PropClassObjectJsunit_static_0100
@@ -138,7 +136,7 @@ it('PropClassObjectJsunit_static_0300', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropClassObjectJsunit_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[PropClassObjectJsunit_static_0300] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("Click to change Class or Object: Hello");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("Click to change Class or Object: World");
       console.info('[PropClassObjectJsunit_static_0300] END');
       done();
     });

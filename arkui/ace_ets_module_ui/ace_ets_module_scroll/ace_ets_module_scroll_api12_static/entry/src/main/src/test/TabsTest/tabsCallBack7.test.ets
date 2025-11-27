@@ -47,9 +47,10 @@ export default function tabsCallBack7() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get tabsCallBack7 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabsCallBack7" == pages.name)) {
+        if (!("tabsCallBack7" == pages.name)) {
           console.info("get tabsCallBack7 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -61,11 +62,7 @@ export default function tabsCallBack7() {
       console.info("tabsCallBack7 beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-    
+
       
   /*
      * @tc.number   tabsCallBack7_static_0100

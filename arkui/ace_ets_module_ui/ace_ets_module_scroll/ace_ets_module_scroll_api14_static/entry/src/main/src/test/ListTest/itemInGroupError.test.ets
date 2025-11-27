@@ -55,7 +55,6 @@ export default function itemInGroupError() {
           console.info("get itemInGroupError pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push itemInGroupError page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push itemInGroupError page error:" + err);

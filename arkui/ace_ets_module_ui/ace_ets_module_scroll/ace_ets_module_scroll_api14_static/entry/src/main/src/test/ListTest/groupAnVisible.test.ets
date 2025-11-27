@@ -55,7 +55,6 @@ export default function groupAnVisible() {
           console.info("get groupAnVisible pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push groupAnVisible page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push groupAnVisible page error:" + err);

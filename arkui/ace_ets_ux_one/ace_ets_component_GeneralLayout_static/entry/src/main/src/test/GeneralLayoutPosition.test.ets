@@ -401,6 +401,7 @@ export default function GeneralLayoutPositionTest() {
       let bottom_rect_left: number = rectInfo3.left;
       // position is invalid.
       expect(original_rect_left - mirror_rect_left).assertEqual(0);
+      // 异常值
       // expect(Math.floor(Math.abs((mirror_rect_left - left) - (bottom_rect_left - mirror_rect_right))) <= 1).assertTrue();
       expect(original_rect_top - top).assertEqual(0);
       expect(mirror_rect_top - top).assertEqual(0);

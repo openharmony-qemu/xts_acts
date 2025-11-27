@@ -51,7 +51,7 @@ export default function flexBasisTest() {
     'Marquee',
     'Menu',
     'Navigation',
-    // 'NavRouter',
+    'NavRouter',
     'ScrollBar',
     'Row',
     'RelativeContainer'

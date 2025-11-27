@@ -54,13 +54,14 @@ export default function TabsOnSelectedTest() {
     beforeEach(async (): Promise<void> => {
       console.info('TabsOnSelectedTest beforeEach start');
       const tabsOnSelected = AppStorage.get<Router>("router") as Router
+      tabsOnSelected.clear();
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Tabs/TabsOnSelected',
       }
       try {
         let pages = tabsOnSelected.getState();
         console.info('get TabsOnSelected state pages: ' + JSON.stringify(pages));
-        if (!('MainAbility/pages/Tabs/TabsOnSelected' == pages.name)) {
+        if (!('TabsOnSelected' == pages.name)) {
           console.info('get TabsOnSelected pages.name: ' + JSON.stringify(pages.name));
           tabsOnSelected.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -77,10 +78,7 @@ export default function TabsOnSelectedTest() {
       await CommonFunc.sleep(1000);
       console.info('bindSheetRadius after each called');
     })
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
 
     /*

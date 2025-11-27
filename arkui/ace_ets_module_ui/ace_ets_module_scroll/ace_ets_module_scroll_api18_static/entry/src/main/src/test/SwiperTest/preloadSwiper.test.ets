@@ -58,7 +58,6 @@ export default function preloadSwiper() {
         url: "MainAbility/pages/Swiper/preloadSwiper",
       }
       try {
-        preloadSwiper.clear();
         let pages = preloadSwiper.getState();
         console.info("get preloadSwiper state pages:" + JSON.stringify(pages));
         if (!("preloadSwiper" == pages.name)) {

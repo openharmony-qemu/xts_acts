@@ -68,7 +68,7 @@ export default function localTrackTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get localTrackTestckTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("localTrack" == pages.name)) {
           console.info("get localTrackTestckTest pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

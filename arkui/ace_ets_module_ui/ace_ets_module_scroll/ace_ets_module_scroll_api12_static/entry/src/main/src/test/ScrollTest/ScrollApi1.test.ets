@@ -61,7 +61,7 @@ export default function ScrollApi1() {
         router.clear();
         let pages = router.getState();
         console.info("get ScrollApi1 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/ScrollApi1" == pages.name)) {
+        if (!("ScrollApi1" == pages.name)) {
           console.info("get ScrollApi1 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

@@ -62,7 +62,7 @@ export default function List07Test() {
         router.clear();
         let pages = router.getState();
         console.info("get list state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/List07" == pages.name)) {
+        if (!("List07" == pages.name)) {
           console.info("get list state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await UtilsTest.msSleep(4000)

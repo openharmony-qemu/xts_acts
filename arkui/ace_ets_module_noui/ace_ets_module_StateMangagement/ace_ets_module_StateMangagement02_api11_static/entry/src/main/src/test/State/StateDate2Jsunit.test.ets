@@ -65,9 +65,10 @@ export default function StateDate2Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateDate2Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StateDate2" == pages.name)) {
+        if (!("StateDate2" == pages.name)) {
           console.info("get StateDate2Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,6 @@ export default function StateDate2Jsunit() {
       console.info("StateDate2Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
     afterEach(async (): Promise<void> => {
       let driver = Driver.create();

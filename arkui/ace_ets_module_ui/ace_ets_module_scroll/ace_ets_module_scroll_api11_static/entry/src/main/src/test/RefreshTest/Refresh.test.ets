@@ -58,7 +58,7 @@ export default function RefreshTest() {
         router.clear();
         let pages = router.getState();
         console.info("get Index state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Refresh/refreshux" == pages.name)) {
+        if (!("refreshux" == pages.name)) {
           console.info("get Index state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           // console.info("push Index page success " + JSON.stringify(result));

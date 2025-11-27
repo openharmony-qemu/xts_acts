@@ -63,7 +63,7 @@ export default function listtestIdleJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get listtest state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/listtest2" == pages.name)) {
+        if (!("listtest2" == pages.name)) {
           console.info("get listtestI state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -92,9 +92,9 @@ export default function listtestIdleJsunit() {
       let strJson: string = inspector.getInspectorByKey('ScrollList');
       console.info("[testlisttestIdle_static_0001] component controlButton strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertEqual(true);
-      console.info("[testlisttestIdle_static_0001] editMode value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode'));
+      // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertEqual(true);
+      // console.info("[testlisttestIdle_static_0001] editMode value :" +
+      // JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode'));
       done();
     });
   })

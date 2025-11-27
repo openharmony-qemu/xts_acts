@@ -58,7 +58,7 @@ export default function refreshDragJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get refresh state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Refresh/refreshAPI" == pages.name)) {
+        if (!("refreshAPI" == pages.name)) {
           console.info("get refresh state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

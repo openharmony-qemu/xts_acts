@@ -68,7 +68,7 @@ export default function CombinationState7Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CombinationState7Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/CombinationState7" == pages.name)) {
+        if (!("CombinationState7" == pages.name)) {
           console.info("get CombinationState7Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

@@ -53,7 +53,7 @@ export default function tabsBarPositionJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get tabs state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabs2" == pages.name)) {
+        if (!("tabs2" == pages.name)) {
           console.info("get tabs state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await Utils.sleep(2000);

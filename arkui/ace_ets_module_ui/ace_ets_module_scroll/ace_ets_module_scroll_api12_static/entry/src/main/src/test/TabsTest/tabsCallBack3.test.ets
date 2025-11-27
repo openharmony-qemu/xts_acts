@@ -47,9 +47,10 @@ export default function tabsCallBack3() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get tabsCallBack3 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabsCallBack3" == pages.name)) {
+        if (!("tabsCallBack3" == pages.name)) {
           console.info("get tabsCallBack3 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -65,10 +66,7 @@ export default function tabsCallBack3() {
       console.info("tabsCallBack3 after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+ 
     
       
   /*

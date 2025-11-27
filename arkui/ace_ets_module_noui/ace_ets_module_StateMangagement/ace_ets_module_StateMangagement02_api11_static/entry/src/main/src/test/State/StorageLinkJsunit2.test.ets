@@ -68,7 +68,7 @@ export default function StorageLinkJsunit2() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageLinkJsunit2 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("StorageLink2" == pages.name)) {
           console.info("get StorageLinkJsunit2 pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

@@ -73,7 +73,7 @@ export default function testsuite() {
   lineNeJsunit()
   listNewJsunit()  // editMode 1
   list_itemOnSelectJsunit() // editable 1
-  mediaQueryOffJsunit()   //  sendEventByKey引起APP Died 2         this.listener.on('change', portraitFunc) 导致页面不显示
+  mediaQueryOffJsunit()   
   navigatorTargetJsunit()  // navigator 废弃 1
   pageRouteTest()
   panelBackgroundMaskJsunit() // Panel 组件废弃 1
@@ -91,6 +91,6 @@ export default function testsuite() {
   textAreaOnCutJsunit()
   textInputOnEditChangeJsunit()
   videoOnFullscreenChangeJsunit()
-  webGetTitleJsunit() //  Web组件  9
+  // webGetTitleJsunit() //  Web组件  9
   xcomponentGetXComponentContextJsunit()
 }

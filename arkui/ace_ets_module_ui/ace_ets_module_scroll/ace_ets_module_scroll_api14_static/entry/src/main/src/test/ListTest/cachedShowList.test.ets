@@ -50,13 +50,13 @@ export default function cachedShowList() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear()
         let pages = router.getState();
         console.info("get cachedShowList state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/cachedShowList" == pages.name)) {
+        if (!("cachedShowList" == pages.name)) {
           console.info("get cachedShowList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push cachedShowList page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push cachedShowList page error:" + err);
@@ -64,18 +64,14 @@ export default function cachedShowList() {
       console.info("cachedShowList beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
-
-    /*
-       * @tc.number   cachedShowList_static_0100
-       * @tc.name     cachedShowList_static_0100
-       * @tc.desc     cachedShowList_static_0100
-       * @tc.level    Level.LEVEL1
-       */
+    /**
+     * @tc.number    cachedShowList_static_001
+     * @tc.name      cachedShowList_static_0100
+     * @tc.desc      Set the preloading quantity of listItem in the list and display preloading nodes.
+     * @tc.level     Level 3
+     * @tc.type
+     * @tc.size
+     */
     it('cachedShowList_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[cachedShowList_static_0100] START');
       await CommonFunc.sleep(1000);

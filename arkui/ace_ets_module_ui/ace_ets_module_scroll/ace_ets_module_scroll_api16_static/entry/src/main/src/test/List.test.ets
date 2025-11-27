@@ -21,7 +21,7 @@ import TabBarComponentContent from './TabsTest/TabBarComponentContent.test';
 import TabsOnSelectedTest from './TabsTest/TabsOnSelected.test';
 
 export default function testsuite() {
-  ListSwipeTest();  // DTS2025070600574 builderComponent  4
+  ListSwipeTest();  //  builderComponent  4
   ScrollEffectEdge();
   SwiperOnSelectedTest();
   TabBarComponentContent(); // .tabBarComponentContent 1

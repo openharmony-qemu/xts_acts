@@ -53,9 +53,10 @@ export default function UIComponentScrollSwiperDisplaycount0200() {
       console.info("UIComponentScrollSwiperDisplaycount0200 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get UIComponentScrollSwiperDisplaycount0200 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/UIComponentScrollSwiperDisplaycount/UIComponentScrollSwiperDisplaycount0200" == pages.name)) {
+        if (!("UIComponentScrollSwiperDisplaycount0200" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/UIComponentScrollSwiperDisplaycount/UIComponentScrollSwiperDisplaycount0200'
@@ -73,10 +74,7 @@ export default function UIComponentScrollSwiperDisplaycount0200() {
       console.info("UIComponentScrollSwiperDisplaycount0200 after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+   
     
       
   /*

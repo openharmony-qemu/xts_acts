@@ -58,7 +58,7 @@ export default function refreshOffsetChangeJsunit() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get refreshOffsetChangeJsunit state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Refresh/refreshOffsetChange" == pages.name)) {
+        if (!("refreshOffsetChange" == pages.name)) {
           console.info("get refreshOffsetChangeJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
         }
@@ -73,17 +73,11 @@ export default function refreshOffsetChangeJsunit() {
       console.info(" refreshOffsetChangeJsunit after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-    
-      
-  /*
-     * @tc.number   refreshOffsetChangeJsunit_static_0100
-     * @tc.name     refreshOffsetChangeJsunit_static_0100
-     * @tc.desc     refreshOffsetChangeJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number: refreshOffsetChangeJsunit_static_0100
+     * @tc.name  : refreshOffsetChangeJsunit_static_0100
+     * @tc.desc  : Add refreshOffset and pullToRefresh interfaces.
+     * @tc.level : Level 1
      */
 it('refreshOffsetChangeJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0100 START');

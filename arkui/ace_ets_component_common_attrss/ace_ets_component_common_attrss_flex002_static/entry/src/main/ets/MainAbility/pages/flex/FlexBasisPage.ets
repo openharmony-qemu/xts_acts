@@ -120,7 +120,9 @@ import {
   BreakpointsReference,
   CommonMethod,
   applyStyles,
-  LineJoinStyle,AlignRuleOption
+  LineJoinStyle,
+  AlignRuleOption,
+  NavDestination
 } from '@ohos.arkui.component'
 
 
@@ -197,15 +199,15 @@ struct FlexBasisPage {
     } else if (this.targetView == 'Navigation') {
       Navigation(new NavPathStack()).applyStyles(this.commonStyle)
     } else if (this.targetView == 'NavRouter') {
-      // NavRouter() {
-      //   Row() {
-      //     Image($r('app.media.icon'))
-      //   }
-      //
-      //   NavDestination() {
-      //     Text('NavDestination').fontSize(10)
-      //   }
-      // }//.commonStyle()
+      Navigation() {
+        Row() {
+          Image($r('app.media.icon'))
+        }
+
+        NavDestination() {
+          Text('NavDestination').fontSize(10)
+        }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Progress') {
       Progress({ value: 50, type: ProgressType.Linear }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'QRCode') {
@@ -311,10 +313,15 @@ struct FlexBasisPage {
 
       .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigator') {
-      // Navigator({ target: 'MainAbility/pages/index/Index' }) {
-      //   Text('Navigator Go to index page')
-      //     .width('100%').textAlign(TextAlign.Center)
-      // }//.commonStyle()
+      Navigation() {
+        Row() {
+          Image($r('app.media.icon'))
+        }
+
+        NavDestination() {
+          Text('NavDestination').fontSize(10)
+        }
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
         Row()

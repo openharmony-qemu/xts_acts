@@ -58,7 +58,7 @@ export default function refreshOffsetJsunit() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get refreshOffsetJsunit state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Refresh/refreshOffset" == pages.name)) {
+        if (!("refreshOffset" == pages.name)) {
           console.info("get refreshOffsetJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
         }
@@ -73,20 +73,15 @@ export default function refreshOffsetJsunit() {
       console.info(" refreshOffsetJsunit after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
-    
-      
-  /*
-     * @tc.number   refreshOffsetJsunit_static_0100
-     * @tc.name     refreshOffsetJsunit_static_0100
-     * @tc.desc     refreshOffsetJsunit_static_0100
-     * @tc.level    Level.LEVEL0
-     */
-it('refreshOffsetJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /* *
+    * @tc.number: refreshOffsetJsunit_static_0100
+    * @tc.name  : refreshOffsetJsunit_static_0100
+    * @tc.desc  : Add refreshOffset and pullToRefresh interfaces.
+    * @tc.level : Level 2
+    * @tc.type :
+    * @tc.size :
+    */
+    it('refreshOffsetJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Refresh_Offset');
