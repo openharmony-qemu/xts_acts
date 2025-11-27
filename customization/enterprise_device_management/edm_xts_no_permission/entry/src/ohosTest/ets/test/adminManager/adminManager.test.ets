@@ -26,12 +26,12 @@ const DELEGATED_POLICIES: Array<string> = [ "set_browser_policies" ];
 export default function adminManagerTest() {
   describe('adminManager_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_SUBSCRIBEMANAGEDEVENTSYNC_001
-     * @tc.name      : test_subscribeManagedEventSync_001
-     * @tc.desc      : test subscribeManagedEventSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_subscribeManagedEventSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_SUBSCRIBEMANAGEDEVENTSYNC_001
+     * @tc.desc   test subscribeManagedEventSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_subscribeManagedEventSync_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -47,12 +47,12 @@ export default function adminManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNSUBSCRIBEMANAGEDEVENTSYNC_001
-     * @tc.name      : test_unsubscribeManagedEventSync_001
-     * @tc.desc      : test unsubscribeManagedEventSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_unsubscribeManagedEventSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNSUBSCRIBEMANAGEDEVENTSYNC_001
+     * @tc.desc   test unsubscribeManagedEventSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_unsubscribeManagedEventSync_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -68,12 +68,12 @@ export default function adminManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_SETDELEGATEDPOLICIES_001
-     * @tc.name      : test_setDelegatedPolicies_001
-     * @tc.desc      : test setDelegatedPolicies method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_setDelegatedPolicies_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDELEGATEDPOLICIES_001
+     * @tc.desc   test setDelegatedPolicies method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_setDelegatedPolicies_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -89,12 +89,12 @@ export default function adminManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDELEGATEDPOLICIES_001
-     * @tc.name      : test_getDelegatedPolicies_001
-     * @tc.desc      : test getDelegatedPolicies method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDelegatedPolicies_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDELEGATEDPOLICIES_001
+     * @tc.desc   test getDelegatedPolicies method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_getDelegatedPolicies_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -110,12 +110,12 @@ export default function adminManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDELEGATEDBUNDLENAMES_001
-     * @tc.name      : test_getDelegatedBundleNames_001
-     * @tc.desc      : test getDelegatedBundleNames method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDelegatedBundleNames_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDELEGATEDBUNDLENAMES_001
+     * @tc.desc   test getDelegatedBundleNames method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_getDelegatedBundleNames_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -131,12 +131,12 @@ export default function adminManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISBYODADMIN_001
-     * @tc.name      : test_isByodAdmin_001
-     * @tc.desc      : test isByodAdmin method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_isByodAdmin_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ISBYODADMIN_001
+     * @tc.desc   test isByodAdmin method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_isByodAdmin_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -152,12 +152,12 @@ export default function adminManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_STARTADMINPROVISION_001
-     * @tc.name      : test_startadminprovision_001
-     * @tc.desc      : test startadminprovision method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_startadminprovision_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_STARTADMINPROVISION_001
+     * @tc.desc   test startadminprovision method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_startadminprovision_001", Level.LEVEL0, async (done: Function) => {
       if (sysDeviceInfo.deviceType === '2in1') {
