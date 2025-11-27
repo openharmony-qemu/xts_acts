@@ -311,7 +311,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
          * @tc.desc   Test startBLEScan api10
@@ -349,7 +348,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
          * @tc.desc   Test stopBLEScan api10
@@ -373,7 +371,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
          * @tc.desc   Test on-BLEDeviceFind api10
@@ -393,7 +390,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
          * @tc.desc   Test off-BLEDeviceFind api10
@@ -413,7 +409,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -436,7 +431,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -460,7 +454,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -484,7 +477,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -508,7 +500,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -539,7 +530,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -568,7 +558,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -599,7 +588,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -630,7 +618,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -661,7 +648,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -692,7 +678,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.desc   Test constant PhyType api12
@@ -712,7 +697,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.desc   Test constant PhyType api12
@@ -732,7 +716,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
          * @tc.desc   Test startBLEScan api10
@@ -752,7 +735,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
          * @tc.desc   Test createBleScanner
@@ -773,7 +755,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
          * @tc.desc   Test startScan
@@ -821,7 +802,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
          * @tc.desc   Test stopScan
@@ -859,7 +839,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
          * @tc.desc   Test startScan 401
@@ -881,7 +860,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
          * @tc.desc   Test startScan again
@@ -927,7 +905,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
          * @tc.desc   Test ScanReportType
@@ -951,7 +928,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
          * @tc.desc   Test ScanReportMode
@@ -979,7 +955,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
          * @tc.desc   Test getConnectedBLEDevices api21
@@ -1030,7 +1005,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
          * @tc.desc   Test BleProfile api21
@@ -1054,12 +1028,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100
-         * @tc.desc 20251113API22用例覆盖 ConnectionParam Enumvalue 3-1.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 ConnectionParam Enumvalue 3-1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1079,12 +1053,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
-         * @tc.desc 20251113API22用例覆盖 on_serviceChange/off_serviceChange 1-1.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 on_serviceChange/off_serviceChange 1-1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1103,12 +1077,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100
-         * @tc.desc 20251113API22用例覆盖 updateConnectionParam 1-3 .
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 updateConnectionParam 1-3 .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1127,12 +1101,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200
-         * @tc.desc 20251113API22用例覆盖 updateConnectionParam 2-3 .
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 updateConnectionParam 2-3 .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1152,12 +1126,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300
-         * @tc.desc 20251113API22用例覆盖 updateConnectionParam 3-3.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 updateConnectionParam 3-3.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1176,12 +1150,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0400
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0400
-         * @tc.desc 20251113API22用例覆盖 updateConnectionParam 4-3 2900003.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 updateConnectionParam 4-3 2900003.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0400', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1204,12 +1178,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0500
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0500
-         * @tc.desc 20251113API22用例覆盖 updateConnectionParam 4-3 2900003.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 updateConnectionParam 4-3 2900003.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0500', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1229,12 +1203,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100
-         * @tc.desc 20251113API22用例覆盖 GattServer-getService 2901008 Gatt service is not found.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 GattServer-getService 2901008 Gatt service is not found.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1264,12 +1238,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200
-         * @tc.desc 20251113API22用例覆盖 GattServer-getService input is error.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 GattServer-getService input is error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1283,12 +1257,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0300
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0300
-         * @tc.desc 20251113API22用例覆盖 GattServer-getService.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 GattServer-getService.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1312,12 +1286,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100
-         * @tc.desc 20251113API22用例覆盖 GattServer-getServices.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 GattServer-getServices.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1342,12 +1316,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0200
-         * @tc.desc 20251113API22用例覆盖 GattServer-getServices.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖 GattServer-getServices.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1376,12 +1350,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100
-         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖GattServer-getConnectedState.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1401,12 +1375,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200
-         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖GattServer-getConnectedState.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1430,12 +1404,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0300
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0300
-         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖GattServer-getConnectedState.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1457,12 +1431,12 @@ export default function bluetoothBleTest() {
 
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100
-         * @tc.desc 20251113API22用例覆盖GattClientDevice-getConnectedState.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖GattClientDevice-getConnectedState.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
@@ -1483,12 +1457,12 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0200
-         * @tc.desc 20251113API22用例覆盖GattClientDevice-getConnectedState.
-         * @tc.type Method
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.desc   20251113API22用例覆盖GattClientDevice-getConnectedState.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {

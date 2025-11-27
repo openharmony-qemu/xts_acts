@@ -33,7 +33,6 @@ describe('btConstantTest', () =>  {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0100
      * @tc.desc   Test constant api10
@@ -59,7 +58,6 @@ describe('btConstantTest', () =>  {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0200
      * @tc.desc   Test constant api10
@@ -85,7 +83,6 @@ describe('btConstantTest', () =>  {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0300
      * @tc.desc   Test constant api10
@@ -131,7 +128,6 @@ describe('btConstantTest', () =>  {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0800
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0400
      * @tc.desc   Test constant api10
@@ -442,7 +438,6 @@ describe('btConstantTest', () =>  {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0500
      * @tc.desc   Test constant api12
