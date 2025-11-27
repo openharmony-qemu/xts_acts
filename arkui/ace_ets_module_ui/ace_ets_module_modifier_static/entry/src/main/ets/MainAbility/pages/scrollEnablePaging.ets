@@ -13,21 +13,21 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-// import { ScrollModifier } from "@ohos.arkui.modifier";
-import { Entry, Column, Component, ForEach, Scroll, Scroller, Flex, FlexDirection, TextAlign,
+import { ScrollModifier } from "@ohos.arkui.modifier";
+import { Entry, Column, Component, ForEach, Scroll, Scroller, Flex, FlexDirection, TextAlign,ScrollAttribute,
   ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent} from '@ohos.arkui.component'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-// class CustomModifier extends ScrollModifier {
-// 	applyNormalAttribute(instance: ScrollAttribute): void {
-// 		super.applyNormalAttribute?.(instance);
-// 	}
-// }
+class CustomModifier extends ScrollModifier {
+	applyNormalAttribute(instance: ScrollAttribute): void {
+		// super.applyNormalAttribute?.(instance);
+	}
+}
 
 @Entry
 @Component
 struct ScrollEnablePaging {
-  // @State customModifier: ScrollModifier = new CustomModifier().enablePaging(true)
+  @State customModifier: ScrollModifier = new CustomModifier().enablePaging(true)
   scroller: Scroller = new Scroller()
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
 
@@ -63,7 +63,7 @@ struct ScrollEnablePaging {
           }, (item:number) => item.toString())
         }.width('100%')
       }
-      // .attributeModifier(this.customModifier as CustomModifier)
+      .attributeModifier(this.customModifier as CustomModifier)
         .key("ScrollTest")
     }.width('100%')
       .height("100%")

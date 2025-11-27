@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,44 +56,42 @@ export default function checkboxJsunit() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_Checkbox_static_0100
-     * @tc.name ArkUX_Stage_Checkbox_static_0100
-     * @tc.desc Set mark values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Checkbox_static_0100
+     * @tc.name     ArkUX_Stage_Checkbox_static_0100
+     * @tc.desc     ArkUX_Stage_Checkbox_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Checkbox_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('Checkbox_static_0100');
+          let strJson = inspector.getInspectorByKey('Checkbox_0100');
           console.info("ArkUX_Stage_Checkbox_static_0100 component strJson is: " + strJson);
           console.info("ArkUX_Stage_Checkbox_static_0100 component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mark').getString('size')).assertEqual('50.00vp');
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('mark')).getString('size')).assertEqual('50.00vp');
           console.info('ArkUX_Stage_Checkbox_static_0100 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_Checkbox_static_0100 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_Checkbox_static_0100 ERR  ' + err);
         }
         done();
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Checkbox_static_0400
-     * @tc.name ArkUX_Stage_Checkbox_static_0400
-     * @tc.desc Set unselectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Checkbox_static_0400
+     * @tc.name     ArkUX_Stage_Checkbox_static_0400
+     * @tc.desc     ArkUX_Stage_Checkbox_static_0400
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Checkbox_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('Checkbox_static_0100');
+          let strJson = inspector.getInspectorByKey('Checkbox_0100');
           console.info("ArkUX_Stage_Checkbox_static_0400 component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('unselectedColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Checkbox_static_0400 END ');
@@ -106,19 +104,18 @@ export default function checkboxJsunit() {
     });
 
 
-    /**
-     * @tc.number ArkUX_Stage_Checkbox_static_0300
-     * @tc.name ArkUX_Stage_Checkbox_static_0300
-     * @tc.desc Set select values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Checkbox_static_0300
+     * @tc.name     ArkUX_Stage_Checkbox_static_0300
+     * @tc.desc     ArkUX_Stage_Checkbox_static_0300
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Checkbox_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('Checkbox_static_0100');
+          let strJson = inspector.getInspectorByKey('Checkbox_0100');
           console.info("ArkUX_Stage_Checkbox_static_0300 component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
 
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('select')).assertEqual("false");
@@ -132,19 +129,18 @@ export default function checkboxJsunit() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Checkbox_attrs_static_0200
-     * @tc.name ArkUX_Stage_Checkbox_attrs_static_0200
-     * @tc.desc Set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Checkbox_attrs_static_0200
+     * @tc.name     ArkUX_Stage_Checkbox_attrs_static_0200
+     * @tc.desc     ArkUX_Stage_Checkbox_attrs_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Checkbox_attrs_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_attrs_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('Checkbox_static_0100');
+          let strJson = inspector.getInspectorByKey('Checkbox_0100');
           console.info("ArkUX_Stage_Checkbox_attrs_static_0200 component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selectedColor')).assertEqual("#FFED6F21");
           console.info('ArkUX_Stage_Checkbox_attrs_static_0200 END ');
@@ -157,13 +153,12 @@ export default function checkboxJsunit() {
     });
 
 
-    /**
-     * @tc.number ArkUX_Stage_Checkbox_attrs_static_0201
-     * @tc.name ArkUX_Stage_Checkbox_attrs_static_0201
-     * @tc.desc Change unselectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Checkbox_attrs_static_0201
+     * @tc.name     ArkUX_Stage_Checkbox_attrs_static_0201
+     * @tc.desc     ArkUX_Stage_Checkbox_attrs_static_0201
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Checkbox_attrs_static_0201', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_attrs_static_0201 START');
@@ -172,7 +167,7 @@ export default function checkboxJsunit() {
       await button.click();
      await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('Checkbox_static_0100');
+      let strJsonNew = inspector.getInspectorByKey('Checkbox_0100');
       console.info("ArkUX_Stage_Checkbox_attrs_static_0201 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('unselectedColor')).assertEqual("#FFED6F21");
       console.info('ArkUX_Stage_Checkbox_attrs_static_0201 END');

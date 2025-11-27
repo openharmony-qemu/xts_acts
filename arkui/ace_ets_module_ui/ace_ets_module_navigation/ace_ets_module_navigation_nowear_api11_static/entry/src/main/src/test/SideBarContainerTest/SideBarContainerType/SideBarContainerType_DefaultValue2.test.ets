@@ -50,7 +50,7 @@ export default function SideBarContainerType_DefaultValue2() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get SideBarContainerType_DefaultValue2 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/SideBarContainer/SideBarContainerType/SideBarContainerType_DefaultValue2" == pages.name)) {
+        if (!("SideBarContainerType_DefaultValue2" == pages.name)) {
           console.info("get SideBarContainerType_DefaultValue2 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

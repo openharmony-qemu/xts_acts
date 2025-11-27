@@ -37,7 +37,6 @@ export default function AlignRulesTest() {
   let supportView = ['Text', 'Button', 'Radio', 'Checkbox', 'CheckboxGroup', 'DataPanel', 'DatePicker',
     'Divider', 'Gauge', 'LoadingProgress', 'Marquee', 'Navigation', 'Image', 'ImageAnimator', 'AlphabetIndexer',
     'Progress', 'QRCode', 'Rating', 'Search', 'Slider', 'TextArea', 'TextClock', 'TextInput']
-  // testAlignRulesGaugeParentAlignTopLeftJustifying
 
   //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 300;

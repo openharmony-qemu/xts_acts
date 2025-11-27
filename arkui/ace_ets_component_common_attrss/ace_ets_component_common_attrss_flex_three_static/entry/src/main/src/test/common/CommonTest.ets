@@ -33,12 +33,12 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index: Int) => {
+      let lastIndex: int = 0;
+      testValues.forEach((temp: TestValue, index: int) => {
           lastIndex = index;
       });
 
-      testValues.forEach((testValue: TestValue, index: Int) => {
+      testValues.forEach((testValue: TestValue, index: int) => {
 
         //If there are components that need to be excluded, do not generate cases.
           let currentIndex = index;

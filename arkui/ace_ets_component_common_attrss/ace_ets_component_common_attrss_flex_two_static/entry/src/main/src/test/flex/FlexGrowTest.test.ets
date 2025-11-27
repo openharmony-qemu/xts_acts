@@ -73,7 +73,7 @@ export default function flexGrowTest() {
     'RelativeContainer',
     'Navigator',
     'TextTimer',
-    //    'Flex',
+    //    'Flex', 1.1×¢áŒ
     'Progress',
     'QRCode',
     'Radio',

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
@@ -51,6 +51,7 @@ export default function common1Jsunit() {
         if (!("common1" == pages.name)) {
           console.info("get Common1 state pages.name: " + JSON.stringify(pages.name));
           alphabetIndexer.pushUrl(options);
+          console.info("================= pushUrl")
           await UtilsTest.msSleep(2000);
         }
       } catch (err) {
@@ -58,18 +59,12 @@ export default function common1Jsunit() {
       }
     });
 
-    beforeEach(async (): Promise<void> => {
-      await UtilsTest.msSleep(100);
-      console.info("Common1 before each called");
-    })
-
-    /**
-     * @tc.number Common001
-     * @tc.name Common1Static001
-     * @tc.desc Set outlineRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static001
+     * @tc.name     Common1Static001
+     * @tc.desc     Common1Static001
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static001] START');
@@ -84,19 +79,18 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static002
-     * @tc.name Common1Static002
-     * @tc.desc Set outlineStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static002
+     * @tc.name     Common1Static002
+     * @tc.desc     Common1Static002
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static002] START');
       let strJsonNew = inspector.getInspectorByKey('common1');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[Common1Static002] component Common1Static002 is: " + JSON.stringify(objNew.getElement('$attrs')));
+      console.info("[Common1Static002] component Common1Static002 is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs')));
       let outlineStyle = objNew.getElement('$attrs').getElement('outlineStyle')
       expect(outlineStyle.getString('left')).assertEqual("OutlineStyle.SOLID");
       expect(outlineStyle.getString('top')).assertEqual("OutlineStyle.SOLID");
@@ -105,13 +99,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static003
-     * @tc.name Common1Static003
-     * @tc.desc Set outlineWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static003
+     * @tc.name     Common1Static003
+     * @tc.desc     Common1Static003
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static003] START');
@@ -126,13 +119,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static004
-     * @tc.name Common1Static004
-     * @tc.desc Set outlineColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static004
+     * @tc.name     Common1Static004
+     * @tc.desc     Common1Static004
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static004] START');
@@ -147,13 +139,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static005
-     * @tc.name Common1Static005
-     * @tc.desc Set align values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static005
+     * @tc.name     Common1Static005
+     * @tc.desc     Common1Static005
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static005] START');
@@ -164,13 +155,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static006
-     * @tc.name Common1Static006
-     * @tc.desc Set direction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static006
+     * @tc.name     Common1Static006
+     * @tc.desc     Common1Static006
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static006] START');
@@ -181,13 +171,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static007
-     * @tc.name Common1Static007
-     * @tc.desc Set backdropBlur values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static007
+     * @tc.name     Common1Static007
+     * @tc.desc     Common1Static007
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static007] START');
@@ -198,13 +187,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static008
-     * @tc.name Common1Static008
-     * @tc.desc Set invert values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static008
+     * @tc.name     Common1Static008
+     * @tc.desc     Common1Static008
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static008] START');
@@ -215,13 +203,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static009
-     * @tc.name Common1Static009
-     * @tc.desc Set blur values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static009
+     * @tc.name     Common1Static009
+     * @tc.desc     Common1Static009
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static009] START');
@@ -232,13 +219,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static010
-     * @tc.name Common1Static010
-     * @tc.desc Set outline values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static010
+     * @tc.name     Common1Static010
+     * @tc.desc     Common1Static010
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static010] START');
@@ -253,13 +239,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static011
-     * @tc.name Common1Static011
-     * @tc.desc Set useShadowBatching values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static011
+     * @tc.name     Common1Static011
+     * @tc.desc     Common1Static011
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static011] START');
@@ -270,13 +255,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static012
-     * @tc.name Common1Static012
-     * @tc.desc Set obscured values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static012
+     * @tc.name     Common1Static012
+     * @tc.desc     Common1Static012
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static012] START');
@@ -287,13 +271,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static013
-     * @tc.name Common1Static013
-     * @tc.desc Set shadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static013
+     * @tc.name     Common1Static013
+     * @tc.desc     Common1Static013
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static013] START');
@@ -305,13 +288,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static014
-     * @tc.name Common1Static014
-     * @tc.desc Set renderFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static014
+     * @tc.name     Common1Static014
+     * @tc.desc     Common1Static014
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static014] START');
@@ -322,13 +304,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static015
-     * @tc.name Common1Static015
-     * @tc.desc Set clip values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static015
+     * @tc.name     Common1Static015
+     * @tc.desc     Common1Static015
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static015] START');
@@ -339,13 +320,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static016
-     * @tc.name Common1Static016
-     * @tc.desc Set radialGradient values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static016
+     * @tc.name     Common1Static016
+     * @tc.desc     Common1Static016
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static016', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static016] START');
@@ -357,13 +337,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static017
-     * @tc.name Common1Static017
-     * @tc.desc Set sweepGradient values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static017
+     * @tc.name     Common1Static017
+     * @tc.desc     Common1Static017
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static017] START');
@@ -376,13 +355,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static018
-     * @tc.name Common1Static018
-     * @tc.desc Set mask values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static018
+     * @tc.name     Common1Static018
+     * @tc.desc     Common1Static018
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static018] START');
@@ -393,13 +371,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static019
-     * @tc.name Common1Static019
-     * @tc.desc Set id values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static019
+     * @tc.name     Common1Static019
+     * @tc.desc     Common1Static019
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static019', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static019] START');
@@ -409,13 +386,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static020
-     * @tc.name Common1Static020
-     * @tc.desc Set key values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static020
+     * @tc.name     Common1Static020
+     * @tc.desc     Common1Static020
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static020] START');
@@ -424,13 +400,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static021
-     * @tc.name Common1Static021
-     * @tc.desc Set overlay values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static021
+     * @tc.name     Common1Static021
+     * @tc.desc     Common1Static021
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static021', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static021] START');
@@ -441,13 +416,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static022
-     * @tc.name Common1Static022
-     * @tc.desc Set draggable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static022
+     * @tc.name     Common1Static022
+     * @tc.desc     Common1Static022
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static022', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static022] START');
@@ -458,30 +432,28 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static023
-     * @tc.name Common1Static023
-     * @tc.desc Set aspectRatio values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static023
+     * @tc.name     Common1Static023
+     * @tc.desc     Common1Static023
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static023', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static023] START');
       let strJsonNew = inspector.getInspectorByKey('common2');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("[Common1Static023] component Common1Static023 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('aspectRatio')).assertEqual(2);
+      expect(objNew.getElement('$attrs').getDouble('aspectRatio')).assertEqual(2);
       done();
     });
 
-    /**
-     * @tc.number Common1Static024
-     * @tc.name Common1Static024
-     * @tc.desc Set aspectRatio values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static024
+     * @tc.name     Common1Static024
+     * @tc.desc     Common1Static024
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static024', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static024] START');
@@ -492,13 +464,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static025
-     * @tc.name Common1Static025
-     * @tc.desc Set offset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static025
+     * @tc.name     Common1Static025
+     * @tc.desc     Common1Static025
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static025', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static025] START');
@@ -510,13 +481,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static026
-     * @tc.name Common1Static026
-     * @tc.desc Set markAnchor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static026
+     * @tc.name     Common1Static026
+     * @tc.desc     Common1Static026
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static026', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static026] START');
@@ -528,13 +498,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static027
-     * @tc.name Common1Static027
-     * @tc.desc Set position values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static027
+     * @tc.name     Common1Static027
+     * @tc.desc     Common1Static027
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static027', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static027] START');
@@ -546,13 +515,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static028
-     * @tc.name Common1Static028
-     * @tc.desc Set zIndex values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static028
+     * @tc.name     Common1Static028
+     * @tc.desc     Common1Static028
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static028', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static028] START');
@@ -563,13 +531,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static029
-     * @tc.name Common1Static029
-     * @tc.desc Set alignSelf values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static029
+     * @tc.name     Common1Static029
+     * @tc.desc     Common1Static029
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static029', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static029] START');
@@ -580,13 +547,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static030
-     * @tc.name Common1Static030
-     * @tc.desc Set flexBasis values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static030
+     * @tc.name     Common1Static030
+     * @tc.desc     Common1Static030
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static030] START');
@@ -597,13 +563,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static031
-     * @tc.name Common1Static031
-     * @tc.desc Set flexGrow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static031
+     * @tc.name     Common1Static031
+     * @tc.desc     Common1Static031
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static031', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static031] START');
@@ -615,13 +580,12 @@ export default function common1Jsunit() {
     });
 
 
-    /**
-     * @tc.number Common1Static032
-     * @tc.name Common1Static032
-     * @tc.desc Set flexShrink values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static032
+     * @tc.name     Common1Static032
+     * @tc.desc     Common1Static032
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static032', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static032] START');
@@ -632,13 +596,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static033
-     * @tc.name Common1Static033
-     * @tc.desc Set displayPriority values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static033
+     * @tc.name     Common1Static033
+     * @tc.desc     Common1Static033
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static033', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static033] START');
@@ -649,13 +612,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static034
-     * @tc.name Common1Static034
-     * @tc.desc Set backgroundEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static034
+     * @tc.name     Common1Static034
+     * @tc.desc     Common1Static034
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static034', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static034] START');
@@ -666,13 +628,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static035
-     * @tc.name Common1Static035
-     * @tc.desc Set transform values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static035
+     * @tc.name     Common1Static035
+     * @tc.desc     Common1Static035
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static035', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static035] START');
@@ -683,13 +644,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static036
-     * @tc.name Common1Static036
-     * @tc.desc Set translate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static036
+     * @tc.name     Common1Static036
+     * @tc.desc     Common1Static036
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static036', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static036] START');
@@ -701,13 +661,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static037
-     * @tc.name Common1Static037
-     * @tc.desc Set rotate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static037
+     * @tc.name     Common1Static037
+     * @tc.desc     Common1Static037
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static037', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static037] START');
@@ -718,13 +677,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static038
-     * @tc.name Common1Static038
-     * @tc.desc Set renderGroup values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static038
+     * @tc.name     Common1Static038
+     * @tc.desc     Common1Static038
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static038', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static038] START');
@@ -735,40 +693,6 @@ export default function common1Jsunit() {
       done();
     });
 
-
-    /**
-     * @tc.number Common1Static039
-     * @tc.name Common1Static039
-     * @tc.desc Set gridOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
-    it('Common1Static039', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[Common1Static039] START');
-      let strJsonNew = inspector.getInspectorByKey('common2');
-      let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[Common1Static039] component Common1Static039 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getDouble('gridOffset')).assertEqual(2);
-      done();
-    });
-
-    /**
-     * @tc.number Common1Static040
-     * @tc.name Common1Static040
-     * @tc.desc Set gridSpan values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
-    it('Common1Static040', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[Common1Static040] START');
-      let strJsonNew = inspector.getInspectorByKey('common2');
-      let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[Common1Static040] component Common1Static040 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getDouble('gridSpan')).assertEqual(3);
-      done();
-    });
 
     /**
      * @tc.number Common1Static041
@@ -787,13 +711,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static042
-     * @tc.name Common1Static042
-     * @tc.desc Set sepia values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static042
+     * @tc.name     Common1Static042
+     * @tc.desc     Common1Static042
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static042', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static042] START');
@@ -804,13 +727,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static043
-     * @tc.name Common1Static043
-     * @tc.desc Set clickEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static043
+     * @tc.name     Common1Static043
+     * @tc.desc     Common1Static043
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static043', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static043] START');
@@ -823,13 +745,12 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static044
-     * @tc.name Common1Static044
-     * @tc.desc Set hoverEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static044
+     * @tc.name     Common1Static044
+     * @tc.desc     Common1Static044
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static044', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static044] START');
@@ -840,19 +761,22 @@ export default function common1Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number Common1Static046
-     * @tc.name Common1Static046
-     * @tc.desc change zIndex values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   Common1Static046
+     * @tc.name     Common1Static046
+     * @tc.desc     Common1Static046
+     * @tc.level    Level.LEVEL0
      */
     it('Common1Static046', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static046] START');
       let driver = Driver.create();
+      console.log("==================================111 ");
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      await UtilsTest.msSleep(2000)
+      console.log("================================== " + button);
       await button.click();
+      console.log("================================== click");
       await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('common1');
       let objNew = JSON.parseJsonElement(strJsonNew);

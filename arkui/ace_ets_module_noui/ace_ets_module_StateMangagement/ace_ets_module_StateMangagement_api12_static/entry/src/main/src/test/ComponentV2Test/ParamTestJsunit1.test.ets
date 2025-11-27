@@ -68,7 +68,7 @@ export default function ParamTestJsunit1() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ParamTestJsunit1 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/ComponentV2/ParamTest1" == pages.name)) {
+        if (!("ParamTest1" == pages.name)) {
           console.info("get ParamTestJsunit1 pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

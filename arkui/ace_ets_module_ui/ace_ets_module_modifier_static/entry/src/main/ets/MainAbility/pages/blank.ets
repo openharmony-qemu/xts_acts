@@ -12,7 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,Blank,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,ColumnOptions,Blank,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,
+  ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,
+  CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition,BlankAttribute,
+  Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -20,32 +23,33 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-// import { BlankModifier } from "@ohos.arkui.modifier";
+import { BlankModifier } from "@ohos.arkui.modifier";
 
-// class CustomModifier extends BlankModifier {
-//   applyBlankAttribute(instance: BlankAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.color("#FF654321")
-//   }
-// }
+class CustomModifier extends BlankModifier {
+  applyBlankAttribute(instance: BlankAttribute): void {
+    // super.applyNormalAttribute(instance);
+  }
+
+  onChange1() {
+    this.color(Color.Red)
+  }
+}
+
 @Entry
 @Component
 struct BlankExample {
-  // @State customModifier: BlankModifier = new CustomModifier()
-  //   .color("#FF123456")
+  @State customModifier: BlankModifier = new CustomModifier()
+    .color("#FF123456")
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-        // (this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Column() {
         Blank("160")
-          // .attributeModifier(this.customModifier as CustomModifier)
+          .attributeModifier(this.customModifier as CustomModifier)
           .key('blank')
         Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 } as Margin)
       }.backgroundColor(Color.Gray).padding(20)

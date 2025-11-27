@@ -46,11 +46,9 @@ import {
   Menu,
   ScrollBar,
   TextTimer,
-// Navigator,
   ColumnSplit,
   RowSplit,
   Refresh,
-// Panel,
   Shape,
   Rect,
   Path,
@@ -121,7 +119,7 @@ import {
   applyStyles
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -131,7 +129,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct AlignRules {
   @State show: boolean = false //For Panel
-  @StorageProp("_alignRules") _alignRules: AlignRuleOption  = {
+  @StoragePropRef("_alignRules") _alignRules: AlignRuleOption  = {
     center: { anchor: '__container__', align: VerticalAlign.Center },
     middle: { anchor: '__container__', align: HorizontalAlign.Center }
   } as AlignRuleOption;
@@ -474,25 +472,6 @@ struct AlignRules {
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
         .applyStyles(this.commonStyle)
-        // } else if (this.targetView == 'Shape') {
-        //   Shape() {
-        //     Rect().width('100%').height('100%').id('Rect')
-        //   }
-        //   .backgroundColor(Color.Blue)
-        //   .width(this.subassemblyWidth)
-        //   .height(this.subassemblyHeight)
-        //
-        .applyStyles(this.commonStyle)
-        // } else if (this.targetView == 'Panel') {
-        //   Panel(this.show = true) {
-        //     Column() {
-        //     }
-        //   }
-        //   .width(this.subassemblyWidth)
-        //   .height(this.subassemblyHeight)
-        //   .alignRules(this.subassemblyCenter)
-        //
-        //   .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Refresh') {
         Refresh({ refreshing: false }) {
           Text('Pull Down and refresh:0 ')

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,13 +58,12 @@ export default function rectJsunit() {
       }
     });
 
-    /**
-     * @tc.number testrect_static_radiusHeight
-     * @tc.name testrect_static_radiusHeight
-     * @tc.desc Set radiusHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testrect_static_radiusHeight
+     * @tc.name     testrect_static_radiusHeight
+     * @tc.desc     testrect_static_radiusHeight
+     * @tc.level    Level.LEVEL0
      */
     it('testrect_static_radiusHeight', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testrect_static_radiusHeight] START');
@@ -75,18 +74,17 @@ export default function rectJsunit() {
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[testrect_static_radiusHeight] obj1 is : " + JSON.stringify(obj1.getElement('$attrs')));
       //json返回值与设置值不统一，所以使用与原生返回做对比验证
-      expect(obj.getElement('$attrs').getString('radiusHeight')).assertEqual(obj1.getElement('$attrs').getString('radiusHeight'));
+      expect(obj.getElement('$attrs').getDouble('radiusHeight')).assertEqual(obj1.getElement('$attrs').getDouble('radiusHeight'));
       console.info('[testrect_static_radiusHeight] END');
       done();
     });
 
-    /**
-     * @tc.number testrect_static_radius
-     * @tc.name testrect_static_radius
-     * @tc.desc Set radius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testrect_static_radius
+     * @tc.name     testrect_static_radius
+     * @tc.desc     testrect_static_radius
+     * @tc.level    Level.LEVEL0
      */
     it('testrect_static_radius', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testrect_static_radius] START');
@@ -97,18 +95,17 @@ export default function rectJsunit() {
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[testrect_static_radius] obj22 is : " + JSON.stringify(obj1.getElement('$attrs')));
       //json返回值与设置值不统一，所以使用与原生返回做对比验证
-      expect(obj.getElement('$attrs').getString('radius')).assertEqual(obj1.getElement('$attrs').getString('radius'));
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('radius'))).assertEqual(JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('radius')));
       console.info('[testrect_static_radius] END');
       done();
     });
 
-    /**
-     * @tc.number testrect_static_radiusWidth
-     * @tc.name testrect_static_radiusWidth
-     * @tc.desc Set radiusWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testrect_static_radiusWidth
+     * @tc.name     testrect_static_radiusWidth
+     * @tc.desc     testrect_static_radiusWidth
+     * @tc.level    Level.LEVEL0
      */
     it('testrect_static_radiusWidth', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testrect_static_radiusWidth] START');
@@ -119,18 +116,17 @@ export default function rectJsunit() {
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[testrect_static_radiusWidth] obj1 is : " + JSON.stringify(obj1.getElement('$attrs')));
       //json返回值与设置值不统一，所以使用与原生返回做对比验证
-      expect(obj.getElement('$attrs').getString('radiusWidth')).assertEqual(obj1.getElement('$attrs').getString('radiusWidth'));
+      expect(obj.getElement('$attrs').getDouble('radiusWidth')).assertEqual(obj1.getElement('$attrs').getDouble('radiusWidth'));
       console.info('[testrect_static_radiusWidth] END');
       done();
     });
 
-    /**
-     * @tc.number testrect_static_001
-     * @tc.name testrect_static_001
-     * @tc.desc Change radiusHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testrect_static_001
+     * @tc.name     testrect_static_001
+     * @tc.desc     testrect_static_001
+     * @tc.level    Level.LEVEL0
      */
     it('testrect_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testrect_static_001 START');
@@ -145,7 +141,7 @@ export default function rectJsunit() {
       let objNew3 = JSON.parseJsonElement(strJsonNew3);
       console.info("testrect_static_001 component objNew1  is: " + JSON.stringify(objNew1.getElement('$attrs')));
       console.info("testrect_static_001 component objNew3  is: " + JSON.stringify(objNew3.getElement('$attrs')));
-      expect(objNew1.getElement('$attrs').getString('radiusHeight')).assertEqual(objNew3.getElement('$attrs').getString('radiusHeight'));
+      expect(objNew1.getElement('$attrs').getDouble('radiusHeight')).assertEqual(objNew3.getElement('$attrs').getDouble('radiusHeight'));
       console.info('testrect_static_001 END');
       done();
     });

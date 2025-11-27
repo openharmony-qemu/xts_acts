@@ -73,9 +73,6 @@ export default function searchTest() {
       console.info("search after each called");
     })
 
-    // const abilityStageContext =
-    //   AppStorage.get<common.AbilityStageContext>('stageContext') as common.AbilityStageContext;
-    // let resourceSize = abilityStageContext.resourceManager.getNumber($r('sys.float.ohos_id_text_size_body1').id)
 
     
     /*
@@ -127,13 +124,14 @@ export default function searchTest() {
       await Utils.sleep(1000)
       let strJson = inspector.getInspectorByKey('search');
       console.info('[' + tagName + '] component obj is: ' + strJson);
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Search');
-
-      // expect(obj.getElement('$attrs').getElement('placeholderFont'))
-      //   .assertEqual('{"style":"FontStyle.Normal","size":"' + uiContext.px2fp(resourceSize) +
-      //     '.00fp","weight":"400","fontFamily":"sans-serif"}');
+      const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+      let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_size_body1').id) as double
+      expect(obj.getElement('$attrs').getElement('placeholderFont'))
+        .assertEqual('{"style":"FontStyle.Normal","size":"' + uiContext!.px2fp(resourceSize) +
+          '.00fp","weight":"400","fontFamily":"sans-serif"}');
       try {
         let eventData: emitter.EventData = {
           data: {

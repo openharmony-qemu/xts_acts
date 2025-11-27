@@ -29,7 +29,7 @@ import {TextTimerController,TabContent,FlowItem,ColumnOptions,SideBarContainerTy
   AlphabetIndexer,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,Stepper,
   TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType
 } from '@ohos.arkui.component'
-import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 interface ViewRouter {
@@ -48,8 +48,8 @@ interface ViewI {
 @Entry
 @Component
 struct AspectRatioHeightPage {
-  @StorageProp("_aspectRatio") _aspectRatio: number = 1.0
-  @StorageProp("_height") _height: number = 50
+  @StoragePropRef("_aspectRatio") _aspectRatio: number = 1.0
+  @StoragePropRef("_height") _height: number = 50
   @State targetView: string | undefined = ''
   @State componentKey: string | undefined = ''
   @State parentWidth: number | undefined = 0

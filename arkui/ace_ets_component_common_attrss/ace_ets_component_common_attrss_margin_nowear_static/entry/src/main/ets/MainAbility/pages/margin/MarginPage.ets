@@ -137,14 +137,14 @@ import {
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
 @Component
 struct MarginPage {
-  @StorageProp('_margin') _margin: Margin = { top: 0, right: 0, bottom: 0, left: 0 } as Margin;
+  @StoragePropRef('_margin') _margin: Margin = { top: 0, right: 0, bottom: 0, left: 0 } as Margin;
   @State targetView: string = ''
   @State targetGroupView: string =''
   @State componentKey: string = ''

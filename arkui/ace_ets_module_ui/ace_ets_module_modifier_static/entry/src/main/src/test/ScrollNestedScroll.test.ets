@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll} from "../../../hypium"
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll} from "../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import router from '@ohos.router';
@@ -32,7 +32,7 @@ import CommonFunc from '../../ets/MainAbility/common/Common';
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext()
+
 interface Action {
   ACTION: boolean
 }
@@ -71,13 +71,12 @@ export default function scrollNestedScrollJsunit() {
       console.info("scrollNestedScroll beforeEach end");
     });
 
-    /**
-     * @tc.number ArkUI_Stage_scrollNestedScroll_static_01
-     * @tc.name ArkUI_Stage_scrollNestedScroll_static_01
-     * @tc.desc Set nestedScroll values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_scrollNestedScroll_static_01
+     * @tc.name     ArkUI_Stage_scrollNestedScroll_static_01
+     * @tc.desc     ArkUI_Stage_scrollNestedScroll_static_01
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_scrollNestedScroll_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] START');
@@ -87,7 +86,8 @@ export default function scrollNestedScrollJsunit() {
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      // await driver.swipe(Math.round(x), Math.round(y + uiContext.vp2px(60)), Math.round(x), Math.round(y - uiContext.vp2px(60)));
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      await driver.swipe(Math.round(x) as int, Math.round(y + uiContext!.vp2px(60)) as int, Math.round(x) as int, Math.round(y - uiContext!.vp2px(60)) as int);
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

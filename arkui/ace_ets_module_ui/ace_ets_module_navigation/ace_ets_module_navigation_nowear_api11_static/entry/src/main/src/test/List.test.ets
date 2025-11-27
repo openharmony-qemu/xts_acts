@@ -45,22 +45,22 @@ export default function testsuite() {
 
   StepperJsunit11() // 5 pass
   stepperInterface006() // 1 pass
-  SideBarContainer_AttributeTest() // 2 fail 2 pass
+  SideBarContainer_AttributeTest() // 4 pass
   SideBarContainerDivider() // 2 pass
-  SideBarContainerTypeTest() // 1 fail  6 pass  8 注释
+  SideBarContainerTypeTest() // 7 pass  8 注释
   SideBarContainerType_DefaultValue1() // 2 pass
   SideBarContainerType_DefaultValue2() // 2 pass
   SideBarContainerType_DefaultValue3() // 2 pass
-  sidebar() // 11 pass 3 fail
+  sidebar() // pass 14
   sidebarIconsJsunit() // 1 pass
   stepperAction001() // 1 pass
   stepperAction027() // 1 pass
-  stepperInterface001() //1 fail
-  stepperInterface002() // 1 fail
-  stepperInterface003() // 1 fail
-  stepperInterface004() // 1 fail
-  stepperInterface005() // 1 fail
-  stepperInterface009() // 1 fail
+  stepperInterface001() //1 pass
+  stepperInterface002() // 1 pass
+  stepperInterface003() // 1 pass
+  stepperInterface004() // 1 pass
+  stepperInterface005() // 1 pass
+  stepperInterface009() // 1 pass
   stepperLayout001() // 1 pass
   stepperLayout002() // 1 pass
   stepperLayout003() // 1 pass

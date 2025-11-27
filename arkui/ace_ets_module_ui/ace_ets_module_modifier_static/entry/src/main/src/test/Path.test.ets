@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function pathNewTest() {
       }
     });
 
-    /**
-     * @tc.number testPathNeStatic0004
-     * @tc.name testPathNeStatic0004
-     * @tc.desc Set commands values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testPathNeStatic0004
+     * @tc.name     testPathNeStatic0004
+     * @tc.desc     testPathNeStatic0004
+     * @tc.level    Level.LEVEL0
      */
     it('testPathNeStatic0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('pathNe testPathNeStatic0004 START');
@@ -76,13 +75,12 @@ export default function pathNewTest() {
       done();
     });
 
-    /**
-     * @tc.number testPathNeStatic0005
-     * @tc.name testPathNeStatic0005
-     * @tc.desc Change commands values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testPathNeStatic0005
+     * @tc.name     testPathNeStatic0005
+     * @tc.desc     testPathNeStatic0005
+     * @tc.level    Level.LEVEL0
      */
     it('testPathNeStatic0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testPathNeStatic0005 START');

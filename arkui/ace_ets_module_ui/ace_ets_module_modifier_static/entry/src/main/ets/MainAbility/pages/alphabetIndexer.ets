@@ -25,9 +25,10 @@ import inspector from '@ohos.arkui.inspector';
 // class CustomModifier extends AlphabetIndexerModifier {
 //   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
 //     super.applyNormalAttribute?.(instance);
-// dsfdffsdsdfsdfs
-//   onChange1() {
-//     this.selected(2)
+//
+//     onChange1() {
+//       this.selected(2)
+//     }
 //   }
 // }
 

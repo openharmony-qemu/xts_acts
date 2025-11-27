@@ -32,7 +32,7 @@ import {
   ItemState,
   Margin
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { Link, State, PropRef} from '@ohos.arkui.stateManagement';
 
 function itemStyle(this: ColumnAttribute): this {
   this.width(336)
@@ -59,7 +59,7 @@ export struct StepperView {
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
-  @Link _alignRules!: AlignRuleOption;
+  @PropRef _alignRules!: AlignRuleOption;
   private componentKey: string = '';
   private subassemblyWidth: number = 0;
   private subassemblyHeight: number = 0;

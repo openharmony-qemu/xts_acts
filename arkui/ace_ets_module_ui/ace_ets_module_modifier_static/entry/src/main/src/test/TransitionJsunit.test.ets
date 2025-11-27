@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -64,13 +64,12 @@ export default function transitionJsunit() {
       console.info("transition after each called");
     });
 
-    /**
-     * @tc.number transitionTest_static_0200
-     * @tc.name transitionTest_static_0200
-     * @tc.desc Set transition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   transitionTest_static_0200
+     * @tc.name     transitionTest_static_0200
+     * @tc.desc     transitionTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('transitionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('transitionTest_static_0200 START');
@@ -81,7 +80,8 @@ export default function transitionJsunit() {
      await UtilsTest.msSleep(1000);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("transitionTest_static_0200 get state result is: " + JSON.stringify(indexEvent));
-        expect((indexEvent.data as Btn)?.btn1).assertEqual(false);
+        const data = indexEvent.data as Record<String,undefined|null|Object>
+        expect(data['btn1'] as boolean).assertEqual(false);
       }
       try {
         events_emitter.on(indexEvent, callback);

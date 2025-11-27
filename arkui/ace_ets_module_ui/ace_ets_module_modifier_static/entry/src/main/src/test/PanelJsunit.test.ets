@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,13 +56,12 @@ export default function panelJsunit() {
       }
     });
 
-    /**
-     * @tc.number test_panel_static_001
-     * @tc.name test_panel_static_001
-     * @tc.desc Set type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_001
+     * @tc.name     test_panel_static_001
+     * @tc.desc     test_panel_static_001
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_001] START');
@@ -76,13 +75,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_002
-     * @tc.name test_panel_static_002
-     * @tc.desc Set showCloseIcon values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_002
+     * @tc.name     test_panel_static_002
+     * @tc.desc     test_panel_static_002
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_002] START');
@@ -96,13 +94,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_003
-     * @tc.name test_panel_static_003
-     * @tc.desc Set show values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_003
+     * @tc.name     test_panel_static_003
+     * @tc.desc     test_panel_static_003
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_003] START');
@@ -116,13 +113,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_004
-     * @tc.name test_panel_static_004
-     * @tc.desc Set mode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_004
+     * @tc.name     test_panel_static_004
+     * @tc.desc     test_panel_static_004
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_004] START');
@@ -136,13 +132,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_005
-     * @tc.name test_panel_static_005
-     * @tc.desc Set dragBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_005
+     * @tc.name     test_panel_static_005
+     * @tc.desc     test_panel_static_005
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_005] START');
@@ -156,13 +151,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_006
-     * @tc.name test_panel_static_006
-     * @tc.desc Set miniHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_006
+     * @tc.name     test_panel_static_006
+     * @tc.desc     test_panel_static_006
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_006] START');
@@ -176,13 +170,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_007
-     * @tc.name test_panel_static_007
-     * @tc.desc Set halfHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_007
+     * @tc.name     test_panel_static_007
+     * @tc.desc     test_panel_static_007
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_007] START');
@@ -196,13 +189,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_008
-     * @tc.name test_panel_static_008
-     * @tc.desc Set fullHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_008
+     * @tc.name     test_panel_static_008
+     * @tc.desc     test_panel_static_008
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_008] START');
@@ -216,13 +208,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_009
-     * @tc.name test_panel_static_009
-     * @tc.desc Set customHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_009
+     * @tc.name     test_panel_static_009
+     * @tc.desc     test_panel_static_009
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_009] START');
@@ -234,13 +225,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_0010
-     * @tc.name test_panel_static_0010
-     * @tc.desc Set backgroundMask values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_0010
+     * @tc.name     test_panel_static_0010
+     * @tc.desc     test_panel_static_0010
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_panel_static_0010] START');
@@ -258,13 +248,12 @@ export default function panelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_panel_static_0011
-     * @tc.name test_panel_static_0011
-     * @tc.desc Change backgroundMask values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_panel_static_0011
+     * @tc.name     test_panel_static_0011
+     * @tc.desc     test_panel_static_0011
+     * @tc.level    Level.LEVEL0
      */
     it('test_panel_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

@@ -69,7 +69,7 @@ export default function ComponentV2TestJsunit() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ComponentV2TestJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/ComponentV2/ComponentV2Test" == pages.name)) {
+        if (!("ComponentV2Test" == pages.name)) {
           console.info("get ComponentV2TestJsunit pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

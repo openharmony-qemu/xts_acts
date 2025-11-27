@@ -91,7 +91,7 @@ struct PinchGestureHandlerAllowedTypes {
       Button('Invalid').id('Invalid_type')
           .onClick((e: ClickEvent) => {
             this.result = 'allowed types default';
-            this.modifier = new PinchGestureHandlerAllowedTypesModifier([SourceTool.Unknown], this.callback);
+            // this.modifier = new PinchGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
           })
     }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('PinchGestureHandlerAllowedTypes_Father')
   }

@@ -208,7 +208,7 @@ it('Stack_Text_static_006', Level.LEVEL0, async (done: () => void): Promise<void
       console.info("[Stack_Text_006] Stack_Text obj is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
 
-      expect(obj1.getElement('$attrs').getString('enableAutoFill')).assertEqual('true');
+      expect(obj1.getElement('$attrs').getBoolean('enableAutoFill')).assertEqual(true);
       console.info('[Stack_Text_006] END');
       done();
     });

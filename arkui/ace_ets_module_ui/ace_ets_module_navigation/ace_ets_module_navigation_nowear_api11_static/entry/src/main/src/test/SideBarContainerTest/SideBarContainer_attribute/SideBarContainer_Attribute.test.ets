@@ -49,10 +49,10 @@ export default function SideBarContainer_AttributeTest() {
         };
         try {
           const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+       
         let pages = routerInstance.getState();
           console.info("get SideBarContainer_Attribute state pages:" + JSON.stringify(pages));
-          if (!("MainAbility/pages/SideBarContainer/SideBarContainer_attribute/SideBarContainer_Attribute" == pages.name)) {
+          if (!("SideBarContainer_Attribute" == pages.name)) {
             console.info("get SideBarContainer_Attribute pages.name:" + JSON.stringify(pages.name));
             routerInstance.pushUrl(options);
             await CommonFunc.sleep(2000);

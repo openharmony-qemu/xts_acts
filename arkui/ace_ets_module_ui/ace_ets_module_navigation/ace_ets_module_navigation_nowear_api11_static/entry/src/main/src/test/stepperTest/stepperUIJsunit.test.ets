@@ -51,7 +51,7 @@ export default function stepperUIJsunit() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get stepperUIJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/stepper/stepperUI" == pages.name)) {
+        if (!("stepperUI" == pages.name)) {
           console.info("get stepperUIJsunit state pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
         }

@@ -47,10 +47,10 @@ export default function SideBarContainerType_DefaultValue3() {
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+       
         let pages = routerInstance.getState();
         console.info("get SideBarContainerType_DefaultValue3 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/SideBarContainer/SideBarContainerType/SideBarContainerType_DefaultValue3" == pages.name)) {
+        if (!("SideBarContainerType_DefaultValue3" == pages.name)) {
           console.info("get SideBarContainerType_DefaultValue3 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

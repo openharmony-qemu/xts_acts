@@ -70,33 +70,32 @@ export default function EnableToolBarAdaptation() {
     });
 
 
-    
-    // /*
-    //  * @tc.number   EnableToolBarAdaptation_static_0100
-    //  * @tc.name     EnableToolBarAdaptation_static_0100
-    //  * @tc.desc     EnableToolBarAdaptation_static_0100
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('EnableToolBarAdaptation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('EnableToolBarAdaptation_static_0100 START');
-    //   await CommonFunc.sleep(500);
-    //
-    //   let driver = Driver.create();
-    //   await driver.delayMs(500);
-    //
-    //   await driver.assertComponentExist(ON.text('a'));
-    //   await driver.delayMs(500);
-    //   let btn1: Component = await driver.findComponent(ON.id('showTextId')) as Component;
-    //   await btn1.click()
-    //   console.info('[EnableToolBarAdaptation_static_0100] btn1 click');
-    //   await driver.delayMs(500);
-    //
-    //   let text: Component | null = await driver.findComponent(ON.text('a'));
-    //   await driver.delayMs(500);
-    //   expect(text).assertEqual(null);
-    //   console.info('EnableToolBarAdaptation_static_0100 END');
-    //   done();
-    // });
+    /**
+     * @tc.number    EnableToolBarAdaptation_static_0100
+     * @tc.name      EnableToolBarAdaptation_static_0100
+     * @tc.desc      Test Navigation\NavDestination hideItemValue is false
+     * @tc.level     Level.LEVEL0
+     */
+    it('EnableToolBarAdaptation_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('EnableToolBarAdaptation_static_0100 START');
+      await CommonFunc.sleep(500);
+
+      let driver = Driver.create();
+      await driver.delayMs(500);
+
+      await driver.assertComponentExist(ON.text('a'));
+      await driver.delayMs(500);
+      let btn1: Component = await driver.findComponent(ON.id('showTextId')) as Component;
+      await btn1.click()
+      console.info('[EnableToolBarAdaptation_static_0100] btn1 click');
+      await driver.delayMs(500);
+
+      let text: Component | null = await driver.findComponent(ON.text('a'));
+      await driver.delayMs(500);
+      expect(text).assertEqual(null);
+      console.info('EnableToolBarAdaptation_static_0100 END');
+      done();
+    });
 
     
     /*

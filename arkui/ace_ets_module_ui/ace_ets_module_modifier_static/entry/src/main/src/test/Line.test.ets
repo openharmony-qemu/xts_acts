@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,47 +57,44 @@ export default function lineNeJsunit() {
       }
     });
 
-    /**
-     * @tc.number testLineNeStatic00071
-     * @tc.name testLineNeStatic00071
-     * @tc.desc Set startPoint values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testLineNeStatic00071
+     * @tc.name     testLineNeStatic00071
+     * @tc.desc     testLineNeStatic00071
+     * @tc.level    Level.LEVEL0
      */
     it('testLineNeStatic00071', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('lineNe testLineNeStatic00071 START');
       let strJson = inspector.getInspectorByKey('LineKey1');
       console.info("[testLineNeStatic00071] obj value :" + JSON.parseJsonElement(strJson).getElement('$attrs'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('startPoint')[0]).assertEqual(0);
+      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('startPoint')[0])).assertEqual('0');
       console.info('lineNe testLineNeStatic00071 END');
       done();
     });
 
-    /**
-     * @tc.number testLineNeStatic00072
-     * @tc.name testLineNeStatic00072
-     * @tc.desc Set endPoint values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testLineNeStatic00072
+     * @tc.name     testLineNeStatic00072
+     * @tc.desc     testLineNeStatic00072
+     * @tc.level    Level.LEVEL0
      */
     it('testLineNeStatic00072', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('lineNe testLineNeStatic00072 START');
       let strJson = inspector.getInspectorByKey('LineKey1');
       console.info("[testLineNeStatic00072] obj value :" + JSON.parseJsonElement(strJson).getElement('$attrs'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('endPoint')[0]).assertEqual(200);
+      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('endPoint')[0])).assertEqual('200');
       console.info('lineNe testLineNeStatic00072 END');
       done();
     });
 
-    /**
-     * @tc.number testLineNeStatic00073
-     * @tc.name testLineNeStatic00073
-     * @tc.desc Change startPoint values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testLineNeStatic00073
+     * @tc.name     testLineNeStatic00073
+     * @tc.desc     testLineNeStatic00073
+     * @tc.level    Level.LEVEL0
      */
     it('testLineNeStatic00073', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testLineNeStatic00073 START');
@@ -108,7 +105,7 @@ export default function lineNeJsunit() {
 
       let strJsonNew = inspector.getInspectorByKey('LineKey1'); //测试组件的key名称
       console.info("testLineNeStatic00073 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getArray('startPoint')[0]).assertEqual(1); //
+      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getArray('startPoint')[0])).assertEqual('1'); //
       console.info('testLineNeStatic00073 END');
       done();
     });

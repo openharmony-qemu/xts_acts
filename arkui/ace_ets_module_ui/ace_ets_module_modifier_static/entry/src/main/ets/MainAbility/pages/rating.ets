@@ -12,56 +12,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,Marquee,Rating,NavDestination,QRCode,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List,RatingAttribute, ListItem,Marquee,Rating,NavDestination,QRCode,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-// import { RatingModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends RatingModifier {
-//   applyNormalAttribute(instance: RatingAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.stepSize(0.4)
-//   }
-// }
+import { RatingModifier } from "@ohos.arkui.modifier";
+
+class CustomModifier extends RatingModifier {
+  applyNormalAttribute(instance: RatingAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+
+  onChange1() {
+    this.stepSize(0.4)
+  }
+}
 
 @Entry
 @Component
 struct RatingPage {
   @State rating: number = 3.5
   @State indicator: boolean = true
-  @State stars: number = 5
+  @State stars: int = 5
   @State stepSize: number = 0.5
   @State text: string = 'no change'
   @State backgroundUri: string = 'resources/base/media/star_1.png'
   @State foregroundUri: string = 'resources/base/media/star_2.png'
   @State secondaryUri: string = 'resources/base/media/star_3.png'
-//
-//   @State customModifier: RatingModifier = new CustomModifier()
-//     .stars(this.stars)
-//     .stepSize(this.stepSize)
-//     .starStyle({
-//       backgroundUri: this.backgroundUri,
-//       foregroundUri: this.foregroundUri,
-//       secondaryUri: this.secondaryUri})
+
+  @State customModifier: RatingModifier = new CustomModifier()
+    .stars(this.stars)
+    .stepSize(this.stepSize)
+    .starStyle({
+      backgroundUri: this.backgroundUri,
+      foregroundUri: this.foregroundUri,
+      secondaryUri: this.secondaryUri})
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        // (this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
         })
         .key("changeButton")
       Column() {
         Rating({ rating: this.rating, indicator: this.indicator })
           .key('rating1')
           .margin({ top: 24 } as Margin)
-          // .attributeModifier(this.customModifier as CustomModifier)
+          .attributeModifier(this.customModifier as CustomModifier)
       }.width(360).height(150).backgroundColor('#FFFFFF').margin({ top: 68 } as Margin)
     }.width('100%').height('100%').backgroundColor('#F1F3F5')
   }

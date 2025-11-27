@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function timepickerJsunit() {
       }
     });
 
-    /**
-     * @tc.number ArkUI_Stage_timepicker_static_1000
-     * @tc.name ArkUI_Stage_timepicker_static_1000
-     * @tc.desc Set textStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_timepicker_static_1000
+     * @tc.name     ArkUI_Stage_timepicker_static_1000
+     * @tc.desc     ArkUI_Stage_timepicker_static_1000
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_timepicker_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('timePickerDefault');
@@ -76,13 +75,12 @@ export default function timepickerJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUI_Stage_timepicker_2000
-     * @tc.name ArkUI_Stage_timepicker_2000
-     * @tc.desc Set selectedTextStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_timepicker_2000
+     * @tc.name     ArkUI_Stage_timepicker_2000
+     * @tc.desc     ArkUI_Stage_timepicker_2000
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_timepicker_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('timePickerDefault');
@@ -94,13 +92,12 @@ export default function timepickerJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUI_Stage_timepicker_3000
-     * @tc.name ArkUI_Stage_timepicker_3000
-     * @tc.desc Set disappearTextStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_timepicker_3000
+     * @tc.name     ArkUI_Stage_timepicker_3000
+     * @tc.desc     ArkUI_Stage_timepicker_3000
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_timepicker_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('timePickerDefault');
@@ -112,13 +109,12 @@ export default function timepickerJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUI_Stage_timepicker_4000
-     * @tc.name ArkUI_Stage_timepicker_4000
-     * @tc.desc Set useMilitaryTime values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_timepicker_4000
+     * @tc.name     ArkUI_Stage_timepicker_4000
+     * @tc.desc     ArkUI_Stage_timepicker_4000
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_timepicker_4000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('timePickerDefault');
@@ -128,13 +124,12 @@ export default function timepickerJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUI_Stage_timepicker_5000
-     * @tc.name ArkUI_Stage_timepicker_5000
-     * @tc.desc change useMilitaryTime values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_timepicker_5000
+     * @tc.name     ArkUI_Stage_timepicker_5000
+     * @tc.desc     ArkUI_Stage_timepicker_5000
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_timepicker_5000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_timepicker_5000 START');

@@ -12,37 +12,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,Marquee,NavDestination,Polyline,Navigation,Polygon,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List,PolylineAttribute, ListItem,Marquee,NavDestination,Polyline,Navigation,Polygon,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-// import { PolylineModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends PolylineModifier {
-//
-//   applyNormalAttribute(instance: PolylineAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//   onChange() {
-//     this.points([[1, 1], [20, 61], [100, 101]])
-//   }
-// }
+import { PolylineModifier } from "@ohos.arkui.modifier";
+
+class CustomModifier extends PolylineModifier {
+
+  applyNormalAttribute(instance: PolylineAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+  onChange() {
+    this.points([[1, 1], [20, 61], [100, 101]])
+  }
+}
 
 @Entry
 @Component
   struct PolyLinePointsExample {
-//   @State customModifier: PolylineModifier = new CustomModifier()
-//     .points([[0, 0], [20, 60], [100, 100]]);
+  @State customModifier: PolylineModifier = new CustomModifier()
+    .points([[0, 0], [20, 60], [100, 100]]);
   build() {
     Column({ space: 10 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-//         (this.customModifier as CustomModifier).onChange();
+        (this.customModifier as CustomModifier).onChange();
       }).key("changeButton")
 
       Polyline({ width: 100, height: 100 })
-        // .attributeModifier(this.customModifier as CustomModifier)
+        .attributeModifier(this.customModifier as CustomModifier)
         .key("polyLine")
         .fillOpacity(0)
         .stroke(Color.Blue)

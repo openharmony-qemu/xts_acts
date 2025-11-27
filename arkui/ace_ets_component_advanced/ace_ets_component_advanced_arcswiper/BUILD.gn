@@ -17,7 +17,7 @@ group("componentArcSwiperTest") {
   if (is_standard_system) {
     if (ace_engine_feature_wearable) {
       deps = [ "ace_ets_component_advanced_arcswiper_api16:ActsAceEtscomponentArcSwiperTest",
-      "ace_ets_component_advanced_arcswiper_api16_static:ActsAceEtscomponentArcSwiperTest",
+      "ace_ets_component_advanced_arcswiper_api16_static:ActsAceEtscomponentArcSwiperStaticTest",
                "ace_ets_component_advanced_arcswiper_no_wear_api16:ActsAceEtscomponentArcSwiperNoWearTest" ]
     } else {
       deps = [ "ace_ets_component_advanced_arcswiper_no_wear_api16:ActsAceEtscomponentArcSwiperNoWearTest" ]

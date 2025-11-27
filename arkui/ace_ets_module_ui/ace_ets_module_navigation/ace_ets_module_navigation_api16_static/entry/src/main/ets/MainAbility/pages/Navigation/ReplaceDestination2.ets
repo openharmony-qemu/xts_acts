@@ -30,7 +30,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct ReplaceDestination2 {
-  @Consume('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide({alias:'pageInfos'}) pageInfos: NavPathStack = new NavPathStack()
   @State code100005: string = '';
 
   @Builder
@@ -45,7 +45,7 @@ struct ReplaceDestination2 {
       Column({space: '5vp'} as ColumnOptions) {
         Text(this.code100005).id('id05')
         Button('push pageOne').id('pageTwoId').onClick((e: ClickEvent) => {
-          this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null))
+          this.pageInfos.replaceDestination(new NavPathInfo('pageOne', undefined))
             .then(() => {
               console.log('[replaceDestination pageOne] success')
             })

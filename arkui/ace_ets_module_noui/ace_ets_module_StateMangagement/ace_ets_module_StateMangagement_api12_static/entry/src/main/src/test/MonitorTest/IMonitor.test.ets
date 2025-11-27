@@ -70,7 +70,7 @@ export default function IMonitorTest() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get IMonitorTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Monitor/IMonitor" == pages.name)) {
+        if (!("IMonitor" == pages.name)) {
           console.info("get IMonitorTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

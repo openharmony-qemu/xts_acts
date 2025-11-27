@@ -50,7 +50,7 @@ export default function stepperItemDisabledJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get stepperItem state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/stepper/stepperItem" == pages.name)) {
+        if (!("stepperItem" == pages.name)) {
           console.info("get stepperItem state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);

@@ -88,7 +88,7 @@ struct TapGestureHandlerAllowedTypes {
       Button('Invalid').id('Invalid_type')
           .onClick((e: ClickEvent) => {
             this.result = 'allowed types default';
-            this.modifier = new TapGestureHandlerAllowedTypesModifier([SourceTool.Unknown], this.callback);
+            // this.modifier = new TapGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
           })
     }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('TapGestureHandlerAllowedTypes_Father')
   }

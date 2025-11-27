@@ -49,7 +49,7 @@ export default function stepperAction027() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get stepperAction027 state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/stepper/stepperAction/stepperAction027" == pages.name)) {
+        if (!("stepperAction027" == pages.name)) {
           console.info("get stepperAction027 state success " + JSON.stringify(pages.name));
          routerInstance.pushUrl(options);
           await Utils.sleep(2000);

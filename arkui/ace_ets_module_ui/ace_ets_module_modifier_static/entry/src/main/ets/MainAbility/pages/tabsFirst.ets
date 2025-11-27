@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Builder,Component,Video,BarPosition,Resource,$r,FlexAlign,TabsOptions,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Builder,Component,Video,BarPosition,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -20,15 +20,15 @@ import {
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 // import { TabsModifier } from "@ohos.arkui.modifier";
-//
+
 // class CustomModifier extends TabsModifier {
 //   applyNormalAttribute(instance: TabsAttribute): void {
 //     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChangeTabs() {
-//     this.barBackgroundColor('#FF122345')
-//   }
+  // }
+
+  // onChangeTabs() {
+  //   this.barBackgroundColor('#FF122345')
+  // }
 // }
 
 @Component
@@ -36,7 +36,7 @@ struct ModifierComponent {
   // @Link customModifier: TabsModifier
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: Int = 0
+  @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
 
   @Builder
@@ -61,7 +61,7 @@ struct ModifierComponent {
         // (this.customModifier as CustomModifier).onChangeTabs();
       }).key("changeButton")
 
-      Tabs({ barPosition: BarPosition.Start, controller: this.controller } as TabsOptions) {
+      Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }
@@ -84,7 +84,7 @@ struct ModifierComponent {
       }
     .key('tabsTest')
         // .attributeModifier(this.customModifier as CustomModifier)
-        .onChange((index: Int) => {
+        .onChange((index: int) => {
           this.currentIndex = index
         })
         .width(200)

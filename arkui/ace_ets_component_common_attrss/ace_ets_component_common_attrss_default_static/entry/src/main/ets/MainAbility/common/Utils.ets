@@ -147,7 +147,7 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!('MainAbility/pages/index/Index' == router.getState().name)) {
+    if (!('Index' == router.getState().name)) {
       router.back()
     }
     AttrsManager.unRegisterDataChange();

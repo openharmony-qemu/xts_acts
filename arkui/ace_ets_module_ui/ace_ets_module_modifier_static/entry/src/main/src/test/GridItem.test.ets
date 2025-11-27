@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,13 +58,12 @@ export default function gridItemJsunit() {
       }
     });
 
-    /**
-     * @tc.number testGridItem_static_0100
-     * @tc.name testGridItem_static_0100
-     * @tc.desc Set selected values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGridItem_static_0100
+     * @tc.name     testGridItem_static_0100
+     * @tc.desc     testGridItem_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('testGridItem_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridItem_static_0100] START');
@@ -76,13 +75,12 @@ export default function gridItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGridItem_static_0101
-     * @tc.name testGridItem_static_0101
-     * @tc.desc Set rowStart values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGridItem_static_0101
+     * @tc.name     testGridItem_static_0101
+     * @tc.desc     testGridItem_static_0101
+     * @tc.level    Level.LEVEL0
      */
     it('testGridItem_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridItem_static_0101] START');
@@ -96,13 +94,12 @@ export default function gridItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGridItem_static_0102
-     * @tc.name testGridItem_static_0102
-     * @tc.desc Set rowEnd values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGridItem_static_0102
+     * @tc.name     testGridItem_static_0102
+     * @tc.desc     testGridItem_static_0102
+     * @tc.level    Level.LEVEL0
      */
     it('testGridItem_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridItem_static_0102] START');
@@ -116,13 +113,12 @@ export default function gridItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGridItem_static_0103
-     * @tc.name testGridItem_static_0103
-     * @tc.desc Set columnStart values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGridItem_static_0103
+     * @tc.name     testGridItem_static_0103
+     * @tc.desc     testGridItem_static_0103
+     * @tc.level    Level.LEVEL0
      */
     it('testGridItem_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridItem_static_0103] START');
@@ -136,13 +132,12 @@ export default function gridItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGridItem_static_0104
-     * @tc.name testGridItem_static_0104
-     * @tc.desc Set columnEnd values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGridItem_static_0104
+     * @tc.name     testGridItem_static_0104
+     * @tc.desc     testGridItem_static_0104
+     * @tc.level    Level.LEVEL0
      */
     it('testGridItem_static_0104', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridItem_static_0104] START');
@@ -156,13 +151,12 @@ export default function gridItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGridItem_static_0105
-     * @tc.name testGridItem_static_0105
-     * @tc.desc Set selectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGridItem_static_0105
+     * @tc.name     testGridItem_static_0105
+     * @tc.desc     testGridItem_static_0105
+     * @tc.level    Level.LEVEL0
      */
     it('testGridItem_static_0105', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridItem_static_0105] START');
@@ -176,13 +170,12 @@ export default function gridItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGridItem_static_0106
-     * @tc.name testGridItem_static_0106
-     * @tc.desc Change rowStart values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGridItem_static_0106
+     * @tc.name     testGridItem_static_0106
+     * @tc.desc     testGridItem_static_0106
+     * @tc.level    Level.LEVEL0
      */
     it('testGridItem_static_0106', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGridItem_static_0106 START');

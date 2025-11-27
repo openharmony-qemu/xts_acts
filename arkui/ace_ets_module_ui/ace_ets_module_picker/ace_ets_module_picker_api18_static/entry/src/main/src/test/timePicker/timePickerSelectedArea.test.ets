@@ -47,7 +47,7 @@ export default function timePickerSelectedAreaTest() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get timePickerSelectedAreaTest state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/timePicker/timePickerSelectedArea' == pages.name)) {
+        if (!('timePickerSelectedArea' == pages.name)) {
           console.info('get timePickerSelectedAreaTest pages.name:' + JSON.stringify(pages.name));
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

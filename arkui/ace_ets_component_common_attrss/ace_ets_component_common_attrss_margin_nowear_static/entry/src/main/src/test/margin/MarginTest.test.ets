@@ -109,10 +109,10 @@ export default function marginTest() {
         top: '20.00vp', right: '30.00vp', bottom: '30.00vp', left: '20.00vp'
       } as Margin,
       
-      top: UIContext.getFocusedUIContext()!.vp2px(20),
-      right: UIContext.getFocusedUIContext()!.vp2px(30),
-      bottom: UIContext.getFocusedUIContext()!.vp2px(30),
-      left: UIContext.getFocusedUIContext()!.vp2px(20)
+      top: AppStorage.get<UIContext>("uiContext")!.vp2px(20),
+      right: AppStorage.get<UIContext>("uiContext")!.vp2px(30),
+      bottom: AppStorage.get<UIContext>("uiContext")!.vp2px(30),
+      left: AppStorage.get<UIContext>("uiContext")!.vp2px(20)
     }
   }, {
     describe: 'SetTop',
@@ -126,10 +126,10 @@ export default function marginTest() {
         top: '50.00vp', right: '0.00vp', bottom: '0.00vp', left: '0.00vp'
       } as Margin,
       
-      top: UIContext.getFocusedUIContext()!.vp2px(50),
-      right: UIContext.getFocusedUIContext()!.vp2px(0),
-      bottom: UIContext.getFocusedUIContext()!.vp2px(0),
-      left: UIContext.getFocusedUIContext()!.vp2px(0)
+      top: AppStorage.get<UIContext>("uiContext")!.vp2px(50),
+      right: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      bottom: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      left: AppStorage.get<UIContext>("uiContext")!.vp2px(0)
     }
   }, {
     describe: 'SetRight',
@@ -143,10 +143,10 @@ export default function marginTest() {
         top: '0.00vp', right: '50.00vp', bottom: '0.00vp', left: '0.00vp'
       } as Margin,
       
-      top: UIContext.getFocusedUIContext()!.vp2px(0),
-      right: UIContext.getFocusedUIContext()!.vp2px(50),
-      bottom: UIContext.getFocusedUIContext()!.vp2px(0),
-      left: UIContext.getFocusedUIContext()!.vp2px(0)
+      top: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      right: AppStorage.get<UIContext>("uiContext")!.vp2px(50),
+      bottom: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      left: AppStorage.get<UIContext>("uiContext")!.vp2px(0)
     }
   }, {
     describe: 'SetBottom',
@@ -160,10 +160,10 @@ export default function marginTest() {
         top: '0.00vp', right: '0.00vp', bottom: '50.00vp', left: '0.00vp'
       }  as Margin,
       
-      top: UIContext.getFocusedUIContext()!.vp2px(0),
-      right: UIContext.getFocusedUIContext()!.vp2px(0),
-      bottom: UIContext.getFocusedUIContext()!.vp2px(50),
-      left: UIContext.getFocusedUIContext()!.vp2px(0)
+      top: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      right: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      bottom: AppStorage.get<UIContext>("uiContext")!.vp2px(50),
+      left: AppStorage.get<UIContext>("uiContext")!.vp2px(0)
     }
   }, {
     describe: 'SetLeft',
@@ -177,10 +177,10 @@ export default function marginTest() {
         top: '0.00vp', right: '0.00vp', bottom: '0.00vp', left: '50.00vp'
       }  as Margin,
       
-      top: UIContext.getFocusedUIContext()!.vp2px(0),
-      right: UIContext.getFocusedUIContext()!.vp2px(0),
-      bottom: UIContext.getFocusedUIContext()!.vp2px(0),
-      left: UIContext.getFocusedUIContext()!.vp2px(50)
+      top: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      right: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      bottom: AppStorage.get<UIContext>("uiContext")!.vp2px(0),
+      left: AppStorage.get<UIContext>("uiContext")!.vp2px(50)
     }
   }]
 
@@ -265,7 +265,10 @@ export default function marginTest() {
       console.info('[' + data.caseTag + ']' + 'margin is: ' + referenceRectAfter.getElement('$attrs').getString('margin'));
       console.log("data.testValue.expectValue.margin====" + JSON.stringify(data.testValue.expectValue.margin))
       //Confirm if the margin is correct
-      expect(referenceRectAfter.getElement('$attrs').getString('margin')).assertEqual(JSON.stringify(data.testValue.expectValue.margin));
+      expect(JSON.parseJsonElement(referenceRectAfter.getElement('$attrs').getString('margin')).getString("top")).assertEqual(data.testValue.expectValue.margin.top);
+      expect(JSON.parseJsonElement(referenceRectAfter.getElement('$attrs').getString('margin')).getString("right")).assertEqual(data.testValue.expectValue.margin.right);
+      expect(JSON.parseJsonElement(referenceRectAfter.getElement('$attrs').getString('margin')).getString("bottom")).assertEqual(data.testValue.expectValue.margin.bottom);
+      expect(JSON.parseJsonElement(referenceRectAfter.getElement('$attrs').getString('margin')).getString("left")).assertEqual(data.testValue.expectValue.margin.left);
       expect(Math.abs(top - (data.testValue.expectValue.top as number).toInt()) <= 1).assertTrue();
       expect(Math.abs(right - (data.testValue.expectValue.right as number).toInt()) <= 1).assertTrue();
       console.log('(data.testValue.expectValue.bottom as number).toInt()' + (data.testValue.expectValue.bottom as number).toInt())

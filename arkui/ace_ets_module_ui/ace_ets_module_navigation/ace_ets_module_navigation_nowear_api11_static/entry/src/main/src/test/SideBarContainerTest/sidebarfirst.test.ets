@@ -48,7 +48,7 @@ export default function sidebarIconsJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get sidebar state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/SideBarContainer/sidebar2" == pages.name)) {
+        if (!("sidebar2" == pages.name)) {
           console.info("get sidebar state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);

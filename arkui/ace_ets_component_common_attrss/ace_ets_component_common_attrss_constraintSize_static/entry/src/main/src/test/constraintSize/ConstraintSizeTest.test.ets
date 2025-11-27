@@ -48,7 +48,7 @@ export default function constraintSizeTest() {
     'Image',
     'ImageAnimator',
     'LoadingProgress',
-    // 'Marquee', 组件加载失败
+    'Marquee',
     'Menu',
     'MenuItem',
     'Navigation',
@@ -66,7 +66,7 @@ export default function constraintSizeTest() {
     'TextTimer',
     'TimePicker',
     'Toggle',
-    // 'Badge', 组件加载失败
+    'Badge',
     'Column',
     'Counter',
     'Flex',

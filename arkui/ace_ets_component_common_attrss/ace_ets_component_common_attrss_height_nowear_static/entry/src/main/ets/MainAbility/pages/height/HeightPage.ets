@@ -127,7 +127,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 
 import { SetValue } from '../../common/Utils'
@@ -144,8 +144,8 @@ struct heightPage {
   private value: string[] = ['#', 'A', 'B']
   //Use for Scroll,Grid,DataPanel.
   public valueArr: number[] = new Array<number>(5, 10, 10, 7, 9, 10, 10, 10, 10)
-  @StorageProp('_height') _height: Length = 0 as Length
-  @StorageProp('_width') _width: Length = 0 as Length
+  @StoragePropRef('_height') _height: Length = 0 as Length
+  @StoragePropRef('_width') _width: Length = 0 as Length
   @State targetView: string = "";
   @State componentKey: string = "";
   @State parentWidth: number = 0;

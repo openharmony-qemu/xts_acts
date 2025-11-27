@@ -53,13 +53,11 @@ export default function ColumnSetDisplayPriority_SubChange() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ColumnSetDisplayPriorityTest state pages:" + JSON.stringify(pages));
-        if (!("ColumnSetDisplayPriority_SubChange" == pages.name)) {
+        if (!("SetDisplayPriority" == pages.name)) {
           console.info("get ColumnSetDisplayPriorityTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ColumnSetDisplayPriorityTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetDisplayPriorityTest page error:" + err);

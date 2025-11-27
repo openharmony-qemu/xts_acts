@@ -63,7 +63,7 @@ export default function RepeatTest0200() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RepeatTest0200 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Repeat/Repeat0200" == pages.name)) {
+        if (!("Repeat0200" == pages.name)) {
           console.info("get RepeatTest0200 pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

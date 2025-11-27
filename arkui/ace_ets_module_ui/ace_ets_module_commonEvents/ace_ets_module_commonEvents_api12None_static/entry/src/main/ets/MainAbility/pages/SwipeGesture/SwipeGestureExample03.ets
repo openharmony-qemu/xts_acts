@@ -153,7 +153,7 @@ struct SwipeGestureExample03 {
       Text(`${this.offsetX}`).key('SwipeGestureExample03_offsetX')
       Text(`${this.offsetY}`).key('SwipeGestureExample03_offsetY')
       Text(`angle:${this.angle}`).key('SwipeGestureExample03_angle')
-      Text(`scale:${this.scale1}`).key('SwipeGestureExample03_scale')
+      Text(`scale:${Number.parseInt(this.scale1)}`).key('SwipeGestureExample03_scale')
       Text(`pinchCenterX:${this.pinchCenterX}`).key('SwipeGestureExample03_pinchCenterX')
       Text(`pinchCenterY:${this.pinchCenterY}`).key('SwipeGestureExample03_pinchCenterY')
       Text(`speed:${this.speed}`).key('SwipeGestureExample03_speed')

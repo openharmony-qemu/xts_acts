@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,22 +55,21 @@ export default function checkBoxGroupTest() {
       }
     });
 
-    /**
-     * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1000
-     * @tc.name ArkUX_Stage_CheckboxGroup_static_1000
-     * @tc.desc Set mark values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_CheckboxGroup_static_1000
+     * @tc.name     ArkUX_Stage_CheckboxGroup_static_1000
+     * @tc.desc     ArkUX_Stage_CheckboxGroup_static_1000
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('ArkUX_Stage_CheckboxGroup_static_1000 START');
         let strJson = inspector.getInspectorByKey('checkboxNO');
         console.info('ArkUX_Stage_CheckboxGroup_static_1000 START  :' + JSON.stringify(strJson));
-        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mark').getString('strokeWidth')).assertEqual("15.00vp");
-        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mark').getString('size')).assertEqual("10.00vp");
-        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mark').getString('strokeColor')).assertEqual('#FFFF00FF');
+        expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('mark')).getString('strokeWidth')).assertEqual("15.00vp");
+        expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('mark')).getString('size')).assertEqual("10.00vp");
+        expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('mark')).getString('strokeColor')).assertEqual('#FFFF00FF');
         console.info('ArkUX_Stage_CheckboxGroup_static_1000 END ');
       } catch (err) {
         expect().assertFail();
@@ -79,13 +78,12 @@ export default function checkBoxGroupTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
-     * @tc.name ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
-     * @tc.desc Set unselectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
+     * @tc.name     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
+     * @tc.desc     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -101,13 +99,12 @@ export default function checkBoxGroupTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
-     * @tc.name ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
-     * @tc.desc Set selectAll values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
+     * @tc.name     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
+     * @tc.desc     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002 START');
@@ -118,13 +115,12 @@ export default function checkBoxGroupTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
-     * @tc.name ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
-     * @tc.desc Set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
+     * @tc.name     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
+     * @tc.desc     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -140,13 +136,12 @@ export default function checkBoxGroupTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004
-     * @tc.name ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004
-     * @tc.desc Change unselectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004
+     * @tc.name     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004
+     * @tc.desc     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004 START');

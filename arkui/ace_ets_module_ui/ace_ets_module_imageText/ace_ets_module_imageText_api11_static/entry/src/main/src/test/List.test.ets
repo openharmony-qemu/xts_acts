@@ -123,7 +123,7 @@ export default function testsuite() {
     textAreaInputTest() // pass 1
     stageFontTest(); // pass 5
     stageMediaquery(); // pass 13
-    richEditorApi4(); // 之前问题已解决pass 11.08 fail， 1 个用例 JSON.stringify 相关
+    richEditorApi4(); // fail 1 // JSON.stringify 相关
     richEditorApi5(); // pass 1
     richEditorApi6(); // pass 1
     richEditorApi7(); // pass 1
@@ -134,7 +134,7 @@ export default function testsuite() {
     ImageTextTest(); //pass 7
     TextAreaCallbackTest(); //pass 1
     Image_QRCode_Api(); // pass 1
-    RichEditorApi(); // pass2 fail 2 JSON.stringify相关
+    RichEditorApi(); // pass 2 fail 2 JSON.stringify相关
 
 
     APIgetUIFontConfigJsunit(); // pass 1
@@ -159,7 +159,7 @@ export default function testsuite() {
     symbolSpanApi1() // pass 1
     TextStyle() // pass 8
     tabsDemo() // pass 1
-    TextSelectionMenu() // 11.08 fail 2 uitest
+    TextSelectionMenu() // pass 2
     textInputApi1() // pass 1
     textInputApiTest() // pass 1
 
@@ -168,12 +168,12 @@ export default function testsuite() {
     UIfont() // pass 4
     TextfieldOtherTest() // pass 4
     TextfieldSingleTest() // pass 3
-    TextfieldMultiTest() // pass 3 fail 1
+    TextfieldMultiTest() // pass 4
     CurveTest() // pass 4
     backgroundAndSizeSettingJsunit() // pass 9
     borderJsunit(); // pass 3
-    textAreaJsunit(); // pass 2  fail 1
-    textInputJsunit(); //pass 18 fail 2
+    textAreaJsunit(); // pass 3
+    textInputJsunit(); //pass 20
     propJsunit(); // pass 2
     spanJsunit() // pass 3
     textJsunit() // fail 4 Json.stringify() https://gitcode.com/m0_73853300/docs/blob/master/zh-cn/application-dev/reference/apis-arkts/js-apis-json.md#jsonstringify
@@ -186,18 +186,18 @@ export default function testsuite() {
     search_bottom();// pass 1
     textArea_top(); // pass 3
     textAenEnabledJsunit(); // pass 2
-    textInput_caret(); // fail 1 uitest
+    textInput_caret(); // pass 1
 
 
     textOneJsunit(); // 4 pass
     textTwoJsunit();  // pass 5
     textEnabledJsunit(); // pass 6
     textChangeEnabledJsunit(); // pass 2
-    marqueeUIJsunit();  // pass7 fail 1 marqueeUIJsunit_static_0600 fail 11.08
+    marqueeUIJsunit();  // pass 8
     fontJsunit(); // pass 6
     textClockJsunit() // pass 6
     textTimerJsunit() // pass 3
-    appVersionCodeJsunit(); // 11.6sdk app died
+    appVersionCodeJsunit();
     colorEnumJsunit(); // pass 1
     copyOptionJsunit(); // pass 2
     TextStyle2() // pass 1
@@ -205,9 +205,9 @@ export default function testsuite() {
     text3Jsunit(); // pass 11
     span3Jsunit(); // pass 5
     textMinFontSizeJsunit(); // pass 11
-    textAreaOnCutJsunit(); // pass 7 fail 2 11.08
+    textAreaOnCutJsunit(); // pass 8 注释 1 undefined
     textInputOnEditChangeJsunit(); // pass 9
-    textAreaJsunit3(); // pass 11 fail 2 问题已上报
+    textAreaJsunit3(); // pass 13
     textInputJsunit3();  // pass 11
     textObscuredTest() // pass 5
     textSpanFontTest(); // pass 65

@@ -17,8 +17,7 @@
 import router from '@ohos.router';
 import { beforeEach, describe, expect, it, Level,beforeAll } from "../../../../hypium/index";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-// import { resourceManager } from '@kit.LocalizationKit';
-// import { BusinessError } from '@kit.BasicServicesKit';
+import { $r } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -54,8 +53,7 @@ export default function TextfieldMultiTest() {
         console.info("get TextfieldMultiTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextfieldMultiTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push TextfieldMultiTest page result:" + JSON.stringify(result));
@@ -65,9 +63,8 @@ export default function TextfieldMultiTest() {
       }
       console.info("TextfieldMultiTest beforeEach end");
     });
-    
 
-    
+
     /*
      * @tc.number   ArkUX_Text_Visual_static_0110
      * @tc.name     ArkUX_Text_Visual_static_0110
@@ -100,13 +97,12 @@ export default function TextfieldMultiTest() {
       done();
     });
 
-    
     /*
-     * @tc.number   ArkUX_Text_Visual_static_0120
-     * @tc.name     ArkUX_Text_Visual_static_0120
-     * @tc.desc     ArkUX_Text_Visual_static_0120
-     * @tc.level    Level.LEVEL1
-     */
+      * @tc.number   ArkUX_Text_Visual_static_0120
+      * @tc.name     ArkUX_Text_Visual_static_0120
+      * @tc.desc     ArkUX_Text_Visual_static_0120
+      * @tc.level    Level.LEVEL1
+      */
     it('ArkUX_Text_Visual_static_0120', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0120 START');
       setTimeout(() => {
@@ -134,7 +130,6 @@ export default function TextfieldMultiTest() {
       }, 500)
     });
 
-    
     /*
      * @tc.number   ArkUX_Text_Visual_static_0130
      * @tc.name     ArkUX_Text_Visual_static_0130
@@ -168,7 +163,6 @@ export default function TextfieldMultiTest() {
       }, 500)
     });
 
-    
     /*
      * @tc.number   ArkUX_Text_Visual_static_0140
      * @tc.name     ArkUX_Text_Visual_static_0140
@@ -190,9 +184,11 @@ export default function TextfieldMultiTest() {
           let color  = icon.getString('color');
           let src  = icon.getString('src');
           expect(style).assertEqual(2);
-		  // let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_search_icon_height').id)
-		  // console.info("[TextInputPageJsunit_0200] size: " +px2vp(resourceSize));
-      //     expect(size).assertEqual(Math.round(px2vp(resourceSize))+".00vp");
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_search_icon_height').id) as double
+          console.info("[ArkUX_Text_Visual_static_0140] size: " +uiContext!.px2vp(resourceSize));
+          expect(size).assertEqual(Math.round(uiContext!.px2vp(resourceSize))+".00vp");
           expect(typeof src).assertEqual("string");
           expect(color).assertEqual("#FF000000");
           console.info('ArkUX_Text_Visual_static_0140 END ');

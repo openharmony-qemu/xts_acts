@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -44,10 +44,11 @@ export default function buttonJsunit() {
 
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get button state pages: " + JSON.stringify(pages));
         if (!("button" == pages.name)) {
+          routerInstance.clear()
           console.info("get button state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
          await UtilsTest.msSleep(2000);
@@ -57,13 +58,12 @@ export default function buttonJsunit() {
       }
     });
 
-    /**
-     * @tc.number testButtonStatic1601
-     * @tc.name testButtonStatic1601
-     * @tc.desc Set type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1601
+     * @tc.name     testButtonStatic1601
+     * @tc.desc     testButtonStatic1601
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1601', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1601] START');
@@ -74,13 +74,12 @@ export default function buttonJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1602
-     * @tc.name testButtonStatic1602
-     * @tc.desc Set stateEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1602
+     * @tc.name     testButtonStatic1602
+     * @tc.desc     testButtonStatic1602
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1602', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1602] START');
@@ -91,13 +90,12 @@ export default function buttonJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1603
-     * @tc.name testButtonStatic1603
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1603
+     * @tc.name     testButtonStatic1603
+     * @tc.desc     testButtonStatic1603
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1603', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1603] START');
@@ -108,13 +106,12 @@ export default function buttonJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1604
-     * @tc.name testButtonStatic1604
-     * @tc.desc Set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1604
+     * @tc.name     testButtonStatic1604
+     * @tc.desc     testButtonStatic1604
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1604', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1604] START');
@@ -125,13 +122,12 @@ export default function buttonJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1605
-     * @tc.name testButtonStatic1605
-     * @tc.desc Set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1605
+     * @tc.name     testButtonStatic1605
+     * @tc.desc     testButtonStatic1605
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1605', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1605] START');
@@ -142,13 +138,12 @@ export default function buttonJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1606
-     * @tc.name testButtonStatic1606
-     * @tc.desc Set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1606
+     * @tc.name     testButtonStatic1606
+     * @tc.desc     testButtonStatic1606
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1606', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1606] START');
@@ -159,13 +154,12 @@ export default function buttonJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1607
-     * @tc.name testButtonStatic1607
-     * @tc.desc Set fontStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1607
+     * @tc.name     testButtonStatic1607
+     * @tc.desc     testButtonStatic1607
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1607', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1607] START');
@@ -176,37 +170,35 @@ export default function buttonJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1608
-     * @tc.name testButtonStatic1608
-     * @tc.desc Set labelStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1608
+     * @tc.name     testButtonStatic1608
+     * @tc.desc     testButtonStatic1608
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1608', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1608] START');
       let strJsonNew = inspector.getInspectorByKey('button2');
 
       console.info("[testButtonStatic1608] component testButtonStatic1608 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('labelStyle').getString('overflow')).assertEqual('TextOverflow.Clip');
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('labelStyle')).getString('overflow')).assertEqual('TextOverflow.Clip');
       done();
     });
 
-    /**
-     * @tc.number testButtonStatic1609
-     * @tc.name testButtonStatic1609
-     * @tc.desc Change fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testButtonStatic1609
+     * @tc.name     testButtonStatic1609
+     * @tc.desc     testButtonStatic1609
+     * @tc.level    Level.LEVEL0
      */
     it('testButtonStatic1609', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testButtonStatic1609 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await driver.findComponent(ON.id('changeButton')) as  Component;
       await button.click();
-     await UtilsTest.msSleep(2000)
+      await UtilsTest.msSleep(2000)
 
       let strJsonNew = inspector.getInspectorByKey('button'); //测试组件的key名称
 

@@ -29,7 +29,7 @@ import {TextTimerController,TabContent,FlowItem,ColumnOptions,SideBarContainerTy
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 interface ViewRouter {
   parentBackGroundColor: string
@@ -48,8 +48,8 @@ interface ViewI {
 @Entry
 @Component
 struct AspectRatioWidthPage {
-  @StorageProp("_aspectRatio") _aspectRatio: number = 1.0
-  @StorageProp("_width") _width: number = 50
+  @StoragePropRef("_aspectRatio") _aspectRatio: number = 1.0
+  @StoragePropRef("_width") _width: number = 50
   @State targetView: string | undefined = ''
   @State componentKey: string | undefined = ''
   @State parentWidth: number | undefined = 0

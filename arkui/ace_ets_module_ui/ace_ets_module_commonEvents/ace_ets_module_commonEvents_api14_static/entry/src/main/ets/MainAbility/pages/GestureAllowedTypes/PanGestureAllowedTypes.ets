@@ -23,7 +23,10 @@ import {PanGesture,PanDirection,PanGestureOptions,LongPressGesture,Color,Horizon
 struct PanGestureAllowedTypes {
   @State types: Array<SourceTool> = new Array<SourceTool>();
   @State result: string = 'allowed types default';
-  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left})
+  private panOption: PanGestureOptions = new PanGestureOptions({
+    direction: (PanDirection.Left | PanDirection.Right | PanDirection.All | PanDirection.Horizontal |
+    PanDirection.Vertical) as PanDirection
+  })
   build() {
     Column({space: 10} as ColumnOptions) {
       Text('Pan').fontSize(20).width(240).height(80)
@@ -54,7 +57,7 @@ struct PanGestureAllowedTypes {
       Button('Invalid').id('Invalid_type')
           .onClick((e: ClickEvent) => {
             this.result = 'allowed types default';
-            this.types = [SourceTool.Unknown];   //null   undefined
+            // this.types = [null, undefined];
           })
     }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('PanGestureAllowedTypes_Father')
   }
