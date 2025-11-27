@@ -76,6 +76,7 @@ export default function swiperItemMargin() {
         if (!("swiperItemMargin" == pages.name)) {
           console.info("get swiperItemPadMar state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
+          await CommonFunc.sleep(2000);
           console.info("push swiperItemPadMar page success ");
         }
       } catch (err) {

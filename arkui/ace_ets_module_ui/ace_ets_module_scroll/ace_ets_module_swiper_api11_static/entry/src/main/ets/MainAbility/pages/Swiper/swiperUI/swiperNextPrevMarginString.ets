@@ -82,10 +82,7 @@ struct SwiperNextPrevMarginExampleString {
 
   onPageShow() {
     console.info('SwiperNextPrevMargin onPageShow')
-    const globalMessage: GlobalMessage<string | Resource> = {
-      name: 'messageManager', message: this.messageManager
-    } as GlobalMessage<string | Resource>;
-    AppStorage.setOrCreate<GlobalMessage<string | Resource>>('SwiperNextPrevMarginExampleString', globalMessage);
+    AppStorage.setOrCreate<MessageManager<string | Resource>>('SwiperNextPrevMarginExampleString', this.messageManager);
     let callback: Callback<string | Resource> = (message: Message<string | Resource>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'prevMargin') {

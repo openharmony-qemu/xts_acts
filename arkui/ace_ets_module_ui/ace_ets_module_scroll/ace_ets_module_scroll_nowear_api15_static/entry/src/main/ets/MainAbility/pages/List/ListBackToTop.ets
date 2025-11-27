@@ -39,9 +39,13 @@ struct ListExampleA {
         if (this.currentIndex !== 0) {
           this.scrollCount ++;
         }
-
+        console.log('List-----' + this.scrollCount)
         if (this.isBackToTop == false) {
           this.isBackToTop = undefined
+        // } else if (this.isBackToTop === undefined) {
+        //   this.isBackToTop = null;
+        // } else if (this.isBackToTop === null) {
+        //   this.isBackToTop = true;
         } else if (this.isBackToTop == true) {
           this.isBackToTop = false
         }
@@ -72,10 +76,9 @@ struct ListExampleA {
       .friction(0.6)
       .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 })
       .edgeEffect(EdgeEffect.Spring)
-      .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource): undefined => {
+      .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
         this.message='onWillScroll'
         this.message3 = 'NotListBackToTop';
-        return undefined
       })
       .onDidScroll((): void => {
         this.message1='onDidScroll'
@@ -85,6 +88,7 @@ struct ListExampleA {
       })
       .onDidScroll((offset: number): void => {
         this.scrollOffset = offset;
+        console.log('List-----DidAbnormal')
         if (this.scrollCount === 3) {
           this.message4 = 'DidAbnormal';
         }

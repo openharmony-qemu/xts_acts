@@ -21,14 +21,14 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridExampleA {
-  private arr: Array<Double> = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0];
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[]
   @State message:string=''
   @State message1:string=''
   @State message2:string=''
   @State message3:string=''
   @State message4:string=''
   @State buttonNumber: number = 0;
-  @State isBackToTop: boolean|undefined|null = false
+  @State isBackToTop: boolean|undefined = false
   @State scrollCount: number = 0;
   @State scrollOffset: number = 0;
   private currentIndex: int = 0;
@@ -39,19 +39,15 @@ struct GridExampleA {
         if (this.currentIndex !== 0) {
           this.scrollCount ++;
         }
-        switch (String(this.isBackToTop)) {
-          case 'false':
-            this.isBackToTop = undefined
-            break;
-          case "undefined":
-            this.isBackToTop = null
-            break;
-          case "null":
-            this.isBackToTop = true
-            break;
-          case "true":
-            this.isBackToTop = false
-            break;
+        console.log('Grid-----' + this.scrollCount)
+        if (this.isBackToTop == false) {
+          this.isBackToTop = undefined
+          // } else if (this.isBackToTop === undefined) {
+          //   this.isBackToTop = null;
+          // } else if (this.isBackToTop === null) {
+          //   this.isBackToTop = true;
+        } else if (this.isBackToTop == true) {
+          this.isBackToTop = false
         }
       }).id('Switch')
       Text('offset:' + this.scrollOffset)
@@ -66,14 +62,14 @@ struct GridExampleA {
           GridItem() {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)
-              .textAlign(TextAlign.Center).borderRadius(10)//.backgroundColor(0xFFFFFF)
+              .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }
           .onAppear(() => {
             this.currentIndex = index;
           })
         }, (item: number) => String(item))
       }
-      .backToTop(this.isBackToTop ?? false)
+      .backToTop(this.isBackToTop)
       .columnsTemplate('1fr')
       .id('gridScroll_4')
       .scrollBar(BarState.Off)
@@ -84,11 +80,12 @@ struct GridExampleA {
           this.message='onWillScroll'
           this.message3 = 'NotBackToTop';
       })
-      .onDidScroll((scrollOffset: number, scrollState: ScrollState): void => {
+      .onDidScroll((scrollOffset: number): void => {
         this.message1='onDidScroll'
       })
-      .onDidScroll((offset: number, scrollState: ScrollState): void => {
+      .onDidScroll((offset: number): void => {
         this.scrollOffset = offset;
+        console.log('Grid-----DidAbnormal')
           if (this.scrollCount === 3) {
             console.log('DidAbnormal---------')
             this.message4 = 'DidAbnormal';
@@ -102,7 +99,7 @@ struct GridExampleA {
     }
     .width('100%')
     .height('100%')
-    // .backgroundColor(0xDCDCDC)
+    .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

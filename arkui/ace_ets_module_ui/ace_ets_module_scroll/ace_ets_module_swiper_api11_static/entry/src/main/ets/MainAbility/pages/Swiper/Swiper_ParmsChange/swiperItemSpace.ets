@@ -52,10 +52,7 @@ struct SwiperItemSpaceTest {
 
   onPageShow() {
     console.info('SwiperItemSpace onPageShow');
-    const globalMessage: GlobalMessage<number> = {
-      name: 'messageManager', message: this.messageManager
-    } as GlobalMessage<number>;
-    AppStorage.setOrCreate<GlobalMessage<number>>('SwiperItemSpaceTest', globalMessage);
+    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'itemspace') {

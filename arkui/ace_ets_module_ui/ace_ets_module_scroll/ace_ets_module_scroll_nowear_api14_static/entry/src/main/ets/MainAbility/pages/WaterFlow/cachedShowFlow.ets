@@ -33,10 +33,7 @@ import {
 import events_emitter from '@ohos.events.emitter';
 import { WaterFlowDataSource } from './WaterFlowDataSource';
 import { State } from '@ohos.arkui.stateManagement';
-interface ObjClass {
-  clip1: boolean,
-  show1: boolean | undefined
-}
+
 @Entry
 @Component
 struct cachedCountShowFlowExample {
@@ -87,7 +84,7 @@ struct cachedCountShowFlowExample {
             }
           }
           .width('100%')
-          // .backgroundColor(this.colors[item.toInt() % 5])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number) => String(item))
       }
       .id('cachedCount_show_flow')
@@ -100,7 +97,7 @@ struct cachedCountShowFlowExample {
       .friction(0.6)
       .padding('3%')
       .scrollBar(BarState.On)
-      .onScrollIndex((first: Int, last: Int) => {
+      .onScrollIndex((first: int, last: int) => {
         console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
       })
       .onReachStart(() => {
@@ -116,7 +113,7 @@ struct cachedCountShowFlowExample {
     }
     .width('100%')
     .height('100%')
-    // .backgroundColor(0xDCDCDC)
+    .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

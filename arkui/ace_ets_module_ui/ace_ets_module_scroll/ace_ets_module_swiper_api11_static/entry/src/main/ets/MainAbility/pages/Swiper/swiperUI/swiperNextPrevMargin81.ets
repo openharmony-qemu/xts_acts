@@ -75,7 +75,7 @@ class MyDataSource81 implements IDataSource<number> {
 struct SwiperNextPrevMarginExample81 {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource81 = new MyDataSource81([])
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<int> = new MessageManager<int>()
   @State displayCount: int = 1;
 
   aboutToAppear(): void {
@@ -88,14 +88,11 @@ struct SwiperNextPrevMarginExample81 {
 
   onPageShow() {
     console.info('SwiperNextPrevMargin78 onPageShow')
-    const globalMessage: GlobalMessage<number> = {
-      name: 'messageManager', message: this.messageManager
-    } as GlobalMessage<number>;
-    AppStorage.setOrCreate<GlobalMessage<number>>('SwiperNextPrevMarginExample81', globalMessage);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>('SwiperNextPrevMarginExample81', this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'displayCount') {
-        this.displayCount = message.value.toInt()
+        this.displayCount = message.value
       }
     }
     this.messageManager.registerCallback(callback)

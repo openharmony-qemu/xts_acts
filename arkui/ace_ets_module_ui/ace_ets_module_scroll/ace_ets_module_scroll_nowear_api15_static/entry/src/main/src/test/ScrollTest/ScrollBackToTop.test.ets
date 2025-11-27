@@ -123,7 +123,7 @@ it('ScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       await (switchButton?.click() as Promise<void>);
       await sleep(500)
       await (topButton?.click() as Promise<void>);
-      await sleep(1000); //waiting for backToTop
+      await sleep(3000); //waiting for backToTop
 
       let strJson = inspector.getInspectorByKey('Scroll_1');
       let strJson1 = inspector.getInspectorByKey('Scroll_2');

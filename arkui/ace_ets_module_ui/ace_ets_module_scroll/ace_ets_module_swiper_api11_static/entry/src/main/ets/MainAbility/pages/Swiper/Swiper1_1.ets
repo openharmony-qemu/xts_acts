@@ -243,7 +243,6 @@ struct SwiperTest_1 {
             .key('ArkUX_Stage_Swiper_SelectedDigitFont_0600')
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
-              // .selectedDigitFont({ size: 'abc', weight: null })
               .selectedDigitFont({ size: 'abc' })
             )
             .onChange((index: int): void => {
@@ -349,7 +348,6 @@ struct SwiperTest_1 {
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: 10, weight: 500 }))
             .indicator(Indicator.digit()
-              // .selectedDigitFont({ size: 'abc', weight: null })
               .selectedDigitFont({ size: 'abc' })
             )
             .onChange((index: int): void => {
@@ -528,7 +526,6 @@ struct SwiperTest_1 {
             .key('ArkUX_Stage_Swiper_DigitFont_0600')
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
-              // .digitFont({ size: 'abc', weight: null })
               .digitFont({ size: 'abc' })
             )
             .onChange((index: int): void => {

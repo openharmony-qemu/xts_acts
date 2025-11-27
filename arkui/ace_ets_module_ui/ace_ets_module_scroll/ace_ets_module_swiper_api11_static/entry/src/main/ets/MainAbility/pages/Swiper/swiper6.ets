@@ -115,9 +115,9 @@ struct SwiperMask {
         .itemSpace(0)
         .curve(Curve.Linear) // 动画曲线
         .key("maskSwiper")
-        .indicator(
-          new DotIndicator().mask(false)
-        )
+        // .indicatorStyle({
+        //   mask: false
+        // })
       }
       .width('100%')
     }

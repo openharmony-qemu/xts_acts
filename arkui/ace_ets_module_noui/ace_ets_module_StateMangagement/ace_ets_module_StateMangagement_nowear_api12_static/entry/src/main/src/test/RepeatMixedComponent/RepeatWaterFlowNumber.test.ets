@@ -69,10 +69,10 @@ export default function RepeatWaterFlowNumber() {
         console.info("get RepeatWaterFlowNumber state pages:" + JSON.stringify(pages));
         if (!("RepeatWaterFlowNumber" == pages.name)) {
           console.info("get RepeatWaterFlowNumber pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push RepeatWaterFlowNumber page result:" + JSON.stringify(result));
+          // console.info("push RepeatWaterFlowNumber page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RepeatWaterFlowNumber page error:" + err);
@@ -86,30 +86,31 @@ export default function RepeatWaterFlowNumber() {
       console.info("RepeatWaterFlowNumber after each called");
     });
 
-
-    /*
-     * @tc.number   RepeatWaterFlowNumber_001
-     * @tc.name     RepeatWaterFlowNumber_001
-     * @tc.desc     RepeatWaterFlowNumber_001
-     * @tc.level    0
+    /**
+     * @tc.number RepeatWaterFlowNumber_static_001
+     * @tc.name RepeatWaterFlowNumber_static_001
+     * @tc.desc Test RepeatWaterFlowNumber component
+     * @tc.level Level 2
+     * @tc.type
+     * @tc.size
      */
-it('RepeatWaterFlowNumber_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[RepeatWaterFlowNumber_001] START');
+    it('RepeatWaterFlowNumber_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[RepeatWaterFlowNumber_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
 
       let strJson = inspector.getInspectorByKey('Text1_WN2');
       let obj= JSON.parseJsonElement(strJson);
-      console.info("[RepeatWaterFlowNumber_001] component obj is: " + JSON.stringify(obj));
+      console.info("[RepeatWaterFlowNumber_static_001] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('2 index:2:0');
-      console.info('[RepeatWaterFlowNumber_001] END');
+      console.info('[RepeatWaterFlowNumber_static_001] END');
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey('Text2_WN2');
       let obj1= JSON.parseJsonElement(strJson1);
-      console.info("[RepeatWaterFlowNumber_001] component obj1 is: " + JSON.stringify(obj1));
+      console.info("[RepeatWaterFlowNumber_static_001] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('2 index:2:0');
-      console.info('[RepeatWaterFlowNumber_001] END');
+      console.info('[RepeatWaterFlowNumber_static_001] END');
       await CommonFunc.sleep(1000);
 
       let btn: Component = await driver.findComponent(ON.id('Button1_WN')) as Component;
@@ -118,9 +119,9 @@ it('RepeatWaterFlowNumber_001', Level.LEVEL0, async (done: () => void): Promise<
 
       let strJson2 = inspector.getInspectorByKey('Text1_WN15');
       let obj2= JSON.parseJsonElement(strJson2);
-      console.info("[RepeatWaterFlowNumber_001] component obj2 is: " + JSON.stringify(obj2));
+      console.info("[RepeatWaterFlowNumber_static_001] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('15 index:15:0');
-      console.info('[RepeatWaterFlowNumber_001] END');
+      console.info('[RepeatWaterFlowNumber_static_001] END');
       await CommonFunc.sleep(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('Button2_WN')) as Component;
@@ -129,9 +130,9 @@ it('RepeatWaterFlowNumber_001', Level.LEVEL0, async (done: () => void): Promise<
 
       let strJson3 = inspector.getInspectorByKey('Text1_WN15');
       let obj3= JSON.parseJsonElement(strJson3);
-      console.info("[RepeatWaterFlowNumber_001] component obj3 is: " + JSON.stringify(obj3));
+      console.info("[RepeatWaterFlowNumber_static_001] component obj3 is: " + JSON.stringify(obj3));
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('15 index:15:100');
-      console.info('[RepeatWaterFlowNumber_001] END');
+      console.info('[RepeatWaterFlowNumber_static_001] END');
       done();
     });
   })

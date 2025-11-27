@@ -41,7 +41,7 @@ import {
   SearchController,ComponentV2,ForEach,
   ColumnOptions,WaterFlowSections,Scroller,SectionOptions
 } from '@ohos.arkui.component'
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef, Local } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
@@ -49,10 +49,10 @@ import common from '@ohos.app.ability.common';
 @Entry
 @ComponentV2
 struct makeObserved0140 {
-  colors: Array<number> = [0XFFC0CB, 0XDA70D6, 0X6B8E23, 0X6A5ACD, 0x00FFF, 0X00FF7F] as Array<number>
+  colors: Array<string> = ['0XFFC0CB', '0XDA70D6', '0X6B8E23', '0X6A5ACD', '0x00FFF', '0X00FF7F']
   sections: WaterFlowSections = UIUtils.makeObserved(new WaterFlowSections())
   scroller: Scroller = new Scroller()
-  
+  @Local private arr: Array<number> = new Array<number>(8).fill(0)
   oneColumnSection: SectionOptions = {
     itemsCount: 3,
     crossCount: 1,
@@ -73,33 +73,35 @@ struct makeObserved0140 {
 
   build() {
     Column() {
-      
+      Text(`${this.arr.length}`).height('5%')
       Button('push option').height('5%').onClick(():void => {
-        
-        
-        
-        
+        this.arr.push(100)
+        this.arr.push(101)
+        this.arr.push(102)
+        this.arr.push(103)
         let section: SectionOptions = { itemsCount: 4, crossCount: 2 } as SectionOptions
         this.sections.push(section)
       }).id('buttonPush')
       Button('splice option').height('5%').onClick(():void => {
         let section: SectionOptions = { itemsCount: 12, crossCount: 3 } as SectionOptions
-        
+        this.sections.splice(0, this.arr.length, [section])
       }).id('buttonSplice')
       Button('update option').height('5%').onClick(():void => {
         let section: SectionOptions = { itemsCount: 12, crossCount: 4 } as SectionOptions
+        console.log('----xxxx----update before')
         this.sections.update(0, section)
+        console.log('----xxxx----update after')
       }).id('buttonUpdate')
       WaterFlow({ scroller: this.scroller, sections: this.sections }) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        ForEach(this.arr, (item: number, index: int) => {
+          FlowItem() {
+            Text(`${item}`)
+              .border({ width: 1 })
+              .backgroundColor(this.colors[(index % 6) ])
+              .height('5%')
+              .id(`flowItem${index}`)
+          }
+        })
       }.id('waterFlowTest')
     }
   }

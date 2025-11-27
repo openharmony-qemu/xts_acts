@@ -164,325 +164,325 @@ export default function swiperTest_1() {
     });
 
 
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0200
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0200
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0200
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0200');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getString('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(obj2.getString('selectedFontSize')).assertEqual("20.00px");
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("200");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0300
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0300
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0300
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0300');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('selectedFontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("900");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0400
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0400
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0400
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0400');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getString('selectedFontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Bolder");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0500
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0500
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0500
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0500');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('selectedFontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0600
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0600
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0600
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0600');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('selectedFontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0700
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0700
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0700
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0700');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('selectedFontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0800
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0800
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0800
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0800');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(obj2.getString('selectedFontSize')).assertEqual("100.00vp");
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0900
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0900
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0900
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0900');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(obj2.getString('selectedFontSize')).assertEqual("40.00lpx");
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("500");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_1000
-    //  * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_1000
-    //  * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_1000
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 START');
-    //   // setTimeout(() => {
-    //   //   try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_1000');
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj is: " +
-    //       JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj.$attrs.selectedDigitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('selectedFontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 END ');
-    //       done();
-    //   //   } catch (err: Error) {
-    //   //     expect().assertFail();
-    //   //     console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 ERR  ' + JSON.stringify(err));
-    //   //     done();
-    //   //   }
-    //   // }, 500)
-    // });
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0200
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0200
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0200
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0200');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getString('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(obj2.getString('selectedFontSize')).assertEqual("20.00px");
+          expect(obj2.getString('selectedFontWeight')).assertEqual("200");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0300
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0300
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0300
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0300');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('selectedFontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('selectedFontWeight')).assertEqual("900");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0400
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0400
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0400
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0400');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getString('selectedFontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Bolder");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0500
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0500
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0500
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0500');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('selectedFontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0600
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0600
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0600
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0600');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('selectedFontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0700
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0700
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0700
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0700');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('selectedFontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0800
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0800
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0800
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0800');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(obj2.getString('selectedFontSize')).assertEqual("100.00vp");
+          expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_0900
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_0900
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_0900
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_0900');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(obj2.getString('selectedFontSize')).assertEqual("40.00lpx");
+          expect(obj2.getString('selectedFontWeight')).assertEqual("500");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_SelectedDigitFont_static_1000
+     * @tc.name     ArkUX_Stage_Swiper_SelectedDigitFont_static_1000
+     * @tc.desc     ArkUX_Stage_Swiper_SelectedDigitFont_static_1000
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 START');
+      // setTimeout(() => {
+      //   try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_SelectedDigitFont_1000');
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj is: " +
+          JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj.$attrs.selectedDigitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('selectedDigitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('selectedFontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 END ');
+          done();
+      //   } catch (err: Error) {
+      //     expect().assertFail();
+      //     console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 ERR  ' + JSON.stringify(err));
+      //     done();
+      //   }
+      // }, 500)
+    });
 
 
     /*
@@ -554,317 +554,316 @@ export default function swiperTest_1() {
     });
 
 
-    //全pass 注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0200
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0200
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0200
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0200');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(obj2.getString('fontSize')).assertEqual("20.00px");
-    //       expect(obj2.getString('fontWeight')).assertEqual("200");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0300
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0300
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0300
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0300');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('fontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('fontWeight')).assertEqual("900");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0400
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0400
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0400
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0400');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('fontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Bolder");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0500
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0500
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0500
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0500');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('fontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0600
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0600
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0600
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0600');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('fontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0700
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0700
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0700
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0700');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('fontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0800
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0800
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0800
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0800');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(obj2.getString('fontSize')).assertEqual("100.00vp");
-    //       expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0900
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0900
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0900
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0900');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(obj2.getString('fontSize')).assertEqual("40.00lpx");
-    //       expect(obj2.getString('fontWeight')).assertEqual("500");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_1000
-    //  * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_1000
-    //  * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_1000
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_DigitFont_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_1000');
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       // console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj.$attrs.digitFont is: " +
-    //       // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       // expect(obj2.getElement('fontSize'))
-    //       //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
-    //       expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0200
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0200
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0200
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0200');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0200 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(obj2.getString('fontSize')).assertEqual("20.00px");
+          expect(obj2.getString('fontWeight')).assertEqual("200");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0300
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0300
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0300
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0300');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0300 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('fontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('fontWeight')).assertEqual("900");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0400
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0400
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0400
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0400');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0400 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('fontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Bolder");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0500
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0500
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0500
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0500');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0500 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('fontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0600
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0600
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0600
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0600');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0600 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('fontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0700
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0700
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0700
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0700');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0700 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('fontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0800
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0800
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0800
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0800');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0800 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(obj2.getString('fontSize')).assertEqual("100.00vp");
+          expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_0900
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_0900
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_0900
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_0900');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_0900 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(obj2.getString('fontSize')).assertEqual("40.00lpx");
+          expect(obj2.getString('fontWeight')).assertEqual("500");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_DigitFont_static_1000
+     * @tc.name     ArkUX_Stage_Swiper_DigitFont_static_1000
+     * @tc.desc     ArkUX_Stage_Swiper_DigitFont_static_1000
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_DigitFont_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_DigitFont_1000');
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          // console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj.$attrs.digitFont is: " +
+          // JSON.stringify(obj.getElement('$attrs').getElement('digitFont')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_DigitFont_static_1000 component obj2 is: " +
+          JSON.stringify(obj2));
+          // expect(obj2.getElement('fontSize'))
+          //   .assertEqual(swiperDefaultFontSize($r('sys.float.ohos_id_text_size_body2')));
+          expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
 
 
     /*
@@ -901,133 +900,133 @@ export default function swiperTest_1() {
     });
 
 
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0100
-    //  * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0100
-    //  * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0100
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_Indicator_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_Indicator_static_0100 START');
-    //   // setTimeout(() => {
-    //   //   try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0100');
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0100 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       // console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj2 is: " +
-    //       // JSON.stringify(obj2));
-    //       expect(Number.parseFloat(obj2.getString('top'))).assertEqual(1);
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj2.indicator.top is: " +
-    //       JSON.stringify(obj2.getElement('top')));
-    //       expect(obj2.getString('top').substr(obj2.getString('top').length - 2, 2)).assertEqual("vp");
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0100 END ');
-    //       done();
-    //   //   } catch (err: Error) {
-    //   //     expect().assertFail();
-    //   //     console.info('ArkUX_Stage_Swiper_Indicator_static_0100 ERR  ' + JSON.stringify(err));
-    //   //     done();
-    //   //   }
-    //   // }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0200
-    //  * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0200
-    //  * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0200
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_Indicator_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_Indicator_static_0200 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0200');
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0200 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0200 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0200 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0200 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(Number.parseFloat(obj2.getString('bottom'))).assertEqual(1);
-    //       expect(obj2.getString('bottom').substr(obj2.getString('bottom').length - 2, 2)).assertEqual("vp");
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0200 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0200 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0300
-    //  * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0300
-    //  * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0300
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_Indicator_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_Indicator_static_0300 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0300');
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0300 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0300 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0300 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0300 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(Number.parseFloat(obj2.getString('left'))).assertEqual(1);
-    //       expect(obj2.getString('left').substr(obj2.getString('left').length - 2, 2)).assertEqual("vp");
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0300 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0300 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0400
-    //  * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0400
-    //  * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0400
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_Indicator_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('ArkUX_Stage_Swiper_Indicator_static_0400 START');
-    //   setTimeout(() => {
-    //     try {
-    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0400');
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0400 START  :' + JSON.stringify(strJson));
-    //       let obj = JSON.parseJsonElement(strJson);
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0400 component obj is: " + JSON.stringify(obj));
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0400 component obj.$attrs is: " +
-    //       JSON.stringify(obj.getElement('$attrs')));
-    //       let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
-    //       console.info("ArkUX_Stage_Swiper_Indicator_static_0400 component obj2 is: " +
-    //       JSON.stringify(obj2));
-    //       expect(Number.parseFloat(obj2.getString('right'))).assertEqual(1);
-    //       expect(obj2.getString('right').substr(obj2.getString('right').length - 2, 2)).assertEqual("vp");
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0400 END ');
-    //       done();
-    //     } catch (err: Error) {
-    //       expect().assertFail();
-    //       console.info('ArkUX_Stage_Swiper_Indicator_static_0400 ERR  ' + JSON.stringify(err));
-    //       done();
-    //     }
-    //   }, 500)
-    // });
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0100
+     * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0100
+     * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0100
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_Indicator_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_Indicator_static_0100 START');
+      // setTimeout(() => {
+      //   try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0100');
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0100 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          // console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj2 is: " +
+          // JSON.stringify(obj2));
+          expect(Number.parseFloat(obj2.getString('top'))).assertEqual(1);
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0100 component obj2.indicator.top is: " +
+          JSON.stringify(obj2.getElement('top')));
+          expect(obj2.getString('top').substr(obj2.getString('top').length - 2, 2)).assertEqual("vp");
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0100 END ');
+          done();
+      //   } catch (err: Error) {
+      //     expect().assertFail();
+      //     console.info('ArkUX_Stage_Swiper_Indicator_static_0100 ERR  ' + JSON.stringify(err));
+      //     done();
+      //   }
+      // }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0200
+     * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0200
+     * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0200
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_Indicator_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_Indicator_static_0200 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0200');
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0200 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0200 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0200 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0200 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(Number.parseFloat(obj2.getString('bottom'))).assertEqual(1);
+          expect(obj2.getString('bottom').substr(obj2.getString('bottom').length - 2, 2)).assertEqual("vp");
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0200 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0200 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0300
+     * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0300
+     * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0300
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_Indicator_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_Indicator_static_0300 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0300');
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0300 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0300 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0300 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0300 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(Number.parseFloat(obj2.getString('left'))).assertEqual(1);
+          expect(obj2.getString('left').substr(obj2.getString('left').length - 2, 2)).assertEqual("vp");
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0300 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0300 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_Indicator_static_0400
+     * @tc.name     ArkUX_Stage_Swiper_Indicator_static_0400
+     * @tc.desc     ArkUX_Stage_Swiper_Indicator_static_0400
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_Indicator_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Stage_Swiper_Indicator_static_0400 START');
+      setTimeout(() => {
+        try {
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Swiper_Indicator_0400');
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0400 START  :' + JSON.stringify(strJson));
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0400 component obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0400 component obj.$attrs is: " +
+          JSON.stringify(obj.getElement('$attrs')));
+          let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
+          console.info("ArkUX_Stage_Swiper_Indicator_static_0400 component obj2 is: " +
+          JSON.stringify(obj2));
+          expect(Number.parseFloat(obj2.getString('right'))).assertEqual(1);
+          expect(obj2.getString('right').substr(obj2.getString('right').length - 2, 2)).assertEqual("vp");
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0400 END ');
+          done();
+        } catch (err: Error) {
+          expect().assertFail();
+          console.info('ArkUX_Stage_Swiper_Indicator_static_0400 ERR  ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    });
   })
 }

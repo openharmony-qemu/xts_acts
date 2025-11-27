@@ -102,63 +102,6 @@ export default function swiperItemPadding() {
       console.info("swiperItemPadMar after each called");
     });
 
-    // 原代码注释
-    // /**
-    //  * @tc.number   testSwiperItemSetPadding_static
-    //  * @tc.name     testSwiperItemSetPadding_static
-    //  * @tc.desc     testSwiperItemSetPadding_static
-    //  * @tc.level    0
-    //  */
-    // it('testSwiperItemSetPadding_static', Level.LEVEL0, async (done: Function) => {
-    //   console.info('new testSwiperItemSetPadding START');
-    //   let strJson = inspector.getInspectorByKey('swiperItemPadding');
-    //
-    //   let swiperItemPadding: RectValue = CommonFunc.getComponentRect('swiperItemPadding');
-    //   let swiperItemPadding01: RectValue = CommonFunc.getComponentRect('swiperItemPadding01');
-    //   let swiperItemPadding02: RectValue = CommonFunc.getComponentRect('swiperItemPadding02');
-    //   let swiperItemPadding03: RectValue = CommonFunc.getComponentRect('swiperItemPadding03');
-    //   let swiperItemPadding04: RectValue = CommonFunc.getComponentRect('swiperItemPadding04');
-    //   let swiperItemPadding05: RectValue = CommonFunc.getComponentRect('swiperItemPadding05');
-    //   let swiperItemPadding06: RectValue = CommonFunc.getComponentRect('swiperItemPadding06');
-    //   // Before flipping the page
-    //   console.info("Before page turning, the swiperItemPadding.left value is " +
-    //   JSON.stringify(swiperItemPadding.left));
-    //   console.info("Before page turning,the swiperItemPadding01.left.left value is " +
-    //   JSON.stringify(swiperItemPadding01.left));
-    //   expect(swiperItemPadding.left).assertEqual(swiperItemPadding01.left);
-    //   expect(swiperItemPadding.right).assertEqual(swiperItemPadding01.right);
-    //   expect(swiperItemPadding.top).assertEqual(swiperItemPadding01.top);
-    //   expect(swiperItemPadding.bottom).assertEqual(swiperItemPadding01.bottom);
-    //   // Page turning.
-    //   let driver = Driver.create();
-    //   await driver.swipe(250, 230, 200, 230);
-    //   await CommonFunc.sleep(1000);
-    //   swiperItemPadding: RectValue = CommonFunc.getComponentRect('swiperItemPadding');
-    //   swiperItemPadding01: RectValue = CommonFunc.getComponentRect('swiperItemPadding01');
-    //   swiperItemPadding02: RectValue = CommonFunc.getComponentRect('swiperItemPadding02');
-    //   swiperItemPadding03: RectValue = CommonFunc.getComponentRect('swiperItemPadding03');
-    //   swiperItemPadding04: RectValue = CommonFunc.getComponentRect('swiperItemPadding04');
-    //   swiperItemPadding05: RectValue = CommonFunc.getComponentRect('swiperItemPadding05');
-    //   swiperItemPadding06: RectValue = CommonFunc.getComponentRect('swiperItemPadding06');
-    //   // After flipping the page.
-    //   console.info("After page turning, the swiperItemPadding.left value is " + JSON.stringify(swiperItemPadding.left));
-    //   console.info("After page turning,the swiperItemPadding02.left.left value is " +
-    //   JSON.stringify(swiperItemPadding02.left));
-    //   expect(swiperItemPadding.left).assertEqual(swiperItemPadding02.left);
-    //   expect(swiperItemPadding.right).assertEqual(swiperItemPadding02.right);
-    //   expect(swiperItemPadding.top).assertEqual(swiperItemPadding02.top);
-    //   expect(swiperItemPadding.bottom).assertEqual(swiperItemPadding02.bottom);
-    //   console.info("The type value is " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
-    //   console.info("The loop value is " +
-    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
-    //   console.info("The displayCount value is " +
-    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
-    //   expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
-    //   console.info('new testSwiperItemSetPadding END');
-    //   done();
-    // });
-    // 原代码注释
+
   })
 }

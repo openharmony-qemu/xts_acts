@@ -52,7 +52,8 @@ class WaterFlowDataSource implements IDataSource<string> {
   }
 
   getData(index: int): string {
-    return `${this.dataArray[index.toInt()]}`
+    let intIndex:int = index as int
+    return `${this.dataArray[intIndex]}`
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -95,7 +96,7 @@ struct ViewHolder {
 @Component
 struct WaterFlowDemo {
   @State disAppearCount: number = 0
-  colors: Array<int> = new Array<int>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F);
+  colors: Array<string> = new Array<string>('0xFFC0CB', '0xDA70D6', '0x6B8E23', '0x6A5ACD', '0x00FFFF', '0x00FF7F');
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
 
   aboutToAppear(){
@@ -112,7 +113,7 @@ struct WaterFlowDemo {
           }
           .width('100%')
           .height('25%')
-          .backgroundColor(this.colors[Number(item).toInt() % 5])
+          .backgroundColor(this.colors[(Number(item)%5 as int)])
         }, (item: string) => item)
       }
       .columnsTemplate('1fr 1fr')

@@ -57,7 +57,7 @@ export default function upDownTreeEventTest() {
         router.clear();
         let pages = router.getState();
         console.info("get upDownTreeEventTest state pages:" + JSON.stringify(pages));
-        if (!("gestureEventTest" == pages.name)) {
+        if (!("MainAbility/pages/FrameNode/upDownTreeEventTest" == pages.name)) {
           console.info("get upDownTreeEventTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -95,7 +95,7 @@ export default function upDownTreeEventTest() {
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[nodeOnWillUnbindTest_static_0100] component obj1 is: " + JSON.stringifyJsonElement(obj1));
       console.info("[nodeOnWillUnbindTest_static_0100] content obj1 is: " + JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('content')));
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('willUnbind');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('willUnbind');
       console.info('[nodeOnWillUnbindTest_static_0600] END');
       done();
     });
@@ -121,7 +121,7 @@ export default function upDownTreeEventTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnUnBindTest_static_0200] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[nodeOnUnBindTest_static_0200] content obj is: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('content')));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('unbind');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('unbind');
       console.info('[nodeOnUnBindTest_static_0500] END');
       done();
     });
@@ -147,7 +147,7 @@ export default function upDownTreeEventTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnDetachTest_static_0300] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[nodeOnDetachTest_static_0300] content obj is: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('content')));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('detach');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('detach');
       console.info('[nodeOnDetachTest_static_0300] END');
       done();
     });
@@ -170,7 +170,7 @@ export default function upDownTreeEventTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnAttachTest_static_0400] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[nodeOnAttachTest_static_0400] content obj is: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('content')));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('attach');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('attach');
       console.info('[nodeOnAttachTest_static_0400] END');
       done();
     });
@@ -193,7 +193,7 @@ export default function upDownTreeEventTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnBindTest_static_0500] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[nodeOnBindTest_static_0500] content obj is: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('content')));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('bind');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('bind');
       console.info('[nodeOnBindTest_static_0500] END');
       done();
     });
@@ -216,7 +216,7 @@ export default function upDownTreeEventTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnWillBindTest_static_0600] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[nodeOnWillBindTest_static_0600] content obj is: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('content')));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('willBind');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('willBind');
       console.info('[nodeOnWillBindTest_static_0600] END');
       done();
     });

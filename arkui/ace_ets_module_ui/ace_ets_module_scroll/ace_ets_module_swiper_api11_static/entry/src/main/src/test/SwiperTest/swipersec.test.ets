@@ -53,16 +53,6 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 let emitKey = "emitUserAgent";
 
-interface ArrowStyleType {
-  showBackground?: boolean | number | string | null
-  isSidebarMiddle?: boolean | number | string | null
-  backgroundColor?: Color | number | string | Resource | null
-  arrowColor?: Color | number | string | Resource | null
-  backgroundSize?: Length
-  arrowSize?: Length
-  BackgroundColor?: Color | number | string | Resource | null
-}
-
 function sleep(time: int) {
   return new Promise<string>((resolve, reject) => {
     setTimeout(() => {
@@ -73,11 +63,11 @@ function sleep(time: int) {
   })
 }
 
-async function setArrowStyle(arrowStyle: ArrowStyleType) {
+async function setArrowStyle(arrowStyle: ArrowStyle) {
   try {
     let backData: events_emitter.EventData = {
       data: {
-        "arrowStyle": arrowStyle as ArrowStyleType
+        "arrowStyle": arrowStyle as ArrowStyle
       } as Record<string, undefined|null|Object>
     }
     let backEvent: events_emitter.InnerEvent = {
@@ -152,7 +142,7 @@ export default function swiperSecTest() {
     afterEach(async (): Promise<void> => {
 
       await setArrowStyle(
-        {} as ArrowStyleType
+        {} as ArrowStyle
       )
     });
 
@@ -167,148 +157,147 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           showBackground: true
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("true")
     })
 
 
-    //pass过注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0200
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0200
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0200
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_0200', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: 1
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0300
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0300
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0300
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_0300', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: "true"
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0400
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0400
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0400
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_0400', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: "false",
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0500
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0500
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0500
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_0500', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: 0
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_600
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_600
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_600
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_600', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: false
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0700
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0700
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0700
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_0700', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: ""
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0800
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0800
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0800
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_0800', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: undefined
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0900
-    //  * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0900
-    //  * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0900
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_showBackground_static_0900', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       showBackground: null
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
-    // })
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0200
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0200
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0200
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_0200', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // showBackground: 1
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0300
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0300
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0300
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_0300', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // showBackground: "true"
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0400
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0400
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0400
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_0400', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // showBackground: "false",
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0500
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0500
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0500
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_0500', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // showBackground: 0
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_600
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_600
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_600
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_600', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          showBackground: false
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0700
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0700
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0700
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_0700', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // showBackground: ""
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0800
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0800
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0800
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_0800', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          showBackground: undefined
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_showBackground_static_0900
+     * @tc.name     ArkUX_Stage_Swiper_showBackground_static_0900
+     * @tc.desc     ArkUX_Stage_Swiper_showBackground_static_0900
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_showBackground_static_0900', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // showBackground: null
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('showBackground')).assertEqual("false")
+    })
 
 
     /*
@@ -321,148 +310,146 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           isSidebarMiddle: true
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("true")
     })
 
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // isSidebarMiddle: 1
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
 
-    //pass过 注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0200', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: 1
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: "true"
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: "false",
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: 0
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: false
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: ""
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: undefined
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
-    //
-    //
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900
-    //  * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900
-    //  * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: null
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
-    // })
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0300', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // isSidebarMiddle: "true"
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0400', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // isSidebarMiddle: "false",
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0500', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // isSidebarMiddle: 0
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0600', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          isSidebarMiddle: false
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0700', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // isSidebarMiddle: ""
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0800', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          isSidebarMiddle: undefined
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
+
+
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900
+     * @tc.name     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900
+     * @tc.desc     ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_IsSidebarMiddle_static_0900', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          // isSidebarMiddle: null
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      expect(obj.getElement('$attrs').getString('isSidebarMiddle')).assertEqual("false")
+    })
 
 
     /*
@@ -476,7 +463,7 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: 34
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0100 BackgroundSize :' +
@@ -498,7 +485,7 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: "20px"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0200 BackgroundSize :'
@@ -521,7 +508,7 @@ export default function swiperSecTest() {
           showBackground: true,
           isSidebarMiddle: true,
           backgroundSize: "48%"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0300 BackgroundSize :' +
@@ -543,7 +530,7 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: ""
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0400 BackgroundSize :' +
@@ -565,7 +552,7 @@ export default function swiperSecTest() {
         {
           isSidebarMiddle: true,
           backgroundSize: "-2",
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0500 BackgroundSize :' +
@@ -576,27 +563,26 @@ export default function swiperSecTest() {
     })
 
 
-    //pass过 注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_BackgroundSize_static_0600
-    //  * @tc.name     ArkUX_Stage_Swiper_BackgroundSize_static_0600
-    //  * @tc.desc     ArkUX_Stage_Swiper_BackgroundSize_static_0600
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_BackgroundSize_static_0600', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: false,
-    //       backgroundSize: "-2",
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0600 BackgroundSize :' +
-    //   JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundSize')));
-    //   let backgroundSize = obj.getElement('$attrs').getString('arrowBackgroundSize');
-    //   expect(Number.parseFloat(backgroundSize)).assertEqual(18)
-    //   expect(backgroundSize.substr(backgroundSize.length - 2, 2)).assertEqual("vp")
-    // })
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_BackgroundSize_static_0600
+     * @tc.name     ArkUX_Stage_Swiper_BackgroundSize_static_0600
+     * @tc.desc     ArkUX_Stage_Swiper_BackgroundSize_static_0600
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_BackgroundSize_static_0600', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          isSidebarMiddle: false,
+          backgroundSize: "-2",
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0600 BackgroundSize :' +
+      JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundSize')));
+      let backgroundSize = obj.getElement('$attrs').getString('arrowBackgroundSize');
+      expect(Number.parseFloat(backgroundSize)).assertEqual(18)
+      expect(backgroundSize.substr(backgroundSize.length - 2, 2)).assertEqual("vp")
+    })
 
 
     /*
@@ -610,7 +596,7 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: "abc"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0700 BackgroundSize :' +
@@ -632,7 +618,7 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: "1000%"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0800 BackgroundSize :' +
@@ -654,7 +640,7 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: "100fp"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0900 BackgroundSize :' +
@@ -676,13 +662,13 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: 10
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           showBackground: true,
           backgroundSize: "42lpx"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0000 BackgroundSize :' +
@@ -704,13 +690,13 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: 10
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           showBackground: true,
           backgroundSize: "abc"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0100 BackgroundSize :'
@@ -732,13 +718,13 @@ export default function swiperSecTest() {
         {
           showBackground: true,
           backgroundSize: "abc"
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           showBackground: true,
           backgroundSize: 10
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundSize_static_0200 BackgroundSize :'
@@ -759,7 +745,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: 0x00ff00
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0100 BackgroundColor :'
@@ -778,7 +764,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: "#FFFF0000"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0200 BackgroundColor :' +
@@ -797,7 +783,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: "rgb(138,43,226)"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0300 BackgroundColor :' +
@@ -816,7 +802,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: Color.Pink
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0400 BackgroundColor :' +
@@ -836,7 +822,7 @@ export default function swiperSecTest() {
         {
           isSidebarMiddle: true,
           backgroundColor: ""
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0500 BackgroundColor :' +
@@ -845,26 +831,24 @@ export default function swiperSecTest() {
         .assertEqual(obj.getElement('$attrs').getString('backgroundColor'))
     })
 
-
-    //pass过 注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_0600
-    //  * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_0600
-    //  * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_0600
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_BackgroundColor_static_0600', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: false,
-    //       backgroundColor: ""
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0600 BackgroundColor :' +
-    //   JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
-    //   expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
-    // })
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_0600
+     * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_0600
+     * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_0600
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_BackgroundColor_static_0600', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          isSidebarMiddle: false,
+          backgroundColor: ""
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0600 BackgroundColor :' +
+      JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
+      expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
+    })
 
 
     /*
@@ -877,8 +861,8 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           isSidebarMiddle: true,
-          backgroundColor: null
-        }
+          // backgroundColor: null
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0700 BackgroundColor :' +
@@ -887,25 +871,24 @@ export default function swiperSecTest() {
         .assertEqual(obj.getElement('$attrs').getString('backgroundColor'))
     })
 
-    //pass过 注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_0800
-    //  * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_0800
-    //  * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_0800
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_BackgroundColor_static_0800', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: false,
-    //       backgroundColor: null
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0800 BackgroundColor :' +
-    //   JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
-    //   expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
-    // })
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_0800
+     * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_0800
+     * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_0800
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_BackgroundColor_static_0800', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          isSidebarMiddle: false,
+          // backgroundColor: null
+        }  as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0800 BackgroundColor :' +
+      JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
+      expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
+    })
 
 
     /*
@@ -918,7 +901,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: $r("app.color.swiper_BackgroundColor_test")
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_0900 BackgroundColor :' +
@@ -938,7 +921,7 @@ export default function swiperSecTest() {
         {
           isSidebarMiddle: true,
           backgroundColor: "bgr(138,43,226)"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1000 BackgroundColor :' +
@@ -948,25 +931,24 @@ export default function swiperSecTest() {
     })
 
 
-    //pass过 注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_1100
-    //  * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_1100
-    //  * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_1100
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_BackgroundColor_static_1100', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: false,
-    //       backgroundColor: "bgr(138,43,226)"
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1100 BackgroundColor :' +
-    //   JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
-    //   expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
-    // })
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_1100
+     * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_1100
+     * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_1100
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_BackgroundColor_static_1100', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          isSidebarMiddle: false,
+          backgroundColor: "bgr(138,43,226)"
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1100 BackgroundColor :' +
+      JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
+      expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
+    })
 
 
     /*
@@ -980,7 +962,7 @@ export default function swiperSecTest() {
         {
           isSidebarMiddle: true,
           backgroundColor: undefined
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1200 BackgroundColor :' +
@@ -990,25 +972,24 @@ export default function swiperSecTest() {
     })
 
 
-    //pass过 注释
-    // /*
-    //  * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_1300
-    //  * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_1300
-    //  * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_1300
-    //  * @tc.level    0
-    //  */
-    // it('ArkUX_Stage_Swiper_BackgroundColor_static_1300', Level.LEVEL0, async (): Promise<void> => {
-    //   await setArrowStyle(
-    //     {
-    //       isSidebarMiddle: false,
-    //       backgroundColor: undefined
-    //     }
-    //   )
-    //   let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
-    //   console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1300 BackgroundColor :' +
-    //   JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
-    //   expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
-    // })
+    /*
+     * @tc.number   ArkUX_Stage_Swiper_BackgroundColor_static_1300
+     * @tc.name     ArkUX_Stage_Swiper_BackgroundColor_static_1300
+     * @tc.desc     ArkUX_Stage_Swiper_BackgroundColor_static_1300
+     * @tc.level    0
+     */
+    it('ArkUX_Stage_Swiper_BackgroundColor_static_1300', Level.LEVEL0, async (): Promise<void> => {
+      await setArrowStyle(
+        {
+          isSidebarMiddle: false,
+          backgroundColor: undefined
+        } as ArrowStyle
+      )
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
+      console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1300 BackgroundColor :' +
+      JSON.stringify(obj.getElement('$attrs').getString('arrowBackgroundColor')));
+      expect(obj.getElement('$attrs').getString('arrowBackgroundColor')).assertEqual("#00000000")
+    })
 
 
     /*
@@ -1021,12 +1002,12 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: "rgb(138,43,226)"
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           backgroundColor: Color.Gray
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1400 BackgroundColor :' +
@@ -1045,13 +1026,13 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: "rgb(255,0,0)"
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           isSidebarMiddle: true,
           backgroundColor: undefined
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1500 BackgroundColor :' +
@@ -1071,12 +1052,12 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           backgroundColor: undefined,
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           backgroundColor: "rgb(255,0,0)",
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_BackgroundColor_static_1600 BackgroundColor :' +
@@ -1097,7 +1078,7 @@ export default function swiperSecTest() {
           showBackground: false,
           backgroundSize: 12,
           arrowSize: 34
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0100 arrowSize :' +
@@ -1120,7 +1101,7 @@ export default function swiperSecTest() {
           showBackground: true,
           backgroundSize: 12,
           arrowSize: 34
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0200 arrowSize :' +
@@ -1143,7 +1124,7 @@ export default function swiperSecTest() {
           showBackground: false,
           isSidebarMiddle: false,
           arrowSize: "20px"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0300 arrowSize :' +
@@ -1166,7 +1147,7 @@ export default function swiperSecTest() {
           showBackground: true,
           isSidebarMiddle: true,
           arrowSize: "20px"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0400 arrowSize :' +
@@ -1189,7 +1170,7 @@ export default function swiperSecTest() {
           showBackground: true,
           isSidebarMiddle: false,
           arrowSize: "20px"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0500 arrowSize :' +
@@ -1210,7 +1191,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: "48%"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0600 arrowSize :' +
@@ -1231,7 +1212,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: ""
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0700 arrowSize :' +
@@ -1255,7 +1236,7 @@ export default function swiperSecTest() {
           showBackground: true,
           backgroundSize: 12,
           arrowSize: "-2"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0800 arrowSize :' +
@@ -1279,7 +1260,7 @@ export default function swiperSecTest() {
           showBackground: false,
           backgroundSize: 12,
           arrowSize: "-2"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_0900 arrowSize :' +
@@ -1303,7 +1284,7 @@ export default function swiperSecTest() {
           isSidebarMiddle: false,
           backgroundSize: 12,
           arrowSize: "-2"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_1000 arrowSize :' +
@@ -1324,7 +1305,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: "abc"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_1100 arrowSize :' +
@@ -1345,7 +1326,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: "1000%"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_1200 arrowSize :' +
@@ -1366,7 +1347,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: "100fp"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_1300 arrowSize :' +
@@ -1387,12 +1368,12 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: 10
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           arrowSize: "42lpx"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_1400 arrowSize :' +
@@ -1413,12 +1394,12 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: 10
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           arrowSize: "abc"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_1500 arrowSize :' +
@@ -1439,12 +1420,12 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowSize: "abc"
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           arrowSize: 10
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowSize_static_1600 arrowSize :' +
@@ -1465,7 +1446,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: 0x00ff00
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0100 arrowColor :' +
@@ -1484,7 +1465,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: "#FFFF0000"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0200 arrowColor :' +
@@ -1503,7 +1484,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: "rgb(138,43,226)"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0300 arrowColor :' +
@@ -1522,7 +1503,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: Color.Pink
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0400 arrowColor :' +
@@ -1541,7 +1522,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: ""
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0500 arrowColor :' +
@@ -1560,8 +1541,8 @@ export default function swiperSecTest() {
     it('ArkUX_Stage_Swiper_ArrowColor_static_0600', Level.LEVEL0, async (): Promise<void> => {
       await setArrowStyle(
         {
-          arrowColor: null
-        }
+          // arrowColor: null
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0600 arrowColor :' +
@@ -1581,7 +1562,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: $r("app.color.swiper_BackgroundColor_test")
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0700 arrowColor :' +
@@ -1600,7 +1581,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: "bgr(138,43,226)"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0800 arrowColor :' +
@@ -1620,7 +1601,7 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: undefined
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_0900 arrowColor :' +
@@ -1640,12 +1621,12 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: "rgb(138,43,226)"
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           arrowColor: Color.Gray
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_1000 arrowColor :' +
@@ -1663,13 +1644,13 @@ export default function swiperSecTest() {
     it('ArkUX_Stage_Swiper_ArrowColor_static_1100', Level.LEVEL0, async (): Promise<void> => {
       await setArrowStyle(
         {
-          BackgroundColor: "rgb(255,0,0)",
-        }
+          // BackgroundColor: "rgb(255,0,0)",
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
-          BackgroundColor: undefined
-        }
+          // BackgroundColor: undefined
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_1100 arrowColor :' +
@@ -1689,12 +1670,12 @@ export default function swiperSecTest() {
       await setArrowStyle(
         {
           arrowColor: undefined
-        }
+        } as ArrowStyle
       )
       await setArrowStyle(
         {
           arrowColor: "#FFFF0000"
-        }
+        } as ArrowStyle
       )
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperA"))
       console.info('ArkUX_Stage_Swiper_ArrowColor_static_1200 arrowColor :' +

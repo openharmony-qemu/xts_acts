@@ -109,7 +109,7 @@ struct SwiperCurve {
 
       Column({ space: 5 } as ColumnOptions) {
         Swiper(this.swiperController) {
-          LazyForEach(this.data, (item: number, index: int) => {
+          LazyForEach(this.data, (item: number) => {
             Text(item.toString())
               .width('90%')
               .height(160)
@@ -121,7 +121,7 @@ struct SwiperCurve {
         .key("swiper")
         .cachedCount(2)
         .index(1)
-        .autoPlay(true, undefined)
+        .autoPlay(true)
         .interval(4000)
         .indicator(true) // 默认开启指示点
         .loop(false) // 默认开启循环播放

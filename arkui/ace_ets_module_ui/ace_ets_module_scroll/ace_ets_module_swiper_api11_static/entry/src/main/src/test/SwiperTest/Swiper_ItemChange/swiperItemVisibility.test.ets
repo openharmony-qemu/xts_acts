@@ -99,74 +99,73 @@ export default function swiperItemVisibility() {
     });
 
 
-    //pass过 注释
-    // /**
-    //  * @tc.number   SUB_ACE_SWIPER_VISIBLECHANGED_static_0100
-    //  * @tc.name     SUB_ACE_SWIPER_VISIBLECHANGED_static_0100
-    //  * @tc.desc     SUB_ACE_SWIPER_VISIBLECHANGED_static_0100
-    //  * @tc.level    0
-    //  */
-    // it('SUB_ACE_SWIPER_VISIBLECHANGED_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('new SUB_ACE_SWIPER_VISIBLECHANGED_static_0100 START');
-    //   const globalMessage =
-    //     AppStorage.get<GlobalMessage<number>>('SwiperItemVisibilityTest');
-    //   globalMessage?.message.notify({
-    //     name: 'index', value: 0
-    //   });
-    //   let strJson = inspector.getInspectorByKey('visiblekey');
-    //
-    //   let strJson1 = inspector.getInspectorByKey('visiblekey01');
-    //   let visiblekey: RectValue = CommonFunc.getComponentRect('visiblekey');
-    //   let visiblekey01: RectValue = CommonFunc.getComponentRect('visiblekey01');
-    //   // 翻页前子组件1大小及位置与父组件一致
-    //   console.info("Before page turning , the visiblekey.left value is " + JSON.stringify(visiblekey.left));
-    //   console.info("Before page turning , the visiblekey01.left value is " + JSON.stringify(visiblekey01.left));
-    //   expect(visiblekey.left).assertEqual(visiblekey01.left);
-    //   expect(visiblekey.right).assertEqual(visiblekey01.right);
-    //   expect(visiblekey.top).assertEqual(visiblekey01.top);
-    //   expect(visiblekey.bottom).assertEqual(visiblekey01.bottom);
-    //   let driver = Driver.create();
-    //   await CommonFunc.sleep(2500);
-    //   //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
-    //   // //  await driver.swipe(250, 230, 200, 230);原代码注释
-    //   // await CommonFunc.sleep(1000);原代码注释
-    //   await CommonFunc.sleep(1000);
-    //   let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('visiblekey')
-    //   await driver.swipe(
-    //     Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`) as Int,
-    //     Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int,
-    //     Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`) as Int,
-    //     Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int,
-    //     1000);
-    //   await CommonFunc.sleep(3000);
-    //   // 翻页后子组件2大小及位置与父组件一致，翻页成功
-    //   visiblekey = CommonFunc.getComponentRect('visiblekey');
-    //   let visiblekey02: RectValue = CommonFunc.getComponentRect('visiblekey02');
-    //   console.info("After page turning , the visiblekey.left value is " + JSON.stringify(visiblekey.left));
-    //   console.info("After page turning , the visiblekey02.left value is " + JSON.stringify(visiblekey02.left));
-    //   expect(visiblekey.left).assertEqual(visiblekey02.left);
-    //   expect(visiblekey.right).assertEqual(visiblekey02.right);
-    //   expect(visiblekey.top).assertEqual(visiblekey02.top);
-    //   expect(visiblekey.bottom).assertEqual(visiblekey02.bottom);
-    //   console.info("The type value is " +
-    //   JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
-    //   console.info("The indicator value is " +
-    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator')));
-    //   console.info("The loop value is " +
-    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
-    //   console.info("The displayCount value is " +
-    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
-    //   console.info("The visibility value is " +
-    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visibility')));
-    //   expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
-    //   //      expect(JSON.parse(strJson).$attrs.indicator).assertEqual('true');
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
-    //   expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility'))
-    //     .assertEqual('Visibility.Visible');
-    //   console.info('new SUB_ACE_SWIPER_VISIBLECHANGED_static_0100 END');
-    //   done();
-    // });
+    /**
+     * @tc.number   SUB_ACE_SWIPER_VISIBLECHANGED_static_0100
+     * @tc.name     SUB_ACE_SWIPER_VISIBLECHANGED_static_0100
+     * @tc.desc     SUB_ACE_SWIPER_VISIBLECHANGED_static_0100
+     * @tc.level    0
+     */
+    it('SUB_ACE_SWIPER_VISIBLECHANGED_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('new SUB_ACE_SWIPER_VISIBLECHANGED_static_0100 START');
+      const globalMessage =
+        AppStorage.get<GlobalMessage<number>>('SwiperItemVisibilityTest');
+      globalMessage?.message.notify({
+        name: 'index', value: 0
+      });
+      let strJson = inspector.getInspectorByKey('visiblekey');
+
+      let strJson1 = inspector.getInspectorByKey('visiblekey01');
+      let visiblekey: RectValue = CommonFunc.getComponentRect('visiblekey');
+      let visiblekey01: RectValue = CommonFunc.getComponentRect('visiblekey01');
+      // 翻页前子组件1大小及位置与父组件一致
+      console.info("Before page turning , the visiblekey.left value is " + JSON.stringify(visiblekey.left));
+      console.info("Before page turning , the visiblekey01.left value is " + JSON.stringify(visiblekey01.left));
+      expect(visiblekey.left).assertEqual(visiblekey01.left);
+      expect(visiblekey.right).assertEqual(visiblekey01.right);
+      expect(visiblekey.top).assertEqual(visiblekey01.top);
+      expect(visiblekey.bottom).assertEqual(visiblekey01.bottom);
+      let driver = Driver.create();
+      await CommonFunc.sleep(2500);
+      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
+      // //  await driver.swipe(250, 230, 200, 230);原代码注释
+      // await CommonFunc.sleep(1000);原代码注释
+      await CommonFunc.sleep(1000);
+      let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('visiblekey')
+      await driver.swipe(
+        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`) as Int,
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int,
+        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`) as Int,
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int,
+        1000);
+      await CommonFunc.sleep(3000);
+      // 翻页后子组件2大小及位置与父组件一致，翻页成功
+      visiblekey = CommonFunc.getComponentRect('visiblekey');
+      let visiblekey02: RectValue = CommonFunc.getComponentRect('visiblekey02');
+      console.info("After page turning , the visiblekey.left value is " + JSON.stringify(visiblekey.left));
+      console.info("After page turning , the visiblekey02.left value is " + JSON.stringify(visiblekey02.left));
+      expect(visiblekey.left).assertEqual(visiblekey02.left);
+      expect(visiblekey.right).assertEqual(visiblekey02.right);
+      expect(visiblekey.top).assertEqual(visiblekey02.top);
+      expect(visiblekey.bottom).assertEqual(visiblekey02.bottom);
+      console.info("The type value is " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
+      console.info("The indicator value is " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator')));
+      console.info("The loop value is " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
+      console.info("The displayCount value is " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+      console.info("The visibility value is " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visibility')));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+      //      expect(JSON.parse(strJson).$attrs.indicator).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility'))
+        .assertEqual('Visibility.Visible');
+      console.info('new SUB_ACE_SWIPER_VISIBLECHANGED_static_0100 END');
+      done();
+    });
 
 
     /**
@@ -185,7 +184,7 @@ export default function swiperItemVisibility() {
       globalMessage?.message.notify({
         name: 'index', value: 4
       });
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('visiblekey');
 
       let strJson1 = inspector.getInspectorByKey('visiblekey05');
@@ -199,9 +198,6 @@ export default function swiperItemVisibility() {
       expect(visiblekey.top).assertEqual(visiblekey05.top);
       expect(visiblekey.bottom).assertEqual(visiblekey05.bottom);
       let driver = Driver.create();
-      // await CommonFunc.sleep(500);原代码注释
-      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
-      // //  await driver.swipe(250, 230, 200, 230);原代码注释
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('visiblekey')
       await driver.swipe(
@@ -214,8 +210,8 @@ export default function swiperItemVisibility() {
       // 翻页后子组件6大小及位置与父组件一致，翻页成功
       visiblekey = CommonFunc.getComponentRect('visiblekey');
       let visiblekey06: RectValue = CommonFunc.getComponentRect('visiblekey06');
-      console.info("After page turning , the visiblekey.left value is " + JSON.stringify(visiblekey.left));
-      console.info("After page turning , the visiblekey06.left value is " + JSON.stringify(visiblekey06.left));
+      console.info("After page turning , the visiblekey.left value is " + visiblekey.left + ', ' + visiblekey.top + ', ' + visiblekey.right + ', ' + visiblekey.bottom);
+      console.info("After page turning , the visiblekey.left value is " + visiblekey06.left + ', ' + visiblekey06.top + ', ' + visiblekey06.right + ', ' + visiblekey06.bottom);
       expect(visiblekey.left).assertEqual(visiblekey06.left);
       expect(visiblekey.right).assertEqual(visiblekey06.right);
       expect(visiblekey.top).assertEqual(visiblekey06.top);
@@ -252,9 +248,12 @@ export default function swiperItemVisibility() {
       const globalMessage =
         AppStorage.get<GlobalMessage<number>>('SwiperItemVisibilityTest');
       globalMessage?.message.notify({
+        name: 'visibility2', value: Visibility.None
+      });
+      globalMessage?.message.notify({
         name: 'index', value: 2
       });
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('visiblekey');
 
       let strJson1 = inspector.getInspectorByKey('visiblekey03');
