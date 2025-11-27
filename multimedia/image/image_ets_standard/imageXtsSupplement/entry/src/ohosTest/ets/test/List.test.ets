@@ -214,4 +214,5 @@ export default function testsuite() {
   ImageCreatePixelMapPicture();
   imagePackerPackingPictureTest();
   ImagePackerPackingToFilePictureTest();
+
 }

@@ -39,7 +39,6 @@ export default function ImageCreatePixelMapPicture() {
     it('SUB_IMAGE_CREATE_PIXELMAP_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXELMAP_001';
       try {
-
         const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }

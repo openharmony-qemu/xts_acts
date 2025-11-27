@@ -36,6 +36,7 @@ async function createPictureObj(done:Function,testName: string, pathUri: string)
     expect().assertFail()
     return error;
 
+
   }
 }
 export default function ImagePackerPackingToFilePictureTest() {

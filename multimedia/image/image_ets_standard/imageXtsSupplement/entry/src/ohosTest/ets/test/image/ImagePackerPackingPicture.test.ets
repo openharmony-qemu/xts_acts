@@ -36,7 +36,6 @@ async function createPictureObj(done:Function,testName: string, pathUri: string)
     console.error(TAG, testName, ` failed; error:`, JSON.stringify(error), error.code);
     expect().assertFail()
     return error;
-
   }
 }
 
