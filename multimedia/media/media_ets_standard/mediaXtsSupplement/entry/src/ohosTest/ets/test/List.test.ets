@@ -51,5 +51,6 @@ export default function testsuite() {
   MediaVideoPlayerOn_audioInterruptTest();
   MediaVideoPlayerSeekTest();
   AVPlayerSetSpeedTest();
+
 }
 

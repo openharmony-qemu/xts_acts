@@ -1004,6 +1004,7 @@ export default function AVPlayerSetSpeedTest() {
     });
 
 
+
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_033
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_033
