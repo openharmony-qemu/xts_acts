@@ -115,6 +115,8 @@ import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirPa
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
+import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
+import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -218,4 +220,6 @@ export default function testsuite() {
   PictureSetMetadataTest();
   sendableCreatePixelMapSyncAbnormalTest();
 
+  ImagePictureSetAuxiliaryPictureTest();
+  ImagePixelMapCropTest();
 }
