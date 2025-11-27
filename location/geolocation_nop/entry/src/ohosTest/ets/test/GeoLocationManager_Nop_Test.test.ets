@@ -47,7 +47,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   geoLocationManager_nop_test_001
      * @tc.number SUB_geoLocationManager_nop_test_001
      * @tc.desc   Using the geoLocationManager.on method without permission
@@ -93,7 +92,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   geoLocationManager_nop_test_002
      * @tc.number SUB_geoLocationManager_nop_test_002
      * @tc.desc   Using the geoLocationManager.off method without permission
@@ -139,7 +137,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   geoLocationManager_nop_test_003
      * @tc.number SUB_geoLocationManager_nop_test_003
      * @tc.desc   Using the geoLocationManager.on method without permission
@@ -163,7 +160,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   geoLocationManager_nop_test_004
      * @tc.number SUB_geoLocationManager_nop_test_004
      * @tc.desc   Using the geoLocationManager.off method without permission
@@ -189,7 +185,6 @@ export default function geoLocationManager_nop_test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   geoLocationManager_nop_test_005
      * @tc.number SUB_geoLocationManager_nop_test_005
      * @tc.desc   Using the geoLocationManager.off method without permission
@@ -216,7 +211,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   geoLocationManager_nop_test_006
      * @tc.number SUB_geoLocationManager_nop_test_006
      * @tc.desc   Using the geoLocationManager.off method without permission
@@ -244,7 +238,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   geoLocationManager_nop_test_007
      * @tc.number SUB_geoLocationManager_nop_test_007
      * @tc.desc   Using the geoLocationManager.off method without permission
