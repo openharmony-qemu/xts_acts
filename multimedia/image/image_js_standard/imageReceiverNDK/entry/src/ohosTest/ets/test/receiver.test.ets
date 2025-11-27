@@ -154,26 +154,8 @@ const checkWaitForResultIsNum = (logger: string, myData: arriveOnNdkTest.onImage
     return;
 }
 
-//是否可拍下一张回调函数
-let isCaptureReady: boolean = true;
-
-function captureReadyCallback() {
-    isCaptureReady = true;
-    console.info('isCaptureReady is true')
-}
-
-//监听是否可拍下一张
-export function onCaptureReady(photoOutput: cameraObj.PhotoOutput) {
-    photoOutput.on('captureReady', captureReadyCallback)
-}
-
-//取消监听是否可拍下一张
-export function offCaptureReady(photoOutput: cameraObj.PhotoOutput) {
-    photoOutput.off('captureReady', captureReadyCallback)
-}
-
 //相机拍照
-export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject, captureNumber: number) {
+export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject) {
     let captureLocation: cameraObj.Location = {
         latitude: 0,
         longitude: 0,
@@ -185,26 +167,12 @@ export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject,
         location: captureLocation,
         mirror: false
     }
-    console.info(`${TAG} captureNumber is ${captureNumber}`);
     //使用当前拍照设置进行拍照。
-    let iCapture = 0;
-    while (iCapture < captureNumber) {
-      if (isCaptureReady) {
-        iCapture++;
-        isCaptureReady = false;
-        console.info(`${TAG} iCapture is ${iCapture}`);
-        await photoOutput.capture(photoCaptureSetting, (err: BusinessError) => {
-          if (err) {
-            console.error(`${TAG} Failed to capture the photo ${err.message}`);
-            expect(false).assertTrue();
-            return;
-          }
-        });
-      }
-      await sleep(10000);
-    }
-    expect(iCapture == captureNumber).assertTrue();
-    console.info(`${TAG} capture ${iCapture} image success`);
+    await photoOutput.capture(photoCaptureSetting);
+    await sleep(5000);
+    await photoOutput.capture(photoCaptureSetting);
+    await sleep(5000);
+    console.info(`${TAG} capture two images success`);
 }
 
 export default function ImageReceiverTest() {
@@ -274,7 +242,7 @@ export default function ImageReceiverTest() {
             expect(arriveOnNdkTest.imageArriveOn(receiver, myData1) == IMAGE_SUCCESS).assertTrue();
             expect(arriveOnNdkTest.imageArriveOn(receiver, myData2) == IMAGE_SUCCESS).assertTrue();
             expect(arriveOnNdkTest.imageReceiverTest(receiver) == IMAGE_SUCCESS).assertTrue();
-            await sleep(500);
+            await sleep(1000);
             checkWaitForResultIsObj(TAG, myData1, 0);
             checkWaitForResultIsNum(TAG, myData2, 1);
             arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE);
@@ -1323,7 +1291,7 @@ export default function ImageReceiverTest() {
                 expect(mCameraInput != null && mCameraInput != undefined).assertTrue();
                 console.info(`${TAG} create mCameraInput success, mCameraInput is ${mCameraInput}`);
                 await mCameraInput.open();
-                sleep(100);
+                await sleep(100);
                 console.info(`${TAG} start create output`);
                 let cameraOutputCap: cameraObj.CameraOutputCapability = await mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0]);
                 expect(cameraOutputCap != null && cameraOutputCap != undefined).assertTrue();
@@ -1352,9 +1320,7 @@ export default function ImageReceiverTest() {
                 await mCameraSession.start();
                 await sleep(500);
                 // 拍两张图
-                onCaptureReady(mPhotoOutput);
-                await cameraCaptureRelyOnNum(TAG, mPhotoOutput, 2);
-                offCaptureReady(mPhotoOutput);
+                await cameraCaptureRelyOnNum(TAG, mPhotoOutput);
                 // 查看下一张图片
                 let nextImage: image.Image = ndkTest.JsReadNextImage(myReceiver);
                 console.info(`${TAG} read next image success, image is ${JSON.stringify(nextImage)}`);
@@ -1366,6 +1332,7 @@ export default function ImageReceiverTest() {
                 // 环境恢复
                 let onOFF: number = ndkTest.JsOff(myReceiver);
                 expect(onOFF != undefined).assertTrue();
+                await mCameraInput.close();
                 await mPreviewOutput.release();
                 await mPhotoOutput.release();
                 await mCameraSession.release();
@@ -1424,7 +1391,7 @@ export default function ImageReceiverTest() {
                 expect(mCameraInput != null && mCameraInput != undefined).assertTrue();
                 console.info(`${TAG} create mCameraInput success, mCameraInput is ${mCameraInput}`);
                 await mCameraInput.open();
-                sleep(100);
+                await sleep(100);
                 console.info(`${TAG} start create output`);
                 let cameraOutputCap: cameraObj.CameraOutputCapability = await mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0]);
                 expect(cameraOutputCap != null && cameraOutputCap != undefined).assertTrue();
@@ -1453,9 +1420,7 @@ export default function ImageReceiverTest() {
                 await mCameraSession.start();
                 await sleep(500);
                 // 拍两张图
-                onCaptureReady(mPhotoOutput);
-                await cameraCaptureRelyOnNum(TAG, mPhotoOutput, 2);
-                offCaptureReady(mPhotoOutput);
+                await cameraCaptureRelyOnNum(TAG, mPhotoOutput);
                 // 校验两张图
                 let nextImage: image.Image = ndkTest.JsReadNextImage(myReceiver);
                 let lastestImage = ndkTest.JsReadLatestImage(myReceiver);
@@ -1474,6 +1439,7 @@ export default function ImageReceiverTest() {
                 // 环境恢复
                 let onOFF: number = ndkTest.JsOff(myReceiver);
                 expect(onOFF != undefined).assertTrue();
+                await mCameraInput.close();
                 await mPreviewOutput.release();
                 await mPhotoOutput.release();
                 await mCameraSession.release();
@@ -1537,7 +1503,7 @@ export default function ImageReceiverTest() {
                 expect(mCameraInput != null && mCameraInput != undefined).assertTrue();
                 console.info(`${TAG} create mCameraInput success, mCameraInput is ${mCameraInput}`);
                 await mCameraInput.open();
-                sleep(100);
+                await sleep(100);
                 console.info(`${TAG} start create output`);
                 let cameraOutputCap: cameraObj.CameraOutputCapability = await mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0]);
                 expect(cameraOutputCap != null && cameraOutputCap != undefined).assertTrue();
@@ -1566,9 +1532,7 @@ export default function ImageReceiverTest() {
                 await mCameraSession.start();
                 await sleep(500);
                 // 拍两张图
-                onCaptureReady(mPhotoOutput);
-                await cameraCaptureRelyOnNum(TAG, mPhotoOutput, 2);
-                offCaptureReady(mPhotoOutput);
+                await cameraCaptureRelyOnNum(TAG, mPhotoOutput);
                 let nextImage: image.Image = ndkTest.JsReadNextImage(myReceiver);
                 let lastestImage = ndkTest.JsReadLatestImage(myReceiver);
                 let size : ndkTest.imageSize = ndkTest.JsGetImageSize(lastestImage);
@@ -1597,6 +1561,7 @@ export default function ImageReceiverTest() {
                 // 环境恢复
                 let onOFF: number = ndkTest.JsOff(myReceiver);
                 expect(onOFF != undefined).assertTrue();
+                await mCameraInput.close();
                 await mPreviewOutput.release();
                 await mPhotoOutput.release();
                 await mCameraSession.release();
