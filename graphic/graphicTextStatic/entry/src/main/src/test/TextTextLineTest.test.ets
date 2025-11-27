@@ -347,6 +347,7 @@ export default function TextTextLineTest() {
             let textRange: text.Range = textLine.getTextRange();
             expect(textRange.start).assertEqual(textLineExpectData[i].textRange.start);
             expect(textRange.end).assertEqual(textLineExpectData[i].textRange.end);
+            textLine.paint(globalCanvas, 0, 0);
             textLine.createTruncatedLine(4, text.EllipsisMode.START, "...");
             let bounds: text.TypographicBounds = textLine.getTypographicBounds();
             expect(Math.round(bounds.ascent * 100) / 100).assertEqual(textLineExpectData[i].typographicBounds.ascent);
