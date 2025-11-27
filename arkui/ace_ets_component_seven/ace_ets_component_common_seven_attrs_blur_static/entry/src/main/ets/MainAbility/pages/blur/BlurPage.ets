@@ -907,6 +907,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1141,7 +1142,7 @@ struct blurPage {
   @State componentKey: string = '';
   @State parentWidth: number = 0;
   @State parentHeight: number = 0;
-  @State columns: number = 0;
+  @State columns: int = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
 
@@ -1153,9 +1154,10 @@ struct blurPage {
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.parentWidth = routerParamOptions.view.parentWidth
     this.parentHeight = routerParamOptions.view.parentHeight
-    this.columns = routerParamOptions.view.columns
+    this.columns = routerParamOptions.view.columns as int
     this.gutter = routerParamOptions.view.gutter
     this.parentComponentKey = routerParamOptions.view.parentComponentKey
+    this._blurButttonMod.mBlur =  routerParamOptions.view.testValue.setValue.blur
 
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.blur))
@@ -1238,7 +1240,7 @@ struct blurPage {
   }
 
   build() {
-    GridRow({ columns: this.columns as Int, gutter: this.gutter}) {
+    GridRow({ columns: this.columns, gutter: this.gutter}) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').commonStyleButton(this.componentKey, this.blurButton.blur).attributeModifier(this._blurButttonMod)

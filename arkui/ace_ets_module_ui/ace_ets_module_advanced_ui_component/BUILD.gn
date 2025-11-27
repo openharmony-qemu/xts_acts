@@ -14,6 +14,7 @@
 import("//foundation/arkui/ace_engine/ace_config.gni")
 group("ActsAceEtsModuleAtomicServiceComponentTest") {
   testonly = true
-  deps = [ "ace_ets_module_atomicservicecomponent_api18:ActsAceEtsModuleAtomicServiceComponentApi18Test",
-  "ace_ets_module_atomicservicecomponent_api18_static:ActsAceEtsModuleAtomicServiceComponentApi18StaticTest" ]
+  deps = [ 
+    "ace_ets_module_atomicservicecomponent_api18:ActsAceEtsModuleAtomicServiceComponentApi18Test"
+   ]
 }

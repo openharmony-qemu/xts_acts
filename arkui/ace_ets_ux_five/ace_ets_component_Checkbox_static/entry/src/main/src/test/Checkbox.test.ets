@@ -41,8 +41,6 @@ export default function CheckboxTest() {
         console.info("get Index state success " + JSON.stringify(pages));
         if (!("Index" == pages.name)) {
           console.info("get Index state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
-          // console.info("push Index page success " + JSON.stringify(result));
           routerInstance.pushUrl(options);
         }
       } catch (err) {

@@ -1,9 +1,0 @@
-{
-  "src": [
-    "MainAbility/pages/Index/index",
-    "MainAbility/pages/Zhuang/link2",
-    "MainAbility/pages/Zhuang/ObjectLink2",
-    "MainAbility/pages/Zhuang/Prop2",
-    "MainAbility/pages/Zhuang/state2"
-  ]
-}
