@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,108 +56,102 @@ export default function videoJsunit() {
       }
     });
 
-    /**
-     * @tc.number videoTest_static_0001
-     * @tc.name videoTest_static_0001
-     * @tc.desc Set muted values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   videoTest_static_0001
+     * @tc.name     videoTest_static_0001
+     * @tc.desc     videoTest_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('videoTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('videoTest_static_0001 START');
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0001 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('muted')).assertEqual(false);
-      expect(objNew.getElement('$attrs').getString('muted')).assertEqual(undefined);
+      // expect(objNew.getElement('$attrs').getString('muted')).assertEqual(false); // 1.1 注释
+      expect(objNew.getElement('$attrs').getString('muted')).assertEqual('false');
       console.info('videoTest_static_0001 END');
       done();
     });
 
-    /**
-     * @tc.number videoTest_static_0002
-     * @tc.name videoTest_static_0002
-     * @tc.desc Set autoPlay values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   videoTest_static_0002
+     * @tc.name     videoTest_static_0002
+     * @tc.desc     videoTest_static_0002
+     * @tc.level    Level.LEVEL0
      */
     it('videoTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('videoTest_static_0002 START');
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0002 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('autoPlay')).assertEqual(false);
-      expect(objNew.getElement('$attrs').getString('autoPlay')).assertEqual(undefined);
+      // expect(objNew.getElement('$attrs').getString('autoPlay')).assertEqual(false);// 1.1 注释
+      expect(objNew.getElement('$attrs').getString('autoPlay')).assertEqual('false');
       console.info('videoTest_static_0002 END');
       done();
     });
 
-    /**
-     * @tc.number videoTest_static_0003
-     * @tc.name videoTest_static_0003
-     * @tc.desc Set controls values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   videoTest_static_0003
+     * @tc.name     videoTest_static_0003
+     * @tc.desc     videoTest_static_0003
+     * @tc.level    Level.LEVEL0
      */
     it('videoTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('videoTest_static_0003 START');
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0003 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('controls')).assertEqual(true);
-      expect(objNew.getElement('$attrs').getString('controls')).assertEqual(undefined);
+      // expect(objNew.getElement('$attrs').getString('controls')).assertEqual(true); // 1.1 注释
+      expect(objNew.getElement('$attrs').getString('controls')).assertEqual('true');
       console.info('videoTest_static_0003 END');
       done();
     });
 
-    /**
-     * @tc.number videoTest_static_0004
-     * @tc.name videoTest_static_0004
-     * @tc.desc Set loop values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   videoTest_static_0004
+     * @tc.name     videoTest_static_0004
+     * @tc.desc     videoTest_static_0004
+     * @tc.level    Level.LEVEL0
      */
     it('videoTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('videoTest_static_0004 START');
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0004 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('loop')).assertEqual(false);
-      expect(objNew.getElement('$attrs').getString('loop')).assertEqual(undefined);
+      // expect(objNew.getElement('$attrs').getString('loop')).assertEqual(false); // 1.1 注释
+      expect(objNew.getElement('$attrs').getString('loop')).assertEqual('false');
       console.info('videoTest_static_0004 END');
       done();
     });
 
-    /**
-     * @tc.number videoTest_static_0005
-     * @tc.name videoTest_static_0005
-     * @tc.desc Set objectFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   videoTest_static_0005
+     * @tc.name     videoTest_static_0005
+     * @tc.desc     videoTest_static_0005
+     * @tc.level    Level.LEVEL0
      */
     it('videoTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('videoTest_static_0005 START');
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0005 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('objectFit')).assertEqual(ImageFit.Cover);
-      expect(objNew.getElement('$attrs').getString('objectFit')).assertEqual(undefined);
+      // expect(objNew.getElement('$attrs').getString('objectFit')).assertEqual(ImageFit.Cover); // 1.1 注释
+      expect(objNew.getElement('$attrs').getString('objectFit')).assertEqual("ImageFit.Cover");
       console.info('videoTest_static_0005 END');
       done();
     });
 
-    /**
-     * @tc.number videoTest_static_0006
-     * @tc.name videoTest_static_0006
-     * @tc.desc Change muted values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   videoTest_static_0006
+     * @tc.name     videoTest_static_0006
+     * @tc.desc     videoTest_static_0006
+     * @tc.level    Level.LEVEL0
      */
     it('videoTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('videoTest_static_0006 START');
@@ -168,8 +162,8 @@ export default function videoJsunit() {
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0006 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('muted')).assertEqual(true);
-      expect(objNew.getElement('$attrs').getString('muted')).assertEqual(undefined);
+      // expect(objNew.getElement('$attrs').getString('muted')).assertEqual(true); // 1.1 注释
+      expect(objNew.getElement('$attrs').getString('muted')).assertEqual('true');
       console.info('videoTest_static_0006 END');
       done();
     });

@@ -12,38 +12,86 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,Counter,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  State,
-  Link,
-  Prop,
-} from '@ohos.arkui.stateManagement';
-// import { CounterModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends CounterModifier{
-//
-//   applyNormalAttribute(instance: CounterAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.enableInc(false)
-//   }
-// }
+  Entry,
+  Component,
+  $r,
+  Column,
+  ColumnOptions,
+  Counter,
+  BorderImageOption,
+  BorderOptions,
+  AdaptiveColor,
+  BackgroundEffectOptions,
+  BorderStyle,
+  RepeatMode,
+  GradientDirection,
+  Image,
+  Checkbox,
+  Blank,
+  MarkStyle,
+  ResourceColor,
+  CheckboxGroup,
+  Text,
+  Toggle,
+  ToggleType,
+  FlexAlign,
+  Color,
+  Flex,
+  ButtonType,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  Week,
+  FontWeight,
+  Axis,
+  Margin,
+  Swiper,
+  ForEach,
+  PickerTextStyle,
+  CalendarAlign,
+  Date,
+  CalendarPicker,
+  EdgeEffect,
+  Curve,
+  SwiperDisplayMode,
+  ArrowPosition,
+  Select,
+  BlurStyle,
+  MenuAlignType,
+  TextInputController,
+  TextAlign,
+  AlphabetIndexer,
+  CounterAttribute
+} from '@ohos.arkui.component';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { CounterModifier } from "@ohos.arkui.modifier";
+
+class CustomModifier extends CounterModifier {
+  applyNormalAttribute(instance: CounterAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+
+  onChange1() {
+    this.enableInc(false)
+  }
+}
 
 @Entry
 @Component
 struct CounterTest {
-//   @State customModifier: CounterModifier = new CustomModifier()
-//     .enableInc(true)
-//     .enableDec(true)
+  @State customModifier: CounterModifier = new CustomModifier()
+    .enableInc(true)
+    .enableDec(true)
   @State value: number = 0
 
   build() {
     Row() {
       Column() {
         Button("change value").onClick((e: ClickEvent) => {
-//           (this.customModifier as CustomModifier).onChange1();
+          (this.customModifier as CustomModifier).onChange1();
         }).key("changeButton")
 
         Counter() {
@@ -51,13 +99,13 @@ struct CounterTest {
         }
         .key("Counter")
         .margin(100)
-//         .attributeModifier(this.customModifier as CustomModifier)
+        .attributeModifier(this.customModifier as CustomModifier)
         .onInc((): void => {
-            this.value++
-          })
+          this.value++
+        })
         .onDec((): void => {
-            this.value--
-          })
+          this.value--
+        })
       }
       .width('100%')
     }

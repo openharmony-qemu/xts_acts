@@ -12,23 +12,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,ColumnOptions, CheckboxGroupAttribute,
+  Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,
+  Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,
+  ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,
+  CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,
+  TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-// import { CheckboxGroupModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends CheckboxGroupModifier {
-//   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.unselectedColor("#FF121212")
-//   }
-// }
+import { CheckboxGroupModifier } from "@ohos.arkui.modifier";
+
+class CustomModifier extends CheckboxGroupModifier {
+  applyNormalAttribute(instance: CheckboxGroupAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+
+  onChange1() {
+    this.unselectedColor("#FF121212")
+  }
+}
 
 @Entry
 @Component
@@ -38,21 +43,21 @@ struct TestCheckboxGroupPage {
   private mSelectAll: boolean = false
   private mSelectedColor: ResourceColor = '#FF321456'
 
-//   @State customModifier: CheckboxGroupModifier = new CustomModifier()
-//     .mark(this.mMark)
-//     .unselectedColor(this.mUnselectedColor)
-//     .selectAll(this.mSelectAll)
-//     .selectedColor(this.mSelectedColor)
+  @State customModifier: CheckboxGroupModifier = new CustomModifier()
+    .mark(this.mMark)
+    .unselectedColor(this.mUnselectedColor)
+    .selectAll(this.mSelectAll)
+    .selectedColor(this.mSelectedColor)
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-//         (this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       CheckboxGroup({ group: 'checkboxGroup' })
         .key('checkboxNO')
-//         .attributeModifier(this.customModifier as CustomModifier)
+        .attributeModifier(this.customModifier as CustomModifier)
     }
     .width('100%')
       .height('100%')

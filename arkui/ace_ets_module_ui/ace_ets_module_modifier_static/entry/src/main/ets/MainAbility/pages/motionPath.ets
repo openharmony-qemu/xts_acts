@@ -12,7 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,Marquee,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List, ListItem,Marquee,HorizontalAlign,Menu,Column,animateTo,
+ Row,Button,ClickEvent,Week,GridRow,FontWeight,Margin,Swiper,ForEach,PickerTextStyle,Curve,
+  ButtonAttribute} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -20,13 +22,13 @@ import {
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
-// import {ButtonModifier} from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends ButtonModifier {
-//   applyNormalAttribute(instance: ButtonAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-// }
+import {ButtonModifier} from "@ohos.arkui.modifier";
+
+class CustomModifier extends ButtonModifier {
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+}
 interface FormXy {
   fromX: string
   toY: string
@@ -41,14 +43,14 @@ struct MotionPath7Example {
   @State path: string = 'Mstart.x start.y L300 200 L300 500 Lend.x end.y'
   @State fromX: number = 0
   @State toY: number = 1
-//   @State motionPathModifier1: ButtonAttribute = new CustomModifier()
-//           .motionPath({ path: 'Mstart.x start.y L300 200 L300 500 Lend.x end.y', from: 0, to: 1, rotatable: false })
-//
+  @State motionPathModifier1: ButtonAttribute = new CustomModifier()
+          .motionPath({ path: 'Mstart.x start.y L300 200 L300 500 Lend.x end.y', from: 0, to: 1, rotatable: false })
+
   build() {
     Column() {
       Button('click me')
         .key('button')
-//         .attributeModifier(this.motionPathModifier1 as ButtonModifier)
+        .attributeModifier(this.motionPathModifier1 as ButtonModifier)
         .onClick((e: ClickEvent) => {
           this.rotatable = true;
           console.info('button rotate current action state is:' + this.rotatable);
@@ -99,22 +101,25 @@ struct MotionPath7Example {
 
   onPageShow() {
     console.info('motionPath page show called');
+
+    let stateChangeCallBack = (eventData: events_emitter.EventData) => {
+        if (eventData != null) {
+          console.info('motionPath page state change called:' + JSON.stringify(eventData));
+          const data = eventData.data as Record<String,undefined|null|Object>
+          if (data['fromX'] != null) {
+            this.fromX == Number.parseInt(data['toY'] as string);
+          }
+          if (data['toY'] != null) {
+            this.toY == Number.parseInt(data['toY'] as string);
+          }
+        }
+    }
+
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 134,
       priority: events_emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangeCallBack)
+    events_emitter.on(stateChangeEvent, stateChangeCallBack)
   }
 
-  private stateChangeCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info('motionPath page state change called:' + JSON.stringify(eventData));
-      if ((eventData.data as FormXy)?.fromX != null) {
-        this.fromX == Number.parseInt(((eventData.data as FormXy)?.fromX) as string);
-      }
-      if ((eventData.data as FormXy)?.toY != null) {
-        this.toY == Number.parseInt(((eventData.data as FormXy)?.toY) as string);
-      }
-    }
-  }
 }

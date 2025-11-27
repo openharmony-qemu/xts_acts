@@ -64,7 +64,7 @@ export default function testsuite() {
   RichEditorApi5();
   RichEditorApi1();
   RichEditor1();
-  RichEditor3() // app died 4
+  RichEditor3() // pass
   RichEditor4();
   RichEditor5();
   RichEditor6();

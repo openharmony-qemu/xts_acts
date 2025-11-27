@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function MenuJsunit() {
       }
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Menu_attrs_static_0100
-     * @tc.name ArkUX_Stage_Menu_attrs_static_0100
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Menu_attrs_static_0100
+     * @tc.name     ArkUX_Stage_Menu_attrs_static_0100
+     * @tc.desc     ArkUX_Stage_Menu_attrs_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -79,13 +78,12 @@ export default function MenuJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Menu_attrs_static_0101
-     * @tc.name ArkUX_Stage_Menu_attrs_static_0101
-     * @tc.desc Set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Menu_attrs_static_0101
+     * @tc.name     ArkUX_Stage_Menu_attrs_static_0101
+     * @tc.desc     ArkUX_Stage_Menu_attrs_static_0101
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -104,13 +102,12 @@ export default function MenuJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Menu_attrs_static_0102
-     * @tc.name ArkUX_Stage_Menu_attrs_static_0102
-     * @tc.desc Set borderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Menu_attrs_static_0102
+     * @tc.name     ArkUX_Stage_Menu_attrs_static_0102
+     * @tc.desc     ArkUX_Stage_Menu_attrs_static_0102
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -129,13 +126,12 @@ export default function MenuJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Menu_attrs_static_0103
-     * @tc.name ArkUX_Stage_Menu_attrs_static_0103
-     * @tc.desc Change borderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Menu_attrs_static_0103
+     * @tc.name     ArkUX_Stage_Menu_attrs_static_0103
+     * @tc.desc     ArkUX_Stage_Menu_attrs_static_0103
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

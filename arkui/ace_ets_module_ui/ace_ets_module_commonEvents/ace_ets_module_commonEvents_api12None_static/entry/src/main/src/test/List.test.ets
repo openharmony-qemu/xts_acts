@@ -47,8 +47,8 @@ export default function testsuite() {
   SwipeGestureExample02Test();
   SwipeGestureExample01Test();
   onKeyPreImeTest();
-  SwipeGestureTemplateTest(); // 11.17sdk failed
+  SwipeGestureTemplateTest(); 
   PanGestureUpdateTest();
   PinchGestureUpdateTest();
-  RotationGestureUpdateTest(); // 11.11sdk failed
+  RotationGestureUpdateTest();
 }

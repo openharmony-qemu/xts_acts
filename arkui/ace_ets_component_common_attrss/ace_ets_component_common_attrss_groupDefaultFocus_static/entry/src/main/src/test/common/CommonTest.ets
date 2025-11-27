@@ -73,7 +73,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            // try {
+            try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
@@ -105,15 +105,15 @@ export default class CommonTest {
               // data.viewObj = JSON.parse(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            // } catch (err: Error) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect().assertFail();
-            //   }
-            // }
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect().assertFail();
+              }
+            }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

@@ -53,7 +53,7 @@ export default function TextDeleteDirectionTest() {
         console.info("get TextDeleteDirectionTest state success " + JSON.stringify(pages));
         routerInstance.pushUrl(options);
         await CommonFunc.sleep(4000);
-        if (!("MainAbility/pages/TextArea/TextDeleteDirectionTest" == pages.name)) {
+        if (!("TextDeleteDirectionTest" == pages.name)) {
           console.info("get TextDeleteDirectionTest state success " + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
         }

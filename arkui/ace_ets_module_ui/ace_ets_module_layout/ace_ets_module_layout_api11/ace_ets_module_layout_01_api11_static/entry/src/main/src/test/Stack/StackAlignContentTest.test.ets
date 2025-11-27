@@ -30,19 +30,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// interface optionsObj {
-//   uri: string
-// }
-// interface events_emitter.EventData {
-//   data : dataObj
-// }
-// interface dataObj {
-//   alignContentValue : Alignment
-// }
-// interface events_emitter.InnerEvent {
-//   eventId: number
-//   priority : events_emitter.EventPriority
-// }
+
 
 export default function StackAlignContentTest() {
   describe('StackAlignContentTest',  () => {

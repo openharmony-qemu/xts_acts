@@ -12,65 +12,65 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,Marquee,Rect, RectOptions,NavDestination,QRCode,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List, ListItem,Marquee,Rect,RectAttribute, RectOptions,NavDestination,QRCode,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-// import { RectModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends RectModifier {
-//   applyNormalAttribute(instance: RectAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//   onChange() {
-//     this.radiusHeight(9)
-//   }
-// }
-//
-// class CustomModifier1 extends RectModifier {
-//   applyNormalAttribute(instance: RectAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//   onChange() {
-//   }
-// }
-//
-// class CustomModifier2 extends RectModifier {
-//   applyNormalAttribute(instance: RectAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//   onChange() {
-//   }
-// }
+import { RectModifier } from "@ohos.arkui.modifier";
+
+class CustomModifier extends RectModifier {
+  applyNormalAttribute(instance: RectAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+  onChange() {
+    this.radiusHeight(9)
+  }
+}
+
+class CustomModifier1 extends RectModifier {
+  applyNormalAttribute(instance: RectAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+  onChange() {
+  }
+}
+
+class CustomModifier2 extends RectModifier {
+  applyNormalAttribute(instance: RectAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+  onChange() {
+  }
+}
 
 @Entry
 @Component
 struct RectTest {
-//   @State customModifier1: RectModifier = new CustomModifier().radiusHeight(8);
-//   @State customModifier2: RectModifier = new CustomModifier1().radius(6);
-//   @State customModifier3: RectModifier = new CustomModifier2().radiusWidth(12);
+  @State customModifier1: RectModifier = new CustomModifier().radiusHeight(8);
+  @State customModifier2: RectModifier = new CustomModifier1().radius(6);
+  @State customModifier3: RectModifier = new CustomModifier2().radiusWidth(12);
   @State value: number = 0
 
   build() {
       Column() {
         Button("change value").onClick((e: ClickEvent) => {
-//           (this.customModifier1 as CustomModifier).onChange();
+          (this.customModifier1 as CustomModifier).onChange();
         }).key("changeButton")
 
           Rect({ width: '80%', height: '20%' } as RectOptions)
           .key("Rect1")
-//             .attributeModifier(this.customModifier1 as CustomModifier)
+            .attributeModifier(this.customModifier1 as CustomModifier)
 
           Rect({ width: '60%', height: '30%' } as RectOptions)
           .key("Rect2")
-//             .attributeModifier(this.customModifier2 as CustomModifier)
+            .attributeModifier(this.customModifier2 as CustomModifier1)
 
           Rect({ width: '40%', height: '40%' } as RectOptions)
           .key("Rect3")
-//             .attributeModifier(this.customModifier3 as CustomModifier)
+            .attributeModifier(this.customModifier3 as CustomModifier2)
 
           Rect({ width: '80%', height: '20%' } as RectOptions)
           .key("Rect11")

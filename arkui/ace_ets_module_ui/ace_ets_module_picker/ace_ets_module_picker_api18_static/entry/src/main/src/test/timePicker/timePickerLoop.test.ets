@@ -47,7 +47,7 @@ export default function timePickerLoopTest() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get timePickerLoopTest state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/timePicker/timePickerLoop' == pages.name)) {
+        if (!('timePickerLoop' == pages.name)) {
           console.info('get timePickerLoopTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

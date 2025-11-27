@@ -34,21 +34,19 @@ import {
   // StateDecoratedVariable,
   AppStorage
 } from '@ohos.arkui.stateManagement'
-// import { AlignRuleOption } from '@ohos.arkui.component';
-// import { NavRouter } from '@ohos.arkui.UIContext';
-import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { regObj } from '../../../MainAbility/common/Utils';
 import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct FlexGrowPage {
-  @StorageProp("_flexGrow") _flexGrow: number = 2
+  @StoragePropRef("_flexGrow") _flexGrow: number = 2
   @State targetView: string = ""
   @State componentKey: string = ""
   @State containerView: string = ""
-  @StorageProp("_parentWidth") _parentWidth: number = 500
-  @StorageProp("_parentHeight") _parentHeight: number = 500
+  @StoragePropRef("_parentWidth") _parentWidth: number = 500
+  @StoragePropRef("_parentHeight") _parentHeight: number = 500
   @State compareWidth: number = 0
   @State compareHeight: number = 0
   @State standardWidth: number = 0
@@ -57,7 +55,7 @@ struct FlexGrowPage {
   @State standardComponentKey: string = ""
   @State targetWidth: number = 0
   @State targetHeight: number = 0
-  @StorageProp("_compareFlexGrow") _compareFlexGrow: number = 1
+  @StoragePropRef("_compareFlexGrow") _compareFlexGrow: number = 1
 
   onPageShow() {
     console.info('[FlexGrow] page show called')

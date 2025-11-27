@@ -60,7 +60,7 @@ struct RotationGestureAllowedTypes {
       Button('Invalid').id('Invalid_type')
           .onClick((e: ClickEvent) => {
             this.result = 'allowed types default';
-            this.types = [SourceTool.Unknown];    //null   undefined
+            // this.types = [null, undefined];
           })
     }.padding({top: 10, left:40 } as Padding).alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('RotationGestureAllowedTypes_Father')
   }

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -59,13 +59,12 @@ export default function scrollOnScrollBeginJsunit() {
       }
     });
 
-    /**
-     * @tc.number testScrollStatic0001
-     * @tc.name testScrollStatic0001
-     * @tc.desc Set scrollSnapAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0001
+     * @tc.name     testScrollStatic0001
+     * @tc.desc     testScrollStatic0001
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0001 START');
@@ -77,49 +76,46 @@ export default function scrollOnScrollBeginJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0002
-     * @tc.name testScrollStatic0002
-     * @tc.desc Set friction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0002
+     * @tc.name     testScrollStatic0002
+     * @tc.desc     testScrollStatic0002
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0002 START');
       let strJson = inspector.getInspectorByKey('ScrollKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollStatic0002] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('friction')).assertEqual(1);
+      expect(obj.getElement('$attrs').getDouble('friction')).assertEqual(1);
       console.info('testScrollStatic0001 END');
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0003
-     * @tc.name testScrollStatic0003
-     * @tc.desc Set enableScrollInteraction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0003
+     * @tc.name     testScrollStatic0003
+     * @tc.desc     testScrollStatic0003
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0003 START');
       let strJson = inspector.getInspectorByKey('ScrollKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollStatic0003] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('enableScrollInteraction')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('enableScrollInteraction')).assertEqual(true);
       console.info('testScrollStatic0003 END');
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0005
-     * @tc.name testScrollStatic0005
-     * @tc.desc Set scrollable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0005
+     * @tc.name     testScrollStatic0005
+     * @tc.desc     testScrollStatic0005
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0005 START');
@@ -131,13 +127,12 @@ export default function scrollOnScrollBeginJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0006
-     * @tc.name testScrollStatic0006
-     * @tc.desc Set scrollBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0006
+     * @tc.name     testScrollStatic0006
+     * @tc.desc     testScrollStatic0006
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0006 START');
@@ -149,13 +144,12 @@ export default function scrollOnScrollBeginJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0007
-     * @tc.name testScrollStatic0007
-     * @tc.desc Set scrollBarWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0007
+     * @tc.name     testScrollStatic0007
+     * @tc.desc     testScrollStatic0007
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0007 START');
@@ -167,13 +161,12 @@ export default function scrollOnScrollBeginJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0008
-     * @tc.name testScrollStatic0008
-     * @tc.desc Set edgeEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0008
+     * @tc.name     testScrollStatic0008
+     * @tc.desc     testScrollStatic0008
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0008 START');
@@ -185,13 +178,12 @@ export default function scrollOnScrollBeginJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0009
-     * @tc.name testScrollStatic0009
-     * @tc.desc Set scrollBarColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0009
+     * @tc.name     testScrollStatic0009
+     * @tc.desc     testScrollStatic0009
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0009 START');
@@ -203,38 +195,36 @@ export default function scrollOnScrollBeginJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0010
-     * @tc.name testScrollStatic0010
-     * @tc.desc Set enablePaging values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0010
+     * @tc.name     testScrollStatic0010
+     * @tc.desc     testScrollStatic0010
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0010 START');
       let strJson = inspector.getInspectorByKey('ScrollKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollStatic0010] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('enablePaging')).assertEqual(undefined);
+      expect(obj.getElement('$attrs').tryGetElement('enablePaging')).assertEqual(undefined);
       console.info('testScrollStatic0010 END');
       done();
     });
 
-    /**
-     * @tc.number testScrollStatic0011
-     * @tc.name testScrollStatic0011
-     * @tc.desc Change scrollBarColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testScrollStatic0011
+     * @tc.name     testScrollStatic0011
+     * @tc.desc     testScrollStatic0011
+     * @tc.level    Level.LEVEL0
      */
     it('testScrollStatic0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0011 START');
       let driver = Driver.create();
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-     await UtilsTest.msSleep(2000)
+      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('ScrollKey1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("testScrollStatic0011 component  is: " + JSON.stringify(objNew.getElement('$attrs')));

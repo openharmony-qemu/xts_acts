@@ -37,64 +37,64 @@ interface Attrs{
 }
 
 export default function aspectRatioHeightTest() {
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    // 'AlphabetIndexer',
-    // 'Button',
-    // 'Checkbox',
-    // 'CheckboxGroup',
-    // 'DataPanel',
-    // 'DatePicker',
-    // 'Divider',
-    // 'Gauge',
-    // 'Image',
-    // 'ImageAnimator',
-    // 'LoadingProgress',
-    // 'Marquee',
-    // 'Menu',
-    // 'MenuItem',
-    // 'Navigation',
-    // 'NavRouter',
-    // 'Progress',
-    // 'QRCode',
-    // 'Radio',
-    // 'Rating',
-    // 'ScrollBar',
-    // 'Search',
-    // 'Slider',
-    // 'Text',
-    // 'TextArea',
-    // 'TextClock',
-    // 'TextInput',
-    // 'TextPicker',
-    // 'TextTimer',
-    // 'TimePicker',
-    // 'Toggle',
+    'AlphabetIndexer',
+    'Button',
+    'Checkbox',
+    'CheckboxGroup',
+    'DataPanel',
+    'DatePicker',
+    'Divider',
+    'Gauge',
+    'Image',
+    'ImageAnimator',
+    'LoadingProgress',
+    'Marquee',
+    'Menu',
+    'MenuItem',
+    'Navigation',
+    'Progress',
+    'QRCode',
+    'Radio',
+    'Rating',
+    'ScrollBar',
+    'Search',
+    'Slider',
+    'Text',
+    'TextArea',
+    'TextClock',
+    'TextInput',
+    'TextPicker',
+    'TextTimer',
+    'TimePicker',
+    'Toggle',
     'Badge',
-    // 'Column',
-    // 'Flex',
-    // 'GridRow',
-    // 'Grid',
-    // 'GridItem',
-    // 'List',
-    // 'ListItem',
-    // 'Navigator',
-    // 'Panel',
-    // 'Refresh',
-    // 'RelativeContainer',
-    // 'Row',
-    // 'Scroll',
-    // 'Stack',
-    // 'Swiper',
-    // 'Tabs',
-    // 'Circle',
-    // 'Ellipse',
-    // 'Line',
-    // 'Polyline',
-    // 'Polygon',
-    // 'Path',
-    // 'Rect',
-    // 'Shape'
+    'Column',
+    'Flex',
+    'GridRow',
+    'Grid',
+    'GridItem',
+    'List',
+    'ListItem',
+    'Panel',
+    'Refresh',
+    'RelativeContainer',
+    'Row',
+    'Scroll',
+    'Stack',
+    'Swiper',
+    'Tabs',
+    'Circle',
+    'Ellipse',
+    'Line',
+    'Polyline',
+    'Polygon',
+    'Path',
+    'Rect',
+    'Shape'
   )
 
   //Custom params.
@@ -120,19 +120,19 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      heightValue: 100,
+      heightValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
       aspectRatio: 2.0
     }
   },
     {
     describe: 'SetDecimal',
     setValue: {
-      height: 100,
+      height: 150,
       aspectRatio: 0.5
     },
     expectValue: {
-      height: '100.00vp',
-      heightValue: 100,
+      height: '150.00vp',
+      heightValue: AppStorage.get<UIContext>('uiContext')!.vp2px(150),
       aspectRatio: 0.5
     }
   }]
@@ -140,15 +140,11 @@ export default function aspectRatioHeightTest() {
   describe('AspectRatioHeightTest', () => {
     beforeAll(() => {
       console.info("aspectRatioHeightTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       AppStorage.setOrCreate<number>('_aspectRatio',  data.testValue.setValue.aspectRatio)
       AppStorage.setOrCreate<number>('_height',  data.testValue.setValue.height as number)
-
-      data.testValue.expectValue.heightValue = AppStorage.get<UIContext>('uiContext')!.vp2px(100)
 
       //Gets Rect information for the target component
       let targetRect = Utils.getComponentRect(data.pageConfig.componentKey??'');

@@ -68,8 +68,6 @@ struct AspectRatioHeightPage {
     this.parentWidth = routerParamOptions.view.parentWidth
     this.parentHeight = routerParamOptions.view.parentHeight
     console.info('AspectRatioHeightPage page show called ')
-    // AppStorage.setOrCreate<number>('_aspectRatio',  1.0)
-    // AppStorage.setOrCreate<number>('_height',  1.0)
   }
 
   aboutToAppear() {
@@ -156,8 +154,7 @@ struct AspectRatioHeightPage {
       } else if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-        }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
-.constraintSize({ minWidth: 0 })
+        }.backgroundColor(Color.Pink).applyStyles(this.commonStyle).constraintSize({ minWidth: 0 })
       } else if (this.targetView == 'MenuItem') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).backgroundColor(Color.Pink).applyStyles(this.commonStyle)

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function datapanelJsunit() {
       }
     });
 
-    /**
-     * @tc.number testDataPanelStatic01
-     * @tc.name testDataPanelStatic01
-     * @tc.desc Set trackShadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testDataPanelStatic01
+     * @tc.name     testDataPanelStatic01
+     * @tc.desc     testDataPanelStatic01
+     * @tc.level    Level.LEVEL0
      */
     it('testDataPanelStatic01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanelStatic01 START');
@@ -77,13 +76,12 @@ export default function datapanelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testDataPanelStatic02
-     * @tc.name testDataPanelStatic02
-     * @tc.desc Set strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testDataPanelStatic02
+     * @tc.name     testDataPanelStatic02
+     * @tc.desc     testDataPanelStatic02
+     * @tc.level    Level.LEVEL0
      */
     it('testDataPanelStatic02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanelStatic02 START');
@@ -95,13 +93,12 @@ export default function datapanelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testDataPanelStatic03
-     * @tc.name testDataPanelStatic03
-     * @tc.desc Set trackBackgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testDataPanelStatic03
+     * @tc.name     testDataPanelStatic03
+     * @tc.desc     testDataPanelStatic03
+     * @tc.level    Level.LEVEL0
      */
     it('testDataPanelStatic03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanelStatic03 START');
@@ -113,32 +110,30 @@ export default function datapanelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testDataPanelStatic04
-     * @tc.name testDataPanelStatic04
-     * @tc.desc Set valueColors values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testDataPanelStatic04
+     * @tc.name     testDataPanelStatic04
+     * @tc.desc     testDataPanelStatic04
+     * @tc.level    Level.LEVEL0
      */
     it('testDataPanelStatic04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanelStatic04 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
 
       console.log("cd DataPanel JSON.parseJsonElement(strJson)" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('valueColors')))
+      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('valueColors')))
         .assertEqual('[[{"color":"#FF123456","offset":"0.000000"},{"color":"#FF123456","offset":"1.000000"}],[{"color":"#FF654321","offset":"0.000000"},{"color":"#FF654321","offset":"1.000000"}]]')
       console.info('testDataPanelStatic04 END');
       done();
     });
 
-    /**
-     * @tc.number testDataPanelStatic05
-     * @tc.name testDataPanelStatic05
-     * @tc.desc Set closeEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testDataPanelStatic05
+     * @tc.name     testDataPanelStatic05
+     * @tc.desc     testDataPanelStatic05
+     * @tc.level    Level.LEVEL0
      */
     it('testDataPanelStatic05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanelStatic05 START');
@@ -150,13 +145,12 @@ export default function datapanelJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testDataPanelStatic06
-     * @tc.name testDataPanelStatic06
-     * @tc.desc Change strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testDataPanelStatic06
+     * @tc.name     testDataPanelStatic06
+     * @tc.desc     testDataPanelStatic06
+     * @tc.level    Level.LEVEL0
      */
     it('testDataPanelStatic06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanelStatic06 START');

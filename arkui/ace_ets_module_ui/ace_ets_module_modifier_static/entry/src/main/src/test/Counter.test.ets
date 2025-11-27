@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,13 +58,12 @@ export default function counterJsunit() {
       }
     });
 
-    /**
-     * @tc.number testCounterStatic01
-     * @tc.name testCounterStatic01
-     * @tc.desc Set enableInc values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testCounterStatic01
+     * @tc.name     testCounterStatic01
+     * @tc.desc     testCounterStatic01
+     * @tc.level    Level.LEVEL0
      */
     it('testCounterStatic01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testCounterStatic01] START');
@@ -75,13 +74,12 @@ export default function counterJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testCounterStatic02
-     * @tc.name testCounterStatic02
-     * @tc.desc Set enableDec values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testCounterStatic02
+     * @tc.name     testCounterStatic02
+     * @tc.desc     testCounterStatic02
+     * @tc.level    Level.LEVEL0
      */
     it('testCounterStatic02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testCounterStatic02] START');
@@ -92,13 +90,12 @@ export default function counterJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testCounterStatic03
-     * @tc.name testCounterStatic03
-     * @tc.desc Change enableDec values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testCounterStatic03
+     * @tc.name     testCounterStatic03
+     * @tc.desc     testCounterStatic03
+     * @tc.level    Level.LEVEL0
      */
     it('testCounterStatic03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testCounterStatic03 START');

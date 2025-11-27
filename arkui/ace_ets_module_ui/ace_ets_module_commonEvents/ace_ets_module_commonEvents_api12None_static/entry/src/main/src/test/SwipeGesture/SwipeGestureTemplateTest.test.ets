@@ -97,7 +97,7 @@ it('SwipeGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => void
       console.log('SwipeGestureTemplateTest_0010 obj2 time time2-time1',time2 - time1);
       console.log('TapGestureTemplateTest_0010 obj2 time timeBefore timeAfter', timeBefore, timeAfter);
       console.log('SwipeGestureTemplateTest_0010 obj2 time timeSpace',timeSpace);
-      let flag:number = time2 - time1 - timeSpace * 1000000 -  (timeAfter - timeBefore)*1000000
+      let flag:number = time2 - time1 - (timeSpace as number) * 1000000 -  (timeAfter - timeBefore)*1000000
       console.log('SwipeGestureTemplateTest_0010 flag',flag)
       console.log('TapGestureTemplateTest_0010 timeAfter - timeBefore:',timeAfter - timeBefore)
       expect( flag <= (16 * 1000000)).assertTrue();

@@ -50,7 +50,7 @@ export default function stepperLayout004() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get stepperLayout004 state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/stepper/stepperLayout/stepperLayout004" == pages.name)) {
+        if (!("stepperLayout004" == pages.name)) {
           console.info("get stepperLayout004 state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);

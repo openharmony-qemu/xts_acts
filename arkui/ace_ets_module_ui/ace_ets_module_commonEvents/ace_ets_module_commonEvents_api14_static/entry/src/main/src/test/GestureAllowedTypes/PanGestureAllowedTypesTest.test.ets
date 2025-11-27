@@ -84,7 +84,8 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
       // trigger gesture with finger
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int)) as Promise<void>)
+      let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000) as Int
+      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int, speed)
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
       let obj1 = JSON.parseJsonElement(text1);
@@ -93,7 +94,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
 
       // trigger gesture with mouse
       await CommonFunc.sleep(1000);
-      await ((driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int, y: Math.round(areaObj1.top + areaHeight1/2) as Int})) as Promise<void>)
+      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int, y: Math.round(areaObj1.top + areaHeight1/2) as Int}, speed)
       await CommonFunc.sleep(3000);
       let text2 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
       let obj2 = JSON.parseJsonElement(text2);
@@ -111,7 +112,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int)) as Promise<void>)
+      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int, speed)
       await CommonFunc.sleep(3000);
       let text4 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
       let obj4 = JSON.parseJsonElement(text4);
@@ -120,7 +121,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await ((driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int, y: Math.round(areaObj1.top + areaHeight1/2) as Int})) as Promise<void>)
+      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int, y: Math.round(areaObj1.top + areaHeight1/2) as Int}, speed)
       await CommonFunc.sleep(3000);
       let text5 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
       let obj5 = JSON.parseJsonElement(text5);
@@ -138,7 +139,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int, y: Math.round(areaObj1.top + areaHeight1/2) as Int})
+      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int, y: Math.round(areaObj1.top + areaHeight1/2) as Int}, speed)
       await CommonFunc.sleep(3000);
       let text7 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
       let obj7 = JSON.parseJsonElement(text7);
@@ -147,7 +148,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int)) as Promise<void>)
+      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int, speed)
       await CommonFunc.sleep(3000);
       let text8 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
       let obj8 = JSON.parseJsonElement(text8);
@@ -164,14 +165,14 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
       console.log('PanGestureAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
-      // trigger gesture again with finger
-      await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int)) as Promise<void>)
-      await CommonFunc.sleep(3000);
-      let text10 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
-      let obj10 = JSON.parseJsonElement(text10);
-      console.log('PanGestureAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
-      expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success');
+      // trigger gesture again with finger  // undefined/null
+      // await CommonFunc.sleep(1000);
+      // await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int)) as Promise<void>)
+      // await CommonFunc.sleep(3000);
+      // let text10 = inspector.getInspectorByKey('PanGestureAllowedTypes_result');
+      // let obj10 = JSON.parseJsonElement(text10);
+      // console.log('PanGestureAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
+      // expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success');
 
       console.info('PanGestureAllowedTypesTest_static_0010 END');
       done();

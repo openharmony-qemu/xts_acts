@@ -20,8 +20,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-// import { resourceManager } from '@kit.LocalizationKit';
-// import { BusinessError } from '@kit.BasicServicesKit';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -59,8 +57,7 @@ export default function textStyleJsunit() {
         console.info("get textStyleTest state pages:" + JSON.stringify(pages));
         if (!("textStyle" == pages.name)) {
           console.info("get textStyleTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push textStyleTest page result:" + JSON.stringify(result));
@@ -76,7 +73,6 @@ export default function textStyleJsunit() {
       await CommonFunc.sleep(1000);
       console.info("textStyle after each called");
     });
-	// let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id)
 
     /*
      * @tc.number   testTextStyle_static_006
@@ -91,7 +87,11 @@ export default function textStyleJsunit() {
       console.info("[testTextStyle_static_006] component strJson:" + strJson);
       console.info("[testTextStyle_static_006] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
 	    console.info("[testTextStyle_static_006] fontSize: " + $r('sys.float.ohos_id_text_font_size'));
-	    // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+      let obj = JSON.parseJsonElement(strJson);
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+      let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+	    expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
     });
 
     /*
@@ -114,7 +114,10 @@ export default function textStyleJsunit() {
       console.info("[testTextStyle_static_007] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_007] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+      let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+	    expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
     });
 
     
@@ -138,7 +141,10 @@ export default function textStyleJsunit() {
       console.info("[testTextStyle_static_008] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_008] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+      let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+	    expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
     });
 
     
@@ -163,7 +169,10 @@ export default function textStyleJsunit() {
       console.info("[testTextStyle_static_009] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_009] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+      let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+	    expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
     });
 
     
@@ -187,8 +196,10 @@ export default function textStyleJsunit() {
       console.info("[testTextStyle_static_010] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_010] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-    //
-	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+      let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+	    expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
 
     });
 

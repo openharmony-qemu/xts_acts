@@ -67,7 +67,7 @@ export default function LocalTestJsunit() {
         //routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LocalTestJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/ComponentV2/LocalTest" == pages.name)) {
+        if (!("LocalTest" == pages.name)) {
           console.info("get LocalTestJsunit pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

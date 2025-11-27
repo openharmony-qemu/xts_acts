@@ -12,41 +12,113 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r, Padding,Column,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  State,
-  Link,
-  Prop,
-} from '@ohos.arkui.stateManagement';
-// import { ImageSpanModifier } from "@ohos.arkui.modifier";
+  Entry,
+  Component,
+  $r,
+  Padding,
+  Column,
+  ImageAnimator,
+  ImageSpan,
+  Alignment,
+  Hyperlink,
+  BreakpointsReference,
+  GridRowDirection,
+  TextOverflow,
+  GridCol,
+  ColumnOptions,
+  Grid,
+  GridItem,
+  Gauge,
+  animateTo,
+  FormComponent,
+  Visibility,
+  FormDimension,
+  Divider,
+  Counter,
+  DataPanel,
+  DatePicker,
+  BorderImageOption,
+  BorderOptions,
+  AdaptiveColor,
+  BackgroundEffectOptions,
+  BorderStyle,
+  RepeatMode,
+  GradientDirection,
+  Image,
+  Checkbox,
+  Blank,
+  MarkStyle,
+  ResourceColor,
+  CheckboxGroup,
+  Text,
+  Toggle,
+  ToggleType,
+  FlexAlign,
+  Color,
+  Flex,
+  ButtonType,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  Week,
+  GridRow,
+  FontWeight,
+  Axis,
+  Margin,
+  Swiper,
+  ForEach,
+  PickerTextStyle,
+  CalendarAlign,
+  CalendarPicker,
+  EdgeEffect,
+  Curve,
+  SwiperDisplayMode,
+  ArrowPosition,
+  Select,
+  BlurStyle,
+  MenuAlignType,
+  TextInputController,
+  TextAlign,
+  AlphabetIndexer,
+  ImageSpanAttribute,
+  ImageFit,
+  ImageSpanAlignment
+} from '@ohos.arkui.component';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { ImageSpanModifier } from "@ohos.arkui.modifier";
+
 //
-// class CustomModifier extends ImageSpanModifier {
-//   applyNormalAttribute(instance: ImageSpanAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.objectFit(ImageFit.Contain)
-//   }
-// }
+class CustomModifier extends ImageSpanModifier {
+  applyNormalAttribute(instance: ImageSpanAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+
+  onChange1() {
+    this.objectFit(ImageFit.Contain)
+  }
+}
 
 @Entry
 @Component
 struct ImageSpanExample {
   private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7)
-//   @State customModifier: ImageSpanModifier = new CustomModifier()
-//     .objectFit(ImageFit.Cover)
-//     .verticalAlign(ImageSpanAlignment.BASELINE)
+
+    @State customModifier: ImageSpanModifier = new CustomModifier()
+      .objectFit(ImageFit.Cover)
+      .verticalAlign(ImageSpanAlignment.BASELINE)
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-//         (this.customModifier as CustomModifier).onChange1();
+                (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
       Text() {
         ImageSpan($r('app.media.icon'))
-//         .attributeModifier(this.customModifier as CustomModifier)
-        .key('imageSpan')
+                .attributeModifier(this.customModifier as CustomModifier)
+          .key('imageSpan')
       }.width('100%')
     }
     .margin({ top: 5 } as Margin)

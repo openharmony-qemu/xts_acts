@@ -45,7 +45,7 @@ export default function stepperInterface009() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get stepperInterface009 state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/stepper/stepperInterface/stepperInterface009" == pages.name)) {
+        if (!("stepperInterface009" == pages.name)) {
           console.info("get stepperInterface009 state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);

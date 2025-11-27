@@ -15,6 +15,7 @@
  */
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { $r } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 // import { resourceManager } from '@kit.LocalizationKit';
@@ -31,7 +32,6 @@ import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext();
 
 export default function textSpanFontTest() {
   describe('textSpanFontTest', () => {
@@ -55,11 +55,8 @@ export default function textSpanFontTest() {
         console.info("get textSpanFontTest state pages:" + JSON.stringify(pages));
         if (!("textSpanFont" == pages.name)) {
           console.info("get textSpanFontTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push textSpanFontTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textSpanFontTest page error:" + err);
@@ -68,7 +65,6 @@ export default function textSpanFontTest() {
     });
 
 
-	// let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id)
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -80,7 +76,7 @@ export default function textSpanFontTest() {
     })
 
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Text_Font_FontWeight_static_0100
      * @tc.name     ArkUX_Stage_Text_Font_FontWeight_static_0100
@@ -107,7 +103,7 @@ export default function textSpanFontTest() {
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Text_Font_FontWeight_static_0200
      * @tc.name     ArkUX_Stage_Text_Font_FontWeight_static_0200
@@ -136,7 +132,7 @@ export default function textSpanFontTest() {
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Text_Font_FontWeight_static_0300
      * @tc.name     ArkUX_Stage_Text_Font_FontWeight_static_0300
@@ -165,7 +161,7 @@ export default function textSpanFontTest() {
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Text_Font_FontWeight_static_0400
      * @tc.name     ArkUX_Stage_Text_Font_FontWeight_static_0400
@@ -912,8 +908,10 @@ export default function textSpanFontTest() {
 
           console.info("ArkUX_Stage_Text_Font_FontSize_static_0600 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
-
-		  // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0600 END ');
         } catch (err) {
           expect().assertFail()
@@ -941,7 +939,10 @@ export default function textSpanFontTest() {
 
           console.info("ArkUX_Stage_Text_Font_FontSize_static_0700 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
-          // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0700 END ');
         } catch (err) {
           expect().assertFail()
@@ -969,8 +970,10 @@ export default function textSpanFontTest() {
 
           console.info("ArkUX_Stage_Text_Font_FontSize_static_0800 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
-
-		  // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0800 END ');
         } catch (err) {
           expect().assertFail()
@@ -998,8 +1001,10 @@ export default function textSpanFontTest() {
 
           console.info("ArkUX_Stage_Text_Font_FontSize_static_0900 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
-
-		  // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0900 END ');
         } catch (err) {
           expect().assertFail()
@@ -1195,7 +1200,10 @@ export default function textSpanFontTest() {
 
           console.info("ArkUX_Stage_Span_Font_FontSize_static_0600 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
-          // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0600 END ');
         } catch (err) {
           expect().assertFail()
@@ -1251,7 +1259,10 @@ export default function textSpanFontTest() {
 
           console.info("ArkUX_Stage_Span_Font_FontSize_static_0800 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
-          // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0800 END ');
         } catch (err) {
           expect().assertFail()
@@ -1279,7 +1290,10 @@ export default function textSpanFontTest() {
 
           console.info("ArkUX_Stage_Span_Font_FontSize_static_0900 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
-          // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          const uiContext = AppStorage.get<UIContext>('uiContext');
+          const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+          let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0900 END ');
         } catch (err) {
           expect().assertFail()

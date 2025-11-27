@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,13 +55,12 @@ export default function imageAnimatorJsunit() {
       }
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0001
-     * @tc.name imageAnimatorTest_static_0001
-     * @tc.desc Set iterations values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0001
+     * @tc.name     imageAnimatorTest_static_0001
+     * @tc.desc     imageAnimatorTest_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageAnimatorTest_static_0001 START');
@@ -74,13 +73,12 @@ export default function imageAnimatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0002
-     * @tc.name imageAnimatorTest_static_0002
-     * @tc.desc Set fillMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0002
+     * @tc.name     imageAnimatorTest_static_0002
+     * @tc.desc     imageAnimatorTest_static_0002
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageAnimatorTest_static_0002 START');
@@ -93,13 +91,12 @@ export default function imageAnimatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0003
-     * @tc.name imageAnimatorTest_static_0003
-     * @tc.desc Set fixedSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0003
+     * @tc.name     imageAnimatorTest_static_0003
+     * @tc.desc     imageAnimatorTest_static_0003
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageAnimatorTest_static_0003 START');
@@ -112,13 +109,12 @@ export default function imageAnimatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0004
-     * @tc.name imageAnimatorTest_static_0004
-     * @tc.desc Set reverse values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0004
+     * @tc.name     imageAnimatorTest_static_0004
+     * @tc.desc     imageAnimatorTest_static_0004
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageAnimatorTest_static_0004 START');
@@ -131,13 +127,12 @@ export default function imageAnimatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0005
-     * @tc.name imageAnimatorTest_static_0005
-     * @tc.desc Set duration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0005
+     * @tc.name     imageAnimatorTest_static_0005
+     * @tc.desc     imageAnimatorTest_static_0005
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageAnimatorTest_static_0005 START');
@@ -150,13 +145,12 @@ export default function imageAnimatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0006
-     * @tc.name imageAnimatorTest_static_0006
-     * @tc.desc Set state values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0006
+     * @tc.name     imageAnimatorTest_static_0006
+     * @tc.desc     imageAnimatorTest_static_0006
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageAnimatorTest_static_0006 START');
@@ -169,13 +163,12 @@ export default function imageAnimatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0007
-     * @tc.name imageAnimatorTest_static_0007
-     * @tc.desc Set images values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0007
+     * @tc.name     imageAnimatorTest_static_0007
+     * @tc.desc     imageAnimatorTest_static_0007
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageAnimatorTest_static_0007 START');
@@ -184,18 +177,17 @@ export default function imageAnimatorJsunit() {
       console.info("imageAnimatorTest_static_0007 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('images'))
-        .assertEqual('[{\"src\":\"resource:///16777257.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"},{\"src\":\"resource:///16777258.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"},{\"src\":\"resource:///16777259.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"},{\"src\":\"resource:///16777260.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"}]');
+        .assertEqual('[{\"src\":\"resource:///16777250.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"},{\"src\":\"resource:///16777251.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"},{\"src\":\"resource:///16777252.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"},{\"src\":\"resource:///16777253.jpg\",\"left\":\"0.00vp\",\"top\":\"0.00vp\",\"width\":\"0.00vp\",\"height\":\"0.00vp\",\"duration\":\"0\"}]');
       console.info('imageAnimatorTest_static_0007 END');
       done();
     });
 
-    /**
-     * @tc.number imageAnimatorTest_static_0008
-     * @tc.name imageAnimatorTest_static_0008
-     * @tc.desc Change iterations values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageAnimatorTest_static_0008
+     * @tc.name     imageAnimatorTest_static_0008
+     * @tc.desc     imageAnimatorTest_static_0008
+     * @tc.level    Level.LEVEL0
      */
     it('imageAnimatorTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -203,7 +195,7 @@ export default function imageAnimatorJsunit() {
       let driver = Driver.create();
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-     await UtilsTest.msSleep(2000)
+      await UtilsTest.msSleep(2000)
 
       let strJsonNew = inspector.getInspectorByKey('imageAnimator');
 

@@ -49,7 +49,7 @@ export default function TimePickerStartAndEnd() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get TimePickerAddApi state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/timePicker/timePickerStartAndEnd' == pages.name)) {
+        if (!('timePickerStartAndEnd' == pages.name)) {
           console.info('get TimePickerAddApi pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

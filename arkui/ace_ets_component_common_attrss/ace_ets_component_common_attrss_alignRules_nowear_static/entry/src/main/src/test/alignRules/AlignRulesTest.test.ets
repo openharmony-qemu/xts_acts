@@ -256,9 +256,6 @@ export default function AlignRulesTest() {
     }
   }
   ]
-  // ParentAlignTopHorizontalCenter/ParentVerticalCenterLeftJustifying
-  // /ParentVerticalCenterHorizontally/ParentVerticalCenterRightAlignment
-  // /ParentAlignmentLeftJustifyingHorizontally
 
   describe('AlignRulesTest', () => {
 

@@ -106,14 +106,13 @@ it('ReplaceDestination1_static_0100', Level.LEVEL0, async (done: () => void): Pr
 
     
     
-
-// /*
-//      * @tc.number   ReplaceDestination1_static_static_0200
-//      * @tc.name     ReplaceDestination1_static_static_0200
-//      * @tc.desc     ReplaceDestination1_static_static_0200
-//      * @tc.level    Level.LEVEL0
-//      */
-// it('ReplaceDestination1_static_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+/*
+     * @tc.number   ReplaceDestination1_static_static_0200
+     * @tc.name     ReplaceDestination1_static_static_0200
+     * @tc.desc     ReplaceDestination1_static_static_0200
+     * @tc.level    Level.LEVEL0
+     */
+// it('ReplaceDestination1_static_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {  // undefined
 //       console.info('ReplaceDestination1_static_static_0200 START');
 //       await CommonFunc.sleep(500);
 //
@@ -137,14 +136,13 @@ it('ReplaceDestination1_static_0100', Level.LEVEL0, async (done: () => void): Pr
 
     
     
-
-// /*
-//      * @tc.number   ReplaceDestination1_static_0300
-//      * @tc.name     ReplaceDestination1_static_0300
-//      * @tc.desc     ReplaceDestination1_static_0300
-//      * @tc.level    Level.LEVEL0
-//      */
-// it('ReplaceDestination1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+/*
+     * @tc.number   ReplaceDestination1_static_0300
+     * @tc.name     ReplaceDestination1_static_0300
+     * @tc.desc     ReplaceDestination1_static_0300
+     * @tc.level    Level.LEVEL0
+     */
+// it('ReplaceDestination1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => { // null
 //       console.info('ReplaceDestination1_static_0300 START');
 //       await CommonFunc.sleep(500);
 //

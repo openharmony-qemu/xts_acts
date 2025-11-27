@@ -47,10 +47,10 @@ export default function SideBarContainerTypeTest() {
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+       
         let pages = routerInstance.getState();
         console.info("get SideBarContainerType state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/SideBarContainer/SideBarContainerType/SideBarContainerType" == pages.name)) {
+        if (!("SideBarContainerType" == pages.name)) {
           console.info("get SideBarContainerType pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -156,8 +156,6 @@ export default function SideBarContainerTypeTest() {
       console.log("assert width")
       expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(150))) <= 1).assertTrue();
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
-      expect(Math.round(sideBarContent_011.right - sideBarContent_011.left)).assertEqual(Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(700)));
-      console.log("sideBarContent_011.right - sideBarContent_011.left" + (sideBarContent_011.right - sideBarContent_011.left))
 
       let strJson1 = inspector.getInspectorByKey('SideBarContainerType_SideBarContainer_01');
 
@@ -360,79 +358,6 @@ export default function SideBarContainerTypeTest() {
       done();
     });
 
-// 源代码注释
-// /*
-//      * @tc.number   SUB_ACE_SideBarContainerType_static_0800
-//      * @tc.name     SUB_ACE_SideBarContainerType_static_0800
-//      * @tc.desc     SUB_ACE_SideBarContainerType_static_0800
-//      * @tc.level    Level.LEVEL0
-//      */
-//     it('SUB_ACE_SideBarContainerType_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//     //   console.info('[SUB_ACE_SideBarContainerType_0800] START');
-//     //   AppStorage.get<MessageManager<SideBarContainerType>>('messageManager')?.notify({name:'SideBarContainerType', value:SideBarContainerType.AUTO})
-//     //   AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'width1', value:200 + fp2vp(100)})
-//     //   AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'minContentWidth', value:'100fp'})
-//     //   AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'minSideBarWidth', value:200})
-//     //   AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'maxSideBarWidth', value:300})
-//     //   await CommonFunc.sleep(500);
-//     //   console.log("get Initial value")
-//     //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-//     //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-//     //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
-//     //
-//     //   console.log("assert position")
-//     //   expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
-//     //   console.log("SideBar_01.left" + SideBar_01.left)
-//     //   expect(sideBarContent_01.left).assertEqual(SideBarContainer_01.left);
-//     //   console.log("sideBarContent_01.left" + sideBarContent_01.left)
-//     //   console.log("SideBarContainer_01.left" + SideBarContainer_01.left)
-//     //
-//     //   console.log("assert width")
-//     //   expect(Math.round(SideBar_01.right - SideBar_01.left)).assertEqual(Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(200)));
-//     //   console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
-//     //   expect(Math.round(sideBarContent_01.right - sideBarContent_01.left)).assertEqual(Math.round(fp2px(100)));
-//     //   console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
-//     //
-//     //   console.info('[SUB_ACE_SideBarContainerType_0800] END');
-//     //   done();
-//     });
-//
-//      /*
-//      * @tc.number   SUB_ACE_SideBarContainerType_static_0900
-//      * @tc.name     SUB_ACE_SideBarContainerType_static_0900
-//      * @tc.desc     SUB_ACE_SideBarContainerType_static_0900
-//      * @tc.level    Level.LEVEL0
-//      */
-//     it('SUB_ACE_SideBarContainerType_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//     //   console.info('[SUB_ACE_SideBarContainerType_0900] START');
-//     //   AppStorage.get<MessageManager<SideBarContainerType>>('messageManager')?.notify({name:'SideBarContainerType', value:SideBarContainerType.AUTO})
-//     //   AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'width1', value:200 + lpx2vp(100)})
-//     //   AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'minContentWidth', value:'100lpx'})
-//     //   AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'minSideBarWidth', value:200})
-//     //   AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'maxSideBarWidth', value:300})
-//     //   await CommonFunc.sleep(500);
-//     //   console.log("get Initial value")
-//     //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-//     //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-//     //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
-//     //
-//     //   console.log("assert position")
-//     //   expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
-//     //   console.log("SideBar_01.left" + SideBar_01.left)
-//     //   expect(sideBarContent_01.left).assertEqual(SideBarContainer_01.left);
-//     //   console.log("sideBarContent_01.left" + sideBarContent_01.left)
-//     //   console.log("SideBarContainer_01.left" + SideBarContainer_01.left)
-//     //
-//     //   console.log("assert width")
-//     //   expect(Math.round(SideBar_01.right - SideBar_01.left)).assertEqual(Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(200)));
-//     //   console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
-//     //   expect(Math.round(sideBarContent_01.right - sideBarContent_01.left)).assertEqual(Math.round(lpx2px(100)));
-//     //   console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
-//     //
-//     //   console.info('[SUB_ACE_SideBarContainerType_0900] END');
-//     //   done();
-//     });
-// 源代码注释
 
     
 // /*

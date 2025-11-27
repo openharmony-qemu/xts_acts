@@ -68,7 +68,7 @@ export default function Provider5Test() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Provider5Test state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Provider/Provider5" == pages.name)) {
+        if (!("Provider5" == pages.name)) {
           console.info("get Provider5Test pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

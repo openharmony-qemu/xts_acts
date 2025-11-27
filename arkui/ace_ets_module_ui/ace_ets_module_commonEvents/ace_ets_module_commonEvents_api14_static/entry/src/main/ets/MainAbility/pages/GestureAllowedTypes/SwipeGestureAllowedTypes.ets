@@ -49,7 +49,7 @@ struct SwipeGestureAllowedTypes {
       Button('Invalid').id('Invalid_type')
           .onClick((e: ClickEvent) => {
             this.result = 'allowed types default';
-            this.types = [SourceTool.Unknown];
+            // this.types = [null, undefined];
           })
     }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('SwipeGestureAllowedTypes_Father')
   }

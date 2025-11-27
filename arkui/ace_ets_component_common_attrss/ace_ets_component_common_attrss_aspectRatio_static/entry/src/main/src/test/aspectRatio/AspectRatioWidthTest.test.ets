@@ -37,67 +37,67 @@ interface Attrs{
 }
 
 export default function aspectRatioWidthTest() {
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
   // let uiContext = AppStorage.get<UIContext>("uiContext")
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    // 'AlphabetIndexer',
-    // 'Blank',
-    // 'Button',
-    // 'Checkbox',
-    // 'CheckboxGroup',
-    // 'DataPanel',
-    // 'DatePicker',
-    // 'Divider',
-    // 'Gauge',
-    // 'Image',
-    // 'ImageAnimator',
-    // 'LoadingProgress',
-    // 'Marquee',
-    // 'Menu',
-    // 'MenuItem',
-    // 'Navigation',
-    // 'NavRouter',
-    // 'Progress',
-    // 'QRCode',
-    // 'Radio',
-    // 'Rating',
-    // 'ScrollBar',
-    // 'Search',
-    // 'Slider',
-    // 'Text',
-    // 'TextArea',
-    // 'TextClock',
-    // 'TextInput',
-    // 'TextPicker',
-    // 'TextTimer',
-    // 'TimePicker',
-    // 'Toggle',
+    'AlphabetIndexer',
+    'Blank',
+    'Button',
+    'Checkbox',
+    'CheckboxGroup',
+    'DataPanel',
+    'DatePicker',
+    'Divider',
+    'Gauge',
+    'Image',
+    'ImageAnimator',
+    'LoadingProgress',
+    'Marquee',
+    'Menu',
+    'MenuItem',
+    'Navigation',
+    'Progress',
+    'QRCode',
+    'Radio',
+    'Rating',
+    'ScrollBar',
+    'Search',
+    'Slider',
+    'Text',
+    'TextArea',
+    'TextClock',
+    'TextInput',
+    'TextPicker',
+    'TextTimer',
+    'TimePicker',
+    'Toggle',
     'Badge',
-    // 'Column',
-    // 'Counter',
-    // 'Flex',
-    // 'GridRow',
-    // 'Grid',
-    // 'GridItem',
-    // 'List',
-    // 'ListItem',
-    // 'Navigator',
-    // 'Panel',
-    // 'Refresh',
-    // 'RelativeContainer',
-    // 'Row',
-    // 'Scroll',
-    // 'Stack',
-    // 'Swiper',
-    // 'Tabs',
-    // 'Circle',
-    // 'Ellipse',
-    // 'Line',
-    // 'Polyline',
-    // 'Polygon',
-    // 'Path',
-    // 'Rect',
-    // 'Shape'
+    'Column',
+    'Counter',
+    'Flex',
+    'GridRow',
+    'Grid',
+    'GridItem',
+    'List',
+    'ListItem',
+    'Panel',
+    'Refresh',
+    'RelativeContainer',
+    'Row',
+    'Scroll',
+    'Stack',
+    'Swiper',
+    'Tabs',
+    'Circle',
+    'Ellipse',
+    'Line',
+    'Polyline',
+    'Polygon',
+    'Path',
+    'Rect',
+    'Shape'
   )
 
   //Custom params.
@@ -114,7 +114,8 @@ export default function aspectRatioWidthTest() {
   }
 
   //Test content and expected results
-  let testValues: TestValue[] = [{
+  let testValues: TestValue[] = [
+    {
     describe: 'SetNumber',
     setValue: {
       width: 100,
@@ -122,10 +123,11 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      widthValue: 100,
+      widthValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
       aspectRatio: 2.0
     }
-  }, {
+  },
+    {
     describe: 'SetDecimal',
     setValue: {
       width: 100,
@@ -133,23 +135,21 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      widthValue: 100,
+      widthValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
       aspectRatio: 0.5
     }
-  }]
+  }
+  ]
 
   describe('AspectRatioWidthTest', () => {
     beforeAll(() => {
       console.info("aspectRatioWidthTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Gets Rect information for the target component
       AppStorage.setOrCreate<number>('_aspectRatio',  data.testValue.setValue.aspectRatio)
       AppStorage.setOrCreate<number>('_width',  data.testValue.setValue.width as number)
-      data.testValue.expectValue.heightValue = AppStorage.get<UIContext>('uiContext')!.vp2px(100)
       let targetRect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       let targetRectWidth = targetRect.right - targetRect.left;
       let targetRectHeight = targetRect.bottom - targetRect.top;

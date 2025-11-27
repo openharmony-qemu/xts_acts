@@ -127,7 +127,7 @@ import {
   GaugeOptions
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { RouterParams } from '../../common/Utils';
 
@@ -142,7 +142,7 @@ import { RouterParams } from '../../common/Utils';
 struct AlignRules {
 
   @State show: boolean = false //For Panel
-  @StorageProp("_alignRules") _alignRules: AlignRuleOption = {
+  @StoragePropRef("_alignRules") _alignRules: AlignRuleOption = {
     center: { anchor: '__container__', align: VerticalAlign.Center },
     middle: { anchor: '__container__', align: HorizontalAlign.Center }
   } as AlignRuleOption;

@@ -37,6 +37,8 @@ interface Attrs{
 }
 
 export default function aspectRatioWidthTest() {
+	await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.aspectRatio.nowear.test.static", "EntryAbility")
+	await UtilsTest.msSleep(4000)
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
@@ -71,7 +73,7 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      widthValue: new UIContext().vp2px(100),
+      widthValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
       aspectRatio: 2.0
     }
   }, {
@@ -82,7 +84,7 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      widthValue: new UIContext().vp2px(100),
+      widthValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
       aspectRatio: 0.5
     }
   }]
@@ -90,8 +92,6 @@ export default function aspectRatioWidthTest() {
   describe('AspectRatioWidthTest', () => {
     beforeAll(() => {
       console.info("aspectRatioWidthTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.aspectRatio.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Gets Rect information for the target component

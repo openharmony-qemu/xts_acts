@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function navRouterJsunit() {
       }
     });
 
-    /**
-     * @tc.number NavRouterJsunit_static_0100
-     * @tc.name NavRouterJsunit_static_0100
-     * @tc.desc Set mode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavRouterJsunit_static_0100
+     * @tc.name     NavRouterJsunit_static_0100
+     * @tc.desc     NavRouterJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('NavRouterJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[NavRouterJsunit_static_0100] START');
@@ -76,13 +75,12 @@ export default function navRouterJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavRouterJsunit_static_0101
-     * @tc.name NavRouterJsunit_static_0101
-     * @tc.desc Change mode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavRouterJsunit_static_0101
+     * @tc.name     NavRouterJsunit_static_0101
+     * @tc.desc     NavRouterJsunit_static_0101
+     * @tc.level    Level.LEVEL0
      */
     it('NavRouterJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavRouterJsunit_static_0101 START');

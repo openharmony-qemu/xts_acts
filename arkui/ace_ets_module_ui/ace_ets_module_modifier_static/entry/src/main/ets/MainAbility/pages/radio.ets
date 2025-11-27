@@ -12,41 +12,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,Radio,Marquee,NavDestination,QRCode,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List,RadioAttribute, ListItem,Radio,Marquee,NavDestination,QRCode,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-// import { RadioModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends RadioModifier {
-//   applyNormalAttribute(instance: RadioAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.checked(false)
-//   }
-// }
+import { RadioModifier } from "@ohos.arkui.modifier";
+
+class CustomModifier extends RadioModifier {
+  applyNormalAttribute(instance: RadioAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+
+  onChange1() {
+    this.checked(false)
+  }
+}
 
 @Entry
 @Component
 struct RadioGroup {
-//   @State customModifier: RadioModifier = new CustomModifier()
-//     .radioStyle({
-//       indicatorColor: '#FF123456',
-//       checkedBackgroundColor: '#FF147258',
-//       uncheckedBorderColor: '#FF963852'
-//     })
-//     .checked(true);
+  @State customModifier: RadioModifier = new CustomModifier()
+    .radioStyle({
+      indicatorColor: '#FF123456',
+      checkedBackgroundColor: '#FF147258',
+      uncheckedBorderColor: '#FF963852'
+    })
+    .checked(true);
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
 
       Button("change value").onClick((e: ClickEvent) => {
-//         (this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Text("radio-Group")
@@ -65,7 +65,7 @@ struct RadioGroup {
 
       Radio({ value: 'Radio1', group: 'radioGroup' })
         .key("RadioOne")
-        // .attributeModifier(this.customModifier as CustomModifier)
+        .attributeModifier(this.customModifier as CustomModifier)
 
       Radio({ value: 'Radio2', group: 'radioGroup' })
         .checked(false)

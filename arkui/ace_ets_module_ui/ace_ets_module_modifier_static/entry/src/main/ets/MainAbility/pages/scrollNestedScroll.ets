@@ -14,29 +14,29 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../../src/test/Utils.test';
-// import { ScrollModifier } from "@ohos.arkui.modifier";
-import { Entry, Column, Component, Scroll, Scroller, Flex,  TextAlign,
-  Text, Button, ClickEvent, Color} from '@ohos.arkui.component'
+import { ScrollModifier } from "@ohos.arkui.modifier";
+import { Entry, Column, Component, Scroll, Scroller, Flex,  TextAlign,NestedScrollMode,
+  Text, Button, ClickEvent, Color, ScrollAttribute, ScrollState, ScrollSource} from '@ohos.arkui.component'
 import { BusinessError } from '@ohos.base';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage,State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-// class CustomModifier extends ScrollModifier {
-//   applyNormalAttribute(instance: ScrollAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-// }
+class CustomModifier extends ScrollModifier {
+  applyNormalAttribute(instance: ScrollAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+}
 
 @Entry
 @Component
 struct ScrollNestedScroll {
   scroller: Scroller = new Scroller()
-  // @State customModifier: ScrollModifier = new CustomModifier()
-  //   .nestedScroll({
-  //     scrollForward: NestedScrollMode.PARALLEL,
-  //     scrollBackward: NestedScrollMode.PARALLEL,
-  //   })
-  // @State selfScrollTime: number = 0
-  // @State parentScrollTime: number = 0
+  @State customModifier: ScrollModifier = new CustomModifier()
+    .nestedScroll({
+      scrollForward: NestedScrollMode.PARALLEL,
+      scrollBackward: NestedScrollMode.PARALLEL,
+    })
+  @State selfScrollTime: number = 0
+  @State parentScrollTime: number = 0
 
   build() {
     Column() {
@@ -48,10 +48,10 @@ struct ScrollNestedScroll {
             try {
               let backData: events_emitter.EventData = {
                 data: {
-                  // "ACTION": this.parentScrollTime > 0 && this.selfScrollTime > 0,
-                  // "parentScrollTime": this.parentScrollTime,
-                  // "selfScrollTime": this.selfScrollTime
-                }
+                  "ACTION": this.parentScrollTime > 0 && this.selfScrollTime > 0,
+                  "parentScrollTime": this.parentScrollTime,
+                  "selfScrollTime": this.selfScrollTime
+                } as Record<String,undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 77004,
@@ -84,16 +84,14 @@ struct ScrollNestedScroll {
               .textAlign(TextAlign.Center)
               .backgroundColor(1234).height('150%')
           }
-          // .attributeModifier(this.customModifier as CustomModifier)
+          .attributeModifier(this.customModifier as CustomModifier)
           .backgroundColor(Color.Black)
           .height('90%')
-          // .onScroll((xOffset: number, yOffset: number) => {
-          //   console.info("WebView onScroll x = " + xOffset)
-          //   console.info("WebView onScroll y = " + yOffset)
-          //   // if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
-          //   //   this.selfScrollTime = Utils.getSystemTime()
-          //   // }
-          // })
+          .onDidScroll((xOffset: double, yOffset: double, scrollState: ScrollState) => {
+            if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
+              this.selfScrollTime = Utils.getSystemTime()
+            }
+          })
 
           Text("Scroll Area")
             .width("100%")
@@ -103,12 +101,12 @@ struct ScrollNestedScroll {
             .textAlign(TextAlign.Center)
         }.width('100%')
       }
-      // .onScroll((xOffset: number, yOffset: number) => {
-      //   // console.info('ParentScroll:' + xOffset + ' ' + yOffset)
-      //   // if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
-      //   //   this.parentScrollTime = Utils.getSystemTime()
-      //   // }
-      // })
+      .onWillScroll((xOffset: double, yOffset: double, scrollState: ScrollState, ScrollSource:ScrollSource) => {
+        console.info('ParentScroll:' + xOffset + ' ' + yOffset)
+        if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
+          this.parentScrollTime = Utils.getSystemTime()
+        }
+      })
       .width('100%')
       .height('70%')
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).key('ColumnSize')

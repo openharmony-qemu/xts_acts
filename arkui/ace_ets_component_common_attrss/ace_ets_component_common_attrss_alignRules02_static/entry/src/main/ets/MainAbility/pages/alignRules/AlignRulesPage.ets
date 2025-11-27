@@ -46,11 +46,11 @@ import {
   Menu,
   ScrollBar,
   TextTimer,
-// Navigator,
+
   ColumnSplit,
   RowSplit,
   Refresh,
-// Panel,
+
   Shape,
   Rect,
   Path,

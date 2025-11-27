@@ -3645,16 +3645,15 @@ export default function search() {
       console.info("[ArkUI_Stage_Search_SearchButton_1000]: " + JSON.stringify(strJson))
       let obj = JSON.parseJsonElement(strJson);
       const uiContext = AppStorage.get<UIContext>('uiContext');
-      // const abilityStageContext =
-      //   AppStorage.get<common.AbilityStageContext>('stageContext') as common.AbilityStageContext;
       console.info("[ArkUI_Stage_Search_SearchButton_1000]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchButton')));
       console.info("[ArkUI_Stage_Search_SearchButton_1000]: " +
       obj.getElement('$attrs').getElement('searchButtonOption').getString('fontSize'));
-      // let resourceSize = abilityStageContext.resourceManager.getNumber($r('sys.float.Body_M').id)
-      // console.info("[TextInputPageJsunit_0200] size: " + uiContext!.px2fp(resourceSize));
-      // expect(obj.getElement('$attrs').getElement('searchButtonOption').getString('fontSize'))
-      //   .assertEqual('' + Math.round(uiContext!.px2fp(resourceSize)) + '.00fp');
+      const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+      let resourceSize = context?.resourceManager.getDouble($r('sys.float.Body_M').id) as double
+      console.info("[TextInputPageJsunit_0200] size: " + uiContext!.px2fp(resourceSize));
+      expect(obj.getElement('$attrs').getElement('searchButtonOption').getString('fontSize'))
+        .assertEqual('' + Math.round(uiContext!.px2fp(resourceSize)) + '.00fp');
       console.info("[ArkUI_Stage_Search_SearchButton_1000] end");
       done();
     });

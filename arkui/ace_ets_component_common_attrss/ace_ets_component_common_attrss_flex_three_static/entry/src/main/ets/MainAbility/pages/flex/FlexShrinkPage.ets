@@ -124,7 +124,7 @@ import {
   State,
   Link,
   Prop,
-  StorageProp
+  StoragePropRef
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
@@ -137,20 +137,20 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct FlexShrinkPage {
-  @StorageProp("_flexShrink") _flexShrink: number = 4;
+  @StoragePropRef("_flexShrink") _flexShrink: number = 4;
   @State targetView: string = ""
   @State componentKey: string = ""
   @State containerView: string = ""
-  @StorageProp("_parentWidth") _parentWidth: number = 400
-  @StorageProp("_parentHeight") _parentHeight: number = 400
+  @StoragePropRef("_parentWidth") _parentWidth: number = 400
+  @StoragePropRef("_parentHeight") _parentHeight: number = 400
   @State compareWidth: number = 0
   @State compareHeight: number = 0
   @State standardWidth: number = 0
   @State standardHeight: number = 0
   @State targetWidth: number = 0
   @State targetHeight: number = 0
-  @StorageProp("_standardFlexShrink") _standardFlexShrink: number = 0
-  @StorageProp("_compareFlexShrink") _compareFlexShrink: number = 1
+  @StoragePropRef("_standardFlexShrink") _standardFlexShrink: number = 0
+  @StoragePropRef("_compareFlexShrink") _compareFlexShrink: number = 1
   @State compareComponentKey: string =""
   @State standardComponentKey: string = ""
   @Builder

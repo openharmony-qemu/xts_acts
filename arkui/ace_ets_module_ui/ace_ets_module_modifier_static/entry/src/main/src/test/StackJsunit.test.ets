@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,13 +55,12 @@ export default function stackJsunit() {
       }
     });
 
-    /**
-     * @tc.number stackTest_static_002
-     * @tc.name stackTest_static_002
-     * @tc.desc Set alignContent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   stackTest_static_002
+     * @tc.name     stackTest_static_002
+     * @tc.desc     stackTest_static_002
+     * @tc.level    Level.LEVEL0
      */
     it('stackTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('stackTest_static_002 START');
@@ -73,13 +72,12 @@ export default function stackJsunit() {
       done();
     });
 
-    /**
-     * @tc.number stackTest_static_001
-     * @tc.name stackTest_static_001
-     * @tc.desc Change alignContent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   stackTest_static_001
+     * @tc.name     stackTest_static_001
+     * @tc.desc     stackTest_static_001
+     * @tc.level    Level.LEVEL0
      */
     it('stackTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('stackTest_static_001 START');

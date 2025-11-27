@@ -124,7 +124,7 @@ import {
   State,
   Link,
   Prop,
-  StorageProp
+  StoragePropRef
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
@@ -136,12 +136,12 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct FlexGrowPage {
-  @StorageProp("_flexGrow") _flexGrow: number = 2
+  @StoragePropRef("_flexGrow") _flexGrow: number = 2
   @State targetView: string = ""
   @State componentKey: string = ""
   @State containerView: string = ""
-  @StorageProp("_parentWidth") _parentWidth: number = 500
-  @StorageProp("_parentHeight") _parentHeight: number = 500
+  @StoragePropRef("_parentWidth") _parentWidth: number = 500
+  @StoragePropRef("_parentHeight") _parentHeight: number = 500
   @State compareWidth: number = 0
   @State compareHeight: number = 0
   @State standardWidth: number = 0
@@ -150,7 +150,7 @@ struct FlexGrowPage {
   @State standardComponentKey: string = ""
   @State targetWidth: number = 0
   @State targetHeight: number = 0
-  @StorageProp("_compareFlexGrow") _compareFlexGrow: number = 1
+  @StoragePropRef("_compareFlexGrow") _compareFlexGrow: number = 1
   @Builder
   myBuilder() {
     Column() {

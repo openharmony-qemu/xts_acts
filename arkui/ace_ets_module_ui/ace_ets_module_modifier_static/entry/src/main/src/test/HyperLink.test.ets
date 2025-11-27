@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function hyperLinkJsunit() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_hyperLink_attrs_static_0100
-     * @tc.name ArkUX_Stage_hyperLink_attrs_static_0100
-     * @tc.desc Set color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_hyperLink_attrs_static_0100
+     * @tc.name     ArkUX_Stage_hyperLink_attrs_static_0100
+     * @tc.desc     ArkUX_Stage_hyperLink_attrs_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_hyperLink_attrs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_hyperLink_attrs_static_0100 START');
@@ -77,13 +76,12 @@ export default function hyperLinkJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_hyperLink_attrs_static_0101
-     * @tc.name ArkUX_Stage_hyperLink_attrs_static_0101
-     * @tc.desc Change color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_hyperLink_attrs_static_0101
+     * @tc.name     ArkUX_Stage_hyperLink_attrs_static_0101
+     * @tc.desc     ArkUX_Stage_hyperLink_attrs_static_0101
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_hyperLink_attrs_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

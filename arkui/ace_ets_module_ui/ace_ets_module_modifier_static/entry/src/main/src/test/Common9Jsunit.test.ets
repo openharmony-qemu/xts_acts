@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
@@ -38,7 +38,7 @@ export default function common9Jsunit() {
     beforeEach(async () => {
       console.info("common_static_Jsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/common_static_9',
+        url: 'MainAbility/pages/common_9',
       }
 
       try {
@@ -46,7 +46,7 @@ export default function common9Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get common_static_Jsunit state pages: " + JSON.stringify(pages));
-        if (!("common_static_9" == pages.name)) {
+        if (!("common_9" == pages.name)) {
           console.info("get common_static_Jsunit state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
          await UtilsTest.msSleep(2000);
@@ -61,13 +61,12 @@ export default function common9Jsunit() {
       console.info("common_static_Jsunit before each called");
     })
 
-    /**
-     * @tc.number common_static_0001
-     * @tc.name common_static_focusable
-     * @tc.desc Set focusable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_focusable
+     * @tc.name     common_static_focusable
+     * @tc.desc     common_static_focusable
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_focusable', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_focusable] START');
@@ -78,13 +77,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0002
-     * @tc.name common_static_tabIndex
-     * @tc.desc Set tabIndex values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_tabIndex
+     * @tc.name     common_static_tabIndex
+     * @tc.desc     common_static_tabIndex
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_tabIndex', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_tabIndex] START');
@@ -96,13 +94,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0003
-     * @tc.name common_static_defaultFocus
-     * @tc.desc Set defaultFocus values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_defaultFocus
+     * @tc.name     common_static_defaultFocus
+     * @tc.desc     common_static_defaultFocus
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_defaultFocus', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_defaultFocus] START');
@@ -114,13 +111,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0004
-     * @tc.name common_static_groupDefaultFocus
-     * @tc.desc Set groupDefaultFocus values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_groupDefaultFocus
+     * @tc.name     common_static_groupDefaultFocus
+     * @tc.desc     common_static_groupDefaultFocus
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_groupDefaultFocus', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_groupDefaultFocus] START');
@@ -132,13 +128,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0005
-     * @tc.name common_static_focusOnTouch
-     * @tc.desc Set focusOnTouch values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_focusOnTouch
+     * @tc.name     common_static_focusOnTouch
+     * @tc.desc     common_static_focusOnTouch
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_focusOnTouch', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_focusOnTouch] START');
@@ -150,13 +145,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0006
-     * @tc.name common_static_brightness
-     * @tc.desc Set brightness values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_brightness
+     * @tc.name     common_static_brightness
+     * @tc.desc     common_static_brightness
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_brightness', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_brightness] START');
@@ -168,13 +162,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0007
-     * @tc.name common_static_contrast
-     * @tc.desc Set contrast values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_contrast
+     * @tc.name     common_static_contrast
+     * @tc.desc     common_static_contrast
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_contrast', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_contrast] START');
@@ -186,13 +179,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0008
-     * @tc.name common_static_grayscale
-     * @tc.desc Set grayscale values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_grayscale
+     * @tc.name     common_static_grayscale
+     * @tc.desc     common_static_grayscale
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_grayscale', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_grayscale] START');
@@ -204,13 +196,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0009
-     * @tc.name common_static_colorBlend
-     * @tc.desc Set colorBlend values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_colorBlend
+     * @tc.name     common_static_colorBlend
+     * @tc.desc     common_static_colorBlend
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_colorBlend', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_colorBlend] START');
@@ -222,13 +213,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0010
-     * @tc.name common_static_saturate
-     * @tc.desc Set saturate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_saturate
+     * @tc.name     common_static_saturate
+     * @tc.desc     common_static_saturate
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_saturate', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_saturate] START');
@@ -240,13 +230,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0011
-     * @tc.name common_static_foregroundColor
-     * @tc.desc Set foregroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_foregroundColor
+     * @tc.name     common_static_foregroundColor
+     * @tc.desc     common_static_foregroundColor
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_foregroundColor', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_foregroundColor] START');
@@ -258,13 +247,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0012
-     * @tc.name common_static_borderImage
-     * @tc.desc Set borderImage values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_borderImage
+     * @tc.name     common_static_borderImage
+     * @tc.desc     common_static_borderImage
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_borderImage', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_borderImage] START');
@@ -277,19 +265,19 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0013
-     * @tc.name common_static_borderWidth
-     * @tc.desc Set borderWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_borderWidth
+     * @tc.name     common_static_borderWidth
+     * @tc.desc     common_static_borderWidth
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_borderWidth', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_borderWidth] START');
       let strJson = inspector.getInspectorByKey('textModifier2');
 
       console.info("[common_static_borderWidth] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('borderWidth').getString('left')).assertEqual('3.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('borderWidth').getString('top')).assertEqual('3.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('borderWidth').getString('bottom')).assertEqual('3.00vp');
@@ -298,13 +286,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0014
-     * @tc.name common_static_borderColor
-     * @tc.desc Set borderColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_borderColor
+     * @tc.name     common_static_borderColor
+     * @tc.desc     common_static_borderColor
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_borderColor', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_borderColor] START');
@@ -319,13 +306,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0015
-     * @tc.name common_static_borderStyle
-     * @tc.desc Set borderStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_borderStyle
+     * @tc.name     common_static_borderStyle
+     * @tc.desc     common_static_borderStyle
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_borderStyle', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_borderStyle] START');
@@ -337,13 +323,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0016
-     * @tc.name common_static_borderRadius
-     * @tc.desc Set borderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_borderRadius
+     * @tc.name     common_static_borderRadius
+     * @tc.desc     common_static_borderRadius
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_borderRadius', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_borderRadius] START');
@@ -358,21 +343,20 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0017
-     * @tc.name common_static_border
-     * @tc.desc Set border values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_border
+     * @tc.name     common_static_border
+     * @tc.desc     common_static_border
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_border', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_border] START');
       let strJson = inspector.getInspectorByKey('textModifier3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[common_static_border] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let border_obj =  obj.getElement('$attrs').getElement('border');
-      console.info("[common_static_border] border_obj is : " + JSON.stringify(obj.getElement('$attrs').getElement('border')));
+      let border_obj =  JSON.parseJsonElement(obj.getElement('$attrs').getString('border'));
+      console.info("[common_static_border] border_obj is : " + obj.getElement('$attrs').getString('border'));
 
       expect(border_obj.getElement('style').getString('left')).assertEqual("BorderStyle.Dashed");
       expect(border_obj.getElement('style').getString('right')).assertEqual("BorderStyle.Dotted");
@@ -403,13 +387,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0018
-     * @tc.name common_static_backgroundBlurStyle
-     * @tc.desc Set backgroundBlurStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_backgroundBlurStyle
+     * @tc.name     common_static_backgroundBlurStyle
+     * @tc.desc     common_static_backgroundBlurStyle
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_backgroundBlurStyle', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_backgroundBlurStyle] START');
@@ -427,13 +410,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0019
-     * @tc.name common_static_monopolizeEvents
-     * @tc.desc Set monopolizeEvents values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_monopolizeEvents
+     * @tc.name     common_static_monopolizeEvents
+     * @tc.desc     common_static_monopolizeEvents
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_monopolizeEvents', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_monopolizeEvents] START');
@@ -445,13 +427,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0020
-     * @tc.name common_static_backgroundImage
-     * @tc.desc Set backgroundImage values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_backgroundImage
+     * @tc.name     common_static_backgroundImage
+     * @tc.desc     common_static_backgroundImage
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_backgroundImage', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_backgroundImage] START');
@@ -463,13 +444,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0021
-     * @tc.name common_static_backgroundImageSize
-     * @tc.desc Set backgroundImageSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_backgroundImageSize
+     * @tc.name     common_static_backgroundImageSize
+     * @tc.desc     common_static_backgroundImageSize
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_backgroundImageSize', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_backgroundImageSize] START');
@@ -483,13 +463,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0022
-     * @tc.name common_static_backgroundImagePosition
-     * @tc.desc Set backgroundImagePosition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_backgroundImagePosition
+     * @tc.name     common_static_backgroundImagePosition
+     * @tc.desc     common_static_backgroundImagePosition
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_backgroundImagePosition', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_backgroundImagePosition] START');
@@ -502,13 +481,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0023
-     * @tc.name common_static_size
-     * @tc.desc Set size values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_size
+     * @tc.name     common_static_size
+     * @tc.desc     common_static_size
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_size', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_size] START');
@@ -522,13 +500,12 @@ export default function common9Jsunit() {
     });
 
 
-    /**
-     * @tc.number common_static_0024
-     * @tc.name common_static_pixelStretchEffect
-     * @tc.desc Set pixelStretchEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_pixelStretchEffect
+     * @tc.name     common_static_pixelStretchEffect
+     * @tc.desc     common_static_pixelStretchEffect
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_pixelStretchEffect', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_pixelStretchEffect] START');
@@ -544,13 +521,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0025
-     * @tc.name common_static_backgroundBrightness
-     * @tc.desc Set backgroundBrightness values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_backgroundBrightness
+     * @tc.name     common_static_backgroundBrightness
+     * @tc.desc     common_static_backgroundBrightness
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_backgroundBrightness', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_backgroundBrightness] START');
@@ -558,18 +534,17 @@ export default function common9Jsunit() {
 
       console.info("[common_static_backgroundBrightness] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundBrightness')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('backgroundBrightness')).assertEqual(undefined);
       console.info('[common_static_backgroundBrightness] END');
       done();
     });
 
-    /**
-     * @tc.number common_static_0026
-     * @tc.name common_static_dragPreviewOptions
-     * @tc.desc Set dragPreviewOptions values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_dragPreviewOptions
+     * @tc.name     common_static_dragPreviewOptions
+     * @tc.desc     common_static_dragPreviewOptions
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_dragPreviewOptions', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_dragPreviewOptions] START');
@@ -577,18 +552,17 @@ export default function common9Jsunit() {
 
       console.info("[common_static_dragPreviewOptions] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('dragPreviewOptions')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('dragPreviewOptions')).assertEqual(undefined);
       console.info('[common_static_dragPreviewOptions] END');
       done();
     });
 
-    /**
-     * @tc.number common_static_0027
-     * @tc.name common_static_layoutWeight
-     * @tc.desc Set layoutWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_layoutWeight
+     * @tc.name     common_static_layoutWeight
+     * @tc.desc     common_static_layoutWeight
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_layoutWeight', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_layoutWeight] START');
@@ -600,13 +574,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0028
-     * @tc.name common_static_constraintSize
-     * @tc.desc Set constraintSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_constraintSize
+     * @tc.name     common_static_constraintSize
+     * @tc.desc     common_static_constraintSize
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_constraintSize', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_constraintSize] START');
@@ -619,13 +592,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0029
-     * @tc.name common_static_useEffect
-     * @tc.desc Set useEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_useEffect
+     * @tc.name     common_static_useEffect
+     * @tc.desc     common_static_useEffect
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_useEffect', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_useEffect] START');
@@ -637,13 +609,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0030
-     * @tc.name common_static_sphericalEffect
-     * @tc.desc Set sphericalEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_sphericalEffect
+     * @tc.name     common_static_sphericalEffect
+     * @tc.desc     common_static_sphericalEffect
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_sphericalEffect', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_sphericalEffect] START');
@@ -655,13 +626,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0031
-     * @tc.name common_static_hitTestBehavior
-     * @tc.desc Set hitTestBehavior values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_hitTestBehavior
+     * @tc.name     common_static_hitTestBehavior
+     * @tc.desc     common_static_hitTestBehavior
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_hitTestBehavior', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_hitTestBehavior] START');
@@ -674,13 +644,12 @@ export default function common9Jsunit() {
     });
 
 
-    /**
-     * @tc.number common_static_0032
-     * @tc.name common_static_lightUpEffect
-     * @tc.desc Set lightUpEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_lightUpEffect
+     * @tc.name     common_static_lightUpEffect
+     * @tc.desc     common_static_lightUpEffect
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_lightUpEffect', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_lightUpEffect] START');
@@ -692,13 +661,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0033
-     * @tc.name common_static_width
-     * @tc.desc Set width values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_width
+     * @tc.name     common_static_width
+     * @tc.desc     common_static_width
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_width', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_width] START');
@@ -710,13 +678,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0034
-     * @tc.name common_static_height
-     * @tc.desc Set height values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_height
+     * @tc.name     common_static_height
+     * @tc.desc     common_static_height
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_height', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_height] START');
@@ -728,50 +695,47 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0035
-     * @tc.name common_static_expandSafeArea
-     * @tc.desc Set expandSafeArea values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_expandSafeArea
+     * @tc.name     common_static_expandSafeArea
+     * @tc.desc     common_static_expandSafeArea
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_expandSafeArea', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_expandSafeArea] START');
       let strJson = inspector.getInspectorByKey('rowModifier');
 
       console.info("[common_static_expandSafeArea] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('expandSafeArea')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('expandSafeArea')).assertEqual(undefined);
       console.info('[common_static_expandSafeArea] END');
       done();
     });
 
-    /**
-     * @tc.number common_static_0036
-     * @tc.name common_static_responseRegion
-     * @tc.desc Set responseRegion values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_responseRegion
+     * @tc.name     common_static_responseRegion
+     * @tc.desc     common_static_responseRegion
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_responseRegion', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_responseRegion] START');
       let strJson = inspector.getInspectorByKey('rowModifier');
 
       console.info("[common_static_responseRegion] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('responseRegion')[0])
-        .assertEqual("{\"x\":\"0.00vp\",\"y\":\"0.00vp\",\"width\":\"50.00%\",\"height\":\"100.00%\"}");
+      expect(JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('responseRegion')[0]))
+        .assertEqual(  "{\"x\":\"0.00vp\",\"y\":\"0.00vp\",\"width\":\"50.00%\",\"height\":\"100.00%\"}");
       console.info('[common_static_responseRegion] END');
       done();
     });
 
-    /**
-     * @tc.number common_static_0037
-     * @tc.name common_static_visibility
-     * @tc.desc Set visibility values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_visibility
+     * @tc.name     common_static_visibility
+     * @tc.desc     common_static_visibility
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_visibility', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_visibility] START');
@@ -783,13 +747,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0038
-     * @tc.name common_static_opacity
-     * @tc.desc Set opacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_opacity
+     * @tc.name     common_static_opacity
+     * @tc.desc     common_static_opacity
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_opacity', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_opacity] START');
@@ -801,13 +764,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0039
-     * @tc.name common_static_margin
-     * @tc.desc Set margin values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_margin
+     * @tc.name     common_static_margin
+     * @tc.desc     common_static_margin
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_margin', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_margin] START');
@@ -819,13 +781,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0040
-     * @tc.name common_static_padding
-     * @tc.desc Set padding values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_padding
+     * @tc.name     common_static_padding
+     * @tc.desc     common_static_padding
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_padding', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_padding] START');
@@ -837,13 +798,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0041
-     * @tc.name common_static_backgroundColor
-     * @tc.desc Set backgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_backgroundColor
+     * @tc.name     common_static_backgroundColor
+     * @tc.desc     common_static_backgroundColor
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_backgroundColor', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_backgroundColor] START');
@@ -855,13 +815,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0042
-     * @tc.name common_static_linearGradient
-     * @tc.desc Set linearGradient values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_linearGradient
+     * @tc.name     common_static_linearGradient
+     * @tc.desc     common_static_linearGradient
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_linearGradient', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_linearGradient] START');
@@ -873,13 +832,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0043
-     * @tc.name common_static_linearGradientBlur
-     * @tc.desc Set linearGradientBlur values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_linearGradientBlur
+     * @tc.name     common_static_linearGradientBlur
+     * @tc.desc     common_static_linearGradientBlur
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_linearGradientBlur', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_linearGradientBlur] START');
@@ -892,13 +850,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0044
-     * @tc.name common_static_blendMode
-     * @tc.desc Set blendMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_blendMode
+     * @tc.name     common_static_blendMode
+     * @tc.desc     common_static_blendMode
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_blendMode', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_blendMode] START');
@@ -909,13 +866,12 @@ export default function common9Jsunit() {
       console.info('[common_static_blendMode] END');
       done();
     });
-    /**
-     * @tc.number common_static_0045
-     * @tc.name common_static_accessibilityLevel
-     * @tc.desc Set accessibilityLevel values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_accessibilityLevel
+     * @tc.name     common_static_accessibilityLevel
+     * @tc.desc     common_static_accessibilityLevel
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_accessibilityLevel', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_accessibilityLevel] START');
@@ -927,13 +883,12 @@ export default function common9Jsunit() {
       console.info('[common_static_accessibilityLevel] END');
       done();
     });
-    /**
-     * @tc.number common_static_0046
-     * @tc.name common_static_accessibilityDescription
-     * @tc.desc Set accessibilityDescription values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_accessibilityDescription
+     * @tc.name     common_static_accessibilityDescription
+     * @tc.desc     common_static_accessibilityDescription
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_accessibilityDescription', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_accessibilityDescription] START');
@@ -946,13 +901,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0047
-     * @tc.name common_static_accessibilityText
-     * @tc.desc Set accessibilityText values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_accessibilityText
+     * @tc.name     common_static_accessibilityText
+     * @tc.desc     common_static_accessibilityText
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_accessibilityText', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_accessibilityText] START');
@@ -964,13 +918,12 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0048
-     * @tc.name common_static_accessibilityGroup
-     * @tc.desc Set accessibilityGroup values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_accessibilityGroup
+     * @tc.name     common_static_accessibilityGroup
+     * @tc.desc     common_static_accessibilityGroup
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_accessibilityGroup', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_accessibilityGroup] START');
@@ -983,67 +936,63 @@ export default function common9Jsunit() {
       done();
     });
 
-    /**
-     * @tc.number common_static_0049
-     * @tc.name common_static_restoreId
-     * @tc.desc Set restoreId values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_restoreId
+     * @tc.name     common_static_restoreId
+     * @tc.desc     common_static_restoreId
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_restoreId', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_restoreId] START');
       let strJson = inspector.getInspectorByKey('rowModifier');
 
       console.info("[common_static_restoreId] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('restoreId')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('restoreId')).assertEqual(undefined);
       console.info('[common_static_restoreId] END');
       done();
     });
 
-    /**
-     * @tc.number common_static_0050
-     * @tc.name common_static_allowDrop
-     * @tc.desc Set allowDrop values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_allowDrop
+     * @tc.name     common_static_allowDrop
+     * @tc.desc     common_static_allowDrop
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_allowDrop', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_allowDrop] START');
       let strJson = inspector.getInspectorByKey('rowModifier');
 
       console.info("[common_static_allowDrop] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('allowDrop')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('allowDrop')).assertEqual(undefined);
       console.info('[common_static_allowDrop] END');
       done();
     });
 
-    /**
-     * @tc.number common_static_0051
-     * @tc.name common_static_alignRules
-     * @tc.desc Set alignRules values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_alignRules
+     * @tc.name     common_static_alignRules
+     * @tc.desc     common_static_alignRules
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_alignRules', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_alignRules] START');
       let strJson = inspector.getInspectorByKey('rowModifier');
 
       console.info("[common_static_alignRules] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignRules')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('alignRules')).assertEqual(undefined);
       console.info('[common_static_alignRules] END');
       done();
     });
 
-    /**
-     * @tc.number common_static_0052
-     * @tc.name common_static_foregroundBlurStyle
-     * @tc.desc Set foregroundBlurStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   common_static_foregroundBlurStyle
+     * @tc.name     common_static_foregroundBlurStyle
+     * @tc.desc     common_static_foregroundBlurStyle
+     * @tc.level    Level.LEVEL0
      */
     it('common_static_foregroundBlurStyle', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[common_static_foregroundBlurStyle] START');
@@ -1051,7 +1000,7 @@ export default function common9Jsunit() {
 
       console.info("[common_static_foregroundBlurStyle] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('foregroundBlurStyle')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('foregroundBlurStyle')).assertEqual(undefined);
       console.info('[common_static_foregroundBlurStyle] END');
       done();
     });

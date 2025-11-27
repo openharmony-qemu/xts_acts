@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,13 +56,12 @@ export default function qrCodeJsunit() {
       }
     });
 
-    /**
-     * @tc.number test_qrCode_static_001
-     * @tc.name test_qrCode_static_001
-     * @tc.desc Set opacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_qrCode_static_001
+     * @tc.name     test_qrCode_static_001
+     * @tc.desc     test_qrCode_static_001
+     * @tc.level    Level.LEVEL0
      */
     it('test_qrCode_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_qrCode_static_001] START');
@@ -74,13 +73,12 @@ export default function qrCodeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_qrCode_static_002
-     * @tc.name test_qrCode_static_002
-     * @tc.desc Set color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_qrCode_static_002
+     * @tc.name     test_qrCode_static_002
+     * @tc.desc     test_qrCode_static_002
+     * @tc.level    Level.LEVEL0
      */
     it('test_qrCode_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_qrCode_static_002] START');
@@ -94,13 +92,12 @@ export default function qrCodeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_qrCode_static_003
-     * @tc.name test_qrCode_static_003
-     * @tc.desc Set contentOpacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_qrCode_static_003
+     * @tc.name     test_qrCode_static_003
+     * @tc.desc     test_qrCode_static_003
+     * @tc.level    Level.LEVEL0
      */
     it('test_qrCode_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_qrCode_static_003] START');
@@ -108,17 +105,16 @@ export default function qrCodeJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[test_qrCode_static_003] obj is: " + JSON.stringify(obj.getElement('$attrs')));
 
-      expect(obj.getElement('$attrs').getString('contentOpacity')).assertEqual(undefined); //not support
+      expect(obj.getElement('$attrs').tryGetElement('contentOpacity')).assertEqual(undefined); //not support
       console.info('[test_qrCode_static_003] END');
       done();
     });
-    /**
-     * @tc.number test_qrCode_static_004
-     * @tc.name test_qrCode_static_004
-     * @tc.desc Change backgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_qrCode_static_004
+     * @tc.name     test_qrCode_static_004
+     * @tc.desc     test_qrCode_static_004
+     * @tc.level    Level.LEVEL0
      */
     it('test_qrCode_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('test_qrCode_static_004 START');
