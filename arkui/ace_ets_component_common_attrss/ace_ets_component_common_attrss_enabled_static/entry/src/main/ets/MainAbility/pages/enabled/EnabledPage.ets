@@ -61,6 +61,7 @@ import {
   Image,
   ImageAnimator,
   Line,
+  LineJoinStyle,
   List,
   ListItem,
   ListItemGroup,
@@ -92,6 +93,7 @@ import {
   Scroller,
   Search,
   Select,
+  Shape,
   SideBarContainer,
   SideBarContainerType,
   Slider,
@@ -204,15 +206,15 @@ struct EnabledPage {
         .height('70%')
         .listDirection(Axis.Vertical)
       } else if (this.targetView == 'ListItemGroup') {
-        // List({ space: 0, initialIndex: 0 }) {
-        //   ListItemGroup({ header: this.itemHead('Group1') } as ListItemGroupOptions) {
-        //     ListItem()
-        //   }
-        //   .backgroundColor(Color.Yellow)
-        //   .applyStyles(this.commonStyle)
-        // }
-        // .width('100%')
-        // .height('70%')
+        List({ space: 0, initialIndex: 0 }) {
+          // ListItemGroup({ header: this.itemHead('Group1') } as ListItemGroupOptions) {
+          //   ListItem()
+          // }
+          // .backgroundColor(Color.Yellow)
+          // .applyStyles(this.commonStyle)
+        }
+        .width('100%')
+        .height('70%')
       } else if (this.targetView == 'TabContent') {
         Tabs() {
           TabContent() {
@@ -295,15 +297,6 @@ struct EnabledPage {
           } else if (this.targetView == 'Navigation') {
             Navigation(new NavPathStack()).backgroundColor(Color.Green).applyStyles(this.commonStyle)
           } else if (this.targetView == 'NavRouter') {
-            // NavRouter() {
-            //   Row() {
-            //     Image($r('app.media.icon'))
-            //   }
-            //
-            //   NavDestination() {
-            //     Text('NavDestination').fontSize(10)
-            //   }
-            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Progress') {
             Progress({ value: 50, type: ProgressType.Linear }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'QRCode') {
@@ -368,6 +361,7 @@ struct EnabledPage {
           } else if (this.targetView == 'Counter') {
             Counter() {
               Text('1')
+                .focusable(true)
             }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Flex') {
             Flex() {
@@ -405,10 +399,6 @@ struct EnabledPage {
 
             .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Navigator') {
-            // Navigator({ target: '' }) {
-            //   Text('Navigator Go to index page')
-            //     .width('100%').textAlign(TextAlign.Center)
-            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'RelativeContainer') {
             RelativeContainer() {
               Row()
@@ -434,12 +424,11 @@ struct EnabledPage {
               Button('RowSplit')
             }.backgroundColor(Color.Green).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Panel') {
-            // Panel(true) {
-            //   Button('Panel')
-            // }
-            // .backgroundColor(Color.Green)
-            // .mode(PanelMode.Full)
-            // .applyStyles(this.commonStyle)
+            Column() {
+              Button('Panel')
+            }
+            .backgroundColor(Color.Green)
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Refresh') {
             Refresh({ refreshing: true }) {
               Text('Refresh').fontSize(30)
@@ -535,16 +524,21 @@ struct EnabledPage {
               .stroke(Color.Transparent)
               .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Shape') {
-            // Shape() {
-            //   Path().width(200).height(60).commands('M0 0 L400 0 L400 150 Z')
-            // }
-            // .viewPort({ x: -20, y: -5, width: 310, height: 90 })
-            // .fill(0x317AF7)
-            // .stroke(0xEE8443)
-            // .strokeWidth(10)
-            // .strokeLineJoin(LineJoinStyle.Miter)
-            // .strokeMiterLimit(5)
-            // .applyStyles(this.commonStyle)
+            Shape() {
+              Path().width(200).height(60).commands('M0 0 L400 0 L400 150 Z')
+            }
+            .viewPort({
+              x: -20,
+              y: -5,
+              width: 310,
+              height: 90
+            })
+            .fill(0x317AF7)
+            .stroke(0xEE8443)
+            .strokeWidth(10)
+            .strokeLineJoin(LineJoinStyle.Miter)
+            .strokeMiterLimit(5)
+            .applyStyles(this.commonStyle)
           }
         }
         .width('100%')

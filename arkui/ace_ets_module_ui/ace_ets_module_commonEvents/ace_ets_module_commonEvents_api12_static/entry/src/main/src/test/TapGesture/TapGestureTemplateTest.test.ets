@@ -54,16 +54,13 @@ export default function TapGestureTemplateTest() {
         console.info("get TapGestureTemplateTest state pages:" + JSON.stringify(pages));
         if (!("TapGestureTemplate" == pages.name)) {
           console.info("get TapGestureTemplateTest pages.name:" + JSON.stringify(pages.name));
-          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push TapGestureTemplateTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TapGestureTemplateTest page error:" + err);
       }
       console.info("TapGestureTemplateTest beforeEach end");
-      // done();
     });
 
     afterEach(async () => {
@@ -112,7 +109,7 @@ it('TapGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => void):
       console.log('TapGestureTemplateTest_0010 obj2 time time2-time1',time2 - time1);
       console.log('TapGestureTemplateTest_0010 obj2 time timeBefore timeAfter',timeAfter, timeBefore);
       console.log('TapGestureTemplateTest_0010 obj2 time timeSpace',timeSpace);
-      let flag: number = time2 - time1 - timeSpace * 1000000 - (timeAfter - timeBefore)*1000000
+      let flag: number = time2 - time1 - (timeSpace as Number) * 1000000 - (timeAfter - timeBefore)*1000000
       console.log('TapGestureTemplateTest_0010 flag',flag)
       console.log('TapGestureTemplateTest_0010 timeAfter - timeBefore:',timeAfter - timeBefore)
       expect( flag <= (16 * 1000000)).assertTrue();

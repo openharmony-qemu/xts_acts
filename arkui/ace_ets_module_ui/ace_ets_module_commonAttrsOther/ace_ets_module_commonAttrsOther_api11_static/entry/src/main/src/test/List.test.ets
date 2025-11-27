@@ -31,7 +31,7 @@ import HoverJsunit25 from './HoverTest/HoverJsunit25.test';
 import OverlayUIJsunit from './overlayTest/OverlayUIJsunit.test';
 
 export default function testsuite() {
-  noBarrierComponentsTest(); // 28 pass 26
+  noBarrierComponentsTest(); // 27 pass 27
   noBarriersGroupTest(); // 12 pass 12
   overLayJsunit(); // 8 pass 8
   zIndexJsunit(); // 4 pass 4

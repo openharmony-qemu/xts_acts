@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  $r,
+  BarState,
+  Button,
+  Canvas,
+  CanvasPattern,
+  CanvasRenderingContext2D,
+  Color,
   Column,
   Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  RenderingContextSettings,
-  CanvasRenderingContext2D,
-  OffscreenCanvasRenderingContext2D,
-  Scroll,
-  ImageBitmap,
-  CanvasPattern,
-  Scroller,
+  Entry,
   Flex,
-  FlexDirection,
-  ItemAlign,
   FlexAlign,
-  Canvas,
+  FlexDirection,
+  ImageBitmap,
+  ItemAlign,
+  OffscreenCanvasRenderingContext2D,
+  RenderingContextSettings,
+  Row,
+  Scroll,
   ScrollDirection,
-  BarState,ImageBitmap
+  Scroller,
+  Text
 } from '@ohos.arkui.component';
 
 @Entry

@@ -93,7 +93,7 @@ export default class CommonTest {
                 testValue: testValue,
               }
 
-              AppStorage.setOrCreate<boolean>('_defaultFocus', data.testValue.setValue)
+              // AppStorage.setOrCreate<boolean>('_defaultFocus', data.testValue.setValue)
 
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');

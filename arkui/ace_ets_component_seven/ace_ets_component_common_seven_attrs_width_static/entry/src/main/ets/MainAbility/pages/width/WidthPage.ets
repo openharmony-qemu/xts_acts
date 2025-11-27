@@ -207,7 +207,7 @@ import {
   RichText,
   AlignRuleOption
 } from '@ohos.arkui.component'
-import { State, StorageProp, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -505,19 +505,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     instance.width(this.mWidth)
   }
 }
-
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mWidth: number | string = 10
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     instance.width(this.mWidth)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mWidth: number | string = 10
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     instance.width(this.mWidth)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mWidth: number | string = 10
 
@@ -821,13 +808,6 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
     instance.width(this.mWidth)
   }
 }
-
-// class PanelModifier implements AttributeModifier<PanelAttribute>{
-//   mWidth: number | string = 10
-//   applyNormalAttribute(instance: PanelAttribute): void {
-//     instance.width(this.mWidth)
-//   }
-// }
 
 function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
   this.width(50)
@@ -1414,19 +1394,16 @@ struct WidthPage {
   private value: string[] = ['#', 'A', 'B']
   //Use for Scroll,Grid,DataPanel.
   public valueArr: number[] = [5, 10, 10, 7, 9, 10, 10, 10, 10] as number[]
-  @StorageProp('_widthObj') _width: SetValue = {
-    height: 0, width: 0
+  @StoragePropRef('_widthObj') _width: SetValue = {
+    height: 0,width: 0
   }
-  // @State _witdhPanelMod: PanelModifier = new PanelModifier()
   @State _widthCircleMod: CircleModifier = new CircleModifier()
   @State _widthProgressMod: ProgressModifier = new ProgressModifier()
-  // @Stae  _widthBlankRowMod: BlankRowModifier = new BlankRowModifier()
   @State _widthAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _widthBadgeMod: BadgeModifier = new BadgeModifier()
   //Blank Component is not found on build
   @State _widthBlankMod: BlankModifier = new BlankModifier()
   @State _widthButtonMod: ButtonModifier = new ButtonModifier()
-  // @State _widthButtonMod: ButtonModifier = new ButtonModifier()
   //CalendarPicker Component is not found on build
   @State _widthCalendarPickerMod: CalendarPickerModifier = new CalendarPickerModifier()
   @State _widthCheckboxMod: CheckboxModifier = new CheckboxModifier()
@@ -1467,9 +1444,7 @@ struct WidthPage {
   @State _widthMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   //NavDestination Component is not found on build
   @State _widthNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _widthNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _widthNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _widthNavigatorMod: NavigatorModifier = new NavigatorModifier()
   //PatternLock Component is not found on build
   @State _widthPatternLockMod: PatternLockModifier = new PatternLockModifier()
   //PluginComponent Component is not found on build
@@ -1525,18 +1500,17 @@ struct WidthPage {
 
   onPageShow() {
     console.info('[WidthPage] page show called ')
-    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
-      .getElement("view")
-    this.targetView = viewElement.getString("targetView")
-    this.componentKey = viewElement.getString("componentKey")
-    this.parentWidth = viewElement.getDouble("parentWidth")
-    this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = viewElement.getDouble("columns")
-    this.gutter = viewElement.getDouble("gutter")
-    this.parentComponentKey = viewElement.getString("parentComponentKey")
-    this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
-    this.BackGroundColor = viewElement.getString("BackGroundColor")
-    // AppStorage.setOrCreate<ButtonModifier>('_widthButtonMod', this._widthButtonMod);
+      const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+        .getElement("view")
+      this.targetView = viewElement.getString("targetView")
+      this.componentKey = viewElement.getString("componentKey")
+      this.parentWidth = viewElement.getDouble("parentWidth")
+      this.parentHeight = viewElement.getDouble("parentHeight")
+      this.columns = viewElement.getDouble("columns")
+      this.gutter = viewElement.getDouble("gutter")
+      this.parentComponentKey = viewElement.getString("parentComponentKey")
+      this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
+      this.BackGroundColor = viewElement.getString("BackGroundColor")
   }
 
   build() {
@@ -1625,7 +1599,6 @@ struct WidthPage {
       } else if (this.targetView == 'Navigation') {
         Navigation().commonStyle(this.componentKey).height(100).attributeModifier(this._widthNavigationMod)
       } else if (this.targetView == 'NavRouter') {
-        // NavRouter().commonStyle(this.componentKey).height(100).attributeModifier(this._widthNavRouterMod)
       } else if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Eclipse })
           .commonStyle(this.componentKey)
@@ -1806,7 +1779,6 @@ struct WidthPage {
             } as AlignRuleOption)
         }.backgroundColor(Color.Green).commonStyle(this.componentKey).height(100)
       } else if (this.targetView == 'Navigator') {
-        // Navigator().commonStyle(this.componentKey).height(100).attributeModifier(this._widthNavigatorMod)
       } else if (this.targetView == 'Badge') {
         Badge({
           count: 50,
@@ -1878,7 +1850,8 @@ struct WidthPage {
         Refresh({ refreshing: true }) {
           Text('123')
         }.commonStyle(this.componentKey).attributeModifier(this._widthRefreshMod)
-      } else if (this.targetView == 'Row') {
+      }
+      else if (this.targetView == 'Row') {
         Row().commonStyle(this.componentKey).attributeModifier(this._widthRowMod)
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
@@ -1941,9 +1914,6 @@ struct WidthPage {
         .width('100%')
         .height('100%')
       } else if (this.targetView == 'Panel') {
-        // Panel(true) {
-        //   Text('Text')
-        // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._witdhPanelMod)
       }
     }
     .height(this.parentHeight)

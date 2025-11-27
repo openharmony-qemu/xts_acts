@@ -38,7 +38,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions } from '@ohos.arkui.component'
-import { State, StorageProp, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -344,30 +344,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 		instance.tabIndex(this.mTabIndex)
 	}
 }
-
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-// 	mTabIndex: Int = 1
-//
-// 	applyNormalAttribute(instance: NavigatorAttribute): void {
-// 		instance.tabIndex(this.mTabIndex)
-// 	}
-// }
-//
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-// 	mTabIndex: Int = 1
-//
-// 	applyNormalAttribute(instance: NavRouterAttribute): void {
-// 		instance.tabIndex(this.mTabIndex)
-// 	}
-// }
-//
-// class PanelModifier implements AttributeModifier<PanelAttribute> {
-// 	mTabIndex: Int = 1
-//
-// 	applyNormalAttribute(instance: PanelAttribute): void {
-// 		instance.tabIndex(this.mTabIndex)
-// 	}
-// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
 	mTabIndex: Int = 1
@@ -1148,9 +1124,6 @@ struct TabIndexPage {
 	@State _tabIndexMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
 	@State _tabIndexNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
 	@State _tabIndexNavigationModifier: NavigationModifier = new NavigationModifier()
-	// @State _tabIndexNavigatorModifier: NavigatorModifier = new NavigatorModifier()
-	// @State _tabIndexNavRouterModifier: NavRouterModifier = new NavRouterModifier()
-	// @State _tabIndexPanelModifier: PanelModifier = new PanelModifier()
 	@State _tabIndexPathModifier: PathModifier = new PathModifier()
 	@State _tabIndexPolygonModifier: PolygonModifier = new PolygonModifier()
 	@State _tabIndexPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1201,7 +1174,7 @@ struct TabIndexPage {
   @State gutter: number = 0
   @State parentBackGroundColor: string = '#FFFF00'
   @State parentComponentKey: string =  '';
-	@StorageProp('_tabIndex') _tabIndex: SetValue = {
+	@StoragePropRef('_tabIndex') _tabIndex: SetValue = {
 		height: 0,tabIndex: 0
 	}
 
@@ -1219,10 +1192,6 @@ struct TabIndexPage {
 		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}
 
-  // @Styles
-  // commonStyle() {
-  //   .key(this.componentKey)
-  // }
 
 	build() {
 		Column() {
@@ -1315,18 +1284,6 @@ struct TabIndexPage {
 					.attributeModifier(this._tabIndexMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
-				// NavRouter() {
-				// 	Row() {
-				// 		Image($r('app.media.icon'))
-				// 	}
-				//
-				// 	NavDestination() {
-				// 		Text('NavDestination')
-				// 			.fontSize(10)
-				// 	}
-				// }
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._tabIndexNavRouterModifier)
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
@@ -1616,22 +1573,8 @@ struct TabIndexPage {
 					.height('100%')
 			}
 			if (this.targetView == 'Navigator') {
-				// Navigator() {
-				// 	Text('Go to back page')
-				// 		.width('100%')
-				// 		.height(20)
-				// }
-				// 	.backgroundColor(Color.Red)
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._tabIndexNavigatorModifier)
 			}
 			if (this.targetView == 'Panel') {
-				// Panel(true) {
-				// 	Text('Text')
-				// }
-				// 	.backgroundColor(Color.Yellow)
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._tabIndexPanelModifier)
 			}
 			if (this.targetView == 'Refresh') {
 				Refresh({ refreshing: true }) {

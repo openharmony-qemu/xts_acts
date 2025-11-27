@@ -43,6 +43,12 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfGridRowTest() {
 
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+
+  const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
+
   let supportView: Array<string> = new Array<string>(
     'GridCol'
   )
@@ -137,9 +143,7 @@ export default function alignSelfGridRowTest() {
   describe('AlignSelfGridRowTest', () => {
     beforeAll(() => {
       console.info("alignSelfGridRowTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

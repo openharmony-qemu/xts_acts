@@ -198,7 +198,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -809,30 +809,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-// 	mRotate: RotateOptions = { x: 13, y: 17, z: 31, centerX: 37, centerY: 41, angle: 3, perspective: 11 }
-//
-// 	applyNormalAttribute(instance: NavigatorAttribute): void {
-// 		instance.rotate(this.mRotate)
-// 	}
-// }
-//
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-// 	mRotate: RotateOptions = { x: 13, y: 17, z: 31, centerX: 37, centerY: 41, angle: 3, perspective: 11 }
-//
-// 	applyNormalAttribute(instance: NavRouterAttribute): void {
-// 		instance.rotate(this.mRotate)
-// 	}
-// }
-
-// class PanelModifier implements AttributeModifier<PanelAttribute> {
-// 	mRotate: RotateOptions = { x: 13, y: 17, z: 31, centerX: 37, centerY: 41, angle: 3, perspective: 11 }
-//
-// 	applyNormalAttribute(instance: PanelAttribute): void {
-// 		instance.rotate(this.mRotate)
-// 	}
-// }
-
 class PathModifier implements AttributeModifier<PathAttribute> {
   mRotate: RotateOptions = {
     x: 13,
@@ -1197,7 +1173,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    // instance.rotate(this.mRotate)
+
   }
 }
 
@@ -1949,9 +1925,6 @@ struct RotatePage {
   @State _rotateMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _rotateNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
   @State _rotateNavigationModifier: NavigationModifier = new NavigationModifier()
-  // @State _rotateNavigatorModifier: NavigatorModifier = new NavigatorModifier()
-  // @State _rotateNavRouterModifier: NavRouterModifier = new NavRouterModifier()
-  // @State _rotatePanelModifier: PanelModifier = new PanelModifier()
   @State _rotatePathModifier: PathModifier = new PathModifier()
   @State _rotatePolygonModifier: PolygonModifier = new PolygonModifier()
   @State _rotatePolylineModifier: PolylineModifier = new PolylineModifier()
@@ -2002,7 +1975,7 @@ struct RotatePage {
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
   @State parentBackGroundColor: string = '';
-  @StorageProp('_rotate') _rotate: SetValue = {
+  @StoragePropRef('_rotate') _rotate: SetValue = {
     height: 0, rotate: {
       x: 0,
       y: 0,
@@ -2109,7 +2082,7 @@ struct RotatePage {
         }
         .commonStyle(this.componentKey)
 
-        // .attributeModifier(this._rotateNavigationModifier)
+     
       }
       if (this.targetView == 'Menu') {
         Menu() {
@@ -2120,18 +2093,6 @@ struct RotatePage {
         .attributeModifier(this._rotateMenuModifier)
       }
       if (this.targetView == 'NavRouter') {
-        // NavRouter() {
-        // 	Row() {
-        // 		Image($r('app.media.icon'))
-        // 	}
-        //
-        // 	NavDestination() {
-        // 		Text('NavDestination')
-        // 			.fontSize(10)
-        // 	}
-        // }
-        // 	.commonStyle(this.componentKey)
-        // 	.attributeModifier(this._rotateNavRouterModifier)
       }
       if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Eclipse })
@@ -2195,7 +2156,7 @@ struct RotatePage {
         }
         .commonStyle(this.componentKey)
 
-        // .attributeModifier(this._rotateStepperModifier)
+  
       }
       if (this.targetView == 'StepperItem') {
         Stepper() {
@@ -2207,7 +2168,7 @@ struct RotatePage {
           .backgroundColor(Color.Red)
           .commonStyle(this.componentKey)
 
-          // .attributeModifier(this._rotateStepperItemModifier)
+
         }
         .backgroundColor(Color.Yellow)
         .width('100%')
@@ -2443,22 +2404,8 @@ struct RotatePage {
         .height('100%')
       }
       if (this.targetView == 'Navigator') {
-        // Navigator() {
-        // 	Text('Go to back page')
-        // 		.width('100%')
-        // 		.height(20)
-        // }
-        // 	.backgroundColor(Color.Red)
-        // 	.commonStyle(this.componentKey)
-        // 	.attributeModifier(this._rotateNavigatorModifier)
       }
       if (this.targetView == 'Panel') {
-        // Panel(true) {
-        // 	Text('Text')
-        // }
-        // 	.backgroundColor(Color.Yellow)
-        // 	.commonStyle(this.componentKey)
-        // 	.attributeModifier(this._rotatePanelModifier)
       }
       if (this.targetView == 'Refresh') {
         Refresh({ refreshing: true }) {

@@ -217,6 +217,10 @@ export default function heightTest() {
       console.info('[' + data.caseTag + '] data.testValue.expectValue.height:' + data.testValue.expectValue.height);
       console.info('[' + data.caseTag + '] data.viewObj.$attrs.height:' +
       data.viewObj?.getElement('$attrs').getString('height'));
+
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.width:' +
+      data.viewObj?.getElement('$attrs').getString('width'));
+
       console.info('[' + data.caseTag + '] data.viewObj.$attrs' +
       JSON.stringifyJsonElement(data.viewObj?.getElement('$attrs')!));
       console.info('[' + data.caseTag + '] strJsonRectHeight is: ' + strJsonRectHeight);

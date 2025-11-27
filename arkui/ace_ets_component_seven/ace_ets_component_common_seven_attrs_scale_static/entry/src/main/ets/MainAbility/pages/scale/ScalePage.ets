@@ -39,7 +39,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, ScaleOptions } from '@ohos.arkui.component'
-import { State,StorageProp } from '@ohos.arkui.stateManagement';
+import { State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -264,18 +264,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     instance.scale(this.scale)
   }
 }
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   scale: ScaleOptions = { x: 1, y: 1 }
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     instance.scale(this.scale)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   scale: ScaleOptions = { x: 1, y: 1 }
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     instance.scale(this.scale)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -492,12 +480,6 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
     instance.scale(this.scale)
   }
 }
-// class PanelModifier implements AttributeModifier<PanelAttribute>{
-//   scale: ScaleOptions = { x: 1, y: 1 }
-//   applyNormalAttribute(instance: PanelAttribute): void {
-//     instance.scale(this.scale)
-//   }
-// }
 class PolylineModifier implements AttributeModifier<PolylineAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: PolylineAttribute): void {
@@ -880,7 +862,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.height('100%')
+
   this.key(componentKey)
   return this
 }
@@ -1045,7 +1027,6 @@ struct scalePage {
   @State _scalePathMod: PathModifier = new PathModifier()
   @State _scaleRectMod: RectModifier = new RectModifier()
   @State _scaleShapeMod: ShapeModifier = new ShapeModifier()
-  // @State _scalePanelMod: PanelModifier = new PanelModifier()
   @State _scaleAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _scaleBadgeMod: BadgeModifier = new BadgeModifier()
   @State _scaleBlankMod: BlankModifier = new BlankModifier()
@@ -1082,9 +1063,7 @@ struct scalePage {
   @State _scaleMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _scaleMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _scaleNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _scaleNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _scaleNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _scaleNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _scalePatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _scalePluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _scaleQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1128,7 +1107,7 @@ struct scalePage {
   @State columns: number = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
-  @StorageProp('_scale') _scale: SetValue = {
+  @StoragePropRef('_scale') _scale: SetValue = {
     height: 0,scale: {}
   }
 
@@ -1202,15 +1181,6 @@ struct scalePage {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._scaleMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._scaleNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1369,13 +1339,7 @@ struct scalePage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._scaleNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._scalePanelMod)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

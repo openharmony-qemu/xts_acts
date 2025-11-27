@@ -40,40 +40,40 @@ export default function DefaultFocusTest() {
     'TextInput',
     'TextArea',
     'Search',
-    // 'Text',
-    // 'Image',
-    // 'Grid',
-    // 'List',
-    // 'Checkbox',
-    // 'CheckboxGroup',
-    // 'DatePicker',
-    // //    'ImageAnimator',
-    // 'Menu',
-    // 'MenuItem',
-    // //    'MenuItemGroup',
-    // 'Radio',
-    // 'Rating',
-    // 'Slider',
-    // 'TextPicker',
-    // 'TimePicker',
-    // 'Toggle',
-    // 'AlphabetIndexer',
-    // 'Column',
-    // //    'ColumnSplit',
-    // 'Counter',
-    // 'Flex',
-    // //    'GridCol',
-    // //    'GridRow',
-    // 'GridItem',
-    // 'ListItem',
-    // //    'ListItemGroup',
-    // 'Row',
-    // //    'RowSplit',
-    // 'Scroll',
-    // 'Stack',
-    // 'Swiper',
-    // 'Tabs',
-    // //    'TabContent'
+    'Text',
+    'Image',
+    'Grid',
+    'List',
+    'Checkbox',
+    'CheckboxGroup',
+    'DatePicker',
+    //    'ImageAnimator',
+    'Menu',
+    'MenuItem',
+    //    'MenuItemGroup',
+    'Radio',
+    'Rating',
+    'Slider',
+    'TextPicker',
+    'TimePicker',
+    'Toggle',
+    'AlphabetIndexer',
+    'Column',
+    //    'ColumnSplit',
+    'Counter',
+    'Flex',
+    //    'GridCol',
+    //    'GridRow',
+    'GridItem',
+    'ListItem',
+    //    'ListItemGroup',
+    'Row',
+    //    'RowSplit',
+    'Scroll',
+    'Stack',
+    'Swiper',
+    'Tabs',
+    //    'TabContent'
   )
   //Page config, this param is required.
   let pageConfig: PageConfig = {
@@ -167,12 +167,16 @@ export default function DefaultFocusTest() {
 
       } else if ('SetFalse' == data.testValue.describe) {
         //Confirm if the focus is on the target component
+        expect(Utils.performKeyEventDownUp(2049, 'Tab')).assertTrue();
+        await Utils.sleep(2000);
+        console.info('[' + data.caseTag + '] Press Tab.1123');
+
         let component =
           JSON.parseJsonElement(inspector.getInspectorByKey(data.pageConfig.textComponentKey));
         await Utils.sleep(2000)
         console.info('[' + data.caseTag + '] component.$attrs.content 157: ' +
         component.getElement('$attrs').getString('content'));
-        expect(component.getElement('$attrs').getString('content')).assertEqual('onFocus');
+        expect(component.getElement('$attrs').getString('content')).assertEqual('');
 
         let viewObj =
           JSON.parseJsonElement(inspector.getInspectorByKey(data.pageConfig.componentKey));

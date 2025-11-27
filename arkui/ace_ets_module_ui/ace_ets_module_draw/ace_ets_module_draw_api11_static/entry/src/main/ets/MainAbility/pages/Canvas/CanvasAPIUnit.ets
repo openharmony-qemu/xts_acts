@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  $r,
+  Button,
+  Canvas,
+  CanvasRenderingContext2D,
+  Color,
   Column,
   Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  RenderingContextSettings,
-  CanvasRenderingContext2D,
+  Entry,
+  ImageBitmap,
   OffscreenCanvasRenderingContext2D,
+  RenderingContextSettings,
+  Row,
   Scroll,
-  Canvas,ImageBitmap
+  Text
 } from '@ohos.arkui.component';
 
 @Entry

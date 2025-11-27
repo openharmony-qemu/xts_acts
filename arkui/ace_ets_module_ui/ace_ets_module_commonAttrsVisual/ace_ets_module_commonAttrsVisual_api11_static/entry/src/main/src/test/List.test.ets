@@ -47,7 +47,7 @@ export default function testsuite() {
   common_ts_ets_apiStaticClearJsunit() // 3 pass 3
   rotateTest() // 1 pass 1
   shapeTest() // 1 pass 1
-  imageEffectsJsunit(); // 42 pass 38 16进制
+  imageEffectsJsunit(); // 42 pass 42 16进制
   transformPointTest() // 1 pass 1
   commonBackgroundBlurStyleJsunit() // 8 pass 8
 }

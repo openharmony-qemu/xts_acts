@@ -78,47 +78,47 @@ export default class CommonTest {
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
             console.info('[' + caseTag + ']' + ' push page. end');
-            // try {
-            //If there is no call back functions, do nothing.
-            if (functions.length === 0) {
-              done();
-            }
-            let funcs: CallbackWithReturn[] = [];
-            if (functions[0] instanceof Array) {
-              funcs = functions[0] as CallbackWithReturn[];
-              if (funcs.length === 0) {
+            try {
+              //If there is no call back functions, do nothing.
+              if (functions.length === 0) {
                 done();
               }
+              let funcs: CallbackWithReturn[] = [];
+              if (functions[0] instanceof Array) {
+                funcs = functions[0] as CallbackWithReturn[];
+                if (funcs.length === 0) {
+                  done();
+                }
+              }
+
+              //Execute test
+              let data: BasePageConfig = {
+                pageConfig: pageConfig,
+                caseTag: caseTag,
+                testValue: testValue,
+              }
+
+
+              // AppStorage.setOrCreate<boolean>('_enabled', data.testValue.setValue)
+              //Check test result
+              // console.info('test ===== 111   ' + pageConfig.componentKey)
+              // let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              // console.info('test ===== 112   ' + pageConfig.componentKey)
+              // await Utils.sleep(2000);
+              // data.viewObj = JSON.parseJsonElement(strJson);
+              await Utils.sleep(2000);
+              // console.info('[' + caseTag + '] ================== strJson: ' + strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
+
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect(msg).assertTrue();
+              }
             }
-
-            //Execute test
-            let data: BasePageConfig = {
-              pageConfig: pageConfig,
-              caseTag: caseTag,
-              testValue: testValue,
-            }
-
-
-            // AppStorage.setOrCreate<boolean>('_enabled', data.testValue.setValue)
-            //Check test result
-            // console.info('test ===== 111   ' + pageConfig.componentKey)
-            // let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-            // console.info('test ===== 112   ' + pageConfig.componentKey)
-            // await Utils.sleep(2000);
-            // data.viewObj = JSON.parseJsonElement(strJson);
-            await Utils.sleep(2000);
-            // console.info('[' + caseTag + '] ================== strJson: ' + strJson);
-            await (functions[functions.length - 1] as CallbackWithReturn)(data);
-
-            // } catch (err: Error) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect(msg).assertTrue();
-            //   }
-            // }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

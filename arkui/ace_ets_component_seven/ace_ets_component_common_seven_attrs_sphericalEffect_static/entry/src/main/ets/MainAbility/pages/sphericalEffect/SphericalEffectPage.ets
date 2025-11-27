@@ -203,7 +203,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -539,20 +539,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mSphericalEffect: number = 1
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
-//    instance.sphericalEffect(this.mSphericalEffect)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mSphericalEffect: number = 1
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
-//    instance.sphericalEffect(this.mSphericalEffect)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mSphericalEffect: number = 1
 
@@ -1216,7 +1202,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.height('100%')
+
   this.key(componentKey)
   return this
 }
@@ -1410,9 +1396,7 @@ struct sphericalEffectPage {
   @State _sphericalEffectMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _sphericalEffectMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _sphericalEffectNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _sphericalEffectNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _sphericalEffectNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _sphericalEffectNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _sphericalEffectPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _sphericalEffectPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _sphericalEffectQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1456,7 +1440,7 @@ struct sphericalEffectPage {
   @State columns: number = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
-  @StorageProp('_sphericalEffect') _sphericalEffect: SetValue = {
+  @StoragePropRef('_sphericalEffect') _sphericalEffect: SetValue = {
     height: 0, sphericalEffect: 0.0
   }
 
@@ -1536,15 +1520,6 @@ struct sphericalEffectPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._sphericalEffectMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._sphericalEffectNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1722,13 +1697,7 @@ struct sphericalEffectPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._sphericalEffectNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

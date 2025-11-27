@@ -252,8 +252,8 @@ struct AnimatorInterpolatingSpringTest {
               Button('interpolating-springn')
                 .key('interpolating-springn')
                 .onClick((e: ClickEvent) => {
-                  // this.useInterpolating = true;
-                  // this.curve = `interpolating-spring(${this.velocity},1,${this.stiffnes},${this.damping})`;
+                  this.useInterpolating = true;
+                  this.curve = `interpolating-spring(${this.velocity},1,${this.stiffnes},${this.damping})`;
                 })
               Button('linear')
                 .key('linear')

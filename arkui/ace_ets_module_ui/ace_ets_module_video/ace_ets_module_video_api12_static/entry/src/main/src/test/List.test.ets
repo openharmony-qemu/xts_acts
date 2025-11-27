@@ -16,5 +16,5 @@
 import VideoCallBackJsunit from './VideoCallbackJsunitTest1.test';
 
 export default function testsuite() {
-  VideoCallBackJsunit(); // emitter问题
+  VideoCallBackJsunit(); //
 }

@@ -130,7 +130,8 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct DefaultFocusPage {
-  @StorageProp("_defaultFocus") _defaultFocus: boolean = true
+  // @StorageProp("_defaultFocus") _defaultFocus: boolean = true
+  @State _defaultFocus: boolean = true;
   @State callback: string = '';
   @State referenceCallback: string = '';
   @State targetView: string = ''
@@ -144,8 +145,8 @@ struct DefaultFocusPage {
   onPageShow() {
     console.info('[DefaultFocusPage] page show called ');
     let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-    AppStorage.setOrCreate<boolean>('_defaultFocus', routerParamOptions.view.testValue.setValue)
-
+    // AppStorage.setOrCreate<boolean>('_defaultFocus', routerParamOptions.view.testValue.setValue)
+    this._defaultFocus = routerParamOptions.view.testValue.setValue
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;

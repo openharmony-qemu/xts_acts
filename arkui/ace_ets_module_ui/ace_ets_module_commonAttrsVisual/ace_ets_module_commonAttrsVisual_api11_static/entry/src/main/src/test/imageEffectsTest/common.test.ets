@@ -79,13 +79,6 @@ export default function commonColorModeJsunit() {
       await Utils.sleep(1000);
       console.info("commonColorMode after each called");
     });
-
-    afterAll(() => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
-    })
-
-    
     /*
      * @tc.number   testCommonColorMode_static_0011
      * @tc.name     testCommonColorMode_static_0011

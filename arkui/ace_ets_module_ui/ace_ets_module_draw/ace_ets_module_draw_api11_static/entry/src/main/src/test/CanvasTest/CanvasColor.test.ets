@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router'
-import { Driver, Component, ON } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@ohos.UiTest'
 import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
@@ -39,7 +39,6 @@ export default function CanvasColorTest() {
   const SUITE: string = 'CanvasColor'
   describe('CanvasColorTest', () => {
     beforeAll(async () => {
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });

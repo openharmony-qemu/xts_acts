@@ -54,15 +54,12 @@ export default function columnJsunit() {
         console.info("get column state pages:" + JSON.stringify(pages));
         if (!("column" == pages.name)) {
           console.info("get column pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push column page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push column page error:" + err);
       }
-      // done()
     });
 
     afterEach(async () => {

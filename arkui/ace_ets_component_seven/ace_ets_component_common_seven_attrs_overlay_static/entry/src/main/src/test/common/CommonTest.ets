@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, TestValue, SetValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
@@ -76,40 +76,45 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            // try {
-            //If there is no call back functions, do nothing.
-            if (functions.length === 0) {
-              done();
-            }
-            let funcs: CallbackWithReturn[] = [];
-            if (functions[0] instanceof Array) {
-              funcs = functions[0] as CallbackWithReturn[];
-              if (funcs.length === 0) {
+            try {
+              //If there is no call back functions, do nothing.
+              if (functions.length === 0) {
                 done();
               }
+              let funcs: CallbackWithReturn[] = [];
+              if (functions[0] instanceof Array) {
+                funcs = functions[0] as CallbackWithReturn[];
+                if (funcs.length === 0) {
+                  done();
+                }
+              }
+
+              //Execute test
+              let data: BasePageConfig = {
+                pageConfig: pageConfig,
+                caseTag: caseTag,
+                testValue: testValue,
+              }
+
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              // AttrsManager.change(data.caseTag, data.testValue.setValue);
+              AppStorage.setOrCreate<SetValue>('_overlay', data.testValue.setValue);
+              await Utils.sleep(1000);
+
+              //Check test result
+              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
+
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect(msg).assertTrue();
+              }
             }
-
-            //Execute test
-            let data: BasePageConfig = {
-              pageConfig: pageConfig,
-              caseTag: caseTag,
-              testValue: testValue,
-            }
-
-            //Check test result
-            let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-            data.viewObj = JSON.parseJsonElement(strJson);
-            await (functions[functions.length - 1] as CallbackWithReturn)(data);
-
-            // } catch (err: Error) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect(msg).assertTrue();
-            //   }
-            // }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

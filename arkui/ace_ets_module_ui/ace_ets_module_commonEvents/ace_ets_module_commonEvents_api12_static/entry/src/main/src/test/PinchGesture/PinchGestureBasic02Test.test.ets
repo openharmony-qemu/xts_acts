@@ -13,10 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {PointerMatrix, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode} from '@ohos.UiTest';
+import {
+  Component,
+  DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  Point,
+  PointerMatrix,
+  ResizeDirection,
+  UiWindow,
+  WindowMode
+} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,10 +36,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Driver, ON, Point } from '@ohos.UiTest';
-import {UtilsTest} from '../Util.test'
+import { UtilsTest } from '../Util.test'
+
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -103,6 +112,7 @@ it('PinchGestureBasic02Test_static_0010', Level.LEVEL0, async (done: () => void)
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('PinchGestureBasic02_Father');
+      await CommonFunc.sleep(1000);
       let FatherObjHeight = FatherObj.bottom - FatherObj.top
       let FatherObjWidth = FatherObj.right - FatherObj.left
       console.log('PinchGestureBasic02Test_0010 FatherObj',FatherObj.left,FatherObj.top,FatherObj.right,FatherObj.bottom)

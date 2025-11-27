@@ -39,7 +39,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, ScaleOptions } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 import matrix4 from '@ohos.matrix4'
 
@@ -271,18 +271,6 @@ let matrix1 = matrix4.init([1.0, 0.0, 0.0, 0.0,
       instance.transform(this.mTransform)
     }
   }
-  // class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-  //   mTransform: matrix4.Matrix4Transit = matrix1
-  //   applyNormalAttribute(instance: NavigatorAttribute): void {
-  //     instance.transform(this.mTransform)
-  //   }
-  // }
-  // class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-  //   mTransform: matrix4.Matrix4Transit = matrix1
-  //   applyNormalAttribute(instance: NavRouterAttribute): void {
-  //     instance.transform(this.mTransform)
-  //   }
-  // }
   class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
     mTransform: matrix4.Matrix4Transit = matrix1
     applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -996,8 +984,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct transformPage {
-  // @State _transform: matrix4.Matrix4Transit = matrix2
-  @StorageProp('_transform') _transform: SetValue = {
+  @StoragePropRef('_transform') _transform: SetValue = {
     height: 0,transform: matrix2
   }
   @State _transformAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
@@ -1036,9 +1023,7 @@ struct transformPage {
   @State _transformMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _transformMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _transformNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _transformNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _transformNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _transformNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _transformPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _transformPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _transformQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1095,13 +1080,6 @@ struct transformPage {
     this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
-
-//  @Styles commonStyle(){
-//    // .transform(this._transform)
-//    .height('100%')
-//    .gridSpan(1)
-//    .key(this.componentKey)
-//  }
 
   build() {
     GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
@@ -1160,15 +1138,6 @@ struct transformPage {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._transformMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._transformNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1328,13 +1297,7 @@ struct transformPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._transformNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

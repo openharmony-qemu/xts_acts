@@ -550,20 +550,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mPosition: Position = { x: 0, y: 0 };
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     console.info(`position page show ${JSON.stringify(this.mPosition)}`)
-//     instance.position(this.mPosition)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mPosition: Position = { x: 0, y: 0 };
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     console.info(`position page show ${JSON.stringify(this.mPosition)}`)
-//     instance.position(this.mPosition)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mPosition: Position = { x: 0, y: 0 };
 
@@ -1305,7 +1291,6 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 struct PositionPage {
   //Use for Scroll,Grid,DataPanel.
   public valueArr: number[] = [5, 10, 10, 7, 9, 10, 10, 10, 10] as number[]
-  // @State _position: Position = { x: 1, y: 1 } as Position;
   @StoragePropRef('_position') _position: Position = { x: 1, y: 1 } as Position;
   @State _positionAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _positionBadgeMod: BadgeModifier = new BadgeModifier()
@@ -1352,7 +1337,6 @@ struct PositionPage {
   @State _positionMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   //NavDestination Component is not found on build
   @State _positionNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _positionNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _positionNavigationMod: NavigationModifier = new NavigationModifier()
   //PatternLock Component is not found on build
   @State _positionPatternLockMod: PatternLockModifier = new PatternLockModifier()
@@ -1360,7 +1344,6 @@ struct PositionPage {
   @State _positionPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   //QRCodeAttribute Component is not found on build
   @State _positionQRCodeMod: QRCodeModifier = new QRCodeModifier()
-  // @State _positionNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _positionRadioMod: RadioModifier = new RadioModifier()
   @State _positionRatingMod: RatingModifier = new RatingModifier()
   @State _positionRefreshMod: RefreshModifier = new RefreshModifier()
@@ -1416,9 +1399,6 @@ struct PositionPage {
 
   onPageShow() {
     console.info('[positionPage] page show called ')
-    // let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-    // AppStorage.setOrCreate<Position>('_position',
-    //   routerParamOptions.view.testValue.setValue)
     const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
       .getElement("view")
     this.targetView = viewElement.getString("targetView")
@@ -1494,14 +1474,6 @@ struct PositionPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._positionMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._positionNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1680,13 +1652,7 @@ struct PositionPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._positionNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

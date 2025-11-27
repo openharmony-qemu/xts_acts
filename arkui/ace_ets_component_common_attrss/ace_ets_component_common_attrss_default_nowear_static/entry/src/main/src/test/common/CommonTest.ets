@@ -31,33 +31,36 @@ export default class CommonTest {
    */
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[],
     ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+    console.log('test data is: ' + JSON.stringify(pageConfig))
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
       let lastIndex: number = 0;
       testValues.forEach((temp: TestValue, index: Int) => {
-        lastIndex = index;
+        if (temp.exceptView == undefined || temp.exceptView.indexOf(targetView) < 0) {
+          lastIndex = index;
+        }
       });
 
       testValues.forEach((testValue: TestValue, index: Int) => {
 
         //If there are components that need to be excluded, do not generate cases.
+        if (testValue.exceptView == undefined || testValue.exceptView.indexOf(targetView) < 0) {
+          let currentIndex = index;
+          let sharePage = true;
+          if (pageConfig.sharePage != undefined) {
+            sharePage = pageConfig.sharePage!;
+          }
 
-        let currentIndex = index;
-        let sharePage = true;
-        if (pageConfig.sharePage != undefined) {
-          sharePage = pageConfig.sharePage!;
-        }
+          //Create case name.
+          let caseTag = pageConfig.testName + targetView + testValue.describe;
 
-        //Create case name.
-        let caseTag = pageConfig.testName + targetView + testValue.describe;
-
-        //If there is a specified container view.
-        let containerView = '';
-        if (pageConfig.containerView != undefined) {
-          containerView = pageConfig.containerView!;
-          caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
-        }
+          //If there is a specified container view.
+          let containerView = '';
+          if (pageConfig.containerView != undefined) {
+            containerView = pageConfig.containerView!;
+            caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
+          }
 
         /**
          * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
@@ -74,7 +77,7 @@ export default class CommonTest {
           pageConfig.containerView = containerView;
           pageConfig.testValue = testValue;
           await Utils.pushPage(pageConfig);
-          // try {
+          try {
           //If there is no call back functions, do nothing.
           if (functions.length === 0) {
             done();
@@ -87,44 +90,33 @@ export default class CommonTest {
             }
           }
 
-          //Execute test
-          let data: BasePageConfig = {
-            pageConfig: pageConfig,
-            caseTag: caseTag,
-            testValue: testValue,
-          }
-          if (funcs.length > 1) {
-            // let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
-            // //Set custom params to data, can be used by check test result.
-            // if (customParams) {
-            //   data.customParams = customParams;
-            // }
-          } else {
-            //If there is only an assertion function, automatically modify the status value
-            // console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-            // AttrsManager.change(data.caseTag, data.testValue.setValue);
-            await Utils.sleep(1000);
-          }
+            //Execute test
+            let data: BasePageConfig = {
+              pageConfig: pageConfig,
+              caseTag: caseTag,
+              testValue: testValue,
+            }
 
           //Check test result
           let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
           data.viewObj = JSON.parseJsonElement(strJson);
           await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-          // } catch (err: Error) {
-          //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-          //   console.error(msg);
-          //   console.error(err.stack);
-          //   if (err.name != 'AssertException') {
-          //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-          //     expect().assertFail();
-          //   }
-          // }
+          } catch (err: Error) {
+            let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+            console.error(msg);
+            console.error(err.stack);
+            if (err.name != 'AssertException') {
+              await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+              expect().assertFail();
+            }
+          }
           await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 
-          console.info('[' + caseTag + '] END');
-          done();
-        });
+            console.info('[' + caseTag + '] END');
+            done();
+          });
+        }
       })
     });
   }

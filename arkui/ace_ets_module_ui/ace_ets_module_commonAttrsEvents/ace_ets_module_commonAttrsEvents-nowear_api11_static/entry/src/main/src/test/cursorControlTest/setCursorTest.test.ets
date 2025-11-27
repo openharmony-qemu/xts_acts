@@ -63,11 +63,6 @@ export default function setCursorTest() {
       }
       console.info("setCursorTest beforeEach end");
     });
-
-    afterEach(async (): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back()
-    });
     
     /*
      * @tc.number   setCursorTest_static_0100

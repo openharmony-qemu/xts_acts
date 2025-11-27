@@ -14,28 +14,30 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
   $r,
-  RenderingContextSettings,
-  CanvasRenderingContext2D,
-  OffscreenCanvasRenderingContext2D,
-  Scroll,
-  ImageBitmap,
-  CanvasPattern,
-  ColumnOptions,
+  Button,
   Canvas,
+  CanvasPattern,
+  CanvasRenderingContext2D,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  ImageBitmap,
+  ItemAlign,
   Margin,
-  Canvas
+  OffscreenCanvas,
+  OffscreenCanvasRenderingContext2D,
+  RenderingContextSettings,
+  Row,
+  Scroll,
+  Text
 } from '@ohos.arkui.component';
-import { UIContext } from "@ohos.arkui.UIContext";
-const uiContext = new UIContext();
-
+import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -182,16 +184,16 @@ struct CanvasShader {
   }
 
   // createConicGradient11() {
-  //   let grad = this.context.createConicGradient(0, null, 100)
+  //   let grad = this.context.createConicGradient(0 as Int, null, 100 as Int)
   //   grad.addColorStop(0.0, '#ff0000')
   //   grad.addColorStop(0.3, '#0000ff')
   //   grad.addColorStop(1.0, '#ff00ff')
   //   this.context.fillStyle = grad
   //   this.context.fillRect(0, 0, 200, 200)
   // }
-
+  //
   // createConicGradient12() {
-  //   let grad = this.context.createConicGradient(0, undefined, 100)
+  //   let grad = this.context.createConicGradient(0 as int, undefined, 100 as Int)
   //   grad.addColorStop(0.0, '#ff0000')
   //   grad.addColorStop(0.3, '#0000ff')
   //   grad.addColorStop(1.0, '#ff00ff')
@@ -200,7 +202,7 @@ struct CanvasShader {
   // }
   //
   // createConicGradient13() {
-  //   let grad = this.context.createConicGradient(0, 100, null)
+  //   let grad = this.context.createConicGradient(0 as Int, 100 as Int, null)
   //   grad.addColorStop(0.0, '#ff0000')
   //   grad.addColorStop(0.3, '#0000ff')
   //   grad.addColorStop(1.0, '#ff00ff')
@@ -209,7 +211,7 @@ struct CanvasShader {
   // }
   //
   // createConicGradient14() {
-  //   let grad = this.context.createConicGradient(0, 100, undefined)
+  //   let grad = this.context.createConicGradient(0 as Int, 100 as Int, undefined)
   //   grad.addColorStop(0.0, '#ff0000')
   //   grad.addColorStop(0.3, '#0000ff')
   //   grad.addColorStop(1.0, '#ff00ff')
@@ -218,7 +220,7 @@ struct CanvasShader {
   // }
   //
   // createConicGradient15() {
-  //   let grad = this.context.createConicGradient(null, 100, 100)
+  //   let grad = this.context.createConicGradient(null, 100 as Int, 100 as Int)
   //   grad.addColorStop(0.0, '#ff0000')
   //   grad.addColorStop(0.3, '#0000ff')
   //   grad.addColorStop(1.0, '#ff00ff')
@@ -227,14 +229,14 @@ struct CanvasShader {
   // }
   //
   // createConicGradient16() {
-  //   let grad = this.context.createConicGradient(undefined, 100, 100)
+  //   let grad = this.context.createConicGradient(undefined, 100 as Int, 100 as Int)
   //   grad.addColorStop(0.0, '#ff0000')
   //   grad.addColorStop(0.3, '#0000ff')
   //   grad.addColorStop(1.0, '#ff00ff')
   //   this.context.fillStyle = grad
   //   this.context.fillRect(0, 0, 200, 200)
   // }
-  //
+
   // createConicGradient17() {
   //   let grad = this.context.createConicGradient(null, null, null)
   //   grad.addColorStop(0.0, '#ff0000')
@@ -247,48 +249,48 @@ struct CanvasShader {
   clamp1() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(276 * 2), uiContext.px2vp(183))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(276 * 2), this.getUIContext().px2vp(183))
   }
 
   clamp2() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(276), uiContext.px2vp(183 * 2))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(276), this.getUIContext().px2vp(183 * 2))
   }
 
   clamp3() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(276 * 2), uiContext.px2vp(183 * 2))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(276 * 2), this.getUIContext().px2vp(183 * 2))
   }
 
   clamp4() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(276), uiContext.px2vp(183))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(276), this.getUIContext().px2vp(183))
   }
 
   mirror1() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(150 * 2), uiContext.px2vp(150))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(150 * 2), this.getUIContext().px2vp(150))
   }
 
   mirror2() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(150), uiContext.px2vp(150 * 2))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(150), this.getUIContext().px2vp(150 * 2))
   }
 
   mirror3() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(150 * 2), uiContext.px2vp(150 * 2))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(150 * 2), this.getUIContext().px2vp(150 * 2))
   }
 
   mirror4() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, uiContext.px2vp(150), uiContext.px2vp(150))
+    this.context1.fillRect(0, 0, this.getUIContext().px2vp(150), this.getUIContext().px2vp(150))
   }
 }

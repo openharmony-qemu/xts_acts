@@ -14,24 +14,25 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  $r,
+  Button,
+  Canvas,
+  CanvasPattern,
+  CanvasRenderingContext2D,
+  Color,
   Column,
   Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  RenderingContextSettings,
-  CanvasRenderingContext2D,
-  OffscreenCanvasRenderingContext2D,
-  Scroll,
+  Entry,
   ImageBitmap,
-  CanvasPattern,
-  Canvas
+  OffscreenCanvasRenderingContext2D,
+  RenderingContextSettings,
+  Row,
+  Scroll,
+  Text
 } from '@ohos.arkui.component';
-import { UIContext } from "@ohos.arkui.UIContext";
-const uiContext = new UIContext();
+import { UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+
 
 @Entry
 @Component
@@ -83,7 +84,8 @@ struct CanvasColor {
   fillStyle_CanvasPattern() {
     let pattern = this.context.createPattern(this.img, 'repeat')
     this.context.fillStyle = pattern as CanvasPattern
-    this.context.fillRect(0, 0, uiContext.px2vp(276 * 2), uiContext.px2vp(183))
+    this.context.fillRect(0, 0, this.getUIContext().px2vp(276 * 2),
+      this.getUIContext().px2vp(183))
   }
 
   strokeStyle_string() {
@@ -109,6 +111,7 @@ struct CanvasColor {
     let pattern = this.context.createPattern(this.img, 'repeat')
     this.context.lineWidth = 5
     this.context.strokeStyle = pattern as CanvasPattern
-    this.context.strokeRect(0, 0, uiContext.px2vp(276 * 2), uiContext.px2vp(183))
+    this.context.strokeRect(0, 0, this.getUIContext().px2vp(276 * 2),
+      this.getUIContext().px2vp(183))
   }
 }

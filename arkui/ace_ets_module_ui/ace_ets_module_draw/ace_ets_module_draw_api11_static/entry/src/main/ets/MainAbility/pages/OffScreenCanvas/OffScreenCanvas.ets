@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  $r,
+  Button,
+  Canvas,
+  CanvasRenderingContext2D,
+  Color,
   Column,
   Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  RenderingContextSettings,
-  CanvasRenderingContext2D,
-  CanvasRenderingContext2D,
-  FlexDirection,
-  ItemAlign,
+  Entry,
   FlexAlign,
-  Canvas,
+  FlexDirection,
+  ImageBitmap,
+  ItemAlign,
   OffscreenCanvas,
-  Scroll,ImageBitmap
+  RenderingContextSettings,
+  Row,
+  Scroll,
+  Text
 } from '@ohos.arkui.component';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
