@@ -43,8 +43,8 @@ const OH_AudioFormat audioFormatOutput = {.samplingRate = OH_Audio_SampleRate::S
 
 std::vector<char> audioData(g_frameSize);
 bool g_finishedFlag = false;
-static int32_t MyOnWriteData( OH_AudioNode *audioNode, void *userData, void *audioData, int32_t audioDataSize,
-                             bool *finished )
+static int32_t MyOnWriteData(OH_AudioNode *audioNode, void *userData, void *audioData, int32_t audioDataSize,
+                             bool *finished)
 {
     std::fill(static_cast<char *>(audioData), static_cast<char *>(audioData) + audioDataSize, 1);
     *finished = true;
@@ -217,7 +217,7 @@ static napi_value AudioSuiteNodeBuilderSetNodeTypeTest_0002(napi_env env, napi_c
         if (result != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
             LOG("AudioSuiteNodeBuilderSetNodeTypeTest_0002 fail, result is: %{public}d", result);
-        }else {
+        } else {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         }
     }
@@ -360,11 +360,12 @@ static napi_value AudioSuiteNodeBuilderSetFormatTest_0004(napi_env env, napi_cal
     OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
     OH_AudioNodeBuilder *inputNodeBuilder = nullptr;
     const OH_AudioFormat audioFormatInput = {
-                                      .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
-                                      .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
-                                      .channelCount = NUM_THREE,
-                                      .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
-                                      .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE };
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .channelCount = NUM_THREE,
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
         <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
@@ -495,11 +496,12 @@ static napi_value AudioSuiteNodeBuilderSetFormatTest_0008(napi_env env, napi_cal
         <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
     OH_AudioSuiteNodeBuilder_Create(&outputNodeBuilder);
     const OH_AudioFormat audioFormatOutput = {
-                                      .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
-                                      .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
-                                      .channelCount = NUM_ONE,
-                                      .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
-                                      .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE };
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .channelCount = NUM_ONE,
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
     OH_AudioSuite_Result result = OH_AudioSuiteNodeBuilder_SetFormat(outputNodeBuilder, audioFormatOutput);
     if (result != OH_AudioSuite_Result::AUDIOSUITE_ERROR_UNSUPPORTED_FORMAT) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
@@ -582,7 +584,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "AudioSuiteEngineCreateTest_0004", nullptr, AudioSuiteEngineCreateTest_0004,
         nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngineCreateTest_0005", nullptr, AudioSuiteEngineCreateTest_0005,
-        nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngineDestroyTest_0001", nullptr, AudioSuiteEngineDestroyTest_0001,
         nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngineDestroyTest_0002", nullptr, AudioSuiteEngineDestroyTest_0002,
