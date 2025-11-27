@@ -37,7 +37,6 @@ export default function FivePointOne_i18nStageTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0160
      * @tc.number SUB_GLOBAL_refinedFormat_0160
      * @tc.desc   begin code same as stop code
@@ -52,7 +51,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0170
      * @tc.number SUB_GLOBAL_refinedFormat_0170
      * @tc.desc   normally (begin code & stop code)
@@ -67,7 +65,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0180
      * @tc.number SUB_GLOBAL_refinedFormat_0180
      * @tc.desc   begin code with negative ,stop code with decimal
@@ -82,7 +79,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0190
      * @tc.number SUB_GLOBAL_refinedFormat_0190
      * @tc.desc   begin code large than stop code
@@ -97,7 +93,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_0100
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0100
      * @tc.desc   i18n.TemperatureType.CELSIUS
@@ -112,7 +107,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_0200
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0200
      * @tc.desc   i18n.TemperatureType.FAHRENHEIT
@@ -127,7 +121,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_0300
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0300
      * @tc.desc   i18n.TemperatureType.KELVIN
@@ -142,7 +135,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_0400
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0400
      * @tc.desc   input number zero
@@ -160,7 +152,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0100
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0100
      * @tc.desc   en-GB & en-Latn-US
@@ -178,7 +169,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0200
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0200
      * @tc.desc   zh-Hant-HK & zh-Hant-TW
@@ -196,7 +186,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0300
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0300
      * @tc.desc   es-ES & es-US
@@ -214,7 +203,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0400
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0400
      * @tc.desc   pt-PT & pt-BR
@@ -232,7 +220,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0500
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0500
      * @tc.desc   en-CN & en-Test
@@ -250,7 +237,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0600
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0600
      * @tc.desc   zh-Hant-CN & zh-Hant-Test
@@ -268,7 +254,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0700
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0700
      * @tc.desc   es-CN & es-Test
@@ -286,7 +271,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0800
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0800
      * @tc.desc   pt-CN & pt-Test
@@ -304,7 +288,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_0900
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0900
      * @tc.desc   bo-CN & bo-Test & bo-Test
@@ -325,7 +308,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_1000
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_1000
      * @tc.desc   pt-CN & pt-Test
@@ -343,7 +325,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_I18N_StyledNumberFormat_02_00100
      * @tc.number SUB_GLOBAL_I18N_StyledNumberFormat_02_00100
      * @tc.desc   fontColor &fontFamily & fontSize & fontWeight & fontStyle
@@ -409,7 +390,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0310
      * @tc.number SUB_GLOBAL_refinedFormat_0310
      * @tc.desc   maximumFractionDigits: 2 & maximumSignificantDigits: 6 & roundingPriority: "lessPrecision"
@@ -427,7 +407,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0630
      * @tc.number SUB_GLOBAL_refinedFormat_0630
      * @tc.desc   roundingMode: "halfExpand" & maximumSignificantDigits: 5
@@ -445,7 +424,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_FilePathMirroring_0100
      * @tc.number SUB_GLOBAL_FilePathMirroring_0100
      * @tc.desc   path /data/out/tmp & delimiter /
@@ -463,7 +441,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0020
      * @tc.number SUB_GLOBAL_refinedFormat_0020
      * @tc.desc   Date(2024, 11, 13, 6, 30, 25) & 'y'/'M'/'d' 'h':'m':'s'
@@ -481,7 +458,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0790
      * @tc.number SUB_GLOBAL_refinedFormat_0790
      * @tc.desc   skeletonFormat (1230000) & getSimpleNumberFormatBySkeleton "engineering/sign-always"
@@ -498,7 +474,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0320
      * @tc.number SUB_GLOBAL_refinedFormat_0320
      * @tc.desc   maximumFractionDigits: 2 & roundingIncrement: 1
@@ -516,7 +491,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_008
      * @tc.number SUB_GLOBAL_refinedFormat_008
      * @tc.desc   local is CN
@@ -533,7 +507,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_01_1010
      * @tc.number I18N_test_getSimplifiedLanguage_01_1010
      * @tc.desc   no param
@@ -548,7 +521,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureType_0100
      * @tc.number I18N_test_getTemperatureType_0100
      * @tc.desc   no param
@@ -563,7 +535,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getFirstDayOfWeek_0100
      * @tc.number I18N_test_getFirstDayOfWeek_0100
      * @tc.desc   no param
@@ -578,7 +549,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getUnicodeWrappedFilePath_0100
      * @tc.number I18N_test_getUnicodeWrappedFilePath_0100
      * @tc.desc   890001
@@ -599,7 +569,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getUnicodeWrappedFilePath_0200
      * @tc.number I18N_test_getUnicodeWrappedFilePath_0200
      * @tc.desc   path & delimiter
@@ -616,7 +585,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getUnicodeWrappedFilePath_0300
      * @tc.number I18N_test_getUnicodeWrappedFilePath_0300
      * @tc.desc   path
@@ -632,7 +600,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_0100
      * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_0100
      * @tc.desc   89001
@@ -651,7 +618,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_0200
      * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_0200
      * @tc.desc   only date
@@ -669,7 +635,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_0100
      * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_0100
      * @tc.desc   89001
@@ -688,7 +653,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_0200
      * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_0200
      * @tc.desc   only date
@@ -705,7 +669,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_0100
      * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_0100
      * @tc.desc   89001
@@ -724,7 +687,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_0200
      * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_0200
      * @tc.desc   only skeletonFormatter
@@ -740,7 +702,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0010
      * @tc.number SUB_GLOBAL_refinedFormat_0010
      * @tc.desc   without pattern
@@ -757,7 +718,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0030
      * @tc.number SUB_GLOBAL_refinedFormat_0030
      * @tc.desc   without data symbol
@@ -774,7 +734,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0050
      * @tc.number SUB_GLOBAL_refinedFormat_0050
      * @tc.desc   local is en-US
@@ -792,7 +751,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0060
      * @tc.number SUB_GLOBAL_refinedFormat_0060
      * @tc.desc   local is ug-CN
@@ -810,7 +768,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0090
      * @tc.number SUB_GLOBAL_refinedFormat_0090
      * @tc.desc   local is zh-Hant-HK
@@ -828,7 +785,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0100
      * @tc.number SUB_GLOBAL_refinedFormat_0100
      * @tc.desc   local is zh-Hant-TW
@@ -846,7 +802,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0110
      * @tc.number SUB_GLOBAL_refinedFormat_0110
      * @tc.desc   local is zh-Hant-MO
@@ -864,7 +819,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0120
      * @tc.number SUB_GLOBAL_refinedFormat_0120
      * @tc.desc   local is ug-CN
@@ -882,7 +836,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0130
      * @tc.number SUB_GLOBAL_refinedFormat_0130
      * @tc.desc   local is bo-CN
@@ -900,7 +853,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0140
      * @tc.number SUB_GLOBAL_refinedFormat_0140
      * @tc.desc   local is en-GB
@@ -918,7 +870,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0150
      * @tc.number SUB_GLOBAL_refinedFormat_0150
      * @tc.desc   local is en-GB
@@ -935,7 +886,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0240
      * @tc.number SUB_GLOBAL_refinedFormat_0240
      * @tc.desc   numOptions is 2,4
@@ -953,7 +903,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0250
      * @tc.number SUB_GLOBAL_refinedFormat_0250
      * @tc.desc   numOptions is 2,6
@@ -971,7 +920,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0260
      * @tc.number SUB_GLOBAL_refinedFormat_0260
      * @tc.desc   numOptions is 2,4,auto
@@ -989,7 +937,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0270
      * @tc.number SUB_GLOBAL_refinedFormat_0270
      * @tc.desc   numOptions is 2,6,auto
@@ -1007,7 +954,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0280
      * @tc.number SUB_GLOBAL_refinedFormat_0280
      * @tc.desc   numOptions is 2,4,morePrecision
@@ -1025,7 +971,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0290
      * @tc.number SUB_GLOBAL_refinedFormat_0290
      * @tc.desc   numOptions is 2,6,morePrecision
@@ -1043,7 +988,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0300
      * @tc.number SUB_GLOBAL_refinedFormat_0300
      * @tc.desc   numOptions is 2,4,lessPrecision
@@ -1061,7 +1005,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0330
      * @tc.number SUB_GLOBAL_refinedFormat_0330
      * @tc.desc   numOptions is 2,2
@@ -1079,7 +1022,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0340
      * @tc.number SUB_GLOBAL_refinedFormat_0340
      * @tc.desc   numOptions is 2,5
@@ -1097,7 +1039,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0350
      * @tc.number SUB_GLOBAL_refinedFormat_0350
      * @tc.desc   numOptions is 2,10
@@ -1115,7 +1056,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0360
      * @tc.number SUB_GLOBAL_refinedFormat_0360
      * @tc.desc   numOptions is 2,20
@@ -1133,7 +1073,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0370
      * @tc.number SUB_GLOBAL_refinedFormat_0370
      * @tc.desc   numOptions is 2,25
@@ -1151,7 +1090,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0380
      * @tc.number SUB_GLOBAL_refinedFormat_0380
      * @tc.desc   numOptions is 2,50
@@ -1169,7 +1107,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0390
      * @tc.number SUB_GLOBAL_refinedFormat_0390
      * @tc.desc   numOptions is 2,100
@@ -1187,7 +1124,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0400
      * @tc.number SUB_GLOBAL_refinedFormat_0400
      * @tc.desc   numOptions is 2,200
@@ -1205,7 +1141,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0410
      * @tc.number SUB_GLOBAL_refinedFormat_0410
      * @tc.desc   numOptions is 2,250
@@ -1223,7 +1158,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0420
      * @tc.number SUB_GLOBAL_refinedFormat_0420
      * @tc.desc   numOptions is 2,500
@@ -1241,7 +1175,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0430
      * @tc.number SUB_GLOBAL_refinedFormat_0430
      * @tc.desc   numOptions is 2,1000
@@ -1259,7 +1192,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0440
      * @tc.number SUB_GLOBAL_refinedFormat_0440
      * @tc.desc   numOptions is 2,2000
@@ -1277,7 +1209,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0450
      * @tc.number SUB_GLOBAL_refinedFormat_0450
      * @tc.desc   numOptions is 2,2500
@@ -1295,7 +1226,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0460
      * @tc.number SUB_GLOBAL_refinedFormat_0460
      * @tc.desc   numOptions is 2,5000
@@ -1313,7 +1243,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0470
      * @tc.number SUB_GLOBAL_refinedFormat_0470
      * @tc.desc   numOptions is ceil,2
@@ -1331,7 +1260,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0480
      * @tc.number SUB_GLOBAL_refinedFormat_0480
      * @tc.desc   numOptions is ceil,5
@@ -1349,7 +1277,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0490
      * @tc.number SUB_GLOBAL_refinedFormat_0490
      * @tc.desc   numOptions is floor,2
@@ -1367,7 +1294,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0500
      * @tc.number SUB_GLOBAL_refinedFormat_0500
      * @tc.desc   numOptions is floor,5
@@ -1385,7 +1311,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0510
      * @tc.number SUB_GLOBAL_refinedFormat_0510
      * @tc.desc   numOptions is expand,2
@@ -1403,7 +1328,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0520
      * @tc.number SUB_GLOBAL_refinedFormat_0520
      * @tc.desc   numOptions is expand,5
@@ -1421,7 +1345,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0530
      * @tc.number SUB_GLOBAL_refinedFormat_0530
      * @tc.desc   numOptions is trunc,2
@@ -1439,7 +1362,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0540
      * @tc.number SUB_GLOBAL_refinedFormat_0540
      * @tc.desc   numOptions is trunc,5
@@ -1457,7 +1379,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0550
      * @tc.number SUB_GLOBAL_refinedFormat_0550
      * @tc.desc   numOptions is halfCeil,2
@@ -1475,7 +1396,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0560
      * @tc.number SUB_GLOBAL_refinedFormat_0560
      * @tc.desc   numOptions is halfCeil,5
@@ -1493,7 +1413,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0570
      * @tc.number SUB_GLOBAL_refinedFormat_0570
      * @tc.desc   numOptions is halfCeil,2
@@ -1511,7 +1430,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0580
      * @tc.number SUB_GLOBAL_refinedFormat_0580
      * @tc.desc   numOptions is halfCeil,5
@@ -1529,7 +1447,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0590
      * @tc.number SUB_GLOBAL_refinedFormat_0590
      * @tc.desc   numOptions is halfFloor,2
@@ -1547,7 +1464,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0600
      * @tc.number SUB_GLOBAL_refinedFormat_0600
      * @tc.desc   numOptions is halfFloor,5
@@ -1565,7 +1481,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0610
      * @tc.number SUB_GLOBAL_refinedFormat_0610
      * @tc.desc   numOptions is halfFloor,2
@@ -1583,7 +1498,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0620
      * @tc.number SUB_GLOBAL_refinedFormat_0620
      * @tc.desc   numOptions is halfFloor,5
@@ -1601,7 +1515,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0640
      * @tc.number SUB_GLOBAL_refinedFormat_0640
      * @tc.desc   numOptions is halfExpand,5
@@ -1619,7 +1532,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0650
      * @tc.number SUB_GLOBAL_refinedFormat_0650
      * @tc.desc   numOptions is halfExpand,5
@@ -1637,7 +1549,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0660
      * @tc.number SUB_GLOBAL_refinedFormat_0660
      * @tc.desc   numOptions is halfExpand,5
@@ -1655,7 +1566,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0670
      * @tc.number SUB_GLOBAL_refinedFormat_0670
      * @tc.desc   numOptions is halfTrunc,5
@@ -1673,7 +1583,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0680
      * @tc.number SUB_GLOBAL_refinedFormat_0680
      * @tc.desc   numOptions is halfTrunc,5
@@ -1691,7 +1600,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0690
      * @tc.number SUB_GLOBAL_refinedFormat_0690
      * @tc.desc   numOptions is halfTrunc,5
@@ -1709,7 +1617,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0700
      * @tc.number SUB_GLOBAL_refinedFormat_0700
      * @tc.desc   numOptions is halfTrunc,5
@@ -1727,7 +1634,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0710
      * @tc.number SUB_GLOBAL_refinedFormat_0710
      * @tc.desc   numOptions is halfEven,5
@@ -1745,7 +1651,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0720
      * @tc.number SUB_GLOBAL_refinedFormat_0720
      * @tc.desc   numOptions is halfEven,5
@@ -1763,7 +1668,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0730
      * @tc.number SUB_GLOBAL_refinedFormat_0730
      * @tc.desc   numOptions is halfEven,5
@@ -1781,7 +1685,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0740
      * @tc.number SUB_GLOBAL_refinedFormat_0740
      * @tc.desc   numOptions is halfEven,5
@@ -1799,7 +1702,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0800
      * @tc.number SUB_GLOBAL_refinedFormat_0800
      * @tc.desc   skeleton is EE+!0
@@ -1815,7 +1717,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0810
      * @tc.number SUB_GLOBAL_refinedFormat_0810
      * @tc.desc   skeleton is %
@@ -1831,7 +1732,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0820
      * @tc.number SUB_GLOBAL_refinedFormat_0820
      * @tc.desc   skeleton is permille
@@ -1847,7 +1747,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0830
      * @tc.number SUB_GLOBAL_refinedFormat_0830
      * @tc.desc   skeleton is %x100
@@ -1863,7 +1762,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0840
      * @tc.number SUB_GLOBAL_refinedFormat_0840
      * @tc.desc   skeleton is unit/meter
@@ -1879,7 +1777,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0850
      * @tc.number SUB_GLOBAL_refinedFormat_0850
      * @tc.desc   skeleton is measure-unit/length-meter
@@ -1896,7 +1793,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0860
      * @tc.number SUB_GLOBAL_refinedFormat_0860
      * @tc.desc   skeleton is currency/CNY
@@ -1912,7 +1808,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0870
      * @tc.number SUB_GLOBAL_refinedFormat_0870
      * @tc.desc   skeleton is measure-unit/length-meter per-measure-unit/duration-second
@@ -1929,7 +1824,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0880
      * @tc.number SUB_GLOBAL_refinedFormat_0880
      * @tc.desc   skeleton is unit/meter unit-width-full-name
@@ -1946,7 +1840,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0890
      * @tc.number SUB_GLOBAL_refinedFormat_0890
      * @tc.desc   skeleton is precision-increment/0.01
@@ -1963,7 +1856,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0900
      * @tc.number SUB_GLOBAL_refinedFormat_0900
      * @tc.desc   skeleton is precision-increment/0.01 rounding-mode-ceiling
@@ -1980,7 +1872,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0910
      * @tc.number SUB_GLOBAL_refinedFormat_0910
      * @tc.desc   skeleton is integer-width/000
@@ -1996,7 +1887,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0920
      * @tc.number SUB_GLOBAL_refinedFormat_0920
      * @tc.desc   skeleton is scale/100
@@ -2012,7 +1902,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0930
      * @tc.number SUB_GLOBAL_refinedFormat_0930
      * @tc.desc   skeleton is group-min2
@@ -2028,7 +1917,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0940
      * @tc.number SUB_GLOBAL_refinedFormat_0940
      * @tc.desc   skeleton is numbering-system/arab
@@ -2045,7 +1933,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0950
      * @tc.number SUB_GLOBAL_refinedFormat_0950
      * @tc.desc   skeleton is () currency/CAD
@@ -2061,7 +1948,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_0960
      * @tc.number SUB_GLOBAL_refinedFormat_0960
      * @tc.desc   skeleton is decimal-always
@@ -2077,7 +1963,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_FilePathMirroring_0200
      * @tc.number SUB_GLOBAL_FilePathMirroring_0200
      * @tc.desc   path /data/out/tmp & delimiter / non-mirror language
@@ -2095,7 +1980,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_FilePathMirroring_0300
      * @tc.number SUB_GLOBAL_FilePathMirroring_0300
      * @tc.desc   path \data\out\tmp & delimiter \ mirror language
@@ -2113,7 +1997,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_FilePathMirroring_0400
      * @tc.number SUB_GLOBAL_FilePathMirroring_0400
      * @tc.desc   path >data>out>tmp & delimiter > mirror language
@@ -2131,7 +2014,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_FilePathMirroring_0600
      * @tc.number SUB_GLOBAL_FilePathMirroring_0600
      * @tc.desc   path /data/out/tmp & delimiter > mirror language
@@ -2149,7 +2031,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_FilePathMirroring_0800
      * @tc.number SUB_GLOBAL_FilePathMirroring_0800
      * @tc.desc   path /data/&*^%$#@-+=!out/tmp & delimiter / mirror language
@@ -2167,7 +2048,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0010
      * @tc.number SUB_GLOBAL_numberFormat_0010
      * @tc.desc   units Incoming beat-per-minute
@@ -2190,7 +2070,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0020
      * @tc.number SUB_GLOBAL_numberFormat_0020
      * @tc.desc   units Incoming beat-per-minute
@@ -2213,7 +2092,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0030
      * @tc.number SUB_GLOBAL_numberFormat_0030
      * @tc.desc   units Incoming beat-per-minute
@@ -2236,7 +2114,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0040
      * @tc.number SUB_GLOBAL_numberFormat_0040
      * @tc.desc   units Incoming beat-per-minute
@@ -2259,7 +2136,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0050
      * @tc.number SUB_GLOBAL_numberFormat_0050
      * @tc.desc   units Incoming beat-per-minute
@@ -2282,7 +2158,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0060
      * @tc.number SUB_GLOBAL_numberFormat_0060
      * @tc.desc   units Incoming beat-per-minute
@@ -2305,7 +2180,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0070
      * @tc.number SUB_GLOBAL_numberFormat_0070
      * @tc.desc   units Incoming jump-rope-per-minute
@@ -2328,7 +2202,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0080
      * @tc.number SUB_GLOBAL_numberFormat_0080
      * @tc.desc   units Incoming jump-rope-per-minute
@@ -2351,7 +2224,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0090
      * @tc.number SUB_GLOBAL_numberFormat_0090
      * @tc.desc   units Incoming jump-rope-per-minute
@@ -2374,7 +2246,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0100
      * @tc.number SUB_GLOBAL_numberFormat_0100
      * @tc.desc   units Incoming jump-rope-per-minute
@@ -2397,7 +2268,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0110
      * @tc.number SUB_GLOBAL_numberFormat_0110
      * @tc.desc   units Incoming jump-rope-per-minute
@@ -2420,7 +2290,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0120
      * @tc.number SUB_GLOBAL_numberFormat_0120
      * @tc.desc   units Incoming jump-rope-per-minute
@@ -2443,7 +2312,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0130
      * @tc.number SUB_GLOBAL_numberFormat_0130
      * @tc.desc   units Incoming breath-per-minute
@@ -2466,7 +2334,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0140
      * @tc.number SUB_GLOBAL_numberFormat_0140
      * @tc.desc   units Incoming breath-per-minute
@@ -2489,7 +2356,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0150
      * @tc.number SUB_GLOBAL_numberFormat_0150
      * @tc.desc   units Incoming breath-per-minute
@@ -2512,7 +2378,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0160
      * @tc.number SUB_GLOBAL_numberFormat_0160
      * @tc.desc   units Incoming breath-per-minute
@@ -2535,7 +2400,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0170
      * @tc.number SUB_GLOBAL_numberFormat_0170
      * @tc.desc   units Incoming breath-per-minute
@@ -2558,7 +2422,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0180
      * @tc.number SUB_GLOBAL_numberFormat_0180
      * @tc.desc   units Incoming breath-per-minute
@@ -2581,7 +2444,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0190
      * @tc.number SUB_GLOBAL_numberFormat_0190
      * @tc.desc   units Incoming body-weight-per-second
@@ -2604,7 +2466,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0200
      * @tc.number SUB_GLOBAL_numberFormat_0200
      * @tc.desc   units Incoming body-weight-per-second
@@ -2627,7 +2488,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0210
      * @tc.number SUB_GLOBAL_numberFormat_0210
      * @tc.desc   units Incoming body-weight-per-second
@@ -2650,7 +2510,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0220
      * @tc.number SUB_GLOBAL_numberFormat_0220
      * @tc.desc   units Incoming body-weight-per-second
@@ -2673,7 +2532,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0230
      * @tc.number SUB_GLOBAL_numberFormat_0230
      * @tc.desc   units Incoming body-weight-per-second
@@ -2696,7 +2554,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0240
      * @tc.number SUB_GLOBAL_numberFormat_0240
      * @tc.desc   units Incoming body-weight-per-second
@@ -2719,7 +2576,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0250
      * @tc.number SUB_GLOBAL_numberFormat_0250
      * @tc.desc   units Incoming rotation-per-minute
@@ -2742,7 +2598,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0260
      * @tc.number SUB_GLOBAL_numberFormat_0260
      * @tc.desc   units Incoming rotation-per-minute
@@ -2765,7 +2620,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0270
      * @tc.number SUB_GLOBAL_numberFormat_0270
      * @tc.desc   units Incoming rotation-per-minute
@@ -2788,7 +2642,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0280
      * @tc.number SUB_GLOBAL_numberFormat_0280
      * @tc.desc   units Incoming rotation-per-minute
@@ -2811,7 +2664,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0290
      * @tc.number SUB_GLOBAL_numberFormat_0290
      * @tc.desc   units Incoming rotation-per-minute
@@ -2834,7 +2686,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0300
      * @tc.number SUB_GLOBAL_numberFormat_0300
      * @tc.desc   units Incoming rotation-per-minute
@@ -2857,7 +2708,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0310
      * @tc.number SUB_GLOBAL_numberFormat_0310
      * @tc.desc   units Incoming mile-per-hour
@@ -2880,7 +2730,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0320
      * @tc.number SUB_GLOBAL_numberFormat_0320
      * @tc.desc   units Incoming mile-per-hour
@@ -2903,7 +2752,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0330
      * @tc.number SUB_GLOBAL_numberFormat_0330
      * @tc.desc   units Incoming mile-per-hour
@@ -2926,7 +2774,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0340
      * @tc.number SUB_GLOBAL_numberFormat_0340
      * @tc.desc   units Incoming mile-per-hour
@@ -2949,7 +2796,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0350
      * @tc.number SUB_GLOBAL_numberFormat_0350
      * @tc.desc   units Incoming mile-per-hour
@@ -2972,7 +2818,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0360
      * @tc.number SUB_GLOBAL_numberFormat_0360
      * @tc.desc   units Incoming mile-per-hour
@@ -2995,7 +2840,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0370
      * @tc.number SUB_GLOBAL_numberFormat_0370
      * @tc.desc   units Incoming kilometer-per-hour
@@ -3019,7 +2863,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0380
      * @tc.number SUB_GLOBAL_numberFormat_0380
      * @tc.desc   units Incoming kilometer-per-hour
@@ -3042,7 +2885,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0390
      * @tc.number SUB_GLOBAL_numberFormat_0390
      * @tc.desc   units Incoming kilometer-per-hour
@@ -3065,7 +2907,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0400
      * @tc.number SUB_GLOBAL_numberFormat_0400
      * @tc.desc   units Incoming kilometer-per-hour
@@ -3088,7 +2929,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0410
      * @tc.number SUB_GLOBAL_numberFormat_0410
      * @tc.desc   units Incoming kilometer-per-hour
@@ -3111,7 +2951,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0420
      * @tc.number SUB_GLOBAL_numberFormat_0420
      * @tc.desc   units Incoming kilometer-per-hour
@@ -3134,7 +2973,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0430
      * @tc.number SUB_GLOBAL_numberFormat_0430
      * @tc.desc   units Incoming meter-per-hour
@@ -3157,7 +2995,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0440
      * @tc.number SUB_GLOBAL_numberFormat_0440
      * @tc.desc   units Incoming meter-per-hour
@@ -3180,7 +3017,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0450
      * @tc.number SUB_GLOBAL_numberFormat_0450
      * @tc.desc   units Incoming meter-per-hour
@@ -3203,7 +3039,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0460
      * @tc.number SUB_GLOBAL_numberFormat_0460
      * @tc.desc   units Incoming meter-per-hour
@@ -3226,7 +3061,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0470
      * @tc.number SUB_GLOBAL_numberFormat_0470
      * @tc.desc   units Incoming meter-per-hour
@@ -3249,7 +3083,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0480
      * @tc.number SUB_GLOBAL_numberFormat_0480
      * @tc.desc   units Incoming meter-per-hour
@@ -3272,7 +3105,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0490
      * @tc.number SUB_GLOBAL_numberFormat_0490
      * @tc.desc   units Incoming meter-per-second
@@ -3295,7 +3127,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0500
      * @tc.number SUB_GLOBAL_numberFormat_0500
      * @tc.desc   units Incoming meter-per-second
@@ -3318,7 +3149,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0510
      * @tc.number SUB_GLOBAL_numberFormat_0510
      * @tc.desc   units Incoming meter-per-second
@@ -3341,7 +3171,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0520
      * @tc.number SUB_GLOBAL_numberFormat_0520
      * @tc.desc   units Incoming meter-per-second
@@ -3364,7 +3193,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0530
      * @tc.number SUB_GLOBAL_numberFormat_0530
      * @tc.desc   units Incoming meter-per-second
@@ -3387,7 +3215,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0540
      * @tc.number SUB_GLOBAL_numberFormat_0540
      * @tc.desc   units Incoming meter-per-second
@@ -3410,7 +3237,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0550
      * @tc.number SUB_GLOBAL_numberFormat_0550
      * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
@@ -3433,7 +3259,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0560
      * @tc.number SUB_GLOBAL_numberFormat_0560
      * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
@@ -3456,7 +3281,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0570
      * @tc.number SUB_GLOBAL_numberFormat_0570
      * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
@@ -3479,7 +3303,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0580
      * @tc.number SUB_GLOBAL_numberFormat_0580
      * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
@@ -3502,7 +3325,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0590
      * @tc.number SUB_GLOBAL_numberFormat_0590
      * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
@@ -3525,7 +3347,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0600
      * @tc.number SUB_GLOBAL_numberFormat_0600
      * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
@@ -3548,7 +3369,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0610
      * @tc.number SUB_GLOBAL_numberFormat_0610
      * @tc.desc   units Incoming millimole-per-liter
@@ -3571,7 +3391,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0620
      * @tc.number SUB_GLOBAL_numberFormat_0620
      * @tc.desc   units Incoming millimole-per-liter
@@ -3594,7 +3413,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0630
      * @tc.number SUB_GLOBAL_numberFormat_0630
      * @tc.desc   units Incoming millimole-per-liter
@@ -3617,7 +3435,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0640
      * @tc.number SUB_GLOBAL_numberFormat_0640
      * @tc.desc   units Incoming millimole-per-liter
@@ -3640,7 +3457,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0650
      * @tc.number SUB_GLOBAL_numberFormat_0650
      * @tc.desc   units Incoming millimole-per-liter
@@ -3663,7 +3479,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0660
      * @tc.number SUB_GLOBAL_numberFormat_0660
      * @tc.desc   units Incoming millimole-per-liter
@@ -3686,7 +3501,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0670
      * @tc.number SUB_GLOBAL_numberFormat_0670
      * @tc.desc   units Incoming step-per-minute
@@ -3709,7 +3523,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0680
      * @tc.number SUB_GLOBAL_numberFormat_0680
      * @tc.desc   units Incoming step-per-minute
@@ -3732,7 +3545,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0690
      * @tc.number SUB_GLOBAL_numberFormat_0690
      * @tc.desc   units Incoming step-per-minute
@@ -3755,7 +3567,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0700
      * @tc.number SUB_GLOBAL_numberFormat_0700
      * @tc.desc   units Incoming step-per-minute
@@ -3778,7 +3589,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0710
      * @tc.number SUB_GLOBAL_numberFormat_0710
      * @tc.desc   units Incoming step-per-minute
@@ -3801,7 +3611,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0720
      * @tc.number SUB_GLOBAL_numberFormat_0720
      * @tc.desc   units Incoming step-per-minute
@@ -3824,7 +3633,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0730
      * @tc.number SUB_GLOBAL_numberFormat_0730
      * @tc.desc   units Incoming stroke-per-minute
@@ -3847,7 +3655,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0740
      * @tc.number SUB_GLOBAL_numberFormat_0740
      * @tc.desc   units Incoming stroke-per-minute
@@ -3870,7 +3677,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0750
      * @tc.number SUB_GLOBAL_numberFormat_0750
      * @tc.desc   units Incoming stroke-per-minute
@@ -3893,7 +3699,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0760
      * @tc.number SUB_GLOBAL_numberFormat_0760
      * @tc.desc   units Incoming stroke-per-minute
@@ -3916,7 +3721,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0770
      * @tc.number SUB_GLOBAL_numberFormat_0770
      * @tc.desc   units Incoming stroke-per-minute
@@ -3939,7 +3743,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0780
      * @tc.number SUB_GLOBAL_numberFormat_0780
      * @tc.desc   units Incoming stroke-per-minute
@@ -3962,7 +3765,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0790
      * @tc.number SUB_GLOBAL_numberFormat_0790
      * @tc.desc   units Incoming foot-per-hour
@@ -3985,7 +3787,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0800
      * @tc.number SUB_GLOBAL_numberFormat_0800
      * @tc.desc   units Incoming foot-per-hour
@@ -4008,7 +3809,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0810
      * @tc.number SUB_GLOBAL_numberFormat_0810
      * @tc.desc   units Incoming foot-per-hour
@@ -4031,7 +3831,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0820
      * @tc.number SUB_GLOBAL_numberFormat_0820
      * @tc.desc   units Incoming foot-per-hour
@@ -4054,7 +3853,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0830
      * @tc.number SUB_GLOBAL_numberFormat_0830
      * @tc.desc   units Incoming foot-per-hour
@@ -4077,7 +3875,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_numberFormat_0840
      * @tc.number SUB_GLOBAL_numberFormat_0840
      * @tc.desc   units Incoming foot-per-hour

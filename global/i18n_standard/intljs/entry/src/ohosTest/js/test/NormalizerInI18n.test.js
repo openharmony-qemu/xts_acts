@@ -57,7 +57,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:57
       * @tc.name   i18n_normalizer_test_0100
       * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0100
       * @tc.desc   get the NFC mode value
@@ -75,7 +74,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_0200
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0200
      * @tc.desc   get the NFD mode value
@@ -93,7 +91,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_0300
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0300
      * @tc.desc   get the NFKC mode value
@@ -111,7 +108,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_0400
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0400
      * @tc.desc   get the NFKD mode value
@@ -129,7 +125,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_0500
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0500
      * @tc.desc   get the NFC mode value
@@ -147,7 +142,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_0600
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0600
      * @tc.desc   get the NFD mode value
@@ -165,7 +159,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_0700
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0700
      * @tc.desc   get the NFKC mode value
@@ -183,7 +176,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_0800
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0800
      * @tc.desc   get the NFKD mode value
@@ -201,7 +193,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:57
       * @tc.name   i18n_normalizer_test_0900
       * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_0900
       * @tc.desc   test the getInstance error code
@@ -222,7 +213,6 @@ describe('NormalizerInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_normalizer_test_1000
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_1000
      * @tc.desc   test the normalize error code
