@@ -60,8 +60,10 @@ export default function requestVideoTest() {
             fs.unlinkSync(`${testContext.filesDir}/${files[i]}`);
           }
         }
+		await sleep(2000);
       } catch (error) {
         console.error(`requestVideoTest listFiles failed; error: ${error.code}  ${error.message}`)
+		await sleep(2000);
       }
     });
 
@@ -393,8 +395,10 @@ export default function requestVideoTest() {
         avMetadataExtractor.fdSrc = fs.openSync(fileUri);
         let metadata = await avMetadataExtractor.fetchMetadata();
         flag = metadata.hdrType === undefined ? -1:metadata.hdrType;
+		done();
       } catch (error) {
         console.error(`handle ${testNum} err:`, error);
+		done();
       }
       return flag;
     }
