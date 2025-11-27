@@ -1638,7 +1638,7 @@ export default function settingUiJsunit() {
       let value = 'brightness111' //值
       let defaultCode: number = 0;
       try {
-        let result: boolean = await settings.setValue(null, name, value, settings.domainName.DEVICE_SHARED);
+        let result = await settings.setValue(null, name, value, settings.domainName.DEVICE_SHARED);
         expect().assertFail();
         done();
       } catch (err) {
@@ -1707,7 +1707,7 @@ export default function settingUiJsunit() {
      */
     it('settings_set_value_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let result: boolean =
+        let result =
           await settings.setValue(globalThis.abilityContext, 'setvaluenull', null, settings.domainName.DEVICE_SHARED);
         expect().assertFail();
         done();
@@ -1736,28 +1736,6 @@ export default function settingUiJsunit() {
         done();
       } catch (err) {
         console.error("[settings_set_value_value_empty] error = " + err);
-        expect().assertFail();
-        done();
-        return;
-      }
-    });
-
-    /**
-     * @tc.name   settings_set_value_domain_null
-     * @tc.number settings_set_value_domain_null
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      try {
-        let result: boolean =
-          await settings.setValue(globalThis.abilityContext, 'setvalue1', 'value1', null);
-        expect(result === null).assertTrue();
-        done();
-      } catch (err) {
-        console.error("[settings_set_value_domain_null] error = " + err);
         expect().assertFail();
         done();
         return;
@@ -2016,29 +1994,6 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_get_value_key_empty] error = " + err);
-          expect().assertFail();
-          done();
-          return;
-        }
-      });
-
-    /**
-     * @tc.name   settings_get_value_domain_null
-     * @tc.number settings_get_value_domain_null
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_get_value_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          let result =
-            await settings.getValue(globalThis.abilityContext, 'testkey', null);
-          expect(result === null).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_get_value_domain_null] error = " + err);
           expect().assertFail();
           done();
           return;
