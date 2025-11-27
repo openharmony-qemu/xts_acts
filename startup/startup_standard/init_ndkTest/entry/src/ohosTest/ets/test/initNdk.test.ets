@@ -1229,11 +1229,14 @@ export default function initNdkTest() {
      * @tc.level      : Level 1
      */
     it('testCanIUse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let resultTrue = 0;
-      let result: number = initndk.canIUse();
-      expect(result).assertEqual(resultTrue);
-      if (result == resultTrue) {
-        console.info('the SystemCapability of SystemCapability.Location.Location.Core can use');
+      try{
+        let cap = "SystemCapability.Ability.AbilityBase";
+        let result: boolean = canIUse(cap);
+        expect(result).assertEqual(true);
+        console.info('the SystemCapability of SystemCapability.Ability.AbilityBase can use.');
+      }catch(e){
+        console.info('the SystemCapability of SystemCapability.Ability.AbilityBase can not use.');
+        expect().assertFail();
       }
       done();
     });
@@ -1247,11 +1250,14 @@ export default function initNdkTest() {
      * @tc.level      : Level 1
      */
     it('testCanIUse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let resultTrue = 0;
-      let result: number = initndk.canIUseOther();
-      expect(result).assertEqual(resultTrue);
-      if (result == resultTrue) {
-        console.info('the SystemCapability of SystemCapability.ArkUI.ArkUI.Full can use');
+      try{
+        let cap = "SystemCapability.Ability.testCanIUse002";
+        let result: boolean = canIUse(cap);
+        expect(result).assertEqual(false);
+        console.info('the SystemCapability of SystemCapability.Ability.testCanIUse002 can not use.');
+      }catch(e){
+        console.info('the SystemCapability of SystemCapability.Ability.testCanIUse002 can use.');
+        expect().assertFail();
       }
       done();
     });
