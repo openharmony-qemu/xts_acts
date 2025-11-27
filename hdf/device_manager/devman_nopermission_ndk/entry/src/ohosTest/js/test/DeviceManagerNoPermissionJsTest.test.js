@@ -68,7 +68,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionQueryDevices001
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0100
          * @tc.desc   verify permission of queryDevices
@@ -93,7 +92,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionBindDevice001
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0200
          * @tc.desc   verify permission of bindDevice
@@ -117,7 +115,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionBindDevice002
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0300
          * @tc.desc   verify permission of bindDevice
@@ -141,7 +138,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionBindDeviceDriver001
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0400
          * @tc.desc   verify permission of bindDeviceDriver
@@ -166,7 +162,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionBindDeviceDriver002
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0500
          * @tc.desc   verify permission of bindDeviceDriver
@@ -191,7 +186,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionUnbindDevice001
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0600
          * @tc.desc   verify permission of unbindDevice
@@ -216,7 +210,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionUnbindDevice002
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0700
          * @tc.desc   verify permission of unbindDevice
@@ -243,7 +236,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionQueryDeviceInfo001
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0800
          * @tc.desc   verify permission of queryDeviceInfo
@@ -269,7 +261,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   testNoPermissionQueryDriverInfo001
          * @tc.number SUB_Driver_Ext_DevManNoPermission_0900
          * @tc.desc   verify permission of queryDeviceInfo
@@ -295,7 +286,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   Permission_bindDriverWithDeviceId_001
          * @tc.number Permission_bindDriverWithDeviceId_001
          * @tc.desc   verify permission of bindDriverWithDeviceId
@@ -319,7 +309,6 @@ export default function DeviceManagerNoPermissionJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:58
          * @tc.name   Permission_unbindDriverWithDeviceId
          * @tc.number Permission_unbindDriverWithDeviceId
          * @tc.desc   verify permission of unbindDriverWithDeviceId

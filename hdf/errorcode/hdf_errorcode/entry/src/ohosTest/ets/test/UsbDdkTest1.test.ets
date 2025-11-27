@@ -35,7 +35,6 @@ export default function UsbDdkTest1() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUSB_DDK_SUCCESS_0100
      * @tc.number SUB_Driver_Ext_USB_DDK_SUCCESS_0100
      * @tc.desc   Test UsbDdkErrCode interface USB_DDK_SUCCESS
@@ -57,7 +56,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUSB_DDK_INVALID_PARAMETER_0100
      * @tc.number SUB_Driver_Ext_USB_DDK_INVALID_PARAMETER_0100
      * @tc.desc   Test UsbDdkErrCode interface USB_DDK_INVALID_PARAMETER
@@ -79,7 +77,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0100
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0100
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -103,7 +100,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0200
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0200
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -127,7 +123,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0300
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0300
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -151,7 +146,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0400
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0400
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -175,7 +169,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0500
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0500
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -199,7 +192,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0600
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0600
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -223,7 +215,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0700
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0700
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -247,7 +238,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0800
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0800
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -271,7 +261,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_0900
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0900
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -295,7 +284,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_1000
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1000
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -319,7 +307,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_1100
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1100
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -343,7 +330,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_1200
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1200
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -367,7 +353,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_1300
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1300
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -391,7 +376,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDeviceDescriptor_1400
      * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1400
      * @tc.desc   Test UsbDeviceDescriptor struct bLength
@@ -415,7 +399,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbConfigDescriptor_0100
      * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0100
      * @tc.desc   Test UsbConfigDescriptor struct bLength
@@ -439,7 +422,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbConfigDescriptor_0200
      * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0200
      * @tc.desc   Test UsbConfigDescriptor struct bLength
@@ -463,7 +445,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbConfigDescriptor_0300
      * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0300
      * @tc.desc   Test UsbConfigDescriptor struct bLength
@@ -487,7 +468,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbConfigDescriptor_0400
      * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0400
      * @tc.desc   Test UsbConfigDescriptor struct bLength
@@ -511,7 +491,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbConfigDescriptor_0500
      * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0500
      * @tc.desc   Test UsbConfigDescriptor struct bLength
@@ -535,7 +514,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbConfigDescriptor_0600
      * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0600
      * @tc.desc   Test UsbConfigDescriptor struct bLength
@@ -559,7 +537,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbConfigDescriptor_0700
      * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0700
      * @tc.desc   Test UsbConfigDescriptor struct bLength
@@ -583,7 +560,6 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsb_DeviceArray_0100
      * @tc.number SUB_Driver_Ext_Usb_DeviceArray_0100
      * @tc.desc   Test Usb_DeviceArray struct num

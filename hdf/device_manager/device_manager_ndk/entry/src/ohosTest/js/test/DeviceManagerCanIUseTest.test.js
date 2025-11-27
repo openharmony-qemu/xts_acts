@@ -99,7 +99,6 @@ describe("DeviceManagerCanIUseTest", function () {
     const SERVICE_NOT_BOUND = 26300003
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDeviceManagerCanIUsek001
      * @tc.number SUB_Driver_Ext_DeviceManagerCanIUse_0100
      * @tc.desc   verify DeviceManagerCanIUse any device

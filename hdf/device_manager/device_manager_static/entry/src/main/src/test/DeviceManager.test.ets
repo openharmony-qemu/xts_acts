@@ -132,7 +132,6 @@ export default function DeviceManagerTest() {
     const SERVICE_NOT_BOUND = 26300003
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0100
      * @tc.desc   verify queryDevice result
@@ -168,7 +167,6 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0200
      * @tc.desc   verify queryDevice no param result
@@ -198,7 +196,6 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices003
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0300
      * @tc.desc   verify queryDevice param is 12345
@@ -227,7 +224,6 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices004
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0400
      * @tc.desc   verify queryDevice errcode 22900001
@@ -255,7 +251,6 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDriverWithDeviceId001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0500
      * @tc.desc   verify bindDriverWithDeviceId promise
@@ -293,7 +288,6 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUnbindDriverWithDeviceId002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0600
      * @tc.desc   verify unbindDriverWithDeviceId promise and no binding relationship
@@ -323,7 +317,6 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUnbindDriverWithDeviceId003
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0700
      * @tc.desc   verify unbindDriverWithDeviceId promise
@@ -353,7 +346,6 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDriverWithDeviceId002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0800
      * @tc.desc   verify bindDriverWithDeviceId promise success
@@ -386,7 +378,6 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUnbindDriverWithDeviceId001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0900
      * @tc.desc   verify unbindDriverWithDeviceId promise success
