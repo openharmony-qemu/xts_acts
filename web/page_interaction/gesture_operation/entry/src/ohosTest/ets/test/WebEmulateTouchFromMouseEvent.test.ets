@@ -58,9 +58,9 @@ export default function WebEmulateTouchFromMouseEventTest() {
 
 
     /*
-    * @tc.number      : SUB_WEB_ZOOMACCESS_0300
-    * @tc.name        : testWebZoomAccess003
-    * @tc.desc        : test zoomAccess true zoomOut
+    * @tc.number      : SUB_WEB_EMULATETOUCHFROMMOUSEEVENT_0300
+    * @tc.name        : testWebEmulateTouchFromMouseEvent001
+    * @tc.desc        : emulateTouchFromMouseEvent
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 1
@@ -75,9 +75,9 @@ export default function WebEmulateTouchFromMouseEventTest() {
     })
 
     /*
-    * @tc.number      : SUB_WEB_ZOOMACCESS_0400
-    * @tc.name        : testWebZoomAccess004
-    * @tc.desc        : test zoomAccess true zoomIn
+    * @tc.number      : SUB_WEB_EMULATETOUCHFROMMOUSEEVENT_0400
+    * @tc.name        : testWebEmulateTouchFromMouseEvent002
+    * @tc.desc        : emulateTouchFromMouseEvent
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 1
