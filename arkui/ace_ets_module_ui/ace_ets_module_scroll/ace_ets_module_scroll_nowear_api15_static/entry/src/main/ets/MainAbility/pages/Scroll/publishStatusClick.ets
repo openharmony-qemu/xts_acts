@@ -25,10 +25,10 @@ export struct StatusClickComponent {
   public isLandScape: boolean = false;
 
   private changeOrientation(isLandscape: boolean) {
-    // let context = getContext(this) as common.UIAbilityContext;
-    // window.getLastWindow(context).then((lastWindow) => {
-    //   lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
-    // });
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    });
   }
   build() {
     Column() {

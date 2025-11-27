@@ -39,8 +39,13 @@ struct WaterFlowExampleA {
         if (this.currentIndex !== 0) {
           this.scrollCount ++;
         }
+        console.log('WaterFlow-----' + this.scrollCount)
         if (this.isBackToTop == false) {
           this.isBackToTop = undefined
+        // } else if (this.isBackToTop == undefined) {
+        //   this.isBackToTop = null
+        // } else if (this.isBackToTop == null) {
+        //   this.isBackToTop = true
         } else if (this.isBackToTop == true) {
           this.isBackToTop = false
         }
@@ -69,16 +74,16 @@ struct WaterFlowExampleA {
       .scrollBar(BarState.Off)
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
-      .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource): undefined => {
+      .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
         this.message='onWillScroll'
         this.message3 = 'NotBackToTop';
-        return undefined
       })
       .onDidScroll((): void => {
         this.message1='onDidScroll'
       })
       .onDidScroll((offset: number): void => {
         this.scrollOffset = offset;
+        console.log('WaterFlow-----DidAbnormal')
         if (this.scrollCount === 3) {
           this.message4 = 'DidAbnormal';
         }

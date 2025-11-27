@@ -32,7 +32,7 @@ struct ScrollExampleA {
   @State message3:string=''
   @State message4:string=''
   @State buttonNumber: number = 0;
-  @State isBackToTop: boolean|undefined|null = false
+  @State isBackToTop: boolean|undefined = false
   @State scrollCount: number = 0;
   @State scrollOffset: number = 0;
   private currentIndex: int = 0;
@@ -41,29 +41,17 @@ struct ScrollExampleA {
     Column() {
       StatusClickComponent()
       Button('switch').onClick((e:ClickEvent) => {
+        console.log('-----onClick index = ' + this.currentIndex)
         if (this.currentIndex !== 0) {
           this.scrollCount ++;
         }
-        switch (String(this.isBackToTop)) {
-          case 'false':
-            this.isBackToTop = undefined
-            break;
-          case "undefined":
-            this.isBackToTop = null
-            break;
-          case "null":
-            this.isBackToTop = true
-            break;
-          case "true":
-            this.isBackToTop = false
-            break;
-        }
+        console.log('-----onClick scrollCount = ' + this.scrollCount)
         if (this.isBackToTop === false) {
           this.isBackToTop = undefined;
-        } else if (this.isBackToTop === undefined) {
-          this.isBackToTop = null;
-        } else if (this.isBackToTop === null) {
-          this.isBackToTop = true;
+        // } else if (this.isBackToTop === undefined) {
+        //   this.isBackToTop = null;
+        // } else if (this.isBackToTop === null) {
+        //   this.isBackToTop = true;
         } else if (this.isBackToTop === true) {
           this.isBackToTop = false;
         }
@@ -80,26 +68,30 @@ struct ScrollExampleA {
           ForEach(this.arr, (item: number, index: int) => {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)
-              .textAlign(TextAlign.Center).borderRadius(10)//.backgroundColor(0xFFFFFF)
+              .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
               .onAppear(() => {
+                console.log('-----onAppear index = ' + index)
                 this.currentIndex = index;
               })
           }, (item: number) => String(item))
         }
       }
-      .backToTop(this.isBackToTop!)
+      .backToTop(this.isBackToTop)
       .id('Scroll_4')
       .scrollBar(BarState.Off)
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
-      .onWillScroll((xOffset: Double, yOffset: Double, scrollState: ScrollState, scrollSource: ScrollSource):undefined|OffsetResult => {  //(xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource):void | OffsetResult => {
+      .onWillScroll((xOffset: Double, yOffset: Double, scrollState: ScrollState, scrollSource: ScrollSource) => {
+        console.log('----xxx----onWillScroll')
         this.message='onWillScroll'
         this.message3 = 'NotBackToTop';
       })
       .onDidScroll((offset: number):void=>{
+        console.log('----xxx----message1')
         this.message1='onDidScroll'
       })
       .onDidScroll((offset: number):void => {
+        console.log('----xxx----onDidScroll')
         this.scrollOffset = offset;
         // 判断是否滚动到顶部以及回滚次数是否达标
         if (this.scrollCount === 3) {
@@ -114,7 +106,7 @@ struct ScrollExampleA {
     }
     .width('100%')
     .height('100%')
-    // .backgroundColor(0xDCDCDC)
+    .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

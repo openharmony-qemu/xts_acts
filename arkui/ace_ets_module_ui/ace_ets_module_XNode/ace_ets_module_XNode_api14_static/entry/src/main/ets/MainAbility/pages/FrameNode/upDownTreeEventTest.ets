@@ -88,23 +88,23 @@ class MyNodeController extends NodeController {
     return this.buttonNode!.getFrameNode();
   }
 
-  onBind(containerId: number): void {
+  onBind(containerId: long): void {
     console.log('test666666 on bind1: '+containerId);
     this.bindValue = 'bind';
   }
 
-  onUnbind(containerId: number): void {
+  onUnbind(containerId: long): void {
     console.log('test666666 on unbind1: '+containerId);
     this.unbindValue = 'unbind';
 
   }
 
-  onWillBind(containerId: number): void {
+  onWillBind(containerId: long): void {
     console.log('test666666 about to bind1: '+containerId);
     this.willBindValue = 'willBind';
   }
 
-  onWillUnbind(containerId: number): void {
+  onWillUnbind(containerId: long): void {
     console.log('test666666 about to unbind1: '+containerId);
     this.willUnbindValue = 'willUnbind';
   }
@@ -140,22 +140,22 @@ class MyNodeController2 extends NodeController {
     return this.buttonNode!.getFrameNode();
   }
 
-  onBind(containerId: number): void {
+  onBind(containerId: long): void {
     console.log('test666666 on bind2: '+containerId);
     this.bindValue = 'bind';
   }
 
-  onUnbind(containerId: number): void {
+  onUnbind(containerId: long): void {
     console.log('test666666 on unbind2: '+containerId);
     this.unbindValue = 'unbind';
   }
 
-  onWillBind(containerId: number): void {
+  onWillBind(containerId: long): void {
     console.log('test666666 about to bind2: '+containerId);
     this.willBindValue = 'willBind';
   }
 
-  onWillUnbind(containerId: number): void {
+  onWillUnbind(containerId: long): void {
     console.log('test666666 about to unbind2: '+containerId);
     this.willUnbindValue = 'willUnbind';
   }
@@ -183,7 +183,7 @@ struct UpDownTreeEventIndex {
   @State willUnbindValue: string = '0';
 
   @State isShow: boolean = true;
-  @State index: number = 0;
+  @State index: int = 0;
   private myNodeController1: MyNodeController = new MyNodeController();
   private myNodeController2: MyNodeController2 = new MyNodeController2();
   private myNodeControllerArray: Array<MyNodeController | MyNodeController2> = [
@@ -194,7 +194,7 @@ struct UpDownTreeEventIndex {
   build() {
     Column() {
       if(this.isShow){
-        NodeContainer(this.myNodeControllerArray[this.index.toInt() % this.myNodeControllerArray.length])
+        NodeContainer(this.myNodeControllerArray[this.index % this.myNodeControllerArray.length])
       }
 
       Button('bindAndUnbinde')
@@ -232,8 +232,8 @@ struct UpDownTreeEventIndex {
       Button('TestValue').height('10%')
         .id('getTestValue')
         .onClick((e: ClickEvent)=>{
-          if (this.myNodeControllerArray[this.index.toInt() % this.myNodeControllerArray.length] != null) {
-            let node =this.myNodeControllerArray[this.index.toInt() % this.myNodeControllerArray.length];
+          if (this.myNodeControllerArray[this.index % this.myNodeControllerArray.length] != null) {
+            let node =this.myNodeControllerArray[this.index % this.myNodeControllerArray.length];
             this.attachValue = node.attachValue
             this.detachValue = node.detachValue
             this.bindValue = node.bindValue

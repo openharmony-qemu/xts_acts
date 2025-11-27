@@ -63,13 +63,13 @@ export default function swiperDelAddTest() {
     beforeEach(async (): Promise<void> => {
       console.info("swiperDelAddTest beforeEach start");
       try {
-        const router = AppStorage.get<Router>("router") as Router;
-        router.clear();
-        let pages = router.getState();
+        const routerSwiper = AppStorage.get<Router>("router") as Router;
+        routerSwiper.clear();
+        let pages = routerSwiper.getState();
         console.info("get swiperDelAddTest state pages:" + JSON.stringify(pages));
         if (!("siwper_adddelete_test" == pages.name)) {
           console.info("get swiperDelAddTest pages.name:" + JSON.stringify(pages.name));
-          let result = router.pushUrl({
+          routerSwiper.pushUrl({
             url: "MainAbility/pages/Swiper/swiper2/siwper_adddelete_test"
           })
           await CommonFunc.sleep(2000);
@@ -93,7 +93,7 @@ export default function swiperDelAddTest() {
      * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070
      * @tc.level    0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070] START');
       await CommonFunc.sleep(2000);
       // click the delete button
@@ -105,15 +105,17 @@ export default function swiperDelAddTest() {
       // right scroll
       let bt = CommonFunc.getComponentRect('swiperTestWidth5');
       let btBottom = bt.bottom;
+      let btTop = bt.top;
       let btRight = bt.right;
       let btLeft = bt.left;
       let btWidth = Math.round(btRight - btLeft);
+      let btHeight = Math.round(btBottom - btTop);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0700] swiper width " + btWidth);
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe(winLeft + Math.round(btLeft)  + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) )as Int,
-      (winTop  + Math.round(btBottom / 2))as Int, (winLeft + Math.round(btRight)) as Int, (winTop  + Math.round(btBottom / 2))as Int);
+      await driver.swipe(winLeft + Math.round(btLeft)  + Math.round(UIContext.getFocusedUIContext()!.vp2px(20) )as Int,
+      (winTop + btTop + Math.round(btHeight / 2))as Int, (winLeft + Math.round(btRight)) as Int, (winTop + btTop + Math.round(btHeight / 2))as Int);
       await CommonFunc.sleep(3000);
 
       // click the Previous button
@@ -136,7 +138,7 @@ export default function swiperDelAddTest() {
      * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080
      * @tc.level    0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080] START');
       await CommonFunc.sleep(2000);
       // click the add button
@@ -152,18 +154,20 @@ export default function swiperDelAddTest() {
       // left scroll
       let bt = CommonFunc.getComponentRect('swiperTestWidth5');
       let btBottom = bt.bottom;
+      let btTop = bt.top;
       let btRight = bt.right;
       let btLeft = bt.left;
       let btWidth = Math.round(btRight - btLeft);
+      let btHeight = Math.round(btBottom - btTop);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080] swiper width " + btWidth);
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
       // right scroll
       await driver.swipe(Math.round(winLeft + Math.round(btRight) - UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
-        Math.round(winTop + Math.round(btBottom / 2)) as Int,
-        Math.round(winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int)) as Int,
-        Math.round(winTop + Math.round(btBottom / 2)) as Int);
+        Math.round(winTop + btTop + Math.round(btHeight / 2)) as Int,
+        Math.round(winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(20) as Int)) as Int,
+        Math.round(winTop + btTop + Math.round(btHeight / 2)) as Int);
       await CommonFunc.sleep(5000);
 
       // click the next button

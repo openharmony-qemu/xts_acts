@@ -70,10 +70,10 @@ export default function makeObserved0140Test() {
         console.info("get makeObserved0140Test state pages:" + JSON.stringify(pages));
         if (!("makeObserved0140Test" == pages.name)) {
           console.info("get makeObserved0140Test pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push makeObserved0140Test page result:" + JSON.stringify(result));
+          // console.info("push makeObserved0140Test page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push makeObserved0140Test page error:" + err);
@@ -93,47 +93,46 @@ export default function makeObserved0140Test() {
 it('makeObserved0140Test_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
   await CommonFunc.sleep(1000)
 
-  console.info('makeObserved0140Test_01 START');
+      console.info('makeObserved0140Test_static_01 START');
 
-  let driver =  Driver.create()
-  let textJson = inspector.getInspectorByKey('flowItem0')
-  let textJsonObj= JSON.parseJsonElement(textJson)!;
-  let initPostion = parseInt(
-    textJsonObj.getString('$rect')
-    .match(new RegExp('/\[\d+/'))![0]!
-    .slice(1) as string)
-  console.info("MR031[makeObserved0140Test_01]: " + textJsonObj!.getString('$rect').match(new RegExp('/\\[\\d+/'))![0]!.slice(1));
-  let testArr: testType[] = [
-    {
-      buttonKey: 'buttonPush',
-      key: 'flowItem9',
-      value: initPostion
-    } as testType,
-    {
-      buttonKey: 'buttonSplice',
-      key: 'flowItem1',
-      value: initPostion
-    } as testType,
-    {
-      buttonKey: 'buttonUpdate',
-      key: 'flowItem3',
-      value: initPostion
-    } as testType,
-  ]
-  for (const item of testArr) {
-    let button = await driver.findComponent(ON.id(item.buttonKey));
-    await (button?.click() as Promise<void>);
-    await CommonFunc.sleep(1000)
-    let textJson = inspector.getInspectorByKey(item.key)
-    let textJsonObj= JSON.parseJsonElement(textJson);
-    console.info("MR031[makeObserved0140Test_01]: " + item.key + ' : ' + item.value);
-    console.info("MR031[makeObserved0140Test_01]: " + parseInt(textJsonObj!.getString('$rect').match(new RegExp('/\\[\\d+/'))![0]!.slice(1)));
-    expect(parseInt(textJsonObj!.getString('$rect').match(new RegExp('/\\[\\d+/'))![0]!.slice(1))).assertLarger(item.value);
-
-
-  }
-  console.info('makeObserved0140Test_01 END');
-  done()
+      let driver =  Driver.create()
+      let textJson = inspector.getInspectorByKey('flowItem0')
+      console.info("MR031[makeObserved0140Test_static_01] $rect: " + JSON.parseJsonElement(textJson).getString('$rect'));
+      console.info("MR031[makeObserved0140Test_static_01] match: " + JSON.parseJsonElement(textJson).getString('$rect').match(new RegExp('\\[\\d+', 'g')));
+      let initPostion = parseInt(JSON.parseJsonElement(textJson).getString('$rect').match(new RegExp('\\[\\d+', 'g'))![0]!.slice(1) as string)
+      console.info("MR031[makeObserved0140Test_static_01]: " + JSON.parseJsonElement(textJson).getString('$rect').match(new RegExp('\\[\\d+', 'g'))![0]!.slice(1) as string);
+      let testArr: testType[] = [
+        {
+          buttonKey: 'buttonPush',
+          key: 'flowItem9',
+          value: initPostion
+        } as testType,
+        {
+          buttonKey: 'buttonSplice',
+          key: 'flowItem1',
+          value: initPostion
+        } as testType,
+        {
+          buttonKey: 'buttonUpdate',
+          key: 'flowItem3',
+          value: initPostion
+        } as testType,
+      ]
+      for (const item of testArr) {
+        let button = await driver.findComponent(ON.id(item.buttonKey));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000)
+        console.log('hhhhhhhhhh--')
+        let textJson = inspector.getInspectorByKey(item.key)
+        console.log('hhhhhhhhhh---------')
+        let textJsonObj= JSON.parseJsonElement(textJson);
+        console.info("MR031[makeObserved0140Test_static_01]: " + item.key + ' : ' + item.value);
+        console.info("MR031[makeObserved0140Test_static_01]: " + textJsonObj!.getString('$rect'));
+        console.info("MR031[makeObserved0140Test_static_01]: " + parseInt(textJsonObj!.getString('$rect').match(new RegExp('\\[\\d+', 'g'))![0]!.slice(1)));
+        expect(parseInt(textJsonObj!.getString('$rect').match(new RegExp('\\[\\d+', 'g'))![0]!.slice(1))).assertLarger(item.value);
+      }
+      console.info('makeObserved0140Test_static_01 END');
+      done()
     })
 
   })

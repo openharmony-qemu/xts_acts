@@ -38,9 +38,6 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
-
-const uiContext = new UIContext()
-
 export default function gestureEventTest() {
   describe('gestureEventTest', () => {
     beforeAll(() => {

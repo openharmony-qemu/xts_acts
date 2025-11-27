@@ -243,7 +243,8 @@ struct SwiperExample {
         this.autoPlay = data['autoPlay'] as boolean;
       }
       if(data['interval'] != null) {
-        this.interval = data['interval'] as int;
+        this.interval = Number.parseInt(data['interval'] as string).toInt();
+        console.log('stateChangCallBack interval = ' + this.interval)
       }
       if(data['indicator'] != null) {
         this.indicator = data['indicator'] as boolean;
@@ -258,7 +259,8 @@ struct SwiperExample {
         this.vertical = data['vertical'] as boolean;
       }
       if(data['itemSpace'] != null) {
-        this.itemSpace = data['itemSpace'] as int;
+        this.itemSpace = Number.parseInt(data['itemSpace'] as string);
+        console.log('stateChangCallBack itemSpace = ' + this.itemSpace)
       }
     }
   }

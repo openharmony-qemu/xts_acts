@@ -91,7 +91,7 @@ export default function frameNodeIsVisibleTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[frameNodeIsVisibleTest_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[frameNodeIsVisibleTest_static_0100] content obj is: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('content')));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('false');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('false');
       console.info('[frameNodeIsVisibleTest_static_0100] END');
       done();
     });

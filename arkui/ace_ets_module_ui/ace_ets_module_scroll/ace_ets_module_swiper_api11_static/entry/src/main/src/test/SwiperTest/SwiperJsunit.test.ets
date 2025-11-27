@@ -106,85 +106,84 @@ export default function swiperJsunit() {
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("swiperTest_0100 JSON.parse(strJson).$attrs.index: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('index'));
-      console.info("swiperTest_0100 JSON.parse(strJson).$attrs.indicatorStyle: " + JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('indicatorStyle'));
+      // console.info("swiperTest_0100 JSON.parse(strJson).$attrs.indicatorStyle: " + JSON.parseJsonElement(strJson)
+      //   .getElement('$attrs')
+      //   .getString('indicatorStyle'));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual('1');
       done()
     });
 
-    //pass过注释
-    // /*
-    //  * @tc.number   swiperTest_static_0200
-    //  * @tc.name     swiperTest_static_0200
-    //  * @tc.desc     swiperTest_static_0200
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_0200 START');
-    //   let strJson: string = inspector.getInspectorByKey('swiper');
-    //   console.info("swiperTest_static_0200 component strJson:" + strJson);
-    //   console.info("swiperTest_static_0200 component obj is: " + JSON.parseJsonElement(strJson));
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator')).assertEqual('true')
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('false');
-    //   console.info('swiperTest_static_0200 END');
-    //   done()
-    // });
-    //
-    // /*
-    //  * @tc.number   swiperTest_static_0300
-    //  * @tc.name     swiperTest_static_0300
-    //  * @tc.desc     swiperTest_static_0300
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_0300 START');
-    //   let strJson: string = inspector.getInspectorByKey('swiper');
-    //   console.info("swiperTest_static_0300 component strJson:" + strJson);
-    //
-    //   console.info("swiperTest_static_0300 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('duration')).assertEqual('1000');
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual('false');
-    //   console.info('swiperTest_static_0300 END');
-    //   done()
-    // });
-    //
-    // /*
-    //  * @tc.number   swiperTest_static_0400
-    //  * @tc.name     swiperTest_static_0400
-    //  * @tc.desc     swiperTest_static_0400
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_0400 START');
-    //   let strJson: string = inspector.getInspectorByKey('swiper');
-    //   console.info("swiperTest_static_0400 component strJson:" + strJson);
-    //
-    //   console.info("swiperTest_static_0400 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual('false');
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('interval')).assertEqual('4000');
-    //   console.info('swiperTest_static_0400 END');
-    //   done()
-    // });
-    //
-    // /*
-    //  * @tc.number   swiperTest_static_0500
-    //  * @tc.name     swiperTest_static_0500
-    //  * @tc.desc     swiperTest_static_0500
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_0500 START');
-    //   let strJson: string = inspector.getInspectorByKey('swiper');
-    //   console.info("swiperTest_static_0500 component strJson:" + strJson);
-    //
-    //   console.info("swiperTest_static_0500 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual('0.00vp');
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('disableSwipe')).assertEqual('false');
-    //   console.info('swiperTest_static_0500 END');
-    //   done()
-    // });
+    /*
+     * @tc.number   swiperTest_static_0200
+     * @tc.name     swiperTest_static_0200
+     * @tc.desc     swiperTest_static_0200
+     * @tc.level    0
+     */
+    it('swiperTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_0200 START');
+      let strJson: string = inspector.getInspectorByKey('swiper');
+      console.info("swiperTest_static_0200 component strJson:" + strJson);
+      console.info("swiperTest_static_0200 component obj is: " + JSON.parseJsonElement(strJson));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator')).assertEqual('true')
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('false');
+      console.info('swiperTest_static_0200 END');
+      done()
+    });
+
+    /*
+     * @tc.number   swiperTest_static_0300
+     * @tc.name     swiperTest_static_0300
+     * @tc.desc     swiperTest_static_0300
+     * @tc.level    0
+     */
+    it('swiperTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_0300 START');
+      let strJson: string = inspector.getInspectorByKey('swiper');
+      console.info("swiperTest_static_0300 component strJson:" + strJson);
+
+      console.info("swiperTest_static_0300 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('duration')).assertEqual('1000');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual('false');
+      console.info('swiperTest_static_0300 END');
+      done()
+    });
+
+    /*
+     * @tc.number   swiperTest_static_0400
+     * @tc.name     swiperTest_static_0400
+     * @tc.desc     swiperTest_static_0400
+     * @tc.level    0
+     */
+    it('swiperTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_0400 START');
+      let strJson: string = inspector.getInspectorByKey('swiper');
+      console.info("swiperTest_static_0400 component strJson:" + strJson);
+
+      console.info("swiperTest_static_0400 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual('false');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('interval')).assertEqual('4000');
+      console.info('swiperTest_static_0400 END');
+      done()
+    });
+
+    /*
+     * @tc.number   swiperTest_static_0500
+     * @tc.name     swiperTest_static_0500
+     * @tc.desc     swiperTest_static_0500
+     * @tc.level    0
+     */
+    it('swiperTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_0500 START');
+      let strJson: string = inspector.getInspectorByKey('swiper');
+      console.info("swiperTest_static_0500 component strJson:" + strJson);
+
+      console.info("swiperTest_static_0500 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual('0.00vp');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('disableSwipe')).assertEqual('false');
+      console.info('swiperTest_static_0500 END');
+      done()
+    });
 
     /*
      * @tc.number   swiperTest_static_0600
@@ -252,107 +251,106 @@ export default function swiperJsunit() {
       done()
     });
 
-    //pass过 注释
-    // /*
-    //  * @tc.number   swiperTest_static_0800
-    //  * @tc.name     swiperTest_static_0800
-    //  * @tc.desc     swiperTest_static_0800
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_0800 START');
-    //   await CommonFunc.sleep(1500);
-    //   let callback = (InnerEvent: events_emitter.EventData) => {
-    //     console.info("swiperTest_static_0800 get state result is: " + JSON.stringify(InnerEvent));
-    //     expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
-    //     done()
-    //   }
-    //   let InnerEvent: events_emitter.InnerEvent = {
-    //     eventId: 205,
-    //     priority: events_emitter.EventPriority.LOW
-    //   }
-    //   try {
-    //     events_emitter.on(InnerEvent, callback);
-    //   } catch (err: Error) {
-    //     console.info("swiperTest_static_0800 on events_emitter err : " + JSON.stringify(err));
-    //   }
-    //   console.info("swiperTest_static_0800 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
-    //   await CommonFunc.sleep(1000);
-    //   console.info('swiperTest_static_0800 END');
-    //   done()
-    // });
-    //
-    // /*
-    //  * @tc.number   swiperTest_static_0900
-    //  * @tc.name     swiperTest_static_0900
-    //  * @tc.desc     swiperTest_static_0900
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_0900 START');
-    //   await CommonFunc.sleep(1500);
-    //   let callback = (InnerEvent: events_emitter.EventData) => {
-    //     console.info("swiperTest_static_0900 get state result is: " + JSON.stringify(InnerEvent));
-    //     expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
-    //     done()
-    //   }
-    //   let InnerEvent: events_emitter.InnerEvent = {
-    //     eventId: 206,
-    //     priority: events_emitter.EventPriority.LOW
-    //   }
-    //   try {
-    //     events_emitter.on(InnerEvent, callback);
-    //   } catch (err: Error) {
-    //     console.info("swiperTest_static_0900 on events_emitter err : " + JSON.stringify(err));
-    //   }
-    //   console.info("swiperTest_static_0900 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
-    //   await CommonFunc.sleep(1000);
-    //   console.info('swiperTest_static_0900 END');
-    //   done()
-    // });
-    //
-    // /*
-    //  * @tc.number   swiperTest_static_1000
-    //  * @tc.name     swiperTest_static_1000
-    //  * @tc.desc     swiperTest_static_1000
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_1000 START');
-    //   await CommonFunc.sleep(1500);
-    //   let callbackOne = (InnerEventOne: events_emitter.EventData) => {
-    //     console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEventOne));
-    //     expect(((InnerEventOne.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
-    //     done()
-    //   }
-    //   let innerEvent: events_emitter.InnerEvent = {
-    //     eventId: 206,
-    //     priority: events_emitter.EventPriority.LOW
-    //   }
-    //   try {
-    //     events_emitter.on(innerEvent, callbackOne);
-    //   } catch (err: Error) {
-    //     console.info("swiperTest_static_1000 on events_emitter err : " + JSON.stringify(err));
-    //   }
-    //   console.info("swiperTest_static_1000 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
-    //   await CommonFunc.sleep(1500);
-    //   let callback = (InnerEvent: events_emitter.EventData) => {
-    //     console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEvent));
-    //     expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
-    //     done()
-    //   }
-    //   let InnerEvent: events_emitter.InnerEvent = {
-    //     eventId: 204,
-    //     priority: events_emitter.EventPriority.LOW
-    //   }
-    //   try {
-    //     events_emitter.on(InnerEvent, callback);
-    //   } catch (err: Error) {
-    //     console.info("swiperTest_static_1000 on events_emitter err : " + JSON.stringify(err));
-    //   }
-    //   console.info('swiperTest_static_1000 END');
-    //   done()
-    // });
+    /*
+     * @tc.number   swiperTest_static_0800
+     * @tc.name     swiperTest_static_0800
+     * @tc.desc     swiperTest_static_0800
+     * @tc.level    0
+     */
+    it('swiperTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_0800 START');
+      await CommonFunc.sleep(1500);
+      let callback = (InnerEvent: events_emitter.EventData) => {
+        console.info("swiperTest_static_0800 get state result is: " + JSON.stringify(InnerEvent));
+        expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        done()
+      }
+      let InnerEvent: events_emitter.InnerEvent = {
+        eventId: 205,
+        priority: events_emitter.EventPriority.LOW
+      }
+      try {
+        events_emitter.on(InnerEvent, callback);
+      } catch (err: Error) {
+        console.info("swiperTest_static_0800 on events_emitter err : " + JSON.stringify(err));
+      }
+      console.info("swiperTest_static_0800 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
+      await CommonFunc.sleep(1000);
+      console.info('swiperTest_static_0800 END');
+      done()
+    });
+
+    /*
+     * @tc.number   swiperTest_static_0900
+     * @tc.name     swiperTest_static_0900
+     * @tc.desc     swiperTest_static_0900
+     * @tc.level    0
+     */
+    it('swiperTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_0900 START');
+      await CommonFunc.sleep(1500);
+      let callback = (InnerEvent: events_emitter.EventData) => {
+        console.info("swiperTest_static_0900 get state result is: " + JSON.stringify(InnerEvent));
+        expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        done()
+      }
+      let InnerEvent: events_emitter.InnerEvent = {
+        eventId: 206,
+        priority: events_emitter.EventPriority.LOW
+      }
+      try {
+        events_emitter.on(InnerEvent, callback);
+      } catch (err: Error) {
+        console.info("swiperTest_static_0900 on events_emitter err : " + JSON.stringify(err));
+      }
+      console.info("swiperTest_static_0900 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      await CommonFunc.sleep(1000);
+      console.info('swiperTest_static_0900 END');
+      done()
+    });
+
+    /*
+     * @tc.number   swiperTest_static_1000
+     * @tc.name     swiperTest_static_1000
+     * @tc.desc     swiperTest_static_1000
+     * @tc.level    0
+     */
+    it('swiperTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_1000 START');
+      await CommonFunc.sleep(1500);
+      let callbackOne = (InnerEventOne: events_emitter.EventData) => {
+        console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEventOne));
+        expect(((InnerEventOne.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        done()
+      }
+      let innerEvent: events_emitter.InnerEvent = {
+        eventId: 206,
+        priority: events_emitter.EventPriority.LOW
+      }
+      try {
+        events_emitter.on(innerEvent, callbackOne);
+      } catch (err: Error) {
+        console.info("swiperTest_static_1000 on events_emitter err : " + JSON.stringify(err));
+      }
+      console.info("swiperTest_static_1000 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      await CommonFunc.sleep(1500);
+      let callback = (InnerEvent: events_emitter.EventData) => {
+        console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEvent));
+        expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        done()
+      }
+      let InnerEvent: events_emitter.InnerEvent = {
+        eventId: 204,
+        priority: events_emitter.EventPriority.LOW
+      }
+      try {
+        events_emitter.on(InnerEvent, callback);
+      } catch (err: Error) {
+        console.info("swiperTest_static_1000 on events_emitter err : " + JSON.stringify(err));
+      }
+      console.info('swiperTest_static_1000 END');
+      done()
+    });
 
     /*
      * @tc.number   swiperTest_static_1100
@@ -584,39 +582,39 @@ export default function swiperJsunit() {
       done()
     });
 
-    //pass过注释
-    // /*
-    //  * @tc.number   swiperTest_static_1800
-    //  * @tc.name     swiperTest_static_1800
-    //  * @tc.desc     swiperTest_static_1800
-    //  * @tc.level    0
-    //  */
-    // it('swiperTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('swiperTest_static_1800 START');
-    //   try {
-    //     let eventData: events_emitter.EventData = {
-    //       data: {
-    //         "autoPlay": "false123"
-    //       } as Record<string, undefined|null|Object>
-    //     }
-    //     let InnerEvent: events_emitter.InnerEvent = {
-    //       eventId: 207,
-    //       priority: events_emitter.EventPriority.LOW
-    //     }
-    //     console.info("swiperTest_static_1800 start to publish emit");
-    //     events_emitter.emit(InnerEvent, eventData);
-    //   } catch (err: Error) {
-    //     console.log("swiperTest_static_1800 change component data error: " + err.message);
-    //   }
-    //   await CommonFunc.sleep(4000);
-    //   let strJsonNew = inspector.getInspectorByKey('swiper');
-    //
-    //   console.info("swiperTest_static_1800 component JSON.parse(strJsonNew) is: " +
-    //   JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-    //   expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('autoPlay')).assertEqual('false');
-    //   console.info('swiperTest_static_1800 END');
-    //   done()
-    // });
+
+    /*
+     * @tc.number   swiperTest_static_1800
+     * @tc.name     swiperTest_static_1800
+     * @tc.desc     swiperTest_static_1800
+     * @tc.level    0
+     */
+    it('swiperTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperTest_static_1800 START');
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "autoPlay": "false123"
+          } as Record<string, undefined|null|Object>
+        }
+        let InnerEvent: events_emitter.InnerEvent = {
+          eventId: 207,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("swiperTest_static_1800 start to publish emit");
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err: Error) {
+        console.log("swiperTest_static_1800 change component data error: " + err.message);
+      }
+      await CommonFunc.sleep(4000);
+      let strJsonNew = inspector.getInspectorByKey('swiper');
+
+      console.info("swiperTest_static_1800 component JSON.parse(strJsonNew) is: " +
+      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('autoPlay')).assertEqual('false');
+      console.info('swiperTest_static_1800 END');
+      done()
+    });
 
     /*
      * @tc.number   swiperTest_static_1900

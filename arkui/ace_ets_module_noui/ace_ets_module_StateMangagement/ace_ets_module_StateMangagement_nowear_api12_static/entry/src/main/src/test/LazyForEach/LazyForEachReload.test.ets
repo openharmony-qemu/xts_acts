@@ -70,10 +70,10 @@ export default function LazyForEachReload() {
         console.info("get LazyForEachReload state pages:" + JSON.stringify(pages));
         if (!("LazyForEachReload" == pages.name)) {
           console.info("get LazyForEachReload pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LazyForEachReload page result:" + JSON.stringify(result));
+          // console.info("push LazyForEachReload page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LazyForEachReload page error:" + err);

@@ -86,18 +86,15 @@ struct SwiperNextPrevMarginExample78 {
     this.data = new MyDataSource78(list)
   }
 
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<int> = new MessageManager<int>()
 
   onPageShow() {
     console.info('SwiperNextPrevMargin78 onPageShow')
-    const globalMessage: GlobalMessage<number> = {
-      name: 'messageManager', message: this.messageManager
-    } as GlobalMessage<number>;
-    AppStorage.setOrCreate<GlobalMessage<number>>('SwiperNextPrevMarginExample78', globalMessage);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>('SwiperNextPrevMarginExample78', this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'displayCount') {
-        this.displayCount = message.value.toInt()
+        this.displayCount = message.value
       }
     }
     this.messageManager.registerCallback(callback)

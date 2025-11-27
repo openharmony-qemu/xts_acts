@@ -55,9 +55,8 @@ import swiperMaskJsunit from './SwiperTest/swiper3.test';
 import swiperCurveJsunit from './SwiperTest/swiper1.test';
 
 export default function testsuite() {
-  SwiperMarginTest(); //全pass 注释
-
-  // 全pass 注释
+  SwiperMarginTest();
+  
   Swiper07Test();
   SwiperLoop()
   SwiperVisibility()
@@ -67,38 +66,37 @@ export default function testsuite() {
   swiperGroupTest()
   swiperPageTest()
   swiperNextPreTest()
-
-  swiperDelAddTest() //driver.findComponent(ON.id('showPreviousTT')为null std.core.Null cannot be cast to @ohos.UiTest.Component 已登记
-  swiperEdgeTest() //全pass 注释
-  swipeleftScrollTest() //全pass 注释
-  swiperRightScrollTest()  //driver.findComponent(ON.text('10'))为null std.core.Null cannot be cast to @ohos.UiTest.Component 已登记
-  swiperTest();  //
-  swiperTest_1();   //10.26SDK镜像 白屏
-  swiperJsunit2(); //全pass 注释
+  
+  swiperDelAddTest()
+  swiperEdgeTest()
+  swipeleftScrollTest()
+  swiperRightScrollTest()
+  swiperTest();
+  swiperTest_1();
+  swiperJsunit2();
   swiperIndex()
   swiperVertical()
   swiperLoopTrue()
-  swiperLoopFalse() //全pass 注释
-  swiperItemSpace() //expect 0.00px equals 0.00vp
-  // 全pass 注释
+  swiperLoopFalse()
+  swiperItemSpace()
   swiperPadding()
   swiperMargin()
   swiperMarPad()
   swiperDisableSwipeTrue()
   swiperDisableSwipeFalse()
   swiperItemSize()
-
+  
   swiperItemSize2()
   swiperItemPadding()
-  swiperItemMargin()  //页面未加载
+  swiperItemMargin()
   swiperItemPadMar()
-
-  swiperItemVisibility() //两个断言失败
-  SwiperMinSize();//全pass 注释
-  SwiperNextPrevMarginAddJsunit();  //app died
-  swiperAnimationJsunit();//全pass 注释
-  swiperMaskJsunit() // 断言失败
-  swiperJsunit(); //emitter传值无法刷新 导致11用例失败
-  swiperCurveJsunit() //expect 1 equals 3
-  swiperSecTest();  //emitter导致大量失败
+  
+  swiperItemVisibility()
+  SwiperMinSize();
+  SwiperNextPrevMarginAddJsunit();
+  swiperAnimationJsunit();
+  swiperMaskJsunit()
+  swiperJsunit();
+  swiperCurveJsunit()
+  swiperSecTest();
 }

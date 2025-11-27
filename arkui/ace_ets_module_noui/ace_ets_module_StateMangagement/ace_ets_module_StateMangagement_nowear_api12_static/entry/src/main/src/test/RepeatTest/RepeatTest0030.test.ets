@@ -68,12 +68,10 @@ export default function RepeatTest0030() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RepeatTest0030 state pages:" + JSON.stringify(pages));
-        if (!("RepeatTest0030" == pages.name)) {
+        if (!("Repeat0030" == pages.name)) {
           console.info("get RepeatTest0030 pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push RepeatTest0030 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RepeatTest0030 page error:" + err);
@@ -87,31 +85,45 @@ export default function RepeatTest0030() {
       console.info("RepeatTest0030 after each called");
     });
 
-
-    /*
-     * @tc.number   RepeatTest0030_001
-     * @tc.name     RepeatTest0030_001
-     * @tc.desc     RepeatTest0030_001
-     * @tc.level    0
+    /**
+     * @tc.number RepeatTest0030_static_001
+     * @tc.name RepeatTest0030_static_001
+     * @tc.desc Frequently updating and modifying the values of parent components
+     * @tc.level Level 3
+     * @tc.type
+     * @tc.size
      */
-it('RepeatTest0030_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[RepeatTest0030_001] START');
+    it('RepeatTest0030_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('[RepeatTest0030_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('toIndex[2]')) as Component;
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let text_1 =  (await driver.findComponent(ON.id('repeat0030_1')))?.getText();
-      let text_2 =  (await driver.findComponent(ON.id('repeat0030_2')))?.getText();
-      let display_status = await (await driver.findComponent(ON.id('display_status')))!.getText();
-      console.info("[RepeatTest0030_001] component text_1: " + text_1 + "text2:" + text_2 + "display_status: " +
+
+      let com1 = await driver.findComponent(ON.id('repeat0030_1'))
+      let text_1 = ''
+      if (com1) {
+        text_1 = await com1.getText();
+      }
+      let com2 = await driver.findComponent(ON.id('repeat0030_2'))
+      let text_2 = ''
+      if (com2) {
+        text_2 = await com2.getText()
+      }
+      let com3 = await driver.findComponent(ON.id('display_status'))
+      let display_status = ''
+      if (com3) {
+        display_status = await com3.getText()
+      }
+      console.info("[RepeatTest0030_static_001] component text_1 = " + text_1 + ", text2 = " + text_2 + ", display_status = " +
         display_status);
       expect(text_1).assertEqual("img0");
       expect(text_2).assertEqual("img2");
       expect(display_status).assertEqual("Normal display");
       await CommonFunc.sleep(1000);
-      console.info('[RepeatTest0030_001] END');
+      console.info('[RepeatTest0030_static_001] END');
       done();
     });
 

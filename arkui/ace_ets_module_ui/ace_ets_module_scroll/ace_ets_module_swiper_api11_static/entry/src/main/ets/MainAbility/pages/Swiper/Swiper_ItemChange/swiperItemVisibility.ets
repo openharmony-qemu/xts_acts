@@ -81,7 +81,7 @@ struct SwiperItemVisibilityTest {
         this.testVisibility3 = this.getVisibilityValue(message.value);
       }
       if (message.name == 'index') {
-        this.testIndex = this.getVisibilityValue(message.value);
+        this.testIndex = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);

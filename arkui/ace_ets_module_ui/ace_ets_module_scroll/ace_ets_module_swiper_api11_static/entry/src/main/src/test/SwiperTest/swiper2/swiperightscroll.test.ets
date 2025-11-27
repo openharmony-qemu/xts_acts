@@ -63,13 +63,13 @@ export default function swiperRightScrollTest() {
     beforeEach(async (): Promise<void> => {
       console.info("swiperRightScrollTest beforeEach start");
       try {
-        const router = AppStorage.get<Router>("router") as Router;
-        router.clear();
-        let pages = router.getState();
+        const routerSwiper = AppStorage.get<Router>("router") as Router;
+        routerSwiper.clear();
+        let pages = routerSwiper.getState();
         console.info("get swiperRightScrollTest state pages:" + JSON.stringify(pages));
         if (!("siwpe_rightscroll" == pages.name)) {
           console.info("swiperRightScrollTest  pages.name:" + JSON.stringify(pages.name));
-          let result = router.pushUrl({
+          routerSwiper.pushUrl({
             url: "MainAbility/pages/Swiper/swiper2/siwpe_rightscroll"
           })
           await CommonFunc.sleep(2000);
@@ -93,7 +93,7 @@ export default function swiperRightScrollTest() {
      * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0300
      * @tc.level    0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0300] START');
       await CommonFunc.sleep(2000);
       let bt = CommonFunc.getComponentRect('swiperTestWidth7');
@@ -108,7 +108,7 @@ export default function swiperRightScrollTest() {
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
       await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int)) as Int,
-        (winTop as Int + Math.round(btBottom / 2)) as Int, (winTop as Int + Math.round(btBottom / 2)) as Int,
+        (winTop as Int + Math.round(btBottom / 2)) as Int, (winLeft as Int + Math.round(btRight)) as Int,
         (winTop as Int + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(3000);
       // get the component of text_10

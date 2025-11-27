@@ -44,10 +44,11 @@ import {
   SwiperAutoFill,
   Padding,
   Indicator,
-  FontWeight
+  FontWeight,
+  Length
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { MessageManager, Callback, Message, GlobalMessage } from '../../../common/MessageManager';
+import { MessageManager, Callback, Message, GlobalMessage } from '../../../common/MessageManager1';
 
 class MyDataSource50 implements IDataSource<number> {
   private list: number[] = []
@@ -91,15 +92,12 @@ struct SwiperNextPrevMarginExample50 {
     this.data = new MyDataSource50(list)
   }
 
-  messageManager: MessageManager = new MessageManager()
+  messageManager: MessageManager<Length | boolean> = new MessageManager<Length | boolean>()
 
   onPageShow() {
     console.info('SwiperNextPrevMargin onPageShow')
-    const globalMessage: GlobalMessage = {
-      name: 'messageManager', message: this.messageManager
-    } as GlobalMessage;
-    AppStorage.setOrCreate<GlobalMessage>('SwiperNextPrevMarginExample50', globalMessage);
-    let callback: Callback = (message: Message) => {
+    AppStorage.setOrCreate<MessageManager<Length | boolean>>('SwiperNextPrevMarginExample50', this.messageManager);
+    let callback: Callback<Length | boolean> = (message: Message<Length | boolean>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'prevMargin') {
         this.prevMargin = Number(message.value?.toString()) ?? 0

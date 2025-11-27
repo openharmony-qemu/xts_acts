@@ -38,14 +38,15 @@ import {
   RowOptions,
   Button,
   Curve,
+  ForEach,
   SwiperAnimationEvent
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
 class MyDataSourceT5 implements IDataSource<number> {
   private list: number[] = []
-  private count: number = 0
-
+  private count:number  = 0
+  private listeners: DataChangeListener[] = [];
   constructor(list: number[]) {
     this.list = list
   }
@@ -61,17 +62,38 @@ class MyDataSourceT5 implements IDataSource<number> {
   add() {
 
     this.list.push(this.totalCount() + 1)
-
+    this.notifyDataAdd(this.totalCount() - 1)
   }
 
   delete() {
     this.list.pop();
+    this.notifyDataAdd(this.totalCount())
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      console.info('add listener');
+      this.listeners.push(listener);
+    }
   }
 
   unregisterDataChangeListener(listener: DataChangeListener) {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      console.info('remove listener');
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  notifyDataAdd(index: int): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    })
+  }
+  notifyDataDelete(index: int): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    })
   }
 }
 
@@ -90,8 +112,8 @@ struct SwiperExampleT5 {
   }
 
   build() {
-    Column({ space: 5 } as ColumnOptions) {
-      Row({ space: 2 } as RowOptions) {
+    Column() {
+      Row() {
         Button('showNext')
           .onClick((e: ClickEvent) => {
             this.swiperController.showNext()
@@ -108,7 +130,7 @@ struct SwiperExampleT5 {
           console.log('change Index 8')
         })
 
-      Row({ space: 2 } as RowOptions) {
+      Row() {
         Button('add')
           .onClick((e: ClickEvent) => {
             this.data.add();
@@ -120,7 +142,7 @@ struct SwiperExampleT5 {
       }
 
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: int) => {
+        LazyForEach(this.data, (item: number) => {
           Text(item.toString())
             .width('90%')
             .height(160)

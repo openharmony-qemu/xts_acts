@@ -123,6 +123,9 @@ struct SwiperExample3 {
       JSON.stringify(((eventData.data) as Record<string, undefined|null|Object>)?.['type']));
       if (eventData != null && eventData.data != null) {
         const data = eventData.data as Record<String,undefined|null|Object>
+        if(data['type'] == undefined) {
+          this.arrowStyle = data['arrowStyle'] as ArrowStyle
+        }
         if(data['type'] == "BoolTrue") {
           this.boolFlag = true
           this.bool = true
@@ -215,8 +218,8 @@ struct SwiperExample3 {
           console.info(index.toString())
         })
 
-        // .displayArrow((this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
-        //   (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? null : undefined)))), true)
+        .displayArrow((this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
+          (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? undefined : undefined)))), true)
       }
 
       Column() {
@@ -241,8 +244,8 @@ struct SwiperExample3 {
           console.info(index.toString())
         })
 
-        // .displayArrow(true, (this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
-        //   (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? null : undefined)))))
+        .displayArrow(true, (this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
+          (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? undefined : undefined)))))
       }
 
       Column() {
@@ -267,8 +270,8 @@ struct SwiperExample3 {
           console.info(index.toString())
         })
 
-        // .displayArrow(true, (this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
-        //   (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? null : undefined)))))
+        .displayArrow(true, (this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
+          (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? undefined : undefined)))))
 
       }
 
@@ -278,7 +281,7 @@ struct SwiperExample3 {
             Text(item.toString())
               .width('90%')
               .height('15%')
-              .backgroundColor('0xAFEEEE')
+              .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(20)
           }, (item: number) => item.toString())
@@ -303,7 +306,7 @@ struct SwiperExample3 {
             Text(item.toString())
               .width('90%')
               .height('15%')
-              .backgroundColor('0xAFEEEE')
+              .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(20)
           }, (item: number) => item.toString())
@@ -328,7 +331,7 @@ struct SwiperExample3 {
             Text(item.toString())
               .width('90%')
               .height('15%')
-              .backgroundColor('0xAFEEEE')
+              .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(20)
           }, (item: number) => item.toString())

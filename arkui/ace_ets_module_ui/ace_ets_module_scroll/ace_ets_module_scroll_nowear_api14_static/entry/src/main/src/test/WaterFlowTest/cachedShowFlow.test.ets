@@ -204,7 +204,7 @@ export default function cachedShowFlow() {
           data: {
             "clip1": false,
             "show1": null
-          } as Record<string, object | null | undefined>
+          } as Record<string, object|null|undefined>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -213,7 +213,7 @@ export default function cachedShowFlow() {
         console.info("[cachedShowFlow_static_0500] start to publish emit:" + JSON.stringify(eventData?.data));
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
-        console.log("[cachedShowFlow_static_0500] change component data error: " + (err as Error)?.message);
+        console.log("[cachedShowFlow_static_0500] change component data error: " +  (err as Error)?.message);
       }
       await CommonFunc.sleep(2000);
       let driver = Driver.create()
@@ -238,7 +238,7 @@ export default function cachedShowFlow() {
           data: {
             "clip1": false,
             "show1": undefined
-          } as Record<string, object | null | undefined>
+          } as Record<string, object|null|undefined>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -247,7 +247,7 @@ export default function cachedShowFlow() {
         console.info("[cachedShowFlow_static_0600] start to publish emit:" + JSON.stringify(eventData?.data));
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
-        console.log("[cachedShowFlow_static_0600] change component data error: " + (err as Error)?.message);
+        console.log("[cachedShowFlow_static_0600] change component data error: " +  (err as Error)?.message);
       }
       await CommonFunc.sleep(2000);
       let driver = Driver.create()

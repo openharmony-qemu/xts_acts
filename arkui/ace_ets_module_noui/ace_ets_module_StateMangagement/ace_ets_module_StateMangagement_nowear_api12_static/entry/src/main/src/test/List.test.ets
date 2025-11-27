@@ -22,8 +22,8 @@ import RepeatTest0030 from './RepeatTest/RepeatTest0030.test';
 
 export default function testsuite() {
   LazyForEachReload();
-  makeObserved0140Test();
   RepeatWaterFlowBoolean();
   RepeatWaterFlowNumber();
   RepeatTest0030();
+  makeObserved0140Test();
 }

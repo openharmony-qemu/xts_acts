@@ -23,12 +23,12 @@ import {BusinessError} from '@ohos.base'
 export struct StatusClickComponent {
   public isLandScape: boolean = false;
 
-  // private changeOrientation(isLandscape: boolean) {
-  //   let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-  //   window.getLastWindow(context).then((lastWindow) => {
-  //     lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
-  //   });
-  // }
+  private changeOrientation(isLandscape: boolean) {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    });
+  }
 
   build() {
     Column() {

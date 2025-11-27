@@ -45,7 +45,8 @@ import {
   Padding,
   Indicator,
   FontWeight,
-  Resource
+  Resource,
+  Length
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message, GlobalMessage } from '../../../common/MessageManager1';
@@ -79,15 +80,12 @@ struct SwiperNextPrevMarginExample {
   private data: MyDataSource = new MyDataSource([])
   @State prevMargin: number = 0
   @State nextMargin: number = 0
-  messageManager: MessageManager<number | undefined | Resource | null> = new MessageManager<number | undefined | Resource | null>()
+  messageManager: MessageManager<Length | undefined | null> = new MessageManager<Length | undefined | null>()
 
   onPageShow() {
     console.info('SwiperNextPrevMargin onPageShow')
-    const globalMessage: GlobalMessage<number | undefined | Resource | null> = {
-      name: 'messageManager', message: this.messageManager
-    } as GlobalMessage<number | undefined | Resource | null>;
-    AppStorage.setOrCreate<GlobalMessage<number | undefined | Resource | null>>('SwiperNextPrevMarginExample', globalMessage);
-    let callback: Callback<number | undefined | Resource | null> = (message: Message<number | undefined | Resource | null>) => {
+    AppStorage.setOrCreate<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample', this.messageManager);
+    let callback: Callback<Length | undefined | null> = (message: Message<Length | undefined | null>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'prevMargin') {
         this.prevMargin = message.value as number

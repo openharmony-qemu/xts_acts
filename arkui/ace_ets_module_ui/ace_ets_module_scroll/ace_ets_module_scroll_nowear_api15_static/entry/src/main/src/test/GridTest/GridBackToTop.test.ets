@@ -40,6 +40,7 @@ export default function GridBackToTopTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info("GridBackToTopTest beforeEach start");
+      const SUITE: string = 'GridBackToTop'
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Grid/GridBackToTop",
       }
@@ -50,7 +51,9 @@ export default function GridBackToTopTest() {
         console.info("get GridBackToTopTest state pages:" + JSON.stringify(pages));
         if (pages == null || !("GridSwipe" == pages.name)) {
           console.info("get GridBackToTopTest pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options).then(() => {
+            console.info(`${SUITE} router.pushUrl success`);
+          });
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -67,7 +70,7 @@ export default function GridBackToTopTest() {
      */
 it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
       console.info('GridScrollTest_0100 START');
-      await sleep(500)
+      await sleep(1500)
       let driverGrid: Driver = Driver.create();
       let grid: Component = await driverGrid.findComponent(ON.id('gridScroll_4')) as Component;
       let rect = await  (grid.getBounds() as Promise<Rect>)
@@ -82,7 +85,7 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
       let topButton: Component = await driverTop.findComponent(ON.id('Top')) as Component;
       let driverSwitch = Driver.create();
       let switchButton: Component = await driverSwitch.findComponent(ON.id('Switch')) as Component;
-      await sleep(500);
+      await sleep(1500);
 
       await driverGrid.swipe(
         Math.round(left + width * 0.2) as int,
@@ -90,9 +93,9 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
         Math.round(left + width * 0.2) as int,
         Math.round(bottom - height / 2) as int
       );
-      await sleep(500);
+      await sleep(2000);
       await topButton.click();
-      await sleep(500)
+      await sleep(1500)
       let stopJson = inspector.getInspectorByKey('gridBackToTop');
       console.info("getInspectorByKey result for stopJson: " + stopJson);
       console.info("getInspectorByKey result for $attrs: " + JSON.parseJsonElement(stopJson).getElement("$attrs"));
@@ -102,7 +105,7 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
       await switchButton.click();
       await sleep(500)
       await topButton.click();
-      await sleep(500)
+      await sleep(1500)
 
       await driverGrid.swipe(
         Math.round(left + width * 0.2) as int,
@@ -110,11 +113,11 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
         Math.round(left + width * 0.2) as int,
         Math.round(bottom - height / 2) as int
       );
-      await sleep(500);
+      await sleep(2000);
       await switchButton.click();
       await sleep(500)
       await topButton.click();
-      await sleep(500)
+      await sleep(1500)
 
       await driverGrid.swipe(
         Math.round(left + width * 0.2) as int,
@@ -122,11 +125,11 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
         Math.round(left + width * 0.2) as int,
         Math.round(bottom - height / 2) as int
       );
-      await sleep(500);
+      await sleep(2000);
       await switchButton.click();
       await sleep(500)
       await topButton.click();
-      await sleep(500); //waiting for scroll to top
+      await sleep(1000); //waiting for scroll to top
 
       // Retrieve the text content of scrolling related events
       let strJson = inspector.getInspectorByKey('gridScroll_1');
