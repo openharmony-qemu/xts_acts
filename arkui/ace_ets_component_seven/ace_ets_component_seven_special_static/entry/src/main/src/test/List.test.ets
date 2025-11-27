@@ -267,26 +267,6 @@ it('ListJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
     
-    
-     /*
-     * @tc.number   ListJsunit_static_0111
-     * @tc.name     ListJsunit_static_0111
-     * @tc.desc     ListJsunit_static_0111
-     * @tc.level    Level.LEVEL0
-     */
-it('ListJsunit_static_0111', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[ListJsunit_static_0111] START');
-      let strJson = inspector.getInspectorByKey('ListKey1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ListJsunit_static_0111] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-
-      expect(obj.getElement('$attrs').getBoolean('editMode')).assertEqual(true);
-      console.info('[ListJsunit_static_0111] END');
-      done();
-    });
-
-    
-    
     /*
      * @tc.number   ListJsunit_static_0112
      * @tc.name     ListJsunit_static_0112

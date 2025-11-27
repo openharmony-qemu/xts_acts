@@ -42,7 +42,6 @@ export default function shape() {
         if (!("shape" == pages.name)) {
           console.info("get shape state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          ;
           await Utils.sleep(2000);
         }
       } catch (err) {

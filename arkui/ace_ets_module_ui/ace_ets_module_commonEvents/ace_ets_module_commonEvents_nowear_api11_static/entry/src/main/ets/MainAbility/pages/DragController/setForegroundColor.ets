@@ -84,26 +84,29 @@ struct DragControllerPage {
           console.error(`onDragEnter---------`);
           try {
             console.log(`try------------------`);
-            let previewObj: dragController.DragPreview = this.getUIContext().getDragController().getDragPreview();
+            // let previewObj: dragController.DragPreview = this.getUIContext().getDragController().getDragPreview();
             this.setColorText = Color.Pink
-            console.log(`AnimationOptions------------------`);
+            console.log(`aaaaa-----AnimationOptions------------------`);
+            let curvesObj = curves.cubicBezierCurve(0.2,0,0,1)
+            console.log(`aaaaa-----cubicBezierCurve------------------`);
             let previewAnimation: dragController.AnimationOptions = {
-              curve: curves.cubicBezierCurve(0.2,0,0,1),
+              curve: curvesObj,
             }
-            console.log(`animate------------------`);
-            previewObj.animate(previewAnimation, () => {
-              console.log(`setForegroundColor------------------`);
-              previewObj.setForegroundColor(this.setColorText);
-            });
+            // console.log(`animate------------------`);
+            // previewObj.animate(previewAnimation, () => {
+            //   console.log(`setForegroundColor------------------`);
+            //   previewObj.setForegroundColor(this.setColorText);
+            //   console.log(`setForegroundColor after------------------`);
+            // });
           } catch (error) {
             let msg = (error as BusinessError).message;
             let code = (error as BusinessError).code;
             console.error(`show error code is ${code}, message is ${msg}`);
           }
         })
-        // .onDrop(() => {
-        //   console.log('---------onDrop')
-        // })
+        .onDrop(() => {
+          console.log('---------onDrop')
+        })
       Button('拖起')
          .draggable(true)
         .id('TouchParent_id')

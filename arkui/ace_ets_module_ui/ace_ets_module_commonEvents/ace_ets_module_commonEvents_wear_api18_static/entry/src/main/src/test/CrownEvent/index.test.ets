@@ -26,9 +26,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
+import {UtilsTest} from '../Util.test'
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
@@ -37,7 +36,6 @@ export default function CrownEventTest() {
   describe('CrownEventTest', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.loadAndSetUpUiTest();
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventnowearapi18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -47,16 +45,14 @@ export default function CrownEventTest() {
         url: 'MainAbility/pages/CrownEvent/index',
       }
       try {
-        const routerInstance = AppStorage.get<Router>("router", Type.from<Router>()) as Router
+        const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CrownEventTest state pages: " + JSON.stringify(pages));
         if (!("CityList" == pages.name)) {
           console.info("get CrownEventTest state pages.name: " + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push CrownEventTest page error: " + err);
@@ -69,7 +65,7 @@ export default function CrownEventTest() {
       console.info("CrownEventTest after each called");
     });
 
-
+    
     /*
      * @tc.number    CrownEventTest_static_0100
      * @tc.name      CrownEventTest_static_0100

@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 import {
-  Column,
-  Component,
-  CrownAction,
-  CrownEvent,
   Entry,
+  Component,
+  Column,
+  Text,
   List,
+  CrownEvent,
+  CrownAction,
+  TextAlign,
   Row,
   Stack,
-  Text,
-  TextAlign,
+  Callback
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -41,8 +47,8 @@ struct CityList {
     Column() {
       Row() {
         Stack() {
-          Text(this.value)
-          Text(this.value)
+        Text(this.value)
+         Text(this.value)
           Text(this.value)
           Text(this.message)
             .textAlign(TextAlign.Center)
@@ -50,8 +56,19 @@ struct CityList {
             .focusOnTouch(true)
             .defaultFocus(true)
             .id('onDigitalCrown')
-
-
+            .onDigitalCrown((event: CrownEvent) => {
+              // event.stopPropagation();
+              if(event.action == CrownAction.BEGIN){
+                 this.value='BEGIN'
+              }else if(event.action == CrownAction.UPDATE){
+                this.value='UPDATE'
+              }else if(event.action == CrownAction.END){
+                this.value='END'
+              }
+              this.message = "CrownEvent\n\n" + JSON.stringify(event);
+              console.debug("action:%d, angularVelocity:%f, degree:%f, timestamp:%f",
+                event.action, event.angularVelocity, event.degree, event.timestamp);
+            })
         }.width("100%").height("100%")
       }.width("100%").height("100%")
     }

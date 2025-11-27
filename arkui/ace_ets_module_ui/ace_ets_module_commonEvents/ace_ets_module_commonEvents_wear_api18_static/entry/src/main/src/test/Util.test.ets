@@ -13,37 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { loadAndSetUpUiTest } from '@ohos.UiTest'
+
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
 
-const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let domain: number = 0x0000;
-let tag: string = 'testlog';
+const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+let domain: Int = 0x0000;
+let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest {
   static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
 
-  static async loadAndSetUpUiTest(): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
-      try {
-        if (!UtilsTest.isloadAndSetUpUiTest) {
-          loadAndSetUpUiTest();
-          hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-          UtilsTest.isloadAndSetUpUiTest = true;
-        }
-        resolve(true)
-      } catch (error) {
-        hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
-        reject(error)
-      }
-    })
-  }
-
-  static async msSleep(count: Int): Promise<Int> {
-    return new Promise<Int>((resolve, reject) => {
+  static async msSleep(count:int) : Promise<int> {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
       }, count)
@@ -58,7 +41,7 @@ class UtilsTest {
         UtilsTest.isStartedAbility = true;
       }
       return true;
-    } catch (error) {
+    } catch(error) {
       console.error(`UiTestCase, start abilityFailed: ${error}`);
       hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
       return false;
@@ -91,5 +74,7 @@ async function stopApplication(bundleName: string): Promise<boolean> {
 }
 
 export {
-  UtilsTest, startAbility, stopApplication
+  UtilsTest,
+  startAbility,
+  stopApplication
 }

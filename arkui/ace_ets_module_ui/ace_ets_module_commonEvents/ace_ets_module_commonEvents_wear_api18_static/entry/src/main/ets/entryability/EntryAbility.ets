@@ -50,16 +50,17 @@ class EntryAbility extends UIAbility {
           try {
             let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
             let wRect: window.Rect | undefined = properties?.windowRect;
-            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0, Type.from<number>());
-            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0, Type.from<number>());
-            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
+            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
+            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+            AppStorage.setOrCreate<number>('winWidth', wRect?.width ?? 0);
+            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top + ',width:' + wRect?.width);
           } catch (exception) {
             hilog.error(0x0000, 'testTag',
               'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
 
           if (windowClass !== null) {
-            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext(), Type.from<UIContext>());
+            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');

@@ -60,7 +60,6 @@ export default function PanGestureHandlerAllowedTypesTest() {
     });
 
     
-    
 /*
      * @tc.number   PanGestureHandlerAllowedTypesTest_static_0010
      * @tc.name     PanGestureHandlerAllowedTypesTest_static_0010

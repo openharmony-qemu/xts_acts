@@ -75,7 +75,7 @@ struct Index {
 
   getDataFromUdmfRetry(event: DragEvent, callback: (data: DragEvent) => void) {
     try {
-      let data: UnifiedData = event.getData()!;
+      let data: UnifiedData = event.getData() as UnifiedData;
       if (!data) {
         return false;
       }

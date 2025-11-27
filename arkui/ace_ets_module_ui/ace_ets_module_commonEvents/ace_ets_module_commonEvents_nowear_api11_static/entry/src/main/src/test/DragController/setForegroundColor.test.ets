@@ -75,8 +75,10 @@ it('setForegroundColor_static_0100', Level.LEVEL0, async (done: () => void): Pro
       let button: Component|null = await driver.findComponent(ON.id('TouchParent_id'));
       let text: Component|null = await driver.findComponent(ON.id('setForegroundColor_id'));
       button?.dragTo(text!);
+      console.info("[setForegroundColor_static_0100] dragTo ");
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('setForegroundColor_id');
+      console.info("[setForegroundColor_static_0100] getInspectorByKey ");
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setForegroundColor_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[setForegroundColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));

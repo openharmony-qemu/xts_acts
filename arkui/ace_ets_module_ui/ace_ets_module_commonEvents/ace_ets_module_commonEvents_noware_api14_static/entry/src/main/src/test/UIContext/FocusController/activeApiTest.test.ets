@@ -32,8 +32,7 @@ export default function activeApiTest() {
       await UtilsTest.msSleep(4000)
     });
     
-   
-/*
+   /*
      * @tc.number   activeApiTest_static_0010
      * @tc.name     activeApiTest_static_0010
      * @tc.desc     activeApiTest_static_0010
@@ -59,8 +58,7 @@ it('activeApiTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    
-/*
+    /*
      * @tc.number   activeApiTest_static_0020
      * @tc.name     activeApiTest_static_0020
      * @tc.desc     activeApiTest_static_0020
@@ -84,7 +82,6 @@ it('activeApiTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<
       }
       done();
     });
-    
     
 /*
      * @tc.number   activeApiTest_static_0030
@@ -112,8 +109,7 @@ it('activeApiTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<
     });
 
      
-    
-/*
+    /*
      * @tc.number   activeApiTest_static_0040
      * @tc.name     activeApiTest_static_0040
      * @tc.desc     activeApiTest_static_0040
@@ -138,7 +134,6 @@ it('activeApiTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-    
     
 /*
      * @tc.number   activeApiTest_static_0050

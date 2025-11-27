@@ -16,73 +16,71 @@
 
 import { BusinessError } from '@ohos.base';
 import RectValue from './Rect';
-import inspector from '@ohos.arkui.inspector'
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+
+export class RectValue {
+  left: number = 0;
+  top: number = 0;
+  right: number = 0;
+  bottom: number = 0;
+}
 
 export default class CommonFunc {
-  static rect_left: number;
-  static rect_top: number;
-  static rect_right: number;
-  static rect_bottom: number;
+  static rect_left: number = 0;
+  static rect_top: number = 0;
+  static rect_right: number = 0;
+  static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static sleep(time: number) {
-    return new Promise<string>((resolve: (value: string) => void) => {
+  // static sleep(time: number) {
+  //   return new Promise<string>((resolve: (value: string) => void) => {
+  //     setTimeout(() => {
+  //       resolve("ok")
+  //     }, time)
+  //   }).then(() => {
+  //     console.info(`sleep ${time} over...`)
+  //   })
+  // }
+
+  static async sleep(time:Int) : Promise<Int> {
+    return new Promise<Int>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
+        console.info(`sleep ${time} over...`)
+        resolve(0)
       }, time)
-    }).then(() => {
-      console.info(`sleep ${time} over...`)
     })
   }
 
   static getComponentRect(key: string): RectValue {
-    let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let strJson: string = inspector.getInspectorByKey(key);
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft", Type.from<number>()) + ',' +
-      "windowRect Top: " +
-    AppStorage.get<number>("winTop", Type.from<number>()));
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
     CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
     CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
     CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+      left: CommonFunc.rect_left, top: CommonFunc.rect_top, right: CommonFunc.rect_right, bottom: CommonFunc.rect_bottom
     }
   }
 
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft", Type.from<number>()) + ',' +
-      "windowRect Top: " +
-    AppStorage.get<number>("winTop", Type.from<number>()));
-    CommonFunc.rect_left =
-      Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft", Type.from<number>()) ?? 0));
-    CommonFunc.rect_top =
-      Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop", Type.from<number>()) ?? 0));
-    CommonFunc.rect_right =
-      Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft", Type.from<number>()) ?? 0));
-    CommonFunc.rect_bottom =
-      Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop", Type.from<number>()) ?? 0));
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
+    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
+    CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
+    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
     return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+      "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
     }
   }
 }
