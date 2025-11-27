@@ -73,17 +73,21 @@ export default function SwiperContentUpdateTwo() {
       let button = await driver.findComponent(ON.text('on'));
       await button.click();
       console.info("SwiperContentUpdateTwo_0100 button click");
-      let swiperComponent = await driver.findComponent(ON.type('Swiper'));
-      let point = await swiperComponent.getBoundsCenter();
-      let x = point.x;
-      let y = point.y;
-      await driver.swipe(Math.round(x), Math.round(y), Math.round(x + 30), Math.round(y));
+      let swiperList = CommonFunc.getComponentRectOnScreen('swiperId');
+      let top = swiperList.top;
+      let right = swiperList.right;
+      let left = swiperList.left;
+      let bottom = swiperList.bottom;
+      let height = bottom -top;
+      let width = right - left;
+      console.info("SwiperContentUpdateTwo_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      let driver = await Driver.create()
+      await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(right - vp2px(20)),Math.round(top + height/2));
       await CommonFunc.sleep(2000);
       let value: SwiperContentInfo = AppStorage.get('swiperContentInfo') as SwiperContentInfo
       expect(value?.id === 'swiperId').assertTrue();
       AppStorage.delete('swiperContentInfo')
       await CommonFunc.sleep(1000);
-
       let button2 = await driver.findComponent(ON.text('off'));
       await button2.click();
       await CommonFunc.sleep(2000);
