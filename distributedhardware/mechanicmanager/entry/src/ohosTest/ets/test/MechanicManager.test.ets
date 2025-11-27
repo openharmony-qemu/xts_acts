@@ -63,7 +63,6 @@ export default function MechanicManagerAPI() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0100
      * @tc.number SUB_DH_MechanicManager_on_0100
      * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口正常调用
@@ -87,7 +86,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0200
      * @tc.number SUB_DH_MechanicManager_on_0200
      * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口入参callback为null
@@ -109,7 +107,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0300
      * @tc.number SUB_DH_MechanicManager_on_0300
      * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口入参callback为undefined
@@ -131,7 +128,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0100
      * @tc.number SUB_DH_MechanicManager_off_0100
      * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口正常调用
@@ -155,7 +151,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0200
      * @tc.number SUB_DH_MechanicManager_off_0200
      * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口回调为空
@@ -177,7 +172,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0300
      * @tc.number SUB_DH_MechanicManager_off_0300
      * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口回调callback为null
@@ -199,7 +193,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0400
      * @tc.number SUB_DH_MechanicManager_off_0400
      * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口回调callback为undefined
@@ -221,7 +214,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_getAttachedMechDevices_0100
      * @tc.number SUB_DH_MechanicManager_getAttachedMechDevices_0100
      * @tc.desc   Obtain the list of connected mechanical devices,mechanicManager.getAttachedMechDevices接口正常调用
@@ -247,7 +239,6 @@ export default function MechanicManagerAPI() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_getAttachedMechDevices_0200
      * @tc.number SUB_DH_MechanicManager_getAttachedMechDevices_0200
      * @tc.desc   Obtain the list of connected mechanical devices,mechanicManager.getAttachedMechDevices接口正常调用
@@ -275,7 +266,6 @@ export default function MechanicManagerAPI() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_setCameraTrackingEnabled_0100
      * @tc.number SUB_DH_MechanicManager_setCameraTrackingEnabled_0100
      * @tc.desc   Checks whether camera tracking is enabled for this mechanical device,启用当前机械体设备摄像头跟踪
@@ -297,7 +287,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_setCameraTrackingEnabled_0200
      * @tc.number SUB_DH_MechanicManager_setCameraTrackingEnabled_0200
      * @tc.desc   Checks whether camera tracking is enabled for this mechanical device,禁用当前机械体设备摄像头跟踪
@@ -319,7 +308,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_setCameraTrackingEnabled_0300
      * @tc.number SUB_DH_MechanicManager_setCameraTrackingEnabled_0300
      * @tc.desc   Checks whether camera tracking is enabled for this mechanical device,setCameraTrackingEnabled参数为null
@@ -341,7 +329,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_setCameraTrackingEnabled_0400
      * @tc.number SUB_DH_MechanicManager_setCameraTrackingEnabled_0400
      * @tc.desc   Checks whether camera tracking is enabled for this mechanical device,setCameraTrackingEnabled参数为undefined
@@ -363,7 +350,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingEnabled_0100
      * @tc.number SUB_DH_MechanicManager_getCameraTrackingEnabled_0100
      * @tc.desc   Subscribes to tracking events,getCameraTrackingEnabled调用
@@ -385,7 +371,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingEnabled_0200
      * @tc.number SUB_DH_MechanicManager_getCameraTrackingEnabled_0200
      * @tc.desc   Subscribes to tracking events,getCameraTrackingEnabled调用
@@ -411,7 +396,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0400
      * @tc.number SUB_DH_MechanicManager_on_0400
      * @tc.desc   Subscribes to tracking events，mechanicManager.on('trackingStateChange')接口调用
@@ -435,7 +419,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0500
      * @tc.number SUB_DH_MechanicManager_on_0500
      * @tc.desc   Subscribes to tracking events,mechanicManager.on接口入参callback为null
@@ -457,7 +440,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0600
      * @tc.number SUB_DH_MechanicManager_on_0600
      * @tc.desc   Subscribes to tracking events,mechanicManager.on接口入参callback为undefined
@@ -479,7 +461,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0700
      * @tc.number SUB_DH_MechanicManager_on_0700
      * @tc.desc   Subscribes to tracking events,mechanicManager.on接口调用
@@ -516,7 +497,6 @@ export default function MechanicManagerAPI() {
     });
  
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_on_0800
      * @tc.number SUB_DH_MechanicManager_on_0800
      * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口正常调用
@@ -549,7 +529,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0500
      * @tc.number SUB_DH_MechanicManager_off_0500
      * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口正常调用
@@ -572,7 +551,6 @@ export default function MechanicManagerAPI() {
       console.info("-----------------SUB_DH_MechanicManager_off_0100 end-----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0600
      * @tc.number SUB_DH_MechanicManager_off_0600
      * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口回调为空
@@ -594,7 +572,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0700
      * @tc.number SUB_DH_MechanicManager_off_0700
      * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口回调callback为null
@@ -616,7 +593,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_off_0800
      * @tc.number SUB_DH_MechanicManager_off_0800
      * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口回调callback为undefined
@@ -638,7 +614,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingLayout_0100
      * @tc.number SUB_DH_MechanicManager_getCameraTrackingLayout_0100
      * @tc.desc   Obtains the camera tracking layout of this mechanical device,getCameraTrackingLayout接口调用
@@ -660,7 +635,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingLayout_0200
      * @tc.number SUB_DH_MechanicManager_getCameraTrackingLayout_0200
      * @tc.desc   Obtains the camera tracking layout of this mechanical device,getCameraTrackingLayout接口调用
@@ -682,7 +656,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_enumerated_0100
      * @tc.number SUB_DH_MechanicManager_enumerated_0100
      * @tc.desc   Enumerates the tracking events，TrackingEvent枚举值
@@ -710,7 +683,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_enumerated_0200
      * @tc.number SUB_DH_MechanicManager_enumerated_0200
      * @tc.desc   Enumerates the tracking events,MechDeviceType枚举值
@@ -732,7 +704,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_enumerated_0300
      * @tc.number SUB_DH_MechanicManager_enumerated_0300
      * @tc.desc   Enumerates the tracking events,AttachState枚举值
@@ -757,7 +728,6 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_DH_MechanicManager_enumerated_0400
      * @tc.number SUB_DH_MechanicManager_enumerated_0400
      * @tc.desc   Enumerates the tracking events,CameraTrackingLayout枚举值
