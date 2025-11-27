@@ -45,7 +45,11 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_gridObjectSortComponent_nowear:ActsAceEtsModuleGridObjectSortComponentNoWearTest",
       "ace_ets_module_progressButtonV2_nowear:ActsAceEtsModuleProgressButtonV2Test",
       "ace_ets_module_toolBarV2_nowear:ActsAceEtsModuleToolBarV2Test",
-      "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest"
+      "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest",
+      "ace_ets_module_composeListItem_nowear:ActsAceEtsModuleComposeListItemNoWearTest",
+      "ace_ets_module_progressButton_nowear:ActsAceEtsModuleProgressButtonNoWearTest",
+      "ace_ets_module_selectTitleBar_nowear:ActsAceEtsModuleSelectTitleBarNoWearTest",
+      "ace_ets_module_swipeRefresher_nowear:ActsAceEtsModuleSwipeRefresherNoWearTest"
     ]
   }
 }
