@@ -81,9 +81,12 @@ export default function webgl1_shader() {
         }
 
         /**
+         * @tc.name   webgl_test_createShader
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0001
-         * @tc.name webgl_test_createShader
-         * @tc.desc Test createShader.
+         * @tc.desc   Test createShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_createShader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_createShader] createShader");
@@ -102,9 +105,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_createShader_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0002
-         * @tc.name webgl_test_createShader_1
-         * @tc.desc Test createShader.
+         * @tc.desc   Test createShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_createShader_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_createShader_1] createShader");
@@ -117,9 +123,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_createShader_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0003
-         * @tc.name webgl_test_createShader_2
-         * @tc.desc Test createShader.
+         * @tc.desc   Test createShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_createShader_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_createShader_2] createShader");
@@ -132,9 +141,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_createShader_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0004
-         * @tc.name webgl_test_createShader_3
-         * @tc.desc Test createShader.
+         * @tc.desc   Test createShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_createShader_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_createShader_3] createShader");
@@ -154,9 +166,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_shaderSource
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0005
-         * @tc.name webgl_test_shaderSource
-         * @tc.desc Test shaderSource.
+         * @tc.desc   Test shaderSource.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_shaderSource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_shaderSource] shaderSource");
@@ -179,9 +194,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_shaderSource_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0006
-         * @tc.name webgl_test_shaderSource_1
-         * @tc.desc Test shaderSource.
+         * @tc.desc   Test shaderSource.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_shaderSource_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_shaderSource_1] shaderSource");
@@ -195,9 +213,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_shaderSource_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0007
-         * @tc.name webgl_test_shaderSource_2
-         * @tc.desc Test shaderSource.
+         * @tc.desc   Test shaderSource.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_shaderSource_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_shaderSource_2] shaderSource");
@@ -211,9 +232,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_shaderSource_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0008
-         * @tc.name webgl_test_shaderSource_3
-         * @tc.desc Test shaderSource.
+         * @tc.desc   Test shaderSource.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_shaderSource_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_shaderSource_3] shaderSource");
@@ -226,9 +250,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_getShaderSource
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0009
-         * @tc.name webgl_test_getShaderSource
-         * @tc.desc Test getShaderSource.
+         * @tc.desc   Test getShaderSource.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderSource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getShaderSource] getShaderSource");
@@ -266,9 +293,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0010
-         * @tc.name webgl_test_getShaderParameter
-         * @tc.desc Test getShaderParameter.
+         * @tc.desc   Test getShaderParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getShaderParameter] getShaderParameter");
@@ -294,9 +324,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderParameter_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0011
-         * @tc.name webgl_test_getShaderParameter_1
-         * @tc.desc Test getShaderParameter.
+         * @tc.desc   Test getShaderParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderParameter_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -312,9 +345,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderParameter_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0012
-         * @tc.name webgl_test_getShaderParameter_2
-         * @tc.desc Test getShaderParameter.
+         * @tc.desc   Test getShaderParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderParameter_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -330,9 +366,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderParameter_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0013
-         * @tc.name webgl_test_getShaderParameter_3
-         * @tc.desc Test getShaderParameter.
+         * @tc.desc   Test getShaderParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderParameter_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -347,9 +386,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_compileShader
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0014
-         * @tc.name webgl_test_compileShader
-         * @tc.desc Test compileShader.
+         * @tc.desc   Test compileShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_compileShader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_compileShader] compileShader");
@@ -375,9 +417,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_getShaderInfoLog
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0015
-         * @tc.name webgl_test_getShaderInfoLog
-         * @tc.desc Test getShaderInfoLog.
+         * @tc.desc   Test getShaderInfoLog.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderInfoLog', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getShaderInfoLog] getShaderInfoLog");
@@ -405,9 +450,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_isShader
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0016
-         * @tc.name webgl_test_isShader
-         * @tc.desc Test isShader.
+         * @tc.desc   Test isShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isShader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isShader] isShader");
@@ -424,9 +472,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_isShader_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0017
-         * @tc.name webgl_test_isShader_1
-         * @tc.desc Test isShader.
+         * @tc.desc   Test isShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isShader_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isShader_1] isShader");
@@ -440,9 +491,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_isShader_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0018
-         * @tc.name webgl_test_isShader_2
-         * @tc.desc Test isShader.
+         * @tc.desc   Test isShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isShader_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isShader_2] isShader");
@@ -455,9 +509,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_deleteShader
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0019
-         * @tc.name webgl_test_deleteShader
-         * @tc.desc Test deleteShader.
+         * @tc.desc   Test deleteShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteShader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteShader] deleteShader");
@@ -475,9 +532,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_deleteShader_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0020
-         * @tc.name webgl_test_deleteShader_1
-         * @tc.desc Test deleteShader.
+         * @tc.desc   Test deleteShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteShader_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteShader_1] deleteShader");
@@ -490,9 +550,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_attachShader
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0021
-         * @tc.name webgl_test_attachShader
-         * @tc.desc Test attachShader.
+         * @tc.desc   Test attachShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_attachShader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_attachShader] attachShader");
@@ -525,9 +588,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_getAttachedShaders
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0022
-         * @tc.name webgl_test_getAttachedShaders
-         * @tc.desc Test getAttachedShaders.
+         * @tc.desc   Test getAttachedShaders.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getAttachedShaders', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getAttachedShaders] getAttachedShaders");
@@ -555,9 +621,12 @@ export default function webgl1_shader() {
         })
 
         /**
+         * @tc.name   webgl_test_detachShader
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0023
-         * @tc.name webgl_test_detachShader
-         * @tc.desc Test detachShader.
+         * @tc.desc   Test detachShader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_detachShader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_detachShader] detachShader");
@@ -608,9 +677,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderPrecisionFormat
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0024
-         * @tc.name webgl_test_getShaderPrecisionFormat
-         * @tc.desc Test getShaderPrecisionFormat.
+         * @tc.desc   Test getShaderPrecisionFormat.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderPrecisionFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -638,9 +710,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderPrecisionFormat_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0025
-         * @tc.name webgl_test_getShaderPrecisionFormat_1
-         * @tc.desc Test getShaderPrecisionFormat.
+         * @tc.desc   Test getShaderPrecisionFormat.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderPrecisionFormat_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -655,9 +730,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderPrecisionFormat_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0026
-         * @tc.name webgl_test_getShaderPrecisionFormat_2
-         * @tc.desc Test getShaderPrecisionFormat.
+         * @tc.desc   Test getShaderPrecisionFormat.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderPrecisionFormat_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -672,9 +750,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderPrecisionFormat_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0027
-         * @tc.name webgl_test_getShaderPrecisionFormat_3
-         * @tc.desc Test getShaderPrecisionFormat.
+         * @tc.desc   Test getShaderPrecisionFormat.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderPrecisionFormat_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -689,9 +770,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderPrecisionFormat_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0028
-         * @tc.name webgl_test_getShaderPrecisionFormat_4
-         * @tc.desc Test getShaderPrecisionFormat.
+         * @tc.desc   Test getShaderPrecisionFormat.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderPrecisionFormat_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -706,9 +790,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderPrecisionFormat_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0029
-         * @tc.name webgl_test_getShaderPrecisionFormat_5
-         * @tc.desc Test getShaderPrecisionFormat.
+         * @tc.desc   Test getShaderPrecisionFormat.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderPrecisionFormat_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -723,9 +810,12 @@ export default function webgl1_shader() {
 
 
         /**
+         * @tc.name   webgl_test_getShaderPrecisionFormat_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SHADER_0030
-         * @tc.name webgl_test_getShaderPrecisionFormat_6
-         * @tc.desc Test getShaderPrecisionFormat.
+         * @tc.desc   Test getShaderPrecisionFormat.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getShaderPrecisionFormat_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {

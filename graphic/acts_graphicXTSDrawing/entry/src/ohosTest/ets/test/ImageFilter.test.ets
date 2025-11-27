@@ -61,12 +61,12 @@ export default function imageFilterTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0100
-     * @tc.name      : testImageFilterCreateBlurImageFilterNormal
-     * @tc.desc      : Test for testImageFilterCreateBlurImageFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testImageFilterCreateBlurImageFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0100
+     * @tc.desc   Test for testImageFilterCreateBlurImageFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testImageFilterCreateBlurImageFilterNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testImageFilterCreateBlurImageFilterNormal';
@@ -113,12 +113,12 @@ export default function imageFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0101
-     * @tc.name      : testImageFilterCreateBlurImageFilterMultipleCalls
-     * @tc.desc      : Test for testImageFilterCreateBlurImageFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testImageFilterCreateBlurImageFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0101
+     * @tc.desc   Test for testImageFilterCreateBlurImageFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testImageFilterCreateBlurImageFilterMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testImageFilterCreateBlurImageFilterMultipleCalls';
@@ -137,12 +137,12 @@ export default function imageFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0102
-     * @tc.name      : testImageFilterCreateBlurImageFilterToNull
-     * @tc.desc      : Test for testImageFilterCreateBlurImageFilterToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testImageFilterCreateBlurImageFilterToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0102
+     * @tc.desc   Test for testImageFilterCreateBlurImageFilterToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testImageFilterCreateBlurImageFilterToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testImageFilterCreateBlurImageFilterToNull';
@@ -205,12 +205,12 @@ export default function imageFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0104
-     * @tc.name      : testImageFilterCreateBlurImageFilterAbnormal
-     * @tc.desc      : Test for testImageFilterCreateBlurImageFilterAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testImageFilterCreateBlurImageFilterAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0104
+     * @tc.desc   Test for testImageFilterCreateBlurImageFilterAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testImageFilterCreateBlurImageFilterAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testImageFilterCreateBlurImageFilterAbnormal';
@@ -257,12 +257,12 @@ export default function imageFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0200
-     * @tc.name      : testImageFilterCreateFromColorFilterNormal
-     * @tc.desc      : Test for testImageFilterCreateFromColorFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testImageFilterCreateFromColorFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0200
+     * @tc.desc   Test for testImageFilterCreateFromColorFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testImageFilterCreateFromColorFilterNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testImageFilterCreateFromColorFilterNormal';
@@ -296,12 +296,12 @@ export default function imageFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0201
-     * @tc.name      : testImageFilterCreateFromColorFilterMultipleCalls
-     * @tc.desc      : Test for testImageFilterCreateFromColorFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testImageFilterCreateFromColorFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0201
+     * @tc.desc   Test for testImageFilterCreateFromColorFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testImageFilterCreateFromColorFilterMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testImageFilterCreateFromColorFilterMultipleCalls';
@@ -321,12 +321,12 @@ export default function imageFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0202
-     * @tc.name      : testImageFilterCreateFromColorFilterToNull
-     * @tc.desc      : Test for testImageFilterCreateFromColorFilterToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testImageFilterCreateFromColorFilterToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0202
+     * @tc.desc   Test for testImageFilterCreateFromColorFilterToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testImageFilterCreateFromColorFilterToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testImageFilterCreateFromColorFilterToNull';
@@ -359,12 +359,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0300
-     * @tc.name      : testImageFilterCreateFromImageNormal
-     * @tc.desc      : Test for testImageFilterCreateFromImageNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testImageFilterCreateFromImageNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0300
+     * @tc.desc   Test for testImageFilterCreateFromImageNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFilterCreateFromImageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testImageFilterCreateFromImageNormal';
@@ -490,12 +490,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0301
-     * @tc.name      : testImageFilterCreateFromImageMultipleCalls
-     * @tc.desc      : Test for testImageFilterCreateFromImageMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testImageFilterCreateFromImageMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0301
+     * @tc.desc   Test for testImageFilterCreateFromImageMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testImageFilterCreateFromImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const msg = 'testImageFilterCreateFromImageMultipleCalls';
@@ -523,12 +523,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0302
-     * @tc.name      : testImageFilterCreateFromImageToNull
-     * @tc.desc      : Test for testImageFilterCreateFromImageToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testImageFilterCreateFromImageToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0302
+     * @tc.desc   Test for testImageFilterCreateFromImageToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testImageFilterCreateFromImageToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testImageFilterCreateFromImageToNull';
@@ -578,12 +578,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0400
-     * @tc.name      : testImageFilterCreateBlendImageFilterNormal
-     * @tc.desc      : Test for testImageFilterCreateBlendImageFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testImageFilterCreateBlendImageFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0400
+     * @tc.desc   Test for testImageFilterCreateBlendImageFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFilterCreateBlendImageFilterNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testImageFilterCreateBlendImageFilterNormal';
@@ -836,12 +836,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0401
-     * @tc.name      : testImageFilterCreateBlendImageFilterMultipleCalls
-     * @tc.desc      : Test for testImageFilterCreateBlendImageFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testImageFilterCreateBlendImageFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0401
+     * @tc.desc   Test for testImageFilterCreateBlendImageFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testImageFilterCreateBlendImageFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testImageFilterCreateBlendImageFilterMultipleCalls';
@@ -860,12 +860,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0402
-     * @tc.name      : testImageFilterCreateBlendImageFilterToNull
-     * @tc.desc      : Test for testImageFilterCreateBlendImageFilterToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testImageFilterCreateBlendImageFilterToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0402
+     * @tc.desc   Test for testImageFilterCreateBlendImageFilterToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testImageFilterCreateBlendImageFilterToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, () => {
       const msg = 'testImageFilterCreateBlendImageFilterToNull';
@@ -923,12 +923,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0403
-     * @tc.name      : testImageFilterCreateBlendImageFilterOverEnum
-     * @tc.desc      : Test for testImageFilterCreateBlendImageFilterOverEnum.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testImageFilterCreateBlendImageFilterOverEnum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0403
+     * @tc.desc   Test for testImageFilterCreateBlendImageFilterOverEnum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testImageFilterCreateBlendImageFilterOverEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testImageFilterCreateBlendImageFilterOverEnum';
@@ -946,12 +946,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0500
-     * @tc.name      : testImageFilterCreateComposeImageFilterNormal
-     * @tc.desc      : Test for testImageFilterCreateComposeImageFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testImageFilterCreateComposeImageFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0500
+     * @tc.desc   Test for testImageFilterCreateComposeImageFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFilterCreateComposeImageFilterNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testImageFilterCreateComposeImageFilterNormal';
@@ -976,12 +976,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0501
-     * @tc.name      : testImageFilterCreateComposeImageFilterMultipleCalls
-     * @tc.desc      : Test for testImageFilterCreateComposeImageFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testImageFilterCreateComposeImageFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0501
+     * @tc.desc   Test for testImageFilterCreateComposeImageFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testImageFilterCreateComposeImageFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testImageFilterCreateComposeImageFilterMultipleCalls';
@@ -1002,12 +1002,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0502
-     * @tc.name      : testImageFilterCreateComposeImageFilterToNull
-     * @tc.desc      : Test for testImageFilterCreateComposeImageFilterToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testImageFilterCreateComposeImageFilterToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0502
+     * @tc.desc   Test for testImageFilterCreateComposeImageFilterToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testImageFilterCreateComposeImageFilterToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, () => {
       const msg = 'testImageFilterCreateComposeImageFilterToNull';
@@ -1066,12 +1066,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0600
-     * @tc.name      : testImageFilterCreateOffsetImageFilterNormal
-     * @tc.desc      : Test for testImageFilterCreateOffsetImageFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testImageFilterCreateOffsetImageFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0600
+     * @tc.desc   Test for testImageFilterCreateOffsetImageFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFilterCreateOffsetImageFilterNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testImageFilterCreateOffsetImageFilterNormal';
@@ -1130,12 +1130,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0601
-     * @tc.name      : testImageFilterCreateOffsetImageFilterMultipleCalls
-     * @tc.desc      : Test for testImageFilterCreateOffsetImageFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testImageFilterCreateOffsetImageFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0601
+     * @tc.desc   Test for testImageFilterCreateOffsetImageFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testImageFilterCreateOffsetImageFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testImageFilterCreateOffsetImageFilterMultipleCalls';
@@ -1154,12 +1154,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0602
-     * @tc.name      : testImageFilterCreateOffsetImageFilterToNull
-     * @tc.desc      : Test for testImageFilterCreateOffsetImageFilterToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testImageFilterCreateOffsetImageFilterToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0602
+     * @tc.desc   Test for testImageFilterCreateOffsetImageFilterToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testImageFilterCreateOffsetImageFilterToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, () => {
       const msg = 'testImageFilterCreateOffsetImageFilterToNull';
@@ -1200,12 +1200,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0700
-     * @tc.name      : testImageFilterCreateFromShaderEffectNormal
-     * @tc.desc      : Test for testImageFilterCreateFromShaderEffectNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testImageFilterCreateFromShaderEffectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0700
+     * @tc.desc   Test for testImageFilterCreateFromShaderEffectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFilterCreateFromShaderEffectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testImageFilterCreateFromShaderEffectNormal';
@@ -1242,12 +1242,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0701
-     * @tc.name      : testImageFilterCreateFromShaderEffectMultipleCalls
-     * @tc.desc      : Test for testImageFilterCreateFromShaderEffectMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testImageFilterCreateFromShaderEffectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0701
+     * @tc.desc   Test for testImageFilterCreateFromShaderEffectMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testImageFilterCreateFromShaderEffectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testImageFilterCreateFromShaderEffectMultipleCalls';
@@ -1264,12 +1264,12 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0702
-     * @tc.name      : testImageFilterCreateFromShaderEffectToNull
-     * @tc.desc      : Test for testImageFilterCreateFromShaderEffectToNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testImageFilterCreateFromShaderEffectToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0702
+     * @tc.desc   Test for testImageFilterCreateFromShaderEffectToNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testImageFilterCreateFromShaderEffectToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, () => {
       const msg = 'testImageFilterCreateFromShaderEffectToNull';

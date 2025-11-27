@@ -98,10 +98,13 @@ void NativeTypographyUpdate::TearDown()
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate001
- * @tc.desc: test the nullptr input value for updating the paint attribute
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate001
+ * @tc.number OHDrawingTypographyUpdate001
+ * @tc.desc   test the nullptr input value for updating the paint attribute
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate001, Function | MediumTest | Level0)
 {
@@ -111,10 +114,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate001, Function | Medium
     OH_Drawing_TypographyUpdateDecorationStyle(nullptr, TEXT_DECORATION_STYLE_DOTTED);
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate002
- * @tc.desc: test for updating the font color
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate002
+ * @tc.number OHDrawingTypographyUpdate002
+ * @tc.desc   test for updating the font color
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate002, Function | MediumTest | Level0)
 {
@@ -127,10 +133,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate002, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate003
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_LINE_THROUGH
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate003
+ * @tc.number OHDrawingTypographyUpdate003
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_LINE_THROUGH
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate003, Function | MediumTest | Level0)
 {
@@ -143,10 +152,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate003, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate004
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_UNDERLINE
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate004
+ * @tc.number OHDrawingTypographyUpdate004
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_UNDERLINE
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate004, Function | MediumTest | Level0)
 {
@@ -159,10 +171,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate004, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate005
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_OVERLINE
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate005
+ * @tc.number OHDrawingTypographyUpdate005
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_OVERLINE
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate005, Function | MediumTest | Level0)
 {
@@ -175,10 +190,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate005, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate006
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_NONE
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate006
+ * @tc.number OHDrawingTypographyUpdate006
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_NONE
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate006, Function | MediumTest | Level0)
 {
@@ -191,10 +209,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate006, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate007
- * @tc.desc: test for updating the decoration thickness scale
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate007
+ * @tc.number OHDrawingTypographyUpdate007
+ * @tc.desc   test for updating the decoration thickness scale
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate007, Function | MediumTest | Level0)
 {
@@ -207,10 +228,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate007, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate008
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_STYLE_DOTTED
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate008
+ * @tc.number OHDrawingTypographyUpdate008
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_STYLE_DOTTED
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate008, Function | MediumTest | Level0)
 {
@@ -223,10 +247,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate008, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate009
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_STYLE_DOTTED
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate009
+ * @tc.number OHDrawingTypographyUpdate009
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_STYLE_DOTTED
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate009, Function | MediumTest | Level0)
 {
@@ -239,10 +266,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate009, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate010
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_STYLE_WAVY
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate010
+ * @tc.number OHDrawingTypographyUpdate010
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_STYLE_WAVY
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate010, Function | MediumTest | Level0)
 {
@@ -255,10 +285,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate010, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate011
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_STYLE_DASHED
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate011
+ * @tc.number OHDrawingTypographyUpdate011
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_STYLE_DASHED
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate011, Function | MediumTest | Level0)
 {
@@ -271,10 +304,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate011, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate012
- * @tc.desc: test for updating the decoration to the value of TEXT_DECORATION_STYLE_DOUBLE
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate012
+ * @tc.number OHDrawingTypographyUpdate012
+ * @tc.desc   test for updating the decoration to the value of TEXT_DECORATION_STYLE_DOUBLE
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate012, Function | MediumTest | Level0)
 {
@@ -287,10 +323,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate012, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingTypographyUpdate013
- * @tc.desc: test for updating the font color and decoration in mutiple text.
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTypographyUpdate013
+ * @tc.number OHDrawingTypographyUpdate013
+ * @tc.desc   test for updating the font color and decoration in mutiple text.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate013, Function | MediumTest | Level0)
 {
@@ -316,10 +355,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate013, Function | Medium
     }
 }
 
-/*
- * @tc.name: OHDrawingSetTypographyTextTrailingSpaceOptimized001
- * @tc.desc: test for setting the different value of trailingSpaceOptimized and improve code coverage
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingSetTypographyTextTrailingSpaceOptimized001
+ * @tc.number OHDrawingSetTypographyTextTrailingSpaceOptimized001
+ * @tc.desc   test for setting the different value of trailingSpaceOptimized and improve code coverage
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingSetTypographyTextTrailingSpaceOptimized001, Function | MediumTest | Level0)
 {
@@ -331,13 +373,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingSetTypographyTextTrailingSpaceOptimize
     PrepareWorkForAlignmentTest();
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyUpdateDecorationColor_001
- * @tc.name  : OHDrawingTypographyUpdateDecorationColor001
- * @tc.desc  : test for updating the decoration color
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingTypographyUpdateDecorationColor001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyUpdateDecorationColor_001
+ * @tc.desc   test for updating the decoration color
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdateDecorationColor001, Function | MediumTest | Level0)
 {
@@ -352,13 +394,13 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdateDecorationColor001, Fu
     }
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_SetTypographyVerticalAlignment_001
- * @tc.name  : OHDrawingSetTypographyVerticalAlignment001
- * @tc.desc  : Test for vertical align valid params
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingSetTypographyVerticalAlignment001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_SetTypographyVerticalAlignment_001
+ * @tc.desc   Test for vertical align valid params
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTypographyUpdate, OHDrawingSetTypographyVerticalAlignment001, Function | MediumTest | Level0)
 {

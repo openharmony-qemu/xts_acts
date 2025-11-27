@@ -18,12 +18,12 @@ import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 export default function ErrorCodeWindowTest() {
   describe('ErrorCodeWindowTest', () => {
     /**
-     * @tc.number  : SUB_OH_Drawing_BufferErrorCodeWindow_0100
-     * @tc.name    : SUB_OH_Drawing_BufferErrorCodeWindow_0100
-     * @tc.desc    : test SUB_OH_Drawing_BufferErrorCodeWindow ok Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BufferErrorCodeWindow_0100
+     * @tc.number SUB_OH_Drawing_BufferErrorCodeWindow_0100
+     * @tc.desc   test SUB_OH_Drawing_BufferErrorCodeWindow ok Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BufferErrorCodeWindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -40,12 +40,12 @@ export default function ErrorCodeWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeWindowBuffer_0200
-     * @tc.name    : SUB_OH_OHNativeErrorCodeWindowBuffer_0200
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeWindowBuffer invalid Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeWindowBuffer_0200
+     * @tc.number SUB_OH_OHNativeErrorCodeWindowBuffer_0200
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeWindowBuffer invalid Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeWindowBuffer_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -62,12 +62,12 @@ export default function ErrorCodeWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeWindowNo_0300
-     * @tc.name    : SUB_OH_OHNativeErrorCodeWindowNo_0300
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeWindow return NoBuffer Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeWindowNo_0300
+     * @tc.number SUB_OH_OHNativeErrorCodeWindowNo_0300
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeWindow return NoBuffer Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeWindowNo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -84,12 +84,12 @@ export default function ErrorCodeWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindow_ErrCode_0400
-     * @tc.name    : SUB_OH_NativeWindow_ErrCode_0400
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeWindow return BUFFER_STATE_INVALID Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindow_ErrCode_0400
+     * @tc.number SUB_OH_NativeWindow_ErrCode_0400
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeWindow return BUFFER_STATE_INVALID Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeWindow_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -106,12 +106,12 @@ export default function ErrorCodeWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ErrorCodeWindowInvalid_0400
-     * @tc.name    : SUB_OH_ErrorCodeWindowInvalid_0400
-     * @tc.desc    : test SUB_OH_ErrorCodeWindowInvalid_0400 return BUFFER_STATE_INVALID Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ErrorCodeWindowInvalid_0400
+     * @tc.number SUB_OH_ErrorCodeWindowInvalid_0400
+     * @tc.desc   test SUB_OH_ErrorCodeWindowInvalid_0400 return BUFFER_STATE_INVALID Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_ErrorCodeWindowInvalid_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

@@ -286,12 +286,12 @@ export default function TextTextLineTest() {
     })
 
     /**
-     * @tc.number     testGetTextLinesStatic
-     * @tc.name       testGetTextLinesStatic
-     * @tc.desc       To test method getTextLine font paragraph.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      LEVEL1
+     * @tc.name   testGetTextLinesStatic
+     * @tc.number testGetTextLinesStatic
+     * @tc.desc   To test method getTextLine font paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTextLinesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

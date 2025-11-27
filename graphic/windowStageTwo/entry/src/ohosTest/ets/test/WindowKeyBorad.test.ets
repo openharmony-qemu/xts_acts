@@ -90,12 +90,12 @@ export default function windowKeyBorad() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0100
-     * @tc.name      : testMainWindow_onKeyboradWillShow
-     * @tc.desc      : 主窗监听onKeyboardWillShow后拉起固定态输入法键盘触发回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_onKeyboradWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0100
+     * @tc.desc   主窗监听onKeyboardWillShow后拉起固定态输入法键盘触发回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_onKeyboradWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_onKeyboradWillShow ';
@@ -156,12 +156,12 @@ export default function windowKeyBorad() {
     
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0400
-     * @tc.name      : testSubWindowDestroy_onKeyboradWillShow
-     * @tc.desc      : 子窗销毁后监听onKeyboardWillShow返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_onKeyboradWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0400
+     * @tc.desc   子窗销毁后监听onKeyboardWillShow返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_onKeyboradWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_onKeyboradWillShow ';
@@ -191,12 +191,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0500
-     * @tc.name      : testSubWindowDestroy_offKeyboradWillShow
-     * @tc.desc      : 子窗销毁后取消监听offKeyboardWillShow返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_offKeyboradWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0500
+     * @tc.desc   子窗销毁后取消监听offKeyboardWillShow返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_offKeyboradWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_offKeyboradWillShow ';
@@ -226,12 +226,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0100
-     * @tc.name      : testMainWindow_onkeyboardWillHide
-     * @tc.desc      : 主窗监听onKeyboardWillHide后隐藏固定态输入法键盘触发回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_onkeyboardWillHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0100
+     * @tc.desc   主窗监听onKeyboardWillHide后隐藏固定态输入法键盘触发回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_onkeyboardWillHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_onkeyboardWillHide ';
@@ -296,12 +296,12 @@ export default function windowKeyBorad() {
     
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0400
-     * @tc.name      : testSubWindowDestroy_onkeyboardWillHide
-     * @tc.desc      : 子窗销毁后监听onKeyboardWillHide返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_onkeyboardWillHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0400
+     * @tc.desc   子窗销毁后监听onKeyboardWillHide返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_onkeyboardWillHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_onkeyboardWillHide ';
@@ -331,12 +331,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0500
-     * @tc.name      : testSubWindowDestroy_offkeyboardWillHide
-     * @tc.desc      : 子窗销毁后取消监听offKeyboardWillHide返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_offkeyboardWillHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0500
+     * @tc.desc   子窗销毁后取消监听offKeyboardWillHide返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_offkeyboardWillHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_offkeyboardWillHide ';
@@ -366,12 +366,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0100
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes
-     * @tc.desc      : 主窗注册2次输入法键盘显示隐藏验证回调2次
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0100
+     * @tc.desc   主窗注册2次输入法键盘显示隐藏验证回调2次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes ';
@@ -436,12 +436,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0200
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes
-     * @tc.desc      : 主窗注册2次输入法键盘显示隐藏后取消其中一个监听验证回调1次
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0200
+     * @tc.desc   主窗注册2次输入法键盘显示隐藏后取消其中一个监听验证回调1次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes ';
@@ -509,12 +509,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0300
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll
-     * @tc.desc      : 主窗注册2次输入法键盘显示隐藏后取消所有监听验证无法触发回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0300
+     * @tc.desc   主窗注册2次输入法键盘显示隐藏后取消所有监听验证无法触发回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll ';
@@ -580,12 +580,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0400
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow
-     * @tc.desc      : 主窗注册输入法键盘显示隐藏后可监听多个输入框拉起固定键盘的显示隐藏
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0400
+     * @tc.desc   主窗注册输入法键盘显示隐藏后可监听多个输入框拉起固定键盘的显示隐藏
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow ';
@@ -647,12 +647,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : testWindowAnimationCurve_0100
-     * @tc.name      : testWindowAnimationCurveEnum
-     * @tc.desc      : Test the function value of WindowAnimationCurve
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowAnimationCurveEnum
+     * @tc.number testWindowAnimationCurve_0100
+     * @tc.desc   Test the function value of WindowAnimationCurve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindowAnimationCurveEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testWindowAnimationCurveEnum';

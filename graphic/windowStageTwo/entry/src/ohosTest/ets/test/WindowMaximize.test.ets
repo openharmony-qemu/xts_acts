@@ -76,12 +76,12 @@ export default function windowMaximizeTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name      : testPresentationDefaultArgs
-     * @tc.desc      : test the function of testPresentationDefaultArgs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationDefaultArgs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   test the function of testPresentationDefaultArgs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationDefaultArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const message = 'TestPresentationDefaultArgs';
@@ -110,12 +110,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
-     * @tc.name      : testPresentationEnterImmersive
-     * @tc.desc      : test the function of testPresentationEnterImmersive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationEnterImmersive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+     * @tc.desc   test the function of testPresentationEnterImmersive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationEnterImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const message = 'TestPresentationEnterImmersive';
@@ -144,12 +144,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
-     * @tc.name      : testPresentationExitImmersive
-     * @tc.desc      : test the function of testPresentationExitImmersive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationExitImmersive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
+     * @tc.desc   test the function of testPresentationExitImmersive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationExitImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationExitImmersive';
@@ -180,12 +180,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
-     * @tc.name      : testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue';
@@ -223,12 +223,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-     * @tc.name      : testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse';
@@ -260,12 +260,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
-     * @tc.name      : testPresentationFollowAppImmersiveInLayoutFullScreenTrue
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInLayoutFullScreenTrue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationFollowAppImmersiveInLayoutFullScreenTrue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInLayoutFullScreenTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationFollowAppImmersiveInLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInLayoutFullScreenTrue';
@@ -297,12 +297,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
-     * @tc.name      : testPresentationFollowAppImmersiveInLayoutFullScreenFalse
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInLayoutFullScreenFalse
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInLayoutFullScreenFalse
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInLayoutFullScreenFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInLayoutFullScreenFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInLayoutFullScreenFalse';
@@ -334,12 +334,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
-     * @tc.name      : testPresentationFollowAppImmersiveInSetImmersiveModeTrue
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInSetImmersiveModeTrue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationFollowAppImmersiveInSetImmersiveModeTrue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInSetImmersiveModeTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationFollowAppImmersiveInSetImmersiveModeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInSetImmersiveModeTrue';
@@ -377,12 +377,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-     * @tc.name      : testPresentationFollowAppImmersiveInSetImmersiveModeFalse
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInSetImmersiveModeFalse
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInSetImmersiveModeFalse
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInSetImmersiveModeFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInSetImmersiveModeFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInSetImmersiveModeFalse';
@@ -414,12 +414,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-     * @tc.name      : testPresentationFollowAppImmersiveInMaximize
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInMaximize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInMaximize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInMaximize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInMaximize';
@@ -452,13 +452,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-    * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0100
-    * @tc.name      : testSetTitleAndDockHoverShow_subWindow_1300004
-    * @tc.desc      : testSetTitleAndDockHoverShow_subWindow_1300004
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_subWindow_1300004
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0100
+     * @tc.desc   testSetTitleAndDockHoverShow_subWindow_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetTitleAndDockHoverShow_subWindow_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_subWindow_1300004';
       try {
@@ -509,13 +509,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0200
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_hide_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : LEVEL0
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_hide_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0200
+     * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_hide_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetTitleAndDockHoverShow_Title_show_dock_hide_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_1';
       try {
@@ -561,13 +561,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0300
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_hide_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : LEVEL0
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_hide_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0300
+     * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_hide_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetTitleAndDockHoverShow_Title_show_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_2';
       try {
@@ -613,13 +613,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0400
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_hide_3
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_hide_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0400
+     * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_hide_3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetTitleAndDockHoverShow_Title_show_dock_hide_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_3';
       try {
@@ -665,13 +665,13 @@ export default function windowMaximizeTest() {
       }
     })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0500
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0500
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_1';
   try {
@@ -718,13 +718,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_1', TestType.FUNCTION | Si
 })
 
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0600
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : LEVEL0
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0600
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_2';
   try {
@@ -751,13 +751,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_2', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0700
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0700
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_3';
   try {
@@ -797,13 +797,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_3', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0800
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0800
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_4';
   try {
@@ -842,13 +842,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_4', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0900
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0900
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_5';
   try {
@@ -888,13 +888,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_5', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1000
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_show_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_show_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1000
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_1';
   try {
@@ -940,13 +940,13 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1100
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1100
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_1';
   try {
@@ -992,13 +992,13 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1200
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_2
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1200
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_show_dock_show_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_2';
   try {
@@ -1044,13 +1044,13 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_2', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1300
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_show
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_show
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_show
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1300
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_show
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_show', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_show';
   try {
@@ -1097,13 +1097,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show', TestType.FUNCTION | Size
 })
 
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1400
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_show_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_show_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_show_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1400
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_show_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_show_1';
   try {
@@ -1149,13 +1149,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1500
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_show_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_show_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_show_2
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1500
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_show_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_show_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_show_2';
   try {
@@ -1202,13 +1202,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show_2', TestType.FUNCTION | Si
 })
 
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1600
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_status
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_status
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_status
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1600
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_status
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_status';
   try {
@@ -1255,12 +1255,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
 })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_MaximizeSupported_0100
-     * @tc.name      : test_MaximizeSupported_0100
-     * @tc.desc      : test_MaximizeSupported_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_MaximizeSupported_0100
+     * @tc.number SUB_BASIC_WMS_MaximizeSupported_0100
+     * @tc.desc   test_MaximizeSupported_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_MaximizeSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_MaximizeSupported_0100';
@@ -1305,12 +1305,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_MaximizeSupported_0200
-     * @tc.name      : test_MaximizeSupported_0200
-     * @tc.desc      : test_MaximizeSupported_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_MaximizeSupported_0200
+     * @tc.number SUB_BASIC_WMS_MaximizeSupported_0200
+     * @tc.desc   test_MaximizeSupported_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_MaximizeSupported_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_MaximizeSupported_0200';
@@ -1355,12 +1355,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_MaximizeSupported_0300
-     * @tc.name      : test_MaximizeSupported_0300
-     * @tc.desc      : test_MaximizeSupported_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_MaximizeSupported_0300
+     * @tc.number SUB_BASIC_WMS_MaximizeSupported_0300
+     * @tc.desc   test_MaximizeSupported_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_MaximizeSupported_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_MaximizeSupported_0300';
