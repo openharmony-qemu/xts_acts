@@ -21,7 +21,6 @@ const TAG =  'readPixelsToBufferSync';
 
 export default function sendableReadPixelsToBufferSyncTest() {
   describe('sendableReadPixelsToBufferSyncTest', () => {
-
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       AppStorage.setOrCreate('undefined', undefined)

@@ -18,6 +18,7 @@ import { image } from '@kit.ImageKit';
 import { describe, it, expect, Level, beforeAll, afterEach, afterAll, beforeEach } from '@ohos/hypium';
 const TAG = 'PixelMapReadPixels';
 
+
 export default function sendableReadPixelsTest() {
   describe('sendableReadPixelsTest', () => {
     beforeAll(async () => {

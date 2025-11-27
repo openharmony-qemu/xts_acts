@@ -18,6 +18,7 @@ import { image } from '@kit.ImageKit';
 import { describe, it, expect, Level, beforeAll, afterEach, afterAll, beforeEach } from '@ohos/hypium';
 const TAG = 'PixelMapWritePixelsSupp';
 
+
 export default function sendableWritePixelsTest() {
   describe('sendableWritePixelsTest', () => {
     beforeAll(async () => {

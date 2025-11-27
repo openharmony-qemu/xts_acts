@@ -22,7 +22,6 @@ import fs from '@ohos.file.fs';
 const TAG = 'getPropertiesTestSupp'
 let fdNumber: number;
 
-
 async function getFd(fileName: string) {
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let basePath = context.filesDir;

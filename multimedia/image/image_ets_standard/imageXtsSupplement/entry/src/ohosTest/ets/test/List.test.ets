@@ -109,8 +109,21 @@ import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirPa
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
-import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
+import getImagePropertiesTest from './image/ImageSourceGetImagePropertiesTest.test';
+import getPropertiesTest from './image/MetaDataGetPropertiesTest.test';
+import setPropertiesTest from './image/MetaDataSetPropertiesTest.test';
+import PixelMapMarshallingTest from './sendableImage/SendableImagePixelMapMarshallingTest.test';
+import sendableReadPixelsSyncTest from './sendableImage/SendableImagePixelMapReadPixelsSyncTest.test';
+import sendableReadPixelsTest from './sendableImage/SendableImagePixelMapReadPixelsTest.test';
+import sendableReadPixelsToBufferSyncTest from './sendableImage/SendableImagePixelMapReadPixelsToBufferSyncTest.test';
+import sendablePixelMapReadPixelsToBufferTest from './sendableImage/SendableImagePixelMapReadPixelsToBufferTest.test';
+import sendablePixelMapWriteBufferToPixelsSyncTest
+  from './sendableImage/SendableImagePixelMapWriteBufferToPixelsSyncTest.test';
+import sendablePixelMapWriteBufferToPixelsTest from './sendableImage/SendableImagePixelMapWriteBufferToPixelsTest.test';
+import sendableWritePixelsSyncTest from './sendableImage/SendableImagePixelMapWritePixelsSyncTest.test';
+import sendableWritePixelsTest from './sendableImage/SendableImagePixelMapWritePixelsTest.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
+import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -210,6 +223,7 @@ export default function testsuite() {
   modifyImagePropertyValueTest();
   ImagePictureSetAuxiliaryPictureTest();
   ImagePixelMapCropTest();
+
   getImagePropertiesTest();
   getPropertiesTest();
   setPropertiesTest();
@@ -222,4 +236,5 @@ export default function testsuite() {
   sendablePixelMapWriteBufferToPixelsTest();
   sendableWritePixelsSyncTest();
   sendableWritePixelsTest();
+
 }

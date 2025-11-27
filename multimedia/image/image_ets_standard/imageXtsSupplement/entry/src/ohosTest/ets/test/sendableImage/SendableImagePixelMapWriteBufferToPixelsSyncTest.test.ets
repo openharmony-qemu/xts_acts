@@ -23,7 +23,6 @@ const TAG = 'writeBufferToPixelsSyncSupp';
 
 export default function sendablePixelMapWriteBufferToPixelsSyncTest() {
   describe('sendablePixelMapWriteBufferToPixelsSyncTest', () => {
-
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       AppStorage.setOrCreate('undefined', undefined)

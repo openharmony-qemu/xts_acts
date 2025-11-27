@@ -22,7 +22,6 @@ import fileio from '@ohos.fileio'
 const TAG = 'PixelMapMarshallingSupp';
 
 
-
 async function marshallingTest(done: Function, testName: string ,callback :(pixelMap: image.PixelMap) => void) {
   const readBuffer = new ArrayBuffer(96);
   const opts: image.InitializationOptions = {

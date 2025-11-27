@@ -23,7 +23,6 @@ const TAG = 'readPixelsToBufferSupp';
 
 export default function sendablePixelMapReadPixelsToBufferTest() {
   describe('sendableReadPixelsToBufferTest', () => {
-
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       AppStorage.setOrCreate('undefined', undefined)

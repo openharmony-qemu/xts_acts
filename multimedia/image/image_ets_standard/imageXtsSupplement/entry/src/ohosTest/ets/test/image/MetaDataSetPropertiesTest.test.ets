@@ -58,7 +58,6 @@ async function setPropertiesAbnormalPromiseTest(done: Function, testName: string
 
 export default function setPropertiesTest() {
   describe('setPropertiesTest', () => {
-
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       AppStorage.setOrCreate('emptyString', '')
