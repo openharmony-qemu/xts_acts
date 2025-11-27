@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { SwiperContentInfo } from '@kit.ArkUI';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/utils/Common';
 import {
