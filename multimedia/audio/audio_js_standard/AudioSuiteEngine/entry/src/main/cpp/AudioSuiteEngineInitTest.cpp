@@ -186,7 +186,7 @@ static napi_value AudioSuiteNodeBuilderSetNodeTypeTest_0001(napi_env env, napi_c
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
         <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
     OH_AudioSuiteNodeBuilder_Create(&audioNodeBuilder);
-    for (auto setNodeType : static_cast<OH_AudioNode_Type>(audioNodeTypeTest)) {
+    for (const auto setNodeType : audioNodeTypeTest) {
         OH_AudioSuite_Result result = OH_AudioSuiteNodeBuilder_SetNodeType(audioNodeBuilder, setNodeType);
         if (result != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
@@ -589,29 +589,29 @@ static napi_value Init(napi_env env, napi_value exports)
         nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngineDestroyTest_0003", nullptr, AudioSuiteEngineDestroyTest_0003,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetNodeTypeTest_0001", nullptr, AudioSuiteNodeBuilderSetNodeType_0001,
+        { "AudioSuiteNodeBuilderSetNodeTypeTest_0001", nullptr, AudioSuiteNodeBuilderSetNodeTypeTest_0001,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetNodeTypeTest_0002", nullptr, AudioSuiteNodeBuilderSetNodeType_0002,
+        { "AudioSuiteNodeBuilderSetNodeTypeTest_0002", nullptr, AudioSuiteNodeBuilderSetNodeTypeTest_0002,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0001", nullptr, AudioSuiteNodeBuilderSetFormat_0001,
+        { "AudioSuiteNodeBuilderSetFormatTest_0001", nullptr, AudioSuiteNodeBuilderSetFormatTest_0001,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0002", nullptr, AudioSuiteNodeBuilderSetFormat_0002,
+        { "AudioSuiteNodeBuilderSetFormatTest_0002", nullptr, AudioSuiteNodeBuilderSetFormatTest_0002,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0003", nullptr, AudioSuiteNodeBuilderSetFormat_0003,
+        { "AudioSuiteNodeBuilderSetFormatTest_0003", nullptr, AudioSuiteNodeBuilderSetFormatTest_0003,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0004", nullptr, AudioSuiteNodeBuilderSetFormat_0004,
+        { "AudioSuiteNodeBuilderSetFormatTest_0004", nullptr, AudioSuiteNodeBuilderSetFormatTest_0004,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0005", nullptr, AudioSuiteNodeBuilderSetFormat_0005,
+        { "AudioSuiteNodeBuilderSetFormatTest_0005", nullptr, AudioSuiteNodeBuilderSetFormatTest_0005,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0006", nullptr, AudioSuiteNodeBuilderSetFormat_0006,
+        { "AudioSuiteNodeBuilderSetFormatTest_0006", nullptr, AudioSuiteNodeBuilderSetFormatTest_0006,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0007", nullptr, AudioSuiteNodeBuilderSetFormat_0007,
+        { "AudioSuiteNodeBuilderSetFormatTest_0007", nullptr, AudioSuiteNodeBuilderSetFormatTest_0007,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "AudioSuiteNodeBuilderSetFormatTest_0008", nullptr, AudioSuiteNodeBuilderSetFormat_0008,
+        { "AudioSuiteNodeBuilderSetFormatTest_0008", nullptr, AudioSuiteNodeBuilderSetFormatTest_0008,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "InputNodeRequestDataCallbackTest_0001", nullptr, InputNodeRequestDataCallback_0001,
+        { "InputNodeRequestDataCallbackTest_0001", nullptr, InputNodeRequestDataCallbackTest_0001,
         nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "InputNodeRequestDataCallbackTest_0002", nullptr, InputNodeRequestDataCallback_0002,
+        { "InputNodeRequestDataCallbackTest_0002", nullptr, InputNodeRequestDataCallbackTest_0002,
         nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
