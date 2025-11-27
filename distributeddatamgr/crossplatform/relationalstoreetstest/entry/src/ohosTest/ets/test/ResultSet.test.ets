@@ -89,7 +89,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetColumnNames001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0550
      * @tc.desc   ResultSet columnNames test
@@ -112,7 +111,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetColumnCount001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0530
      * @tc.desc   ResultSet columnCount test
@@ -135,7 +133,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetColumnCount002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0540
      * @tc.desc   ResultSet columnCount test
@@ -159,7 +156,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetRowCount001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1070
      * @tc.desc   ResultSet rowCount test
@@ -180,7 +176,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetRowCount002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0470
      * @tc.desc   ResultSet rowCount test
@@ -202,7 +197,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetRowCount003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0480
      * @tc.desc   ResultSet rowCount test
@@ -224,7 +218,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetRowCount004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1090
      * @tc.desc   ResultSet rowCount test
@@ -247,7 +240,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetRowIndex001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0220
      * @tc.desc   ResultSet rowIndex test
@@ -280,7 +272,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetRowIndex002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0310
      * @tc.desc   ResultSet rowIndex test
@@ -309,7 +300,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtFirstRow001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0940
      * @tc.desc   ResultSet isAtFirstRow test
@@ -342,7 +332,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtFirstRow002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0450
      * @tc.desc   ResultSet isAtFirstRow test
@@ -365,7 +354,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtFirstRow003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0160
      * @tc.desc   ResultSet isAtFirstRow test
@@ -399,7 +387,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtFirstRow004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0290
      * @tc.desc   ResultSet isAtFirstRow test
@@ -428,7 +415,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtFirstRow005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0360
      * @tc.desc   ResultSet isAtFirstRow test
@@ -462,7 +448,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtFirstRow006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0340
      * @tc.desc   ResultSet isAtFirstRow test
@@ -496,7 +481,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtLastRow001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0960
      * @tc.desc   ResultSet isAtLastRow test
@@ -525,7 +509,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtLastRow002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0460
      * @tc.desc   ResultSet isAtLastRow test
@@ -548,7 +531,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtLastRow003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0140
      * @tc.desc   ResultSet isAtLastRow test
@@ -582,7 +564,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtLastRow004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0200
      * @tc.desc   ResultSet isAtLastRow test
@@ -615,7 +596,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtLastRow005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0370
      * @tc.desc   ResultSet isAtLastRow test
@@ -649,7 +629,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsAtLastRow006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0350
      * @tc.desc   ResultSet isAtLastRow test
@@ -682,7 +661,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsEnded001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0210
      * @tc.desc   ResultSet isEnded test
@@ -718,7 +696,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsEnded002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0300
      * @tc.desc   ResultSet isEnded test
@@ -745,7 +722,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsEnded003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0330
      * @tc.desc   ResultSet isEnded test
@@ -766,7 +742,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsStarted001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0500
      * @tc.desc   ResultSet isStarted test
@@ -786,7 +761,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsStarted002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0120
      * @tc.desc   ResultSet isStarted test
@@ -807,7 +781,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsStarted003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0380
      * @tc.desc   ResultSet isStarted test
@@ -830,7 +803,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsClosed001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0110
      * @tc.desc   ResultSet isClosed test
@@ -853,7 +825,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsClosed002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0490
      * @tc.desc   ResultSet isClosed test
@@ -874,7 +845,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsClosed003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0390
      * @tc.desc   ResultSet isClosed test
@@ -896,7 +866,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetColumnIndex001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0660
      * @tc.desc   ResultSet getColumnIndex test
@@ -920,7 +889,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetColumnIndex002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0670
      * @tc.desc   ResultSet getColumnIndex test
@@ -944,7 +912,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetColumnIndex003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0650
      * @tc.desc   ResultSet getColumnIndex test
@@ -967,7 +934,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetColumnName001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0690
      * @tc.desc   ResultSet getColumnName test
@@ -992,7 +958,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetColumnName002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0710
      * @tc.desc   ResultSet getColumnName test
@@ -1018,7 +983,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetColumnName003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0680
      * @tc.desc   ResultSet getColumnName test
@@ -1042,7 +1006,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetColumnName004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0700
      * @tc.desc   ResultSet getColumnName test
@@ -1067,7 +1030,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoTo001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0130
      * @tc.desc   ResultSet goTo test
@@ -1094,7 +1056,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoTo002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0100
      * @tc.desc   ResultSet goTo test
@@ -1120,7 +1081,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoTo003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0170
      * @tc.desc   ResultSet goTo test
@@ -1148,7 +1108,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoTo004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0240
      * @tc.desc   ResultSet goTo test
@@ -1176,7 +1135,6 @@ export default function rdbResultSetTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToRow001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0190
      * @tc.desc   ResultSet goToRow test
@@ -1204,7 +1162,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToRow002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0440
      * @tc.desc   ResultSet goToRow test
@@ -1232,7 +1189,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToRow003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0230
      * @tc.desc   ResultSet goToRow test
@@ -1262,7 +1218,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToRow004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0280
      * @tc.desc   ResultSet goToRow test
@@ -1291,7 +1246,6 @@ export default function rdbResultSetTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToFirstRow001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0950
      * @tc.desc   ResultSet goToFirstRow test
@@ -1314,7 +1268,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToFirstRow002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0400
      * @tc.desc   ResultSet goToFirstRow test
@@ -1337,7 +1290,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToFirstRow003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0150
      * @tc.desc   ResultSet goToFirstRow test
@@ -1362,7 +1314,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToLastRow001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0970
      * @tc.desc   ResultSet goToLastRow test
@@ -1385,7 +1336,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToLastRow002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0410
      * @tc.desc   ResultSet goToLastRow test
@@ -1408,7 +1358,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToLastRow003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0250
      * @tc.desc   ResultSet goToLastRow test
@@ -1433,7 +1382,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToNextRow001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0980
      * @tc.desc   ResultSet goToNextRow test
@@ -1455,7 +1403,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToNextRow002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0420
      * @tc.desc   ResultSet goToNextRow test
@@ -1477,7 +1424,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToNextRow003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1080
      * @tc.desc   ResultSet goToNextRow test
@@ -1502,7 +1448,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToNextRow004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0260
      * @tc.desc   ResultSet goToNextRow test
@@ -1524,7 +1469,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToPreviousRow001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0510
      * @tc.desc   ResultSet goToPreviousRow test
@@ -1545,7 +1489,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToPreviousRow002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0430
      * @tc.desc   ResultSet goToPreviousRow test
@@ -1567,7 +1510,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToPreviousRow003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0180
      * @tc.desc   ResultSet goToPreviousRow test
@@ -1592,7 +1534,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGoToPreviousRow004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0270
      * @tc.desc   ResultSet goToPreviousRow test
@@ -1616,7 +1557,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetBlob001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0600
      * @tc.desc   ResultSet getBlob test
@@ -1649,7 +1589,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetBlob002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0610
      * @tc.desc   ResultSet getBlob test
@@ -1683,7 +1622,6 @@ export default function rdbResultSetTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetString001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0850
      * @tc.desc   ResultSet getString test
@@ -1712,7 +1650,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetString002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0860
      * @tc.desc   ResultSet getString test
@@ -1741,7 +1678,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetString003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0880
      * @tc.desc   ResultSet getString test
@@ -1770,7 +1706,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetString004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0870
      * @tc.desc   ResultSet getString test
@@ -1803,7 +1738,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetLong001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0840
      * @tc.desc   ResultSet getLong test
@@ -1834,7 +1768,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetLong002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0790
      * @tc.desc   ResultSet getLong test
@@ -1864,7 +1797,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetLong003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0800
      * @tc.desc   ResultSet getLong test
@@ -1894,7 +1826,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetLong004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0820
      * @tc.desc   ResultSet getLong test null
@@ -1924,7 +1855,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetLong005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0810
      * @tc.desc   ResultSet getLong test err parameter
@@ -1954,7 +1884,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetLong006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0830
      * @tc.desc   ResultSet getLong test err typr parameter
@@ -1985,7 +1914,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetDouble001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0730
      * @tc.desc   ResultSet getDouble test
@@ -2011,7 +1939,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetDouble002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0750
      * @tc.desc   ResultSet getDouble test
@@ -2037,7 +1964,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetDouble003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0740
      * @tc.desc   ResultSet getDouble test
@@ -2063,7 +1989,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetDouble004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0720
      * @tc.desc   ResultSet getDouble test
@@ -2089,7 +2014,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetDouble005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0770
      * @tc.desc   ResultSet getDouble test null
@@ -2122,7 +2046,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetDouble006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0760
      * @tc.desc   ResultSet getDouble test
@@ -2155,7 +2078,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetGetDouble007
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0780
      * @tc.desc   ResultSet getDouble test err type parameter
@@ -2188,7 +2110,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsColumnNull001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1060
      * @tc.desc   ResultSet isColumnNull test
@@ -2216,7 +2137,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsColumnNull002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1010
      * @tc.desc   ResultSet isColumnNull test
@@ -2242,7 +2162,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsColumnNull003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1030
      * @tc.desc   ResultSet isColumnNull test
@@ -2269,7 +2188,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsColumnNull004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1040
      * @tc.desc   ResultSet isColumnNull test null
@@ -2301,7 +2219,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsColumnNull005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1020
      * @tc.desc   ResultSet isColumnNull test err parameter
@@ -2333,7 +2250,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetIsColumnNull006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1050
      * @tc.desc   ResultSet isColumnNull test err type parameter
@@ -2366,7 +2282,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetClose001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0320
      * @tc.desc   ResultSet close test
@@ -2390,7 +2305,6 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testResultSetClose002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0520
      * @tc.desc   ResultSet close test

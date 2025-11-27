@@ -33,7 +33,6 @@ export default function error14800030Test() {
   describe('error14800030Test', () => {
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0100
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0100
      * @tc.desc   Verify the properties of the text type
@@ -151,7 +150,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0200
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0200
      * @tc.desc   Verify the properties of the text type
@@ -262,7 +260,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0300
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0300
      * @tc.desc   Verify the properties of the text type
@@ -328,7 +325,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0400
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0400
      * @tc.desc   Verify the properties of the text type
@@ -422,7 +418,6 @@ export default function error14800030Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0500
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0500
      * @tc.desc   Verify the properties of the text type
@@ -480,7 +475,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0600
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0600
      * @tc.desc   Verify the properties of the text type
@@ -518,7 +512,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0700
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0700
      * @tc.desc   Verify the properties of the text type
@@ -557,7 +550,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1400
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1400
      * @tc.desc   Verify the properties of the text type
@@ -598,7 +590,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0800
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0800
      * @tc.desc   Verify the properties of the text type
@@ -718,7 +709,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0900
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_0900
      * @tc.desc   Verify the properties of the text type
@@ -764,7 +754,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1000
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1000
      * @tc.desc   Verify the properties of the text type
@@ -823,7 +812,6 @@ export default function error14800030Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1100
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1100
      * @tc.desc   Verify the properties of the text type
@@ -889,7 +877,6 @@ export default function error14800030Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1200
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1200
      * @tc.desc   Verify the properties of the text type
@@ -931,7 +918,6 @@ export default function error14800030Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1300
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800030Test_1300
      * @tc.desc   Verify the properties of the text type

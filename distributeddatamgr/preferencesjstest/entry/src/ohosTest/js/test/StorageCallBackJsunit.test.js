@@ -43,7 +43,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testClear0012
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0400
          * @tc.desc   clear callback interface test
@@ -61,7 +60,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0032
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1600
          * @tc.desc   has string callback interface test
@@ -78,7 +76,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0033
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1400
          * @tc.desc   has int callback interface test
@@ -95,7 +92,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0034
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1300
          * @tc.desc   has float callback interface test
@@ -112,7 +108,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0035
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1500
          * @tc.desc   has long callback interface test
@@ -129,7 +124,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0036
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1200
          * @tc.desc   has boolean callback interface test
@@ -146,7 +140,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0037
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_2300
          * @tc.desc   has string callback interface test
@@ -162,7 +155,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetDefValue0062
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0700
          * @tc.desc   get defaultValue callback interface test
@@ -179,7 +171,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetFloat0072
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0800
          * @tc.desc   get float callback interface test
@@ -197,7 +188,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetInt0082
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0900
          * @tc.desc   get int callback interface test
@@ -215,7 +205,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetLong0092
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1000
          * @tc.desc   get long callback interface test
@@ -234,7 +223,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetString102
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1100
          * @tc.desc   get String callback interface test
@@ -253,7 +241,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutBoolean0122
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1800
          * @tc.desc   put boolean callback interface test
@@ -272,7 +259,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutFloat0132
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1900
          * @tc.desc   put float callback interface test
@@ -291,7 +277,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutInt0142
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_2000
          * @tc.desc   put int callback interface test
@@ -310,7 +295,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutLong0152
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_2100
          * @tc.desc   put long callback interface test
@@ -330,7 +314,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutString0162
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_2200
          * @tc.desc   put String callback interface test
@@ -349,7 +332,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testFluesh00172
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0200
          * @tc.desc   flush callback interface test
@@ -367,7 +349,6 @@ export default function storageCallBackTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testCallback0172
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0300
          * @tc.desc   flush String callback interface test
@@ -416,7 +397,6 @@ export default function storageCallBackTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDelete0182
          * @tc.number testDelete0182
          * @tc.desc   testDelete0182
@@ -434,7 +414,6 @@ export default function storageCallBackTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetDefValue0192
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_1700
          * @tc.desc   get defaultValue callback interface test

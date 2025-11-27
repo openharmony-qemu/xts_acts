@@ -21,7 +21,6 @@ import { BusinessError } from '@ohos.base';
 export default function UtdfileNameTest() {
   describe('UtdfileNameTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0010
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .bmp
@@ -37,7 +36,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0020
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ico
@@ -53,7 +51,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1290
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .doc
@@ -69,7 +66,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0030
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .xls
@@ -85,7 +81,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0040
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ppt
@@ -101,7 +96,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0050
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wav
@@ -117,7 +111,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0060
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wave
@@ -133,7 +126,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0070
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wm
@@ -148,7 +140,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.WINDOWS_MEDIA_WM);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0080
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wmv
@@ -163,7 +154,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.WINDOWS_MEDIA_WMV);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0090
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wmp"
@@ -178,7 +168,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.WINDOWS_MEDIA_WMP);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0100
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wma
@@ -194,7 +183,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0110
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wmx
@@ -209,7 +197,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.WINDOWS_MEDIA_WMX);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0120
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wvx
@@ -225,7 +212,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0130
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .wax
@@ -241,7 +227,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0140
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pdf
@@ -256,7 +241,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PDF);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0150
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ps
@@ -272,7 +256,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0160
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .eps
@@ -288,7 +271,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0170
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .psd
@@ -304,7 +286,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0180
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ai
@@ -320,7 +301,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0190
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pfb
@@ -336,7 +316,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0200
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pfa
@@ -352,7 +331,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0210
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .exe
@@ -367,7 +345,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PORTABLE_EXECUTABLE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0220
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .dll
@@ -382,7 +359,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PORTABLE_EXECUTABLE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0230
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .class
@@ -399,7 +375,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0240
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .jar
@@ -415,7 +390,6 @@ export default function UtdfileNameTest() {
 
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0250
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .gtar
@@ -431,7 +405,6 @@ export default function UtdfileNameTest() {
 
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0260
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .gz
@@ -447,7 +420,6 @@ export default function UtdfileNameTest() {
 
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0270
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .gzip
@@ -463,7 +435,6 @@ export default function UtdfileNameTest() {
 
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0280
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .tgz
@@ -478,7 +449,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.GNU_ZIP_TAR_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0290
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .mobi
@@ -493,7 +463,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.MOBI);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0300
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .azw
@@ -508,7 +477,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AZW);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1300
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .azw3
@@ -523,7 +491,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AZW3);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0310
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .kfx
@@ -538,7 +505,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.KFX);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0320
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .tga
@@ -553,7 +519,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.TGA_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0330
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .sgi
@@ -568,7 +533,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.SGI_IMAGE)
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0340
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .exr
@@ -583,7 +547,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENEXR_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0350
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .fpx
@@ -598,7 +561,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.FLASHPIX_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0360
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .jfx
@@ -613,7 +575,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JFX_FAX);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0370
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .efx
@@ -628,7 +589,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.EFX_FAX);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0380
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .sd2
@@ -643,7 +603,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.SD2_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0390
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .rm
@@ -658,7 +617,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.REALMEDIA);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0400
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ra
@@ -673,7 +631,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.REALAUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0410
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ram
@@ -688,7 +645,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.REALAUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0420
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .smil
@@ -703,7 +659,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.SMIL);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0430
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .sitx
@@ -718,7 +673,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.STUFFIT_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0440
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .sit
@@ -734,7 +688,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0450
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .docx
@@ -749,7 +702,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.WORDPROCESSINGML_DOCUMENT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0460
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .docm
@@ -764,7 +716,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.wordprocessingml.document.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0470
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .xlsx
@@ -779,7 +730,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.SPREADSHEETML_SHEET);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0480
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .xlsm
@@ -794,7 +744,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.sheet.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0490
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pptx
@@ -809,7 +758,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PRESENTATIONML_PRESENTATION);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0500
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pptx
@@ -825,7 +773,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0510
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .odt
@@ -840,7 +787,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_TEXT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0520
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .fodt
@@ -855,7 +801,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_TEXT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0530
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ods
@@ -870,7 +815,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_SPREADSHEET);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0540
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .fods
@@ -885,7 +829,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_SPREADSHEET);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0550
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .odp
@@ -900,7 +843,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_PRESENTATION);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0560
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .fodp
@@ -915,7 +857,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_PRESENTATION);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0570
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .odg
@@ -930,7 +871,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_GRAPHICS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0580
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .fodg
@@ -945,7 +885,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_GRAPHICS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0590
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .odf
@@ -960,7 +899,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_FORMULA);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0600
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .hap
@@ -975,7 +913,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENHARMONY_HAP);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0610
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .hdoc
@@ -990,7 +927,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENHARMONY_HDOC);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0620
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .hinote
@@ -1006,7 +942,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0630
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .png
@@ -1021,7 +956,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PNG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0640
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .jpg
@@ -1036,7 +970,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0650
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .jpeg
@@ -1051,7 +984,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0660
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .tif
@@ -1066,7 +998,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.TIFF);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0670
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .tiff
@@ -1081,7 +1012,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.TIFF);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0680
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .xbm
@@ -1096,7 +1026,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.XBITMAP_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0690
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .avi
@@ -1111,7 +1040,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AVI);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1310
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .vfw
@@ -1126,7 +1054,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AVI);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1320
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .mpg
@@ -1141,7 +1068,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1330
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .mpeg
@@ -1156,7 +1082,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0700
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .m75
@@ -1171,7 +1096,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0710
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .m15
@@ -1187,7 +1111,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1340
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .mp4
@@ -1202,7 +1125,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG4);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0720
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .3gp
@@ -1217,7 +1139,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.VIDEO_3GPP);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0730
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .3gpp
@@ -1232,7 +1153,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.VIDEO_3GPP);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0740
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .3g2
@@ -1247,7 +1167,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.VIDEO_3GPP2);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0750
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .3gp2
@@ -1262,7 +1181,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.VIDEO_3GPP2);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0760
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ogg
@@ -1277,7 +1195,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OGG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0770
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .aiff
@@ -1292,7 +1209,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AIFF);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0780
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pcm
@@ -1307,7 +1223,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PCM);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0790
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .flac
@@ -1322,7 +1237,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.FLAC);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0800
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .alac
@@ -1337,7 +1251,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.ALAC);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0810
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .mp3
@@ -1352,7 +1265,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.MP3);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0820
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .aac
@@ -1367,7 +1279,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AAC);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0830
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .au
@@ -1382,7 +1293,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AU_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0840
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0840
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .snd
@@ -1397,7 +1307,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AU_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0850
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .aifc
@@ -1412,7 +1321,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AIFC_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0870
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0870
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .aif
@@ -1427,7 +1335,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.AIFC_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0880
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0880
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .tar
@@ -1442,7 +1349,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.TAR_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0890
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .zip
@@ -1457,7 +1363,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.ZIP_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0900
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .bz2
@@ -1472,7 +1377,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.BZ2_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1350
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .txt
@@ -1487,7 +1391,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PLAIN_TEXT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0910
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .html
@@ -1502,7 +1405,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.HTML);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0920
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .htm
@@ -1517,7 +1419,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.HTML);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0930
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .xml
@@ -1532,7 +1433,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.XML);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0940
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .md
@@ -1547,7 +1447,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.MARKDOWN);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0950
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .sh
@@ -1562,7 +1461,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.SHELL_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0960
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0960
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .command
@@ -1577,7 +1475,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.SHELL_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0970
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .csh
@@ -1592,7 +1489,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.CSH_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0980
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pl
@@ -1607,7 +1503,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PERL_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_0990
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .pm
@@ -1622,7 +1517,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PERL_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1000
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .py
@@ -1637,7 +1531,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PYTHON_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1010
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .rb
@@ -1652,7 +1545,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.RUBY_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1020
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .rbw
@@ -1667,7 +1559,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.RUBY_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1030
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .php
@@ -1682,7 +1573,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1040
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .php3
@@ -1697,7 +1587,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1050
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .php4
@@ -1712,7 +1601,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1060
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ph3
@@ -1727,7 +1615,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1070
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ph4
@@ -1742,7 +1629,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1080
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .phtml
@@ -1757,7 +1643,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1090
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .ts
@@ -1772,7 +1657,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.TYPE_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1100
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .js
@@ -1787,7 +1671,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JAVA_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1110
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .jscript
@@ -1802,7 +1685,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JAVA_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1120
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .javascript
@@ -1817,7 +1699,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JAVA_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1130
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .c
@@ -1832,7 +1713,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1140
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .h
@@ -1847,7 +1727,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_HEADER);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1360
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .cp
@@ -1862,7 +1741,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1150
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is .cpp
@@ -1877,7 +1755,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1370
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".c++"
@@ -1892,7 +1769,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1160
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cc"
@@ -1907,7 +1783,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1170
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cxx"
@@ -1922,7 +1797,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1180
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hpp"
@@ -1937,7 +1811,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_HEADER);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1190
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".h++"
@@ -1952,7 +1825,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_HEADER);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1200
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hxx"
@@ -1967,7 +1839,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.C_PLUS_PLUS_HEADER);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1210
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".java"
@@ -1982,7 +1853,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JAVA_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1220
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jav"
@@ -1997,7 +1867,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.JAVA_SOURCE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1230
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".epub"
@@ -2012,7 +1881,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.EPUB);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1240
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vcs"
@@ -2027,7 +1895,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.VCS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1250
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ics"
@@ -2042,7 +1909,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.ICS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1260
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ttf"
@@ -2057,7 +1923,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.TRUETYPE_FONT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1270
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ttc"
@@ -2072,7 +1937,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.TRUETYPE_COLLECTION_FONT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1280
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".otf"
@@ -2089,7 +1953,6 @@ export default function UtdfileNameTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1380
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dmg"
@@ -2104,7 +1967,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("macos.dmg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1390
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".deb"
@@ -2119,7 +1981,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("debian.deb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1400
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".udeb"
@@ -2134,7 +1995,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("debian.deb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1410
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ofd"
@@ -2149,7 +2009,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OFD);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1420
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".opg"
@@ -2164,7 +2023,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1430
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".css"
@@ -2179,7 +2037,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual(UTD.UniformDataType.CSS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1440
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vob"
@@ -2195,7 +2052,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1450
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dif"
@@ -2210,7 +2066,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.dif-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1460
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dv"
@@ -2225,7 +2080,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.dv-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1470
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".fli"
@@ -2240,7 +2094,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.flc-animation");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1480
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".flc"
@@ -2255,7 +2108,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.flc-animation");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1490
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mxu"
@@ -2270,7 +2122,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpegurl-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1500
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m4u"
@@ -2285,7 +2136,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpegurl-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1510
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mhtml"
@@ -2300,7 +2150,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.web-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1520
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".amr"
@@ -2315,7 +2164,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.amr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1530
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".awb"
@@ -2330,7 +2178,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.amr-wb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1540
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".gsm"
@@ -2345,7 +2192,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.gsm");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1550
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".imy"
@@ -2360,7 +2206,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.imy");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1560
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".kar"
@@ -2375,7 +2220,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.kar");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1570
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m3u"
@@ -2390,7 +2234,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpegurl-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1580
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m4a"
@@ -2405,7 +2248,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-4-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1590
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mid"
@@ -2420,7 +2262,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.midi-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1600
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mp2"
@@ -2435,7 +2276,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mp2");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1610
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpga"
@@ -2450,7 +2290,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1620
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mxmf"
@@ -2465,7 +2304,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mxmf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1630
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ota"
@@ -2480,7 +2318,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.ota");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1640
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pls"
@@ -2495,7 +2332,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.pls");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1650
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rtttl"
@@ -2510,7 +2346,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.rtttl");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1660
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sid"
@@ -2525,7 +2360,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.psid");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1670
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".psid"
@@ -2540,7 +2374,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.psid");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1680
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".potm"
@@ -2555,7 +2388,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.template.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1690
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ulw"
@@ -2570,7 +2402,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.ulaw-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1700
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".midi"
@@ -2585,7 +2416,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.midi-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1710
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xmf"
@@ -2600,7 +2430,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.xmf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1720
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".gif"
@@ -2615,7 +2444,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.gif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1730
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".djv"
@@ -2630,7 +2458,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.djvu-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1740
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".djvU"
@@ -2645,7 +2472,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.djvu-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1750
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jng"
@@ -2660,7 +2486,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.jng-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1760
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pcx"
@@ -2675,7 +2500,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.pcx-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1770
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pbm"
@@ -2691,7 +2515,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1790
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ppm"
@@ -2706,7 +2529,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.ppm-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1800
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rgb"
@@ -2721,7 +2543,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.rgb-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1810
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".svg"
@@ -2736,7 +2557,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.svg-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1820
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".svgz"
@@ -2751,7 +2571,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.svg-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1830
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wbmp"
@@ -2766,7 +2585,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.wbmp-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1840
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1840
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xpm"
@@ -2781,7 +2599,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.xpixmap-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1850
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xwd"
@@ -2796,7 +2613,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.xwindowdump-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1860
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1860
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".heif"
@@ -2811,7 +2627,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.heif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1870
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1870
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".heic"
@@ -2826,7 +2641,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.heic");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1880
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1880
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vcd"
@@ -2841,7 +2655,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.virtual-cd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1890
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".boo"
@@ -2856,7 +2669,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.boo-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1900
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".d"
@@ -2871,7 +2683,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.d-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1910
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".htc"
@@ -2886,7 +2697,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.html-component");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1920
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".p"
@@ -2901,7 +2711,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.pascal-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1930
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pas"
@@ -2916,7 +2725,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.pascal-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1940
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hs"
@@ -2931,7 +2739,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.haskell-script");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1950
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".lhs"
@@ -2947,7 +2754,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1970
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".asc"
@@ -2962,7 +2768,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.asc-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1980
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".po"
@@ -2977,7 +2782,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.portable-object");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_1990
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rtf"
@@ -2992,7 +2796,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.rich-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2010
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rtx"
@@ -3007,7 +2810,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.rich-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2020
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".csv"
@@ -3022,7 +2824,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.comma-separated-values-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2030
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".diff"
@@ -3037,7 +2838,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.diff");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2040
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".etx"
@@ -3052,7 +2852,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.setext");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2050
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".gcd"
@@ -3067,7 +2866,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.gcd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2070
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".tsv"
@@ -3082,7 +2880,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.tab-separated-values-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2080
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".p7r"
@@ -3097,7 +2894,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.p7r");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2090
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pem"
@@ -3112,7 +2908,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.pem");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2100
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pgn"
@@ -3127,7 +2922,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.chess-pgn");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2110
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mml"
@@ -3142,7 +2936,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mathml");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2120
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xhtml"
@@ -3157,7 +2950,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.xhtml");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2130
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rss"
@@ -3172,7 +2964,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.rss");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2140
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rdf"
@@ -3187,7 +2978,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.rdf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2150
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".iges"
@@ -3202,7 +2992,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.iges");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2160
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".igs"
@@ -3217,7 +3006,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.iges");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2170
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".iso"
@@ -3232,7 +3020,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.iso");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2180
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".msh"
@@ -3247,7 +3034,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mesh-model");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2190
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mesh"
@@ -3262,7 +3048,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mesh-model");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2200
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".silo"
@@ -3277,7 +3062,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mesh-model");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2210
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".o"
@@ -3292,7 +3076,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.c-object");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2220
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dvi"
@@ -3307,7 +3090,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.dvi");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2230
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cer"
@@ -3322,7 +3104,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.cer-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2240
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".crt"
@@ -3337,7 +3118,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.crt-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2250
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".crl"
@@ -3352,7 +3132,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.crl-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2260
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".prn"
@@ -3367,7 +3146,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.prn");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2270
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".odc"
@@ -3382,7 +3160,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.chart");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2280
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".odm"
@@ -3397,7 +3174,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.text-master");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2290
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".oth"
@@ -3412,7 +3188,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.text-web");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2300
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".odb"
@@ -3427,7 +3202,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.database");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2310
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".odi"
@@ -3442,7 +3216,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2320
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".tz"
@@ -3457,7 +3230,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.taz-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2330
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".otc"
@@ -3472,7 +3244,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.chart-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2340
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".otp"
@@ -3487,7 +3258,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.presentation-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2350
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".oti"
@@ -3502,7 +3272,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.image-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2360
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".otg"
@@ -3517,7 +3286,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.graphics-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2370
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ots"
@@ -3532,7 +3300,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.spreadsheet-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2380
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ott"
@@ -3547,7 +3314,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.text-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2390
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dot"
@@ -3562,7 +3328,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.word.dot");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2400
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pps"
@@ -3577,7 +3342,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.powerpoint.pps");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2410
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pot"
@@ -3592,7 +3356,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.powerpoint.pot");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2420
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xlt"
@@ -3607,7 +3370,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.excel.xlt");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2430
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vsd"
@@ -3622,7 +3384,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.visio.vsd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2440
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vsdx"
@@ -3637,7 +3398,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.drawingml.visio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2450
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vstx"
@@ -3652,7 +3412,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.drawingml.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2460
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vsdm"
@@ -3667,7 +3426,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.drawingml.visio.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2470
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vstm"
@@ -3682,7 +3440,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.drawingml.template.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2480
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dotx"
@@ -3697,7 +3454,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.wordprocessingml.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2490
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".potx"
@@ -3712,7 +3468,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2500
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ppsx"
@@ -3727,7 +3482,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.slideshow");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2510
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xltx"
@@ -3742,7 +3496,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2520
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sxc"
@@ -3757,7 +3510,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.calc");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2530
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sxd"
@@ -3772,7 +3524,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.draw");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2540
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sxg"
@@ -3787,7 +3538,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.writer-global");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2550
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sxi"
@@ -3802,7 +3552,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.impress");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2560
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sxm"
@@ -3817,7 +3566,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.math");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2570
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sxw"
@@ -3832,7 +3580,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.writer");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2580
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".stc"
@@ -3847,7 +3594,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.calc.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2590
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".std"
@@ -3864,7 +3610,6 @@ export default function UtdfileNameTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2600
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".stw"
@@ -3879,7 +3624,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.writer.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2610
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sda"
@@ -3894,7 +3638,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.draw");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2620
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sdc"
@@ -3909,7 +3652,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.calc");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2630
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sdd"
@@ -3924,7 +3666,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.impress");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2640
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sdw"
@@ -3939,7 +3680,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.writer");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2650
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sdm"
@@ -3954,7 +3694,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.mail");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2660
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sgl"
@@ -3969,7 +3708,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.writer-global");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2670
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".smf"
@@ -3984,7 +3722,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.math");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2680
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vor"
@@ -3999,7 +3736,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2690
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".bib"
@@ -4014,7 +3750,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.tug.bib");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2700
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cls"
@@ -4029,7 +3764,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.tug.cls");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2710
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sty"
@@ -4044,7 +3778,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.tug.sty");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2720
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".tex"
@@ -4059,7 +3792,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.tug.tex");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2730
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ltx"
@@ -4074,7 +3806,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.latex-project.latex");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2740
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".latex"
@@ -4089,7 +3820,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.latex-project.latex");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2750
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".asf"
@@ -4104,7 +3834,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.advanced-systems-format");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2760
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".asx"
@@ -4119,7 +3848,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.advanced-stream-redirector");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2770
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mkv"
@@ -4134,7 +3862,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.matroska.mkv");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2780
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mka"
@@ -4149,7 +3876,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.matroska.mka");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2790
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".movie"
@@ -4164,7 +3890,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sgi.movie");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2800
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m4v"
@@ -4179,7 +3904,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.m4v");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2810
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".webm"
@@ -4194,7 +3918,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.webmproject.webm");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2820
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mov"
@@ -4209,7 +3932,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.quicktime-movie");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2830
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".qt"
@@ -4224,7 +3946,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.quicktime-movie");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2850
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cdr"
@@ -4239,7 +3960,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.coreldraw.cdr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2860
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2860
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cpt"
@@ -4254,7 +3974,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.coreldraw.cpt");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2870
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2870
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pat"
@@ -4269,7 +3988,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.coreldraw.pat");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2880
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2880
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cur"
@@ -4284,7 +4002,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.cur");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2890
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ras"
@@ -4299,7 +4016,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sun.raster");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2900
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".webp"
@@ -4314,7 +4030,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.google.webp");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2910
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".skd"
@@ -4329,7 +4044,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sseyo.koan-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2920
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".skm"
@@ -4344,7 +4058,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sseyo.koan-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2930
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".skp"
@@ -4359,7 +4072,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sseyo.koan-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2940
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".skt"
@@ -4374,7 +4086,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sseyo.koan-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2950
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".moc"
@@ -4389,7 +4100,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("io.qt.moc");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2960
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2960
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".gsf"
@@ -4404,7 +4114,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.ghostscript.font");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2970
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pcf"
@@ -4420,7 +4129,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2980
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wmd"
@@ -4435,7 +4143,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.windows-media-wmd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_2990
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wmz"
@@ -4450,7 +4157,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.windows-media-wmz");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3000
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".msi"
@@ -4465,7 +4171,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.windows-installer");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3010
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pub"
@@ -4480,7 +4185,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.publisher.pub");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3020
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wpl"
@@ -4495,7 +4199,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.windows-media-playlist");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3030
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mdb"
@@ -4510,7 +4213,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.access.mdb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3040
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".stl"
@@ -4525,7 +4227,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.3dsystems.stereolithography");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3050
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m3u8"
@@ -4540,7 +4241,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.media.playlist");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3060
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".abw"
@@ -4555,7 +4255,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.abisource.word");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3070
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".book"
@@ -4570,7 +4269,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.framemaker");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3080
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".fm"
@@ -4585,7 +4283,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.framemaker");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3090
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".frame"
@@ -4600,7 +4297,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.framemaker");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3100
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".maker"
@@ -4615,7 +4311,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.framemaker");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3110
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cdf"
@@ -4630,7 +4325,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.wolfram.cdf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3120
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cdy"
@@ -4645,7 +4339,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("de.cinderella.cdy");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3130
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dcr"
@@ -4660,7 +4353,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.dcr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3140
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dir"
@@ -4675,7 +4367,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.dir");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3150
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dxr"
@@ -4690,7 +4381,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.dxr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3160
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".gnumeric"
@@ -4705,7 +4395,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.gnumeric.spreadsheet");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3170
      * @tc.number testSUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3170
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hdf"
@@ -4720,7 +4409,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.hdfgroup.hdf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3180
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hqx"
@@ -4735,7 +4423,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.binhex-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3190
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hta"
@@ -4750,7 +4437,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.hta");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3200
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ins"
@@ -4765,7 +4451,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.internet.ins");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3210
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".isp"
@@ -4780,7 +4465,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.internet.isp");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3220
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".man"
@@ -4795,7 +4479,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.troff");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3230
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".t"
@@ -4810,7 +4493,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.troff");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3240
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".roff"
@@ -4825,7 +4507,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.troff");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3250
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mif"
@@ -4840,7 +4521,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.framemaker.mif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3260
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mm"
@@ -4855,7 +4535,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("io.sourceforge.freemind");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3270
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mmf"
@@ -4870,7 +4549,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.yamaha.smaf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3280
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".nb"
@@ -4885,7 +4563,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.wolfram.mathematica.notebook");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3290
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".oga"
@@ -4900,7 +4577,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.xiph.ogg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3300
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sdp"
@@ -4915,7 +4591,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.impress");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3310
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pac"
@@ -4930,7 +4605,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.netscape.proxy-autoconfig");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3320
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pfx"
@@ -4945,7 +4619,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.rsa.pkcs-12");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3330
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".p12"
@@ -4960,7 +4633,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.rsa.pkcs-12");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3340
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pgp"
@@ -4975,7 +4647,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openpgp.signature");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3350
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".qtl"
@@ -4990,7 +4661,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.quicktime-link");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3360
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rar"
@@ -5005,7 +4675,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.rarlab.rar-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3370
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".7z"
@@ -5020,7 +4689,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.7-zip.7-zip-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3380
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sgf"
@@ -5035,7 +4703,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.red-bean.sgf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3390
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".tar.z"
@@ -5050,7 +4717,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.taz-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3400
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".spl"
@@ -5065,7 +4731,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.futuresplash");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3410
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".swf"
@@ -5080,7 +4745,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.flash");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3420
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".texinfo"
@@ -5095,7 +4759,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.gnu.texinfo");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3430
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".texi"
@@ -5110,7 +4773,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.gnu.texinfo");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3440
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".torrent"
@@ -5125,7 +4787,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.bittorrent.torrent");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3450
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wad"
@@ -5140,7 +4801,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.idsoftware.doom");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3460
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".webarchive"
@@ -5155,7 +4815,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.webarchive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3470
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".webarchivexml"
@@ -5170,7 +4829,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.android.webarchive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3480
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xcf"
@@ -5185,7 +4843,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.gimp.xcf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3490
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".eddx"
@@ -5200,7 +4857,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.edrawsoft.edrawmax");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3500
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".emmx"
@@ -5215,7 +4871,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.edrawsoft.edrawmind");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3510
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".caj"
@@ -5230,7 +4885,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("net.cnki.caj");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3520
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dbf"
@@ -5245,7 +4899,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.dbase.dbf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3530
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dwg"
@@ -5260,7 +4913,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.dwg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3540
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dxf"
@@ -5275,7 +4927,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.dxf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3550
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dws"
@@ -5290,7 +4941,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.dws");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3560
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dwt"
@@ -5305,7 +4955,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.dwt");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3570
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dwf"
@@ -5320,7 +4969,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.dwf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3580
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dwfx"
@@ -5335,7 +4983,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.dwfx");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3590
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".shp"
@@ -5350,7 +4997,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.shp");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3600
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".shx"
@@ -5365,7 +5011,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.shx");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3610
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".slb"
@@ -5380,7 +5025,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.slide-library");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3620
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".lin"
@@ -5395,7 +5039,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.line");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3630
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".plt"
@@ -5410,7 +5053,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.autodesk.plotter");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3640
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hpgl"
@@ -5425,7 +5067,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.hp.graphics-language");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3650
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wmf"
@@ -5440,7 +5081,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.metafile");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3660
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sat"
@@ -5455,7 +5095,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.spatial.acis.sat");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3670
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".avif"
@@ -5470,7 +5109,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.aomedia.avif-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3680
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dds"
@@ -5485,7 +5123,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.dds");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3690
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ilbm"
@@ -5500,7 +5137,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.ea.iff-ilbm");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3700
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cr2"
@@ -5515,7 +5151,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.canon.cr2-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3710
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cr3"
@@ -5530,7 +5165,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.canon.cr3-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3720
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".crw"
@@ -5545,7 +5179,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.canon.crw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3730
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dng"
@@ -5560,7 +5193,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.dng-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3740
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".arw"
@@ -5575,7 +5207,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sony.arw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3750
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".nef"
@@ -5590,7 +5221,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.nikon.nef-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3760
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mmap"
@@ -5605,7 +5235,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.mindjet.mindmanager.mmap");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3770
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".eml"
@@ -5620,7 +5249,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.email");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3780
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".msg"
@@ -5635,7 +5263,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.message");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3790
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pst"
@@ -5650,7 +5277,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.pst");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3800
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wps"
@@ -5665,7 +5291,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.kingsoft.office.writer.wps");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3810
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wpt"
@@ -5680,7 +5305,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.kingsoft.office.writer.wpt");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3820
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dps"
@@ -5695,7 +5319,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.kingsoft.office.presentation.dps");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3830
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dpt"
@@ -5710,7 +5333,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.kingsoft.office.presentation.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3840
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3840
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".et"
@@ -5725,7 +5347,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.kingsoft.office.spreadsheets.et");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3850
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ett"
@@ -5740,7 +5361,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.kingsoft.office.spreadsheets.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3860
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3860
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mng"
@@ -5755,7 +5375,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mng");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3870
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3870
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pgm"
@@ -5770,7 +5389,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.pgm-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3880
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3880
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".tcl"
@@ -5785,7 +5403,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.tcl-script");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3890
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sti"
@@ -5800,7 +5417,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openoffice.impress.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3900
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sds"
@@ -5815,7 +5431,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.staroffice.chart");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3910
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cdt"
@@ -5830,7 +5445,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.coreldraw.cdt");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3920
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xlsb"
@@ -5845,7 +5459,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.binary.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3930
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xlam"
@@ -5860,7 +5473,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.addin.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3940
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".xltm"
@@ -5875,7 +5487,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.template.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3950
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jpe"
@@ -5890,7 +5501,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.jpeg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3960
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3960
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpe"
@@ -5905,7 +5515,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3970
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".3gpp2"
@@ -5920,7 +5529,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.3gpp2");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3980
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".text"
@@ -5935,7 +5543,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.plain-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_3990
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hh"
@@ -5950,7 +5557,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.c-plus-plus-header");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4000
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vcard"
@@ -5965,7 +5571,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.vcard");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4010
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vcf"
@@ -5980,7 +5585,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.vcard");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4020
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pnm"
@@ -5995,7 +5599,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.pnm-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4030
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".lha"
@@ -6010,7 +5613,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.lha-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4040
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".lzh"
@@ -6025,7 +5627,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.lzh-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4050
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".lzx"
@@ -6040,7 +5641,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.lzx-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4070
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".shar"
@@ -6055,7 +5655,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.shar-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4080
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".cpio"
@@ -6070,7 +5669,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.cpio-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4090
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mht"
@@ -6085,7 +5683,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.web-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4100
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ustar"
@@ -6100,7 +5697,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.ustar");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4110
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dotm"
@@ -6115,7 +5711,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.wordprocessingml.template.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4120
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ppam"
@@ -6130,7 +5725,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.addin.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4130
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ppsm"
@@ -6147,7 +5741,6 @@ export default function UtdfileNameTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4140
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".f4v"
@@ -6162,7 +5755,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.f4v");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4150
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m2ts"
@@ -6177,7 +5769,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mp2t");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4160
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mts"
@@ -6192,7 +5783,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mp2t");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4170
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m2t"
@@ -6207,7 +5797,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mp2t");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4180
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".yt"
@@ -6222,7 +5811,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.youtube.video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4190
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".vt"
@@ -6237,7 +5825,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.youtube.video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4200
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".wrf"
@@ -6252,7 +5839,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.cisco.webex-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4210
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpeg2"
@@ -6267,7 +5853,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-2");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4220
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpv2"
@@ -6282,7 +5867,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-2");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4230
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mp2v"
@@ -6297,7 +5881,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-2");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4240
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m2v"
@@ -6312,7 +5895,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-2");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4250
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpv"
@@ -6327,7 +5909,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-2");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4260
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpeg1"
@@ -6342,7 +5923,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-1");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4270
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpv1"
@@ -6357,7 +5937,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-1");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4280
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mp1v"
@@ -6372,7 +5951,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-1");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4290
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m1v"
@@ -6387,7 +5965,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-1");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4300
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rmvb"
@@ -6402,7 +5979,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.real.realmedia-vbr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4310
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rv"
@@ -6417,7 +5993,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.real.realvideo");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4320
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".divx"
@@ -6432,7 +6007,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.divx-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4330
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".axv"
@@ -6447,7 +6021,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("org.csiro.annodex");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4340
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ogv"
@@ -6462,7 +6035,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.ogv");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4350
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".lsf"
@@ -6477,7 +6049,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.lsf-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4360
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".lsx"
@@ -6493,7 +6064,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4370
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".h264"
@@ -6508,7 +6078,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.h264-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4380
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jp2"
@@ -6523,7 +6092,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4390
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".nrw"
@@ -6538,7 +6106,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.nikon.nrw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4400
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jpg2"
@@ -6553,7 +6120,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4410
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jpx"
@@ -6568,7 +6134,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4420
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jpf"
@@ -6583,7 +6148,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4430
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".jpm"
@@ -6598,7 +6162,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4440
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".raf"
@@ -6613,7 +6176,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.fujifilm.raf-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4450
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".raw"
@@ -6629,7 +6191,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4460
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pef"
@@ -6645,7 +6206,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4470
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".srw"
@@ -6660,7 +6220,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.sumsung.srw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4480
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".erf"
@@ -6675,7 +6234,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.epson.erf-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4490
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".orf"
@@ -6690,7 +6248,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.olympus.orf-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4500
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ief"
@@ -6705,7 +6262,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.ief-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4510
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".art"
@@ -6720,7 +6276,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.aol.art-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4520
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".heifs"
@@ -6735,7 +6290,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.heif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4530
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".hif"
@@ -6750,7 +6304,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.heif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4540
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".heics"
@@ -6765,7 +6318,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.heic");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4550
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mp4v"
@@ -6780,7 +6332,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-4");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4560
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".mpeg4"
@@ -6795,7 +6346,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-4");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4570
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m4p"
@@ -6810,7 +6360,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.apple.m4p-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4580
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".m4b"
@@ -6825,7 +6374,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.mpeg-4-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4590
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ac3"
@@ -6840,7 +6388,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("general.ac3-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4600
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".bm"
@@ -6855,7 +6402,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.microsoft.bmp");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4610
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".flv"
@@ -6870,7 +6416,6 @@ export default function UtdfileNameTest() {
       expect(result).assertEqual("com.adobe.flash");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4620
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".rw2"
@@ -6886,7 +6431,6 @@ export default function UtdfileNameTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4630
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dif"
@@ -6906,7 +6450,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4640
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".dif"
@@ -6925,7 +6468,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4650
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ts"
@@ -6944,7 +6486,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4660
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ts"
@@ -6963,7 +6504,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4670
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ogg"
@@ -6982,7 +6522,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4680
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".aiff"
@@ -7002,7 +6541,6 @@ export default function UtdfileNameTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4690
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".au"
@@ -7021,7 +6559,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4700
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".snd"
@@ -7040,7 +6577,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4710
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".tar"
@@ -7059,7 +6595,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4720
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".etx"
@@ -7078,7 +6613,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4730
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".etx"
@@ -7097,7 +6631,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4740
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".etx"
@@ -7116,7 +6649,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4750
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".etx"
@@ -7135,7 +6667,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4760
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".otf"
@@ -7154,7 +6685,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4770
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".otf"
@@ -7174,7 +6704,6 @@ export default function UtdfileNameTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4780
      * @tc.desc   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4780
@@ -7193,7 +6722,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4790
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".movie"
@@ -7212,7 +6740,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4800
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".sit"
@@ -7231,7 +6758,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4810
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".pdb"
@@ -7250,7 +6776,6 @@ export default function UtdfileNameTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4820
      * @tc.desc   getUniformDataTypeByFilenameExtension  parmater is ".ape"

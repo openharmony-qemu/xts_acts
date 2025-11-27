@@ -115,7 +115,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest001
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0010
      * @tc.desc   //getKVStore<distributedKVStore.SingleKVStore>
@@ -140,7 +139,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest0011
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0011
      * @tc.desc   //getKVStore<distributedKVStore.SingleKVStore>
@@ -165,7 +163,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest002
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0020
      * @tc.desc   //getKVStore<distributedKVStore.DeviceKVStore>
@@ -189,7 +186,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest003
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0030
      * @tc.desc   //SingleKVStore put get string
@@ -223,7 +219,6 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest005
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0050
      * @tc.desc   //SingleKVStore put get Boolean
@@ -252,7 +247,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest006
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0060
      * @tc.desc   //SingleKVStore put get Uint8Array
@@ -279,7 +273,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest007
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0070
      * @tc.desc   //SingleKVStore backup
@@ -304,7 +297,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest008
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0080
      * @tc.desc   //DeviceKVStore backup
@@ -329,7 +321,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest009
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0090
      * @tc.desc   //SingleKVStore backup  callback
@@ -355,7 +346,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest010
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0100
      * @tc.desc   //DeviceKVStore put get Uint8Array
@@ -382,7 +372,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest011
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0110
      * @tc.desc   //DeviceKVStore put get string
@@ -411,7 +400,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest012
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0120
      * @tc.desc   //DeviceKVStore put get double
@@ -439,7 +427,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest013
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0130
      * @tc.desc   //DeviceKVStore put get Boolean
@@ -467,7 +454,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest014
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0140
      * @tc.desc   //DeviceKVStore put get callback Boolean
@@ -500,7 +486,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest015
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0150
      * @tc.desc   //DeviceKVStore put get callback double
@@ -534,7 +519,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest016
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0160
      * @tc.desc   //DeviceKVStore put get callback string
@@ -566,7 +550,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest017
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0170
      * @tc.desc   //DeviceKVStore put get  callback string
@@ -598,7 +581,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest018
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0180
      * @tc.desc   //SingleKVStore put get  callback string
@@ -629,7 +611,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest019
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
      * @tc.desc   //DeviceKVStore get(did, key)
@@ -661,7 +642,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest0191
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0191
      * @tc.desc   //DeviceKVStore get(key)
@@ -692,7 +672,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest020
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
      * @tc.desc   //DeviceKVStore get(did,key)  callback
@@ -727,7 +706,6 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest0201
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0201
      * @tc.desc   //DeviceKVStore get(key)  callback
@@ -761,7 +739,6 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest021
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0210
      * @tc.desc   //Schema.constructor, FieldNode.constructor, Query.constructor
@@ -783,7 +760,6 @@ export default function KvStoreEtsTestStatic() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest022
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
      * @tc.desc   //SingleKVStore get(key)
@@ -814,7 +790,6 @@ export default function KvStoreEtsTestStatic() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest023
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0230
      * @tc.desc   //SingleKVStore get(key)  callback

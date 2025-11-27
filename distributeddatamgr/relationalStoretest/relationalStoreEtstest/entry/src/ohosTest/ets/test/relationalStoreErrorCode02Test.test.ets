@@ -62,7 +62,6 @@ export default function relationalStoreErrorCode02Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -87,7 +86,6 @@ export default function relationalStoreErrorCode02Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   relationalStoreTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -117,7 +115,6 @@ export default function relationalStoreErrorCode02Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreAttach0001
      * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0010
      * @tc.desc   non encrypted database attach non encrypted database

@@ -104,7 +104,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetPreferences0001
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2200
      * @tc.desc   GetSyn promise interface test
@@ -129,7 +128,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDeletePreferencesOptionsPromise_0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2300
      * @tc.desc   GetSyn promise interface test
@@ -165,7 +163,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDeletePreferencesOptionsPromise_0200
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2400
      * @tc.desc   GetSyn promise interface test
@@ -218,7 +215,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesGetSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_0100
      * @tc.desc   GetSyn promise interface test
@@ -234,7 +230,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesPutSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_PutSync_strong_basis_EtsApiTest_0200
      * @tc.desc   PutSync promise interface test
@@ -313,7 +308,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesPutArrayNumber001
      * @tc.number SUB_DistributedData_Preference_SDK_PutSync_strong_basis_EtsApiTest_2500
      * @tc.desc   PutArrayNumber promise interface test
@@ -332,7 +326,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesPutFlushRemoveGet_0300
      * @tc.number SUB_DistributedData_Preference_SDK_Flush_strong_basis_EtsApiTest_0300
      * @tc.desc   Flush promise interface test
@@ -384,7 +377,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetFloat0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetFloat_strong_basis_EtsApiTest_0400
      * @tc.desc   GetFloat promise interface test
@@ -403,7 +395,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesPutInt0100
      * @tc.number SUB_DistributedData_Preference_SDK_PutInt_strong_basis_EtsApiTest_0500
      * @tc.desc   PutInt promise interface test
@@ -433,7 +424,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDelete0010
      * @tc.number SUB_DistributedData_Preference_SDK_Delete_strong_basis_EtsApiTest_0600
      * @tc.desc   Delete promise interface test
@@ -461,7 +451,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesHasKey0036
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0700
      * @tc.desc   HasKey promise interface test
@@ -479,7 +468,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesHasKey0031
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0800
      * @tc.desc   HasKey promise interface test
@@ -500,7 +488,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testRemovePreferencesFromCache0001
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0900
      * @tc.desc   HasKey promise interface test
@@ -533,7 +520,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0400
      * @tc.number SUB_DistributedData_Preference_SDK_removePreferencesFromCacheSync_strong_basis_EtsApiTest_1000
      * @tc.desc   removePreferencesFromCacheSync promise interface test
@@ -580,7 +566,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_deleteSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_strong_basis_EtsApiTest_1100
      * @tc.desc   deleteSync promise interface test
@@ -598,7 +583,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_GetPreferencesSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_sGetPreferencesSync_basis_EtsApiTest_1200
      * @tc.desc   GetPreferencesSync promise interface test
@@ -622,7 +606,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesHasSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_HasSync_basis_EtsApiTest_1300
      * @tc.desc   HasSync promise interface test
@@ -640,7 +623,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_GetAllSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAllSync_basis_EtsApiTest_1400
      * @tc.desc   GetAllSync promise interface test
@@ -692,7 +674,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesClear0012
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_Clear_basis_EtsApiTest_1500
      * @tc.desc   Clear promise interface test
@@ -712,7 +693,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesClear0011
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_Clear_basis_EtsApiTest_1600
      * @tc.desc   Clear promise interface test
@@ -735,7 +715,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDeletePreferences0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_DeletePreferences_basis_EtsApiTest_1700
      * @tc.desc   DeletePreferences promise interface test
@@ -768,7 +747,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetPreferencesPromise0010
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetPreferences_basis_EtsApiTest_1800
      * @tc.desc   GetPreferences promise interface test
@@ -793,7 +771,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesRemovePreferencesFromCacheSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_RemovePreferencesFromCacheSync_basis_EtsApiTest_1900
      * @tc.desc   RemovePreferencesFromCacheSync promise interface test
@@ -825,7 +802,6 @@ export default function preferenceTest() {
     
     
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetAllCallBackTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2000
      * @tc.desc   GetAll promise interface test
@@ -880,7 +856,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetAllPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2100
      * @tc.desc   GetAllPromise promise interface test
@@ -937,7 +912,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnChangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2600
      * @tc.desc   GetAllPromise promise interface test
@@ -976,7 +950,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOffChangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2700
      * @tc.desc   GetAllPromise promise interface test
@@ -1008,7 +981,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnMultiprocessPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2800
      * @tc.desc   GetAllPromise promise interface test
@@ -1042,7 +1014,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOffMultiprocessPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2900
      * @tc.desc   GetAllPromise promise interface test
@@ -1074,7 +1045,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnDatachangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_3000
      * @tc.desc   GetAllPromise promise interface test
@@ -1104,7 +1074,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnMultiprocessErrPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_3100
      * @tc.desc   GetAllPromise promise interface test
@@ -1139,7 +1108,6 @@ export default function preferenceTest() {
 
 
      /**
-      * @generated.time 2025-11-09 20:49:48
       * @tc.name   testPreferencesMxaKeyLengthPromiseTest0001
       * @tc.number SUB_DistributedData_Preference_SDK_MxaKeyLength_basis_EtsApiTest_3200
       * @tc.desc   MxaKeyLength promise interface test
@@ -1176,7 +1144,6 @@ export default function preferenceTest() {
     };
 
     /**
-     * @generated.time 2025-11-13 14:49:48
      * @tc.name   testPreferencesObjectPromiseTestGet
      * @tc.number SUB_DistributedData_Preference_SDK_ObjectGet_basis_EtsApiTest_3300
      * @tc.desc   MxaKeyLength promise interface test
@@ -1216,7 +1183,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-13 14:49:48
      * @tc.name   testPreferencesObjectPromiseTestGetAll
      * @tc.number SUB_DistributedData_Preference_SDK_ObjectGetAll_basis_EtsApiTest_3400
      * @tc.desc   MxaKeyLength promise interface test

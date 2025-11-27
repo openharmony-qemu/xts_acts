@@ -56,7 +56,6 @@ export default function RelationalStoreIcu() {
         });
         console.info(TAG + "*************Unit Test Begin*************");
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuInsert0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Insert_0100
          * @tc.desc   RelationalStore icu insert test, query 1
@@ -122,7 +121,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuInsert0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Insert_0200
          * @tc.desc   RelationalStore icu insert test, query 2
@@ -195,7 +193,6 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuInsert0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Insert_0300
          * @tc.desc   RelationalStore icu insert test, query 0
@@ -254,7 +251,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuUpdate0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Update_0100
          * @tc.desc   RelationalStore icu update data exist, query 2
@@ -359,7 +355,6 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuUpdate0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Update_0200
          * @tc.desc   RelationalStore icu update not exist, query 0
@@ -447,7 +442,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuDelete0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Delete_0100
          * @tc.desc   RelationalStore icu Delete not exist, query 1
@@ -540,7 +534,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuDelete0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Delete_0200
          * @tc.desc   RelationalStore icu Delete  exist, query 0
@@ -626,7 +619,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0100
          * @tc.desc   RelationalStore icu  1字， query 1
@@ -692,7 +684,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0102
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0102
          * @tc.desc   RelationalStore icu  1字， query 1
@@ -759,7 +750,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0103
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0103
          * @tc.desc   RelationalStore icu  1字 不存在， query 0
@@ -817,7 +807,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0104
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0104
          * @tc.desc   RelationalStore icu  1字 存在， query 0
@@ -875,7 +864,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0200
          * @tc.desc   RelationalStore icu 2字， query 1
@@ -941,7 +929,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0202
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0202
          * @tc.desc   RelationalStore icu 2字， query 3
@@ -1000,7 +987,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0203
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0203
          * @tc.desc   RelationalStore icu 2字 不存在， query 0
@@ -1059,7 +1045,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0204
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0204
          * @tc.desc   RelationalStore icu 2字 存在， query 0
@@ -1117,7 +1102,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0300
          * @tc.desc   RelationalStore icu 3字， query 1
@@ -1183,7 +1167,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0302
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0302
          * @tc.desc   RelationalStore icu 3字， query 0
@@ -1242,7 +1225,6 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0400
          * @tc.desc   RelationalStore icu query 4字
@@ -1300,7 +1282,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0500
          * @tc.desc   RelationalStore icu query n字俗语
@@ -1358,7 +1339,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0600
          * @tc.desc   RelationalStore icu query 完整文本
@@ -1416,7 +1396,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0700
          * @tc.desc   RelationalStore icu query 位置1
@@ -1475,7 +1454,6 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0800
          * @tc.desc   RelationalStore icu query 位置1 空格
@@ -1533,7 +1511,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0900
          * @tc.desc   RelationalStore icu query 位置1 标点
@@ -1591,7 +1568,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_1000
          * @tc.desc   RelationalStore icu query 位置1 标点
@@ -1649,7 +1625,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_1100
          * @tc.desc   RelationalStore icu  create table same name  testicu, fail
@@ -1697,7 +1672,6 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreIcuQuery1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_1200
          * @tc.desc   RelationalStore icu  create table dif name  testicu

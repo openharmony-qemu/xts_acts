@@ -19,7 +19,6 @@ import testNapi from 'libentry.so'
 export default function ActsPredicatesTest() {
   describe('ActsPredicatesTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Glob_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Glob_0100
      * @tc.desc   Test the successful execution of the OH_Predicates_Glob interface.
@@ -43,7 +42,6 @@ export default function ActsPredicatesTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotGlob_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotGlob_0200
      * @tc.desc   Test the successful execution of the OH_Predicates_NotGlob interface.
@@ -67,7 +65,6 @@ export default function ActsPredicatesTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotLike_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotLike_0300
      * @tc.desc   Test the successful execution of the OH_Predicates_NotLike interface.
@@ -91,7 +88,6 @@ export default function ActsPredicatesTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Having_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Having_0400
      * @tc.desc   Test the successful execution of the OH_Predicates_Having interface.

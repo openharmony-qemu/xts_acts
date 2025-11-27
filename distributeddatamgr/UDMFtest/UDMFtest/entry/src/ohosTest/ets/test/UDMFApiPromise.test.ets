@@ -39,7 +39,6 @@ export default function UDMFApiPromise() {
     console.info(TAG + "*************Unit Test Begin*************")
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0100
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -70,7 +69,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0200
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -103,7 +101,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0300
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -136,7 +133,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0400
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -170,7 +166,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0500
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -203,7 +198,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0600
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -235,7 +229,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1000
      * @tc.desc   unifiedDataChannel updateData promise interface test.
@@ -278,7 +271,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0800
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -326,7 +318,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0900
      * @tc.desc   unifiedDataChannel insertData promise interface test.
@@ -376,7 +367,6 @@ export default function UDMFApiPromise() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0700
      * @tc.desc   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_0700
@@ -424,7 +414,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1100
      * @tc.desc   unifiedDataChannel queryData promise interface test.
@@ -479,7 +468,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1200
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1200
      * @tc.desc   unifiedDataChannel queryData promise interface test.
@@ -532,7 +520,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1300
      * @tc.desc   unifiedDataChannel queryData promise interface test.
@@ -587,7 +574,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1400
      * @tc.desc   unifiedDataChannel queryData promise interface test.
@@ -648,7 +634,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1500
      * @tc.desc   unifiedDataChannel queryData promise interface test.
@@ -706,7 +691,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_SDK_UnifiedDataPromiseJsAPITest_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1600
      * @tc.desc   unifiedDataChannel deleteData promise interface test.
@@ -764,7 +748,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1700
      * @tc.desc   unifiedDataChannel deleteData promise interface test.
@@ -824,7 +807,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1800
      * @tc.desc   unifiedDataChannel deleteData promise interface test.
@@ -886,7 +868,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1900
      * @tc.desc   unifiedDataChannel deleteData promise interface test.
@@ -954,7 +935,6 @@ export default function UDMFApiPromise() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_2000
      * @tc.desc   unifiedDataChannel deleteData promise interface test.
