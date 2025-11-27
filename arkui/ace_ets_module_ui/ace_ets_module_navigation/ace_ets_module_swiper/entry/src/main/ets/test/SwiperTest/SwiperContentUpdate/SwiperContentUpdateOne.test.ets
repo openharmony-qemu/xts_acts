@@ -81,7 +81,6 @@ export default function SwiperContentUpdateOne() {
       let height = bottom -top;
       let width = right - left;
       console.info("SwiperContentUpdateOne_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let driver = await Driver.create()
       await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(right - vp2px(20)),Math.round(top + height/2));
       await CommonFunc.sleep(2000);
       let value: SwiperContentInfo = AppStorage.get('swiperContentInfo') as SwiperContentInfo
