@@ -503,7 +503,7 @@ describe('etsIntlFunTest', function () {
             currencyDisplay: 'name', currencySign: 'accounting', signDisplay: 'always' };
         var intlObj = new Intl.NumberFormat("en-GB", option);
         console.log("intlNumberFormatTest016::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+€123,456.79');
+        expect(intlObj.format(number)).assertEqual('+123,456.79 euros');
         expect(intlObj.resolvedOptions().locale).assertEqual('en-GB');
         expect(intlObj.resolvedOptions().style).assertEqual('currency');
         expect(intlObj.resolvedOptions().currency).assertEqual('EUR');
@@ -525,7 +525,7 @@ describe('etsIntlFunTest', function () {
             currencyDisplay: 'code', currencySign: 'accounting', signDisplay: 'always' };
         var intlObj = new Intl.NumberFormat("en-US", option);
         console.log("intlNumberFormatTest017::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+$123,456.79');
+        expect(intlObj.format(number)).assertEqual('+USD 123,456.79');
         expect(intlObj.resolvedOptions().currency).assertEqual('USD');
         expect(intlObj.format(number)).assertContain('123,456.79');
     })
@@ -1257,7 +1257,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "always", style: 'narrow'});
         var value = relativetimefmt.format(1, 'quarter');
         console.log('RelativeTimeFormatTest021 :' + value);
-        expect(value).assertEqual('in 1 qtr.');
+        expect(value).assertEqual('in 1q');
         expect(relativetimefmt.resolvedOptions().numeric).assertEqual('always');
         expect(relativetimefmt.resolvedOptions().style).assertEqual('narrow');
     })
@@ -1401,7 +1401,7 @@ describe('etsIntlFunTest', function () {
         var listform = new Intl.ListFormat("zh", {style: 'narrow'});
         var value = listform.format(vehicles);
         console.log('ListFormatTest006 :' + value);
-        expect(value).assertEqual('Motorcycle、Bus和Car');
+        expect(value).assertEqual('Motorcycle、Bus、Car');
     })
 
     /**
