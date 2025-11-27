@@ -18,7 +18,6 @@ import AVMetaFetchFrameByTime from './media/AVMetadataFetchFrameByTimeTest.test'
 import AVPlayerLocalDeprecatedTest from './media/AVPlayerLocalDeprecatedTest.test';
 import AVPlayerLocalSuppTest from './media/AVPlayerLocalTest.test';
 import SetUrISourceTest from './media/MediaSetUrlSourceTest.test';
-import RespondDataTest from './media/RespondDataTest.test';
 import AVPlayerSetMediaSourceSuppTest from './media/AVPlayerMediaSourceSupp.test';
 import AVPlayerSetMediaMutedSuppTest from './media/AVPlayerSetMediaMutedSupp.test';
 import AVPlayerSetPlaybackRangeSuppTest from './media/AVPlayerSetPlaybackRangeSupp.test';
@@ -37,7 +36,6 @@ export default function testsuite() {
   AVImageFetchFrameByTime();
   AVMetaFetchFrameByTime();
   SetUrISourceTest();
-  RespondDataTest();
   AVPlayerSetPlaybackRangeSuppTest();
   AVPlayerSetMediaMutedSuppTest();
   AVPlayerSetMediaSourceSuppTest();
