@@ -16,6 +16,7 @@
     "MainAbility/pages/promptAction/subwindowDialog",
     "MainAbility/pages/tips/showAtAnchor",
     "MainAbility/pages/select/SelectPage",
+    "MainAbility/pages/select/SelectPage1",
     "MainAbility/pages/select/SelectAttr",
     "MainAbility/pages/select/selectoptionwith",
     "MainAbility/pages/select/Select",

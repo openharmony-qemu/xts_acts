@@ -24,7 +24,7 @@ export default function SelectJsunit01() {
     beforeEach(async (done: Function) => {
       console.info("SelectJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/select/SelectPage',
+        url: 'MainAbility/pages/select/SelectPage1',
       }
       try {
         router.clear();
