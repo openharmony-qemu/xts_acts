@@ -27,7 +27,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
   @State API_getPanGestureOptions:string = 'API_getPanGestureOptions'
 
   build() {
-    Column({space: 10}) {
+    Column() {
       Text(this.API_getTag).key('APIshouldBuiltInRecognizerParallelWith_Text01').margin({top:20})
       Text(`${this.API_isBuiltIn}`).key('APIshouldBuiltInRecognizerParallelWith_Text02')
       Text(this.API_getEventTargetInfo).key('APIshouldBuiltInRecognizerParallelWith_Text03')
@@ -40,7 +40,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
               .height('10%')
               .backgroundColor(0xFFFFFF)
               .borderRadius(15)
-              .fontSize(16)
+              .fontSize(8)
               .textAlign(TextAlign.Center)
               .margin({ top: 10 })
             Scroll(this.scroller2) {
@@ -50,7 +50,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
                   .height('10%')
                   .backgroundColor(0xFFFFFF)
                   .borderRadius(15)
-                  .fontSize(16)
+                  .fontSize(8)
                   .textAlign(TextAlign.Center)
                   .margin({ top: 10 })
                 Column() {
@@ -60,11 +60,11 @@ struct APIshouldBuiltInRecognizerParallelWith {
                       .height('10%')
                       .backgroundColor(0xFFFFFF)
                       .borderRadius(15)
-                      .fontSize(16)
+                      .fontSize(8)
                       .textAlign(TextAlign.Center)
                       .margin({ top: 10 })
                   }, (item: string) => item)
-                }.width('100%')
+                }.width('100%').id('column1')
               }
             }
             .id("inner")
@@ -142,8 +142,8 @@ struct APIshouldBuiltInRecognizerParallelWith {
               this.lastOffset = event.offsetY
             })
         )
-      }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+      }.width('100%').height('90%').backgroundColor(0xDCDCDC)
 
-    }
+    }.width('100%').height('100%')
   }
 }
