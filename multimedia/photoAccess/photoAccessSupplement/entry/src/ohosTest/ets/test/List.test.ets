@@ -41,6 +41,9 @@ import PhotoAssetImageGetThumbnail from './photoAccess/PhotoAssetImageGetThumbna
 import PhotoAccessHelperPhotoAlbumChange from './photoAccess/PhotoAccessHelperPhotoAlbumChange.test';
 import MediaAlbumChangeRequestSetAlbumName from './photoAccess/MediaAlbumChangeRequestSetAlbumName.test';
 import MediaAssetChangeRequestSaveCameraPhoto from './photoAccess/MediaAssetChangeRequestSaveCameraPhoto.test';
+import PhotoShowAssetsCreationDialogTest from './photoAccess/PhotoAccessHelperShowAssetsCreationDialog.test';
+import PhotoCreateAssetWithShortTermPermissionTest
+  from './photoAccess/PhotoAccessHelperCreateAssetWithShortTermPermission.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -82,4 +85,6 @@ export default function testsuite() {
   PhotoAccessHelperPhotoAlbumChange();
   MediaAlbumChangeRequestSetAlbumName();
   MediaAssetChangeRequestSaveCameraPhoto();
+  PhotoShowAssetsCreationDialogTest();
+  PhotoCreateAssetWithShortTermPermissionTest();
 }
