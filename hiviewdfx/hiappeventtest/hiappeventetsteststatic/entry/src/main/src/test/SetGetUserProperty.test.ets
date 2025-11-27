@@ -24,12 +24,12 @@ export default function SetGetUserPropertyTest() {
     hilog.info(domain, tag, 'describe start');
 
     /**
+     * @tc.name   testSetGetUserProperty01
      * @tc.number SUB_DFX_SetGetUserProperty_0100
-     * @tc.name testSetGetUserProperty01
-     * @tc.desc 验证多次setUserProperty，userproperty名与值合法，getUserProperty获取userproperty值与设置一致
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证多次setUserProperty，userproperty名与值合法，getUserProperty获取userproperty值与设置一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty01', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty01 start');
@@ -62,12 +62,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty02
      * @tc.number SUB_DFX_SetGetUserProperty_0200
-     * @tc.name testSetGetUserProperty02
-     * @tc.desc 验证多次setUserProperty，userproperty名重复，userproperty值更新
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证多次setUserProperty，userproperty名重复，userproperty值更新
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty02', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty02 start');
@@ -86,12 +86,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty03
      * @tc.number SUB_DFX_SetGetUserProperty_0300
-     * @tc.name testSetGetUserProperty03
-     * @tc.desc 验证setUserProperty，userproperty值为空字符，清除userproperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserProperty，userproperty值为空字符，清除userproperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty03', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty03 start');
@@ -110,12 +110,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty04
      * @tc.number SUB_DFX_SetGetUserProperty_0400
-     * @tc.name testSetGetUserProperty04
-     * @tc.desc 验证setUserProperty，userproperty名为空，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserProperty，userproperty名为空，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty04', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty04 start');
@@ -132,12 +132,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty05
      * @tc.number SUB_DFX_SetGetUserProperty_0500
-     * @tc.name testSetGetUserProperty05
-     * @tc.desc 验证setUserProperty，userproperty名257字节，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserProperty，userproperty名257字节，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty05', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty05 start');
@@ -158,12 +158,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty06
      * @tc.number SUB_DFX_SetGetUserProperty_0600
-     * @tc.name testSetGetUserProperty06
-     * @tc.desc 验证setUserProperty，userproperty名数字开头，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserProperty，userproperty名数字开头，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty06', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty06 start');
@@ -181,12 +181,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty07
      * @tc.number SUB_DFX_SetGetUserProperty_0700
-     * @tc.name testSetGetUserProperty07
-     * @tc.desc 验证setUserProperty，userproperty值长度为1025字节，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserProperty，userproperty值长度为1025字节，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty07', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty07 start');
@@ -206,12 +206,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty08
      * @tc.number SUB_DFX_SetGetUserProperty_0800
-     * @tc.name testSetGetUserProperty08
-     * @tc.desc 验证getUserProperty，userproperty名为空，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getUserProperty，userproperty名为空，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty08', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty08 start');
@@ -228,12 +228,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty09
      * @tc.number SUB_DFX_SetGetUserProperty_0900
-     * @tc.name testSetGetUserProperty09
-     * @tc.desc 验证getUserProperty，userproperty名长度为257字节，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getUserProperty，userproperty名长度为257字节，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty09', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty09 start');
@@ -254,12 +254,12 @@ export default function SetGetUserPropertyTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserProperty10
      * @tc.number SUB_DFX_SetGetUserProperty_1000
-     * @tc.name testSetGetUserProperty10
-     * @tc.desc 验证getUserProperty，userproperty名数字开头，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getUserProperty，userproperty名数字开头，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserProperty10', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserProperty10 start');
