@@ -695,7 +695,7 @@ export default function Json2Test() {
         }
         return v;
       });
-      expect(initialKey).assertEqual(0);
+      expect(initialKey).assertEqual("0");
     });
 
     /**
