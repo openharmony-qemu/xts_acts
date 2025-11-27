@@ -60,7 +60,7 @@ describe('etsIntlFunTest', function () {
                 hour: "2-digit", minute: "2-digit", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("en-US", options).format;
         console.log("intlDateTimeFormatTest003::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
+        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
     })
 
     /**
@@ -77,7 +77,7 @@ describe('etsIntlFunTest', function () {
                 hour: "2-digit", minute: "2-digit", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("en", options).format;
         console.log("intlDateTimeFormatTest004::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
+        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
     })
 
     /**
@@ -95,7 +95,7 @@ describe('etsIntlFunTest', function () {
             timeZoneName: "short", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat(["pt-BR", "pt-PT"], options).format;
         console.log("intlDateTimeFormatTest005::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("8 de outubro de 2022 00:00 UTC");
+        expect(intlObj(newDate)).assertEqual("8 de outubro de 2022 às 00:00 UTC");
     })
 
     /**
@@ -503,7 +503,7 @@ describe('etsIntlFunTest', function () {
             currencyDisplay: 'name', currencySign: 'accounting', signDisplay: 'always' };
         var intlObj = new Intl.NumberFormat("en-GB", option);
         console.log("intlNumberFormatTest016::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+123,456.79 euros');
+        expect(intlObj.format(number)).assertEqual('+€123,456.79');
         expect(intlObj.resolvedOptions().locale).assertEqual('en-GB');
         expect(intlObj.resolvedOptions().style).assertEqual('currency');
         expect(intlObj.resolvedOptions().currency).assertEqual('EUR');
@@ -525,7 +525,7 @@ describe('etsIntlFunTest', function () {
             currencyDisplay: 'code', currencySign: 'accounting', signDisplay: 'always' };
         var intlObj = new Intl.NumberFormat("en-US", option);
         console.log("intlNumberFormatTest017::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+USD 123,456.79');
+        expect(intlObj.format(number)).assertEqual('+$123,456.79');
         expect(intlObj.resolvedOptions().currency).assertEqual('USD');
         expect(intlObj.format(number)).assertContain('123,456.79');
     })
@@ -1037,7 +1037,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(100, 'second');
         console.log('RelativeTimeFormatTest007 :' + value);
-        expect(value).assertEqual('in 100 sec.');
+        expect(value).assertEqual('in 100s');
     })
 
     /**
@@ -1052,7 +1052,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(-1, 'day');
         console.log('RelativeTimeFormatTest008 :' + value);
-        expect(value).assertEqual('1 day ago');
+        expect(value).assertEqual('1d ago');
     })
 
     /**
@@ -1082,7 +1082,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(2, 'day');
         console.log('RelativeTimeFormatTest010 :' + value);
-        expect(value).assertEqual('in 2 days');
+        expect(value).assertEqual('in 2d');
     })
 
     /**

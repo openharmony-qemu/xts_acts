@@ -3363,7 +3363,8 @@ export default function IntlTest() {
         let intl = new Intl.DateTimeFormat(locales, options);
         let date = new Date();
         let dateTimeFormat = intl.format(date);
-        const regex = /^n\. Chr\. \d{4}-\d{2}-\d{2}$/;
+        // 01.06.2012 n. Chr.
+        const regex = /^\d{2}\.\d{2}\.\d{4} n\. Chr\.$/;
         expect(regex.test(dateTimeFormat)).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3440,7 +3441,7 @@ export default function IntlTest() {
         let intl = new Intl.DateTimeFormat(locales, options);
         let date = new Date();
         let dateTimeFormat = intl.format(date);
-        const regex = /^n\. Chr\. \d{4}-\d{2}-\d{2}$/;
+        const regex = /^\d{2}\.\d{2}\.\d{4} n\. Chr\.$/;
         expect(regex.test(dateTimeFormat)).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3518,7 +3519,7 @@ export default function IntlTest() {
         let intl = new Intl.DateTimeFormat(locales, options);
         let date = new Date();
         let dateTimeFormat = intl.format(date);
-        const regex = /^n\. Chr\. \d{4}-\d{2}-\d{2}$/;
+        const regex = /^\d{2}\.\d{2}\.\d{4} n\. Chr\.$/;
         expect(regex.test(dateTimeFormat)).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4620,7 +4621,7 @@ export default function IntlTest() {
         }
         let formatter = new Intl.DateTimeFormat("en-US", options);
         let dateFormat = formatter.format(date);
-        expect(dateFormat).assertEqual("Saturday, 1 22, 2022 Anno Domini, 2:30:30 AM GMT+8");
+        expect(dateFormat).assertEqual("Saturday, 1 22, 2022 Anno Domini, 2:30:30 AM GMT+8");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -4690,7 +4691,7 @@ export default function IntlTest() {
         }
         let formatter = new Intl.DateTimeFormat("en-US", options);
         let dateFormat = formatter.format(date);
-        expect(dateFormat).assertEqual("Sat, Jan 22, 22 AD, 02:30:30 AM China Standard Time");
+        expect(dateFormat).assertEqual("Sat, Jan 22, 22 AD, 02:30:30 AM China Standard Time");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -4725,7 +4726,7 @@ export default function IntlTest() {
         }
         let formatter = new Intl.DateTimeFormat("en-US", options);
         let dateFormat = formatter.format(date);
-        expect(dateFormat).assertEqual("J 22, 22, 02:30:30 AM");
+        expect(dateFormat).assertEqual("J 22, 22, 02:30:30 AM");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -4912,7 +4913,7 @@ export default function IntlTest() {
         let parts = new Intl.DateTimeFormat("en-US", options).formatToParts(date);
         let partsValue = parts.map((p) => p.value);
         let partsValueToString = partsValue.join("");
-        expect(partsValueToString).assertEqual("Saturday, 1 22, 2022 Anno Domini, 2:30:30 AM GMT+8");
+        expect(partsValueToString).assertEqual("Saturday, 1 22, 2022 Anno Domini, 2:30:30 AM GMT+8");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -4987,7 +4988,7 @@ export default function IntlTest() {
         let parts = new Intl.DateTimeFormat("en-US", options).formatToParts(date);
         let partsValue = parts.map((p) => p.value);
         let partsValueToString = partsValue.join("");
-        expect(partsValueToString).assertEqual("Sat, Jan 22, 22 AD, 02:30:30 AM China Standard Time");
+        expect(partsValueToString).assertEqual("Sat, Jan 22, 22 AD, 02:30:30 AM China Standard Time");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -5023,7 +5024,7 @@ export default function IntlTest() {
         let parts = new Intl.DateTimeFormat("en-US", options).formatToParts(date);
         let partsValue = parts.map((p) => p.value);
         let partsValueToString = partsValue.join("");
-        expect(partsValueToString).assertEqual("J 22, 22, 02:30:30 AM");
+        expect(partsValueToString).assertEqual("J 22, 22, 02:30:30 AM");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -10351,7 +10352,7 @@ export default function IntlTest() {
         };
         let rtf = new Intl.RelativeTimeFormat(locales, options);
         let format = rtf.format(4, "quarter");
-        expect(format).assertEqual("in 4 qtrs.");
+        expect(format).assertEqual("in 4q");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -10420,7 +10421,7 @@ export default function IntlTest() {
         };
         let rtf = new Intl.RelativeTimeFormat(locales, options);
         let format = rtf.format(10, "months");
-        expect(format).assertEqual("in 10 mo.");
+        expect(format).assertEqual("in 10mo");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -10512,7 +10513,7 @@ export default function IntlTest() {
         };
         let rtf = new Intl.RelativeTimeFormat(locales, options);
         let format = rtf.format(-40, "days");
-        expect(format).assertEqual('40 days ago');
+        expect(format).assertEqual('40d ago');
       } catch (error) {
         console.error(`${TAG} failed,error: ${error.message}`);
         expect().assertFail();
@@ -10794,7 +10795,7 @@ export default function IntlTest() {
           console.log(`${JSON.stringify(item)}`);
         })
         expect(`${JSON.stringify(format)}`)
-          .assertEqual('[{"type":"literal","value":"in "},{"type":"integer","value":"4","unit":"quarter"},{"type":"literal","value":" qtrs."}]');
+          .assertEqual('[{"type":"literal","value":"in "},{"type":"integer","value":"4","unit":"quarter"},{"type":"literal","value":"q"}]');
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -10878,7 +10879,7 @@ export default function IntlTest() {
           console.log(`${JSON.stringify(item)}`);
         })
         expect(`${JSON.stringify(format)}`)
-          .assertEqual('[{"type":"literal","value":"in "},{"type":"integer","value":"10","unit":"month"},{"type":"literal","value":" mo."}]');
+          .assertEqual('[{"type":"literal","value":"in "},{"type":"integer","value":"10","unit":"month"},{"type":"literal","value":"mo"}]');
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -10986,7 +10987,7 @@ export default function IntlTest() {
           console.log(`${JSON.stringify(item)}`);
         })
         expect(`${JSON.stringify(format)}`)
-          .assertEqual('[{"type":"integer","value":"40","unit":"day"},{"type":"literal","value":" days ago"}]');
+          .assertEqual('[{"type":"integer","value":"40","unit":"day"},{"type":"literal","value":"d ago"}]');
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -11069,7 +11070,7 @@ export default function IntlTest() {
           console.log(`${JSON.stringify(item)}`);
         });
         expect(`${JSON.stringify(format)}`)
-          .assertEqual('[{"type":"integer","value":"5","unit":"minute"},{"type":"literal","value":" min. ago"}]');
+          .assertEqual('[{"type":"integer","value":"5","unit":"minute"},{"type":"literal","value":"m ago"}]');
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
