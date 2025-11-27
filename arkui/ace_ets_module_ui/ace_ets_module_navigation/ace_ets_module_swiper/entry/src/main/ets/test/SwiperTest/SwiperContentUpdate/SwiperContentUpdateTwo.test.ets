@@ -81,7 +81,7 @@ export default function SwiperContentUpdateTwo() {
       let button2 = await driver.findComponent(ON.text('off'));
       await button2.click();
       await CommonFunc.sleep(2000);
-      let value2 = AppStorage.get('swiperContentInfo')
+      let value2: SwiperContentInfo | undefined = AppStorage.get('swiperContentInfo');
       expect(value2 == null).assertTrue();
       console.info('SwiperContentUpdateTwo_0100 END');
       done();
