@@ -65,7 +65,6 @@ export default function nfcMifareUltralightTag() {
         })
             
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareUltralight_0100
          * @tc.number SUB_Communication_NFC_mifareUltralight_0100
          * @tc.desc   Test readMultiplePages api by promise.
@@ -109,7 +108,6 @@ export default function nfcMifareUltralightTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareUltralight_0200
          * @tc.number SUB_Communication_NFC_mifareUltralight_0200
          * @tc.desc   Test readMultiplePages api by callback.
@@ -149,7 +147,6 @@ export default function nfcMifareUltralightTag() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareUltralight_0300
          * @tc.number SUB_Communication_NFC_mifareUltralight_0300
          * @tc.desc   Test writeSinglePage api by promise.
@@ -189,7 +186,6 @@ export default function nfcMifareUltralightTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareUltralight_0400
          * @tc.number SUB_Communication_NFC_mifareUltralight_0400
          * @tc.desc   Test writeSinglePage api by callback.
@@ -225,7 +221,6 @@ export default function nfcMifareUltralightTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareUltralight_0500
          * @tc.number SUB_Communication_NFC_mifareUltralight_0500
          * @tc.desc   Gets the type of Mifare Ultralight label

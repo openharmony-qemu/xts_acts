@@ -66,7 +66,6 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   constantTest
          * @tc.number constantTest
          * @tc.desc   Test constantTest API functionality
@@ -109,7 +108,6 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   bluetoothOnOffStateTest
          * @tc.number bluetoothOnOffStateTest
          * @tc.desc   Test bluetoothOnOffStateTest API functionality
@@ -178,7 +176,6 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   accessConstantTest
          * @tc.number accessConstantTest
          * @tc.desc   Test accessConstantTest API functionality
@@ -218,7 +215,6 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   stateChangeTest
          * @tc.number stateChangeTest
          * @tc.desc   Test stateChangeTest API functionality
@@ -257,7 +253,6 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   stateChangeTest2
          * @tc.number stateChangeTest2
          * @tc.desc   Test stateChangeTest API functionality

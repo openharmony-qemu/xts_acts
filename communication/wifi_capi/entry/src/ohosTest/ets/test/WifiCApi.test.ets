@@ -47,7 +47,6 @@ export default function wifiCApiTest() {
         afterAll(() => {
         })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0100
          * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0100
          * @tc.desc   test OH_Wifi_IsWifiEnabled
@@ -73,7 +72,6 @@ export default function wifiCApiTest() {
             done();
         });
         /**
-         * @generated.time 2025-11-16 16:00:00
          * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0200
          * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0200
          * @tc.desc   test OH_Wifi_GetDeviceMacAddress (验证接口调用成功性)

@@ -67,7 +67,6 @@ export default function actsWifiErrorCode401Test() {
         afterEach(function () {
         })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0005
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0005
          * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
@@ -92,7 +91,6 @@ export default function actsWifiErrorCode401Test() {
             done();
 	    })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0006
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0006
          * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
@@ -132,7 +130,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0007
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0007
          * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
@@ -153,7 +150,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0008
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0008
          * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
@@ -181,7 +177,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0009
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0009
          * @tc.desc   Test ConnectToCandidateConfig API ErrorCode 401.
@@ -202,7 +197,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0014
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0014
          * @tc.desc   Test GetSignalLevel API ErrorCode 401.
@@ -222,7 +216,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0017
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0017
          * @tc.desc   Test isFeatureSupported API ErrorCode 401.
@@ -243,7 +236,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0026
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0026
          * @tc.desc   Test createGroup API ErrorCode 401.
@@ -263,7 +255,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0020
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0020
          * @tc.desc   Test p2pConnect API ErrorCode 401.
@@ -283,7 +274,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0027
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0027
          * @tc.desc   Test wifiStateChange API ErrorCode 401.
@@ -314,7 +304,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0028
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0028
          * @tc.desc   Test wifiConnectionChange API ErrorCode 401.
@@ -345,7 +334,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0029
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0029
          * @tc.desc   Test wifiScanStateChange API ErrorCode 401.
@@ -376,7 +364,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0030
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0030
          * @tc.desc   Test wifiRssiChange API ErrorCode 401.
@@ -407,7 +394,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0031
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0031
          * @tc.desc   Test hotspotStateChange API ErrorCode 401.
@@ -438,7 +424,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0032
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0032
          * @tc.desc   Test p2pStateChange API ErrorCode 401.
@@ -469,7 +454,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0033
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0033
          * @tc.desc   Test p2pConnectionChange API ErrorCode 401.
@@ -500,7 +484,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0034
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0034
          * @tc.desc   Test p2pDeviceChange API ErrorCode 401.
@@ -531,7 +514,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0035
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0035
          * @tc.desc   Test p2pPeerDeviceChange API ErrorCode 401.
@@ -562,7 +544,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0036
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0036
          * @tc.desc   Test p2pPersistentGroupChange API ErrorCode 401.
@@ -593,7 +574,6 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0037
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0037
          * @tc.desc   Test p2pDiscoveryChange API ErrorCode 401.

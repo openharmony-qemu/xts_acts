@@ -65,7 +65,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0008
          * @tc.number SUB_Communication_WiFi_Event_Test_0008
          * @tc.desc   Test p2pStateChange callback
@@ -93,7 +92,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0009
          * @tc.number SUB_Communication_WiFi_Event_Test_0009
          * @tc.desc   Test p2pConnectionChange callback
@@ -144,7 +142,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0012
          * @tc.number SUB_Communication_WiFi_Event_Test_0012
          * @tc.desc   Test p2pDeviceChange callback
@@ -172,7 +169,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0010
          * @tc.number SUB_Communication_WiFi_Event_Test_0010
          * @tc.desc   Test p2pPeerDeviceChange callback
@@ -202,7 +198,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0013
          * @tc.number SUB_Communication_WiFi_Event_Test_0013
          * @tc.desc   Test p2pPersistentGroupChange callback
@@ -247,7 +242,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0007
          * @tc.number SUB_Communication_WiFi_Event_Test_0007
          * @tc.desc   Test createGroup and getCurrentGroup promise and removeGroup
@@ -305,7 +299,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0006
          * @tc.number SUB_Communication_WiFi_Event_Test_0006
          * @tc.desc   Test getCurrentGroup callback
@@ -345,7 +338,6 @@ export default function actsWifiManagerEventTest() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0005
          * @tc.number SUB_Communication_WiFi_Event_Test_0005
          * @tc.desc   Test startDiscoverDevices and stopDiscoverDevices
@@ -381,7 +373,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_Event_Test_0011
          * @tc.number SUB_Communication_WiFi_Event_Test_0011
          * @tc.desc   Test p2pDiscoveryChange callback
