@@ -111,8 +111,8 @@ it('uiopenCustomDialogMode_static_0100', Level.LEVEL1, async (done: () => void):
       await CommonFunc.sleep(1000);
       console.info('[uiopenCustomDialogMode_static_0100] router');
 
-      let btn6: Component = ( await driver.findComponent(ON.id('close')) ) as Component;
-      await ( btn6?.click() as Promise<void>);
+      let btn6: Component = (await driver.findComponent(ON.id('close')) as Component);
+      await (btn6?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[uiopenCustomDialogMode_static_0100] END');
       done();
@@ -150,7 +150,7 @@ it('uiopenCustomDialogMode_static_0200', Level.LEVEL1, async (done: () => void):
       console.info('[uiopenCustomDialogMode_static_0200] router');
       await CommonFunc.sleep(1000);
 
-      let btn3: Component = ( await driver.findComponent(ON.id('router')) ) as Component;
+      let btn3 = await driver.findComponent(ON.id('router'));
       expect(btn3 != null).assertFalse();
       await CommonFunc.sleep(1000);
 

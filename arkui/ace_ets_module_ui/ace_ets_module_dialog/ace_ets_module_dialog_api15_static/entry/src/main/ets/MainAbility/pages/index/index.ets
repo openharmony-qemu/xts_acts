@@ -13,39 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@ohos.router';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-// import { Hypium } from '@ohos/hypium'
-import testsuite from '../../../../src/test/List.test'
-import router from '@ohos.router';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,ItemAlign,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,FlexDirection,FlexDirection,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,
-  Observed,
-  ObjectLink,
-} from '@ohos.arkui.stateManagement'
-import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import common from '@ohos.app.ability.common';
-import { BuilderNode,FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode } from '@ohos.promptAction';
-import { LengthMetrics } from '@ohos.arkui.node';
-import { Callback } from '@ohos.base';
-import { Hypium } from '../../../../../hypium';
-import promptAction from '@ohos.promptAction';
-let promptAction = new PromptAction()
+import common2D from '@ohos.graphics.displaySync'
 
 
 @Entry
@@ -53,28 +25,27 @@ let promptAction = new PromptAction()
 struct Index {
 
   aboutToAppear(){
-    console.info("start run testcase!!!!")
-        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
-        console.info('start run testcase!!!')
-        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+    try {
+      let router1 = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router1);
+    } catch (error: Error) {
+      console.log('error ' + error);
+    }
   }
 
   build() {
-    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center } as FlexOptions) {
+    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-      Button('') {
+      Button("123") {
         Text('next page')
           .fontSize(25)
-          .fontWeight(FontWeight.Bold)
-      }.type(ButtonType.Capsule)
+      }
       .margin({
         top: 20
       } as Margin)
       .backgroundColor('#0D9FFB')
-      .onClick(():void => {
+      .onClick((e:ClickEvent) => {
 
       })
     }

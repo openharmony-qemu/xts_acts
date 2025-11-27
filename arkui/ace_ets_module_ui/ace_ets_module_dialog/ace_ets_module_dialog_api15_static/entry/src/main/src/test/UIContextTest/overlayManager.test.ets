@@ -87,7 +87,7 @@ it('overlayManager_static_0100', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let text = inspector.getInspectorByKey('text');
       console.info("[overlayManager_static_0100] attrs is: " + JSON.stringify(JSON.parseJsonElement(text).getElement('$attrs').getString('content')))
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual(true)
+      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('true')
       console.info('[overlayManager_static_0100] END');
       done();
     });
@@ -118,7 +118,7 @@ it('overlayManager_static_0200', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let text = inspector.getInspectorByKey('text');
       console.info("[overlayManager_static_0200] attrs is: " + JSON.stringify(JSON.parseJsonElement(text).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual(true);
+      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('true');
       console.info('[overlayManager_static_0200] END');
       done();
     });

@@ -24,7 +24,7 @@ import {
   Text,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,$$,SheetType,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
@@ -38,15 +38,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode,FrameNode } from '@ohos.arkui.node';
 import { ImmersiveMode } from '@ohos.promptAction';
-import { LengthMetrics,NodeBorderRadiuses } from '@ohos.arkui.node';
+import { LengthMetrics } from '@ohos.arkui.node';
 import { Callback } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
-let promptAction = new PromptAction()
 @Entry
 @Component
 struct bindSheetRadius {
   @State isShow: boolean = false
-  @State radius: LengthMetrics | NodeBorderRadiuses | LocalizedBorderRadiuses | undefined | null = LengthMetrics.px(20)
+  @State radius: undefined|LengthMetrics|BorderRadiuses|LocalizedBorderRadiuses = LengthMetrics.px(20)
 
   @Builder
   myBuilder() {
@@ -54,36 +53,36 @@ struct bindSheetRadius {
       Button('radius:20px')
         .height('8%')
         .id('radiusPX')
-        .onClick(():void => {
+        .onClick((event: ClickEvent) => {
           this.radius = LengthMetrics.px(20);
         })
       Button('radius:20vp')
         .height('8%')
         .id('radiusVP')
-        .onClick(():void => {
+        .onClick((event: ClickEvent) => {
           this.radius = LengthMetrics.vp(20);
         })
       Button('radius:20fp')
         .height('8%')
         .id('radiusFP')
-        .onClick(():void => {
+        .onClick((event: ClickEvent) => {
           this.radius = LengthMetrics.fp(20);
         })
       Button('radius:BorderRadiuses')
         .height('8%')
         .id('borderRadiuses')
-        .onClick(():void => {
-          // this.radius = {
-          //   topLeft: '10px',
-          //   topRight: '20vp',
-          //   bottomLeft: '10fp',
-          //   bottomRight: '10%'
-          // }
+        .onClick((event: ClickEvent) => {
+          this.radius = {
+            topLeft: '10px',
+            topRight: '20vp',
+            bottomLeft: '10fp',
+            bottomRight: '10%'
+          }
         })
       Button('radius:LocalizedBorderRadiuses')
         .height('8%')
         .id('localizedBorderRadiuses')
-        .onClick(():void => {
+        .onClick((event: ClickEvent) => {
           this.radius = {
             topStart: LengthMetrics.px(100),
             topEnd: LengthMetrics.vp(0),
@@ -94,14 +93,14 @@ struct bindSheetRadius {
       Button('radius:undefined')
         .height('8%')
         .id('undefined')
-        .onClick(():void => {
+        .onClick((event: ClickEvent) => {
           this.radius = undefined
         })
       Button('radius:null')
         .height('8%')
         .id('null')
-        .onClick(():void => {
-          this.radius = null;
+        .onClick((event: ClickEvent) => {
+          this.radius = undefined;  //null
         })
 
 
@@ -109,7 +108,7 @@ struct bindSheetRadius {
         .height('8%')
         .id('close')
         .margin(10)
-        .onClick(():void => {
+        .onClick((event: ClickEvent) => {
           this.isShow = false;
         })
     }
@@ -121,13 +120,13 @@ struct bindSheetRadius {
     Column() {
       Button('transition modal 1')
         .id('bindSheet')
-        .onClick(():void => {
+        .onClick((event: ClickEvent) => {
           this.isShow = true
         })
         .fontSize(20)
         .margin(10)
         .bindSheet($$(this.isShow), this.myBuilder, {
-          // radius: this.radius,
+          radius: this.radius,
           height: '80%',
           backgroundColor: Color.Green,
           preferType: SheetType.BOTTOM,

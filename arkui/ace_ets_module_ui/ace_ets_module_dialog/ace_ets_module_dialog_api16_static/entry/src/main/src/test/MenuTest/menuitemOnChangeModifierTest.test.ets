@@ -89,8 +89,7 @@ export default function menuitemOnChangeModifierTest() {
       await CommonFunc.sleep(1000)
 
       let strJsonNew = inspector.getInspectorByKey('MenuItemOnChangValueKey');
-      console.info("ArkUX_Modifier_MenuItem_OnChange_static_1001 component  is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)
+      console.info("ArkUX_Modifier_MenuItem_OnChange_static_1001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('true');
       console.info('ArkUX_Modifier_MenuItem_OnChange_static_1001 END');

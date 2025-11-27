@@ -94,7 +94,7 @@ export default function openDialogTransitionTest() {
         for (let btnId of resetButtons) {
           let btn = await driver.findComponent(ON.id(btnId));
           if (btn) {
-            await (btn?.click() as Promise<void>);
+            await ( btn?.click()  as Promise<void> );
             await CommonFunc.sleep(200);
           }
         }
@@ -105,7 +105,7 @@ export default function openDialogTransitionTest() {
       try {
         let confirmBtn = await driver.findComponent(ON.id('Confirm'));
         if (confirmBtn) {
-          await (confirmBtn?.click() as Promise<void>);
+          await ( confirmBtn?.click()  as Promise<void> );
           await CommonFunc.sleep(200);
         }
       } catch (e) {
@@ -153,8 +153,7 @@ export default function openDialogTransitionTest() {
       await (openDialogButton?.click() as Promise<void>);
       await CommonFunc.sleep(3000);
       let textContent = inspector.getInspectorByKey('TextContent');
-      console.info('OpenDialogTransitionTest_static_200 ysq textContent is %s',
-        JSON.parseJsonElement(textContent).getElement('$attrs').getString('content'));
+      console.info('OpenDialogTransitionTest_static_200 ysq textContent is %s',JSON.parseJsonElement(textContent).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(textContent).getElement('$attrs').getString('content')).assertEqual('弹窗');
       let confirmButton = await driver.findComponent(ON.id('Confirm'));
       await (confirmButton?.click() as Promise<void>);

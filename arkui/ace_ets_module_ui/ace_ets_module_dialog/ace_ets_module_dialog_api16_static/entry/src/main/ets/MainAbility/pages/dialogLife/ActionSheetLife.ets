@@ -29,6 +29,7 @@ import {
   ButtonType,Scroller,Color,Rectangle,
   ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
 } from '@ohos.arkui.component'
+import { LevelMode } from '@ohos.promptAction';
 import {
   State,
   Link,

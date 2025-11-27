@@ -95,12 +95,12 @@ struct Index {
           this.textPosition1.y = newValue.globalPosition.y;
         })
         .onClick(() => {
-          // let context = this.getUIContext()
-          // const contentNode = new ComponentContent(context, wrapBuilder(buildText));
-          // const promptAction = context.getPromptAction();
-          // let uniqueId = this.getUniqueId();
-          // let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-          // emitter.on(innerEvent, this.callback);
+          let context = this.getUIContext()
+          const contentNode = new ComponentContent(context, wrapBuilder(buildText));
+          const promptAction = context.getPromptAction();
+          let uniqueId = this.getUniqueId();
+          let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
+          emitter.on(innerEvent, this.callback);
           // promptAction.openMenu(contentNode, { id: 'btn1', componentId: frameNode?.getUniqueId().toInt() },{
           //   anchorPosition:{x:10, y:10},
           // })

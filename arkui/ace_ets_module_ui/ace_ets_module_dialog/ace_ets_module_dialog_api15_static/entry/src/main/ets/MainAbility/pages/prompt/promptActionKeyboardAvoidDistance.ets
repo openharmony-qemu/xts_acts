@@ -23,7 +23,7 @@ import {
   Text,Builder,Grid,GridItem,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,KeyboardAvoidMode,Dimension,DismissDialogAction,DismissReason,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,LevelMode,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
@@ -40,7 +40,6 @@ import { ImmersiveMode } from '@ohos.promptAction';
 import { LengthMetrics } from '@ohos.arkui.node';
 import { Callback } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
-let promptAction = new PromptAction()
 @Entry
 @Component
 struct promptKeyboard {
@@ -52,17 +51,18 @@ struct promptKeyboard {
   @State showInSub: boolean = false
   @State heigh: Int = 200
   controller1: TextInputController = new TextInputController()
+  promptAction: PromptAction = this.getUIContext().getPromptAction();
 
   @Builder CustomKeyboardBuilder(): void {
     Column() {
-      Button('x').onClick(():void => {
+      Button('x').onClick((event: ClickEvent) => {
         this.controller1.stopEditing()
       })
       Grid() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item:Int|string, index: int):void => {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item:Int|string):void => {
           GridItem() {
             Button(item + '')
-              .width('30%').onClick(():void => {
+              .width('30%').onClick((event: ClickEvent) => {
               this.textValue += item
             })
           }
@@ -75,11 +75,11 @@ struct promptKeyboard {
   @Builder customDialogComponent(): void {
     Column() {
       Row({ space: 20 } as RowOptions) {
-        Button('确认').onClick(():void => {
-          promptAction.closeCustomDialog(this.customDialogComponentId)
+        Button('确认').onClick((event: ClickEvent) => {
+          this.promptAction.closeCustomDialog(this.customDialogComponentId)
         })
-        Button('取消').onClick(():void => {
-          promptAction.closeCustomDialog(this.customDialogComponentId)
+        Button('取消').onClick((event: ClickEvent) => {
+          this.promptAction.closeCustomDialog(this.customDialogComponentId)
         })
       }.margin({top:0} as Margin)
       TextInput({ placeholder: '', text: this.textValue, controller: this.controller1 })
@@ -100,8 +100,8 @@ struct promptKeyboard {
           .margin({top:10} as Margin)
           .id('btn1')
           .fontSize(30)
-          .onClick(():void => {
-            promptAction.openCustomDialog({
+          .onClick((event: ClickEvent) => {
+            this.promptAction.openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -112,16 +112,16 @@ struct promptKeyboard {
               height: this.heigh,
               maskRect: { x: 0, y: 0, width: '100%', height: '100%' },
               maskColor: Color.Pink,
-                // onWillDismiss: (dismissDialogAction: DismissDialogAction):void => {
-              //   console.info('reason' + JSON.stringify(dismissDialogAction.reason))
-              //   console.log('dialog onWillDismiss')
-              //   if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
-              //     //dismissDialogAction.dismiss()
-              //   }
-              //   if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
-              //     //dismissDialogAction.dismiss()
-              //   }
-              // }
+                onWillDismiss: (dismissDialogAction: DismissDialogAction):void => {
+                console.info('reason' + JSON.stringify(dismissDialogAction.reason))
+                console.log('dialog onWillDismiss')
+                if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+                  dismissDialogAction.dismiss()
+                }
+                if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+                  dismissDialogAction.dismiss()
+                }
+              }
             } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
@@ -130,8 +130,8 @@ struct promptKeyboard {
           .margin({top:10} as Margin)
           .id('btn2')
           .fontSize(30)
-          .onClick(():void => {
-            promptAction.openCustomDialog({
+          .onClick((event: ClickEvent) => {
+            this.promptAction.openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -142,16 +142,16 @@ struct promptKeyboard {
               height: this.heigh,
               maskRect: { x: 0, y: 0, width: '100%', height: '100%' },
               maskColor: Color.Pink,
-                // onWillDismiss: (dismissDialogAction: DismissDialogAction):void => {
-              //   console.info('reason' + JSON.stringify(dismissDialogAction.reason))
-              //   console.log('dialog onWillDismiss')
-              //   if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
-              //     //dismissDialogAction.dismiss()
-              //   }
-              //   if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
-              //     //dismissDialogAction.dismiss()
-              //   }
-              // }
+                onWillDismiss: (dismissDialogAction: DismissDialogAction):void => {
+                console.info('reason' + JSON.stringify(dismissDialogAction.reason))
+                console.log('dialog onWillDismiss')
+                if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+                  dismissDialogAction.dismiss()
+                }
+                if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+                  dismissDialogAction.dismiss()
+                }
+              }
             } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
@@ -160,8 +160,8 @@ struct promptKeyboard {
           .margin({top:10} as Margin)
           .id('btn3')
           .fontSize(30)
-          .onClick(():void => {
-            promptAction.openCustomDialog({
+          .onClick((event: ClickEvent) => {
+            this.promptAction.openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -172,16 +172,16 @@ struct promptKeyboard {
               height: this.heigh,
               maskRect: { x: 0, y: 0, width: '100%', height: '100%' },
               maskColor: Color.Pink,
-              // onWillDismiss: (dismissDialogAction: DismissDialogAction):void => {
-              //   console.info('reason' + JSON.stringify(dismissDialogAction.reason))
-              //   console.log('dialog onWillDismiss')
-              //   if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
-              //     //dismissDialogAction.dismiss()
-              //   }
-              //   if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
-              //     //dismissDialogAction.dismiss()
-              //   }
-              // }
+              onWillDismiss: (dismissDialogAction: DismissDialogAction):void => {
+                console.info('reason' + JSON.stringify(dismissDialogAction.reason))
+                console.log('dialog onWillDismiss')
+                if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+                  dismissDialogAction.dismiss()
+                }
+                if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+                  dismissDialogAction.dismiss()
+                }
+              }
             } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })

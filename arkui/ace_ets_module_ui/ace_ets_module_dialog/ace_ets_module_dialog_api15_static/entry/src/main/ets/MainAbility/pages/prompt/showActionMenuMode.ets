@@ -19,12 +19,41 @@ import {
   Entry,
   Column,
   Component,
-  Button,
   ClickEvent,
   Text,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  Row,
+  AlertDialogParamWithButtons,
+  FlexOptions,
+  ColumnOptions,
+  RowOptions,
+  Flex,
+  Scroll,
+  FontWeight,
+  TextAlign,
+  ForEach,
+  ListItem,
+  LocalizedBorderRadiuses,
+  $$,
+  SheetOptions,
+  FlexAlign,
+  CustomDialogController,
+  TextInput,
+  CustomDialogControllerOptions,
+  ButtonType,
+  Scroller,
+  Color,
+  Rectangle,
+  LevelMode,
+  ActionSheetOptions,
+  ControlSize,
+  DialogAlignment,
+  TextInputController,
+  Margin,
+  BorderRadiuses,
+  CustomStyles,
+  CommonMethod,
+  TextAttribute,
+  ColumnAttribute
 } from '@ohos.arkui.component'
 import {
   State,
@@ -36,12 +65,12 @@ import {
 import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-import { BuilderNode,FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode,LevelMode } from '@ohos.promptAction';
+import { BuilderNode, FrameNode } from '@ohos.arkui.node';
+import { ImmersiveMode } from '@ohos.promptAction';
 import { LengthMetrics } from '@ohos.arkui.node';
 import { Callback } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
-let promptAction = new PromptAction()
+import { Button } from '@system.prompt';
 
 //@Preview
 @Component
@@ -49,18 +78,12 @@ export struct MyComponent {
   title: string = 'test'
   func: () => void = () => {
   }
-
-  // @Styles
-  // pressedStyle()
-  // {
-  //   .backgroundColor(0x238E23)
-  // }
-  //
-  // @Styles
-  // normalStyles()
-  // {
-  //   .backgroundColor(0x0000ff)
-  // }
+  NormalStyles: CustomStyles = (instance: CommonMethod): void => {
+    instance.backgroundColor(Color.Gray);
+  };
+  PressedStyles: CustomStyles = (instance: CommonMethod): void => {
+    instance.backgroundColor(Color.Blue);
+  };
 
   build() {
     Text(this.title)
@@ -70,75 +93,74 @@ export struct MyComponent {
       .fontColor(0xffffff)
       .padding(5)
       .onClick(this.func)
-     // .stateStyles({ pressed: this.pressedStyle, normal: this.normalStyles })
+      .stateStyles({ pressed: this.PressedStyles, normal: this.NormalStyles })
   }
 }
 
-// @Extend(Text)
-// function paramTextStyle()
-// {
-//   .fontSize(9)
-//   .width('100%')
-// }
-//
-// @Extend(Text)
-// function componentTextStyle()
-// {
-//   .fontSize(15)
-//   .backgroundColor(Color.Orange)
-//   .margin(3)
-//   .padding(3)
-//   .borderWidth(1.0)
-// }
-//
-// @Extend(Column)
-// function columnStyle()
-// {
-//   .borderWidth(1.0)
-//   .padding(10)
-//   .width('100%')
-//   .backgroundColor(Color.Pink)
-// }
+function superFancyText1(this: TextAttribute): this {
+  this.fontSize(9);
+  this.width('100%');
+  return this;
+}
+
+function superFancyText2(this: TextAttribute): this {
+  this.fontSize(15);
+  this.backgroundColor(Color.Orange)
+  this.width('100%');
+  this.margin(3)
+  this.padding(3)
+  this.borderWidth(1.0)
+  return this;
+}
+
+function superFancyColumn(this: ColumnAttribute): this {
+  this.backgroundColor(Color.Pink)
+  this.width('100%');
+  this.padding(10)
+  this.borderWidth(1.0)
+  return this;
+}
 
 
 @Entry
 @Component
 struct showActionMenuMode {
+  // promptAction = this.getUIContext().getPromptAction()
   scroller: Scroller = new Scroller()
   @State showInSubWindow: boolean = false
   @State levelMode: LevelMode | undefined = undefined
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: long | undefined | Int = this.getUniqueId()
+  @State levelUniqueId: int | undefined = undefined
   @State immersiveMode: ImmersiveMode | undefined = undefined
   @State isModal: boolean = false
 
   aboutToAppear() {
-    this.levelUniqueId = this.getUniqueId();
+    this.levelUniqueId = this.getUniqueId().toInt();
   }
 
   build() {
     Scroll(this.scroller) {
       Column({ space: 5 } as ColumnOptions) {
         Text('返回首页')
-          //.componentTextStyle()
-          .onClick(():void => {
-            this.getUIContext().getRouter().pushUrl({
-              url: 'MainAbility/pages/actionSheet/index'
-            }, router.RouterMode.Standard)
+          .superFancyText2()
+          .onClick((event: ClickEvent) => {
+            // com.arkui.ace.dialog.api15.static({
+            //   url: 'MainAbility/pages/actionSheet/index'
+            // }, router.RouterMode.Standard)
           })
           .id('back')
 
         Column({ space: 5 } as ColumnOptions) {
           Row({ space: 3 }  as RowOptions ) {
             MyComponent({
-              title: 'levelMode: OVERLAY', func: () :void => {
-                //this.levelMode = 0
+              title: 'levelMode: OVERLAY', func: (): void => {
+                this.levelMode = LevelMode.OVERLAY
               }
             })
             MyComponent({
-              title: 'levelMode: EMBEDDED', func: () :void => {
-                //this.levelMode = 1
+              title: 'levelMode: EMBEDDED', func: (): void => {
+                this.levelMode = LevelMode.EMBEDDED
               }
             })
           }
@@ -150,13 +172,13 @@ struct showActionMenuMode {
               }
             })
             MyComponent({
-              title: 'undefined', func: () :void => {
-                  //this.levelMode = undefined
+              title: 'undefined', func: (): void => {
+                this.levelMode = undefined
               }
             })
             MyComponent({
-              title: 'null', func: () :void => {
-                //this.levelMode = null
+              title: 'null', func: (): void => {
+                this.levelMode = undefined
               }
             })
           }
@@ -166,40 +188,40 @@ struct showActionMenuMode {
             MyComponent({
               title: 'uniqId: Normal value', func: () :void => {
                 const node: FrameNode | null = this.getUIContext().getFrameNodeById('pageCol') || null;
-                this.levelUniqueId = node?.getUniqueId();
+                this.levelUniqueId = node?.getUniqueId().toInt();
               }
             })
             MyComponent({
-              title: 'uniqId: Abnormal value', func: () :void => {
-                this.levelUniqueId = 1237 as Int
+              title: 'uniqId: Abnormal value', func: (): void => {
+                this.levelUniqueId = 1237
               }
             })
           }
 
         }
-        //.columnStyle()
+        .superFancyColumn()
 
         Column({ space: 5 } as ColumnOptions) {
           Text(`showActionMenu`)
             .id('showAction')
-            //.componentTextStyle()
-            .onClick(():void => {
-              // this.getUIContext().getPromptAction().showActionMenu({
-              //     //levelMode: this.levelMode,
-              //   //levelUniqueId: this.levelUniqueId,
-              //   immersiveMode: this.immersiveMode,
-              //
-              //   showInSubWindow: this.showInSubWindow,
-              //   isModal: this.isModal,
-              //
-              //   title: 'Title Info',
-              //   buttons: [
-              //     {
-              //       text: 'button1',
-              //       color: '#000000'
-              //     }
-              //   ],
-              // })
+            .superFancyText2()
+            .onClick((event: ClickEvent) => {
+              this.getUIContext().getPromptAction().showActionMenu({
+                levelMode: this.levelMode,
+                levelUniqueId: this.levelUniqueId,
+                immersiveMode: this.immersiveMode,
+
+                showInSubWindow: this.showInSubWindow,
+                isModal: this.isModal,
+
+                title: 'Title Info',
+                buttons: [
+                  {
+                    text: 'button1',
+                    color: '#000000'
+                  } as promptAction.Button
+                ] as [promptAction.Button],   //Error line
+              })
             })
         }
         .id('pageCol')

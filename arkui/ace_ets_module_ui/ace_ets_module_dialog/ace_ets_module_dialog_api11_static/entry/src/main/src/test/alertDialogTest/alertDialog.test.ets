@@ -130,6 +130,7 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
      */
 it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testMeasureText0001_static start');
+      await Utils.sleep(2000);
       let driver = Driver.create()
       await Utils.sleep(2000);
       try {
@@ -147,9 +148,9 @@ it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise
         expect().assertFail();
         done();
       }
-      let button = await driver.findComponent(ON.text('button'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      // let button = await driver.findComponent(ON.text('button'));
+      // await (button?.click() as Promise<void>);
+      // await Utils.sleep(1000);
     });
 
   })

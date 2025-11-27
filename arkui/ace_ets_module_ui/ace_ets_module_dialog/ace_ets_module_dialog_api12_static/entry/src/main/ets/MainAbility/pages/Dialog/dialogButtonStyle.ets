@@ -39,8 +39,9 @@ import {
   Link,
   PropRef,AppStorage
 } from '@ohos.arkui.stateManagement';
-import { LevelOrder } from '@ohos.promptAction';
-
+import {
+  LevelOrder
+} from '@ohos.promptAction';
 @Entry
 @Component
 struct dialogButtonStyle {
@@ -48,7 +49,7 @@ struct dialogButtonStyle {
     Column({ space: 5 } as ColumnOptions) {
       Button(`alertDialog`)
         .id('alertDialog')
-        .onClick(():void => {
+        .onClick((e:ClickEvent):void => {
           this.getUIContext().showAlertDialog(
             {
               title: 'title',

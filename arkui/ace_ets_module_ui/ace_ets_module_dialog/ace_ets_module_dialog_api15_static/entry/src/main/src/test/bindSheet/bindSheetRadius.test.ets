@@ -94,8 +94,8 @@ it('bindSheetRadius_static_0100', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[bindSheetRadius_static_0100] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[bindSheetRadius_static_0100] obj2.$children[1].$children[0] radiusPX is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[bindSheetRadius_static_0100] obj2.$children[1].$children[0] radiusPX is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderRadius')));
+      console.info("[bindSheetRadius_static_0100] obj2.$children[1].$children[0] radiusPX is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[bindSheetRadius_static_0100] obj2.$children[1].$children[0] radiusPX is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderRadius')));
       let topLeft: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topLeft') as string
       let topRight: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topRight') as string
       expect(topLeft).assertEqual('20.00px');
@@ -132,8 +132,8 @@ it('bindSheetRadius_static_0200', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[bindSheetRadius_static_0200] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[bindSheetRadius_static_0200] obj2.$children[1].$children[0] radiusVP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[bindSheetRadius_static_0200] obj2.$children[1].$children[0] radiusVP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderRadius')));
+      console.info("[bindSheetRadius_static_0200] obj2.$children[1].$children[0] radiusVP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[bindSheetRadius_static_0200] obj2.$children[1].$children[0] radiusVP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderRadius')));
       
       let topLeft: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topLeft') as string
       let topRight: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topRight') as string
@@ -170,8 +170,8 @@ it('bindSheetRadius_static_0300', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[bindSheetRadius_static_0300] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[bindSheetRadius_static_0300] obj2.$children[1].$children[0] radiusFP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[bindSheetRadius_static_0300] obj2.$children[1].$children[0] radiusFP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderRadius')));
+      console.info("[bindSheetRadius_static_0300] obj2.$children[1].$children[0] radiusFP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[bindSheetRadius_static_0300] obj2.$children[1].$children[0] radiusFP is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderRadius')));
       
       let topLeft: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topLeft') as string
       let topRight: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topRight') as string
@@ -208,8 +208,8 @@ it('bindSheetRadius_static_0400', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[bindSheetRadius_static_0400] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[bindSheetRadius_static_0400] obj2.$children[1].$children[0] borderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[bindSheetRadius_static_0400] obj2.$children[1].$children[0] borderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderRadius')));
+      console.info("[bindSheetRadius_static_0400] obj2.$children[1].$children[0] borderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[bindSheetRadius_static_0400] obj2.$children[1].$children[0] borderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderRadius')));
       
       let topLeft: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topLeft') as string
       let topRight: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topRight') as string
@@ -246,8 +246,8 @@ it('bindSheetRadius_static_0500', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[bindSheetRadius_static_0500] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[bindSheetRadius_static_0500] obj2.$children[1].$children[0] localizedBorderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[bindSheetRadius_static_0500] obj2.$children[1].$children[0] localizedBorderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderRadius')));
+      console.info("[bindSheetRadius_static_0500] obj2.$children[1].$children[0] localizedBorderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[bindSheetRadius_static_0500] obj2.$children[1].$children[0] localizedBorderRadiuses is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderRadius')));
       
       let topLeft: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topLeft') as string
       let topRight: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topRight') as string
@@ -284,8 +284,8 @@ it('bindSheetRadius_static_0600', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[bindSheetRadius_static_0600] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[bindSheetRadius_static_0600] obj2.$children[1].$children[0] undefined is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[bindSheetRadius_static_0600] obj2.$children[1].$children[0] undefined is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderRadius')));
+      console.info("[bindSheetRadius_static_0600] obj2.$children[1].$children[0] undefined is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[bindSheetRadius_static_0600] obj2.$children[1].$children[0] undefined is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderRadius')));
       
       let topLeft: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topLeft') as string
       let topRight: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topRight') as string
@@ -326,8 +326,8 @@ it('bindSheetRadius_static_0700', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[bindSheetRadius_static_0700] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[bindSheetRadius_static_0700] obj2.$children[1].$children[0] null is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[bindSheetRadius_static_0700] obj2.$children[1].$children[0] null is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderRadius')));
+      console.info("[bindSheetRadius_static_0700] obj2.$children[1].$children[0] null is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[bindSheetRadius_static_0700] obj2.$children[1].$children[0] null is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderRadius')));
       
       let topLeft: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topLeft') as string
       let topRight: string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getElement('borderRadius').getString('topRight') as string
