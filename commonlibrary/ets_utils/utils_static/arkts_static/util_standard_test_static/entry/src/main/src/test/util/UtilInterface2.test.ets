@@ -1585,5 +1585,50 @@ export default function Util2Test() {
       let result = type.isSetIterator(set.keys());
       expect(result).assertEqual(true);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_001
+     * @tc.name testUtil3_001
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let base64Helper = new util.Base64Helper();
+      let buff = 'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25ZnJvb';
+      let result = base64Helper.decodeSync(buff, util.Type.MIME);
+      expect(JSON.stringify(result))
+        .assertEqual('{"0":77,"1":97,"2":110,"3":105,"4":115,"5":100,"6":105,"7":115,"8":116,"9":105,' +
+          '"10":110,"11":103,"12":117,"13":105,"14":115,"15":104,"16":101,"17":100,"18":110,"19":111,"20"' +
+          ':116,"21":111,"22":110,"23":89,"24":156,"25":155,"26":219}');
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_002
+     * @tc.name testUtil3_002
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let lru = new ChildLRUCache4();
+      lru.put(2, 10);
+      lru.get(3);
+      lru.get(5);
+      let res = lru.getCreateCount();
+      expect(res).assertEqual(2);
+    })
   });
+}
+
+class ChildLRUCache4 extends util.LRUCache<int, int> {
+  constructor() {
+    super();
+  }
+
+  createDefault(key: int): int {
+    return key;
+  }
 }

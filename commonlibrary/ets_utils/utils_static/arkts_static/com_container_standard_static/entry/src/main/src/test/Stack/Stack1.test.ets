@@ -512,5 +512,30 @@ export default function StackTest1() {
         expect(false).assertFail()
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_012
+     * @tc.name testUtil3_012
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let res = 0;
+      let stack: Stack<int> = new Stack<int>();
+      stack.push(2);
+      stack.push(4);
+      stack.push(5);
+      stack.push(4);
+
+      let iter = stack.$_iterator();
+      let temp = iter.next().value;
+      while (temp != undefined) {
+        res = res + temp;
+        temp = iter.next().value;
+      }
+      expect(res).assertEqual(15);
+    })
   })
 }
