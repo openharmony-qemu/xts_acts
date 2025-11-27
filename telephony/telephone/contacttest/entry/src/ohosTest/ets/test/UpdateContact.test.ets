@@ -20,7 +20,8 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Driver } from '@ohos.UiTest';
-import { SavePhoto, GetUri } from './ContactTestUtil.test';
+import { SavePhoto, GetUri, GetPixelMap } from './ContactTestUtil.test';
+import { image } from '@kit.ImageKit';
 
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
@@ -2001,6 +2002,306 @@ export default function UpdateContactTest() {
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
         ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3700
+     * @tc.name       : testTelephonyContactUpdateContact3700
+     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testTelephonyContactUpdateContact3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact3700";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let pixelMap: image.PixelMap = await GetPixelMap();
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: '',
+                    photo: pixelMap
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                    if (queryErr) {
+                      console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                      expect().assertFail();
+                      done();
+                    } else {
+                      console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                      let resDate: contact.Contact = queryData;
+                      if (resDate.phoneNumbers !== undefined) {
+                        let phoneNumbers: contact.PhoneNumber[] = resDate.phoneNumbers
+                        if (phoneNumbers[0].phoneNumber !== undefined) {
+                          let phoneNumber = phoneNumbers[0].phoneNumber
+                          expect(phoneNumber === "10086").assertTrue();
+                          done();
+                        }
+                      } else {
+                        expect().assertFail();
+                        done();
+                      }
+                    }
+                  });
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect().assertFail();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3800
+     * @tc.name       : testTelephonyContactUpdateContact3800
+     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testTelephonyContactUpdateContact3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact3800";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let uri = GetUri(fileName);
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: uri,
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                    if (queryErr) {
+                      console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                      expect().assertFail();
+                      done();
+                    } else {
+                      console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                      let resDate: contact.Contact = queryData;
+                      if (resDate.phoneNumbers !== undefined) {
+                        let phoneNumbers: contact.PhoneNumber[] = resDate.phoneNumbers
+                        if (phoneNumbers[0].phoneNumber !== undefined) {
+                          let phoneNumber = phoneNumbers[0].phoneNumber
+                          expect(phoneNumber === "10086").assertTrue();
+                          done();
+                        }
+                      } else {
+                        expect().assertFail();
+                        done();
+                      }
+                    }
+                  });
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect().assertFail();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3900
+     * @tc.name       : testTelephonyContactUpdateContact3900
+     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testTelephonyContactUpdateContact3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact3900";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let uri = 'test';
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: uri,
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  expect().assertFail();
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect(err.code === 401).assertTrue();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number     : SUB_Telephony_Contact_UpdateContact_4000
+     * @tc.name       : testTelephonyContactUpdateContact4000
+     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testTelephonyContactUpdateContact4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact4000";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let uri = 'test';
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: uri,
+                    photo: undefined
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  expect().assertFail();
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect(err.code === 401).assertTrue();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} test end `);
