@@ -21,12 +21,12 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { ObscuredReasons } from '@ohos.arkui.component'
 
 export default function ObscuredTest() {
-  //A list of components that support the position attribute, which is required.
+  
   let supportView = [
     'AlphabetIndexer',
   ]
 
-  //Custom params.
+  
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -68,7 +68,7 @@ export default function ObscuredTest() {
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.info('[' + data.caseTag + ']' + 'obscured is:', data.viewObj!.getElement('$attrs').getArray('obscured'));
-      expect(data.viewObj!.getElement('$attrs').getArray('obscured')[0].asString())
+      expect(data.viewObj!.getElement('$attrs').getArray('obscured')[0])
         .assertEqual(data.testValue.expectValue.obscured[0]);
     });
   })

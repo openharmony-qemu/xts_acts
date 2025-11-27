@@ -60,7 +60,6 @@ export default function SwipeGestureHandlerAllowedTypesTest() {
     });
 
     
-    
 /*
      * @tc.number   SwipeGestureHandlerAllowedTypesTest_static_0010
      * @tc.name     SwipeGestureHandlerAllowedTypesTest_static_0010

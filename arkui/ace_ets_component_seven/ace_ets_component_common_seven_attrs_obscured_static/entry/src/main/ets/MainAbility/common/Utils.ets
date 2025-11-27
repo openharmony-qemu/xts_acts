@@ -140,15 +140,15 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams = router.getParams();
+      let pageParams: RouterParams = router.getParams() as RouterParams;
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      // if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-      //   console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-      //   console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-      //   console.info('targetView: ' + obj.targetView);
-      //   await Utils.back();
-      //   pages = router.getState();
-      // }
+      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+        console.info('targetView: ' + obj.targetView);
+        await Utils.back();
+        pages = router.getState();
+      }
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
@@ -159,7 +159,7 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-        console.info('push ' + obj.pageName);
+        console.info('push ' + obj.pageName)
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -197,18 +197,18 @@ export default class Utils {
     } as RectValue
   }
 
-  // static getComponentRectByObj(obj: ESObject): RectValue {
-  //   console.info('[getInspectorByKey] current component is: ' + obj.$type);
-  //   let rectInfo: ESObject = JSON.parse('[' + obj.$rect + ']');
-  //   let rect_value: RectValue = {
-  //     left: Number(JSON.parse('[' + rectInfo[0] + ']')[0]),
-  //     top: Number(JSON.parse('[' + rectInfo[0] + ']')[1]),
-  //     right: Number(JSON.parse('[' + rectInfo[1] + ']')[0]),
-  //     bottom: Number(JSON.parse('[' + rectInfo[1] + ']')[1])
-  //   };
-  //   console.info(JSON.stringify(rect_value));
-  //   return rect_value;
-  // }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
@@ -322,7 +322,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime().toLong(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -362,7 +362,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime().toLong(),
       target: {
         area: {
           width: width,

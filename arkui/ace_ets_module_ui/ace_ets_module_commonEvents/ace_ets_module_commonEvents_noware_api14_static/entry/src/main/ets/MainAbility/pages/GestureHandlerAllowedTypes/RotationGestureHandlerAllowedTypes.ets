@@ -52,13 +52,16 @@ class RotationGestureHandlerAllowedTypesModifier implements GestureModifier {
   }
 
   applyGesture(event: UIGestureEvent): void {
+    console.log('applyGesture -------')
     event.addGesture(
       new RotationGestureHandler()
         .allowedTypes(this.toolTypes)
         .onActionStart((event: GestureEvent) => {
+          console.log('onActionStart -------')
           this.listener('allowed types success');
         })
         .onActionUpdate((event: GestureEvent) => {
+          console.log('onActionUpdate -------')
           this.listener('allowed types success');
         })
     )
@@ -71,6 +74,7 @@ struct RotateGestureHandlerAllowedTypes {
 
   @State result: string = 'allowed types default';
   private callback: Callback<string> = (data: string) => {
+    console.log('callback -------')
     this.result = data;
   }
   @State modifier: RotationGestureHandlerAllowedTypesModifier = new RotationGestureHandlerAllowedTypesModifier([], this.callback);

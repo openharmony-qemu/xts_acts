@@ -221,13 +221,13 @@ struct CustomDialogExample {
           .onClick((e: ClickEvent) => {
             this.controller.close()
             this.cancel()
-          })//.backgroundColor(0xffffff).fontColor(Color.Black)
+          }).backgroundColor(0xffffff).fontColor(Color.Black)
         Button('confirm')
           .onClick((e: ClickEvent) => {
             this.inputValue = this.textValue
             this.controller.close()
             this.confirm()
-          })//.backgroundColor(0xffffff).fontColor(Color.Red)
+          }).backgroundColor(0xffffff).fontColor(Color.Red)
       }.margin({ bottom: 10 } as Margin)
     }
 

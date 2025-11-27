@@ -57,8 +57,7 @@ export default function RotationGestureHandlerAllowedTypesTest() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   RotationGestureHandlerAllowedTypesTest_static_0010
      * @tc.name     RotationGestureHandlerAllowedTypesTest_static_0010
      * @tc.desc     RotationGestureHandlerAllowedTypesTest_static_0010
@@ -79,14 +78,14 @@ it('RotationGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (do
       console.log('RotationGestureHandlerAllowedTypesTest_static_0010 areaObj1 clicked finger[1] start',Math.round(areaObj1.right),Math.round(areaObj1.bottom))
       console.log('RotationGestureHandlerAllowedTypesTest_static_0010 areaObj1 clicked finger[1] end',Math.round(areaObj1.left),Math.round(areaObj1.bottom))
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
       pointers.setPoint(0,0,{x: Math.round(areaObj1.left) as Int,y: Math.round(areaObj1.top) as Int } as Point);
       pointers.setPoint(0,1,{x: Math.round(areaObj1.right) as Int,y: Math.round(areaObj1.top) as Int } as Point);
       pointers.setPoint(1,0,{x: Math.round(areaObj1.right) as Int,y: Math.round(areaObj1.bottom) as Int } as Point);
       pointers.setPoint(1,1,{x: Math.round(areaObj1.left) as Int,y: Math.round(areaObj1.bottom) as Int } as Point);
       await driver.injectMultiPointerAction(pointers);
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(4000);
 
       let text1 = inspector.getInspectorByKey('RotationGestureHandlerAllowedTypes_result');
       let obj1 = JSON.parseJsonElement(text1);
@@ -96,35 +95,35 @@ it('RotationGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (do
       // click button to change types to [SourceTool.MOUSE]
       let button1 = await driver.findComponent(ON.id('Mouse_Type'));
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(3000);
       let text2 = inspector.getInspectorByKey('RotationGestureHandlerAllowedTypes_result');
       let obj2 = JSON.parseJsonElement(text2);
       console.log('RotationGestureHandlerAllowedTypesTest_static_0010 obj2 $attrs content',obj2.getElement('$attrs').getString('content'),obj2)
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(4000);
       let text3 = inspector.getInspectorByKey('RotationGestureHandlerAllowedTypes_result');
       let obj3 = JSON.parseJsonElement(text3);
       console.log('RotationGestureHandlerAllowedTypesTest_static_0010 obj3 $attrs content',obj3.getElement('$attrs').getString('content'),obj3)
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // change types to invalid types
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       let button3 = await driver.findComponent(ON.id('Invalid_type'));
       await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(3000);
       let text9 = inspector.getInspectorByKey('RotationGestureHandlerAllowedTypes_result');
       let obj9 = JSON.parseJsonElement(text9);
       console.log('RotationGestureHandlerAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(4000);
       let text10 = inspector.getInspectorByKey('RotationGestureHandlerAllowedTypes_result');
       let obj10 = JSON.parseJsonElement(text10);
       console.log('RotationGestureHandlerAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
