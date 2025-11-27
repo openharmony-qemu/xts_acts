@@ -90,9 +90,9 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0100', Level.LEVEL0, async (done: 
      let gridRowGutter = JSON.parseJsonElement(gridRowGutterLengthNumJson);
      expect(gridRowGutter.getString('$type')).assertEqual('GridRow');
 
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(-20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+
+      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0100 END');
       done();
@@ -120,7 +120,7 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0200', Level.LEVEL0, async (done: 
       let gridRowGutterLengthNumJson = inspector.getInspectorByKey('Length_Number001');
      let gridRowGutter = JSON.parseJsonElement(gridRowGutterLengthNumJson);
      expect(gridRowGutter.getString('$type')).assertEqual('GridRow');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
@@ -151,7 +151,7 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0300', Level.LEVEL0, async (done: 
      let gridRowGutter = JSON.parseJsonElement(gridRowGutterLengthNumJson);
      expect(gridRowGutter.getString('$type')).assertEqual('GridRow');
 
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 

@@ -36,7 +36,6 @@ export default function grid_RowCol_ItemPadMarTest() {
   describe('Grid_RowCol_ItemPadMarTest', () => {
     beforeAll(() => {
       console.info("grid_RowCol_ItemPadMarTest beforeAll start");
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -97,7 +96,7 @@ it('testGridRowColItemMargin_static_01', Level.LEVEL0, async (done: () => void):
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      const uiContext = new UIContext();
+
       expect(Math.abs(secondGridItem.left - firstGridItem.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(secondGridItem.top - gridContainer.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
 
@@ -163,7 +162,7 @@ it('testGridRowColItemPadding_static_02', Level.LEVEL0, async (done: () => void)
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar04');
       let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar_Container01');
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar_Container01');
-      const uiContext = new UIContext();
+
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
       expect(Math.abs(secondText.left - secondGridItem.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(secondText.top - secondGridItem.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
@@ -221,7 +220,7 @@ it('testGridRowColItemMarPad_static_03', Level.LEVEL0, async (done: () => void):
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      const uiContext = new UIContext();
+
       expect(Math.abs(secondGridItem.left - firstGridItem.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(secondGridItem.top - gridContainer.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
 

@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import GlobalContext from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
+
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import {
   Entry,
@@ -55,11 +54,11 @@ struct GridCallbackPage {
   @State scrollBar: BarState = BarState.Off
   @State scrollBarColor: Color = Color.Grey
   @State scrollBarWidth: number = 20
-  @State cachedCount: number = 1
+  @State cachedCount: int = 1
   @State editMode: boolean = false
   @State layoutDirection: GridDirection = GridDirection.Column
-  @State maxCount: number = Infinity
-  @State minCount: number = 1
+  @State maxCount: int = Int.MAX_VALUE
+  @State minCount: int = 1
   @State cellLength: number = 40
   @State multiSelectable: boolean = false
   @State supportAnimation: boolean = false
@@ -109,7 +108,7 @@ struct GridCallbackPage {
         this.scrollBarWidth = message.value as number
       }
       if (message.name == 'cachedCount') {
-        this.cachedCount = message.value as number
+        this.cachedCount = message.value as int
       }
       if (message.name == 'editMode') {
         this.editMode = message.value as boolean
@@ -118,10 +117,10 @@ struct GridCallbackPage {
         this.layoutDirection = message.value as GridDirection
       }
       if (message.name == 'maxCount') {
-        this.maxCount = message.value as number
+        this.maxCount = message.value as int
       }
       if (message.name == 'minCount') {
-        this.minCount = message.value as number
+        this.minCount = message.value as int
       }
       if (message.name == 'cellLength') {
         this.cellLength = message.value as number
@@ -226,11 +225,11 @@ struct GridCallbackPage {
       .columnsGap(this.columnsGap)
       .rowsGap(this.rowsGap)
       .scrollBar(this.scrollBar)
-      .cachedCount(Double.toInt(this.cachedCount))
+      .cachedCount(this.cachedCount)
       .editMode(this.editMode)
       .layoutDirection(this.layoutDirection)
-      .maxCount(Double.toInt(this.maxCount))
-      .minCount(Double.toInt(this.minCount))
+      .maxCount(this.maxCount)
+      .minCount(this.minCount)
       .cellLength(this.cellLength)
       .multiSelectable(this.multiSelectable)
       .supportAnimation(this.supportAnimation)
@@ -271,7 +270,7 @@ struct GridCallbackPage {
                 .fontSize(16)
                 .backgroundColor(0xF9CF93)
                 .width('100%')
-                .height('20%')
+                .height('23%')
                 .textAlign(TextAlign.Center)
             }
           }, (day: string) => day)
@@ -279,7 +278,7 @@ struct GridCallbackPage {
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .columnsGap(10)
-      .rowsGap(10)
+      .rowsGap('2%')
       .key('grid2')
       .scrollBar(this.scrollBar)
       .scrollBarColor(this.scrollBarColor)
@@ -291,10 +290,10 @@ struct GridCallbackPage {
       .width('90%')
       .backgroundColor(0xFAEEE0)
       .height('50%')
-      
-      
-      
-      
+      .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
+        this.onScrollText = 'onScroll:succ'
+        console.info('onScroll scrollOffset:' + JSON.stringify(scrollOffset) + ' ScrollState:' + JSON.stringify(scrollState))
+      })
       .onScrollIndex((first: int,last: int):void => {
         this.onScrollIndexText = 'onScrollIndex:succ'
         console.info('onScrollIndex first:' + String(first) + ' last:' + last)

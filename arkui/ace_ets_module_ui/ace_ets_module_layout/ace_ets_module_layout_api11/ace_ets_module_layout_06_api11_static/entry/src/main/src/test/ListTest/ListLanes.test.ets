@@ -1,3 +1,4 @@
+'use static';
 /**
 * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -165,7 +166,7 @@ it('ListLanes_static_008', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[ListLanes_008] START');
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<string | number | Axis>>('messageManager')?.notify({ name:'listGutter', value: '10vp' });
-      AppStorage.get<MessageManager<string | number | Axis>>('messageManager') ?.notify({ name:'initialIndex', value: 8 });
+      AppStorage.get<MessageManager<string | int | Axis>>('messageManager') ?.notify({ name:'initialIndex', value: 8 });
       await CommonFunc.sleep(200);
 
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');

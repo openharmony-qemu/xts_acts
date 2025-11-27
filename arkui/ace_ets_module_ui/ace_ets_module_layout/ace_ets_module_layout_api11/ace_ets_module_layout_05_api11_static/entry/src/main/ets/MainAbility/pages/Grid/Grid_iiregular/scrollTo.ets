@@ -154,15 +154,13 @@ struct scrollTo {
           this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa' as string })
         })
 
-
-      
-      
-      
-      
-      
-      
-      
-
+      Button('scrollTo undefined')
+        .height('5%')
+        .id('scrollTo9')
+        .onClick((e:ClickEvent) => {
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
+          this.scroller.scrollTo({ xOffset: 0, yOffset: 'undefined' })         //undefined
+        })
 
     }.width('100%').margin({ top: 5 } as Margin)
   }

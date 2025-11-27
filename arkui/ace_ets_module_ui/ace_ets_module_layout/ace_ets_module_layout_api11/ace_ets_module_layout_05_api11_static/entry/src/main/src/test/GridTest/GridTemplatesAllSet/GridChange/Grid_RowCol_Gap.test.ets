@@ -88,7 +88,7 @@ it('testGridColGap_static_01', Level.LEVEL0, async (done: () => void): Promise<v
       let Grid_RowCol_Gap_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_01');
       expect(Math.abs(Grid_RowCol_Gap_011.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_013.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Grid_RowCol_Gap_012.left - Grid_RowCol_Gap_011.right - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_014.left - Grid_RowCol_Gap_013.right - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
 
@@ -167,7 +167,7 @@ it('testGridRowGap_static_02', Level.LEVEL0, async (done: () => void): Promise<v
 
       expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_014.top) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_012.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_011.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_014.top - Grid_RowCol_Gap_012.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
 
@@ -224,7 +224,7 @@ it('testGridRowColGap_static_03', Level.LEVEL0, async (done: () => void): Promis
 
       expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_014.top) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_012.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_011.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_014.top - Grid_RowCol_Gap_012.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
 

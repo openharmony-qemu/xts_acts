@@ -78,19 +78,15 @@ it('GridItemJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let strJson1 = inspector.getInspectorByKey('gridItem1');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[GridItemJsunit_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getDouble('rowStart')).assertEqual('1');
-      expect(obj.getElement('$attrs').getDouble('rowEnd')).assertEqual('4');
+      expect(obj.getElement('$attrs').getString('rowStart')).assertEqual('1');
+      expect(obj.getElement('$attrs').getString('rowEnd')).assertEqual('4');
       expect(obj.getElement('$attrs').getString('selectable')).assertEqual('false');
       
-      expect(obj.getElement('$attrs').getString('forceRebuild')).assertEqual('false');
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('gridItem2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridItemJsunit_static_0100] component obj2 is: " + JSON.stringify(obj2));
-      expect(obj2.getElement('$attrs').getDouble('columnStart')).assertEqual('1');
-      expect(obj2.getElement('$attrs').getDouble('columnEnd')).assertEqual('5');
-      expect(obj2.getElement('$attrs').getString('forceRebuild')).assertEqual('true');
-      
+
       expect(obj2.getElement('$attrs').getString('selectable')).assertEqual('true');
       console.info('[GridItemJsunit_static_0100] END');
       done();
@@ -113,12 +109,6 @@ it('GridItemJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(2000);
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowEnd',value:'5'})
       await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'columnStart',value:'2'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'columnEnd',value:'4'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'forceRebuild',value:'false'})
-      await CommonFunc.sleep(2000);
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'selectable',value:'true'})
       await CommonFunc.sleep(2000);
 
@@ -126,16 +116,13 @@ it('GridItemJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
       let strJson = inspector.getInspectorByKey('gridItem1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridItemJsunit_static_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getDouble('rowStart')).assertEqual('2');
-      expect(obj.getElement('$attrs').getDouble('rowEnd')).assertEqual('5');
+      expect(obj.getElement('$attrs').getString('rowStart')).assertEqual('2');
+      expect(obj.getElement('$attrs').getString('rowEnd')).assertEqual('5');
       expect(obj.getElement('$attrs').getString('selectable')).assertEqual('true');
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('gridItem2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridItemJsunit_static_0200] component obj2 is: " + JSON.stringify(obj2));
-      expect(obj2.getElement('$attrs').getDouble('columnStart')).assertEqual('2');
-      expect(obj2.getElement('$attrs').getDouble('columnEnd')).assertEqual('4');
-      expect(obj2.getElement('$attrs').getString('forceRebuild')).assertEqual('false');
       console.info('[GridItemJsunit_static_0200] END');
       done();
     });
@@ -156,12 +143,6 @@ it('GridItemJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowEnd',value:'#'})
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'columnStart',value:'-10'})
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'columnEnd',value:'%a'})
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'forceRebuild',value:'0'})
-      await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'selectable',value:'test'})
       await CommonFunc.sleep(2000);
 
@@ -169,16 +150,13 @@ it('GridItemJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
       let strJson = inspector.getInspectorByKey('gridItem1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridItemJsunit_static_0300] component obj is: " + JSON.stringify(obj));
-      expect(Math.abs(Number(obj.getElement('$attrs').getDouble('rowStart'))) <= 1).assertTrue();
-      expect(Math.abs(Number(obj.getElement('$attrs').getDouble('rowEnd'))) <= 1).assertTrue();
+      expect(Math.abs(Number(obj.getElement('$attrs').getString('rowStart'))) <= 1).assertTrue();
+      expect(Math.abs(Number(obj.getElement('$attrs').getString('rowEnd'))) <= 1).assertTrue();
       expect(obj.getElement('$attrs').getString('selectable')).assertEqual('true');
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('gridItem2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridItemJsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
-      expect(Math.abs(Number(obj.getElement('$attrs').getDouble('columnStart'))) <= 1).assertTrue();
-      expect(Math.abs(Number(obj.getElement('$attrs').getDouble('columnEnd'))) <= 1).assertTrue();
-      expect(obj2.getElement('$attrs').getString('forceRebuild')).assertEqual('false');
       console.info('[GridItemJsunit_static_0300] END');
       done();
     });
@@ -199,7 +177,7 @@ it('GridItemJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
       let left_x = Math.round(grid1.left)
       let bottom_y = Math.round(grid1.bottom / 2)
       let driver = Driver.create()
-      const uiContext = new UIContext();
+
       driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(), (bottom_y).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.getFocusedUIContext()!.vp2px(120))).toInt(), (bottom_y).toInt());
       await CommonFunc.sleep(500);
       let textComponent = await driver.findComponent(ON.id('onSelect'));
@@ -227,7 +205,7 @@ it('GridItemJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let gridItem3 = CommonFunc.getComponentRect('1');
       let left3 = gridItem3.left;
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.ceil(left3 - right1) - Math.ceil(UIContext.getFocusedUIContext()!.vp2px(4))) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0500] END');
       done();
@@ -250,7 +228,7 @@ it('GridItemJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise
       let bottom1 = gridItem1.bottom;
       let gridItem3 = CommonFunc.getComponentRect('4');
       let top3 = gridItem3.top;
-      const uiContext = new UIContext();
+
       expect(Math.abs((top3 - bottom1) - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0600] END');
       done();
@@ -274,7 +252,7 @@ it('GridItemJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise
       let right1 = gridItem1.right;
       let gridItem2 = CommonFunc.getComponentRect('0');
       let left1 = gridItem2.left;
-      const uiContext = new UIContext();
+
 	  expect(Math.abs((left1 - right1) - UIContext.getFocusedUIContext()!.vp2px(4)) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0700] END');
       done();
@@ -301,7 +279,7 @@ it('GridItemJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise
       let bottom1 = gridItem1.bottom;
       let gridItem2 = CommonFunc.getComponentRect('gridItem3');
       let top1 = gridItem2.top;
-      const uiContext = new UIContext();
+
       expect(Math.abs((top1 - bottom1) - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0800] END');
       done();

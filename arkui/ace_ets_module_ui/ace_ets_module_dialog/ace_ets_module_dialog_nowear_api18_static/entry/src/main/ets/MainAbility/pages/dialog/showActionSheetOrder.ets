@@ -14,29 +14,10 @@
  * limitations under the License.
  */
 import { LevelOrder } from '@ohos.promptAction'
-import {
-  Button,
-  ButtonType,
-  ClickEvent,
-  Column,
-  ColumnOptions,
-  Component,
-  DialogAlignment,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  LevelOrder,
-  Margin,
-  Row,
-  RowOptions,
-  Text
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, LevelOrder, ColumnOptions, RowOptions, DialogAlignment} from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct showActionSheetOrder {
@@ -84,6 +65,7 @@ struct showActionSheetOrder {
               message: 'message',
               autoCancel: true,
               isModal: false,
+              // levelOrder: LevelOrder.clamp(undefined),
               confirm: {
                 value: 'Confirm',
                 action: () => {
@@ -174,7 +156,7 @@ struct showActionSheetOrder {
         .onClick((e: ClickEvent) => {
           let showActionSheetOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (showActionSheetOrder !== undefined) {
-            AppStorage.setOrCreate<double>('showActionSheetOrder', showActionSheetOrder.getOrder())
+            AppStorage.setOrCreate<number>('showActionSheetOrder', showActionSheetOrder.getOrder())
           }
         })
     }

@@ -88,7 +88,7 @@ it('testGridRowColGridPad_static_01', Level.LEVEL0, async (done: () => void): Pr
       let Grid_RowCol_PadMar_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_013');
       let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_014');
       let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_01');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left) -
         Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.left - Grid_RowCol_PadMar_011.left) <= 1).assertTrue();
@@ -177,7 +177,7 @@ it('testGridRowColGridMargin_static_02', Level.LEVEL0, async (done: () => void):
 
       expect(Math.abs(Grid_RowCol_PadMar_01.bottom - Grid_RowCol_PadMar_013.bottom) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_014.bottom) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Grid_RowCol_PadMar_01.left - Grid_RowCol_PadMar_Box_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_01.top - Grid_RowCol_PadMar_Box_01.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_Box_01.right - Grid_RowCol_PadMar_01.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
@@ -223,7 +223,7 @@ it('testGridRowColGridPadMar_static_03', Level.LEVEL0, async (done: () => void):
       let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_014');
       let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_01');
       let Grid_RowCol_PadMar_Box_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_Box_01');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
 
       expect(Math.abs(Grid_RowCol_PadMar_013.left - Grid_RowCol_PadMar_011.left) <= 1).assertTrue();

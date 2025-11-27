@@ -115,7 +115,7 @@ struct ListItemExample36 {
               .backgroundColor(0xFFFFFF)
           }
           // .transition(TransitionEffect.OPACITY.opacity(0))
-/*          .transition({ type: TransitionType.Delete, opacity: 0 })*/
+          // .transition({ type: TransitionType.Delete, opacity: 0 })
           .swipeAction({
             start: {
               builder: () => {

@@ -22,17 +22,17 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 struct Row_Space_Default {
   @State addSpace1: number = 0;
   @State addSpace2: string = '0';
-  messageManager: MessageManager<string> = new MessageManager<string>();
+  messageManager: MessageManager<number|string> = new MessageManager<number|string>();
 
   onPageShow() {
     console.info('Row_Space_Default onPageShow');
-    AppStorage.setOrCreate<MessageManager<string>>('messageManager', this.messageManager);
-    let callback: Callback<string> = (message: Message<string>) => {
+    AppStorage.setOrCreate<MessageManager<number|string>>('messageManager', this.messageManager);
+    let callback: Callback<number|string> = (message: Message<number|string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addSpace1') {
-        this.addSpace1 = Number.parseInt(message.value);
+        this.addSpace1 = message.value as number;
       } else if (message.name == 'addSpace2') {
-        this.addSpace2 = message.value;
+        this.addSpace2 = message.value as string;
       }
     };
     this.messageManager.registerCallback(callback);

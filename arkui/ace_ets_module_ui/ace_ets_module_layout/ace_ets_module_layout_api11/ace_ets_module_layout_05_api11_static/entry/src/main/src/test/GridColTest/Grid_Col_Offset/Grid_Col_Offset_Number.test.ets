@@ -18,6 +18,7 @@ import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import router from '@ohos.router';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -34,7 +35,6 @@ export default function Grid_Col_Offset_Number() {
   describe('Grid_Col_Offset_Number', () => {
     beforeAll(() => {
       console.info("Grid_Col_Offset_Number beforeAll start");
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -93,7 +93,6 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
       let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
-      const uiContext = new UIContext();
       console.log('assert space')
       expect(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
@@ -152,7 +151,6 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_05');
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
-      const uiContext = new UIContext();
       console.log('assert space')
       expect(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
@@ -213,7 +211,6 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
 
       console.log('assert space')
-      const uiContext = new UIContext();
       expect(Math.abs((Grid_Col_Offset_Number_02.top - Grid_Col_Offset_Number_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
       expect(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)

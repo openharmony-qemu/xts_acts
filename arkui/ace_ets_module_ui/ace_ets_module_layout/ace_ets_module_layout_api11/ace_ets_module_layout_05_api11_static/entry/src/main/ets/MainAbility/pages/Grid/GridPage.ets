@@ -56,13 +56,13 @@ struct GridPage {
   @State columnsGap: number = 10
   @State rowsGap: number = 10
   @State scrollBar: BarState = BarState.Off
-  @State scrollBarColor: Color = Color.Grey
+  @State scrollBarColor: Color | string = Color.Grey
   @State scrollBarWidth: number = 20
-  @State cachedCount: number = 1
+  @State cachedCount: int = 1
   @State editMode: boolean = false
   @State layoutDirection: GridDirection = GridDirection.Column
-  @State maxCount: number = Infinity
-  @State minCount: number = 1
+  @State maxCount: int = Int.MAX_VALUE
+  @State minCount: int = 1
   @State cellLength: number = 40
   @State multiSelectable: boolean = false
   @State supportAnimation: boolean = false
@@ -82,12 +82,12 @@ struct GridPage {
   @State onScrollFrameBeginText: string = 'onScrollFrameBegin'
   @State myKey: number = 0
   scroller: Scroller = new Scroller()
-  messageManager: MessageManager<string | number | boolean | BarState | Color | GridDirection> = new MessageManager<string | number | boolean | BarState | Color | GridDirection>()
+  messageManager: MessageManager<string | int | number | boolean | BarState | Color | GridDirection> = new MessageManager<string | int | number | boolean | BarState | Color | GridDirection>()
 
   onPageShow() {
     console.info('GridPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<string | number | boolean | BarState | Color | GridDirection>>("messageManager",  this.messageManager);
-    let callback: Callback<string | number | boolean | BarState | Color | GridDirection> = (message: Message<string | number | boolean | BarState | Color | GridDirection>) => {
+    AppStorage.setOrCreate<MessageManager<string | int | number | boolean | BarState | Color | GridDirection>>("messageManager",  this.messageManager);
+    let callback: Callback<string | int | number | boolean | BarState | Color | GridDirection> = (message: Message<string | int | number | boolean | BarState | Color | GridDirection>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'columnsTemplate') {
         this.columnsTemplate = message.value as string
@@ -105,34 +105,34 @@ struct GridPage {
         this.scrollBar = message.value as BarState
       }
       if (message.name == 'scrollBarColor') {
-        this.scrollBarColor = message.value as Color
+        this.scrollBarColor = message.value as string
       }
       if (message.name == 'scrollBarWidth') {
         this.scrollBarWidth = message.value as number
       }
       if (message.name == 'cachedCount') {
-        this.cachedCount = message.value as number
+        this.cachedCount = message.value as int
       }
       if (message.name == 'editMode') {
-        this.editMode = message.value as boolean
+        this.editMode = Boolean(message.value as string)
       }
       if (message.name == 'layoutDirection') {
         this.layoutDirection = message.value as GridDirection
       }
       if (message.name == 'maxCount') {
-        this.maxCount = message.value as number
+        this.maxCount = message.value as int
       }
       if (message.name == 'minCount') {
-        this.minCount = message.value as number
+        this.minCount = message.value as int
       }
       if (message.name == 'cellLength') {
         this.cellLength = message.value as number
       }
       if (message.name == 'multiSelectable') {
-        this.multiSelectable = message.value as boolean
+        this.multiSelectable = Boolean(message.value as string)
       }
       if (message.name == 'supportAnimation') {
-        this.supportAnimation = message.value as boolean
+        this.supportAnimation = Boolean(message.value as string)
       }
     }
     this.messageManager.registerCallback(callback)
@@ -207,11 +207,11 @@ struct GridPage {
       .columnsGap(this.columnsGap)
       .rowsGap(this.rowsGap)
       .scrollBar(this.scrollBar)
-      .cachedCount(Double.toInt(this.cachedCount))
+      .cachedCount(this.cachedCount)
       .editMode(this.editMode)
       .layoutDirection(this.layoutDirection)
-      .maxCount(Double.toInt(this.maxCount))
-      .minCount(Double.toInt(this.minCount))
+      .maxCount(this.maxCount)
+      .minCount(this.minCount)
       .cellLength(this.cellLength)
       .multiSelectable(this.multiSelectable)
       .supportAnimation(this.supportAnimation)
@@ -272,10 +272,10 @@ struct GridPage {
       .width('90%')
       .backgroundColor(0xFAEEE0)
       .height('30%')
-      
-      
-      
-      
+      .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
+        this.onScrollText = 'onScroll:succ'
+        console.info('onScroll scrollOffset:' + JSON.stringify(scrollOffset) + ' ScrollState:' + JSON.stringify(scrollState))
+      })
       .onScrollIndex((first: int,last: int):void => {
         this.onScrollIndexText = "onScrollIndex:succ"
         console.info("onScrollIndex first:" + String(first) + " last:" + last)

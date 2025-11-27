@@ -89,13 +89,13 @@ it('onGetIrregular8Jsunit_static_0001', Level.LEVEL0, async (done: () => void): 
       let GridItem0: RectValue = CommonFunc.getComponentRect('layout0');
       let GridItem1: RectValue = CommonFunc.getComponentRect('layout1');
       let GridItem2: RectValue = CommonFunc.getComponentRect('layout2');
-
+      let context = AppStorage.get<UIContext>('context') as UIContext
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
-      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem0.right - GridItem0.left))).assertEqual(80);
-      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem2.right - GridItem2.left))).assertEqual(80);
-      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem0.bottom - GridItem0.top))).assertEqual(114);
-      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem2.bottom - GridItem2.top))).assertEqual(114);
+
+      expect(Math.round(context.px2vp(GridItem0.right - GridItem0.left))).assertEqual(80);
+      expect(Math.round(context.px2vp(GridItem2.right - GridItem2.left))).assertEqual(80);
+      expect(Math.round(context.px2vp(GridItem0.bottom - GridItem0.top))).assertEqual(114);
+      expect(Math.round(context.px2vp(GridItem2.bottom - GridItem2.top))).assertEqual(114);
       console.info('[onGetIrregular8Jsunit_static_0001] END');
       done();
     });

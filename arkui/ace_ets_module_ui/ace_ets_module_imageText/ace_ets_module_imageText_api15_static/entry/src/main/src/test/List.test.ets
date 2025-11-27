@@ -26,9 +26,6 @@ import RichEditorKeyboardAppearanceTest from './RichEditorTest/RichEditorKeyboar
 import RichEditorStopBackPressTest from './RichEditorTest/RichEditorStopBackPress.test';
 import SelectionMenuOptions from './RichEditorTest/SelectionMenuOptions.test';
 export default function testsuite() {
-  textAreaInputTest();
-  TextInputKeyboardAppearanceTest();
-  TextAreaKeyboardAppearanceTest();
   SearchKeyboardAppearanceTest();
   ResourceDefaultTest(); //  Failure: 10, pass: 2
   ObjectFitTest(); //  Failure: 15

@@ -93,7 +93,7 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0100', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_05');
       let Grid_Row_Columns_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_06');
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Columns_01.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -143,7 +143,7 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0200', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_05');
       let Grid_Row_Columns_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_06');
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -200,7 +200,7 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0300', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_04: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_04');
       let Grid_Row_Columns_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_05');
       let Grid_Row_Columns_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_06');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -249,7 +249,7 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0400', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_05');
       let Grid_Row_Columns_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_06');
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -304,7 +304,7 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0500', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_05');
       let Grid_Row_Columns_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_06');
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -357,7 +357,7 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0600', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_05');
       let Grid_Row_Columns_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_06');
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();

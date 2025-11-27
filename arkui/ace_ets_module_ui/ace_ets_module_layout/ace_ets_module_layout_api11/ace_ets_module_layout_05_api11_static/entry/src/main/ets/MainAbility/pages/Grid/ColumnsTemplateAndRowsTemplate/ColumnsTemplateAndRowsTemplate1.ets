@@ -49,16 +49,16 @@ import {
 @Entry
 @Component
 struct ColumnsTemplateAndRowsTemplate1 {
-  @State columnStart1: number = 0;
-  @State columnEnd1: number = 1;
-  @State rowStart1: number = 1;
-  @State rowEnd1: number = 1;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @State columnStart1: int = 0;
+  @State columnEnd1: int = 1;
+  @State rowStart1: int = 1;
+  @State rowEnd1: int = 1;
+  messageManager: MessageManager<int> = new MessageManager<int>();
 
   onPageShow() {
     console.info('ColumnsTemplateAndRowsTemplate1 page show called');
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager", this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>("messageManager", this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'columnStart1') {
         this.columnStart1 =message.value;
@@ -88,10 +88,10 @@ struct ColumnsTemplateAndRowsTemplate1 {
         .borderColor(0x000000)
         
         
-        .columnStart(Double.toInt(this.columnStart1))
-        .columnEnd(Double.toInt(this.columnEnd1))
-        .rowStart(Double.toInt(this.rowStart1))
-        .rowEnd(Double.toInt(this.rowEnd1))
+        .columnStart(this.columnStart1)
+        .columnEnd(this.columnEnd1)
+        .rowStart(this.rowStart1)
+        .rowEnd(this.rowEnd1)
         .key('ColumnsTemplateAndRowsTemplate1_GridItem_01')
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')

@@ -67,8 +67,8 @@ export default function PixelMapColorFilterTest() {
      * @tc.desc     PixelMapColorFilterTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('PixelMapColorFilterTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[PixelMapColorFilterTest_0010] START');
+    it('PixelMapColorFilterTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[PixelMapColorFilterTest_static_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button: Component = await driver.findComponent(ON.id('set_colorFilter_append_resource')) as Component;
@@ -77,11 +77,11 @@ it('PixelMapColorFilterTest_static_0010', Level.LEVEL2, async (done: () => void)
       let Button1: Component = await driver.findComponent(ON.id('get_styles')) as Component;
       await Button1.click()
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('ColorFilter_content');
+      let strJson = inspector.getInspectorByKey('imageColorFilter');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[PixelMapColorFilterTest_0010] component obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('[1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0]');
-      console.info('[PixelMapColorFilterTest_0010] END');
+      console.info("[PixelMapColorFilterTest_static_0010] component obj is: " + obj.getElement('$attrs').getString('colorFilter'));
+      expect(obj.getElement('$attrs').getString('colorFilter')).assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+      console.info('[PixelMapColorFilterTest_static_0010] END');
       done();
     });
 
@@ -92,8 +92,9 @@ it('PixelMapColorFilterTest_static_0010', Level.LEVEL2, async (done: () => void)
      * @tc.desc     PixelMapColorFilterTest_static_0020
      * @tc.level    Level.LEVEL2
      */
-it('PixelMapColorFilterTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[PixelMapColorFilterTest_0020] START');
+    it('PixelMapColorFilterTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
+      console.info('[PixelMapColorFilterTest_static_0020] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button: Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
@@ -102,11 +103,11 @@ it('PixelMapColorFilterTest_static_0020', Level.LEVEL2, async (done: () => void)
       let Button1: Component = await driver.findComponent(ON.id('get_styles')) as Component;
       await Button1.click()
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('ColorFilter_content');
+      let strJson = inspector.getInspectorByKey('imageColorFilter');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[PixelMapColorFilterTest_0020] component obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('[1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0]');
-      console.info('[PixelMapColorFilterTest_0020] END');
+      console.info("[PixelMapColorFilterTest_static_0020] component obj is: " + obj.getElement('$attrs').getString('colorFilter'));
+      expect(obj.getElement('$attrs').getString('colorFilter')).assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+      console.info('[PixelMapColorFilterTest_static_0020] END');
       done();
     });
   })

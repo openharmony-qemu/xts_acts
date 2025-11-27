@@ -49,7 +49,7 @@ export default function Grid_ScrollFrameBegin() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get Grid_ScrollFrameBegin state pages: " + JSON.stringify(pages));
         if (!("Grid_ScrollFrameBegin" == pages.name)) {

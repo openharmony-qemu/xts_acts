@@ -105,14 +105,23 @@ struct textBackgroundStyleTest {
           start: -1,
           end: -1
         })!.forEach(item => {
-          // if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
-          // } else {
-          //   if(typeof((item as RichEditorTextSpanResult).symbolSpanStyle) != 'undefined') {
-          //   }else {
-          //     AppStorage.setOrCreate('RichEditorTextBackgroundStyleColor',(item as RichEditorTextSpanResult).textStyle.textBackgroundStyle?.color)
-          //     AppStorage.setOrCreate('RichEditorTextBackgroundStyleRadius',(item as RichEditorTextSpanResult).textStyle.textBackgroundStyle?.radius)
-          //   }
-          // }
+          console.log('---------xxxxx----------')
+          if(item instanceof RichEditorImageSpanResult){
+            console.log('---------RichEditorImageSpanResult----------')
+            item as RichEditorImageSpanResult
+          } else {
+            console.log('---------RichEditorTextSpanResult----------')
+            item as RichEditorTextSpanResult
+            if (typeof(item.symbolSpanStyle) != 'undefined') {
+              console.log('---------undefined----------')
+            } else {
+              console.log('---------AppStorage.setOrCreate----------' + JSON.stringify(item.textStyle))
+              console.log('---------AppStorage.setOrCreate----------' + item.textStyle.textBackgroundStyle?.color)
+              console.log('---------AppStorage.setOrCreate----------' + item.textStyle.textBackgroundStyle?.radius)
+              AppStorage.setOrCreate('RichEditorTextBackgroundStyleColor', item.textStyle.textBackgroundStyle?.color)
+              AppStorage.setOrCreate('RichEditorTextBackgroundStyleRadius', item.textStyle.textBackgroundStyle?.radius)
+            }
+          }
         })
       }).fontSize(10).height('5%').id('getSpans')
     }

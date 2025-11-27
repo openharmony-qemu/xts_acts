@@ -38,14 +38,14 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Component
 struct Grid_RowCol_ItemColumnStartEnd {
   @State textNumber: String[] = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'];
-  @State testColumnStart: number = 0;
-  @State testColumnEnd: number = 0;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @State testColumnStart: int = 0;
+  @State testColumnEnd: int = 0;
+  messageManager: MessageManager<int> = new MessageManager<int>();
 
   onPageShow() {
     console.info('Grid_RowCol_ItemColumnStartEnd onPageShow');
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager", this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>("messageManager", this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.log('message = ' + message.name + "--" + message.value);
 
       if (message.name == 'ColumnStart') {
@@ -66,8 +66,8 @@ struct Grid_RowCol_ItemColumnStartEnd {
         }
         .rowStart(0)
         .rowEnd(0)
-        .columnStart(Double.toInt(this.testColumnStart))
-        .columnEnd(Double.toInt(this.testColumnEnd))
+        .columnStart(this.testColumnStart)
+        .columnEnd(this.testColumnEnd)
         .key('Grid_RowCol_ItemColumnStartEnd1')
 
         ForEach(this.textNumber, (item: string) => {

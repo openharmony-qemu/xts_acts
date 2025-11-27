@@ -48,7 +48,7 @@ struct Grid_Row_Columns_Default {
         gutter: 5,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: int) => {
+        ForEach(this.bgColors, (color: Color, index?: number) => {
           GridCol({ span: 1 }) {
             Row().width("100%").height("20vp")
           }.borderColor(color).borderWidth(2).key('GridRow_Columns_' + index)

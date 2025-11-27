@@ -20,11 +20,12 @@ import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Visibility } from '@ohos.arkui.component'
 import router from '@ohos.router';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -102,7 +103,7 @@ it('testVisibility02_static_02', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "visibility": Visibility.Hidden,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 47,
@@ -137,7 +138,7 @@ it('testVisibility03_static_03', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "visibility": Visibility.None,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 48,

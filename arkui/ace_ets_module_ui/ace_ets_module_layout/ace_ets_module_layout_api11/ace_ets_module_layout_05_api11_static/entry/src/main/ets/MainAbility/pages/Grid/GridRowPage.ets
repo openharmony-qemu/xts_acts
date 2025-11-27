@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import GlobalContext from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import {
   Entry,
@@ -39,8 +37,7 @@ import {
   Row, Margin, GridColColumnOption
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
-
-
+import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -51,18 +48,19 @@ struct GridRowPage {
   @State columns: int = 4
   @State breakpoints: BreakPoints = { value: ["400vp", "600vp", "800vp"], reference: BreakpointsReference.WindowSize } as BreakPoints
   @State grDirection: GridRowDirection = GridRowDirection.Row
-  messageManager: MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection> = new MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>()
+  messageManager: MessageManager<string | int | GutterOption | BreakPoints | GridRowDirection> = new MessageManager<string | int | GutterOption | BreakPoints | GridRowDirection>()
 
   onPageShow() {
     console.info('GridRowPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>("messageManager",  this.messageManager);
-    let callback: Callback<string | number | GutterOption | BreakPoints | GridRowDirection> = (message: Message<string | number | GutterOption | BreakPoints | GridRowDirection>) => {
+    AppStorage.setOrCreate<UIContext>('context',this.getUIContext())
+    AppStorage.setOrCreate<MessageManager<string | int | GutterOption | BreakPoints | GridRowDirection>>("messageManager",  this.messageManager);
+    let callback: Callback<string | int | GutterOption | BreakPoints | GridRowDirection> = (message: Message<string | int | GutterOption | BreakPoints | GridRowDirection>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'currentBp') {
         this.currentBp = message.value as string
       }
       if (message.name == 'columns') {
-        this.columns = (message.value as number).toInt()
+        this.columns = Number.parseInt(message.value as string).toInt()
       }
       if (message.name == 'gutter') {
         this.gutter = message.value as GutterOption

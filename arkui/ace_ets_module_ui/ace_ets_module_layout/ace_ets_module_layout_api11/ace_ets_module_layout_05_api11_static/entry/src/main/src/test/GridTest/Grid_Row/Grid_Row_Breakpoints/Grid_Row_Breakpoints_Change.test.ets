@@ -85,7 +85,7 @@ it('SUB_ACE_GridRowBreakpoints_Value_static_0100', Level.LEVEL0, async (done: ()
       let firstBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change0');
       let secondBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change1');
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change2');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(thirdBreakpoints.top - secondBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
@@ -115,7 +115,7 @@ it('SUB_ACE_GridRowBreakpoints_Value_static_0200', Level.LEVEL0, async (done: ()
       let firstBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change0');
       let secondBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change1');
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change2');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondBreakpoints.left - firstBreakpoints.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(thirdBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
@@ -147,7 +147,7 @@ it('SUB_ACE_GridRowBreakpoints_Value_static_0300', Level.LEVEL0, async (done: ()
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change2');
       let fourthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change3');
       let fifthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Change4');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondBreakpoints.left - firstBreakpoints.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(15))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(thirdBreakpoints.left - secondBreakpoints.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(15))) <= 1)

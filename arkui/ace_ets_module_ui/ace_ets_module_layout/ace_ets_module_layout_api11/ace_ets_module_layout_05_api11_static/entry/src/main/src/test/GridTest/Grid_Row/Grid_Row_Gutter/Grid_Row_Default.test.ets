@@ -89,7 +89,7 @@ it('SUB_ACE_GridRowGutterLength_Default_static_0100', Level.LEVEL0, async (done:
 
       expect(firstLengthNoSet.top).assertEqual(LengthNoSet_1.top);
       expect(firstLengthNoSet.left).assertEqual(LengthNoSet_1.left);
-      const uiContext = new UIContext();
+
       expect(Math.round(secondLengthNoSet.top - firstLengthNoSet.bottom)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
 
       console.info('SUB_ACE_GridRowGutterLength_Default_static_0100 END');

@@ -13,11 +13,61 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {
+  Entry,
+  Component,
+  Column,
+  ColumnOptions,
+  Row,
+  Text,
+  VerticalAlign,
+  Padding,
+  Color,
+  NavPathStack,
+  Navigation,
+  ClickEvent,
+  NavPathInfo
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
+interface PathParam {
+  data: number
+}
 
+@Entry
+@Component
+struct row_testcase {
+  @State alignItems: VerticalAlign = VerticalAlign.Top
+  @State active: boolean = false
+  pathStack: NavPathStack = new NavPathStack()
 
+  build() {
+    Column() {
+      Navigation(this.pathStack) {
+        Row() {
+          Column() {
+            Text("Row-Demo1")
+          }
 
+          Column() {
+            Text("Demo2")
+          }
+        }
+        .key('row')
+        .alignItems(this.alignItems)
 
+      }
+      .onClick((e: ClickEvent) => {
+        this.pathStack.pushPath(new NavPathInfo('index', {
+          data: 26
+        } as PathParam))
+      })
+    }.width(300)
+    .height(300)
+    .borderColor(Color.Pink)
+    .borderWidth(2)
+  }
+}
 
 
 

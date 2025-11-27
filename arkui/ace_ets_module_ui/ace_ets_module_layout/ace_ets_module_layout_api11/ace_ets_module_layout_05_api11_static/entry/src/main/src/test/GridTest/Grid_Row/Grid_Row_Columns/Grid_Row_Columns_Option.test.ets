@@ -88,7 +88,7 @@ it('SUB_ACE_GridRowColumns_Option_static_0100', Level.LEVEL0, async (done: () =>
       let secondColumns: RectValue = CommonFunc.getComponentRect('GridRow_Columns_Option1');
       let gridRowColumnsJson = inspector.getInspectorByKey('GridRow_Columns_Option001');
      expect(JSON.parseJsonElement(gridRowColumnsJson).getString('$type')).assertEqual('GridRow');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondColumns.top - firstColumns.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowColumns_Option_static_0100 END');
@@ -120,7 +120,7 @@ it('SUB_ACE_GridRowColumns_Option_static_0200', Level.LEVEL0, async (done: () =>
       let gridRowColumnsJson = inspector.getInspectorByKey('GridRow_Columns_Option001');
      expect(JSON.parseJsonElement(gridRowColumnsJson).getString('$type')).assertEqual('GridRow');
 
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondColumns.left - firstColumns.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
       expect(Math.abs(Math.round(fourthColumns.left - thirdColumns.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
@@ -156,7 +156,7 @@ it('SUB_ACE_GridRowColumns_Option_static_0300', Level.LEVEL0, async (done: () =>
 
       expect(Math.abs(Math.round(secondColumns.left - firstColumns.right) -
       Math.round(thirdColumns.left - secondColumns.right)) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondColumns.left - firstColumns.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowColumns_Option_static_0300 END');
@@ -194,7 +194,7 @@ it('SUB_ACE_GridRowColumns_Option_static_0400', Level.LEVEL0, async (done: () =>
         .assertTrue();
       expect(Math.abs(Math.round(thirdColumns.left - secondColumns.right) - Math.round(fourthColumns.left - thirdColumns.right)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.floor(secondColumns.left - firstColumns.right) - Math.floor(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowColumns_Option_static_0400 END');
@@ -233,7 +233,7 @@ it('SUB_ACE_GridRowColumns_Option_static_0500', Level.LEVEL0, async (done: () =>
         .assertTrue();
       expect(Math.abs(Math.round(fourthColumns.left - thirdColumns.right) - Math.round(fifthColumns.left - fourthColumns.right)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.floor(secondColumns.left - firstColumns.right) - Math.floor(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowColumns_Option_static_0500 END');
@@ -276,7 +276,7 @@ it('SUB_ACE_GridRowColumns_Option_static_0600', Level.LEVEL0, async (done: () =>
         .assertTrue();
       expect(Math.abs(Math.round(fifthColumns.left - fourthColumns.right) - Math.round(sixthColumns.left - fifthColumns.right)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.floor(secondColumns.left - firstColumns.right) - Math.floor(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowColumns_Option_static_0600 END');

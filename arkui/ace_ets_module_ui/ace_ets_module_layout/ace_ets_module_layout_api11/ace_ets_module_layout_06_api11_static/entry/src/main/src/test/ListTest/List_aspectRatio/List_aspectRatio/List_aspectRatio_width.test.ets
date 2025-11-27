@@ -96,8 +96,8 @@ export default function List_aspectRatio_width() {
      */
 it('SUB_ACE_List_aspectRatio_width_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0100] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: '0'
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: 0
       });
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
@@ -124,13 +124,13 @@ it('SUB_ACE_List_aspectRatio_width_static_0100', Level.LEVEL0, async (done: () =
      */
 it('SUB_ACE_List_aspectRatio_width_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0200] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: '0.5'
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: 0.5
       })
       await CommonFunc.sleep(2000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
       console.info('[SUB_ACE_List_aspectRatio_width_0200]' + Math.round(List01.bottom - List01.top));
-
+  console.info('[SUB_ACE_List_aspectRatio_width_0200] ' + Math.round(UIContext.getFocusedUIContext()!.vp2px(320)));
 	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(160))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(320))) <= 1).assertTrue();
 
@@ -151,8 +151,8 @@ it('SUB_ACE_List_aspectRatio_width_static_0200', Level.LEVEL0, async (done: () =
      */
 it('SUB_ACE_List_aspectRatio_width_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0300] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: '2'
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: 2
       });
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
@@ -178,8 +178,8 @@ it('SUB_ACE_List_aspectRatio_width_static_0300', Level.LEVEL0, async (done: () =
      */
 it('SUB_ACE_List_aspectRatio_width_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0400] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: '-1'
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: -1
       });
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');

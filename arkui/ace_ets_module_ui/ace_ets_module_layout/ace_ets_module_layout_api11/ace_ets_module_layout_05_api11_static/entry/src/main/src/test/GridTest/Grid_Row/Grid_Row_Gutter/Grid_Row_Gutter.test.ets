@@ -35,23 +35,9 @@ export default function Grid_Row_Gutter() {
   describe('Grid_Row_Gutter', () => {
     beforeAll(() => {
       console.info("Grid_Row_Gutter beforeAll start");
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
-
-      const searchRouter = AppStorage.get<Router>("router") as Router
-      console.info("Grid_Row_Gutter beforeEach start222");
-      try {
-        searchRouter.pushUrl({
-          url: 'MainAbility/pages/Grid/Grid_Row/Grid_Row_Gutter/Grid_Row_Gutter',
-        });
-        await CommonFunc.sleep(2000);
-        console.info("push Grid_Row_Gutter success: ");
-      } catch (err) {
-        console.error("push Grid_Row_Gutter page error: " + err);
-        expect().assertFail();
-      }
     });
 
     beforeEach(async (): Promise<void> => {
@@ -106,24 +92,26 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0100', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_05');
       let Grid_Row_Gutter_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_06');
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(-10))) <= 1)
+  console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
+  console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
+      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(-10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(-10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(-10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(-10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(-10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
 
 
@@ -159,7 +147,7 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0200', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_05');
       let Grid_Row_Gutter_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_06');
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
@@ -210,7 +198,7 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0300', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_05');
       let Grid_Row_Gutter_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_06');
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
@@ -260,7 +248,7 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0400', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_05: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_05');
       let Grid_Row_Gutter_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_06');
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();

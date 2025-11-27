@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column,RichEditor, RichEditorTextSpanOptions,
+import { Entry, Component, Column,RichEditor, RichEditorTextSpanOptions,Text,
   MutableStyledString,TextInputController,RichEditorController,RichEditorStyledStringController,RichEditorOptions,Row,Button,ClickEvent
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
@@ -30,8 +30,14 @@ struct RichEditorMaxLinesTest {
     'The air is filled with the sweet scent of blooming flowers, mingling with the earthy aroma of freshly turned soil.' +
     'it casts a warm,' +
     'golden hue that spreads like liquid amber across the vast expanse of the sky.' +
+    'The once-blue heavens gradually transform, '+'As the sun begins to set, casting a warm golden hue across the sky,' +
+    'the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, ' +
+    ' pink, and lavender, creating a breathtaking tapestry that stretches as far as the eye can see.' +
+    'The air is filled with the sweet scent of blooming flowers, mingling with the earthy aroma of freshly turned soil.' +
+    'it casts a warm,' +
+    'golden hue that spreads like liquid amber across the vast expanse of the sky.' +
     'The once-blue heavens gradually transform, '
-  @State maxLineList: (Double | undefined)[] = [-1.0,2.5, 6.0, undefined]
+  @State maxLineList: (number | int | undefined)[] = [-1,2.5, 6, undefined]
   @State maxLineIndex: Int = 0
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
   controller2: TextInputController = new TextInputController()
@@ -44,6 +50,9 @@ struct RichEditorMaxLinesTest {
   build() {
     Column() {
       Row(){
+
+        Text('µ±Ç°Öµ£º' + (this.maxLineList[this.maxLineIndex])?.toInt())
+
         Button('setMaxLine1').onClick((e:ClickEvent)=>{
           this.maxLineIndex =1
         })
@@ -72,7 +81,7 @@ struct RichEditorMaxLinesTest {
         })
         .margin(10)
         .width('95%')
-        .maxLines(this.maxLineList[this.maxLineIndex]!.toInt())
+        .maxLines((this.maxLineList[this.maxLineIndex])?.toInt())
         .backgroundColor('rgb(240,250,255)')
         .id('RichEditorMaxLines')
     }

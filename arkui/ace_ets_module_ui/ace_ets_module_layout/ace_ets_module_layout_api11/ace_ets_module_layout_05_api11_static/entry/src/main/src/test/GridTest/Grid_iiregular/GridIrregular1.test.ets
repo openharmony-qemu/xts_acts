@@ -85,9 +85,10 @@ it('GridIrregular1Jsunit_static_0001', Level.LEVEL0, async (done: () => void): P
       console.info('[GridIrregular1Jsunit_static_0001] START');
       let GridItem1: RectValue = CommonFunc.getComponentRect('GridIrr1');
       let Grid: RectValue = CommonFunc.getComponentRect('gridIrregular1')
+      let context = AppStorage.get<UIContext>('context') as UIContext
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
-      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem1.right - GridItem1.left))).assertEqual(400);
+
+      expect(Math.round(context.px2vp(GridItem1.right - GridItem1.left))).assertEqual(400);
       console.info('[GridIrregular1Jsunit_static_0001] END');
       done();
     });

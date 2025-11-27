@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { BreakPoints, GridRowDirection, GutterOption } from '@ohos.arkui.component'
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
@@ -49,7 +49,7 @@ export default function GridRowJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get GridRowJsunit state pages: " + JSON.stringify(pages));
         if (!("GridRowPage" == pages.name)) {
@@ -86,7 +86,7 @@ it('GridRowJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       expect(obj.getElement('$attrs').getString('breakpoints')).assertEqual('[400vp, 600vp, 800vp,]');
       expect(obj.getElement('$attrs').getString('direction')).assertEqual('Row');
       
-      const uiContext = new UIContext();
+
       let x = Number(UIContext.getFocusedUIContext()!.vp2px(5)).toFixed(6);
       let y = Number(UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(6);
       let str = '<' + x + ', '+y;
@@ -107,15 +107,18 @@ it('GridRowJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridRowJsunit_static_0200] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'columns',value:'12'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'columns',value:'12'})
       await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'gutter',value:'x: 7.5, y: 15'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'gutter',value: {
+        x: 7.5,
+        y: 15
+      } as GutterOption})
       await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'breakpoints',value:'12'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'breakpoints',value: '12'})
       await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'grDirection',value:'12'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'grDirection',value: '12'})
       await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'currentBp',value:'sm'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'currentBp',value:'sm'})
       await CommonFunc.sleep(2000);
 
       
@@ -126,8 +129,8 @@ it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[GridRowJsunit_static_0200] breakpoints: " + JSON.stringify(obj.getElement('$attrs').getString('breakpoints')));
       console.info("[GridRowJsunit_static_0200] direction: " + JSON.stringify(obj.getElement('$attrs').getString('direction')));
       console.info("[GridRowJsunit_static_0200] gutter: " + JSON.stringify(obj.getElement('$attrs').getString('gutter')));
-      const uiContext = new UIContext();
-      if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
+
+      if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("")!) < 320) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('2');
       } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('4');
@@ -158,18 +161,16 @@ it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 it('GridRowJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridRowJsunit_static_0300] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'gutter',value:'-10'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'gutter',value:'-10'})
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'columns',value:'-5'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'columns',value:'-5'})
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'breakpoints',value:'test'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'breakpoints',value:'test'})
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'grDirection',value:'test'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'grDirection',value:'test'})
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'currentBp',value:'110'})
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({name:'currentBp',value:'110'})
       await CommonFunc.sleep(200);
-
-      
       let strJson = inspector.getInspectorByKey('gridRow');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridRowJsunit_static_0300] component obj is: " + JSON.stringify(obj));
@@ -177,7 +178,7 @@ it('GridRowJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[GridRowJsunit_static_0300] breakpoints: " + JSON.stringify(obj.getElement('$attrs').getString('breakpoints')));
       console.info("[GridRowJsunit_static_0300] direction: " + JSON.stringify(obj.getElement('$attrs').getString('direction')));
       console.info("[GridRowJsunit_static_0300] gutter: " + JSON.stringify(obj.getElement('$attrs').getString('gutter')));
-      const uiContext = new UIContext();
+
       if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('2');
       } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
@@ -216,7 +217,7 @@ it('GridRowJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[GridRowJsunit_static_0400] breakpoints: " + JSON.stringify(obj.getElement('$attrs').getString('breakpoints')));
       console.info("[GridRowJsunit_static_0400] direction: " + JSON.stringify(obj.getElement('$attrs').getString('direction')));
       console.info("[GridRowJsunit_static_0400] gutter: " + JSON.stringify(obj.getElement('$attrs').getString('gutter')));
-      const uiContext = new UIContext();
+  console.info("AppStorage.get<number>(winWidth): " + AppStorage.get<number>("winWidth"));
       if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('2');
       } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 600) {

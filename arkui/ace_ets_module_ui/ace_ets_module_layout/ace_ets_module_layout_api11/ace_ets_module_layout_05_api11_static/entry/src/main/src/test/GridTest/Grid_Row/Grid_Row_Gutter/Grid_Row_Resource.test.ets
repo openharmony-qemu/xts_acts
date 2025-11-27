@@ -91,7 +91,7 @@ it('SUB_ACE_GridRowGutterLength_RESOURCE_static_0100', Level.LEVEL0, async (done
       expect(Math.abs(firstLengthResource.top - LengthResource_1.top) <= 1).assertTrue();
       expect(Math.abs(secondLengthResource.top - LengthResource_1.top) <= 1).assertTrue();
       expect(Math.abs(firstLengthResource.left - LengthResource_1.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondLengthResource.left - firstLengthResource.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdLengthResource.top - firstLengthResource.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 

@@ -71,7 +71,7 @@ struct scrollEge {
       .onScrollIndex((first: int,last: int):void => {
         console.info(String(first))
       })
-      .onScrollBarUpdate((index: int, offset: double) => {
+      .onScrollBarUpdate((index: int, offset: number) => {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 } as ComputedBarAttribute
       })
       .width('90%')
@@ -134,12 +134,12 @@ struct scrollEge {
         })
 
 
-      
-      
-      
-      
-      
-      
+      Button('scrollToIndex undefined')
+        .height('5%')
+        .id('scrollEge8')
+        .onClick((e:ClickEvent) => {
+          // this.scroller.scrollToIndex(undefined)
+        })
 
     }.width('100%').margin({ top: 5 } as Margin).height('100%').key('columnKeys')
   }

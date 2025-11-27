@@ -104,7 +104,7 @@ it('testGridRowColGridMaxCount_static_01', Level.LEVEL0, async (done: () => void
       expect(Math.abs(Grid_RowCol_maxCount_013.bottom - Grid_RowCol_maxCount_01.bottom) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_maxCount_014.bottom - Grid_RowCol_maxCount_01.bottom) <= 1).assertTrue();
 
-      const uiContext = new UIContext();
+
       expect(Math.abs(Grid_RowCol_maxCount_011.right - Grid_RowCol_maxCount_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_maxCount_012.right - Grid_RowCol_maxCount_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_maxCount_013.right - Grid_RowCol_maxCount_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();

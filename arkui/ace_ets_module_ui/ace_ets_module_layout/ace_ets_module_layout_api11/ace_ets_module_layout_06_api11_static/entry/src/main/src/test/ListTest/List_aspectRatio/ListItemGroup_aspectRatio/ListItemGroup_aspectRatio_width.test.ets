@@ -62,7 +62,7 @@ export default function ListItemGroup_aspectRatio_width() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListItemGroup_aspectRatio_width state pages:" + JSON.stringify(pages));
         if (!("ListItemGroup_aspectRatio_width" == pages.name)) {
@@ -78,7 +78,7 @@ export default function ListItemGroup_aspectRatio_width() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      // routerInstance.clear()
+      routerInstance.clear()
       console.info("ListItemGroup_aspectRatio_width after each called");
     });
 

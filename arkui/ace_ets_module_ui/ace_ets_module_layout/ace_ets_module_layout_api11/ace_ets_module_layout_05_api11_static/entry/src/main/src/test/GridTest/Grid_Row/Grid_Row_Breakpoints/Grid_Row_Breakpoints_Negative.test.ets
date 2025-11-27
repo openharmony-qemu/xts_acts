@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level 
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import router from '@ohos.router';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -34,7 +35,6 @@ export default function Grid_Row_Breakpoints_Negative() {
   describe('Grid_Row_Breakpoints_Negative', () => {
     beforeAll(() => {
       console.info("Grid_Row_Breakpoints_Negative beforeAll start");
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -43,7 +43,7 @@ export default function Grid_Row_Breakpoints_Negative() {
     beforeEach(async (): Promise<void> => {
       console.info("Grid_Row_Breakpoints_Negative beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/GridCol/Grid_Col_Offset/Grid_Col_Offset_Default',
+        url: "MainAbility/pages/Grid/Grid_Row/Grid_Row_Breakpoints/Grid_Row_Breakpoints_Negative",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -84,7 +84,7 @@ it('SUB_ACE_GridRowBreakpoints_Negative_static_0100', Level.LEVEL0, async (done:
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Negative2');
       let fourthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Negative3');
       let fifthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Negative4');
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(secondBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(thirdBreakpoints.top - secondBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)

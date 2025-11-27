@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level 
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import router from '@ohos.router';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -30,11 +31,10 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function GridRowBreakpoints_Value1() {
+export default function Grid_Row_Breakpoints_Incremental() {
   describe('Grid_Row_Breakpoints_Incremental', () => {
     beforeAll(() => {
       console.info("Grid_Row_Breakpoints_Incremental beforeAll start");
-           
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -84,7 +84,7 @@ it('SUB_ACE_GridRowBreakpoints_static_0100', Level.LEVEL0, async (done: () => vo
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Incremental2');
       let fourthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Incremental3');
       let fifthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Incremental4');
-      const uiContext = new UIContext();
+
       expect(Math.floor(Math.abs((secondBreakpoints.left - firstBreakpoints.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((thirdBreakpoints.left - secondBreakpoints.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((fourthBreakpoints.left - thirdBreakpoints.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
