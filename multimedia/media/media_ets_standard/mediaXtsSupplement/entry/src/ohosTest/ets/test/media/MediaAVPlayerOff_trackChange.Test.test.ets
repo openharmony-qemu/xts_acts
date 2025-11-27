@@ -54,6 +54,7 @@ export default function MediaAVPlayerOff_trackChangeTest() {
         avPlayer.off(null, (index: number, isSelect: boolean) => {
           console.info('trackChange info: index=' + index + ' isSelect=' + isSelect);
         });
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' createAVPlayer error', error.message, error.code);
@@ -77,6 +78,7 @@ export default function MediaAVPlayerOff_trackChangeTest() {
         avPlayer.off(undefined, (index: number, isSelect: boolean) => {
           console.info('trackChange info: index=' + index + ' isSelect=' + isSelect);
         });
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' createAVPlayer error', error.message, error.code);
@@ -100,6 +102,7 @@ export default function MediaAVPlayerOff_trackChangeTest() {
         avPlayer.off(AppStorage.get('emptyString') as ESObject, (index: number, isSelect: boolean) => {
           console.info(TAG,testName,'trackChange info: index=' + index + ' isSelect=' + isSelect);
         });
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG,testName, ' createAVPlayer error', error.message, error.code);
@@ -123,6 +126,7 @@ export default function MediaAVPlayerOff_trackChangeTest() {
         console.info(TAG,testName,'avPlayer')
         avPlayer.off('trackChange', null as ESObject)
         console.info(TAG,testName,'trackChange')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' createAVPlayer error', error.message, error.code);
@@ -145,6 +149,7 @@ export default function MediaAVPlayerOff_trackChangeTest() {
         console.info(TAG,testName,'avPlayer')
         avPlayer.off('trackChange', undefined)
         console.info(TAG,testName,'trackChange')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' createAVPlayer error', error.message, error.code);
@@ -167,6 +172,7 @@ export default function MediaAVPlayerOff_trackChangeTest() {
         console.info(TAG,testName,'avPlayer')
         avPlayer.off('trackChange',AppStorage.get('emptyString'))
         console.info(TAG,testName,'trackChange')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG,testName, ' createAVPlayer error', error.message, error.code);
