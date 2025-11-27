@@ -359,6 +359,9 @@ export default function TextRunTest() {
                 JSON.stringify(run.getPositions(range)));
               hilog.info(domain, tag, 'TEXT_LOG run [%{public}d %{public}d] getOffsets :%{public}s', i, j,
                 JSON.stringify(run.getOffsets()));
+              hilog.info(domain, tag, 'TEXT_LOG run [%{public}d %{public}d] getFont :%{public}s', i, j,
+                JSON.stringify(run.getFont()));
+              run.paint(globalCanvas, 0, 0);
               let indices: Array<int> | undefined = run.getStringIndices(range);
               if (indices) {
                 hilog.info(domain, tag, 'TEXT_LOG indices size: %{public}d ', indices.length);
