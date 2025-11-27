@@ -113,7 +113,6 @@ export default function objectStoreTestV9() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2900
      * @tc.desc   object join session and on,object can receive callback when data has been changed
@@ -162,7 +161,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3000
      * @tc.desc   object join session and on,object can receive callback when data has been changed
@@ -191,7 +189,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_003
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3100
      * @tc.desc   object join session and on,object can receive callback when data has been changed
@@ -226,7 +223,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_004
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3200
      * @tc.desc   object join session and on,object can receive callback when data has been changed
@@ -256,7 +252,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_005
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3300
      * @tc.desc   object join session and on,object can receive callback when data has been changed
@@ -296,7 +291,6 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_On_001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2100
      * @tc.desc   object join session and on,object can receive callback when data has been changed
@@ -346,7 +340,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_On_002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2200
      * @tc.desc   object join session and on,then object change data twice,object can receive two callbacks when data has been changed
@@ -386,7 +379,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_On_003
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1500
      * @tc.desc   object join session and on,then object do not change data,object can not receive callbacks
@@ -430,7 +422,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Off_001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2000
      * @tc.desc   object join session and on&off,object can not receive callback after off
@@ -484,7 +475,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Off_002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1000
      * @tc.desc   object join session and off,object can not receive callback
@@ -524,7 +514,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_OnStatus_001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2300
      * @tc.desc   object set a listener to watch another object online/offline
@@ -560,7 +549,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_OnStatus_002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2400
      * @tc.desc   object set several listener and can unWatch all watcher
@@ -593,7 +581,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Save_001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2700
      * @tc.desc   test save local
@@ -637,7 +624,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Save_002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2800
      * @tc.desc   test save local
@@ -678,7 +664,6 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2500
      * @tc.desc   test RevokeSave
@@ -729,7 +714,6 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2600
      * @tc.desc   test RevokeSave
@@ -776,7 +760,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberMax_0100
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1800
      * @tc.desc   test NumberMax
@@ -803,7 +786,6 @@ export default function objectStoreTestV9() {
         done();
       })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberMin_0100
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1900
      * @tc.desc   test NumberMin
@@ -830,7 +812,6 @@ export default function objectStoreTestV9() {
         done();
       })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0100
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1600
      * @tc.desc   test NumberAbnormal
@@ -857,7 +838,6 @@ export default function objectStoreTestV9() {
         done();
       })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0200
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1700
      * @tc.desc   test NumberAbnormal
@@ -885,7 +865,6 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore010
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0010
      * @tc.desc   Test bindAssetStore
@@ -972,7 +951,6 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStorePromise010
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStorePromise_0010
      * @tc.desc   Test bindAssetStore
@@ -1058,7 +1036,6 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore020
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0020
      * @tc.desc   Test bindAssetStore
@@ -1146,7 +1123,6 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore030
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0030
      * @tc.desc   Test bindAssetStore
@@ -1233,7 +1209,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0200
      * @tc.desc   Test bindAssetStore with invalid args,storeName is null
@@ -1281,7 +1256,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore003
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0300
      * @tc.desc   Test bindAssetStore with invalid args,tableName is null
@@ -1329,7 +1303,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore004
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0400
      * @tc.desc   Test bindAssetStore with invalid args,primaryKey is null
@@ -1377,7 +1350,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore005
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0500
      * @tc.desc   Test bindAssetStore with invalid args,field is null
@@ -1425,7 +1397,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore006
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0600
      * @tc.desc   Test bindAssetStore with invalid args,assetName is null
@@ -1473,7 +1444,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore007
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0700
      * @tc.desc   Test bindAssetStore with invalid args,assetKey is null
@@ -1531,7 +1501,6 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore008
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0800
      * @tc.desc   Test bindAssetStore with invalid args,assetKey is null
@@ -1588,7 +1557,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetStore009
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0900
      * @tc.desc   Test bindAssetStore with invalid args,assetKey is null
@@ -1642,7 +1610,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testModifyAsset001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_ModifyAsset_0100
      * @tc.desc   object with asset create distributed data object
@@ -1695,7 +1662,6 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_006
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3400
      * @tc.desc   object join session and on,object can receive callback when data has been changed

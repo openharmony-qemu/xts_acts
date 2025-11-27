@@ -46,7 +46,6 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreUpdate0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0100
          * @tc.desc   resultSet Update test
@@ -119,7 +118,6 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreUpdate0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0200
          * @tc.desc   resultSet Update test
@@ -180,7 +178,6 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreUpdate0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0300
          * @tc.desc   resultSet Update test
@@ -228,7 +225,6 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testRdbStoreUpdate0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0400
          * @tc.desc   resultSet Update test

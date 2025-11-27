@@ -31,7 +31,6 @@ export default function UdmfNdkTest() {
     afterAll(async () => {
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_CreatePropertiesFromUnifiedData001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0100
      * @tc.desc   OH_Udmf_CreatePropertiesFromUnifiedData
@@ -46,7 +45,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetPropertiesTag001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0200
      * @tc.desc   OH_Udmf_SetPropertiesTag
@@ -62,7 +60,6 @@ export default function UdmfNdkTest() {
     });
     /**======================================*/
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_CreateUnifiedData001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0300
      * @tc.desc   OH_Udmf_CreateUnifiedData001
@@ -77,7 +74,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_AddRecordToUnifiedData001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0400
      * @tc.desc   OH_Udmf_AddRecordToUnifiedData001
@@ -92,7 +88,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_HasUnifiedDataType001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0500
      * @tc.desc   OH_Udmf_HasUnifiedDataType001
@@ -107,7 +102,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataTypes001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0600
      * @tc.desc   OH_Udmf_GetUnifiedDataTypes001
@@ -122,7 +116,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedRecordTypes001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0700
      * @tc.desc   OH_Udmf_GetUnifiedRecordTypes001
@@ -137,7 +130,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetRecords001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0800
      * @tc.desc   OH_Udmf_GetRecords001
@@ -152,7 +144,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetAndGetUnifiedData001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0900
      * @tc.desc   OH_Udmf_SetAndGetUnifiedData001
@@ -167,7 +158,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetAndGetUnifiedData002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1000
      * @tc.desc   OH_Udmf_SetAndGetUnifiedData002
@@ -182,7 +172,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetRecords002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1100
      * @tc.desc   OH_Udmf_GetRecords002
@@ -197,7 +186,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_AddAndGetGeneralEntry001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1200
      * @tc.desc   OH_Udmf_AddAndGetGeneralEntry001
@@ -213,7 +201,6 @@ export default function UdmfNdkTest() {
     });
     // 2. BuildAndGet NAPI_ASSERT==================================
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_BuildAndGetPlainTextFromRecord001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1300
      * @tc.desc   OH_Udmf_BuildAndGetPlainTextFromRecord001
@@ -228,7 +215,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(0);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_BuildAndGetHyperlinkFromRecord001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1400
      * @tc.desc   OH_Udmf_BuildAndGetHyperlinkFromRecord001
@@ -243,7 +229,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(0);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_BuildAndGetHtmlFromRecord001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1500
      * @tc.desc   OH_Udmf_BuildAndGetHtmlFromRecord001
@@ -258,7 +243,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(0);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_BuildAndGetAppItemFromRecord001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1600
      * @tc.desc   OH_Udmf_BuildAndGetAppItemFromRecord001
@@ -274,7 +258,6 @@ export default function UdmfNdkTest() {
     });
     // 3. OH_UdmfProperty  napi_create_int32 =====================
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_CreatePropertiesFromUnifiedData001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1700
      * @tc.desc   OH_Udmf_CreatePropertiesFromUnifiedData
@@ -289,7 +272,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetPropertiesTag001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1800
      * @tc.desc   OH_Udmf_SetPropertiesTag001
@@ -304,7 +286,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetPropertiesTag001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_1900
      * @tc.desc   OH_Udmf_GetPropertiesTag001
@@ -319,7 +300,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetPropertiesShareOption001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2000
      * @tc.desc   OH_Udmf_SetPropertiesShareOption001
@@ -334,7 +314,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetPropertiesShareOption001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2100
      * @tc.desc   OH_Udmf_GetPropertiesShareOption001
@@ -349,7 +328,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetPropertiesShareOption002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2200
      * @tc.desc   OH_Udmf_SetPropertiesShareOption002
@@ -364,7 +342,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetPropertiesShareOption002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2300
      * @tc.desc   OH_Udmf_GetPropertiesShareOption002
@@ -379,7 +356,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetPropertiesShareOption003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2400
      * @tc.desc   OH_Udmf_SetPropertiesShareOption003
@@ -394,7 +370,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetPropertiesExtrasIntParam001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2500
      * @tc.desc   OH_Udmf_SetPropertiesExtrasIntParam001
@@ -409,7 +384,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetPropertiesExtrasIntParam001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2600
      * @tc.desc   OH_Udmf_GetPropertiesExtrasIntParam001
@@ -424,7 +398,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetPropertiesExtrasStringParam001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2700
      * @tc.desc   OH_Udmf_SetPropertiesExtrasStringParam001
@@ -439,7 +412,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetPropertiesExtrasStringParam001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2800
      * @tc.desc   OH_Udmf_GetPropertiesExtrasStringParam001
@@ -455,7 +427,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetAndGetUnifiedData006
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_2900
      * @tc.desc   OH_Udmf_SetAndGetUnifiedData006
@@ -470,7 +441,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetAndGetUnifiedData005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3000
      * @tc.desc   OH_Udmf_SetAndGetUnifiedData005
@@ -485,7 +455,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetAndGetUnifiedData004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3100
      * @tc.desc   OH_Udmf_SetAndGetUnifiedData004
@@ -500,7 +469,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetAndGetUnifiedData003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3200
      * @tc.desc   OH_Udmf_SetAndGetUnifiedData003
@@ -516,7 +484,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_Create_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3300
      * @tc.desc   OH_UdmfOptions_Create_001
@@ -531,7 +498,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_Create_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3310
      * @tc.desc   OH_UdmfOptions_Create_002
@@ -546,7 +512,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_Create_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3320
      * @tc.desc   OH_UdmfOptions_Create_003
@@ -561,7 +526,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_Destroy001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3330
      * @tc.desc   OH_UdmfOptions_Destroy001
@@ -576,7 +540,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_GetKey_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4500
      * @tc.desc   OH_UdmfOptions_GetKey_001
@@ -591,7 +554,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_GetKey_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3510
      * @tc.desc   OH_UdmfOptions_GetKey_002
@@ -606,7 +568,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_GetKey_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3620
      * @tc.desc   OH_UdmfOptions_GetKey_003
@@ -621,7 +582,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetKey_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3400
      * @tc.desc   OH_UdmfOptions_SetKey_001
@@ -636,7 +596,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetKey_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3500
      * @tc.desc   OH_UdmfOptions_SetKey_002
@@ -651,7 +610,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetKey_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3600
      * @tc.desc   OH_UdmfOptions_SetKey_003
@@ -666,7 +624,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetKey_004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3610
      * @tc.desc   OH_UdmfOptions_SetKey_004
@@ -681,7 +638,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetKey_005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3620
      * @tc.desc   OH_UdmfOptions_SetKey_005
@@ -696,7 +652,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_GetIntention_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4600
      * @tc.desc   OH_UdmfOptions_GetIntention_001
@@ -711,7 +666,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_GetIntention_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4610
      * @tc.desc   OH_UdmfOptions_GetIntention_002
@@ -726,7 +680,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3700
      * @tc.desc   OH_UdmfOptions_SetIntention_001
@@ -741,7 +694,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3800
      * @tc.desc   OH_UdmfOptions_SetIntention_002
@@ -756,7 +708,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_3900
      * @tc.desc   OH_UdmfOptions_SetIntention_003
@@ -772,7 +723,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4000
      * @tc.desc   OH_UdmfOptions_SetIntention_004
@@ -787,7 +737,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4100
      * @tc.desc   OH_UdmfOptions_SetIntention_005
@@ -802,7 +751,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_006
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4200
      * @tc.desc   OH_UdmfOptions_SetIntention_006
@@ -817,7 +765,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_007
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4300
      * @tc.desc   OH_UdmfOptions_SetIntention_007
@@ -832,7 +779,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_008
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4400
      * @tc.desc   OH_UdmfOptions_SetIntention_008
@@ -847,7 +793,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_009
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4410
      * @tc.desc   OH_UdmfOptions_SetIntention_009
@@ -862,7 +807,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_010
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4420
      * @tc.desc   OH_UdmfOptions_SetIntention_010
@@ -877,7 +821,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_SetIntention_011
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4430
      * @tc.desc   OH_UdmfOptions_SetIntention_011
@@ -892,7 +835,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_Reset_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4700
      * @tc.desc   OH_UdmfOptions_Reset_001
@@ -907,7 +849,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfOptions_Reset_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4710
      * @tc.desc   OH_UdmfOptions_Reset_002
@@ -922,7 +863,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5400
      * @tc.desc   OH_Udmf_GetUnifiedDataByOptions_001
@@ -937,7 +877,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5500
      * @tc.desc   OH_Udmf_GetUnifiedDataByOptions_002
@@ -952,7 +891,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5600
      * @tc.desc   OH_Udmf_GetUnifiedDataByOptions_003
@@ -967,7 +905,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5700
      * @tc.desc   OH_Udmf_GetUnifiedDataByOptions_004
@@ -982,7 +919,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5800
      * @tc.desc   OH_Udmf_GetUnifiedDataByOptions_005
@@ -997,7 +933,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5810
      * @tc.desc   OH_Udmf_GetUnifiedDataByOptions_006
@@ -1012,7 +947,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_007
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5820
      * @tc.desc   OH_Udmf_GetUnifiedDataByOptions_007
@@ -1027,7 +961,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4800
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_001
@@ -1042,7 +975,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_GetUnifiedDataByOptions_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_4900
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_002
@@ -1057,7 +989,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5000
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_003
@@ -1072,7 +1003,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5100
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_004
@@ -1087,7 +1017,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5200
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_005
@@ -1102,7 +1031,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_006
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5300
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_006
@@ -1117,7 +1045,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_008
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5310
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_008
@@ -1133,7 +1060,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_009
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5320
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_009
@@ -1149,7 +1075,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_010
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5340
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_010
@@ -1164,7 +1089,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_011
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5350
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_011
@@ -1179,7 +1103,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_SetUnifiedDataByOptions_012
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5360
      * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_012
@@ -1194,7 +1117,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_5900
      * @tc.desc   OH_Udmf_UpdateUnifiedData_001
@@ -1209,7 +1131,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6000
      * @tc.desc   OH_Udmf_UpdateUnifiedData_002
@@ -1224,7 +1145,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6100
      * @tc.desc   OH_Udmf_UpdateUnifiedData_003
@@ -1240,7 +1160,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6110
      * @tc.desc   OH_Udmf_UpdateUnifiedData_004
@@ -1255,7 +1174,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6120
      * @tc.desc   OH_Udmf_UpdateUnifiedData_005
@@ -1270,7 +1188,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_006
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6130
      * @tc.desc   OH_Udmf_UpdateUnifiedData_006
@@ -1285,7 +1202,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_007
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6140
      * @tc.desc   OH_Udmf_UpdateUnifiedData_007
@@ -1300,7 +1216,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_UpdateUnifiedData_008
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6150
      * @tc.desc   OH_Udmf_UpdateUnifiedData_008
@@ -1315,7 +1230,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DeleteUnifiedData_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6200
      * @tc.desc   OH_Udmf_DeleteUnifiedData_001
@@ -1330,7 +1244,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DeleteUnifiedData_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6300
      * @tc.desc   OH_Udmf_DeleteUnifiedData_002
@@ -1345,7 +1258,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DeleteUnifiedData_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6400
      * @tc.desc   OH_Udmf_DeleteUnifiedData_003
@@ -1360,7 +1272,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DeleteUnifiedData_004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6500
      * @tc.desc   OH_Udmf_DeleteUnifiedData_004
@@ -1375,7 +1286,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DeleteUnifiedData_005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6600
      * @tc.desc   OH_Udmf_DeleteUnifiedData_005
@@ -1390,7 +1300,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DeleteUnifiedData_006
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6700
      * @tc.desc   OH_Udmf_DeleteUnifiedData_006
@@ -1405,7 +1314,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DeleteUnifiedData_008
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_6900
      * @tc.desc   OH_Udmf_DeleteUnifiedData_008
@@ -1420,7 +1328,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DestroyDataArray_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_7000
      * @tc.desc   OH_Udmf_DestroyDataArray_001
@@ -1435,7 +1342,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DestroyDataArray_002
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_7100
      * @tc.desc   OH_Udmf_DestroyDataArray_002
@@ -1450,7 +1356,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DestroyDataArray_003
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_7200
      * @tc.desc   OH_Udmf_DestroyDataArray_003
@@ -1465,7 +1370,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DestroyDataArray_004
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_7300
      * @tc.desc   OH_Udmf_DestroyDataArray_004
@@ -1480,7 +1384,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Udmf_DestroyDataArray_005
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_7400
      * @tc.desc   OH_Udmf_DestroyDataArray_005
@@ -1495,7 +1398,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfData_CreateAndSetUnifiedDataByOptions_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_7500
      * @tc.desc   OH_UdmfData_CreateAndSetUnifiedDataByOptions_001
@@ -1525,7 +1427,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfData_CreateAndGetUnifiedDataByOptions_001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_7600
      * @tc.desc   OH_UdmfData_CreateAndGetUnifiedDataByOptions_001
@@ -1560,7 +1461,6 @@ export default function UdmfNdkTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadParams_Create001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0100
      * @tc.desc   OH_UdmfDataLoadParams_Create001
@@ -1575,7 +1475,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadParams_Create002
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0200
      * @tc.desc   OH_UdmfDataLoadParams_Create002
@@ -1590,7 +1489,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_Create001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0300
      * @tc.desc   OH_UdmfDataLoadInfo_Create001
@@ -1605,7 +1503,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadParams_Create002
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0400
      * @tc.desc   OH_UdmfDataLoadParams_Create002
@@ -1620,7 +1517,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_Create001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0500
      * @tc.desc   OH_UdmfDataLoadInfo_Create001
@@ -1635,7 +1531,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_SetTypeAndGetTypes001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0600
      * @tc.desc   OH_UdmfDataLoadInfo_SetTypeAndGetTypes001
@@ -1650,7 +1545,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_SetTypeAndGetTypes002
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0700
      * @tc.desc   OH_UdmfDataLoadParams_Create001
@@ -1665,7 +1559,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_SetTypeAndGetTypes003
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0800
      * @tc.desc   OH_UdmfDataLoadInfo_SetTypeAndGetTypes003
@@ -1680,7 +1573,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_GetTypes001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_0900
      * @tc.desc   OH_UdmfDataLoadInfo_GetTypes001
@@ -1695,7 +1587,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_GetTypes002
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1000
      * @tc.desc   OH_UdmfDataLoadInfo_GetTypes002
@@ -1710,7 +1601,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1100
      * @tc.desc   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount001
@@ -1725,7 +1615,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount002
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1200
      * @tc.desc   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount002
@@ -1740,7 +1629,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount003
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1300
      * @tc.desc   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount003
@@ -1755,7 +1643,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount004
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1400
      * @tc.desc   OH_UdmfDataLoadInfo_SetRecordCountAndGetRecordCount004
@@ -1770,7 +1657,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadInfo_GetRecordCount001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1500
      * @tc.desc   OH_UdmfDataLoadInfo_GetRecordCount001
@@ -1785,7 +1671,6 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadParams_SetDataLoadInfo001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1600
      * @tc.desc   OH_UdmfDataLoadParams_SetDataLoadInfo001
@@ -1801,7 +1686,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_UdmfDataLoadParams_SetLoadHandler001
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithDelayNDKTest_1700
      * @tc.desc   OH_UdmfDataLoadParams_SetLoadHandler001

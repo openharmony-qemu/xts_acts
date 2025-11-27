@@ -111,7 +111,6 @@ describe('relationalStoreDistributedTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0100
      * @tc.desc   RelationalStore set distributed table using none table as argment
@@ -134,7 +133,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0200
      * @tc.desc   set distributed table using one table name
@@ -157,7 +155,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0300
      * @tc.desc   set distributed table using two table name
@@ -180,7 +177,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0400
      * @tc.desc   insert record after setting distributed table
@@ -207,7 +203,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0500
      * @tc.desc   update record after setting distributed table
@@ -246,7 +241,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0600
      * @tc.desc   query record after setting distributed table
@@ -289,7 +283,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0700
      * @tc.desc   delete record after setting distributed table
@@ -318,7 +311,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0800
      * @tc.desc   predicates inDevice
@@ -343,7 +335,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_0900
      * @tc.desc   predicates inAllDevices
@@ -367,7 +358,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1000
      * @tc.desc   sync test
@@ -396,7 +386,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 	
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributedCallback0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1100
      * @tc.desc   sync Callback test
@@ -430,7 +419,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:50
       * @tc.name   testRdbStoreDistributed0012
       * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1200
       * @tc.desc   subscribe test
@@ -452,7 +440,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1300
      * @tc.desc   subscribe test
@@ -474,7 +461,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 	
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDistributed0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1400
      * @tc.desc   obtainDistributedTableName test
@@ -497,7 +483,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:50
       * @tc.name   testRdbStoreDistributed0015
       * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1500
       * @tc.desc   obtainDistributedTableName test
@@ -523,7 +508,6 @@ describe('relationalStoreDistributedTest', function () {
      })
     
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1600
      * @tc.desc   sync test
@@ -557,7 +541,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1700
      * @tc.desc   sync test
@@ -587,7 +570,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1800
      * @tc.desc   sync test
@@ -617,7 +599,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1900
      * @tc.desc   sync test
@@ -639,7 +620,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_2000
      * @tc.desc   sync test
@@ -661,7 +641,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_2100
      * @tc.desc   sync test
@@ -683,7 +662,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_2200
      * @tc.desc   sync test
@@ -707,7 +685,6 @@ describe('relationalStoreDistributedTest', function () {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_023
      * @tc.number SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_023
      * @tc.desc   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_023
@@ -730,7 +707,6 @@ describe('relationalStoreDistributedTest', function () {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_024
      * @tc.number SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_024
      * @tc.desc   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_024
@@ -752,7 +728,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_2500
      * @tc.desc   set distributed table type DISTRIBUTED_DEVICE
@@ -780,7 +755,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_2600
      * @tc.desc   set distributed table type DISTRIBUTED_CLOUD
@@ -808,7 +782,6 @@ describe('relationalStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_2700
      * @tc.desc   sync test

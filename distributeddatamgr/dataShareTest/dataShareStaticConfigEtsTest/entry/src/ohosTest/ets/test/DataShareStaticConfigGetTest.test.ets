@@ -100,7 +100,6 @@ export default function dataShareStaticConfigGetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest001
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1250
      * @tc.desc   uri repeat
@@ -131,7 +130,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest002
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1260
      * @tc.desc   uri is number
@@ -162,7 +160,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1070
      * @tc.desc   uri is chinese
@@ -193,7 +190,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest004
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1080
      * @tc.desc   value is false
@@ -224,7 +220,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest005
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1090
      * @tc.desc   value is true
@@ -255,7 +250,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest006
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1100
      * @tc.desc   value is special character
@@ -286,7 +280,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest007
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1110
      * @tc.desc   uri path is space
@@ -317,7 +310,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest008
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1120
      * @tc.desc   uri path is null
@@ -348,7 +340,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest009
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1130
      * @tc.desc   uri path is all
@@ -379,7 +370,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest010
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1140
      * @tc.desc   uri path is special character
@@ -410,7 +400,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest011
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1150
      * @tc.desc   uri bundle name is error
@@ -441,7 +430,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest012
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1160
      * @tc.desc   uri can delete
@@ -480,7 +468,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest013
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1170
      * @tc.desc   uri length is 256
@@ -511,7 +498,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest014
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1180
      * @tc.desc   uri length is 257
@@ -537,7 +523,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1190
      * @tc.desc   static config can be published
@@ -592,7 +577,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest016
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1200
      * @tc.desc   value Equal 4096
@@ -622,7 +606,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest017
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1210
      * @tc.desc   value more than 4096
@@ -652,7 +635,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest018
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1220
      * @tc.desc   allowList is 128
@@ -682,7 +664,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest019
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1230
      * @tc.desc   allowList is 129
@@ -714,7 +695,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareStaticConfigGetTest020
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1240
      * @tc.desc   [allowList] more than 256

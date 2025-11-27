@@ -45,7 +45,6 @@ export default function preferencesErrCodeHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesPromiseinterface001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_3300
          * @tc.desc   getPreferencesSync interface test
@@ -68,7 +67,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesCallbackinterface001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_3400
          * @tc.desc   getPreferencesSync interface test
@@ -99,7 +97,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesSyncInvalidInterface001
          * @tc.number testGetPreferencesSyncInvalidInterface001
          * @tc.desc   testGetPreferencesSyncInvalidInterface001
@@ -128,7 +125,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDeletePreferencesPromiseHelper001
          * @tc.number testDeletePreferencesPromiseHelper001
          * @tc.desc   testDeletePreferencesPromiseHelper001
@@ -158,7 +154,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDeletePreferencesPromiseHelper002
          * @tc.number testDeletePreferencesPromiseHelper002
          * @tc.desc   testDeletePreferencesPromiseHelper002
@@ -188,7 +183,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testremovePreferencesFromCachePromiseHelper001
          * @tc.number testremovePreferencesFromCachePromiseHelper001
          * @tc.desc   testremovePreferencesFromCachePromiseHelper001
@@ -217,7 +211,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testremovePreferencesFromCacheCallbackHelper001
          * @tc.number testremovePreferencesFromCacheCallbackHelper001
          * @tc.desc   testremovePreferencesFromCacheCallbackHelper001
@@ -250,7 +243,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesSyncInvalidInterface002
          * @tc.number testGetPreferencesSyncInvalidInterface002
          * @tc.desc   testGetPreferencesSyncInvalidInterface002
@@ -276,7 +268,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesSyncinterface001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_4100
          * @tc.desc   getPreferencesSync interface test
@@ -303,7 +294,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesSyncInvalidInterface003
          * @tc.number testGetPreferencesSyncInvalidInterface003
          * @tc.desc   testGetPreferencesSyncInvalidInterface003
@@ -332,7 +322,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesSyncInvalidInterface004
          * @tc.number testGetPreferencesSyncInvalidInterface004
          * @tc.desc   testGetPreferencesSyncInvalidInterface004
@@ -354,7 +343,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesflushInvalidInterface001
          * @tc.number testGetPreferencesflushInvalidInterface001
          * @tc.desc   testGetPreferencesflushInvalidInterface001
@@ -380,7 +368,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesflushInvalidInterface002
          * @tc.number testGetPreferencesflushInvalidInterface002
          * @tc.desc   testGetPreferencesflushInvalidInterface002
@@ -407,7 +394,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOnObserver0001
          * @tc.number testPreferencesOnObserver0001
          * @tc.desc   testPreferencesOnObserver0001
@@ -433,7 +419,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOnObserver0005
          * @tc.number testPreferencesOnObserver0005
          * @tc.desc   testPreferencesOnObserver0005
@@ -458,7 +443,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOnObserver0002
          * @tc.number testPreferencesOnObserver0002
          * @tc.desc   testPreferencesOnObserver0002
@@ -483,7 +467,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOnObserver0004
          * @tc.number testPreferencesOnObserver0004
          * @tc.desc   testPreferencesOnObserver0004
@@ -514,7 +497,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOnErr0400
          * @tc.number testPreferencesOnErr0400
          * @tc.desc   testPreferencesOnErr0400
@@ -542,7 +524,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOffErr0100
          * @tc.number testPreferencesOffErr0100
          * @tc.desc   testPreferencesOffErr0100
@@ -571,7 +552,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOffErr0200
          * @tc.number testPreferencesOffErr0200
          * @tc.desc   testPreferencesOffErr0200
@@ -601,7 +581,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesDeleteSyncInvalidInterface001
          * @tc.number testGetPreferencesDeleteSyncInvalidInterface001
          * @tc.desc   testGetPreferencesDeleteSyncInvalidInterface001
@@ -626,7 +605,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesDeleteSyncInvalidInterface002
          * @tc.number testGetPreferencesDeleteSyncInvalidInterface002
          * @tc.desc   testGetPreferencesDeleteSyncInvalidInterface002
@@ -650,7 +628,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesDeleteSyncInvalidInterface003
          * @tc.number testGetPreferencesDeleteSyncInvalidInterface003
          * @tc.desc   testGetPreferencesDeleteSyncInvalidInterface003
@@ -677,7 +654,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesOnObserver0003
          * @tc.number testPreferencesOnObserver0003
          * @tc.desc   testPreferencesOnObserver0003
@@ -705,7 +681,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesCallbackErr0100
          * @tc.number testPreferencesCallbackErr0100
          * @tc.desc   testPreferencesCallbackErr0100
@@ -749,7 +724,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPromiserr0100
          * @tc.number testPreferencesPromiserr0100
          * @tc.desc   testPreferencesPromiserr0100
@@ -784,7 +758,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesgetPreferencesSync0100
          * @tc.number testPreferencesgetPreferencesSync0100
          * @tc.desc   testPreferencesgetPreferencesSync0100
@@ -820,7 +793,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesDeletePreferencesCallbackErr0100
          * @tc.number testPreferencesDeletePreferencesCallbackErr0100
          * @tc.desc   testPreferencesDeletePreferencesCallbackErr0100
@@ -865,7 +837,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesDeletePreferencesPromiserr0100
          * @tc.number testPreferencesDeletePreferencesPromiserr0100
          * @tc.desc   testPreferencesDeletePreferencesPromiserr0100
@@ -901,7 +872,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesRemovePreferencesFromCacheCallbackErr0100
          * @tc.number testPreferencesRemovePreferencesFromCacheCallbackErr0100
          * @tc.desc   testPreferencesRemovePreferencesFromCacheCallbackErr0100
@@ -947,7 +917,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesRemovePreferencesFromCachePromiserr0100
          * @tc.number testPreferencesRemovePreferencesFromCachePromiserr0100
          * @tc.desc   testPreferencesRemovePreferencesFromCachePromiserr0100
@@ -984,7 +953,6 @@ export default function preferencesErrCodeHelperTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesremovePreferencesFromCacheSync0100
          * @tc.number testPreferencesremovePreferencesFromCacheSync0100
          * @tc.desc   testPreferencesremovePreferencesFromCacheSync0100

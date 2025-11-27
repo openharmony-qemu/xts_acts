@@ -57,7 +57,6 @@ export default function rdbstoreTransactionTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreTransaction001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0100
      * @tc.desc   RdbStore beginTransaction and commit test
@@ -90,7 +89,6 @@ export default function rdbstoreTransactionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreTransaction002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0110
      * @tc.desc   RdbStore beginTransaction and commit test
@@ -140,7 +138,6 @@ export default function rdbstoreTransactionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreTransaction003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0120
      * @tc.desc   RdbStore beginTransaction and commit test
@@ -172,7 +169,6 @@ export default function rdbstoreTransactionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreTransaction004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0130
      * @tc.desc   RdbStore beginTransaction and commit test
@@ -218,7 +214,6 @@ export default function rdbstoreTransactionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreRollBack001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0140
      * @tc.desc   RdbStore rollBack test
@@ -264,7 +259,6 @@ export default function rdbstoreTransactionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreRollBack002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0150
      * @tc.desc   RdbStore rollBack test

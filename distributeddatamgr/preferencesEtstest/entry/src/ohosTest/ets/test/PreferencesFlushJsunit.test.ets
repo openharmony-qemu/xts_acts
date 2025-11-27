@@ -52,7 +52,6 @@ export default function preferencesFlushTest(){
             await dataPreferences.deletePreferences(context, NAME);
         })
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutFlushRemoveGet_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveEtsApiTest_0100
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -101,7 +100,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutFlushRemoveGet_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveEtsApiTest_0200
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -149,7 +147,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutFlushRemoveGet_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveEtsApiTest_0300
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -197,7 +194,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutFlushRemoveGet_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveEtsApiTest_0400
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -245,7 +241,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutFlushRemoveGet_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveEtsApiTest_0500
          * @tc.desc   put get flush removePreferencesFromCacheget get promise interface test
@@ -295,7 +290,6 @@ export default function preferencesFlushTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutFlushRemoveGet_0600
          * @tc.number testPreferencesPutFlushRemoveGet_0600
          * @tc.desc   testPreferencesPutFlushRemoveGet_0600

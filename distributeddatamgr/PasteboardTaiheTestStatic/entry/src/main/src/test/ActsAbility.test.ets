@@ -55,12 +55,12 @@ export default function abilityTest() {
         hilog.info(domain, tag, 'describe      : Start');
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0070
-         * @tc.number    : PasteBoard_PasteDataRecord_0070
-         * @tc.desc      : Test pasteBoard variety createData PixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteDataRecord_Static_0070
+         * @tc.number PasteBoard_PasteDataRecord_0070
+         * @tc.desc   Test pasteBoard variety createData PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0070----------");
@@ -80,12 +80,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0390
-         * @tc.number    : PasteBoard_SystemPasteboard_0390
-         * @tc.desc      : Test pasteBoard SetProperty API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0390
+         * @tc.number PasteBoard_SystemPasteboard_0390
+         * @tc.desc   Test pasteBoard SetProperty API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
@@ -106,12 +106,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0380
-         * @tc.number    : PasteBoard_SystemPasteboard_0380
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0380
+         * @tc.number PasteBoard_SystemPasteboard_0380
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0380----------");
@@ -138,12 +138,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0010
-         * @tc.number    : PasteBoard_PasteDataRecord_0010
-         * @tc.desc      : Successfully cast string record to text
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteDataRecord_Static_0010
+         * @tc.number PasteBoard_PasteDataRecord_0010
+         * @tc.desc   Successfully cast string record to text
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0010----------");
@@ -162,12 +162,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0020
-         * @tc.number    : PasteBoard_PasteDataRecord_0020
-         * @tc.desc      : Successfully cast pixelMap record to text
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteDataRecord_Static_0020
+         * @tc.number PasteBoard_PasteDataRecord_0020
+         * @tc.desc   Successfully cast pixelMap record to text
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0020----------");
@@ -197,12 +197,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0030
-         * @tc.number    : PasteBoard_PasteDataRecord_0030
-         * @tc.desc      : Successfully cast want record to text
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteDataRecord_Static_0030
+         * @tc.number PasteBoard_PasteDataRecord_0030
+         * @tc.desc   Successfully cast want record to text
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0030----------");
@@ -221,12 +221,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0040
-         * @tc.number    : PasteBoard_PasteDataRecord_0040
-         * @tc.desc      : Successfully cast arrayBuffer record to text
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteDataRecord_Static_0040
+         * @tc.number PasteBoard_PasteDataRecord_0040
+         * @tc.desc   Successfully cast arrayBuffer record to text
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0040----------");
@@ -245,12 +245,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0050
-         * @tc.number    : PasteBoard_PasteDataRecord_0050
-         * @tc.desc      : Test pasteBoard variety createData PixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteDataRecord_Static_0050
+         * @tc.number PasteBoard_PasteDataRecord_0050
+         * @tc.desc   Test pasteBoard variety createData PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0050----------");
@@ -282,12 +282,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0060
-         * @tc.number    : PasteDataRecord_Pasteboard_0060
-         * @tc.desc      : Test pasteBoard variety createData Variety and getData
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteDataRecord_Static_0060
+         * @tc.number PasteDataRecord_Pasteboard_0060
+         * @tc.desc   Test pasteBoard variety createData Variety and getData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0060----------");
@@ -339,12 +339,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0010
-         * @tc.number    : SUB_Pasteboard_Local_SDK_PasteboardVariety_Static_0100
-         * @tc.desc      : Test pasteBoard variety createData plaintext
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0010
+         * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_Static_0100
+         * @tc.desc   Test pasteBoard variety createData plaintext
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0010----------");
@@ -364,12 +364,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0020
-         * @tc.number    : PasteBoard_Pasteboard_0020
-         * @tc.desc      : Test pasteBoard variety createData plaintext
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0020
+         * @tc.number PasteBoard_Pasteboard_0020
+         * @tc.desc   Test pasteBoard variety createData plaintext
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0020----------");
@@ -389,12 +389,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0030
-         * @tc.number    : SUB_Pasteboard_Local_SDK_PasteboardVariety_Static_0102
-         * @tc.desc      : Test pasteBoard variety createData plaintext
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0030
+         * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_Static_0102
+         * @tc.desc   Test pasteBoard variety createData plaintext
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0030----------");
@@ -414,12 +414,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0040
-         * @tc.number    : PasteBoard_Pasteboard_0040
-         * @tc.desc      : Test pasteBoard variety createData plaintext
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0040
+         * @tc.number PasteBoard_Pasteboard_0040
+         * @tc.desc   Test pasteBoard variety createData plaintext
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0040----------");
@@ -443,12 +443,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0050
-         * @tc.number    : PasteBoard_Pasteboard_0050
-         * @tc.desc      : Test pasteBoard variety createData Want
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0050
+         * @tc.number PasteBoard_Pasteboard_0050
+         * @tc.desc   Test pasteBoard variety createData Want
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0050----------");
@@ -471,12 +471,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0060
-         * @tc.number    : PasteBoard_Pasteboard_0060
-         * @tc.desc      : Test pasteBoard variety createData Arraybuffer
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0060
+         * @tc.number PasteBoard_Pasteboard_0060
+         * @tc.desc   Test pasteBoard variety createData Arraybuffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0060----------");
@@ -496,12 +496,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0070
-         * @tc.number    : PasteBoard_Pasteboard_0070
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0070
+         * @tc.number PasteBoard_Pasteboard_0070
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0070----------");
@@ -539,12 +539,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0080
-         * @tc.number    : PasteBoard_Pasteboard_0080
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0080
+         * @tc.number PasteBoard_Pasteboard_0080
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0080----------");
@@ -573,12 +573,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0090
-         * @tc.number    : PasteBoard_Pasteboard_0090
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0090
+         * @tc.number PasteBoard_Pasteboard_0090
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0090----------");
@@ -607,12 +607,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0100
-         * @tc.number    : PasteBoard_Pasteboard_0100
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0100
+         * @tc.number PasteBoard_Pasteboard_0100
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0100----------");
@@ -641,12 +641,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0110
-         * @tc.number    : PasteBoard_Pasteboard_0110
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0110
+         * @tc.number PasteBoard_Pasteboard_0110
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0110----------");
@@ -672,12 +672,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0120
-         * @tc.number    : PasteBoard_Pasteboard_0120
-         * @tc.desc      : Test pasteBoard create uri data success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0120
+         * @tc.number PasteBoard_Pasteboard_0120
+         * @tc.desc   Test pasteBoard create uri data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0120----------");
@@ -696,12 +696,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0130
-         * @tc.number    : PasteBoard_Pasteboard_0130
-         * @tc.desc      : Test pasteBoard create uri data success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0130
+         * @tc.number PasteBoard_Pasteboard_0130
+         * @tc.desc   Test pasteBoard create uri data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0130----------");
@@ -719,12 +719,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0140
-         * @tc.number    : PasteBoard_Pasteboard_0140
-         * @tc.desc      : Test pasteBoard create uri data success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0140
+         * @tc.number PasteBoard_Pasteboard_0140
+         * @tc.desc   Test pasteBoard create uri data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0140----------");
@@ -742,12 +742,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0150
-         * @tc.number    : PasteBoard_Pasteboard_0150
-         * @tc.desc      : get the pastedata from system pasteBoard success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteData_Static_0150
+         * @tc.number PasteBoard_Pasteboard_0150
+         * @tc.desc   get the pastedata from system pasteBoard success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0150----------");
@@ -774,12 +774,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0010
-         * @tc.number    : PasteBoard_SystemPasteboard_0010
-         * @tc.desc      : Determine if there is data in the System pasteboard success, result is true
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0010
+         * @tc.number PasteBoard_SystemPasteboard_0010
+         * @tc.desc   Determine if there is data in the System pasteboard success, result is true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0010----------");
@@ -801,12 +801,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0020
-         * @tc.number    : PasteBoard_SystemPasteboard_0020
-         * @tc.desc      : Determine if there is data in the System pasteboard success, result is true
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0020
+         * @tc.number PasteBoard_SystemPasteboard_0020
+         * @tc.desc   Determine if there is data in the System pasteboard success, result is true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0020----------");
@@ -826,12 +826,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0030
-         * @tc.number    : PasteBoard_SystemPasteboard_0030
-         * @tc.desc      : Test pasteBoard create pixelMap record success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0030
+         * @tc.number PasteBoard_SystemPasteboard_0030
+         * @tc.desc   Test pasteBoard create pixelMap record success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0030----------");
@@ -862,12 +862,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0040
-         * @tc.number    : PasteBoard_SystemPasteboard_0040
-         * @tc.desc      : Test pasteBoard create want record success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0040
+         * @tc.number PasteBoard_SystemPasteboard_0040
+         * @tc.desc   Test pasteBoard create want record success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0040----------");
@@ -888,12 +888,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0050
-         * @tc.number    : PasteBoard_SystemPasteboard_0050
-         * @tc.desc      : Test pasteBoard create arrayBuffer record success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0050
+         * @tc.number PasteBoard_SystemPasteboard_0050
+         * @tc.desc   Test pasteBoard create arrayBuffer record success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0050----------");
@@ -914,12 +914,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0060
-         * @tc.number    : PasteBoard_SystemPasteboard_0060
-         * @tc.desc      : Test pasteBoard create String record success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0060
+         * @tc.number PasteBoard_SystemPasteboard_0060
+         * @tc.desc   Test pasteBoard create String record success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0060----------");
@@ -940,12 +940,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0070
-         * @tc.number    : PasteBoard_SystemPasteboard_0070
-         * @tc.desc      : Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0070
+         * @tc.number PasteBoard_SystemPasteboard_0070
+         * @tc.desc   Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0070----------");
@@ -966,12 +966,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0080
-         * @tc.number    : PasteBoard_SystemPasteboard_0080
-         * @tc.desc      : Test pasteBoard create      : String record success with 512000 bit valueType<string>
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0080
+         * @tc.number PasteBoard_SystemPasteboard_0080
+         * @tc.desc   Test pasteBoard create      : String record success with 512000 bit valueType<string>
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0080----------");
@@ -996,12 +996,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0090
-         * @tc.number    : PasteBoard_SystemPasteboard_0090
-         * @tc.desc      : Test pasteBoard create      : String data fail with 1025 bit mimeType
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0090
+         * @tc.number PasteBoard_SystemPasteboard_0090
+         * @tc.desc   Test pasteBoard create      : String data fail with 1025 bit mimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0090----------");
@@ -1018,12 +1018,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0100
-         * @tc.number    : PasteBoard_SystemPasteboard_0100
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0100
+         * @tc.number PasteBoard_SystemPasteboard_0100
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0100----------");
@@ -1051,12 +1051,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0110
-         * @tc.number    : PasteBoard_SystemPasteboard_0110
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0110
+         * @tc.number PasteBoard_SystemPasteboard_0110
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0110----------");
@@ -1082,12 +1082,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0120
-         * @tc.number    : PasteBoard_SystemPasteboard_0120
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0120
+         * @tc.number PasteBoard_SystemPasteboard_0120
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0120----------");
@@ -1114,12 +1114,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0130
-         * @tc.number    : PasteBoard_SystemPasteboard_0130
-         * @tc.desc      : Determine if there is data in the System pasteboard success, result is true
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0130
+         * @tc.number PasteBoard_SystemPasteboard_0130
+         * @tc.desc   Determine if there is data in the System pasteboard success, result is true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0130----------");
@@ -1144,12 +1144,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0140
-         * @tc.number    : PasteBoard_SystemPasteboard_0140
-         * @tc.desc      : Test pasteBoard SetProperty API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0140
+         * @tc.number PasteBoard_SystemPasteboard_0140
+         * @tc.desc   Test pasteBoard SetProperty API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, 'application/xml');
@@ -1174,12 +1174,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0150
-         * @tc.number    : PasteBoard_SystemPasteboard_0150
-         * @tc.desc      : Test pasteBoard SetProperty API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0150
+         * @tc.number PasteBoard_SystemPasteboard_0150
+         * @tc.desc   Test pasteBoard SetProperty API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
@@ -1203,12 +1203,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0160
-         * @tc.number    : PasteBoard_SystemPasteboard_0160
-         * @tc.desc      : Test clearDataSync when systemPasteBoard has data
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0160
+         * @tc.number PasteBoard_SystemPasteboard_0160
+         * @tc.desc   Test clearDataSync when systemPasteBoard has data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_PasteBoard_ETS_SystemPasteboard_Static_0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0160----------");
@@ -1230,12 +1230,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0170
-         * @tc.number    : PasteBoard_SystemPasteboard_0170
-         * @tc.desc      : Test pasteBoard hasDataSync
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0170
+         * @tc.number PasteBoard_SystemPasteboard_0170
+         * @tc.desc   Test pasteBoard hasDataSync
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0170----------");
@@ -1258,12 +1258,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0180
-         * @tc.number    : PasteBoard_SystemPasteboard_0180
-         * @tc.desc      : Test hasDataSync when systemPasteBoard is null
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0180
+         * @tc.number PasteBoard_SystemPasteboard_0180
+         * @tc.desc   Test hasDataSync when systemPasteBoard is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_PasteBoard_ETS_SystemPasteboard_Static_0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0180----------");
@@ -1282,12 +1282,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0190
-         * @tc.number    : PasteBoard_SystemPasteboard_0190
-         * @tc.desc      : Test pasteBoard clearDataSync
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0190
+         * @tc.number PasteBoard_SystemPasteboard_0190
+         * @tc.desc   Test pasteBoard clearDataSync
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0190----------");
@@ -1308,12 +1308,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0200
-         * @tc.number    : PasteBoard_SystemPasteboard_0200
-         * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_PLAIN type
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0200
+         * @tc.number PasteBoard_SystemPasteboard_0200
+         * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_PLAIN type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0200----------");
@@ -1334,12 +1334,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0210
-         * @tc.number    : PasteBoard_SystemPasteboard_0210
-         * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_HTML type
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0210
+         * @tc.number PasteBoard_SystemPasteboard_0210
+         * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_HTML type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0210----------");
@@ -1360,12 +1360,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0220
-         * @tc.number    : PasteBoard_SystemPasteboard_0220
-         * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_URI type
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0220
+         * @tc.number PasteBoard_SystemPasteboard_0220
+         * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_URI type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0220----------");
@@ -1386,12 +1386,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0230
-         * @tc.number    : PasteBoard_SystemPasteboard_0230
-         * @tc.desc      : setData Verify the properties of the MIMETYPE_PIXELMAP type
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0230
+         * @tc.number PasteBoard_SystemPasteboard_0230
+         * @tc.desc   setData Verify the properties of the MIMETYPE_PIXELMAP type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0230----------");
@@ -1422,12 +1422,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0240
-         * @tc.number    : PasteBoard_SystemPasteboard_0240
-         * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_WANT type
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0240
+         * @tc.number PasteBoard_SystemPasteboard_0240
+         * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_WANT type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0240----------");
@@ -1448,12 +1448,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0250
-         * @tc.number    : PasteBoard_SystemPasteboard_0250
-         * @tc.desc      : setData Verify the properties of the Customize type
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0250
+         * @tc.number PasteBoard_SystemPasteboard_0250
+         * @tc.desc   setData Verify the properties of the Customize type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0250----------");
@@ -1474,12 +1474,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0260
-         * @tc.number    : PasteBoard_SystemPasteboard_0260
-         * @tc.desc      : setUnifiedData Verify the properties of the appRecordData type
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0260
+         * @tc.number PasteBoard_SystemPasteboard_0260
+         * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0260----------");
@@ -1498,12 +1498,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0270
-         * @tc.number    : PasteBoard_SystemPasteboard_0270
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0270
+         * @tc.number PasteBoard_SystemPasteboard_0270
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0270----------");
@@ -1528,12 +1528,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0280
-         * @tc.number    : PasteBoard_SystemPasteboard_0280
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0280
+         * @tc.number PasteBoard_SystemPasteboard_0280
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0280----------");
@@ -1558,12 +1558,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0290
-         * @tc.number    : PasteBoard_SystemPasteboard_0290
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0290
+         * @tc.number PasteBoard_SystemPasteboard_0290
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0290----------");
@@ -1588,12 +1588,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0300
-         * @tc.number    : PasteBoard_SystemPasteboard_0300
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0300
+         * @tc.number PasteBoard_SystemPasteboard_0300
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0300----------");
@@ -1623,12 +1623,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0310
-         * @tc.number    : PasteBoard_SystemPasteboard_0310
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0310
+         * @tc.number PasteBoard_SystemPasteboard_0310
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0310----------");
@@ -1654,12 +1654,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0320
-         * @tc.number    : PasteBoard_SystemPasteboard_0320
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0320
+         * @tc.number PasteBoard_SystemPasteboard_0320
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0320----------");
@@ -1684,12 +1684,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0330
-         * @tc.number    : PasteBoard_SystemPasteboard_0330
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0330
+         * @tc.number PasteBoard_SystemPasteboard_0330
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0330----------");
@@ -1714,12 +1714,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0340
-         * @tc.number    : PasteBoard_SystemPasteboard_0340
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0340
+         * @tc.number PasteBoard_SystemPasteboard_0340
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0340----------");
@@ -1744,12 +1744,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0350
-         * @tc.number    : PasteBoard_SystemPasteboard_0350
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0350
+         * @tc.number PasteBoard_SystemPasteboard_0350
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0350----------");
@@ -1779,12 +1779,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0360
-         * @tc.number    : PasteBoard_SystemPasteboard_0360
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0360
+         * @tc.number PasteBoard_SystemPasteboard_0360
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0360----------");
@@ -1810,12 +1810,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0370
-         * @tc.number    : PasteBoard_SystemPasteboard_0370
-         * @tc.desc      : Test pasteBoard API functionality.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SystemPasteboard_Static_0370
+         * @tc.number PasteBoard_SystemPasteboard_0370
+         * @tc.desc   Test pasteBoard API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0370----------");
@@ -1837,12 +1837,12 @@ export default function abilityTest() {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0370----------");
         })
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010
-         * @tc.desc      : getDataWithProgress with invalid params.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010
+         * @tc.desc   getDataWithProgress with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010 start------");
@@ -1878,12 +1878,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020
-         * @tc.desc      : getDataWithProgress fail,err：12900010,message: System error occurred during paste execution.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020
+         * @tc.desc   getDataWithProgress fail,err：12900010,message: System error occurred during paste execution.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020 start------");
@@ -1907,12 +1907,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_GetChangeCount_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_GetChangeCount_Static_0010
-         * @tc.desc      : getChangeCount with invalid params.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_GetChangeCount_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_GetChangeCount_Static_0010
+         * @tc.desc   getChangeCount with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_GetChangeCount_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetChangeCount_Static_0010 start------");
@@ -1939,12 +1939,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0010
-         * @tc.desc      : createRecord with invalid params.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_CreateRecord_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_CreateRecord_Static_0010
+         * @tc.desc   createRecord with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_CreateRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0010 start------");
@@ -1958,12 +1958,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0020
-         * @tc.desc      : createRecord with invalid params.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_CreateRecord_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_CreateRecord_Static_0020
+         * @tc.desc   createRecord with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_CreateRecord_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0020 start------");
@@ -2007,12 +2007,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0030
-         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0030
-         * @tc.desc      : createRecord with invalid params.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_CreateRecord_Static_0030
+         * @tc.number SUB_PasteBoard_ETS_CreateRecord_Static_0030
+         * @tc.desc   createRecord with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_CreateRecord_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0030 start------");
@@ -2036,12 +2036,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0040
-         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0040
-         * @tc.desc      : createRecord with invalid params.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_CreateRecord_Static_0040
+         * @tc.number SUB_PasteBoard_ETS_CreateRecord_Static_0040
+         * @tc.desc   createRecord with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_CreateRecord_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0040 start------");
@@ -2061,12 +2061,12 @@ export default function abilityTest() {
 
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_ReplaceRecord_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_ReplaceRecord_Static_0010
-         * @tc.desc      : replaceRecord with invalid params.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_ReplaceRecord_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_ReplaceRecord_Static_0010
+         * @tc.desc   replaceRecord with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_ReplaceRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ReplaceRecord_Static_0010 start------");
@@ -2080,13 +2080,13 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name      : SUB_PasteBoard_ETS_ReplaceRecord_Static_0020
-        * @tc.number    : SUB_PasteBoard_ETS_ReplaceRecord_Static_0020
-        * @tc.desc      : replaceRecord with invalid params.
-        * @tc.size      : MEDIUM
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
+         * @tc.name   SUB_PasteBoard_ETS_ReplaceRecord_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_ReplaceRecord_Static_0020
+         * @tc.desc   replaceRecord with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_PasteBoard_ETS_ReplaceRecord_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ReplaceRecord_Static_0020 start------");
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
@@ -2103,12 +2103,12 @@ export default function abilityTest() {
             done();
         })
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_RemoveRecord_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_RemoveRecord_Static_0010
-         * @tc.desc      : Remove specified removeRecord from pasteData failed,index out of range
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_RemoveRecord_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_RemoveRecord_Static_0010
+         * @tc.desc   Remove specified removeRecord from pasteData failed,index out of range
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_RemoveRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveRecord_Static_0010 start------");
@@ -2128,12 +2128,12 @@ export default function abilityTest() {
             done();
         })
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_RemoveRecord_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_RemoveRecord_Static_0020
-         * @tc.desc      : Remove specified removeRecord from pasteData success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_RemoveRecord_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_RemoveRecord_Static_0020
+         * @tc.desc   Remove specified removeRecord from pasteData success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_RemoveRecord_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveRecord_Static_0020 start------");
@@ -2154,12 +2154,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0010
-         * @tc.desc      : Pasteboard setData and hasType.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_HasType_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_HasType_Static_0010
+         * @tc.desc   Pasteboard setData and hasType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_HasType_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0010 start------");
@@ -2173,12 +2173,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0020
-         * @tc.desc      : Pasteboard setData and hasType.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_HasType_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_HasType_Static_0020
+         * @tc.desc   Pasteboard setData and hasType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_HasType_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0020 start------");
@@ -2202,12 +2202,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0030
-         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0030
-         * @tc.desc      : Test pasteBoard hasType data result == false
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_HasType_Static_0030
+         * @tc.number SUB_PasteBoard_ETS_HasType_Static_0030
+         * @tc.desc   Test pasteBoard hasType data result == false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_HasType_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0030 start------");
@@ -2220,12 +2220,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0040
-         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0040
-         * @tc.desc      : hasType result: false
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_HasType_Static_0040
+         * @tc.number SUB_PasteBoard_ETS_HasType_Static_0040
+         * @tc.desc   hasType result: false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_HasType_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0040 start------");
@@ -2247,12 +2247,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010
-         * @tc.desc      : Test pasteBoard getPrimaryPixelMap data success
-         * @tc.size      : MEDIUMTEST
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010
+         * @tc.desc   Test pasteBoard getPrimaryPixelMap data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010 start------");
@@ -2276,12 +2276,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteStart_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_PasteStart_Static_0010
-         * @tc.desc      : Test pasteBoard pasteStart success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteStart_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_PasteStart_Static_0010
+         * @tc.desc   Test pasteBoard pasteStart success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteStart_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_PasteStart_Static_0010 start------");
@@ -2313,12 +2313,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_GetValidTypes_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_GetValidTypes_Static_0010
-         * @tc.desc      : Test pasteBoard variety createData Variety and getValidTypes
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_GetValidTypes_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_GetValidTypes_Static_0010
+         * @tc.desc   Test pasteBoard variety createData Variety and getValidTypes
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_GetValidTypes_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetValidTypes_Static_0010 start------");
@@ -2363,12 +2363,12 @@ export default function abilityTest() {
             done();
         })
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_GetValidTypes_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_GetValidTypes_Static_0020
-         * @tc.desc      : getValidTypes Failed types.length === 0
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_GetValidTypes_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_GetValidTypes_Static_0020
+         * @tc.desc   getValidTypes Failed types.length === 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_GetValidTypes_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetValidTypes_Static_0020 start------");
@@ -2392,12 +2392,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_AddEntry_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_AddEntry_Static_0010
-         * @tc.desc      : Pasteboard setData and hasType.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_AddEntry_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_AddEntry_Static_0010
+         * @tc.desc   Pasteboard setData and hasType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_AddEntry_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0010 start------");
@@ -2421,12 +2421,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_AddEntry_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_AddEntry_Static_0020
-         * @tc.desc      : Test pasteBoard addEntry data success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_AddEntry_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_AddEntry_Static_0020
+         * @tc.desc   Test pasteBoard addEntry data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_AddEntry_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0020 start------");
@@ -2470,12 +2470,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_AddEntry_Static_0030
-         * @tc.number    : SUB_PasteBoard_ETS_AddEntry_Static_0030
-         * @tc.desc      : addEntry Failed types.length === 0
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_AddEntry_Static_0030
+         * @tc.number SUB_PasteBoard_ETS_AddEntry_Static_0030
+         * @tc.desc   addEntry Failed types.length === 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_AddEntry_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0030 start------");
@@ -2499,12 +2499,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_Cancel_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_Cancel_Static_0010
-         * @tc.desc      : Test pasteBoard cancel success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_Cancel_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_Cancel_Static_0010
+         * @tc.desc   Test pasteBoard cancel success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_Cancel_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_Cancel_Static_0010 start ************')
@@ -2533,12 +2533,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010
-         * @tc.desc      : setAppShareOptions fail,code 201
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010
+         * @tc.desc   setAppShareOptions fail,code 201
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010 start------");
@@ -2568,12 +2568,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020
-         * @tc.desc      : setAppShareOptions fail,code 401
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020
+         * @tc.desc   setAppShareOptions fail,code 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020 start------");
@@ -2594,12 +2594,12 @@ export default function abilityTest() {
 
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010
-         * @tc.desc      : removeAppShareOptions fail,code 201
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010
+         * @tc.desc   removeAppShareOptions fail,code 201
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010 start------");
@@ -2630,13 +2630,13 @@ export default function abilityTest() {
 
 
         /**
-       * @tc.name      : SUB_PasteBoard_ETS_GetUnifiedData_Static_0010
-       * @tc.number    : SUB_PasteBoard_ETS_GetUnifiedData_Static_0010
-       * @tc.desc      : Test pasteBoard getUnifiedData success
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
-       */
+         * @tc.name   SUB_PasteBoard_ETS_GetUnifiedData_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_GetUnifiedData_Static_0010
+         * @tc.desc   Test pasteBoard getUnifiedData success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_PasteBoard_ETS_GetUnifiedData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedData_Static_0010 start------");
             let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -2696,12 +2696,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_GetUnifiedData_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_GetUnifiedData_Static_0020
-         * @tc.desc      : Test pasteBoard getUnifiedData success
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_GetUnifiedData_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_GetUnifiedData_Static_0020
+         * @tc.desc   Test pasteBoard getUnifiedData success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_GetUnifiedData_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedData_Static_0020 start------");
@@ -2741,12 +2741,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedData_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedData_Static_0010
-         * @tc.desc      : Test pasteBoard setUnifiedData data success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SetUnifiedData_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_SetUnifiedData_Static_0010
+         * @tc.desc   Test pasteBoard setUnifiedData data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SetUnifiedData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0010 start------");
@@ -2785,12 +2785,12 @@ export default function abilityTest() {
 
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedData_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedData_Static_0020
-         * @tc.desc      : Test pasteBoard setUnifiedData data success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SetUnifiedData_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_SetUnifiedData_Static_0020
+         * @tc.desc   Test pasteBoard setUnifiedData data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SetUnifiedData_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0020 start------");
@@ -2851,12 +2851,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedData_Static_0030
-         * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedData_Static_0030
-         * @tc.desc      : Test pasteBoard setUnifiedData data success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PasteBoard_ETS_SetUnifiedData_Static_0030
+         * @tc.number SUB_PasteBoard_ETS_SetUnifiedData_Static_0030
+         * @tc.desc   Test pasteBoard setUnifiedData data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_SetUnifiedData_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0030 start------");
@@ -2896,13 +2896,13 @@ export default function abilityTest() {
         })
 
         /**
-       * @tc.name      : SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010
-       * @tc.number    : SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010
-       * @tc.desc      : Test pasteBoard getUnifiedDataSync data success
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
-       */
+         * @tc.name   SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010
+         * @tc.desc   Test pasteBoard getUnifiedDataSync data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010 start------");
             let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -2949,12 +2949,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_PasteComplete_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_PasteComplete_Static_0010
-         * @tc.desc      : Test pasteBoard pasteComplete success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_PasteComplete_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_PasteComplete_Static_0010
+         * @tc.desc   Test pasteBoard pasteComplete success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_PasteComplete_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_PasteComplete_Static_0010 start------");
@@ -2983,13 +2983,13 @@ export default function abilityTest() {
             done();
         })
         /**
-           * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010
-           * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010
-           * @tc.desc      : Test pasteBoard setUnifiedDataSync data success
-           * @tc.size      : MEDIUM
-           * @tc.type      : Function
-           * @tc.level     : Level 0
-           */
+         * @tc.name   SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010
+         * @tc.desc   Test pasteBoard setUnifiedDataSync data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010 start------");
             let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -3027,13 +3027,13 @@ export default function abilityTest() {
 
 
         /**
-       * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020
-       * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020
-       * @tc.desc      : Test pasteBoard setUnifiedDataSync data success
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
-       */
+         * @tc.name   SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020
+         * @tc.desc   Test pasteBoard setUnifiedDataSync data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020 start------");
             let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -3080,12 +3080,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_DetectPatterns_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_DetectPatterns_Static_0010
-         * @tc.desc      : Test pasteBoard detectPatterns data success
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0010
+         * @tc.desc   Test pasteBoard detectPatterns data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_DetectPatterns_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0010 start------");
@@ -3116,12 +3116,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   : SUB_PasteBoard_ETS_SetDataSync_Static_0010
-         * @tc.number : SUB_PasteBoard_ETS_SetDataSync_Static_0010
-         * @tc.desc   : Test pasteBoard setDataSync data success
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SetDataSync_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_SetDataSync_Static_0010
+         * @tc.desc   Test pasteBoard setDataSync data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_PasteBoard_ETS_SetDataSync_Static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetDataSync_Static_0010 start------");
@@ -3142,12 +3142,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   : SUB_PasteBoard_ETS_SetDataSync_Static_0020
-         * @tc.number : SUB_PasteBoard_ETS_SetDataSync_Static_0020
-         * @tc.desc   : TgetDataWithProgress fail,err：401,message: Parameter error. mimeType cannot be empty.
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_SetDataSync_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_SetDataSync_Static_0020
+         * @tc.desc   TgetDataWithProgress fail,err：401,message: Parameter error. mimeType cannot be empty.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_SetDataSync_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetDataSync_Static_0020 start------");
@@ -3171,12 +3171,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_IsRemoteData_Static_0010
-         * @tc.number    : SUB_PasteBoard_ETS_IsRemoteData_Static_0010
-         * @tc.desc      : Test pasteBoard isRemoteData success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_IsRemoteData_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_IsRemoteData_Static_0010
+         * @tc.desc   Test pasteBoard isRemoteData success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_IsRemoteData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_IsRemoteData_Static_0010 start------");
@@ -3196,12 +3196,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_IsRemoteData_Static_0020
-         * @tc.number    : SUB_PasteBoard_ETS_IsRemoteData_Static_0020
-         * @tc.desc      : Test pasteBoard isRemoteData success
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_PasteBoard_ETS_IsRemoteData_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_IsRemoteData_Static_0020
+         * @tc.desc   Test pasteBoard isRemoteData success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_IsRemoteData_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_IsRemoteData_Static_0020 start------");
@@ -3222,12 +3222,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_CreateRecord_Static_0050
-         * @tc.number      SUB_PasteBoard_ETS_CreateRecord_Static_0050
-         * @tc.desc        createRecord with invalid params.
-         * @tc.size        MEDIUM
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_CreateRecord_Static_0050
+         * @tc.number SUB_PasteBoard_ETS_CreateRecord_Static_0050
+         * @tc.desc   createRecord with invalid params.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PasteBoard_ETS_CreateRecord_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0050 start------");
@@ -3245,13 +3245,13 @@ export default function abilityTest() {
         })
 
         /**
-           * @tc.name        SUB_PasteBoard_ETS_CreateRecord_Static_0060
-           * @tc.number      SUB_PasteBoard_ETS_CreateRecord_Static_0060
-           * @tc.desc        Create record error, err code is: 401
-           * @tc.size        MEDIUM
-           * @tc.type        Function
-           * @tc.level       Level 2
-           */
+         * @tc.name   SUB_PasteBoard_ETS_CreateRecord_Static_0060
+         * @tc.number SUB_PasteBoard_ETS_CreateRecord_Static_0060
+         * @tc.desc   Create record error, err code is: 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_PasteBoard_ETS_CreateRecord_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0060 start------");
             try {
@@ -3267,13 +3267,13 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name     SUB_PasteBoard_ETS_CreateRecord_Static_0070
-        * @tc.number   SUB_PasteBoard_ETS_CreateRecord_Static_0070
-        * @tc.desc     捕获到预期错误码：401
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        * @tc.level    Level 2
-        */
+         * @tc.name   SUB_PasteBoard_ETS_CreateRecord_Static_0070
+         * @tc.number SUB_PasteBoard_ETS_CreateRecord_Static_0070
+         * @tc.desc   捕获到预期错误码：401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_PasteBoard_ETS_CreateRecord_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
             try {
@@ -3290,12 +3290,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_DetectPatterns_Static_0020
-         * @tc.number      SUB_PasteBoard_ETS_DetectPatterns_Static_0020
-         * @tc.desc        Test EMAIL_ADDRESS pattern detection
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0020
+         * @tc.desc   Test EMAIL_ADDRESS pattern detection
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_DetectPatterns_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0020 start------");
@@ -3326,12 +3326,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_Additions_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_Additions_Static_0010
-         * @tc.desc        Test additions with null, undefined
-         * @tc.size        MEDIUM
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_Additions_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_Additions_Static_0010
+         * @tc.desc   Test additions with null, undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_Additions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Additions_Static_0010----------");
@@ -3358,12 +3358,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_Additions_Static_0020
-         * @tc.number      SUB_PasteBoard_ETS_Additions_Static_0020
-         * @tc.desc        Test clearing additions property
-         * @tc.size        MEDIUM
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_Additions_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_Additions_Static_0020
+         * @tc.desc   Test clearing additions property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_Additions_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Additions_Static_0020----------");
@@ -3413,12 +3413,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_MimeTypes_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_MimeTypes_Static_0010
-         * @tc.desc        Test pasteBoard mimeTypes data success
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_MimeTypes_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_MimeTypes_Static_0010
+         * @tc.desc   Test pasteBoard mimeTypes data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_MimeTypes_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_MimeTypes_Static_0010----------");
@@ -3438,12 +3438,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_MimeTypes_Static_0020
-         * @tc.number      SUB_PasteBoard_ETS_MimeTypes_Static_0020
-         * @tc.desc        Test pasteBoard detectPatterns data success
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_MimeTypes_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_MimeTypes_Static_0020
+         * @tc.desc   Test pasteBoard detectPatterns data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_MimeTypes_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_MimeTypes_Static_0020----------");
@@ -3464,12 +3464,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_LocalOnly_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_LocalOnly_Static_0010
-         * @tc.desc        Test pasteBoard localOnly data success
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_LocalOnly_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_LocalOnly_Static_0010
+         * @tc.desc   Test pasteBoard localOnly data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_LocalOnly_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_LocalOnly_Static_0010----------");
@@ -3490,12 +3490,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_Data_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_Data_Static_0010
-         * @tc.desc        Test pasteBoard createData with Record<string, ArrayBuffer> and getData
-         * @tc.size        MEDIUM
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_Data_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_Data_Static_0010
+         * @tc.desc   Test pasteBoard createData with Record<string, ArrayBuffer> and getData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_Data_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Data_Static_0010----------");
@@ -3526,13 +3526,13 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name     SUB_PasteBoard_ETS_AddEntry_Static_0040
-        * @tc.number   SUB_PasteBoard_ETS_AddEntry_Static_0040
-        * @tc.desc     Failed to addEntry. Cause: Parameter error. the first param should be object or string.401
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        * @tc.level    Level 2
-        */
+         * @tc.name   SUB_PasteBoard_ETS_AddEntry_Static_0040
+         * @tc.number SUB_PasteBoard_ETS_AddEntry_Static_0040
+         * @tc.desc   Failed to addEntry. Cause: Parameter error. the first param should be object or string.401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_PasteBoard_ETS_AddEntry_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0040 start ************')
             let html = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
@@ -3551,13 +3551,13 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name        SUB_PasteBoard_ETS_OVERWRITE_Static_0010
-        * @tc.number      SUB_PasteBoard_ETS_OVERWRITE_Static_0010
-        * @tc.desc        Test pasteBoard OVERWRITE data success.obj.result is fileConflictOptions_OVERWRITE:0
-        * @tc.size        MediumTest
-        * @tc.type        Function
-        * @tc.level       Level 2
-        */
+         * @tc.name   SUB_PasteBoard_ETS_OVERWRITE_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_OVERWRITE_Static_0010
+         * @tc.desc   Test pasteBoard OVERWRITE data success.obj.result is fileConflictOptions_OVERWRITE:0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_PasteBoard_ETS_OVERWRITE_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_OVERWRITE_Static_0010 start------");
             let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
@@ -3593,13 +3593,13 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name        SUB_PasteBoard_ETS_SKIP_Static_0010
-        * @tc.number      SUB_PasteBoard_ETS_SKIP_Static_0010
-        * @tc.desc        Test pasteBoard SKIP data success.result is obj.fileConflictOptions_SKIP:1
-        * @tc.size        MediumTest
-        * @tc.type        Function
-        * @tc.level       Level 2
-        */
+         * @tc.name   SUB_PasteBoard_ETS_SKIP_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_SKIP_Static_0010
+         * @tc.desc   Test pasteBoard SKIP data success.result is obj.fileConflictOptions_SKIP:1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_PasteBoard_ETS_SKIP_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SKIP_Static_0010 start------");
             let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
@@ -3635,12 +3635,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_DEFAULT_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_DEFAULT_Static_0010
-         * @tc.desc        Test pasteBoard DEFAULT data success.obj.result is obj.progressIndicator_DEFAULT:1  
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_DEFAULT_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_DEFAULT_Static_0010
+         * @tc.desc   Test pasteBoard DEFAULT data success.obj.result is obj.progressIndicator_DEFAULT:1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_DEFAULT_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DEFAULT_Static_0010 start------");
@@ -3677,12 +3677,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_ProGress_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_ProGress_Static_0010
-         * @tc.desc        Test pasteBoard fileConflictOptions data success.Data transfer progress: 10%
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_ProGress_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_ProGress_Static_0010
+         * @tc.desc   Test pasteBoard fileConflictOptions data success.Data transfer progress: 10%
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_ProGress_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProGress_Static_0010 start------");
@@ -3705,12 +3705,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_ProGress_Static_0020
-         * @tc.number      SUB_PasteBoard_ETS_ProGress_Static_0020
-         * @tc.desc        Test pasteBoard progress data success.result is resProgressInfo.progress:20
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_ProGress_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_ProGress_Static_0020
+         * @tc.desc   Test pasteBoard progress data success.result is resProgressInfo.progress:20
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_ProGress_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProGress_Static_0020 start------");
@@ -3747,12 +3747,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_FileConflictOptions_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_FileConflictOptions_Static_0010
-         * @tc.desc        Test pasteBoard fileConflictOptions data success, result is obj.fileConflictOptions_SKIP:1
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_FileConflictOptions_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_FileConflictOptions_Static_0010
+         * @tc.desc   Test pasteBoard fileConflictOptions data success, result is obj.fileConflictOptions_SKIP:1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_FileConflictOptions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_FileConflictOptions_Static_0010 start------");
@@ -3775,12 +3775,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_ProgressSignal_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_ProgressSignal_Static_0010
-         * @tc.desc        Test pasteBoard ProgressSignal success
-         * @tc.size        MEDIUM
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_ProgressSignal_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_ProgressSignal_Static_0010
+         * @tc.desc   Test pasteBoard ProgressSignal success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_ProgressSignal_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_ProgressSignal_Static_0010 start ************')
@@ -3801,12 +3801,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name     SUB_PasteBoard_ETS_ProgressSignal_Static_0020
-         * @tc.number   SUB_PasteBoard_ETS_ProgressSignal_Static_0020
-         * @tc.desc     Test pasteBoard progressSignal success.Remove specified record fail,error code is:System error occurred during paste execution.12900010
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level 2
+         * @tc.name   SUB_PasteBoard_ETS_ProgressSignal_Static_0020
+         * @tc.number SUB_PasteBoard_ETS_ProgressSignal_Static_0020
+         * @tc.desc   Test pasteBoard progressSignal success.Remove specified record fail,error code is:System error occurred during paste execution.12900010
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_PasteBoard_ETS_ProgressSignal_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressSignal_Static_0020 start------");
@@ -3844,12 +3844,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name        SUB_PasteBoard_ETS_ProgressListener_Static_0010
-         * @tc.number      SUB_PasteBoard_ETS_ProgressListener_Static_0010
-         * @tc.desc        Test pasteBoard progressListener data success
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   SUB_PasteBoard_ETS_ProgressListener_Static_0010
+         * @tc.number SUB_PasteBoard_ETS_ProgressListener_Static_0010
+         * @tc.desc   Test pasteBoard progressListener data success
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_PasteBoard_ETS_ProgressListener_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressListener_Static_0010 start------");

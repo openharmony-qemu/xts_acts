@@ -66,7 +66,6 @@ describe('dataSharePredicatesTest', () => {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOrderByAsc0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0010
      * @tc.desc   predicates orderByAsc normal test
@@ -99,7 +98,6 @@ describe('dataSharePredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOrderByDesc0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0020
      * @tc.desc   predicates orderByDesc normal test
@@ -133,7 +131,6 @@ describe('dataSharePredicatesTest', () => {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAnd0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0030
      * @tc.desc   predicates and normal test
@@ -167,7 +164,6 @@ describe('dataSharePredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIn0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0040
      * @tc.desc   predicates in normal test
@@ -200,7 +196,6 @@ describe('dataSharePredicatesTest', () => {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLimit0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0050
      * @tc.desc   predicates limit normal test

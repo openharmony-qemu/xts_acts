@@ -39,7 +39,6 @@ export default function UDMFApiCallback() {
     console.info(TAG + "*************Unit Test Begin*************")
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0100
      * @tc.desc   unifiedDataChannel insertData callback interface test.
@@ -72,7 +71,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0200
      * @tc.desc   unifiedDataChannel insertData callback interface test.
@@ -107,7 +105,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0300
      * @tc.desc   unifiedDataChannel insertData callback interface test.
@@ -142,7 +139,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0400
      * @tc.desc   unifiedDataChannel insertData callback interface test
@@ -178,7 +174,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0500
      * @tc.desc   unifiedDataChannel insertData callback interface test.
@@ -213,7 +208,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0600
      * @tc.desc   unifiedDataChannel insertData callback interface test.
@@ -247,7 +241,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1000
      * @tc.desc   unifiedDataChannel updateData callback interface test.
@@ -291,7 +284,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0800
      * @tc.desc   unifiedDataChannel insertData callback interface test.
@@ -341,7 +333,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0900
      * @tc.desc   unifiedDataChannel insertData callback interface test.
@@ -392,7 +383,6 @@ export default function UDMFApiCallback() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0700
      * @tc.desc   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0700
@@ -441,7 +431,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1100
      * @tc.desc   unifiedDataChannel queryData callback interface test.
@@ -497,7 +486,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1200
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1200
      * @tc.desc   unifiedDataChannel queryData callback interface test.
@@ -552,7 +540,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1300
      * @tc.desc   unifiedDataChannel queryData callback interface test.
@@ -609,7 +596,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1400
      * @tc.desc   unifiedDataChannel queryData callback interface test.
@@ -672,7 +658,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1500
      * @tc.desc   unifiedDataChannel queryData callback interface test.
@@ -733,7 +718,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1600
      * @tc.desc   unifiedDataChannel deleteData callback interface test.
@@ -793,7 +777,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1700
      * @tc.desc   unifiedDataChannel deleteData callback interface test.
@@ -855,7 +838,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1800
      * @tc.desc   unifiedDataChannel deleteData callback interface test.
@@ -919,7 +901,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1900
      * @tc.desc   unifiedDataChannel deleteData callback interface test.
@@ -990,7 +971,6 @@ export default function UDMFApiCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_2000
      * @tc.desc   unifiedDataChannel deleteData callback interface test.

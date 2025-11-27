@@ -141,7 +141,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetCount001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0100
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount()testcase 001
@@ -162,7 +161,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetCount002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0200
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount()testcase 002
@@ -195,7 +193,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetCount003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0300
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount()testcase 003
@@ -215,7 +212,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetCount004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0400
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount()testcase 004
@@ -235,7 +231,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetPosition001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0900
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition()testcase 001
@@ -256,7 +251,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetPosition002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1000
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition()testcase 002
@@ -281,7 +275,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetPosition003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1100
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition()testcase 003
@@ -301,7 +294,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetPosition004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1200
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition()testcase 004
@@ -321,7 +313,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToFirst001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3300
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst()testcase 001
@@ -342,7 +333,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToFirst002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3400
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst()testcase 002
@@ -366,7 +356,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToFirst003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3500
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst()testcase 003
@@ -386,7 +375,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToFirst004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3600
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst()testcase 004
@@ -406,7 +394,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToFirst005
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3700
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst()testcase 005
@@ -428,7 +415,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToLast001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3800
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast()testcase 001
@@ -449,7 +435,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToLast002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3900
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast()testcase 002
@@ -470,7 +455,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToLast003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4000
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast()testcase 003
@@ -490,7 +474,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToLast004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4100
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast()testcase 004
@@ -510,7 +493,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToNext001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4200
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext()testcase 001
@@ -531,7 +513,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToNext002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4300
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext()testcase 002
@@ -554,7 +535,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToNext003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4400
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext()testcase 003
@@ -574,7 +554,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToNext004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4500
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext()testcase 004
@@ -594,7 +573,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPrevious001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_5000
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious()testcase 001
@@ -615,7 +593,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPrevious002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_5100
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious()testcase 002
@@ -641,7 +618,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPrevious003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_5200
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious()testcase 003
@@ -661,7 +637,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPrevious004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_5300
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious()testcase 004
@@ -681,7 +656,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPrevious005
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_5400
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious()testcase 005
@@ -706,7 +680,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMove001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2900
      * @tc.desc   Test Js Api KvStoreResultSet.Move()testcase 001
@@ -726,7 +699,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMove002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3000
      * @tc.desc   Test Js Api KvStoreResultSet.Move()testcase 002
@@ -750,7 +722,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMove003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_3100
      * @tc.desc   Test Js Api KvStoreResultSet.Move()testcase 003
@@ -775,7 +746,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPosition001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4600
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPosition()testcase 001
@@ -795,7 +765,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPosition003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4600
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPosition()testcase 003
@@ -815,7 +784,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetMoveToPosition004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_4900
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPosition()testcase 004
@@ -838,7 +806,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsFirst001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2100
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst()testcase 001
@@ -859,7 +826,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsFirst002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2200
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst()testcase 002
@@ -884,7 +850,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsFirst003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2300
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst()testcase 003
@@ -904,7 +869,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsFirst004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2400
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst()testcase 004
@@ -924,7 +888,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsLast001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2500
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast()testcase 001
@@ -945,7 +908,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsLast002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2600
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast()testcase 002
@@ -967,7 +929,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsLast003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2700
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast()testcase 003
@@ -987,7 +948,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsLast004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2800
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast()testcase 004
@@ -1007,7 +967,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsBeforeFirst001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1700
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst()testcase 001
@@ -1028,7 +987,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsBeforeFirst002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1800
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst()testcase 002
@@ -1051,7 +1009,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsBeforeFirst003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1900
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst()testcase 003
@@ -1071,7 +1028,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsBeforeFirst004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_2000
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst()testcase 004
@@ -1091,7 +1047,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsAfterLast001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1300
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast()testcase 001
@@ -1112,7 +1067,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsAfterLast002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1400
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast()testcase 002
@@ -1139,7 +1093,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsAfterLast003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1500
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast()testcase 003
@@ -1159,7 +1112,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetIsAfterLast004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_1600
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast()testcase 004
@@ -1179,7 +1131,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetEntry001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0500
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry()testcase 001
@@ -1202,7 +1153,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetEntry002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0600
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry()testcase 002
@@ -1231,7 +1181,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetEntry003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0700
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry()testcase 003
@@ -1251,7 +1200,6 @@ export default function kvStoreResultSetStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsKvStoreResultSetGetEntry004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreResultSetEtsApiTest_0800
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry()testcase 004
