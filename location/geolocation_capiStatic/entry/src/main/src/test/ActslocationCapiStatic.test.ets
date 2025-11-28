@@ -24,6 +24,7 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import geoLocationManager from '@ohos.geoLocationManager';
 import { notificationManager } from '@kit.NotificationKit';
 import { canIUse } from '@internal.full.global';
+import { wantAgent } from '@kit.AbilityKit';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag:string='location'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -102,6 +103,48 @@ export default function actslocationTest() {
                 expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER == 1)
                 expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT == 2)
 
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_NULL == 0)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_EPHEMERIS_DATA_EXIST == 1)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_ALMANAC_DATA_EXIST == 2)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_USED_IN_FIX == 4)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_CARRIER_FREQUENCY_EXIST == 8)
+
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_UNKNOWN == 0)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GPS == 1)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_SBAS == 2)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GLONASS == 3)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_QZSS == 4)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_BEIDOU == 5)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GALILEO == 6)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_IRNSS == 7)
+
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.NAVIGATION == 0x401)
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.SPORT == 0x402)
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.TRANSPORT == 0x403)
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.DAILY_LIFE_SERVICE == 0x404)
+
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.HIGH_POWER_CONSUMPTION == 0x601)
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.LOW_POWER_CONSUMPTION == 0x602)
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.NO_POWER_CONSUMPTION == 0x603)
+
+                expect(true).assertEqual(geoLocationManager.SportsType.RUNNING == 1)
+                expect(true).assertEqual(geoLocationManager.SportsType.WALKING == 2)
+                expect(true).assertEqual(geoLocationManager.SportsType.CYCLING == 3)
+
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCALE == 1)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_SIM == 2)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCATION == 3)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_NETWORK == 4)
+
+                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.WGS84 == 1)
+                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.GCJ02 == 2)
+
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT == -1)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED == -3)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_SWITCH_OFF == -4)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_INTERNET_ACCESS_FAILURE == -5)
+
                 done();
 
 
@@ -152,6 +195,8 @@ export default function actslocationTest() {
                                 expect(true).assertEqual(result?.additionsMap !=null)
                                 expect(true).assertEqual(result?.directionAccuracy !=null)
                                 expect(true).assertEqual(result?.uncertaintyOfTimeSinceBoot !=null)
+                                expect(true).assertEqual(result?.sourceType !=null)
+                                expect(true).assertEqual(result?.poi !=null)
                                 hilog.info(domain, tag, '%{public}s', 'beforeEach end'+'result.latitude'+'result.longitude'+'result.latitude'+'result.accuracy'+'result.speed'+'result.timeStamp'+'result.direction'+'result.timeSinceBoot'
                                 +'result.additions'+'result.additionsSize'+'result.additionsMap'+'result.additionsMap'+'result.additionsAccuracy'+'result.directionAccuracy'+'result.uncertaintyOfTimeSinceBoot');
 
@@ -295,7 +340,7 @@ export default function actslocationTest() {
                     };
                     try{
                         geoLocationManager.getAddressesFromLocationName(geoCodeRequest).then((result:Array<geoLocationManager.GeoAddress>) => {
-                            expect(Array.isArray(result)).assertTrue;
+                            expect(Array.isArray(result)).assertTrue();
                             done();
                         }).catch((error) => {
                             expect((error as BusinessError).code).assertEqual(3301400);
@@ -334,7 +379,7 @@ export default function actslocationTest() {
                                 expect(err.code).assertEqual(3301400);
                                 done();
                             }else{
-                                expect(Array.isArray(data)).assertTrue;
+                                expect(Array.isArray(data)).assertTrue();
                                 done();
                             }
                         })
@@ -709,6 +754,7 @@ export default function actslocationTest() {
                         }
                         if (transition) {
                             console.info("GeofenceTransition: %{public}s", JSON.stringify(transition));
+                            expect(transition.geofenceId).assertEqual("int");
                         }
                         }
                     }
@@ -1224,6 +1270,7 @@ export default function actslocationTest() {
                 'locatingTimeoutMs': 10000,
                 'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
               };
+              expect(typeof request.needPoi).assertEqual("boolean");
               let locationChange = (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined): void => {
                 if (err) {
                   console.error('locationChange: err=' + JSON.stringify(err));
@@ -1246,10 +1293,10 @@ export default function actslocationTest() {
                   expect(typeof location.speedAccuracy).assertEqual("number");
                   expect(typeof location.uncertaintyOfTimeSinceBoot).assertEqual("number");
                 }
+                expect(true).assertEqual(location!=null);
               };
               try {
                 geoLocationManager.getCurrentLocation(request, locationChange);
-                expect(true).assertEqual(locationChange!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
@@ -1763,7 +1810,7 @@ export default function actslocationTest() {
             try {
                 let location = geoLocationManager.getLastLocation();
                 expect(true).assertEqual(location!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -1781,7 +1828,7 @@ export default function actslocationTest() {
             try {
                 let location = geoLocationManager.getLastLocation();
                 expect(true).assertEqual(location!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(801);
               }
@@ -1799,7 +1846,7 @@ export default function actslocationTest() {
             try {
                 let location = geoLocationManager.getLastLocation();
                 expect(true).assertEqual(location!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -1817,7 +1864,7 @@ export default function actslocationTest() {
             try {
                 let location = geoLocationManager.getLastLocation();
                 expect(true).assertEqual(location!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301200);
               }
@@ -1836,13 +1883,14 @@ export default function actslocationTest() {
                 'interval': 1,
                 'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
               };
+              expect(typeof request.needPoi).assertEqual("boolean");
               let locationCallback = (location: geoLocationManager.Location): void => {
                 console.info('locationCallback: data: ' + JSON.stringify(location));
+                expect(true).assertEqual(location!=null);
               };
               try {
                 geoLocationManager.onLocationChange(request, locationCallback);
-                expect(true).assertEqual(locationCallback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }            
@@ -1865,11 +1913,11 @@ export default function actslocationTest() {
               };
               let locationCallback = (location: geoLocationManager.Location): void => {
                 console.info('locationCallback: data: ' + JSON.stringify(location));
+                expect(true).assertEqual(location!=null);
               };
               try {
                 geoLocationManager.onLocationChange(request, locationCallback);
-                expect(true).assertEqual(locationCallback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(401);
               }            
@@ -1892,11 +1940,11 @@ export default function actslocationTest() {
               };
               let locationCallback = (location: geoLocationManager.Location): void => {
                 console.info('locationCallback: data: ' + JSON.stringify(location));
+                expect(true).assertEqual(location!=null);
               };
               try {
                 geoLocationManager.onLocationChange(request, locationCallback);
-                expect(true).assertEqual(locationCallback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }            
@@ -1923,11 +1971,11 @@ export default function actslocationTest() {
               };
               let locationChange = (location: geoLocationManager.Location): void => {
                 console.info('locationChange: data: ' + JSON.stringify(location));
+                expect(true).assertEqual(location!=null);
               };
               try {
                 geoLocationManager.offLocationChange(locationChange);
-                expect(true).assertEqual(locationChange!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -1961,11 +2009,11 @@ export default function actslocationTest() {
               }
               let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
                 console.info('locationErrorChange: data: ' + JSON.stringify(errcode));
+                expect(true).assertEqual(errcode!=null);
               };
               try {
                 geoLocationManager.onLocationError(locationErrorChange);
-                expect(true).assertEqual(locationErrorChange!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -1984,11 +2032,11 @@ export default function actslocationTest() {
         it('Sub_Location_offLocationError_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
                 console.info('locationErrorChange: data: ' + JSON.stringify(errcode));
+                expect(true).assertEqual(errcode!=null);
               };
               try {
                 geoLocationManager.offLocationError(locationErrorChange);
-                expect(true).assertEqual(locationErrorChange!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }           
@@ -2007,11 +2055,11 @@ export default function actslocationTest() {
         it('Sub_Location_onLocationEnabledChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let state = (state: boolean): void => {
                 console.info('locationEnabledChange: ' + JSON.stringify(state));
+                expect(state).assertTrue();
             }
             try {
                 geoLocationManager.onLocationEnabledChange(state);
-                expect(state).assertTrue();
-            } catch (err) {
+            } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(801);
             }          
@@ -2030,11 +2078,11 @@ export default function actslocationTest() {
         it('Sub_Location_offLocationEnabledChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let state = (state: boolean): void => {
                 console.info('locationEnabledChange: ' + JSON.stringify(state));
+                expect(state).assertTrue();
             }
             try {
                 geoLocationManager.offLocationEnabledChange(state);
-                expect(state).assertTrue();
-            } catch (err) {
+            } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(801);
             }          
@@ -2054,6 +2102,7 @@ export default function actslocationTest() {
         it('Sub_Location_onSatelliteStatusChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
                 console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+                expect(true).assertEqual(satelliteStatusInfo!=null);
                 // 表示卫星个数
                 let totalNumber: number = satelliteStatusInfo.satellitesNumber;
                 let satelliteIds: Array<Int> = satelliteStatusInfo.satelliteIds;
@@ -2086,8 +2135,7 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.onSatelliteStatusChange(gnssStatusCb);
-                expect(true).assertEqual(gnssStatusCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }       
@@ -2106,6 +2154,7 @@ export default function actslocationTest() {
         it('Sub_Location_onSatelliteStatusChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
                 console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+                expect(true).assertEqual(satelliteStatusInfo!=null);
                 // 表示卫星个数
                 let totalNumber: number = satelliteStatusInfo.satellitesNumber;
                 let satelliteIds: Array<Int> = satelliteStatusInfo.satelliteIds;
@@ -2138,8 +2187,7 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.onSatelliteStatusChange(gnssStatusCb);
-                expect(true).assertEqual(gnssStatusCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }       
@@ -2158,11 +2206,11 @@ export default function actslocationTest() {
         it('Sub_Location_offSatelliteStatusChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
                 console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+                expect(true).assertEqual(satelliteStatusInfo!=null);
               }
               try {
                 geoLocationManager.offSatelliteStatusChange(gnssStatusCb);
-                expect(true).assertEqual(gnssStatusCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2181,11 +2229,11 @@ export default function actslocationTest() {
         it('Sub_Location_offSatelliteStatusChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
                 console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+                expect(true).assertEqual(satelliteStatusInfo!=null);
               }
               try {
                 geoLocationManager.offSatelliteStatusChange(gnssStatusCb);
-                expect(true).assertEqual(gnssStatusCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -2204,11 +2252,11 @@ export default function actslocationTest() {
         it('Sub_Location_onNmeaMessage_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
                 console.info('nmeaMessage: ' + JSON.stringify(str));
+                expect(true).assertEqual(str!=null);
               }
               try {
                 geoLocationManager.onNmeaMessage(nmeaCb);
-                expect(true).assertEqual(nmeaCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2227,11 +2275,11 @@ export default function actslocationTest() {
         it('Sub_Location_onNmeaMessage_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
                 console.info('nmeaMessage: ' + JSON.stringify(str));
+                expect(true).assertEqual(str!=null);
               }
               try {
                 geoLocationManager.onNmeaMessage(nmeaCb);
-                expect(true).assertEqual(nmeaCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -2250,11 +2298,11 @@ export default function actslocationTest() {
         it('Sub_Location_offNmeaMessage_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
                 console.info('nmeaMessage: ' + JSON.stringify(str));
+                expect(true).assertEqual(str!=null);
               }
               try {
                 geoLocationManager.offNmeaMessage(nmeaCb);
-                expect(true).assertEqual(nmeaCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2273,11 +2321,11 @@ export default function actslocationTest() {
         it('Sub_Location_offNmeaMessage_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
                 console.info('nmeaMessage: ' + JSON.stringify(str));
+                expect(true).assertEqual(str!=null);
               }
               try {
                 geoLocationManager.offNmeaMessage(nmeaCb);
-                expect(true).assertEqual(nmeaCb!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -2297,11 +2345,11 @@ export default function actslocationTest() {
         it('Sub_Location_onCountryCodeChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (code: geoLocationManager.CountryCode): void => {
                 console.info('countryCodeChange: ' + JSON.stringify(code));
+                expect(true).assertEqual(code!=null);
               }
               try {
                 geoLocationManager.onCountryCodeChange(callback);
-                expect(true).assertEqual(callback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301500);
               }
@@ -2320,11 +2368,13 @@ export default function actslocationTest() {
         it('Sub_Location_offCountryCodeChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (code: geoLocationManager.CountryCode): void => {
                 console.info('countryCodeChange: ' + JSON.stringify(code));
+                expect(true).assertEqual(code!=null);
+                expect(typeof code.country).assertEqual("string");
+                expect(code.type != null).assertTrue();
               }
               try {
                 geoLocationManager.offCountryCodeChange(callback);
-                expect(true).assertEqual(callback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301500);
               }
@@ -2343,17 +2393,22 @@ export default function actslocationTest() {
         it('Sub_Location_onBluetoothScanResultChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (result: geoLocationManager.BluetoothScanResult): void => {
                 console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
+                expect(true).assertEqual(result!=null);
+                expect(typeof result.deviceId).assertEqual("string");
+                expect(typeof result.rssi).assertEqual("number");
+                expect(result.data != null).assertTrue();
+                expect(typeof result.deviceName).assertEqual("string");
+                expect(typeof result.connectable).assertEqual("boolean");
               };
               try {
                 geoLocationManager.onBluetoothScanResultChange(callback);
-                expect(true).assertEqual(callback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
           await Utils.msSleep(1000)
           done();
-      })  
+        })  
       
         /*
          * @tc.number: Sub_Location_onBluetoothScanResultChange_0200
@@ -2366,17 +2421,17 @@ export default function actslocationTest() {
         it('Sub_Location_onBluetoothScanResultChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (result: geoLocationManager.BluetoothScanResult): void => {
                 console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
+                expect(true).assertEqual(result!=null);
               };
               try {
                 geoLocationManager.onBluetoothScanResultChange(callback);
-                expect(true).assertEqual(callback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
           await Utils.msSleep(1000)
           done();
-      })  
+        })  
       
       
         /*
@@ -2390,26 +2445,35 @@ export default function actslocationTest() {
         it('Sub_Location_offBluetoothScanResultChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (result: geoLocationManager.BluetoothScanResult): void => {
                 console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
+                expect(true).assertEqual(result!=null);
               };
               try {
                 geoLocationManager.offBluetoothScanResultChange(callback);
-                expect(true).assertEqual(callback!=null);
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
           await Utils.msSleep(1000)
           done();
-      })      
+        })      
 
-
-
-
-
-
-
-
-
+      /*
+      * @tc.number: Sub_Location_GeofenceRequest_Property_0100
+      * @tc.name: Sub_Location_GeofenceRequest_Property_0100
+      * @tc.desc: offBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
+      * @tc.level: Level 0
+      * @tc.type: Function
+      * @tc.size: MEDIUMTEST
+      */
+      it('Sub_Location_GeofenceRequest_Property_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        let requestInfo: geoLocationManager.GeofenceRequest = {
+          'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+          "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
+        };
+        expect(requestInfo.scenario != null).assertTrue();
+        expect(requestInfo.geofence != null).assertTrue();
+        done();
+      })   
 
 
 
