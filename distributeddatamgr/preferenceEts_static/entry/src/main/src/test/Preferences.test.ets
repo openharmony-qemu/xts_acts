@@ -1278,10 +1278,9 @@ export default function preferenceTest() {
       await mPreferences.clear();
       mPreferences.flushSync();
       let baseInt: int = 123;
-      await mPreferences.put("base_int", baseInt);
-      await mPreferences.flush();
-      const ret = mPreferences.getSync("base_int", 0);
-      expect(123).assertEqual(ret);
+      await mPreferences.put('base_int', baseInt);
+      const ret = mPreferences.getSync('base_int', 0);
+      expect(baseInt).assertEqual(ret);
       done();
     })
 
@@ -1298,10 +1297,9 @@ export default function preferenceTest() {
       await mPreferences.clear();
       mPreferences.flushSync();
       let baseDouble: double = 1239999999.1;
-      await mPreferences.put("base_double", baseDouble);
-      await mPreferences.flush();
-      const ret = mPreferences.getSync("base_double", 0.0);
-      expect(1239999999.1).assertEqual(ret);
+      await mPreferences.put('base_double', baseDouble);
+      const ret = mPreferences.getSync('base_double', 0.0);
+      expect(baseDouble).assertEqual(ret);
       done();
     })
 
@@ -1318,10 +1316,9 @@ export default function preferenceTest() {
       await mPreferences.clear();
       mPreferences.flushSync();
       let baseLong: long = 123888888888;
-      await mPreferences.put("base_long", baseLong);
-      await mPreferences.flush();
-      const ret = mPreferences.getSync("base_long", 0);
-      expect(123888888888).assertEqual(ret);
+      await mPreferences.put('base_long', baseLong);
+      const ret = mPreferences.getSync('base_long', 0);
+      expect(baseLong).assertEqual(ret);
       done();
     })
   })
