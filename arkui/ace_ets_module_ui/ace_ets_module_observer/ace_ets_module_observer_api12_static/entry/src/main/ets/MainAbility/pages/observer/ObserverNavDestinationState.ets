@@ -68,7 +68,7 @@ struct ObserverNavDestinationState {
   }
 
   aboutToAppear(){
-    // observer.onNavDestinationUpdate( this.testFunc);  //create page failed
+    observer.onNavDestinationUpdate( this.testFunc);  //create page failed
   }
 
   aboutToDisappear(){

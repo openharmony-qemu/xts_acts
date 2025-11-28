@@ -30,7 +30,7 @@ struct ObserverPageId {
   }
 
   aboutToAppear(): void {
-    // observer.onRouterPageUpdate( this.getUIContext(), this.testFunc)
+    observer.onRouterPageUpdate( this.getUIContext(), this.testFunc)
   }
 
   aboutToDisappear(): void {
@@ -62,8 +62,8 @@ struct CustomCom {
   @Link pageIdValue: string | undefined;
 
   aboutToAppear() {
-    this.pageInfo  = this.queryRouterPageInfo();
-    console.log('++++++++++++++++++++',this.pageInfo )
+    this.pageInfo  = this.queryRouterPageInfo();  //获取不到pageIde 是空的
+    console.log('++++++++++++++++++++this.pageInfo',this.pageInfo )
     this.pageIdValue = this.pageInfo?.pageId
   }
 
