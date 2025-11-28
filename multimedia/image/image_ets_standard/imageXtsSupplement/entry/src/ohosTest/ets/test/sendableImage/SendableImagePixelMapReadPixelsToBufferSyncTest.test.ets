@@ -62,7 +62,7 @@ export default function sendableReadPixelsToBufferSyncTest() {
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -88,7 +88,7 @@ export default function sendableReadPixelsToBufferSyncTest() {
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -114,7 +114,7 @@ export default function sendableReadPixelsToBufferSyncTest() {
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
