@@ -39,7 +39,7 @@ export default function ImageCreatePixelMapPicture() {
     it('SUB_IMAGE_CREATE_PIXELMAP_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXELMAP_001';
       try {
-        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
         image.createPixelMap(undefined, opts, (error: BusinessError, pixelMap: image.PixelMap) => {
@@ -73,7 +73,7 @@ export default function ImageCreatePixelMapPicture() {
       const testName = 'SUB_IMAGE_CREATE_PIXELMAP_002';
       try {
 
-        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
         image.createPixelMap(null, opts, (error: BusinessError, pixelMap: image.PixelMap) => {
@@ -106,7 +106,7 @@ export default function ImageCreatePixelMapPicture() {
       const testName = 'SUB_IMAGE_CREATE_PIXELMAP_003';
       try {
 
-        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
         image.createPixelMap(AppStorage.get("emptyString"), opts, (error: BusinessError, pixelMap: image.PixelMap) => {
@@ -139,7 +139,7 @@ export default function ImageCreatePixelMapPicture() {
       const testName = 'SUB_IMAGE_CREATE_PIXELMAP_004';
       try {
 
-        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        const color: ArrayBuffer = new ArrayBuffer(96); 
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
         image.createPixelMap(color, undefined, (error: BusinessError, pixelMap: image.PixelMap) => {
@@ -172,7 +172,7 @@ export default function ImageCreatePixelMapPicture() {
       const testName = 'SUB_IMAGE_CREATE_PIXELMAP_005';
       try {
 
-        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        const color: ArrayBuffer = new ArrayBuffer(96); 
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
         image.createPixelMap(color, null, (error: BusinessError, pixelMap: image.PixelMap) => {
@@ -205,7 +205,7 @@ export default function ImageCreatePixelMapPicture() {
       const testName = 'SUB_IMAGE_CREATE_PIXELMAP_006';
       try {
 
-        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        const color: ArrayBuffer = new ArrayBuffer(96); 
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
         image.createPixelMap(color, AppStorage.get("emptyString"), (error: BusinessError, pixelMap: image.PixelMap) => {
