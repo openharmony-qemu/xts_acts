@@ -60,14 +60,14 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0100
-    * @tc.name       : testWebViewBlankScreenDetectionConfig
-    * @tc.desc       : test onDetectedBlankScreen
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewBlankScreenDetectionConfig
+     * @tc.number SUB_WEB_ONDETECTEDBLANKSCREEN_0100
+     * @tc.desc   test onDetectedBlankScreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewBlankScreenDetectionConfig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewBlankScreenDetectionConfig", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewBlankScreenDetectionConfig", 'onDetectedBlankScreen', 20251110, done);

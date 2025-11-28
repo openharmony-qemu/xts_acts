@@ -35,14 +35,14 @@ export default function webHitTestTypeEnumTest01() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0100
-    * @tc.name        : testWebHitTestTypeEnumStatic001
-    * @tc.desc        : test the value of WebHitTestType.EditText is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic001
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0100
+     * @tc.desc   test the value of WebHitTestType.EditText is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum001', 10)
@@ -54,14 +54,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0200
-    * @tc.name        : testWebHitTestTypeEnumStatic002
-    * @tc.desc        : test the value of WebHitTestType.Email is 1
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic002
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0200
+     * @tc.desc   test the value of WebHitTestType.Email is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum002', 10)
@@ -73,14 +73,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0300
-    * @tc.name        : testWebHitTestTypeEnumStatic003
-    * @tc.desc        : test the value of WebHitTestType.HttpAnchor is 2
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic003
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0300
+     * @tc.desc   test the value of WebHitTestType.HttpAnchor is 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum003', 10)
@@ -92,14 +92,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0400
-    * @tc.name        : testWebHitTestTypeEnumStatic004
-    * @tc.desc        : test the value of WebHitTestType.HttpAnchorImg is 3
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic004
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0400
+     * @tc.desc   test the value of WebHitTestType.HttpAnchorImg is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum004', 10)
@@ -111,14 +111,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0500
-    * @tc.name        : testWebHitTestTypeEnumStatic005
-    * @tc.desc        : test the value of WebHitTestType.Img is 4
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic005
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0500
+     * @tc.desc   test the value of WebHitTestType.Img is 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum005', 10)
@@ -130,14 +130,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0600
-    * @tc.name        : testWebHitTestTypeEnumStatic006
-    * @tc.desc        : test the value of WebHitTestType.Map is 5
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic006
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0600
+     * @tc.desc   test the value of WebHitTestType.Map is 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum006', 10)
@@ -149,14 +149,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0700
-    * @tc.name        : testWebHitTestTypeEnumStatic007
-    * @tc.desc        : test the value of WebHitTestType.Phone is 6
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic007
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0700
+     * @tc.desc   test the value of WebHitTestType.Phone is 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum007', 10)
@@ -168,14 +168,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0800
-    * @tc.name        : testWebHitTestTypeEnumStatic008
-    * @tc.desc        : test the value of WebHitTestType.Unknown is 7
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnumStatic008
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0800
+     * @tc.desc   test the value of WebHitTestType.Unknown is 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebHitTestTypeEnumStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum008', 10)
@@ -187,6 +187,14 @@ export default function webHitTestTypeEnumTest01() {
         done();
       })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitonSwitchNextPage", 10)

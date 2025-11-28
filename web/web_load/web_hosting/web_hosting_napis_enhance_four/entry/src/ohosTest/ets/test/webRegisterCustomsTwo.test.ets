@@ -38,13 +38,13 @@ export default function webviewApi() {
     })
 
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0500
-     * @tc.name       : testWebServiceWorker_SetSchemeHandler
-     * @tc.desc       : test WebServiceWorker_SetSchemeHandler
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebServiceWorker_SetSchemeHandler
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0500
+     * @tc.desc   test WebServiceWorker_SetSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebServiceWorker_SetSchemeHandler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         

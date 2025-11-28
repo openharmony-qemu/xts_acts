@@ -57,13 +57,13 @@ export default function webOnLoadInterceptSpecial() {
     })
 
     /**
-    * @tc.number SUB_WEB_ONLOADINTERCEPT_NULL_0100
-    * @tc.name testWebOnLoadInterceptSetNull
-    * @tc.desc test onLoadIntercept set null
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
-    */
+     * @tc.name   testWebOnLoadInterceptSetNull
+     * @tc.number SUB_WEB_ONLOADINTERCEPT_NULL_0100
+     * @tc.desc   test onLoadIntercept set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebOnLoadInterceptSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebOnLoadInterceptSetNull', 156);
       Utils.registerBaseEvent('testWebOnLoadInterceptSetNull', true, 25112617, done,
@@ -73,12 +73,12 @@ export default function webOnLoadInterceptSpecial() {
       sendEventByKey('WebOnLoadInterceptSpecialButton', 10, '');
     })
     /**
+     * @tc.name   testWebOnLoadInterceptSetUndefined
      * @tc.number SUB_WEB_ONLOADINTERCEPT_UNDEFINED_0100
-     * @tc.name testWebOnLoadInterceptSetUndefined
-     * @tc.desc test onLoadIntercept set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onLoadIntercept set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebOnLoadInterceptSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebOnLoadInterceptSetUndefined', 156);

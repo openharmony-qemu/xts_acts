@@ -57,14 +57,14 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0100
-    * @tc.name        : testNestedScrollOptionsScrollForward001
-    * @tc.desc        : test NestedScrollOptions scrollForward
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward001
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0100
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNestedScrollOptionsScrollForward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward001';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -75,14 +75,14 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0200
-    * @tc.name        : testNestedScrollOptionsScrollForward002
-    * @tc.desc        : test NestedScrollOptions scrollForward
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward002
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0200
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNestedScrollOptionsScrollForward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward002';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -93,13 +93,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0300
-     * @tc.name        : testNestedScrollOptionsScrollForward003
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward003
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0300
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward003';
@@ -111,13 +111,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0400
-     * @tc.name        : testNestedScrollOptionsScrollForward004
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward004
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0400
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward004';
@@ -129,13 +129,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0500
-     * @tc.name        : testNestedScrollOptionsScrollForward005
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward005
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0500
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward005';
@@ -147,13 +147,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0600
-     * @tc.name        : testNestedScrollOptionsScrollForward006
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward006
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0600
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward006';
@@ -165,13 +165,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0700
-     * @tc.name        : testNestedScrollOptionsScrollForward007
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward007
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0700
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward007';
@@ -183,13 +183,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0800
-     * @tc.name        : testNestedScrollOptionsScrollForward008
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward008
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0800
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward008';
@@ -201,13 +201,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0900
-     * @tc.name        : testNestedScrollOptionsScrollForward009
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward009
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_0900
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward009';
@@ -219,13 +219,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1000
-     * @tc.name        : testNestedScrollOptionsScrollForward010
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward010
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1000
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward010';
@@ -237,13 +237,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1100
-     * @tc.name        : testNestedScrollOptionsScrollForward011
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward011
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1100
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward011';
@@ -255,13 +255,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1200
-     * @tc.name        : testNestedScrollOptionsScrollForward012
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward012
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1200
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward012';
@@ -273,13 +273,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1300
-     * @tc.name        : testNestedScrollOptionsScrollForward013
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward013
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1300
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward013';
@@ -291,13 +291,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1400
-     * @tc.name        : testNestedScrollOptionsScrollForward014
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward014
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1400
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward014';
@@ -309,13 +309,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1500
-     * @tc.name        : testNestedScrollOptionsScrollForward015
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward015
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1500
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward015';
@@ -327,13 +327,13 @@ export default function webNestedScrollOptionsScrollForwardTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1600
-     * @tc.name        : testNestedScrollOptionsScrollForward016
-     * @tc.desc        : test NestedScrollOptions scrollForward
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testNestedScrollOptionsScrollForward016
+     * @tc.number SUB_WEB_NESTEDSCROLLOPTIONS_SCROLLFORWARD_1600
+     * @tc.desc   test NestedScrollOptions scrollForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNestedScrollOptionsScrollForward016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testNestedScrollOptionsScrollForward016';

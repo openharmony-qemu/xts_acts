@@ -58,14 +58,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0100
-    * @tc.name       : testOnInterceptKeyboardAttach0100
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0100
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0100
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0100';
       tcName = 'testOnInterceptKeyboardAttach0100'
@@ -77,14 +77,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0200
-    * @tc.name       : testOnInterceptKeyboardAttach0200
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0200
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0200
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0200';
       tcName = 'testOnInterceptKeyboardAttach0200'
@@ -96,14 +96,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0300
-    * @tc.name       : testOnInterceptKeyboardAttach0300
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0300
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0300
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0300';
       tcName = 'testOnInterceptKeyboardAttach0300'
@@ -115,14 +115,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0400
-    * @tc.name       : testOnInterceptKeyboardAttach0400
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0400
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0400
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0400';
       tcName = 'testOnInterceptKeyboardAttach0400'
@@ -134,14 +134,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0500
-    * @tc.name       : testOnInterceptKeyboardAttach0500
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0500
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0500
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0500';
       tcName = 'testOnInterceptKeyboardAttach0500'
@@ -153,14 +153,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0600
-    * @tc.name       : testOnInterceptKeyboardAttach0600
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0600
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0600
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0600';
       tcName = 'testOnInterceptKeyboardAttach0600'
@@ -172,14 +172,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0700
-    * @tc.name       : testOnInterceptKeyboardAttach0700
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0700
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0700
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0700';
       tcName = 'testOnInterceptKeyboardAttach0700'
@@ -191,14 +191,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0800
-    * @tc.name       : testOnInterceptKeyboardAttach0800
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0800
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0800
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0800';
       tcName = 'testOnInterceptKeyboardAttach0800'
@@ -210,14 +210,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0900
-    * @tc.name       : testOnInterceptKeyboardAttach0900
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach0900
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_0900
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach0900';
       tcName = 'testOnInterceptKeyboardAttach0900'
@@ -229,14 +229,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONINTERCEPTKEYBOARDATTACH_1000
-    * @tc.name       : testOnInterceptKeyboardAttach1000
-    * @tc.desc       : test onInterceptKeyboardAttach
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   onInterceptKeyboardAttach1000
+     * @tc.number SUB_WEB_ONINTERCEPTKEYBOARDATTACH_1000
+     * @tc.desc   test onInterceptKeyboardAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('onInterceptKeyboardAttach1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'onInterceptKeyboardAttach1000';
       tcName = 'testOnInterceptKeyboardAttach1000'

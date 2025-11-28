@@ -59,14 +59,14 @@ export default function webOnBeforeUnload() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONBEFOREUNLOAD_0100
-    * @tc.name        : testOnBeforeUnload001
-    * @tc.desc        : test OnBeforeUnload when refresh
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnBeforeUnload001
+     * @tc.number SUB_WEB_ONBEFOREUNLOAD_0100
+     * @tc.desc   test OnBeforeUnload when refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnBeforeUnload001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnBeforeUnload001", 134000)
       Utils.registerEvent("testOnBeforeUnload001", "resource://rawfile/onBeforeUnloadTest.html", 134010, done);
@@ -74,14 +74,14 @@ export default function webOnBeforeUnload() {
       sendEventByKey('webOnBeforeUnload', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONBEFOREUNLOAD_0200
-    * @tc.name        : testOnBeforeUnload002
-    * @tc.desc        : test OnBeforeUnload when loadUrl
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnBeforeUnload002
+     * @tc.number SUB_WEB_ONBEFOREUNLOAD_0200
+     * @tc.desc   test OnBeforeUnload when loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnBeforeUnload002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnBeforeUnload002", 134000)
       Utils.registerEvent("testOnBeforeUnload002", "resource://rawfile/onBeforeUnloadTest.html", 134030, done);

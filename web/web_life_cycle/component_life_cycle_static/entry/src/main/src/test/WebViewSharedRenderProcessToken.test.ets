@@ -50,13 +50,13 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
       await Utils.msSleep(1000);
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_SharedRenderProcessToken_API_0001
-     * @tc.name        : testWebViewSharedRenderProcessTokenStatic
-     * @tc.desc        : test SharedRenderProcessToken
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSharedRenderProcessTokenStatic
+     * @tc.number SUB_ACE_WEB_SharedRenderProcessToken_API_0001
+     * @tc.desc   test SharedRenderProcessToken
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSharedRenderProcessTokenStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);

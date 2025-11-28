@@ -53,14 +53,14 @@ export default function webOnBeforeUnload() {
       }
     });
 
-    /*
-    * @tc.number      : SUB_WEB_ONBEFOREUNLOAD_0100
-    * @tc.name        : testOnBeforeUnloadStatic001
-    * @tc.desc        : test OnBeforeUnload when refresh
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnBeforeUnloadStatic001
+     * @tc.number SUB_WEB_ONBEFOREUNLOAD_0100
+     * @tc.desc   test OnBeforeUnload when refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnBeforeUnloadStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnBeforeUnload001", 10)
       await Utils.msSleep(5000);
@@ -76,14 +76,14 @@ export default function webOnBeforeUnload() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONBEFOREUNLOAD_0200
-    * @tc.name        : testOnBeforeUnloadStatic002
-    * @tc.desc        : test OnBeforeUnload when loadUrl
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnBeforeUnloadStatic002
+     * @tc.number SUB_WEB_ONBEFOREUNLOAD_0200
+     * @tc.desc   test OnBeforeUnload when loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnBeforeUnloadStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnBeforeUnload002", 10)
       await Utils.msSleep(5000);

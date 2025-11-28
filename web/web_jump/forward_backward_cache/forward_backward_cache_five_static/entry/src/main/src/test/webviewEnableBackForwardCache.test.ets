@@ -56,14 +56,14 @@ export default function ActsAceWebviewEnableBackForwardCache() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0001
-    * @tc.name        : testWebviewEnableBackForwardCacheStatic
-    * @tc.desc        : test webviewEnableBackForwardCache
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebviewEnableBackForwardCacheStatic
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0001
+     * @tc.desc   test webviewEnableBackForwardCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebviewEnableBackForwardCacheStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         emitKey = 'emitWebviewEnableBackForwardCache'
@@ -77,14 +77,14 @@ export default function ActsAceWebviewEnableBackForwardCache() {
       })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0002
-    * @tc.name        : testWebviewBFCacheNativeEmbedStatic
-    * @tc.desc        : test webviewBFCacheNativeEmbed
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebviewBFCacheNativeEmbedStatic
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0002
+     * @tc.desc   test webviewBFCacheNativeEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebviewBFCacheNativeEmbedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         emitKey = 'emitWebviewBFCacheNativeEmbed'
@@ -98,14 +98,14 @@ export default function ActsAceWebviewEnableBackForwardCache() {
       })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0003
-    * @tc.name        : testWebviewBFCacheMediaTakeOverStatic
-    * @tc.desc        : test webviewBFCacheMediaTakeOver
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebviewBFCacheMediaTakeOverStatic
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0003
+     * @tc.desc   test webviewBFCacheMediaTakeOver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebviewBFCacheMediaTakeOverStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         emitKey = 'emitWebviewBFCacheMediaTakeOver'
@@ -118,6 +118,14 @@ export default function ActsAceWebviewEnableBackForwardCache() {
         done()
       })
 
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SwitchNextPageStatic
+     * @tc.desc   SwitchNextPageStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

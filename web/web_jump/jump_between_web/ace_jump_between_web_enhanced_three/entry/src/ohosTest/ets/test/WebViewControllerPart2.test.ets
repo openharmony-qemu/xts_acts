@@ -56,56 +56,56 @@ export default function webViewControllerPart2() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0100
-    * @tc.name       : testBackOrForward001
-    * @tc.desc       : test backOrForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testBackOrForward001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0100
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBackOrForward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testBackOrForward001", 134100)
       Utils.registerEvent("testBackOrForward001", "second", 134110, done);
       sendEventByKey('WebViewControllerPart2Button', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0200
-    * @tc.name       : testBackOrForward002
-    * @tc.desc       : test backOrForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testBackOrForward002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0200
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBackOrForward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testBackOrForward002", 134100)
       Utils.registerEvent("testBackOrForward002", "index", 134120, done);
       sendEventByKey('WebViewControllerPart2Button', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0300
-    * @tc.name       : testBackOrForward003
-    * @tc.desc       : test backOrForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testBackOrForward003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0300
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBackOrForward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testBackOrForward003", 134100)
       Utils.registerEvent("testBackOrForward003", "index", 134130, done);
       sendEventByKey('WebViewControllerPart2Button', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0400
-    * @tc.name       : testBackOrForward004
-    * @tc.desc       : test backOrForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testBackOrForward004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0400
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBackOrForward004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testBackOrForward004", 134100)
       Utils.registerEvent("testBackOrForward004", "index", 134140, done);

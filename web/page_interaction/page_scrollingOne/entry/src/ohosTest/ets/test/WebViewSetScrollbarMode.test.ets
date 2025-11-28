@@ -66,15 +66,15 @@ export default function ActsAceWebViewSetScrollbarMode() {
       }
       done();
     })
-        /*
-    * @tc.number      : SUB_WEB_SETSCROLLBARMODE_0100
-    * @tc.name        : testSetScrollbarMode001
-    * @tc.desc        : SetScrollbarMode
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
 
+    /**
+     * @tc.name   testSetScrollbarMode001
+     * @tc.number testSetScrollbarMode001
+     * @tc.desc   testSetScrollbarMode001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetScrollbarMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async  (done: Function) => {
       emitKey = 'emitSetScrollbarMode001';
       tcName = 'testSetScrollbarMode001'
@@ -86,14 +86,14 @@ export default function ActsAceWebViewSetScrollbarMode() {
       done();
     });
     
-    /*
-    * @tc.number      : SUB_WEB_SETSCROLLBARMODE_0200
-    * @tc.name        : testSetScrollbarMode002
-    * @tc.desc        : SetScrollbarMode
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testSetScrollbarMode002
+     * @tc.number SUB_WEB_SETSCROLLBARMODE_0200
+     * @tc.desc   SetScrollbarMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetScrollbarMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async  (done: Function) =>{
       emitKey = 'emitSetScrollbarMode002';
       tcName = 'testSetScrollbarMode002'

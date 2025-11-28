@@ -35,10 +35,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_059
-     *tc.name GetCertificateCallback
-     *tc.desic Save current page
+    /**
+     * @tc.name   GetCertificateCallback
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_059
+     * @tc.desc   GetCertificateCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetCertificateCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetCertificateCallback", EVENT_ID_SET_EMIT_KEY);

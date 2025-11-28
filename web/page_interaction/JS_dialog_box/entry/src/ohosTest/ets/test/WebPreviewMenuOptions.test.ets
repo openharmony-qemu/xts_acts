@@ -59,14 +59,14 @@ export default function WebPreviewMenuOptions() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBHAPTICFEEDBACK_0100
-    * @tc.name       : WebHapticFeedback001
-    * @tc.desc       : test WebHapticFeedback001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebHapticFeedback001
+     * @tc.number SUB_WEB_WEBHAPTICFEEDBACK_0100
+     * @tc.desc   test WebHapticFeedback001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebHapticFeedback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebHapticFeedback001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -76,14 +76,14 @@ export default function WebPreviewMenuOptions() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBHAPTICFEEDBACK_0200
-    * @tc.name       : WebHapticFeedback002
-    * @tc.desc       : test WebHapticFeedback002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebHapticFeedback002
+     * @tc.number SUB_WEB_WEBHAPTICFEEDBACK_0200
+     * @tc.desc   test WebHapticFeedback002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebHapticFeedback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebHapticFeedback002", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -94,14 +94,14 @@ export default function WebPreviewMenuOptions() {
     })
 
 
-    /*
-      * @tc.number     : SUB_WEB_WEBHAPTICFEEDBACK_0300
-      * @tc.name       : WebHapticFeedback003
-      * @tc.desc       : test WebHapticFeedback003
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   WebHapticFeedback003
+     * @tc.number SUB_WEB_WEBHAPTICFEEDBACK_0300
+     * @tc.desc   test WebHapticFeedback003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebHapticFeedback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebHapticFeedback003", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

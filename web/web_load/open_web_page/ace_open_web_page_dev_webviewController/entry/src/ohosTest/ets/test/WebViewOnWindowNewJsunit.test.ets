@@ -59,22 +59,28 @@ export default function webViewOnWindowNewJsunit() {
       done();
     })
 
-    /*
-    * @tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0100
-    * @tc.name testOnPageVisibleLoadUrl
-    * @tc.desc test api onPageVisible by load new url
-    */
+    /**
+     * @tc.name   testOnPageVisibleLoadUrl
+     * @tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0100
+     * @tc.desc   test api onPageVisible by load new url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnPageVisibleLoadUrl',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitOnPageVisibleLoadUrl";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testOnPageVisibleLoadUrl", 'success', 200530, done);
       sendEventByKey('onWindowNew', 10, '');
     })
-    /*
-    * @tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0200
-    * @tc.name testOnPageVisibleRefresh
-    * @tc.desc test api onPageVisible by refresh
-    */
+    /**
+     * @tc.name   testOnPageVisibleRefresh
+     * @tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0200
+     * @tc.desc   test api onPageVisible by refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnPageVisibleRefresh',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitOnPageVisibleRefresh";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);

@@ -62,13 +62,13 @@ export default function ActsWebJavaScriptAccessSpecial() {
     })
 
     /**
-    * @tc.number SUB_ACE_WEB_JAVASCRIPTACCESS_NULL_API_0001
-    * @tc.name testWebJavaScriptAccessSetNull
-    * @tc.desc test javaScriptAccess set null
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
-    */
+     * @tc.name   testWebJavaScriptAccessSetNull
+     * @tc.number SUB_ACE_WEB_JAVASCRIPTACCESS_NULL_API_0001
+     * @tc.desc   test javaScriptAccess set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebJavaScriptAccessSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptAccessSetNull", 151);
       Utils.registerBaseEvent('testWebJavaScriptAccessSetNull', 'null', 25112607, done,
@@ -78,12 +78,12 @@ export default function ActsWebJavaScriptAccessSpecial() {
       sendEventByKey('WebJavaScriptAccessSpecialButton', 10, '');
     })
     /**
+     * @tc.name   testWebJavaScriptAccessSetUndefined
      * @tc.number SUB_ACE_WEB_JAVASCRIPTACCESS_UNDEFINED_API_0001
-     * @tc.name testWebJavaScriptAccessSetUndefined
-     * @tc.desc test javaScriptAccess set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test javaScriptAccess set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebJavaScriptAccessSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptAccessSetUndefined", 151);

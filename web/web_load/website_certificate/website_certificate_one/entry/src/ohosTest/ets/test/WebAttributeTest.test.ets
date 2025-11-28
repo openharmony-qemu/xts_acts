@@ -59,14 +59,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETCERTIFICATE_0100
-    * @tc.name        : testGetCertificate001
-    * @tc.desc        : test getCertificate with return promise
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testGetCertificate001
+     * @tc.number SUB_WEB_GETCERTIFICATE_0100
+     * @tc.desc   test getCertificate with return promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetCertificate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetCertificate001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -77,14 +77,14 @@ export default function webAttributeTest() {
       }
     })
 
-    /*
-    * @tc.number      : SUB_WEB_GETCERTIFICATE_0200
-    * @tc.name        : testGetCertificate002
-    * @tc.desc        : test getCertificate with callback function
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetCertificate002
+     * @tc.number SUB_WEB_GETCERTIFICATE_0200
+     * @tc.desc   test getCertificate with callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetCertificate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitGetCertificate002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

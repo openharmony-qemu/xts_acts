@@ -32,14 +32,14 @@ export default function WebDownloadErrorCodeEnumTest() {
       done()
     });
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_ERROR_UNKNOWN
-    *@tc.name    : testWebDownloadErrorCodeErrorUnknown
-    *@tc.desc    : test WebDownloadErrorCode ERROR_UNKNOWN
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeErrorUnknown
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_ERROR_UNKNOWN
+     * @tc.desc   test WebDownloadErrorCode ERROR_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeErrorUnknown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeErrorUnknown start')
         try {
@@ -53,14 +53,14 @@ export default function WebDownloadErrorCodeEnumTest() {
     })
 
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_FAILED
-    *@tc.name    : testWebDownloadErrorCodeFileFailed
-    *@tc.desc    : test WebDownloadErrorCode FILE_FAILED
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileFailed
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_FAILED
+     * @tc.desc   test WebDownloadErrorCode FILE_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileFailed start')
         try {
@@ -73,14 +73,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_ACCESS_DENIED
-    *@tc.name    : testWebDownloadErrorCodeFileAccessDenied
-    *@tc.desc    : test WebDownloadErrorCode FILE_ACCESS_DENIED
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileAccessDenied
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_ACCESS_DENIED
+     * @tc.desc   test WebDownloadErrorCode FILE_ACCESS_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileAccessDenied', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileAccessDenied start')
         try {
@@ -93,14 +93,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_NO_SPACE
-    *@tc.name    : testWebDownloadErrorCodeFileNoSpace
-    *@tc.desc    : test WebDownloadErrorCode FILE_NO_SPACE
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileNoSpace
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_NO_SPACE
+     * @tc.desc   test WebDownloadErrorCode FILE_NO_SPACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileNoSpace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileNoSpace start')
         try {
@@ -113,14 +113,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_NAME_TOO_LONG
-    *@tc.name    : testWebDownloadErrorCodeFileNameTooLong
-    *@tc.desc    : test WebDownloadErrorCode FILE_NAME_TOO_LONG
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileNameTooLong
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_NAME_TOO_LONG
+     * @tc.desc   test WebDownloadErrorCode FILE_NAME_TOO_LONG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileNameTooLong', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileNameTooLong start')
         try {
@@ -133,14 +133,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_TOO_LARGE
-    *@tc.name    : testWebDownloadErrorCodeFileNameTooLarge
-    *@tc.desc    : test WebDownloadErrorCode FILE_TOO_LARGE
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileNameTooLarge
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_TOO_LARGE
+     * @tc.desc   test WebDownloadErrorCode FILE_TOO_LARGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileNameTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileNameTooLarge start')
         try {
@@ -153,14 +153,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_TRANSIENT_ERROR
-    *@tc.name    : testWebDownloadErrorCodeFileTransientError
-    *@tc.desc    : test WebDownloadErrorCode FILE_TRANSIENT_ERROR
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileTransientError
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_TRANSIENT_ERROR
+     * @tc.desc   test WebDownloadErrorCode FILE_TRANSIENT_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileTransientError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileTransientError start')
         try {
@@ -173,14 +173,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_BLOCKED
-    *@tc.name    : testWebDownloadErrorCodeFileBlocked
-    *@tc.desc    : test WebDownloadErrorCode FILE_BLOCKED
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileBlocked
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_BLOCKED
+     * @tc.desc   test WebDownloadErrorCode FILE_BLOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileBlocked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileBlocked start')
         try {
@@ -193,14 +193,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_TOO_SHORT
-    *@tc.name    : testWebDownloadErrorCodeFileTooShort
-    *@tc.desc    : test WebDownloadErrorCode FILE_TOO_SHORT
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileTooShort
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_TOO_SHORT
+     * @tc.desc   test WebDownloadErrorCode FILE_TOO_SHORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileTooShort', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileTooShort start')
         try {
@@ -213,14 +213,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_HASH_MISMATCH
-    *@tc.name    : testWebDownloadErrorCodeFileHashMismatch
-    *@tc.desc    : test WebDownloadErrorCode FILE_HASH_MISMATCH
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileHashMismatch
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_HASH_MISMATCH
+     * @tc.desc   test WebDownloadErrorCode FILE_HASH_MISMATCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileHashMismatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileHashMismatch start')
         try {
@@ -233,14 +233,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_FILE_SAME_AS_SOURCE
-    *@tc.name    : testWebDownloadErrorCodeFileSameAsSource
-    *@tc.desc    : test WebDownloadErrorCode FILE_SAME_AS_SOURCE
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeFileSameAsSource
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_FILE_SAME_AS_SOURCE
+     * @tc.desc   test WebDownloadErrorCode FILE_SAME_AS_SOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeFileSameAsSource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeFileSameAsSource start')
         try {
@@ -253,14 +253,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_TIMEOUT
-    *@tc.name    : testWebDownloadErrorCodeNetworkTimeout
-    *@tc.desc    : test WebDownloadErrorCode NETWORK_TIMEOUT
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeNetworkTimeout
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_TIMEOUT
+     * @tc.desc   test WebDownloadErrorCode NETWORK_TIMEOUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeNetworkTimeout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeNetworkTimeout start')
         try {
@@ -273,14 +273,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_DISCONNECTED
-    *@tc.name    : testWebDownloadErrorCodeNetworkDisconnected
-    *@tc.desc    : test WebDownloadErrorCode NETWORK_DISCONNECTED
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeNetworkDisconnected
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_DISCONNECTED
+     * @tc.desc   test WebDownloadErrorCode NETWORK_DISCONNECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeNetworkDisconnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeNetworkDisconnected start')
         try {
@@ -293,14 +293,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_SERVER_DOWN
-    *@tc.name    : testWebDownloadErrorCodeNetworkServerDown
-    *@tc.desc    : test WebDownloadErrorCode NETWORK_SERVER_DOWN
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeNetworkServerDown
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_SERVER_DOWN
+     * @tc.desc   test WebDownloadErrorCode NETWORK_SERVER_DOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeNetworkServerDown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeNetworkServerDown start')
         try {
@@ -313,14 +313,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_INVALID_REQUEST
-    *@tc.name    : testWebDownloadErrorCodeNetworkInvalidRequest
-    *@tc.desc    : test WebDownloadErrorCode NETWORK_INVALID_REQUEST
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeNetworkInvalidRequest
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_NETWORK_INVALID_REQUEST
+     * @tc.desc   test WebDownloadErrorCode NETWORK_INVALID_REQUEST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeNetworkInvalidRequest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeNetworkInvalidRequest start')
         try {
@@ -333,14 +333,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_FAILED
-    *@tc.name    : testWebDownloadErrorCodeServerFailed
-    *@tc.desc    : test WebDownloadErrorCode SERVER_FAILED
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerFailed
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_FAILED
+     * @tc.desc   test WebDownloadErrorCode SERVER_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerFailed start')
         try {
@@ -353,14 +353,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_NO_RANGE
-    *@tc.name    : testWebDownloadErrorCodeServerNoRange
-    *@tc.desc    : test WebDownloadErrorCode SERVER_NO_RANGE
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerNoRange
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_NO_RANGE
+     * @tc.desc   test WebDownloadErrorCode SERVER_NO_RANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerNoRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerNoRange start')
         try {
@@ -373,14 +373,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_BAD_CONTENT
-    *@tc.name    : testWebDownloadErrorCodeServerBadContent
-    *@tc.desc    : test WebDownloadErrorCode SERVER_BAD_CONTENT
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerBadContent
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_BAD_CONTENT
+     * @tc.desc   test WebDownloadErrorCode SERVER_BAD_CONTENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerBadContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerBadContent start')
         try {
@@ -393,14 +393,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_UNAUTHORIZED
-    *@tc.name    : testWebDownloadErrorCodeServerUnauthorized
-    *@tc.desc    : test WebDownloadErrorCode SERVER_UNAUTHORIZED
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerUnauthorized
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_UNAUTHORIZED
+     * @tc.desc   test WebDownloadErrorCode SERVER_UNAUTHORIZED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerUnauthorized', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerUnauthorized start')
         try {
@@ -413,14 +413,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_CERT_PROBLEM
-    *@tc.name    : testWebDownloadErrorCodeServerCertProblem
-    *@tc.desc    : test WebDownloadErrorCode SERVER_CERT_PROBLEM
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerCertProblem
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_CERT_PROBLEM
+     * @tc.desc   test WebDownloadErrorCode SERVER_CERT_PROBLEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerCertProblem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerCertProblem start')
         try {
@@ -433,14 +433,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_FORBIDDEN
-    *@tc.name    : testWebDownloadErrorCodeServerForbidden
-    *@tc.desc    : test WebDownloadErrorCode SERVER_FORBIDDEN
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerForbidden
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_FORBIDDEN
+     * @tc.desc   test WebDownloadErrorCode SERVER_FORBIDDEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerForbidden', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerForbidden start')
         try {
@@ -453,14 +453,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_UNREACHABLE
-    *@tc.name    : testWebDownloadErrorCodeServerUnreachable
-    *@tc.desc    : test WebDownloadErrorCode SERVER_UNREACHABLE
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerUnreachable
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_UNREACHABLE
+     * @tc.desc   test WebDownloadErrorCode SERVER_UNREACHABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerUnreachable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerUnreachable start')
         try {
@@ -473,14 +473,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_CONTENT_LENGTH_MISMATCH
-    *@tc.name    : testWebDownloadErrorCodeServerContentLengthMismatch
-    *@tc.desc    : test WebDownloadErrorCode SERVER_CONTENT_LENGTH_MISMATCH
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerContentLengthMismatch
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_CONTENT_LENGTH_MISMATCH
+     * @tc.desc   test WebDownloadErrorCode SERVER_CONTENT_LENGTH_MISMATCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerContentLengthMismatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerContentLengthMismatch start')
         try {
@@ -493,14 +493,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_SERVER_CROSS_ORIGIN_REDIRECT
-    *@tc.name    : testWebDownloadErrorCodeServerCrossOriginRedirect
-    *@tc.desc    : test WebDownloadErrorCode SERVER_CROSS_ORIGIN_REDIRECT
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeServerCrossOriginRedirect
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_SERVER_CROSS_ORIGIN_REDIRECT
+     * @tc.desc   test WebDownloadErrorCode SERVER_CROSS_ORIGIN_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeServerCrossOriginRedirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeServerCrossOriginRedirect start')
         try {
@@ -513,14 +513,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_USER_CANCELED
-    *@tc.name    : testWebDownloadErrorCodeUserCanceled
-    *@tc.desc    : test WebDownloadErrorCode USER_CANCELED
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeUserCanceled
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_USER_CANCELED
+     * @tc.desc   test WebDownloadErrorCode USER_CANCELED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeUserCanceled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeUserCanceled start')
         try {
@@ -533,14 +533,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_USER_SHUTDOWN
-    *@tc.name    : testWebDownloadErrorCodeUserShutdown
-    *@tc.desc    : test WebDownloadErrorCode USER_SHUTDOWN
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeUserShutdown
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_USER_SHUTDOWN
+     * @tc.desc   test WebDownloadErrorCode USER_SHUTDOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeUserShutdown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeUserShutdown start')
         try {
@@ -553,14 +553,14 @@ export default function WebDownloadErrorCodeEnumTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebDownloadErrorCode_CRASH
-    *@tc.name    : testWebDownloadErrorCodeCrash
-    *@tc.desc    : test WebDownloadErrorCode CRASH
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebDownloadErrorCodeCrash
+     * @tc.number SUB_WEBVIEW_WebDownloadErrorCode_CRASH
+     * @tc.desc   test WebDownloadErrorCode CRASH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebDownloadErrorCodeCrash', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebDownloadErrorCodeCrash start')
         try {

@@ -56,10 +56,13 @@ export default function runJavaScript() {
       console.info("ActsAceWebControllerTest afterEach start:"+emitKey);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_RUNJAVASCRIPT_API_001
-     *tc.name RunJsCallback
-     *tc.desic test RunJavascrit interface when choose callback mode.
+    /**
+     * @tc.name   RunJsCallback
+     * @tc.number SUB_ACE_BASIC_ETS_RUNJAVASCRIPT_API_001
+     * @tc.desc   RunJsCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RunJsCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitRunJsCallback", 171190)
@@ -67,10 +70,13 @@ export default function runJavaScript() {
       sendEventByKey('webcomponent01',10,'');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_RUNJAVASCRIPT_API_002
-     *tc.name RunJsPromise
-     *tc.desic test RunJavascrit interface when choose promise mode.
+    /**
+     * @tc.name   RunJsPromise
+     * @tc.number SUB_ACE_BASIC_ETS_RUNJAVASCRIPT_API_002
+     * @tc.desc   RunJsPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RunJsPromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("emitRunJsPromise", 171190)

@@ -57,10 +57,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
+    /**
+     * @tc.name   OnLoadIntercept
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_0010
-     * @tc.name OnLoadIntercept
-     * @tc.desc Injects the JavaScript object into window and invoke the function in window
+     * @tc.desc   Injects the JavaScript object into window and invoke the function in window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnLoadIntercept', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnLoadIntercept", EVENT_ID_SET_EMIT_KEY);

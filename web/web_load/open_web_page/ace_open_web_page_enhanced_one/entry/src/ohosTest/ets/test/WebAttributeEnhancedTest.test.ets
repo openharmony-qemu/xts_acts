@@ -60,13 +60,13 @@ export default function webAttributeEnhancedTest() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0100
-     * @tc.name        : testOnTitleReceiveIsRealTitle001
-     * @tc.desc        : test onTitleReceive isRealTitle rawfile title
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testOnTitleReceiveIsRealTitle001
+     * @tc.number SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0100
+     * @tc.desc   test onTitleReceive isRealTitle rawfile title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnTitleReceiveIsRealTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnTitleReceiveIsRealTitle001', EVENT_ID_SET_EMIT_KEY);
@@ -81,13 +81,13 @@ export default function webAttributeEnhancedTest() {
       }
     })
 
-    /*
-     * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0200
-     * @tc.name        : testOnTitleReceiveIsRealTitle002
-     * @tc.desc        : test onTitleReceive isRealTitle rawfile no title
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testOnTitleReceiveIsRealTitle002
+     * @tc.number SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0200
+     * @tc.desc   test onTitleReceive isRealTitle rawfile no title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnTitleReceiveIsRealTitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnTitleReceiveIsRealTitle002', EVENT_ID_SET_EMIT_KEY);
@@ -101,13 +101,13 @@ export default function webAttributeEnhancedTest() {
         done();
       }
     })
-    /*
-     * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0300
-     * @tc.name        : testOnTitleReceiveIsRealTitle003
-     * @tc.desc        : test onTitleReceive isRealTitle https url title
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testOnTitleReceiveIsRealTitle003
+     * @tc.number SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0300
+     * @tc.desc   test onTitleReceive isRealTitle https url title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnTitleReceiveIsRealTitle003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnTitleReceiveIsRealTitle003', EVENT_ID_SET_EMIT_KEY);
@@ -121,13 +121,13 @@ export default function webAttributeEnhancedTest() {
         done();
       }
     })
-    /*
-     * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0400
-     * @tc.name        : testOnTitleReceiveIsRealTitle004
-     * @tc.desc        : test onTitleReceive isRealTitle invalid url title
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testOnTitleReceiveIsRealTitle004
+     * @tc.number SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0400
+     * @tc.desc   test onTitleReceive isRealTitle invalid url title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnTitleReceiveIsRealTitle004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnTitleReceiveIsRealTitle004', EVENT_ID_SET_EMIT_KEY);
@@ -141,13 +141,13 @@ export default function webAttributeEnhancedTest() {
         done();
       }
     })
-    /*
-     * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0500
-     * @tc.name        : testOnTitleReceiveIsRealTitle005
-     * @tc.desc        : test onTitleReceive empty title tag
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testOnTitleReceiveIsRealTitle005
+     * @tc.number SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0500
+     * @tc.desc   test onTitleReceive empty title tag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnTitleReceiveIsRealTitle005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnTitleReceiveIsRealTitle005', EVENT_ID_SET_EMIT_KEY);
@@ -161,13 +161,13 @@ export default function webAttributeEnhancedTest() {
         done();
       }
     })
-    /*
-     * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0600
-     * @tc.name        : testOnTitleReceiveIsRealTitle006
-     * @tc.desc        : test onTitleReceive title empty string
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+    /**
+     * @tc.name   testOnTitleReceiveIsRealTitle006
+     * @tc.number SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0600
+     * @tc.desc   test onTitleReceive title empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnTitleReceiveIsRealTitle006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnTitleReceiveIsRealTitle006', EVENT_ID_SET_EMIT_KEY);

@@ -55,13 +55,13 @@ export default function webJsunit() {
       console.info("web beforeEach start");
     })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_0010
-     * @tc.name       : OnLoadInterceptStatic
-     * @tc.desc       : test stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   OnLoadInterceptStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_0010
+     * @tc.desc   test stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('OnLoadInterceptStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);

@@ -65,12 +65,12 @@ export default function webPrefetchPageEnhancedTest() {
     })
 
     /**
+     * @tc.name   testPrefetchPageWithHeader01
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_HEADER_API_0001
-     * @tc.name testPrefetchPageWithHeader01
-     * @tc.desc test prefetchPage url with additionalHeaders
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test prefetchPage url with additionalHeaders
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchPageWithHeader01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithHeader01', 119);
@@ -80,12 +80,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithHeader02
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_HEADER_API_0002
-     * @tc.name testPrefetchPageWithHeader02
-     * @tc.desc test prefetchPage url with additionalHeaders null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with additionalHeaders null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithHeader02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithHeader02', 119);
@@ -95,12 +95,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithHeader03
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_HEADER_API_0003
-     * @tc.name testPrefetchPageWithHeader03
-     * @tc.desc test prefetchPage url with additionalHeaders undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with additionalHeaders undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithHeader03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithHeader03', 119);
@@ -111,12 +111,12 @@ export default function webPrefetchPageEnhancedTest() {
     })
 
     /**
+     * @tc.name   testPrefetchPageWithOptions01
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0001
-     * @tc.name testPrefetchPageWithOptions01
-     * @tc.desc test prefetchPage url with prefetchOptions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with prefetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions01', 119);
@@ -126,12 +126,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions02
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0002
-     * @tc.name testPrefetchPageWithOptions02
-     * @tc.desc test prefetchPage url with header prefetchOptions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with header prefetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions02', 119);
@@ -141,12 +141,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions03
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0003
-     * @tc.name testPrefetchPageWithOptions03
-     * @tc.desc test prefetchPage url with minTimeBetweenPrefetchesMs -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with minTimeBetweenPrefetchesMs -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions03', 119);
@@ -156,12 +156,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions04
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0004
-     * @tc.name testPrefetchPageWithOptions04
-     * @tc.desc test prefetchPage url with minTimeBetweenPrefetchesMs 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with minTimeBetweenPrefetchesMs 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions04', 119);
@@ -171,12 +171,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions05
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0005
-     * @tc.name testPrefetchPageWithOptions05
-     * @tc.desc test prefetchPage url with minTimeBetweenPrefetchesMs 3.145
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with minTimeBetweenPrefetchesMs 3.145
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions05', 119);
@@ -186,12 +186,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions06
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0006
-     * @tc.name testPrefetchPageWithOptions06
-     * @tc.desc test prefetchPage url with minTimeBetweenPrefetchesMs 501
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with minTimeBetweenPrefetchesMs 501
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions06', 119);
@@ -201,12 +201,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions07
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0007
-     * @tc.name testPrefetchPageWithOptions07
-     * @tc.desc test prefetchPage url with minTimeBetweenPrefetchesMs 1e10
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with minTimeBetweenPrefetchesMs 1e10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions07', 119);
@@ -216,12 +216,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions08
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0008
-     * @tc.name testPrefetchPageWithOptions08
-     * @tc.desc test prefetchPage url with minTimeBetweenPrefetchesMs 999999999999999
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with minTimeBetweenPrefetchesMs 999999999999999
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions08', 119);
@@ -231,12 +231,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions09
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0009
-     * @tc.name testPrefetchPageWithOptions09
-     * @tc.desc test prefetchPage url with PrefetchOptions with only minTimeBetweenPrefetchesMs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with PrefetchOptions with only minTimeBetweenPrefetchesMs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions09', 119);
@@ -246,12 +246,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions10
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0010
-     * @tc.name testPrefetchPageWithOptions10
-     * @tc.desc test prefetchPage url with PrefetchOptions with only ignoreCacheControlNoStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with PrefetchOptions with only ignoreCacheControlNoStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions10', 119);
@@ -261,12 +261,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptions11
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_API_0011
-     * @tc.name testPrefetchPageWithOptions11
-     * @tc.desc test prefetchPage url with PrefetchOptions without minTimeBetweenPrefetchesMs ignoreCacheControlNoStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prefetchPage url with PrefetchOptions without minTimeBetweenPrefetchesMs ignoreCacheControlNoStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrefetchPageWithOptions11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptions11', 119);
@@ -276,12 +276,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptionsError01
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0001
-     * @tc.name testPrefetchPageWithOptionsError01
-     * @tc.desc test prefetchPage url with PrefetchOptions 17100001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPrefetchPageWithOptionsError01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptionsError01', 119);
@@ -291,12 +291,12 @@ export default function webPrefetchPageEnhancedTest() {
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
     /**
+     * @tc.name   testPrefetchPageWithOptionsError02
      * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0002
-     * @tc.name testPrefetchPageWithOptionsError02
-     * @tc.desc test prefetchPage url with PrefetchOptions 17100002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPrefetchPageWithOptionsError02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptionsError02', 119);

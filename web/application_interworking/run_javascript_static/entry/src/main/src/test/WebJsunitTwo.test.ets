@@ -38,14 +38,14 @@ export default function webJsunitTwo() {
 
     })
 
-    /*
-  * @tc.number     :  SUB_ACE_BASIC_ETS_API_076
-  * @tc.name       : getLineNumberStatic
-  * @tc.desc       : return the number of console message lines
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 3
-  */
+    /**
+     * @tc.name   getLineNumberStatic
+     * @tc.number SUB_ACE_BASIC_ETS_API_076
+     * @tc.desc   return the number of console message lines
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getLineNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let emitKey = 'emitOnConsoleTwo';
@@ -58,14 +58,14 @@ export default function webJsunitTwo() {
       done();
     })
 
-    /*
-* @tc.number     :  SUB_ACE_BASIC_ETS_API_077
-* @tc.name       : getSourceIdStatic
-* @tc.desc       : return the source url
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 3
-*/
+    /**
+     * @tc.name   getSourceIdStatic
+     * @tc.number SUB_ACE_BASIC_ETS_API_077
+     * @tc.desc   return the source url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getSourceIdStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let emitKey = 'getSourceIdStatic';

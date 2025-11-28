@@ -49,14 +49,14 @@ export default function webJsunit() {
     });
 
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_029
-    * @tc.name       : testStoreWebArchiveStatic
-    * @tc.desc       : test StoreWebArchive
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   StoreWebArchiveStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_029
+     * @tc.desc   test StoreWebArchive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('StoreWebArchiveStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

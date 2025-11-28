@@ -51,14 +51,14 @@ export default function webControllerZoom() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ZOOMCONTROLACCESS_0100
-    * @tc.name       : testWebZoomControlAccess001
-    * @tc.desc       : WebZoomControlAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebZoomControlAccess001
+     * @tc.number SUB_WEB_ZOOMCONTROLACCESS_0100
+     * @tc.desc   WebZoomControlAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebZoomControlAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebZoomControlAccess001", 153041)
       Utils.registerEvent("testWebZoomControlAccess001", true, 20251213, done);

@@ -58,14 +58,14 @@ export default function webViewOnFullScreenEnterInfoAudio() {
     })
     
 
-    /*
-    * @tc.number      : SUB_ACE_BASIC_ETS_FullscreenEnterEventAudio_videoWidth_videoHeight_API_0001
-    * @tc.name        : testOnFullScreenEnterVideoInfoAudio
-    * @tc.desc        : test FullScreenEnterEvent videowidth videoHeight
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnFullScreenEnterVideoInfoAudio
+     * @tc.number SUB_ACE_BASIC_ETS_FullscreenEnterEventAudio_videoWidth_videoHeight_API_0001
+     * @tc.desc   test FullScreenEnterEvent videowidth videoHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnFullScreenEnterVideoInfoAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
         let emitKey="emitOnfullscreenenterAudioInfo";

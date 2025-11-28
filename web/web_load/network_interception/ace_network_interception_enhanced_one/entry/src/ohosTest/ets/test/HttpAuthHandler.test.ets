@@ -57,14 +57,14 @@ export default function httpAuthHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_ISHTTPAUTHINFOSAVED_0100
-    * @tc.name       : testHttpAuthHandlerIsHttpAuthInfoSaved001
-    * @tc.desc       : test HttpAuthHandler isHttpAuthInfoSaved
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testHttpAuthHandlerIsHttpAuthInfoSaved001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_ISHTTPAUTHINFOSAVED_0100
+     * @tc.desc   test HttpAuthHandler isHttpAuthInfoSaved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpAuthHandlerIsHttpAuthInfoSaved001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testHttpAuthHandlerIsHttpAuthInfoSaved001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -75,14 +75,14 @@ export default function httpAuthHandler() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_CANCEL_0100
-    * @tc.name       : testHttpAuthHandlerCancel001
-    * @tc.desc       : test HttpAuthHandler cancel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testHttpAuthHandlerCancel001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CANCEL_0100
+     * @tc.desc   test HttpAuthHandler cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpAuthHandlerCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testHttpAuthHandlerCancel001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -92,14 +92,14 @@ export default function httpAuthHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_CONFIRM_0100
-    * @tc.name       : testHttpAuthHandlerConfirm001
-    * @tc.desc       : test HttpAuthHandler confirm
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testHttpAuthHandlerConfirm001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONFIRM_0100
+     * @tc.desc   test HttpAuthHandler confirm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpAuthHandlerConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testHttpAuthHandlerConfirm001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -109,14 +109,14 @@ export default function httpAuthHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_isHttpAuthInfoSaved_ReturnTrue
-    * @tc.name       : testIsHttpAuthInfoSavedReturnTrue
-    * @tc.desc       : test HttpAuthHandler isHttpAuthInfoSaved return true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testIsHttpAuthInfoSavedReturnTrue
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_isHttpAuthInfoSaved_ReturnTrue
+     * @tc.desc   test HttpAuthHandler isHttpAuthInfoSaved return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testIsHttpAuthInfoSavedReturnTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testIsHttpAuthInfoSavedReturnTrue", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerBaseEvent("testIsHttpAuthInfoSavedReturnTrue", true, 142055, done,(backData: events_emitter.EventData, expected: Object) => {

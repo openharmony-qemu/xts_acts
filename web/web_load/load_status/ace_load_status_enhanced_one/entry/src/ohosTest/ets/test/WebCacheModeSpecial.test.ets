@@ -63,13 +63,13 @@ export default function WebCacheModeSpecial() {
     })
 
     /**
-    * @tc.number SUB_ACE_WEB_CACHEMODE_NULL_API_0100
-    * @tc.name testWebCacheModeSetNull
-    * @tc.desc test cacheMode set null
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
-    */
+     * @tc.name   testWebCacheModeSetNull
+     * @tc.number SUB_ACE_WEB_CACHEMODE_NULL_API_0100
+     * @tc.desc   test cacheMode set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebCacheModeSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebCacheModeSetNull', 154);
       Utils.registerBaseEvent('testWebCacheModeSetNull', true, 25112613, done,
@@ -79,12 +79,12 @@ export default function WebCacheModeSpecial() {
       sendEventByKey('WebCacheModeSpecialButton', 10, '');
     })
     /**
+     * @tc.name   testWebCacheModeSetUndefined
      * @tc.number SUB_ACE_WEB_CACHEMODE_UNDEFINED_API_0100
-     * @tc.name testWebCacheModeSetUndefined
-     * @tc.desc test cacheMode set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test cacheMode set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebCacheModeSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebCacheModeSetUndefined', 154);

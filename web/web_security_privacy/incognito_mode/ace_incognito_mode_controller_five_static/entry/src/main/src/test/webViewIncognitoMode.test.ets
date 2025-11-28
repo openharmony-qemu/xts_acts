@@ -66,13 +66,13 @@ export default function ActsAceWebViewIncognitoMode() {
       console.info('web beforeEach start');
     })
 
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0013
-     *@tc.name :testWebViewIncognitoModeStatic13
-     *@tc.desc :test getStoredGeolocation(promise) incognito
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level 3
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic13
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0013
+     * @tc.desc   test getStoredGeolocation(promise) incognito
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -88,13 +88,13 @@ export default function ActsAceWebViewIncognitoMode() {
         await Utils.msSleep(3000);
         done();
       })
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0014
-     *@tc.name :testWebViewIncognitoModeStatic14
-     *@tc.desc :test getStoredGeolocation(callback) incognito
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level 3
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic14
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0014
+     * @tc.desc   test getStoredGeolocation(callback) incognito
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -110,13 +110,13 @@ export default function ActsAceWebViewIncognitoMode() {
         await Utils.msSleep(3000);
         done();
       })
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0015
-     *@tc.name :testWebViewIncognitoModeStatic15
-     *@tc.desc :test getStoredGeolocation(promise) normal
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level 3
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic15
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0015
+     * @tc.desc   test getStoredGeolocation(promise) normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -134,13 +134,13 @@ export default function ActsAceWebViewIncognitoMode() {
         await Utils.msSleep(3000);
         done();
       })
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0016
-     *@tc.name :testWebViewIncognitoModeStatic16
-     *@tc.desc :test getStoredGeolocation(callback) normal
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level 3
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic16
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0016
+     * @tc.desc   test getStoredGeolocation(callback) normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -157,13 +157,13 @@ export default function ActsAceWebViewIncognitoMode() {
         await Utils.msSleep(3000);
         done();
       })
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0017
-     *@tc.name :testWebViewIncognitoModeStatic17
-     *@tc.desc :test deleteGeolocation incognito
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level 3
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic17
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0017
+     * @tc.desc   test deleteGeolocation incognito
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -180,13 +180,13 @@ export default function ActsAceWebViewIncognitoMode() {
         await Utils.msSleep(3000);
         done();
       })
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0018
-     *@tc.name :testWebViewIncognitoModeStatic18
-     *@tc.desc :test deleteGeolocation normal
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level 3
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic18
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0018
+     * @tc.desc   test deleteGeolocation normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -203,13 +203,13 @@ export default function ActsAceWebViewIncognitoMode() {
         await Utils.msSleep(3000);
         done();
       })
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0019
-     *@tc.name :testWebViewIncognitoModeStatic19
-     *@tc.desc :test deleteAllGeolocation incognito
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level .
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic19
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0019
+     * @tc.desc   test deleteAllGeolocation incognito
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -226,13 +226,13 @@ export default function ActsAceWebViewIncognitoMode() {
         await Utils.msSleep(3000);
         done();
       })
-    /*
-     *@tc.number :SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0020
-     *@tc.name :testWebViewIncognitoModeStatic20
-     *@tc.desc :test deleteAllGeolocation normal
-     *@tc.size :MediumTest
-     *@tc.type :Function
-     *@tc.level :Level 3
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic20
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0020
+     * @tc.desc   test deleteAllGeolocation normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewIncognitoModeStatic20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

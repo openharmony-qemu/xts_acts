@@ -55,14 +55,14 @@ export default function WebCameraApiNoCrash() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_100
-    * @tc.name       : testWebCameraApiNoCrash0100
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0100
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_100
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WebCameraApiNoCrash0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0100", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0100", true, 300410, done,
@@ -72,14 +72,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_200
-    * @tc.name       : testWebCameraApiNoCrash0200
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0200
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_200
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0200", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0200", true, 300420, done,
@@ -89,14 +89,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_300
-    * @tc.name       : testWebCameraApiNoCrash0300
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0300
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_300
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0300", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0300", true, 300430, done,
@@ -106,14 +106,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_400
-    * @tc.name       : testWebCameraApiNoCrash0400
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0400
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_400
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0400", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0400", true, 300440, done,
@@ -123,14 +123,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_500
-    * @tc.name       : testWebCameraApiNoCrash0500
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0500
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_500
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0500", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0500", true, 300450, done,
@@ -140,14 +140,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_600
-    * @tc.name       : testWebCameraApiNoCrash0600
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0600
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_600
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0600", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0600", true, 300460, done,
@@ -157,14 +157,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_700
-    * @tc.name       : testWebCameraApiNoCrash0700
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0700
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_700
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0700", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0700", true, 300470, done,
@@ -174,14 +174,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_800
-    * @tc.name       : testWebCameraApiNoCrash0800
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0800
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_800
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0800", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0800", true, 300480, done,
@@ -191,14 +191,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_900
-    * @tc.name       : testWebCameraApiNoCrash0900
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash0900
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_900
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0900", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash0900", true, 300490, done,
@@ -208,14 +208,14 @@ export default function WebCameraApiNoCrash() {
       await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_1000
-    * @tc.name       : testWebCameraApiNoCrash1000
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrash1000
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_1000
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebCameraApiNoCrash1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash1000", 300400)
       Utils.registerBaseEvent("WebCameraApiNoCrash1000", true, 300500, done,
