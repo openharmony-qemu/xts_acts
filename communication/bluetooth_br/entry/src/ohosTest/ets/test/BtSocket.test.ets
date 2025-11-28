@@ -453,7 +453,7 @@ export default function btSocketTest() {
                 }
                 let number = await functionSppConnect();
                 console.info(`sppConnect ${number}`);
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (error) {
                 console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
@@ -494,7 +494,7 @@ export default function btSocketTest() {
                 await bluetooth.sppWriteAsync(0, data).then(() => {
                     console.info('[bluetooth_js]:sppWriteAsync success');
                 });
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (err) {
                 console.error("sppWriteAsync: errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -520,7 +520,7 @@ export default function btSocketTest() {
                 await bluetooth.sppReadAsync(0).then((data: ArrayBuffer) => {
                     console.info('[bluetooth_js]:sppReadAsync success, result:' + JSON.stringify(data));
                 });
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (err) {
                 console.error("sppReadAsync: errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -545,7 +545,7 @@ export default function btSocketTest() {
             try {
                 let deviceId = bluetooth.getDeviceId(0);
                 console.info('[bluetooth_js]:getDeviceId success, result:' + JSON.stringify(deviceId));
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (err) {
                 console.error("getDeviceId: errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(401);
@@ -565,7 +565,7 @@ export default function btSocketTest() {
             try {
                 let psm = bluetooth.getL2capPsm(0);
                 console.info('[bluetooth_js]:getL2capPsm success, result:' + JSON.stringify(psm));
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (err) {
                 console.error("getL2capPsm: errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(401);
@@ -594,7 +594,7 @@ export default function btSocketTest() {
                 expect(SPP_L2CAP_BLE).assertEqual(2);
             } catch (err) {
                 console.error("SppType get: errCode:" + err.code + ",errMessage:" + err.message);
-                expect(false).assertTrue();
+                expect().assertFail();
             }
             done();
         })
@@ -622,7 +622,7 @@ export default function btSocketTest() {
                     console.info('[bluetooth_js]sppListen is not support or profile not support');
                     expect(true).assertTrue();
                 } else {
-                    expect(false).assertTrue();
+                    expect().assertFail();
                 }
             }
             done();
@@ -641,7 +641,7 @@ export default function btSocketTest() {
                 let clientSocket = 0;
                 let return_max_receive = bluetooth.getMaxReceiveDataSize(clientSocket);
                 console.info('[bluetooth_js]:getMaxReceiveDataSize success, result:' + JSON.stringify(return_max_receive));
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (error) {
                 console.error(`[bt_arkts]getMaxReceiveDataSize is failed, code is ${error.code}, message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
@@ -662,7 +662,7 @@ export default function btSocketTest() {
                 let clientSocket = 1;
                 let return_max_transmit = bluetooth.getMaxTransmitDataSize(clientSocket);
                 console.info('[bluetooth_js]:getMaxTransmitDataSize success, result:' + JSON.stringify(return_max_transmit));
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (error) {
                 console.error(`[bt_arkts]getMaxTransmitDataSize is failed, code is ${error.code}, message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
