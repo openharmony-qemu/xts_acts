@@ -124,6 +124,7 @@ import customDialogGetstateTest from './customDialogTest/customdialog4.test';
 import closeToastTest from './promptActionTest/closeToastTest2.test';
 
 export default function testsuite() {
+	showAlertDialogBackgroundEffectTest()
 	overlayManagerTest();
 	CustomDialogAJsunit()
 	CustomDialog()
@@ -200,7 +201,6 @@ export default function testsuite() {
 	presentCustomDialogOrder()
 	getDialogControllerTest()
 	getDialogControllerReturnTest()
-	showAlertDialogBackgroundEffectTest()
 	showAlertDialogBlurStyleOptionsTest()
 	UIOpenCustomDialogBackgroundEffectTest()
 	UIOpenCustomDialogBlurStyleOptionsTest()
