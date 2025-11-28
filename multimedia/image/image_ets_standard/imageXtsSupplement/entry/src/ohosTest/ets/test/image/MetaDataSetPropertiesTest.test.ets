@@ -85,10 +85,10 @@ export default function setPropertiesTest() {
       const testName = 'SET_PROPERTIES_ABNORMAL_TEST_001';
       const path = 'test_exif.jpg';
       try {
-          await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-            metaData?.setProperties(null);
-            expect().assertFail();
-          });
+        await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
+          metaData?.setProperties(null);
+          expect().assertFail();
+        });
         done();
       } catch (error) {
         console.info(TAG, testName, ' setProperties error', error.message, error.code);
