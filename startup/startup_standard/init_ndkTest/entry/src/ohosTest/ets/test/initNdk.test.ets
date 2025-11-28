@@ -22,12 +22,12 @@ export default function initNdkTest() {
     const MAX_CHARACTERS_NUM_TWO = 65;
     const MAX_CHARACTERS_NUM = 0;
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDEVICETYPE_0100
-     * @tc.name       : testOHGetDeviceType001
-     * @tc.desc       : test OH_GetDeviceType for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDeviceType001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDEVICETYPE_0100
+     * @tc.desc   test OH_GetDeviceType for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDeviceType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let deviceTypeInfo: string = initndk.oHGetDeviceType();
@@ -50,12 +50,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDEVICETYPE_0200
-     * @tc.name       : testOHGetDeviceType002
-     * @tc.desc       : test OH_GetDeviceType has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDeviceType002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDEVICETYPE_0200
+     * @tc.desc   test OH_GetDeviceType has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDeviceType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let deviceTypeInfo: string = initndk.oHGetDeviceType();
@@ -74,12 +74,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETMANUFACTURE_0100
-     * @tc.name       : testOHGetManufacture001
-     * @tc.desc       : test OH_GetManufacture for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetManufacture001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETMANUFACTURE_0100
+     * @tc.desc   test OH_GetManufacture for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetManufacture001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let manufactureInfo: string = initndk.oHGetManufacture();
@@ -97,12 +97,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETMANUFACTURE_0200
-     * @tc.name       : testOHGetManufacture002
-     * @tc.desc       : test OH_GetManufacture has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetManufacture002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETMANUFACTURE_0200
+     * @tc.desc   test OH_GetManufacture has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetManufacture002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let manufactureInfo: string = initndk.oHGetManufacture();
@@ -113,12 +113,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBRAND_0100
-     * @tc.name       : testOHGetBrand001
-     * @tc.desc       : test OH_GetBrand for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBrand001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBRAND_0100
+     * @tc.desc   test OH_GetBrand for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBrand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let brandInfo: string = initndk.oHGetBrand();
@@ -136,12 +136,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBRAND_0200
-     * @tc.name       : testOHGetBrand002
-     * @tc.desc       : test OH_GetBrand has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBrand002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBRAND_0200
+     * @tc.desc   test OH_GetBrand has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBrand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let brandInfo: string = initndk.oHGetBrand();
@@ -152,12 +152,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETMARKETNAME_0100
-     * @tc.name       : testOHGetMarketName001
-     * @tc.desc       : test OH_GetMarketName for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetMarketName001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETMARKETNAME_0100
+     * @tc.desc   test OH_GetMarketName for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetMarketName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let marketNameInfo: string = initndk.oHGetMarketName();
@@ -175,12 +175,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTSERIES_0100
-     * @tc.name       : testOHGetProductSeries001
-     * @tc.desc       : test OH_GetProductSeries for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetProductSeries001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTSERIES_0100
+     * @tc.desc   test OH_GetProductSeries for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetProductSeries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let productSeriesInfo: string = initndk.oHGetProductSeries();
@@ -203,12 +203,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTSERIES_0200
-     * @tc.name       : testOHGetProductSeries002
-     * @tc.desc       : test OH_GetProductSeries has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetProductSeries002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTSERIES_0200
+     * @tc.desc   test OH_GetProductSeries has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetProductSeries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let productSeriesInfo: string = initndk.oHGetProductSeries();
@@ -227,12 +227,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTMODEL_0100
-     * @tc.name       : testOHGetProductModel001
-     * @tc.desc       : test OH_GetProductModel for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetProductModel001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTMODEL_0100
+     * @tc.desc   test OH_GetProductModel for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetProductModel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let productModelInfo: string = initndk.oHGetProductModel();
@@ -255,12 +255,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTMODEL_0200
-     * @tc.name       : testOHGetProductModel002
-     * @tc.desc       : test OH_GetProductModel has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetProductModel002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETPRODUCTMODEL_0200
+     * @tc.desc   test OH_GetProductModel has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetProductModel002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let productModelInfo: string = initndk.oHGetProductModel();
@@ -280,12 +280,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETSOFTWAREMODEL_0100
-     * @tc.name       : testOHGetSoftwareModel001
-     * @tc.desc       : test OH_GetSoftwareModel for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetSoftwareModel001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETSOFTWAREMODEL_0100
+     * @tc.desc   test OH_GetSoftwareModel for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetSoftwareModel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let softwareModelInfo: string = initndk.oHGetSoftwareModel();
@@ -308,12 +308,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETSOFTWAREMODEL_0200
-     * @tc.name       : testOHGetSoftwareModel002
-     * @tc.desc       : test OH_GetSoftwareModel has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetSoftwareModel002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETSOFTWAREMODEL_0200
+     * @tc.desc   test OH_GetSoftwareModel has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetSoftwareModel002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let softwareModelInfo: string = initndk.oHGetSoftwareModel();
@@ -333,12 +333,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETHARDWAREMODEL_0100
-     * @tc.name       : testOHGetHardwareModel001
-     * @tc.desc       : test OH_GetHardwareModel for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetHardwareModel001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETHARDWAREMODEL_0100
+     * @tc.desc   test OH_GetHardwareModel for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetHardwareModel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let hardwareModelInfo: string = initndk.oHGetHardwareModel();
@@ -355,12 +355,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETHARDWAREMODEL_0200
-     * @tc.name       : testOHGetHardwareModel002
-     * @tc.desc       : test OH_GetHardwareModel has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetHardwareModel002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETHARDWAREMODEL_0200
+     * @tc.desc   test OH_GetHardwareModel has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetHardwareModel002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let hardwareModelInfo: string = initndk.oHGetHardwareModel();
@@ -373,12 +373,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBOOTLOADERVERSION_0100
-     * @tc.name       : testOHGetBootloaderVersion001
-     * @tc.desc       : test OH_GetBootloaderVersion for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBootloaderVersion001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBOOTLOADERVERSION_0100
+     * @tc.desc   test OH_GetBootloaderVersion for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBootloaderVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let bootloaderVersionInfo: string = initndk.oHGetBootloaderVersion();
@@ -401,12 +401,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBOOTLOADERVERSION_0200
-     * @tc.name       : testOHGetBootloaderVersion002
-     * @tc.desc       : test OH_GetBootloaderVersion has at least one character and at most 64 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBootloaderVersion002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBOOTLOADERVERSION_0200
+     * @tc.desc   test OH_GetBootloaderVersion has at least one character and at most 64 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBootloaderVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let bootloaderVersionInfo: string = initndk.oHGetBootloaderVersion();
@@ -426,12 +426,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETABILIST_0100
-     * @tc.name       : testOHGetAbiList001
-     * @tc.desc       : test OH_GetAbiList for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetAbiList001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETABILIST_0100
+     * @tc.desc   test OH_GetAbiList for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetAbiList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abiListInfo: string = initndk.oHGetAbiList();
@@ -455,12 +455,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETABILIST_0200
-     * @tc.name       : testOHGetAbiList002
-     * @tc.desc       : test OH_GetAbiList has at least one character and at most 64 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetAbiList002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETABILIST_0200
+     * @tc.desc   test OH_GetAbiList has at least one character and at most 64 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetAbiList002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abiListInfo: string = initndk.oHGetAbiList();
@@ -480,12 +480,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETSECURITYPATCHTAG_0100
-     * @tc.name       : testOHGetSecurityPatchTag001
-     * @tc.desc       : test OH_GetSecurityPatchTag for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetSecurityPatchTag001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETSECURITYPATCHTAG_0100
+     * @tc.desc   test OH_GetSecurityPatchTag for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetSecurityPatchTag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let securityPatchTagInfo: string = initndk.oHGetSecurityPatchTag();
@@ -497,12 +497,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETSECURITYPATCHTAG_0200
-     * @tc.name       : testOHGetSecurityPatchTag002
-     * @tc.desc       : test OH_GetSecurityPatchTag for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetSecurityPatchTag002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETSECURITYPATCHTAG_0200
+     * @tc.desc   test OH_GetSecurityPatchTag for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetSecurityPatchTag002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let securityPatchTagInfo: string = initndk.oHGetSecurityPatchTag();
@@ -526,12 +526,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISPLAYVERSION_0100
-     * @tc.name       : testOHGetDisplayVersion001
-     * @tc.desc       : test OH_GetDisplayVersion for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDisplayVersion001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISPLAYVERSION_0100
+     * @tc.desc   test OH_GetDisplayVersion for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDisplayVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let displayVersionInfo: string = initndk.oHGetDisplayVersion();
@@ -554,12 +554,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISPLAYVERSION_0200
-     * @tc.name       : testOHGetDisplayVersion002
-     * @tc.desc       : test OH_GetDisplayVersion has at least one character and at most 64 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDisplayVersion002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISPLAYVERSION_0200
+     * @tc.desc   test OH_GetDisplayVersion has at least one character and at most 64 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDisplayVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let displayVersionInfo: string = initndk.oHGetDisplayVersion();
@@ -578,12 +578,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETINCREMENTALVERSION_0100
-     * @tc.name       : testOHGetIncrementalVersion001
-     * @tc.desc       : test OH_GetIncrementalVersion for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetIncrementalVersion001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETINCREMENTALVERSION_0100
+     * @tc.desc   test OH_GetIncrementalVersion for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetIncrementalVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let incrementalVersionInfo: string = initndk.oHGetIncrementalVersion();
@@ -606,12 +606,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETINCREMENTALVERSION_0200
-     * @tc.name       : testOHGetIncrementalVersion002
-     * @tc.desc       : test OH_GetIncrementalVersion has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetIncrementalVersion002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETINCREMENTALVERSION_0200
+     * @tc.desc   test OH_GetIncrementalVersion has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetIncrementalVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let incrementalVersionInfo: string = initndk.oHGetIncrementalVersion();
@@ -630,12 +630,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETOSRELEASETYPE_0100
-     * @tc.name       : testOHGetOsReleaseType001
-     * @tc.desc       : test OH_GetOsReleaseType for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetOsReleaseType001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETOSRELEASETYPE_0100
+     * @tc.desc   test OH_GetOsReleaseType for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetOsReleaseType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let osReleaseTypeInfo: string = initndk.oHGetOsReleaseType();
@@ -658,12 +658,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETOSFULLNAME_0100
-     * @tc.name       : testOHGetOSFullName001
-     * @tc.desc       : test OH_GetOSFullName for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetOSFullName001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETOSFULLNAME_0100
+     * @tc.desc   test OH_GetOSFullName for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetOSFullName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let osFullNameInfo: string = initndk.oHGetOSFullName();
@@ -686,12 +686,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETOSFULLNAME_0200
-     * @tc.name       : testOHGetOSFullName002
-     * @tc.desc       : test OH_GetOSFullName has at least one character and at most 64 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetOSFullName002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETOSFULLNAME_0200
+     * @tc.desc   test OH_GetOSFullName has at least one character and at most 64 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetOSFullName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let osFullNameInfo: string = initndk.oHGetOSFullName();
@@ -711,12 +711,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKAPIVERSION_0100
-     * @tc.name       : testOHGetSdkApiVersion001
-     * @tc.desc       : test OH_GetSdkApiVersion return value type is without special characters for numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetSdkApiVersion001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKAPIVERSION_0100
+     * @tc.desc   test OH_GetSdkApiVersion return value type is without special characters for numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetSdkApiVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sdkApiVersionInfo: number = initndk.oHGetSdkApiVersion();
@@ -733,12 +733,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKAPIVERSION_0200
-     * @tc.name       : testOHGetSdkApiVersion002
-     * @tc.desc       : test OH_GetSdkApiVersion return value type is number, the return value is greater than or equal to 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetSdkApiVersion002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKAPIVERSION_0200
+     * @tc.desc   test OH_GetSdkApiVersion return value type is number, the return value is greater than or equal to 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetSdkApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sdkApiVersionInfo: number = initndk.oHGetSdkApiVersion();
@@ -750,12 +750,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETFIRSTAPIVERSION_0100
-     * @tc.name       : testOHGetFirstApiVersion001
-     * @tc.desc       : test OH_GetFirstApiVersion return value type is without special characters for numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetFirstApiVersion001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETFIRSTAPIVERSION_0100
+     * @tc.desc   test OH_GetFirstApiVersion return value type is without special characters for numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetFirstApiVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstApiVersionInfo: number = initndk.oHGetFirstApiVersion();
@@ -771,12 +771,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETFIRSTAPIVERSION_0200
-     * @tc.name       : testOHGetFirstApiVersion002
-     * @tc.desc       : test OH_GetFirstApiVersion return value type is number, the return value is greater than or equal to 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetFirstApiVersion002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETFIRSTAPIVERSION_0200
+     * @tc.desc   test OH_GetFirstApiVersion return value type is number, the return value is greater than or equal to 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetFirstApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstApiVersionInfo: number = initndk.oHGetFirstApiVersion();
@@ -788,12 +788,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETVERSIONID_0100
-     * @tc.name       : testOHGetVersionId001
-     * @tc.desc       : test OH_GetVersionId for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetVersionId001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETVERSIONID_0100
+     * @tc.desc   test OH_GetVersionId for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetVersionId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let versionIdInfo: string = initndk.oHGetVersionId();
@@ -811,12 +811,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETVERSIONID_0200
-     * @tc.name       : testOHGetVersionId002
-     * @tc.desc       : test OH_GetVersionId has at least one character and at most 255 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetVersionId002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETVERSIONID_0200
+     * @tc.desc   test OH_GetVersionId has at least one character and at most 255 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetVersionId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let versionIdInfo: string = initndk.oHGetVersionId();
@@ -829,12 +829,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTYPE_0100
-     * @tc.name       : testOHGetBuildType001
-     * @tc.desc       : test OH_GetBuildType for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildType001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTYPE_0100
+     * @tc.desc   test OH_GetBuildType for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildTypeInfo: string = initndk.oHGetBuildType();
@@ -858,12 +858,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTYPE_0200
-     * @tc.name       : testOHGetBuildType002
-     * @tc.desc       : test OH_GetBuildType has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildType002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTYPE_0200
+     * @tc.desc   test OH_GetBuildType has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildTypeInfo: string = initndk.oHGetBuildType();
@@ -884,12 +884,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDUSER_0100
-     * @tc.name       : testOHGetBuildUser001
-     * @tc.desc       : test OH_GetBuildUser for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildUser001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDUSER_0100
+     * @tc.desc   test OH_GetBuildUser for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildUser001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildUserInfo: string = initndk.oHGetBuildUser();
@@ -912,12 +912,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDUSER_0200
-     * @tc.name       : testOHGetBuildUser002
-     * @tc.desc       : test OH_GetBuildUser has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildUser002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDUSER_0200
+     * @tc.desc   test OH_GetBuildUser has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildUser002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildUserInfo: string = initndk.oHGetBuildUser();
@@ -937,12 +937,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDHOST_0100
-     * @tc.name       : testOHGetBuildHost001
-     * @tc.desc       : test OH_GetBuildHost for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildHost001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDHOST_0100
+     * @tc.desc   test OH_GetBuildHost for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildHost001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildHostInfo: string = initndk.oHGetBuildHost();
@@ -965,12 +965,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDHOST_0200
-     * @tc.name       : testOHGetBuildHost002
-     * @tc.desc       : test OH_GetBuildHost has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildHost002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDHOST_0200
+     * @tc.desc   test OH_GetBuildHost has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildHost002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildHostInfo: string = initndk.oHGetBuildHost();
@@ -990,12 +990,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTIME_0100
-     * @tc.name       : testOHGetBuildTime001
-     * @tc.desc       : test OH_GetBuildTime has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildTime001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTIME_0100
+     * @tc.desc   test OH_GetBuildTime has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildTimeInfo: string = initndk.oHGetBuildTime();
@@ -1021,12 +1021,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTIME_0200
-     * @tc.name       : testOHGetBuildTime002
-     * @tc.desc       : test OH_GetBuildTime has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildTime002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDTIME_0200
+     * @tc.desc   test OH_GetBuildTime has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildTime002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildTimeInfo: string = initndk.oHGetBuildTime();
@@ -1046,12 +1046,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDROOTHASH_0100
-     * @tc.name       : testOHGetBuildRootHash001
-     * @tc.desc       : test OH_GetBuildRootHash for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetBuildRootHash001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETBUILDROOTHASH_0100
+     * @tc.desc   test OH_GetBuildRootHash for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetBuildRootHash001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let buildRootHashInfo: string = initndk.oHGetBuildRootHash();
@@ -1074,12 +1074,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSNAME_0100
-     * @tc.name       : testOHGetDistributionOSName001
-     * @tc.desc       : test OH_GetDistributionOSName for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDistributionOSName001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSNAME_0100
+     * @tc.desc   test OH_GetDistributionOSName for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDistributionOSName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let distributionOSNameInfo: string = initndk.oHGetDistributionOSName();
@@ -1102,12 +1102,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSVERSION_0100
-     * @tc.name       : testOHGetDistributionOSVersion001
-     * @tc.desc       : test OH_GetDistributionOSVersion for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDistributionOSVersion001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSVERSION_0100
+     * @tc.desc   test OH_GetDistributionOSVersion for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDistributionOSVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let distributionOSVersionInfo: string = initndk.oHGetDistributionOSVersion();
@@ -1130,12 +1130,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSVERSION_0200
-     * @tc.name       : testOHGetDistributionOSVersion002
-     * @tc.desc       : test OH_GetDistributionOSVersion has at least one character and at most 32 characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDistributionOSVersion002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSVERSION_0200
+     * @tc.desc   test OH_GetDistributionOSVersion has at least one character and at most 32 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDistributionOSVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let distributionOSVersionInfo: string = initndk.oHGetDistributionOSVersion();
@@ -1155,12 +1155,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSAPIVERSION_0100
-     * @tc.name       : testOHGetDistributionOSApiVersion001
-     * @tc.desc       : test OH_GetDistributionOSApiVersion return value type is without special characters for numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDistributionOSApiVersion001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSAPIVERSION_0100
+     * @tc.desc   test OH_GetDistributionOSApiVersion return value type is without special characters for numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDistributionOSApiVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let distributionOSApiVersionInfo: number = initndk.oHGetDistributionOSApiVersion();
@@ -1176,12 +1176,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSAPIVERSION_0200
-     * @tc.name       : testOHGetDistributionOSApiVersion002
-     * @tc.desc       : test OH_GetDistributionOSApiVersion return value type is number, the return value is greater than or equal to 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDistributionOSApiVersion002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSAPIVERSION_0200
+     * @tc.desc   test OH_GetDistributionOSApiVersion return value type is number, the return value is greater than or equal to 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDistributionOSApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let distributionOSApiVersionInfo: number = initndk.oHGetDistributionOSApiVersion();
@@ -1193,12 +1193,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSRELEASETYPE_0100
-     * @tc.name       : testOHGetDistributionOSReleaseType001
-     * @tc.desc       : test OH_GetDistributionOSReleaseType for non-empty strings without special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHGetDistributionOSReleaseType001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISTRIBUTIONOSRELEASETYPE_0100
+     * @tc.desc   test OH_GetDistributionOSReleaseType for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHGetDistributionOSReleaseType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let distributionOSReleaseTypeInfo: string = initndk.oHGetDistributionOSReleaseType();
@@ -1221,12 +1221,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_SYSCAPNDK_CANIUSE_0100
-     * @tc.name       : testCanIUse001
-     * @tc.desc       : test canIUse with using SystemCapability.Location.Location.Core
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCanIUse001
+     * @tc.number SUB_STARTUP_INIT_SYSCAPNDK_CANIUSE_0100
+     * @tc.desc   test canIUse with using SystemCapability.Location.Location.Core
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCanIUse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try{
@@ -1242,12 +1242,12 @@ export default function initNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_STARTUP_INIT_SYSCAPNDK_CANIUSE_0200
-     * @tc.name       : testCanIUse002
-     * @tc.desc       : test canIUse with using SystemCapability.ArkUI.ArkUI.Full
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCanIUse002
+     * @tc.number SUB_STARTUP_INIT_SYSCAPNDK_CANIUSE_0200
+     * @tc.desc   test canIUse with using SystemCapability.ArkUI.ArkUI.Full
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCanIUse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try{

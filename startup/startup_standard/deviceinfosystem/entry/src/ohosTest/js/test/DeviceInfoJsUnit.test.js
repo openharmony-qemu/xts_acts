@@ -50,12 +50,12 @@ export default function DeviceInfoTest() {
 
 
         /**
-         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_0110
-         * @tc.name     testGetSerial01
-         * @tc.desc      Get the device serial number represented by a string and the return value is not null.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   device_info_test_010
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0110
+         * @tc.desc   Get the device serial number represented by a string and the return value is not null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('device_info_test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testGetSerial01 start');
@@ -80,12 +80,12 @@ export default function DeviceInfoTest() {
         })
 
         /**
-         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_0430
-         * @tc.name      testGetSerial02
-         * @tc.desc      Get a string representing the device serial number which has a maximum of 64 characters.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   device_info_test_039
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0430
+         * @tc.desc   Get a string representing the device serial number which has a maximum of 64 characters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('device_info_test_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
             console.info('device_info_test_039 start');
@@ -106,12 +106,12 @@ export default function DeviceInfoTest() {
         })
 
         /**
-         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_0590
-         * @tc.name      testGetSerial03
-         * @tc.desc      Get a string representing the device serial number which has at least one characters.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   device_info_test_054
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0590
+         * @tc.desc   Get a string representing the device serial number which has at least one characters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('device_info_test_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
             console.info('device_info_test_054 start');
@@ -132,12 +132,12 @@ export default function DeviceInfoTest() {
         })
 
         /**
-         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_0662
-         * @tc.name      testGetUdid
-         * @tc.desc      Get udid
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   device_info_test_062
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0662
+         * @tc.desc   Get udid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('device_info_test_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
             console.info('device_info_test_062 start');
@@ -151,12 +151,12 @@ export default function DeviceInfoTest() {
         })
 
         /**
-         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_0663
-         * @tc.name      testGetUuid
-         * @tc.desc      Get uuid
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   device_info_test_063
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0663
+         * @tc.desc   Get uuid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('device_info_test_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('device_info_test_063 start');
@@ -176,12 +176,12 @@ export default function DeviceInfoTest() {
         })
 
         /**
-         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_0664
-         * @tc.name      testGetUdid
-         * @tc.desc      Get udid
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   device_info_test_064
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0664
+         * @tc.desc   Get udid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('device_info_test_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
             console.info('device_info_test_064 start');
