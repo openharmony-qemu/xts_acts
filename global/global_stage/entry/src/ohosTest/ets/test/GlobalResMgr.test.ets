@@ -70,5 +70,32 @@ export default function GlobalResMgrTest() {
         expect(JSON.stringify(error)).assertFail();
       }
     })
+
+    /**
+     * @generated.time 2025-11-27
+     * @tc.name   GlobalResMgrTest_getOverrideResourceManager_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_OverrideResourceManager_0100
+     * @tc.desc   overrideResourceManager have no effect on raw resourceManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GlobalResMgrTest_getOverrideResourceManager_0100', Level.LEVEL2, () => {
+      try {
+        let rawValue = res.getStringSync($r('app.string.override_test').id);
+        let config = res.getConfigurationSync();
+        config.locale = "en_US";
+        let overrideResMgr = res.getOverrideResourceManager(config);
+        expect(res.getStringSync($r('app.string.override_test').id)).assertEqual(rawValue);
+        expect(overrideResMgr.getStringSync($r('app.string.override_test').id)).assertEqual("base str");
+        config.locale = "zh_CN";
+        overrideResMgr = res.getOverrideResourceManager(config);
+        expect(res.getStringSync($r('app.string.override_test').id)).assertEqual(rawValue);
+        expect(overrideResMgr.getStringSync($r('app.string.override_test').id)).assertEqual("override str");
+      } catch(error) {
+        expect(JSON.stringify(error)).assertFail();
+      }
+    })
+
   })
 }
