@@ -26,15 +26,15 @@ import RectResourceTest from './Rect/RectResourceTest';
 import ShapeResourceTest from './Shape/ShapeResourceTest';
 
 export default function testsuite() {
-  RoundRectTest(); // pass
-  StartImageAnalyzerErrorCodeTest();  // getImageAnalyzerSupportTypes
-  CircleResourceTest(); //CircleResource
-  EllipseResourceTest(); //EllipseResource
-  LineResourceTest(); //LineResource
-  PathResourceTest(); //PathResource
-  PolygonResourceTest();//PolygonResource
-  PolylineResourceTest();//PolylineResource
-  RectResourceTest();//RectResource
-  ShapeResourceTest();//ShapeResource
+  RoundRectTest(); // 11.22SDK pass
+  // StartImageAnalyzerErrorCodeTest();  // 外领域 11.22SDK 吴东升startImageAnalyzer在0702不实现
+  CircleResourceTest(); //11.22SDK pass
+  EllipseResourceTest(); //11.22SDK pass
+  LineResourceTest(); //11.22SDK pass
+  PathResourceTest(); //11.22SDK pass
+  PolygonResourceTest();//11.22SDK pass
+  PolylineResourceTest();//11.22SDK pass
+  RectResourceTest();//11.22SDK pass
+  ShapeResourceTest();//11.22SDK pass
 
 }

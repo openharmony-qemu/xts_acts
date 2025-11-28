@@ -23,26 +23,50 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 
+// class BlueColors1 implements CustomColors {
+//   fontPrimary = '#FFBA1414';
+//   fontSecondary = '#FF398D0C';
+//   fontTertiary = '#FF0A2AFA';
+//   fontFourth = '#FFEFE05B';
+//   brand = Color.Orange;
+//   warning = Color.Pink;
+//   fontOnSecondary = '#FF0A2AFA';
+//   fontOnTertiary = '#ff0afa22';
+//   fontOnFourth = '#fffa5e0a';
+//   compCommonContrary = '#ff2ba4a4';
+//   compEmphasizeTertiary = '#ff1c1f5d';
+//   compBackgroundFocus = '#ff9295d9';
+//   compFocusedPrimary = '#ffcd72de';
+//   compFocusedSecondary = '#ff621e6e';
+//   compFocusedTertiary = '#ffd0334a';
+// }
+//
+// class BlueColors3 implements CustomColors {
+//   compDivider = '#FFBA1414';
+// }
 
 
+class BlueColors1 implements  CustomColors {
+  fontPrimary ?: '#FFBA1414';
+  fontSecondary?:'#FF398D0C';
+  fontTertiary ?:'#FF0A2AFA';
+  fontFourth ?: '#FFEFE05B';
+  // brand ?: Color.Orange;
+  // warning?: Color.Pink;
+  fontOnSecondary ?: '#FF0A2AFA';
+  fontOnTertiary ?: '#ff0afa22';
+  fontOnFourth ?: '#fffa5e0a';
+  compCommonContrary ?: '#ff2ba4a4';
+  compEmphasizeTertiary ?: '#ff1c1f5d';
+  compBackgroundFocus?:'#ff9295d9';
+  compFocusedPrimary ?: '#ffcd72de';
+  compFocusedSecondary ?: '#ff621e6e';
+  compFocusedTertiary ?: '#ffd0334a';
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class BlueColors3 implements CustomColors {
+  compDivider?:'#FFBA1414';
+}
 
 
 class PageCustomTheme implements CustomTheme {
@@ -66,22 +90,29 @@ struct APIFontPrimary {
       Button('get').key('APIFontPrimary_Button')
         .width(200).height(40)
         .onClick((e:ClickEvent) => {
-          let strJson1 = inspector.getInspectorByKey('APIFontPrimary_Text01');
-          this.text1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fontColor') + '';
-          this.text4 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('backgroundColor') + '';
-          let strJson2 = inspector.getInspectorByKey('APIFontPrimary_Divider');
-          this.text3 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('color') + '';
-        })
-      
-      
-      
-      
-      
-      
-      
-      
+          try{
+            let strJson1 = inspector.getInspectorByKey('APIFontPrimary_Text01');
+            console.log('++++++++++++++++++fontColor', JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fontColor'))
+            console.log('++++++++++++++++++APIFontPrimary_Text01-backgroundColor',JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fontColor'))
+            this.text1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fontColor') + ''; //获取的字体颜色和设置的不一样
+            this.text4 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('backgroundColor') + '';
+            let strJson2 = inspector.getInspectorByKey('APIFontPrimary_Divider');
+            this.text3 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('color') + '';
+          }catch(err:Error){
+            console.log('ClickError:',err)
+          }
 
-      Text(`${this.text1 == '#FFBA1414' ? 'true' : 'false'}`)
+        })
+      WithTheme({ theme: new PageCustomTheme(new BlueColors1()) }) {
+        Text(this.text1)
+          .fontWeight(700)
+          .fontSize(24)
+          .width('100%')
+          .key('APIFontPrimary_Text01')
+          .backgroundColor('#FF9A2AC3')
+      }
+
+      Text(`${this.text1 == '#FFBA1414' ? 'true' : 'false'}`) //实际的text1的fontColor是#FF182431，预期是'#FFBA1414'
         .fontWeight(700)
         .fontSize(30)
         .width('100%')
@@ -101,7 +132,7 @@ struct APIFontPrimary {
         .fontSize(30)
         .width('100%')
         .key('APIFontPrimary_Text05')
-      
+      // 反转颜色
       Text(`${this.text1 !== '#FF0A2AFA' ? 'true' : 'false'}`)
         .fontWeight(700)
         .fontSize(30)
@@ -122,7 +153,7 @@ struct APIFontPrimary {
         .fontSize(30)
         .width('100%')
         .key('APIFontPrimary_Text10')
-      
+      // 背景色
       Text(`${this.text4 == '#FF9A2AC3' ? 'true' : 'false'}`)
         .fontWeight(700)
         .fontSize(30)
@@ -154,9 +185,9 @@ struct APIFontPrimary {
         .width('100%')
         .key('APIFontPrimary_Text16')
 
-      
-      
-      
+      WithTheme({ theme: new PageCustomTheme(new BlueColors3()) }) {
+        Divider().strokeWidth(8).key('APIFontPrimary_Divider')
+      }
 
       Text(`${this.text3 == '#FFBA1414' ? 'true' : 'false'}`)
         .fontWeight(700)

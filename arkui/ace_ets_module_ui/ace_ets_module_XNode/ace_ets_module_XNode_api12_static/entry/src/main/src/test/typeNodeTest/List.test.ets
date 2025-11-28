@@ -73,7 +73,7 @@ export default function typeNodeListTest() {
       let strJson: string = inspector.getInspectorByKey('TypeNode_List');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ListTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('List');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('List');
       console.info('[ListTest_0100] END');
       done();
     });

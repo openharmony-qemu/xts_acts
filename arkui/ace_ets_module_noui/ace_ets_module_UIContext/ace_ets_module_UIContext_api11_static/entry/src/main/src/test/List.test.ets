@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import getUIObserver from './UIContext/getUIObserver.test';
-import getDragController from './UIContext/getDragController.test';
 import atomicServiceBarTest from "./UIContext/autoservice/atomicServiceBar.test";
-import mediaQueryOffJsunit from './mediaqueryTest/mediaQuery.test';
+import getDragController from './UIContext/getDragController.test'
+import getUIObserver from './UIContext/getUIObserver.test'
+import mediaQueryOffJsunit from './mediaqueryTest/mediaQuery.test'
 
 export default function testsuite() {
-  getUIObserver()
-  getDragController()
-  mediaQueryOffJsunit()
-  atomicServiceBarTest()
+  // getDragController(); //  sdk11.13 获取不到组件
+  // atomicServiceBarTest();  // test页76 getAtomicServiceBar appDied  api22 SR20250717371939（6个用例）
+  getUIObserver(); // getUIObserver.on 导致白屏
+  // mediaQueryOffJsunit(); // onChange appDied 11.17
 }

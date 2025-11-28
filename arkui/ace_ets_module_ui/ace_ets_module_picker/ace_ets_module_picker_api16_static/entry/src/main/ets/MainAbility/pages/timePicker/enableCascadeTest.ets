@@ -133,14 +133,14 @@ struct TimePickerPage {
         .key('timePicker')
         .width('100%')
         .height('50%')
-        
-        
-        
-        
-        
-        
-        
-        
+        // .enableCascade(this.enableCascade) //给enableCascade传的值的类型有boolean | undefined | null，但SDK不支持
+        // .useMilitaryTime(this.isMilitaryTime)
+        // .onChange((value: TimePickerResult) => {
+        //   this.hour = value.hour
+        //   this.minute = value.minute
+        //   this.selectedTime.setHours(value.hour, value.minute)
+        //   console.info('select current date is: ' + JSON.stringify(value))
+        // })
       Text('hour:' + this.hour).fontSize(20).margin(10).key('hour')
       Text('minute:' + this.minute).fontSize(20).margin(10).key('minute')
       Text('24hour:false')

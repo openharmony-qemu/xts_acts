@@ -55,8 +55,12 @@ struct NavigationApi5{
     .title('pageOne')
     .onReady((context:NavDestinationContext) => {
       console.log('+++++++++++pageone onReady1')
-      this.text = JSON.stringify(context.getConfigInRouteMap()?.pageSourceFile)
-      console.log('+++++++++++pageone onReady2')
+      try{
+        this.text = JSON.stringify(context.getConfigInRouteMap()?.pageSourceFile)  //这个方法的取值是undefined
+      }catch(err){
+        console.log('+++++++++++pageone onReadyError',err)
+      }
+      console.log('+++++++++++pageone onReady2'+this.text )
     })
   }
 

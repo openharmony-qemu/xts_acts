@@ -39,20 +39,17 @@ class NodeContentCtrl {
     let node = typeNode.createTextNode(this.uiContext)
     node.initialize("ContentText:" + this.textNode.length).fontSize(20)
     this.textNode.push(node)
-    this.textNode1 = node
-    console.log('++++++++++this.textNode.length1',this.textNode.length)
-      storage.set<Int>('NodeContentFlagAPI', this.textNode.length);
-    console.log('++++++++++this.textNode.length2')
+    // this.textNode1 = node
+    storage.set<Int>('NodeContentFlagAPI', this.textNode.length);
     this.content.addFrameNode(node)
   }
 
   RemoveNode() {
-    let node = this.textNode1
-    storage.set<Int>('NodeContentFlagAPI', this.textNode.length);
-    if(node == undefined){
-      console.log('++++++++++++++RemoveNodeundefined')
-    }
-    this.content.removeFrameNode(node as FrameNode)
+      let node = this.textNode.pop()
+      storage.set<Int>('NodeContentFlagAPI', this.textNode.length);
+      if(node != undefined){
+        this.content.removeFrameNode(node as FrameNode)
+      }
   }
 
   GetContent(): NodeContent {
@@ -70,14 +67,12 @@ struct APINodeContent {
   build() {
     Row() {
       Column() {
-        console.log('+++++++++++++++++++++++++++++++++++1 get',storage.get<number>('NodeContentFlagAPI'))
         Text(`${this.text1}`).id('APINodeContent_Text')
         Button('get context').width('50%').id('APINodeContent_Button_get')
           .onClick((event: ClickEvent) => {
             console.log('+++++++++++++++++storage.get1')
-            // this.text1 = storage.get<Int>('NodeContentFlagAPI') as Int
-            this.text1 = 1
-            // console.log('+++++++++++++storage.get',storage.get<Int>('NodeContentFlagAPI') as Int,', this.text1:',this.text1)
+            this.text1 = storage.get<Int>('NodeContentFlagAPI') as Int
+            console.log('+++++++++++++storage.get',storage.get<Int>('NodeContentFlagAPI') as Int,', this.text1:',this.text1)
             console.log('+++++++++++++++++storage.get2: '  + this.text1)
       })
         ContentSlot(this.controller.GetContent())
@@ -92,7 +87,7 @@ struct APINodeContent {
           .onClick((event: ClickEvent) => {
             console.log('++++++++++5')
             this.controller.RemoveNode()
-            console.log('++++++++++5')
+            console.log('++++++++++6')
           })
       }
       .width('100%')

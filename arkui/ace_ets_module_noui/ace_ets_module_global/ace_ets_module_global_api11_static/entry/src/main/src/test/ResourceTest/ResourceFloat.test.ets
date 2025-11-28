@@ -58,7 +58,7 @@ export default function ResourceFloat() {
           console.info("get ResourceFloat pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(5000);
           // console.info("push ResourceFloat page result:" + JSON.stringify(result));
         }
@@ -110,7 +110,7 @@ export default function ResourceFloat() {
       console.info("[ResourceFloat_0200] component obj is: " + JSON.stringify(obj));
       console.info("[ResourceFloat_0200] title: " +
       JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
-      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('40.00vp');
+      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('40.00vp'); //
       console.info('[ResourceFloat_0200] END');
       done();
     });

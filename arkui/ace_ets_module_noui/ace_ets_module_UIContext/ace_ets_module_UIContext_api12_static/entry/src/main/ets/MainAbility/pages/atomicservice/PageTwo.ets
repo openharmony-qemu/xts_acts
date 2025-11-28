@@ -45,12 +45,12 @@ export struct PageTwo {
           .height(40)
           .margin(20)
           .onClick((e:ClickEvent) => {
-            this.pathStack.pop(new resultClass(1)); 
+            this.pathStack.pop(new resultClass(1)); // 回退到上一个页面，将处理结果传入push的onPop回调中。
           })
       }.width('100%').height('100%')
     }.title('pageTwo')
     .onBackPressed(() => {
-      this.pathStack.pop(new resultClass(0)); 
+      this.pathStack.pop(new resultClass(0)); // 回退到上一个页面，将处理结果传入push的onPop回调。
       return true;
     }).onReady((context: NavDestinationContext) => {
       this.pathStack = context.pathStack

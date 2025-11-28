@@ -18,7 +18,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { NodeController, BuilderNode, Size, FrameNode } from '@ohos.arkui.node';
 import {
   Entry, Component,
-  Column, ColumnOptions, Row, Builder, TouchEvent,Color, WrappedBuilder, NodeContainer,
+  Column, ColumnOptions, Row, Builder, TouchEvent,Color, WrappedBuilder, NodeContainer, CustomBuilderT,
   Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -38,14 +38,14 @@ function buttonBuilder(params: Params) {
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode|null = null;
-  private buttonNode: BuilderNode<Params[]> | null = null;
-  
+  private buttonNode: BuilderNode<Params> | null = null;
+  private wrapBuilder = new WrappedBuilder<CustomBuilderT<Params>>(buttonBuilder);
 
   makeNode(uiContext: UIContext): FrameNode {
     if (this.rootNode == null) {
       this.rootNode = new FrameNode(uiContext);
-      this.buttonNode = new BuilderNode<Array<Params>>(uiContext);
-      
+      this.buttonNode = new BuilderNode<Params>(uiContext);
+      this.buttonNode?.build(this.wrapBuilder, { text: "this is a string" } as Params)
 
       const rootRenderNode = this.rootNode?.getRenderNode();
       if (rootRenderNode !== null) {

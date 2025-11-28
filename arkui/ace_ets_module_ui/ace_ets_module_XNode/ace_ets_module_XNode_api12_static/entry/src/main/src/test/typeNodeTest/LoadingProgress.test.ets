@@ -73,7 +73,7 @@ export default function typeNodeLoadingProgressTest() {
       let strJson: string = inspector.getInspectorByKey('TypeNode_LoadingProgress');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[LoadingProgressTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('LoadingProgress');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('LoadingProgress');
       console.info('[LoadingProgressTest_0100] END');
       done();
     });

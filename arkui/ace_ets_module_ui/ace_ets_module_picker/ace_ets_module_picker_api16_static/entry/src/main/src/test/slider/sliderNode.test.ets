@@ -71,13 +71,13 @@ export default function sliderNodeTest() {
      * @tc.desc     sliderNode_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('sliderNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('sliderNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {   // 受注释代码影响
 
       let tagName = 'sliderNode_static_0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_Slider_001');
-      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual('Slider');
+      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
+      expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual('Slider');
       console.info('[' + tagName + '] END ===========================');
       done();
     });

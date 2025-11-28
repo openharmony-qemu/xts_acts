@@ -22,8 +22,8 @@ import {
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, FrameNode, NodeController, ShapeMask, ShapeClip } from '@ohos.arkui.node';
-const uiContext = new UIContext();
-const vp2px = uiContext.vp2px
+const uiContext = AppStorage.get<UIContext>('uiContext');
+const vp2px = uiContext!.vp2px
 const clip = new ShapeClip();
 clip.setCommandPath({ commands: 'M100 0 L0 100 L50 200 L150 200 L200 100 Z' });
 
@@ -72,8 +72,9 @@ struct SetShapeClip {
             top: 0,
             bottom: 150
           });
-          renderNode.shapeClip = shapeClip;
+          renderNode.shapeClip = shapeClip; //设置的值是值是空的{"rect":{}，期望的是"rect":{"left":0,"right":150,"top":0,"bottom":150}
           this.myShapeClip = "" + JSON.stringify(renderNode.shapeClip)
+          console.log('+++++++++++++++',JSON.stringify(renderNode.shapeClip)) //值是空的{"rect":{},"roundRect":null,"circle":null,"oval":null,"path":null}
         })
       Button('setRoundRectShape')
         .onClick((e:ClickEvent) => {

@@ -27,7 +27,7 @@ export default function UIContextComponentSnapshotJsunit() {
     beforeAll(() => {
       console.info("UIContextComponentSnapshotTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.uicontext_widget_api12_static", "EntryAbility")
+      await startAbility("com.example.myapplication.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
@@ -70,7 +70,7 @@ it('UIContextComponentSnapshotTest_static_0100', Level.LEVEL0, async (done: ()=>
       await (button?.click() as Promise<void>);
       await Utils.sleep(1000);
       let text =  inspector.getInspectorByKey('key_getComponentSnapshot_text_01');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');
+      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');//UIContextComponentSnapshotTest_static_0100, expect  equals snapshot
       console.info('UIContextComponentSnapshotTest_0100 END');
       done();
     });

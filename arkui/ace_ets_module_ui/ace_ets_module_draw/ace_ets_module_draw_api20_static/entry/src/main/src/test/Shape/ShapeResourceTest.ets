@@ -80,60 +80,36 @@ export default function ShapeResourceTest() {
       let strJson1 = inspector.getInspectorByKey("ShapeResource1");
       await CommonFunc.sleep(2000);
 
-      console.info("[ShapeResourceTest_0100] viewPort_x1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('x')));
-      console.info("[ShapeResourceTest_0100] viewPort_y1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('y')));
-      console.info("[ShapeResourceTest_0100] viewPort_width1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('width')));
-      console.info("[ShapeResourceTest_0100] viewPort_height1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('height')));
-      console.info("[ShapeResourceTest_0100] fill1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fill')));
-      console.info("[ShapeResourceTest_0100] stroke1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('stroke')));
-      console.info("[ShapeResourceTest_0100] strokeMiterLimit1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('strokeMiterLimit')));
-      console.info("[ShapeResourceTest_0100] strokeWidth1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('strokeWidth')));
-
+      // console.info("[ShapeResourceTest_0100] viewPort_x1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('x')));
+      // console.info("[ShapeResourceTest_0100] viewPort_y1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('y')));
+      // console.info("[ShapeResourceTest_0100] viewPort_width1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('width')));
+      // console.info("[ShapeResourceTest_0100] viewPort_height1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('height')));
+      // console.info("[ShapeResourceTest_0100] fill1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fill')));
+      // console.info("[ShapeResourceTest_0100] stroke1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('stroke')));
+      // console.info("[ShapeResourceTest_0100] strokeMiterLimit1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('strokeMiterLimit')));
+      // console.info("[ShapeResourceTest_0100] strokeWidth1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('strokeWidth')));
+      
       let strJson2 = inspector.getInspectorByKey("ShapeResource2");
       await CommonFunc.sleep(2000);
 
-      console.info("[ShapeResourceTest_0100] viewPort_x2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('x')));
-      console.info("[ShapeResourceTest_0100] viewPort_y2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('y')));
-      console.info("[ShapeResourceTest_0100] viewPort_width2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('width')));
-      console.info("[ShapeResourceTest_0100] viewPort_height2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('height')));
-      console.info("[ShapeResourceTest_0100] fill2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('fill')));
-      console.info("[ShapeResourceTest_0100] stroke2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('stroke')));
-      console.info("[ShapeResourceTest_0100] strokeMiterLimit2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('strokeMiterLimit')));
-      console.info("[ShapeResourceTest_0100] strokeWidth2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('strokeWidth')));
+      // console.info("[ShapeResourceTest_0100] viewPort_x2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('x')));
+      // console.info("[ShapeResourceTest_0100] viewPort_y2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('y')));
+      // console.info("[ShapeResourceTest_0100] viewPort_width2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('width')));
+      // console.info("[ShapeResourceTest_0100] viewPort_height2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('height')));
+      // console.info("[ShapeResourceTest_0100] fill2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('fill')));
+      // console.info("[ShapeResourceTest_0100] stroke2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('stroke')));
+      // console.info("[ShapeResourceTest_0100] strokeMiterLimit2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('strokeMiterLimit')));
+      // console.info("[ShapeResourceTest_0100] strokeWidth2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('strokeWidth')));
 
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('x'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('x'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('y'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('y'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('width'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('width'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('height'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('height'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fill'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('fill'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('stroke'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('stroke'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('strokeMiterLimit'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('strokeMiterLimit'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('strokeWidth'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('strokeWidth'));
-
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('x')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('x'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('y')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('y'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('width')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('width'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('viewPort').getString('height')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('viewPort').getString('height'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fill')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('fill'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('stroke')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('stroke'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('strokeMiterLimit')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('strokeMiterLimit'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getDouble('strokeWidth')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getDouble('strokeWidth'));
+    
       console.info('[ShapeResourceTest_0100] END');
       done();
     });

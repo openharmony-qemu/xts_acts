@@ -53,11 +53,15 @@ class MyNodeController extends NodeController {
     col.appendChild(progress);
     storage.set('ProgressType', '' + progress.getNodeType());
     storage.set('initialize', '' + JSON.stringify(progress.getUserConfigPadding()));
+    //取值不对"top":{"unit":{},"value":0},"left":{"unit":{},"value":0},"right":{"unit":{},"value":0},"bottom":{"unit":{},"value":0}
+    console.log('+++++++++initialize',JSON.stringify(progress.getUserConfigPadding()))
 
     let text1 = typeNode.createTextNode(uiContext);
     text1.attribute.padding(5).fontColor(Color.Blue).fontSize(10);
     col.appendChild(text1);
     storage.set('attribute', '' + JSON.stringify(text1.getUserConfigPadding()));
+    console.log('+++++++++attribute',JSON.stringify(text1.getUserConfigPadding()))
+    //取值不对"top":{"unit":{},"value":0},"left":{"unit":{},"value":0},"right":{"unit":{},"value":0},"bottom":{"unit":{},"value":0}
     return node;
   }
 }

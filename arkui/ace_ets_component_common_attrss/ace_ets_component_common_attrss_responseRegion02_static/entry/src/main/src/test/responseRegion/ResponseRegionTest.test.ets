@@ -29,13 +29,17 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import {
+   Rectangle
+} from '@ohos.arkui.component'
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 const uiContext = new UIContext();
 
 async function clickPoint(data: BasePageConfig, xPoint: number, yPoint: number) {
-  // await Utils.performClickPoint(xPoint, yPoint);
+  await Utils.performClickPoint(xPoint, yPoint);
+  await Utils.sleep(1000);
   if ('Select' == data.pageConfig.componentKey) {
     await Utils.sleep(2000);
     await eventResult(data, 'onClick');
@@ -50,8 +54,9 @@ async function clickPoint(data: BasePageConfig, xPoint: number, yPoint: number) 
 
 async function resetStatus(data: BasePageConfig) {
   console.info('[' + data.caseTag + '] reset status.');
-  // AttrsManager.change(data.caseTag, data.testValue.setValue);
   AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue as Array<Rectangle>)
+  AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+  AppStorage.setOrCreate<string>('eventCallBackStr', '')
   await Utils.sleep(1000);
 }
 
@@ -65,11 +70,12 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
     await Utils.sleep(1000)
   }
   let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
-  console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getString('content'));
+  await Utils.sleep(1000);
+  console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getElement('$attrs').getString('content'));
   if ('' == expectationValue) {
-    expect(referenceComponent.getString('content')).assertEqual(expectationValue);
+    expect(referenceComponent.getElement('$attrs').getString('content')).assertEqual(expectationValue);
   } else {
-    expect(referenceComponent.getString('content')).assertContain(expectationValue);
+    expect(referenceComponent.getElement('$attrs').getString('content')).assertContain(expectationValue);
   }
 }
 
@@ -107,7 +113,8 @@ export default function responseRegionTest() {
     referenceText: 'referenceText'
   }
 
-  let testValues: TestValue[] = [{
+  let testValues: TestValue[] = [
+    {
     describe: 'SetNumber',
     setValue: [{
       x: 50, y: 50, width: 200, height: 200
@@ -115,8 +122,8 @@ export default function responseRegionTest() {
     expectValue: {
       responseRegion: [{
         x: '50.00vp', y: '50.00vp', width: '200.00vp', height: '200.00vp'
-      } as SetValue]
-    } as ResponseRegion}
+      }]
+    }}
      ,{
        describe: 'SetStringPx',
        setValue: [{
@@ -132,8 +139,8 @@ export default function responseRegionTest() {
        expectValue: {
          responseRegion: [{
            x: '100.00px', y: '100.00px', width: '200.00px', height: '200.00px'
-         } as SetValue]
-       } as ResponseRegion
+         } ]
+       }
      }, {
        describe: 'SetPercent',
        setValue: [{
@@ -149,15 +156,15 @@ export default function responseRegionTest() {
        expectValue: {
          responseRegion: [{
            x: '20.00%', y: '20.00%', width: '100.00%', height: '100.00%'
-         } as SetValue]
-       } as ResponseRegion
+         }]
+       }
      }, {
        describe: 'SetResource',
        setValue: [{
-         x: String($r('app.float.50vp')),
-         y: String($r('app.float.50vp')),
-         width: String($r('app.float.200vp')),
-         height: String($r('app.float.200vp')),
+         x: $r('app.float.50vp'),
+         y: $r('app.float.50vp'),
+         width: $r('app.float.200vp'),
+         height: $r('app.float.200vp'),
          // numberX: 50,
          // numberY: 50,
          // numberWidth: 200,
@@ -166,8 +173,8 @@ export default function responseRegionTest() {
        expectValue: {
          responseRegion: [{
            x: '50.00vp', y: '50.00vp', width: '200.00vp', height: '200.00vp'
-         } as SetValue]
-       } as ResponseRegion
+         }]
+       }
      }, {
        describe: 'SetOutsideArea',
        setValue: [{
@@ -181,8 +188,8 @@ export default function responseRegionTest() {
        expectValue: {
          responseRegion: [{
            x: '-200.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-         } as SetValue]
-       } as ResponseRegion
+         }]
+       }
      }, {
        describe: 'SetIntraArea',
        setValue: [{
@@ -196,8 +203,8 @@ export default function responseRegionTest() {
        expectValue: {
          responseRegion: [{
            x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-         } as SetValue]
-       } as ResponseRegion
+         }]
+       }
      }, {
        describe: 'SetMultiArea',
        exceptView: ['Search'],
@@ -219,18 +226,16 @@ export default function responseRegionTest() {
        expectValue: {
          responseRegion: [{
            x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-         } as SetValue, {
+         }, {
            x: '-200.00vp', y: '-200.00vp', width: '100.00%', height: '100.00%'
-         } as SetValue]
-       } as ResponseRegion
+         }]
+       }
      }
     ]
 
   describe('ResponseRegionTest', () => {
     beforeAll(() => {
       console.info("ResponseRegionTest beforeEach start");
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs02.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -244,17 +249,19 @@ export default function responseRegionTest() {
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
       // AttrsManager.change(data.caseTag, data.testValue.setValue);
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue as Array<Rectangle>)
+      AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+      AppStorage.setOrCreate<string>('eventCallBackStr', '')
       await Utils.sleep(1000);
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[wll]'+viewObj)
       if ('SetMultiArea' == data.testValue.describe) {
-        expect((viewObj.getArray('responseRegion'))[0])
-          .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion[0]));
-        expect((viewObj.getArray('responseRegion'))[1])
-          .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion[1]));
+        expect(JSON.stringifyJsonElement(viewObj.getElement('$attrs').getElement('responseRegion')[0]).replaceAll('\\', ''))
+          .assertEqual(`"${JSON.stringify(data.testValue.expectValue?.responseRegion[0])}"`);
+        expect(JSON.stringifyJsonElement(viewObj.getElement('$attrs').getElement('responseRegion')[1]).replaceAll('\\', ''))
+          .assertEqual(`"${JSON.stringify(data.testValue.expectValue?.responseRegion[1])}"`);
       } else {
-        expect((viewObj.getArray('responseRegion'))[0])
-          .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion));
+        expect(JSON.stringifyJsonElement(viewObj.getElement('$attrs').getElement('responseRegion')[0]).replaceAll('\\', ''))
+          .assertEqual(`"${JSON.stringify(data.testValue.expectValue?.responseRegion[0])}"`);
       }
       let offsetX:number | undefined = 0;
       let offsetY:number | undefined = 0;
@@ -368,7 +375,7 @@ export default function responseRegionTest() {
         yPoint = Number(Number(rect.top + (offsetY as number) + (offsetHeight as number) + Number(uiContext!.vp2px(10))).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
-        // await Utils.performClickPoint(xPoint, yPoint);
+        await Utils.performClickPoint(xPoint, yPoint);
         await eventResult(data, notClick);
       }
     });

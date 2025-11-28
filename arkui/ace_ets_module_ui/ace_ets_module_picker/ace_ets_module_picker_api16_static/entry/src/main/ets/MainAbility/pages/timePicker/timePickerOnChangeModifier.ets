@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 import {MessageManager,Callback,Message} from '../../common/MessageManager';
-
+import{TimePickerModifier} from '@ohos.arkui.modifier'  // SDK未找到
 import {
   Entry, Component, Builder,NodeContainer, CheckBoxShape,
-  Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox, TimePicker,
+  Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox, TimePicker,TimePickerResult,
   Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions,  ImageAnalyzerController, ImageBitmap,  ImageAnalyzerConfig,
   Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas,
 } from '@ohos.arkui.component'
@@ -32,18 +32,18 @@ struct TimePickerPage {
   @State onChangeOff: string = 'false'
   messageManager: MessageManager<boolean|Date|number> = new MessageManager<boolean|Date|number>()
   @State enableCascade: boolean | undefined | null = true
-  
-  
-  
-  
-  
-  
+  @State modifier :TimePickerModifier = new TimePickerModifier().onChange((value: TimePickerResult) => {
+    if (value.hour >= 0) {
+      this.onChangeOff = 'true'
+      console.info('check005 TimePickerModifier OnChange select current date is: ' + JSON.stringify(value))
+    }
+  })
   onPageShow() {
     console.info('TimePicker onPageShow')
-    
-    
-    
-    
+    // globalThis.value = {
+    //   name: 'messageManager', message: this.messageManager
+    //
+    // }
     AppStorage.setOrCreate<MessageManager<boolean|Date|number>>('messageManager', this.messageManager )
     let callback: Callback<boolean|Date|number> = (message: Message<boolean|Date|number> ) => {
       console.error('message = ' + message.name + '--' + message.value)
@@ -92,7 +92,7 @@ struct TimePickerPage {
         .width('100%')
         .height('50%')
         .useMilitaryTime(this.isMilitaryTime)
-        
+        .attributeModifier(this.modifier as TimePickerModifier)
 
       Text(this.onChangeOff.toString()).key('onChangeOff')
     }

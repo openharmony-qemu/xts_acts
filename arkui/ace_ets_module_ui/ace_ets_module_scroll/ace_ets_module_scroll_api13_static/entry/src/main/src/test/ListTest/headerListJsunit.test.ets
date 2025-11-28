@@ -39,7 +39,7 @@ export default function headerListJsunit() {
       await UtilsTest.startAbility("com.arkui.ace.scroll13.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    beforeEach(async (done: Function) => {
+    beforeEach(async (): Promise<void> => {
       console.info("headerListJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/headerList",

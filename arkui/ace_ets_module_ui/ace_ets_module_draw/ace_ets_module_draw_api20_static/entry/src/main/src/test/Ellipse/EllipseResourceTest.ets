@@ -78,35 +78,25 @@ export default function EllipseResourceTest() {
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey("EllipseResource1");
-      await CommonFunc.sleep(2000);
-      console.info("[EllipseResourceTest_0100] width1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')));
-      console.info("[EllipseResourceTest_0100] height1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')));
+  await CommonFunc.sleep(2000);
+      console.info("[EllipseResourceTest_0100] width1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')));
+      console.info("[EllipseResourceTest_0100] height1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')));
 
       let strJson2 = inspector.getInspectorByKey("EllipseResource2");
-      await CommonFunc.sleep(2000);
-      console.info("[EllipseResourceTest_0100] width2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')));
-      console.info("[EllipseResourceTest_0100] height2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')));
+  await CommonFunc.sleep(2000);
+      console.info("[EllipseResourceTest_0100] width2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')));
+      console.info("[EllipseResourceTest_0100] height2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')));
 
       let strJson3 = inspector.getInspectorByKey("EllipseResource3");
-      await CommonFunc.sleep(2000);
-      console.info("[EllipseResourceTest_0100] width3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width')));
-      console.info("[EllipseResourceTest_0100] height3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height')));
-
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height'));
-
+  await CommonFunc.sleep(2000);
+      console.info("[EllipseResourceTest_0100] width3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width')));
+      console.info("[EllipseResourceTest_0100] height3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height')));
+      
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height'));
+         
       console.info('[EllipseResourceTest_0100] END');
       done();
     });

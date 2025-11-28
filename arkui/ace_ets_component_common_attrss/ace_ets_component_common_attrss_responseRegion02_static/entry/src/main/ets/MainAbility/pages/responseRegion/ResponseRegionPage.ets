@@ -26,7 +26,7 @@ import {
 import { SetValue } from '../../common/Utils'
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage ,StorageProp} from '@ohos.arkui.stateManagement'
+import { State, AppStorage ,StoragePropRef} from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 interface ViewOption {
 targetView: string
@@ -41,8 +41,8 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct ResponseRegionPage {
-  @State eventCallBackStr: string = ''
-  @StorageProp('_responseRegion') _responseRegion: Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' }as Rectangle] as Array<Rectangle>
+  @StoragePropRef('eventCallBackStr') eventCallBackStr: string = ''
+  @StoragePropRef('_responseRegion') _responseRegion: Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' }as Rectangle] as Array<Rectangle>
   @State targetView: string = ''
   @State componentKey: string =  ''
   @State targetWidth: number = 0
@@ -60,6 +60,8 @@ struct ResponseRegionPage {
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
+      AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+      AppStorage.setOrCreate<string>('eventCallBackStr', '')
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.targetWidth = routerParamOptions.view.targetWidth
@@ -132,7 +134,7 @@ struct ResponseRegionPage {
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
             .applyStyles(this.commonStyle)
-            .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
+            .colors([['0x317AF7', 1], ['0x5BA854', 1], ['0xE08C3A', 1], ['0x9C554B', 1]])
         } else if (this.targetView == 'Image') {
           Image($r('app.media.icon'))
             .applyStyles(this.commonStyle)
@@ -260,21 +262,21 @@ struct ResponseRegionPage {
             Button('message')
               .width(100)
               .height(50)
-              .backgroundColor(0x317aff)
+              .backgroundColor('0x317aff')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Column') {
           Column() {
             Column()
               .width('100%')
               .height(30)
-              .backgroundColor(0xAFEEEE)
+              .backgroundColor('0xAFEEEE')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1')
               .width('100%')
               .height(50)
-              .backgroundColor(0xF5DEB3)
+              .backgroundColor('0xF5DEB3')
               .textAlign(TextAlign.Center)
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Counter') {
@@ -285,7 +287,7 @@ struct ResponseRegionPage {
             Text('1')
               .width('20%')
               .height(50)
-              .backgroundColor(0xF5DEB3)
+              .backgroundColor('0xF5DEB3')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'GridRow') {
           GridRow({
@@ -320,12 +322,12 @@ struct ResponseRegionPage {
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
           .applyStyles(this.commonStyle)
-          .backgroundColor(0xFAEEE0)
+          .backgroundColor('0xFAEEE0')
         } else if (this.targetView == 'GridItem') {
           Grid() {
             GridItem() {
               Text('4')
-                .backgroundColor(0xFAEEE0)
+                .backgroundColor('0xFAEEE0')
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
@@ -517,7 +519,7 @@ struct ResponseRegionPage {
           Grid() {
             GridItem() {
               Text('4')
-                .backgroundColor(0xFAEEE0)
+                .backgroundColor('0xFAEEE0')
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
@@ -553,7 +555,7 @@ struct ResponseRegionPage {
       Text(this.eventCallBackStr)
         .width(100)
         .height(100)
-        .backgroundColor(0xc1cbac)
+        .backgroundColor('0xc1cbac')
         .key(this.referenceComponentKey)
     }
     .backgroundColor(Color.Yellow)

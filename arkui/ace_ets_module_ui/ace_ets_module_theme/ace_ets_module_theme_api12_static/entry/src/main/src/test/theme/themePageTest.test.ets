@@ -68,11 +68,12 @@ it('themeInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
       console.info('frameNodeGetInterfaceTest_0100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      
+      // click to change the skin
       let button = await driver.findComponent(ON.id('themeClick'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      
+      // test the color whether change
       let strJson = inspector.getInspectorByKey('bt');
       console.info("[themeInterfaceTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[themeInterfaceTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor'));

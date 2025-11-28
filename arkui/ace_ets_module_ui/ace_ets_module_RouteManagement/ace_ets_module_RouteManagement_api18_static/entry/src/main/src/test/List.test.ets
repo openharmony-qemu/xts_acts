@@ -17,5 +17,5 @@
 import OnNewParamRouter from './OnNewParamRouter.test.ets'
 
 export default function testsuite() {
-  OnNewParamRouter(); //pass 3 SDK11.17
+  OnNewParamRouter(); //pass 3 SDK11.25
 }

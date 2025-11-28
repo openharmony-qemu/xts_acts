@@ -25,7 +25,7 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -44,9 +44,9 @@ struct bindTabsScrollExample {
       this.arr.push(i.toString())
     }
     let context = this.getUIContext()
-    context.bindTabsToScrollable(this.parentTabsController, this.listScroller)
+    context.bindTabsToScrollable(this.parentTabsController, this.listScroller) //Cannot find method 'bindTabsToScrollable (Larkui/component/tabs/TabsController;Larkui/component/scroll/Scroller;)V' in class '@ohos.arkui.UIContext.UIContext'
     context.bindTabsToScrollable(this.childTabsController, this.listScroller)
-    context.bindTabsToNestedScrollable(this.parentTabsController, this.parentScroller, this.childScroller)
+    // context.bindTabsToNestedScrollable(this.parentTabsController, this.parentScroller, this.childScroller) //Cannot find method 'bindTabsToNestedScrollable (Larkui/component/tabs/TabsController;Larkui/component/scroll/Scroller;Larkui/component/scroll/Scroller;)V' in class '@ohos.arkui.UIContext.UIContext'
     try {
       let router = context.getRouter();
       AppStorage.setOrCreate<Router>('bindTabsScroll', router);
@@ -63,7 +63,7 @@ struct bindTabsScrollExample {
   }
 
   build() {
-    Column(){
+    Column(undefined){
       Tabs({ barPosition: BarPosition.End, controller: this.parentTabsController }) {
         TabContent() {
           Tabs({ controller: this.childTabsController }) {

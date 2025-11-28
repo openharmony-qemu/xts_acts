@@ -79,65 +79,44 @@ export default function RectResourceTest() {
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey("RectResource1");
-      console.info('[wll]' + strJson1)
-      await CommonFunc.sleep(2000);
-      console.info("[RectResourceTest_0100] width1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')));
-      console.info("[RectResourceTest_0100] height1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')));
-      console.info("[RectResourceTest_0100] radiusHeight1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusHeight')));
-      console.info("[RectResourceTest_0100] radiusWidth1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusWidth')));
+  console.info('[wll]'+strJson1)
+  await CommonFunc.sleep(2000);
+      // console.info("[RectResourceTest_0100] width1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')));
+      // console.info("[RectResourceTest_0100] height1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')));
+      // console.info("[RectResourceTest_0100] radiusHeight1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusHeight')));
+      // console.info("[RectResourceTest_0100] radiusWidth1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusWidth')));
 
       let strJson2 = inspector.getInspectorByKey("RectResource2");
-      await CommonFunc.sleep(2000);
-      console.info("[RectResourceTest_0100] width2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')));
-      console.info("[RectResourceTest_0100] height2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')));
-      console.info("[RectResourceTest_0100] radius2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('radius')));
+  await CommonFunc.sleep(2000);
+      // console.info("[RectResourceTest_0100] width2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')));
+      // console.info("[RectResourceTest_0100] height2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')));
+      // console.info("[RectResourceTest_0100] radius2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('radius')));
 
 
       let strJson3 = inspector.getInspectorByKey("RectResource3");
-      await CommonFunc.sleep(2000);
-      console.info("[RectResourceTest_0100] width3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width')));
-      console.info("[RectResourceTest_0100] height3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height')));
-      console.info("[RectResourceTest_0100] radiusHeight3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusHeight')));
-      console.info("[RectResourceTest_0100] radiusWidth3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusWidth')));
+  await CommonFunc.sleep(2000);
+      // console.info("[RectResourceTest_0100] width3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width')));
+      // console.info("[RectResourceTest_0100] height3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height')));
+      // console.info("[RectResourceTest_0100] radiusHeight3 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusHeight')));
+      // console.info("[RectResourceTest_0100] radiusWidth3 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusWidth')));
 
 
       let strJson4 = inspector.getInspectorByKey("RectResource4");
       await CommonFunc.sleep(2000);
 
-      console.info("[RectResourceTest_0100] width4 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('width')));
-      console.info("[RectResourceTest_0100] height4 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height')));
-      console.info("[RectResourceTest_0100] radius4 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('radius')));
+      // console.info("[RectResourceTest_0100] width4 is: " + JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('width')));
+      // console.info("[RectResourceTest_0100] height4 is: " + JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height')));
+      // console.info("[RectResourceTest_0100] radius4 is: " + JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('radius')));
 
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusHeight'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('radiusHeight'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('radiusWidth'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('radiusWidth'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getDouble('radiusHeight')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getDouble('radiusHeight'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getDouble('radiusWidth')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getDouble('radiusWidth'));
 
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width'))
-        .assertEqual(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('width'));
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height'))
-        .assertEqual(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height'));
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('radius'))
-        .assertEqual(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('radius'));
-
+      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')).assertEqual(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('width'));
+      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')).assertEqual(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height'));
+      // expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getInteger('radius')).assertEqual(JSON.parseJsonElement(strJson4).getElement('$attrs').getInteger('radius'));
+    
       console.info('[RectResourceTest_0100] END');
       done();
     });

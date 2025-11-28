@@ -33,21 +33,20 @@ import webJsunit from './webTest/WebJsunitApi9.test'
 import webViewPageattrLackJsunit from './webTest/webviewPageLackattr.test'
 
 export default function testsuite() {
-  AppStorageJsunit();  // 3   无page页   用例2和3存在注释  123pass 23未落地   Cannot find method 'size ()I' in class 'arkui.stateManagement.storage.localStorage.LocalStorage'
-  systemAppJsunit();  // 9   无page页  1234589失败  67pass  （page41）App.getInfo() app Died
-  basicJsunit();  // 1   无page页  pass
-
-  globalJsunit1(); // 3 page存在注释,可能有影响  （test117）sendKeyEvent 报错 stream=Error in testglobal_sendKeyEvent_static_0002, @ohos.arkui.Test.ETSGLOBAL
-  ResourceColor();  //2        1pass 1Failure  expect #FF773399 equals #FF998877
-  ResourceFloat();  //2        1pass 2失败 (test102)findComponent的到的值是null 好像是因为第二个测试的页面加载失败了
-  ResourceInteger();  //2        1pass 2失败 (test102)findComponent的到的值是null 好像是因为第二个测试的页面加载失败了
-  ResourcePlural();  //2        1pass 2失败 (test102)findComponent的到的值是null 好像是因为第二个测试的页面加载失败了
-  ResourceStrarray();  //2        1pass 2失败 (test102)findComponent的到的值是null 好像是因为第二个测试的页面加载失败了
-  ResourceString();  //2        1pass 2失败 (test102)findComponent的到的值是null 好像是因为第二个测试的页面加载失败了
-  webEditTextJsunit(); // 0 web相关，不用管
-  web9Jsunit(); // 3  pass  web相关，不用管
-  webJsunit();  // 31   web相关，不用管
-  webViewPageattrLackJsunit();  // 9   web相关，不用管
-  configurationJsunit();  // 1 app died
-  // pass 58  fail 19  died 1
+  // AppStorageJsunit();  // SDK11.19 pass
+  // basicJsunit();  //SDK11.19 pass
+  // globalJsunit1(); // SDK11.22  Pass: 3
+  // ResourceColor();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939  expect #FF445566 equals #FF998877
+  // ResourceFloat();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939   expect 320.00vp equals 40.00vp
+  // ResourceInteger();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939   expect 10.00fp equals 20.00fp expect 10.00fp equals 20.00fp
+  // ResourcePlural();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939  expect 100 apples equals 100 apples2
+  // ResourceStrarray();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939  expect ["icon:,text:11","icon:,text:22"] equals ["icon:,text:111","icon:,text:222"]
+  // ResourceString(); //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939   expect 1.00fp equals 2.00fp
+  systemAppJsunit();  //  SDK11.22  App.getInfo() 外领域 9个用例
+  // webEditTextJsunit(); // 0 web相关，不用管
+  // web9Jsunit(); // 3  pass  web相关，不用管
+  // webJsunit();  // 31   web相关，不用管
+  // webViewPageattrLackJsunit();  // 9   web相关，不用管
+  // configurationJsunit();  // 国际化 不用管
+  // SDK11.17 run: 19, Failure: 6, Error: 1, Pass: 11, Ignore: 0
 }

@@ -127,7 +127,7 @@ import {
 import { SetValue } from '../../common/Utils'
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 interface ViewOption {
@@ -145,13 +145,8 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct ResponseRegionPage {
-  @State eventCallBackStr: string = ''
-  @StorageProp('_responseRegion') _responseRegion: Array<Rectangle> = [{
-    x: 0,
-    y: 0,
-    width: '100%',
-    height: '100%'
-  } as Rectangle] as Array<Rectangle>
+  @StoragePropRef('eventCallBackStr') eventCallBackStr: string = ''
+  @StoragePropRef('_responseRegion') _responseRegion: Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' } as Rectangle] as Array<Rectangle>
   @State targetView: string = ''
   @State componentKey: string = ''
   @State targetWidth: number = 0
@@ -167,9 +162,10 @@ struct ResponseRegionPage {
 
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-      AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion',
-        routerParamOptions.view.testValue.setValue as Array<Rectangle>)
-      console.info('[wll]after' + JSON.stringify(routerParamOptions.view.testValue.setValue[0]))
+      AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
+      AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+      AppStorage.setOrCreate<string>('eventCallBackStr', '')
+      console.info('[wll]after'+JSON.stringify(routerParamOptions.view.testValue.setValue[0]))
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.targetWidth = routerParamOptions.view.targetWidth
@@ -187,12 +183,13 @@ struct ResponseRegionPage {
   @Builder
   myBuilder() {
     Column() {
-      Text("bindSheet")
+      Text("bindSheet " + this.eventCallBackStr)
         .fontSize(20)
     }
     .width('100%')
     .height('100%')
     .backgroundColor(Color.Pink)
+    .applyStyles(this.commonStyle)
   }
 
   commonStyle(instance: CommonMethod) {
@@ -216,8 +213,7 @@ struct ResponseRegionPage {
           Text('text1')
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-            .applyStyles(this.commonStyle)
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Blank') {
           Row() {
             Blank()
@@ -265,7 +261,7 @@ struct ResponseRegionPage {
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Navigation') {
+        } else if (this.targetView == 'Navigator') {
           Navigation({}) {
           }
           .applyStyles(this.commonStyle)
@@ -367,12 +363,7 @@ struct ResponseRegionPage {
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
-            style: {
-              color: 0xFFFFFF,
-              fontSize: 16,
-              badgeSize: 20,
-              badgeColor: Color.Red
-            }
+            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
           } as BadgeParamWithNumber) {
             Button('message')
               .width(100)
@@ -411,14 +402,7 @@ struct ResponseRegionPage {
           }) {
             ForEach([Color.Red, Color.Orange, Color.Yellow, Color.Green,
               Color.Pink, Color.Grey, Color.Blue, Color.Brown], (color: Color) => {
-              GridCol({
-                span: {
-                  xs: 1,
-                  sm: 2,
-                  md: 3,
-                  lg: 4
-                } as GridColColumnOption
-              } as GridColOptions) {
+              GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } as GridColOptions) {
                 Row()
                   .width('100%')
                   .height('20vp')
@@ -481,14 +465,12 @@ struct ResponseRegionPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Panel') {
-          Column() {
+          Column(){
             Text('Text')
           }
-          .height('100%')
-          .width('100%')
+          .height('100%').width('100%')
           .backgroundColor(Color.Yellow)
-          .applyStyles(this.commonStyle)
-          .bindSheet(true, this.myBuilder)
+          .bindSheet(true,this.myBuilder)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

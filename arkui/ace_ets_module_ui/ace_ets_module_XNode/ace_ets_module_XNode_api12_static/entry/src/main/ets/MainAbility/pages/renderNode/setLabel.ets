@@ -24,9 +24,9 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import {  RenderNode, FrameNode, NodeController } from '@ohos.arkui.node';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-// let para: Record<string> = { 'renderNode_label': 'start' };
-// let storage: LocalStorage = new LocalStorage(para);
-let storage: LocalStorage = new LocalStorage();
+let para: Record<string,string> = { 'renderNode_label': 'start' };
+let storage: LocalStorage = new LocalStorage(para);
+// let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate('RenderNodeDemo04', 'start');
 
 
@@ -61,7 +61,7 @@ struct SetLabel {
       Button(this.getLabel).margin(100).id("SetLabel_text")
         .onClick((e:ClickEvent)=>{
           console.log('+++++++++++++++++++++++++1')
-          this.getLabel = storage.get<string>('renderNode_label') as string
+          this.getLabel = storage.get<string>('renderNode_label') as string  //在这里died
           console.log('+++++++++++++++++++++++++2')
         })
       NodeContainer(this.myNodeController)

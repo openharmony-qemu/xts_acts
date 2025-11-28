@@ -43,16 +43,18 @@ struct MultiNavigation1 {
 
   build() {
     Column() {
-      MultiNavigation({
+      MultiNavigation({   //导致页面加载失败
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name: string) => {}
+        // onHomeShowInTop: (name: string) => {}  //编译报错 type __Options_MultiNavigation has no property named onHomeShowInTop
       })
-        // .width(350).height(400).border({width:1})
+        // .width(350).height(400).border({width:1}) //编译报错 Property 'width' does not exist on type 'MultiNavigation'
 
-      Button('pushPath PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
-      }).id('MultiNavigation1_btn1')
+      Button('pushPath PageDetail1')
+        .onClick((event: ClickEvent) => {
+        // this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);  //函数重载问题
+      })
+        .id('MultiNavigation1_btn1')
 
     }
   }

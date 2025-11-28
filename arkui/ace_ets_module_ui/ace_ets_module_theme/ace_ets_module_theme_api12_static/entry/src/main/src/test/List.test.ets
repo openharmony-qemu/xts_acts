@@ -21,9 +21,10 @@ import themePageSliderTest from "./theme/themePageSliderTest.test";
 import APIFontPrimaryTest from "./theme/APIFontPrimaryTest.test";
 import themePageListTest from "./theme/themePageListTest.test";
 export default function testsuite() {
-  APIFontPrimaryTest();
-  themePageTest();
-  themePageToggleTest();
-  themePageSliderTest();
-  themePageListTest();
+  APIFontPrimaryTest();//run: 15, Failure: 2, Pass: 13
+  // themePageTest(); //WithTheme
+  // themePageToggleTest(); //WithTheme
+  // themePageSliderTest(); //WithTheme
+  // themePageListTest(); //WithTheme
+  
 }

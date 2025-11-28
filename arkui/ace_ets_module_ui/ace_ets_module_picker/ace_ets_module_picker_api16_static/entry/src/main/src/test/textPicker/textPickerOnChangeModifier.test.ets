@@ -23,15 +23,15 @@ import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-const uiContext = new UIContext();
-function getRectCenterVp(rect: string) {
-  let regexp: RegExp = new RegExp('\\[', 'g');
-  let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
-  return [
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
-  ]
-}
+// function getRectCenterVp(rect: string) {
+//   let regexp: RegExp = new RegExp('\\[', 'g');
+//   let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
+//   let uiContext = AppStorage.get<UIContext>('uiContext');
+//   return [
+//     uiContext!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
+//     uiContext!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
+//   ]
+// }
 
 export default function textPickerOnChangeModifierTest() {
   describe('textPickerOnChangeModifierTest', () => {

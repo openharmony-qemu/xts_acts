@@ -34,15 +34,17 @@ class Tmp{
   event:DragEvent|undefined = undefined
   extraParams:string = ''
 }
-let DragController1 = new DragController()
 
 
-@Entry
+let storages: LocalStorage = new LocalStorage()
+let _get_local_storage_ = ():LocalStorage => storages
+
+@Entry({ storage:'_get_local_storage_' })
+// @Entry
 @Component
 struct DragControllerPage {
   @State pixmap: image.PixelMap|null = null
   @State flag: number = 0
-  private storages:LocalStorage = this.getUIContext().getSharedLocalStorage()!;
   @Builder DraggingBuilder() {
     Column() {
       Text("DraggingBuilder")
@@ -59,6 +61,9 @@ struct DragControllerPage {
     .height(100)
     .backgroundColor(Color.Blue)
   }
+  @State DragController1:DragController = this.getUIContext().getDragController()
+
+
   build() {
     Column() {
       Text(this.flag.toString()).id('Do_id')
@@ -69,7 +74,7 @@ struct DragControllerPage {
         .id('dragFlag')
         .onDragEnter((event: DragEvent, extraParams?: string):void => {
         try {
-          let uiContext: UIContext = this.storages.get<UIContext>('uiContext') as UIContext;
+          let uiContext: UIContext = storages.get<UIContext>('uiContext') as UIContext;
           let previewObj: dragController.DragPreview = uiContext.getDragController().getDragPreview();
           let foregroundColor: ResourceColor = Color.Green;
 
@@ -87,7 +92,8 @@ struct DragControllerPage {
       })
         .onDrop((event: DragEvent, extraParams?: string) => {
         })
-      Button('拖起').onTouch((event?:TouchEvent) => {
+      Button('拖起')
+        .onTouch((event?:TouchEvent) => {
         if(event){
           if (event.type == TouchType.Down) {
             let text = new UDC.Text()
@@ -99,7 +105,7 @@ struct DragControllerPage {
             }
 
             let eve:Tmp = new Tmp()
-            DragController1.executeDrag(() => {
+            this.DragController1!.executeDrag(() => {
               this.DraggingBuilder()
             }, dragInfo, (err , eve) => {
               hilog.info(0x0000, `ljx ${JSON.stringify(err)}`, '')
@@ -113,7 +119,8 @@ struct DragControllerPage {
             })
           }
         }
-      }).margin({top:100} as Margin)
+      })
+        .margin({top:100} as Margin)
     }
     .width('100%')
     .height('100%')

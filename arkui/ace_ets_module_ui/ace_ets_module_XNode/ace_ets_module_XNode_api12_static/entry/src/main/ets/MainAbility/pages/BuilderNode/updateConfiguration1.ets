@@ -118,19 +118,19 @@ struct Index {
   private count:number = 0;
 
   aboutToAppear(): void {
-    // let environmentCallback: EnvironmentCallback = {
-    //   onMemoryLevel: (level: AbilityConstant.MemoryLevel): void => {
-    //     console.log('onMemoryLevel');
-    //   },
-    //   onConfigurationUpdated: (config: Configuration): void => {
-    //     console.log('onConfigurationUpdated ' + JSON.stringify(config));
-    //     updateColorMode();
-    //   }
-    // }
-    // // 注册监听回调
-    // this.getUIContext().getHostContext()?.getApplicationContext().on('environment', environmentCallback);
-    // //创建自定义节点并添加至map
-    // this.textNodeController.createNode(this.getUIContext());
+    let environmentCallback: EnvironmentCallback = {
+      onMemoryLevel: (level: AbilityConstant.MemoryLevel): void => {
+        console.log('onMemoryLevel');
+      },
+      onConfigurationUpdated: (config: Configuration): void => {
+        console.log('onConfigurationUpdated ' + JSON.stringify(config));
+        // updateColorMode(); // Unresolved reference updateColorMode
+      }
+    }
+    // 注册监听回调
+    this.getUIContext().getHostContext()?.getApplicationContext().onEnvironment( environmentCallback);
+    //创建自定义节点并添加至map
+    this.textNodeController.createNode(this.getUIContext());
   }
 
   aboutToDisappear(): void {

@@ -46,7 +46,7 @@ export struct ListItemGroupView {
   itemHead(text: string) {
     Text(text)
       .fontSize(20)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width('100%')
       .padding(10)
   }
@@ -55,7 +55,7 @@ export struct ListItemGroupView {
   itemFoot(num: number) {
     Text('total:' + num)
       .fontSize(16)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width('100%')
       .padding(5)
   }
@@ -67,7 +67,7 @@ export struct ListItemGroupView {
       .height(100)
       .fontSize(20)
       .textAlign(TextAlign.Center)
-      .backgroundColor(0xFFFFFF)
+      .backgroundColor('0xFFFFFF')
   }
 
   build() {

@@ -40,16 +40,19 @@ export default function defaultFocus() {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    beforeEach(async (): Promise<void> => {
+beforeEach(async (): Promise<void> => {
       console.info("defaultFocus beforeEach start");
       const searchRouter = AppStorage.get<Router>("router") as Router
-      console.info("defaultFocus beforeEach start222");
       try {
-        searchRouter.pushUrl({
-          url: 'MainAbility/pages/FocusView/defaultFocus',
-        });
-        await CommonFunc.sleep(2000);
-        console.info("push defaultFocus success: ");
+        let pages:router.RouterState = searchRouter.getState();
+        console.info("get TextfieldMultiTest state pages:" + JSON.stringify(pages));
+        if (!("defaultFocus" == pages.name)) {
+          console.info("get TextfieldMultiTest pages.name:" + '');
+          searchRouter.pushUrl({
+            url: 'MainAbility/pages/FocusView/defaultFocus',
+          });
+          await CommonFunc.sleep(2000);
+        }
       } catch (err) {
         console.error("push defaultFocus page error: " + err);
         expect().assertFail();

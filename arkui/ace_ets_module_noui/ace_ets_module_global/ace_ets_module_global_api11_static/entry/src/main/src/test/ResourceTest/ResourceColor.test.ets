@@ -73,7 +73,7 @@ export default function ResourceColor() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/index/index',
       }
-      router.pushUrl(options);
+      // router.pushUrl(options);
       await Utils.sleep(1000);
     });
 

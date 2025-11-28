@@ -25,14 +25,14 @@ import { State } from '@ohos.arkui.stateManagement'
 class Params {
   public text: string = ""
   public fontColor: ResourceColor = Color.Red
-  public fontSize: string | double = 16
-  public fontWeight: int | FontWeight | string = FontWeight.Normal
+  public fontSize: string | number = 16
+  public fontWeight: Int|FontWeight|String|undefined = FontWeight.Normal
   public margin: Margin | Length | LocalizedMargin = 10
   public fontStyle: FontStyle | undefined = FontStyle.Normal
   public type: number
 
-  constructor(text: string, fontColor: ResourceColor, fontSize: string | double,
-    fontWeight: int | FontWeight | string, margin: Margin | Length | LocalizedMargin,
+  constructor(text: string, fontColor: ResourceColor, fontSize: string | number,
+    fontWeight: Int|FontWeight|String|undefined, margin: Margin | Length | LocalizedMargin,
     fontStyle: FontStyle | undefined , type: number){
     this.text = text;
     this.fontColor = fontColor;
@@ -46,9 +46,10 @@ class Params {
 
 @Builder
 function buildTest(params: Params){
-  Column() {
+  Column(undefined) {
     Text(params.text)
       .key('buildTest' + params.type)
+      .id('buildTest' + params.type)
       .fontColor(params.fontColor)
       .fontSize(params.fontSize)
       .fontWeight(params.fontWeight)
@@ -76,16 +77,34 @@ struct Index {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: number = 0
+  @State context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext
   @State isDark: boolean = false;
   uicontext: UIContext = this.getUIContext()
+  headerNode1: ComponentContent<Params> =
+    new ComponentContent<Params>(this.uicontext, wrapBuilder(buildTest), new Params(
+      "message1", Color.Green, 5, FontWeight.Bold, 10, FontStyle.Normal,1));
+  footerNode1: ComponentContent<Params> =
+    new ComponentContent<Params>(this.uicontext, wrapBuilder(buildTest),
+      new Params("message2", Color.Red, 16, FontWeight.Bold, 10, FontStyle.Normal,2));
+  headerNode2: ComponentContent<Params> =
+    new ComponentContent<Params>(this.uicontext, wrapBuilder(buildTest), new Params(
+      "123456789", Color.Green, 5, FontWeight.Bold, 10, FontStyle.Normal,3));
+  footerNode2: ComponentContent<Params> =
+    new ComponentContent<Params>(this.uicontext, wrapBuilder(buildTest),
+      new Params("99999999", Color.Red, 16, FontWeight.Bold, 10, FontStyle.Normal,4));
   build() {
     Scroll() {
-      Row() {
-        Column() {
+      Row(undefined) {
+        Text('+++++++++++++++++')
+        Column(undefined) {
           List({ space: 5 }) {
             ForEach(this.timeTable, (item: TimeTable) => {
-              ListItemGroup({
-              }) {
+              ListItemGroup(
+                {    //SDK11.14 页面加载失败
+                headerComponent: this.headerNode1,
+                footerComponent: this.footerNode1
+              }
+              ) {
                 ForEach(item.projects, (project: string) => {
                   ListItem() {
                     Text(project)
@@ -93,43 +112,44 @@ struct Index {
                       .height(100)
                       .fontSize(20)
                       .textAlign(TextAlign.Center)
-                      .backgroundColor(0xFFFFFF)
+                      .backgroundColor('0xFFFFFF')
                   }
                 }, (item: string) => item)
               }
               .divider({ strokeWidth: 1, color: Color.Blue })
             })
           }
-          .scrollBar(BarState.Off)
-          .width('100%')
-          .height('50%')
-          .backgroundColor(0xDCDCDC)
-          .padding({ top: 5 } as Padding)
+          // .scrollBar(BarState.Off)
+          // .width('100%')
+          // .height('50%')
+          // .backgroundColor('0xDCDCDC')
+          // .padding({ top: 5 } as Padding)
 
-          List({ space: 5 }) {
-            ForEach(this.timeTable, (item: TimeTable) => {
-              ListItemGroup({
-
-              }) {
-                ForEach(item.projects, (project: string) => {
-                  ListItem() {
-                    Text(project)
-                      .width("100%")
-                      .height(100)
-                      .fontSize(20)
-                      .textAlign(TextAlign.Center)
-                      .backgroundColor(0xFFFFFF)
-                  }
-                }, (item: string) => item)
-              }
-              .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
-            })
-          }
-          .scrollBar(BarState.Off)
-          .width('100%')
-          .height('50%')
-          .backgroundColor(0xDCDCDC)
-          .padding({ top: 5 } as Padding)
+          // List({ space: 5 }) {
+          //   ForEach(this.timeTable, (item: TimeTable) => {
+          //     ListItemGroup({
+          //       headerComponent: this.headerNode2,
+          //       footerComponent: this.footerNode2
+          //     }) {
+          //       ForEach(item.projects, (project: string) => {
+          //         ListItem() {
+          //           Text(project)
+          //             .width("100%")
+          //             .height(100)
+          //             .fontSize(20)
+          //             .textAlign(TextAlign.Center)
+          //             .backgroundColor('0xFFFFFF')
+          //         }
+          //       }, (item: string) => item)
+          //     }
+          //     .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+          //   })
+          // }
+          // .scrollBar(BarState.Off)
+          // .width('100%')
+          // .height('50%')
+          // .backgroundColor('0xDCDCDC')
+          // .padding({ top: 5 } as Padding)
         }
       }
     }

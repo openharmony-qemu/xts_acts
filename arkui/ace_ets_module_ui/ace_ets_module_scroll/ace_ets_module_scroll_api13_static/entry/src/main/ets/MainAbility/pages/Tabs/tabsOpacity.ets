@@ -25,7 +25,7 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -59,16 +59,16 @@ struct tabsOpacityExample {
 
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#00CB87')
+          Column(undefined).width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar(BottomTabBarStyle.of($r('app.media.icon'), 'green'))
 
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#E67C92')
+          Column(undefined).width('100%').height('100%').backgroundColor('#E67C92')
         }.tabBar(BottomTabBarStyle.of($r('app.media.icon'), 'pink'))
         .id('tabContent_bar_2')
 
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+          Column(undefined).width('100%').height('100%').backgroundColor('#FFBF00')
         }.tabBar(BottomTabBarStyle.of($r('app.media.icon'), 'yellow'))
 
       }

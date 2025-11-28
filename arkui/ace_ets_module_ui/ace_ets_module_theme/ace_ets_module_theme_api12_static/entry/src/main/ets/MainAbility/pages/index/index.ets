@@ -13,47 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium } from '../../../../../hypium/index'
-import testsuite from '../../../../src/test/List.test';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage,State } from '@ohos.arkui.stateManagement';
-import {
-  Entry, Component,
-  Column, ColumnOptions, 
-  Flex, FlexDirection, ItemAlign, FlexAlign,
-  Text, Button, FontWeight, ClickEvent, Margin, Color,
-} from '@ohos.arkui.component'
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common2D from '@ohos.graphics.displaySync'
+import common from '@ohos.app.ability.common';
 
 @Entry
 @Component
 struct Index {
-  aboutToAppear() {
-    console.info('start run testcase!!!!')
-    let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator
-    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
-    abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    console.info('start run testcase!!!')
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+
+  aboutToAppear(){
     try {
       let router1 = this.getUIContext().getRouter();
-      AppStorage.setOrCreate<Router>('router', router1 );
-    } catch (error) {
+      AppStorage.setOrCreate<Router>('router', router1);
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
 
   build() {
-    Flex({
-      direction: FlexDirection.Column,
-      alignItems: ItemAlign.Center,
-      justifyContent: FlexAlign.Center
-    }) {
-      Text('Dynamic Style ETS TEST')
+    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('Hello World')
         .fontSize(50)
-        .fontWeight(FontWeight.Bold)
+      Button(' ') {
+        Text('next page')
+          .fontSize(25)
+      }
+      .margin({
+        top: 20
+      } as Margin)
+      .backgroundColor('#0D9FFB')
+      .onClick((e:ClickEvent) => {
+
+      })
     }
     .width('100%')
     .height('100%')

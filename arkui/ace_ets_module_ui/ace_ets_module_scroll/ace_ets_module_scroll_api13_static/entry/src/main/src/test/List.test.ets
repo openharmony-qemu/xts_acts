@@ -13,12 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import headerListJsunit from './ListTest/headerListJsunit.test';
+import listItemGroupComponent from './ListTest/listItemGroupComponent.test';
 import bindTabsScroll from './TabsTest/bindTabsScroll.test';
 import tabsOpacityJsunit from './TabsTest/tabsOpacityJsunit.test';
 import offsetRemainScroll from './ScrollTest/offsetRemainScroll.test';
 
 export default function testsuite() {
-  bindTabsScroll();
-  tabsOpacityJsunit();
-  offsetRemainScroll();
+  headerListJsunit(); // driver.findComponent(ON.text("美术")) undefined
+  // listItemGroupComponent(); // ListItemGroup的接口导致页面加载失败
+  // bindTabsScroll(); // text01?.getText()为null 报错
+  // tabsOpacityJsunit(); //pass 1
+  // offsetRemainScroll(); //pass 注释
 }

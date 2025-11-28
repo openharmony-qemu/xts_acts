@@ -31,31 +31,31 @@ struct offsetRemainScroll {
     }
   }
   build() {
-    Column() {
+    Column(undefined) {
       Text('scrollPosition: ' + this.scrollPosition)
         .id('scroll_offsetRemain_text')
 
       Text('Scroll Area')
         .width('100%')
         .height('10%')
-        .backgroundColor(0X330000FF)
+        .backgroundColor('0X330000FF')
         .fontSize(16)
         .textAlign(TextAlign.Center)
 
       Scroll(this.scrollerForScroll) {
-        Column() {
+        Column(undefined) {
           ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('90%')
               .height(100)
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor('0xFFFFFF')
               .borderWidth(1)
               .borderColor(Color.Black)
               .borderRadius(15)
               .fontSize(16)
               .textAlign(TextAlign.Center)
           }, (item:number) => item.toString())
-        }.width('100%').backgroundColor(0xDCDCDC)
+        }.width('100%').backgroundColor('0xDCDCDC')
       }
       .id('scroll_offsetRemain')
       .width('100%')
@@ -80,12 +80,12 @@ struct offsetRemainScroll {
       Text('Scroll Area')
         .width('100%')
         .height('10%')
-        .backgroundColor(0X330000FF)
+        .backgroundColor('0X330000FF')
         .fontSize(16)
         .textAlign(TextAlign.Center)
 
     }.width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
   }
 }

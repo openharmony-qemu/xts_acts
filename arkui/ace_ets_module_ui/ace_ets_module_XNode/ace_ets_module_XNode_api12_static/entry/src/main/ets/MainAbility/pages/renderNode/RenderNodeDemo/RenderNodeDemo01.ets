@@ -31,12 +31,12 @@ class MyRenderNode extends RenderNode {
   draw(context: DrawContext) {
     const canvas = context.canvas;
     const brush = new drawing.Brush();
-    // brush.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    brush.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
     canvas.attachBrush(brush);
     canvas.drawRect({ left: 0, right: 200, top: 0, bottom: 200 });
     canvas.detachBrush();
 
-    // brush.setColor({ alpha: 255, red: 0, green: 255, blue: 0 });
+    brush.setColor({ alpha: 255, red: 0, green: 255, blue: 0 });
     canvas.attachBrush(brush);
     canvas.drawRect({ left: 100, right: 300, top: 100, bottom: 300 });
     canvas.detachBrush();
@@ -58,8 +58,10 @@ class MyNodeController extends NodeController {
     }
     const rootRenderNode = this.rootNode!.getRenderNode();
     if (rootRenderNode !== null) {
+      console.log('+++rootRenderNode !== null')
       rootRenderNode!.appendChild(renderNode);
-      storage.set('RenderNodeDemo01', renderNode.markNodeGroup);
+      storage.set('RenderNodeDemo01', renderNode.markNodeGroup);//存值不对，存的是false
+      console.log('+++rootRenderNode !== null2',renderNode.markNodeGroup)
     }
     return this.rootNode;
   }
@@ -76,6 +78,7 @@ struct RenderNodeDemo01 {
       Button(`${this.text1}`).key('RenderNodeDemo01_Button')
         .onClick((e:ClickEvent)=>{
           this.text1 = storage!.get<boolean>('RenderNodeDemo01') as boolean
+          console.log('++++++++++++++',this.text1)  //值为false,应为true
         })
       Row() {
         NodeContainer(this.myNodeController)

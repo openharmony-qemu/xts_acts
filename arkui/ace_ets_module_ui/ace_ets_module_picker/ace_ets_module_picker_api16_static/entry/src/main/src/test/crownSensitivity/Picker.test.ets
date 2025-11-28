@@ -77,13 +77,14 @@ export default function Picker() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_DatePicker_ComponentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          
+          // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0100] START');
           let strJson = inspector.getInspectorByKey('picker01');
           let obj = JSON.parseJsonElement(strJson);
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0100] attr: " + JSON.stringify(obj.getElement('$attrs')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0100] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0100] focusOnTouch: " + JSON.stringify(obj.getElement('$attrs').getString('focusOnTouch')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0100] attr: " + JSON.stringify(obj.getElement('$attrs')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0100] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getInteger('digitalCrownSensitivity')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0100] focusOnTouch: " + JSON.stringify(obj.getElement('$attrs').getInteger('focusOnTouch')));
+          console.info('[++++wll]'+obj.getElement('$attrs').getString('digitalCrownSensitivity'))
           expect(obj.getElement('$attrs').getString('digitalCrownSensitivity')).assertEqual('2');
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0100] END');
           done();
@@ -99,14 +100,14 @@ it('ArkUX_Stage_DatePicker_ComponentTest_static_0100', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_DatePicker_ComponentTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          
+          // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0200] START');
           let strJson = inspector.getInspectorByKey('picker02');
           let obj = JSON.parseJsonElement(strJson);
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] attr: " + JSON.stringify(obj.getElement('$attrs')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] focusable: " + JSON.stringify(obj.getElement('$attrs').getString('focusable')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] focusOnTouch: " + JSON.stringify(obj.getElement('$attrs').getString('focusOnTouch')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] attr: " + JSON.stringify(obj.getElement('$attrs')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] focusable: " + JSON.stringify(obj.getElement('$attrs').getBoolean('focusable')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0200] focusOnTouch: " + JSON.stringify(obj.getElement('$attrs').getString('focusOnTouch')));
 
           expect(obj.getElement('$attrs').getString('digitalCrownSensitivity')).assertEqual('0');
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0200] END');
@@ -123,13 +124,13 @@ it('ArkUX_Stage_DatePicker_ComponentTest_static_0200', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_DatePicker_ComponentTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          
+          // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0300] START');
           let strJson = inspector.getInspectorByKey('picker03');
           let obj = JSON.parseJsonElement(strJson);
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0300] attr: " + JSON.stringify(obj.getElement('$attrs')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0300] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0300] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getString('defaultFocus')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0300] attr: " + JSON.stringify(obj.getElement('$attrs')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0300] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0300] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getBoolean('defaultFocus')));
           expect(obj.getElement('$attrs').getString('digitalCrownSensitivity')).assertEqual('1');
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0300] END');
           done();
@@ -145,13 +146,13 @@ it('ArkUX_Stage_DatePicker_ComponentTest_static_0300', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_DatePicker_ComponentTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          
+          // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0400] START');
           let strJson = inspector.getInspectorByKey('picker04');
           let obj = JSON.parseJsonElement(strJson);
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0400] attr: " + JSON.stringify(obj.getElement('$attrs')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0400] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0400] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getString('defaultFocus')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0400] attr: " + JSON.stringify(obj.getElement('$attrs')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0400] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0400] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getBoolean('defaultFocus')));
           expect(obj.getElement('$attrs').getString('digitalCrownSensitivity')).assertEqual('1');
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0400] END');
           done();
@@ -167,13 +168,13 @@ it('ArkUX_Stage_DatePicker_ComponentTest_static_0400', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_DatePicker_ComponentTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          
+          // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0500] START');
           let strJson = inspector.getInspectorByKey('picker05');
           let obj = JSON.parseJsonElement(strJson);
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0500] attr: " + JSON.stringify(obj.getElement('$attrs')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0500] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
-          console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0500] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getString('defaultFocus')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0500] attr: " + JSON.stringify(obj.getElement('$attrs')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0500] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
+          // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0500] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getBoolean('defaultFocus')));
           expect(obj.getElement('$attrs').getString('digitalCrownSensitivity')).assertEqual('1');
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0500] END');
           done();
@@ -189,13 +190,13 @@ it('ArkUX_Stage_DatePicker_ComponentTest_static_0500', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_DatePicker_ComponentTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        
+        // Verify the functions of the ArcAlphabetIndexer component
         console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0600] START');
         let strJson = inspector.getInspectorByKey('picker06');
         let obj = JSON.parseJsonElement(strJson);
-        console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0600] attr: " + JSON.stringify(obj.getElement('$attrs')));
-        console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0600] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
-        console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0600] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getString('defaultFocus')));
+        // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0600] attr: " + JSON.stringify(obj.getElement('$attrs')));
+        // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0600] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
+        // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0600] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getBoolean('defaultFocus')));
         expect(obj.getElement('$attrs').getString('digitalCrownSensitivity')).assertEqual('1');
         console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0600] END');
         done();
@@ -211,13 +212,13 @@ it('ArkUX_Stage_DatePicker_ComponentTest_static_0600', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_DatePicker_ComponentTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        
+        // Verify the functions of the ArcAlphabetIndexer component
         console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0700] START');
         let strJson = inspector.getInspectorByKey('picker07');
         let obj = JSON.parseJsonElement(strJson);
-        console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0700] attr: " + JSON.stringify(obj.getElement('$attrs')));
-        console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0700] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
-        console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0700] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getString('defaultFocus')));
+        // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0700] attr: " + JSON.stringify(obj.getElement('$attrs')));
+        // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0700] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));
+        // console.info("[ArkUX_Stage_DatePicker_ComponentTest_static_0700] defaultFocus: " + JSON.stringify(obj.getElement('$attrs').getBoolean('defaultFocus')));
         expect(obj.getElement('$attrs').getString('digitalCrownSensitivity')).assertEqual('1');
         console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0700] END');
         done();

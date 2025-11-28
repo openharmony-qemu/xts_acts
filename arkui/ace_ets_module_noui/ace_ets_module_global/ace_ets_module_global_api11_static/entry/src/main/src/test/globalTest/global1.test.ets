@@ -27,7 +27,7 @@ import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode'
-import { KeyEvent, MouseEvent, SourceTool, KeyType, KeySource , SourceType, MouseButton, MouseAction } from '@ohos.arkui.component'
+import { KeyEvent, MouseEvent, SourceTool, KeyType, KeySource,  SourceType, MouseButton, MouseAction } from '@ohos.arkui.component'
 import { sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 
 export default function globalJsunit1() {
@@ -53,7 +53,7 @@ export default function globalJsunit1() {
           console.info("get globalJsunit1 pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push globalJsunit1 page result:" + JSON.stringify(result));
         }
@@ -137,7 +137,7 @@ export default function globalJsunit1() {
       console.info('testglobal_sendMouseEvent_static_0003 START');
       await Utils.sleep(2000);
       let rect: RectValue = Utils.getComponentRect('ListItem');
-      // console.info('wj+++++++++++++',rect);
+      console.info('+++++++++++++rect',rect);
       let mouseEvent: MouseEvent = {
         button: MouseButton.Left, // 枚举0  MouseButton 可以确定0表示Left
         action: MouseAction.Release,  // 枚举3 源代码3表示 ButtonUP , MouseAction.Release 表示鼠标按键松开

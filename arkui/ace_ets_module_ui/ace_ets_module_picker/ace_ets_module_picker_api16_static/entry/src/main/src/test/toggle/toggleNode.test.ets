@@ -76,8 +76,8 @@ it('toggleNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<voi
       let tagName = 'toggleNode_static_0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_Toggle_001');
-      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual('Toggle');
+      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
+      expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual('Toggle');
       console.info('[' + tagName + '] END ===========================');
       done();
     });

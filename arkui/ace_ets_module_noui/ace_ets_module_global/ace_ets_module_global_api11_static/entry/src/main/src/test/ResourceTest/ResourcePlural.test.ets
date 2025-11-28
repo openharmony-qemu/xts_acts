@@ -58,7 +58,7 @@ export default function ResourcePlural() {
           console.info("get ResourcePlural pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(5000);
           // console.info("push ResourcePlural page result:" + JSON.stringify(result));
         }

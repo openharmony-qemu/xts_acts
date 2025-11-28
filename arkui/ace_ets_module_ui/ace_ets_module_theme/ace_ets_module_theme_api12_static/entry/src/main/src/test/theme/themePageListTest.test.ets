@@ -70,17 +70,19 @@ it('themeListInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void):
       await Utils.sleep(1000);
       
       let button = await driver.findComponent(ON.id('themeClick'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      
+      // test the color whether change
       let strJson = inspector.getInspectorByKey('1bg');
       console.info("[frameNodeGetInterfaceTest_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[frameNodeGetInterfaceTest_static_0100] component obj is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor')).assertEqual('#00000000');
-      
+      // simulate the longClick
       let listItem: Component|null = await driver.findComponent(ON.id('1bg'));
+  await Utils.sleep(1000);
       listItem!.longClick();
-      
+      // test the theme color whether change
       let strJson2 = inspector.getInspectorByKey('1bg');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('backgroundColor')).assertEqual('#00000000');
       console.info('themeListInterfaceTest_0100 END');

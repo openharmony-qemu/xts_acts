@@ -76,8 +76,8 @@ it('ratingNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<voi
       let tagName = 'ratingNode_static_0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_Rating_001');
-      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual('Rating');
+      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
+      expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual('Rating');
       console.info('[' + tagName + '] END ===========================');
       done();
     });

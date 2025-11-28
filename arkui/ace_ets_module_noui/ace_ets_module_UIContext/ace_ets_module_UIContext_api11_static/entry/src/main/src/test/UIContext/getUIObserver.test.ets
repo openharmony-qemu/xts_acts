@@ -28,6 +28,11 @@ interface optionsObj {
 
 export default function getUIObserver() {
   describe('getUIObserver', () => {
+    beforeAll(() => {
+      console.info("getUIObserver beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async (): Promise<void> => {
       console.info("getUIObserver beforeEach start");
       let options: router.RouterOptions = {
@@ -40,11 +45,11 @@ export default function getUIObserver() {
         console.info("get getUIObserver state pages:" + JSON.stringify(pages));
         if (!("getUIObserver" == pages.name)) {
           console.info("get getUIObserver pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push getUIObserver page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getUIObserver page error:" + err);
@@ -66,8 +71,8 @@ it('getUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info('getUIObserver_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.id('lanYa_id'));
-      await (button?.click() as Promise<void>);
+      let button = await driver.findComponent(ON.id('Wlan_Id')) as Component;
+      await button!.click();
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('showFlag_id');
       let obj = JSON.parseJsonElement(strJson);

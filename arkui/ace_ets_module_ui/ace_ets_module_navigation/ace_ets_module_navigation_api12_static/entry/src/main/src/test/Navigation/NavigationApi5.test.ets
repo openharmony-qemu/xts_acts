@@ -28,17 +28,12 @@ import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function NavigationApi5() {
-  console.log('NavigationApi5++++++++++++++++++1')
   describe('NavigationApi5', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000);
-      console.log('NavigationApi5++++++++++++++++++2')
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      console.log('NavigationApi5++++++++++++++++++3')
       await UtilsTest.msSleep(4000);
     });
-    console.log('NavigationApi5++++++++++++++++++4')
     beforeEach(async (): Promise<void> => {
       console.info("NavigationApi5 beforeEach start");
       let options: router.RouterOptions = {

@@ -57,7 +57,7 @@ export default function frameNodeMoveOneTest() {
         router.clear();
         let pages = router.getState();
         // let result = await router.replaceUrl(options);
-        router.pushUrl(options);
+        router.replaceUrl(options);
         console.info("get frameNodeMoveOneTest state pages:" + JSON.stringify(pages));
         if (!("frameNodeMoveOneTest" == pages.name)) {  //"frameNodeMoveOneTest" == pages.name
           console.info("get frameNodeMoveOneTest pages.name:" + JSON.stringify(pages.name));

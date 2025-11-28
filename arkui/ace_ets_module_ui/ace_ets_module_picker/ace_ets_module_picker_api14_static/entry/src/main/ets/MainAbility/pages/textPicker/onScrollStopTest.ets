@@ -21,12 +21,12 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct onScrollStopTest {
-  private fruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
-  private select: undefined | int | Array<int> = 0 as undefined | int | Array<int>;
-  @State v: string = '';
-  @State canLoop: boolean = true;
-  @State message: string = '';
-  @State message1: string = '';
+  private fruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4']
+  private select: undefined|Double|Array<Double>|int = 0 as int
+  @State v: string = ''
+  @State canLoop: boolean = true
+  @State message: string = ''
+  @State message1: string = ''
 
   build() {
     Column({ space: 20 }  as ColumnOptions) {
@@ -34,8 +34,12 @@ struct onScrollStopTest {
       TextPicker({ range: this.fruits })
         .id('myTextPicker')
         .canLoop(this.canLoop)
-        .onScrollStop((value: string | string[], index: int | int[]) => {
-          this.message = 'stop'
+        .onScrollStop((value: string | string[], index: int | int[]):void => {
+          this.message = 'stop' //没触发
+          console.log('111111111111111111')
+        })
+        .onChange((value: string | string[], index: int | int[]) => {
+          console.log('index：'+index)
         })
         .height('50%')
       Divider()
@@ -44,29 +48,34 @@ struct onScrollStopTest {
         .id('myTextPicker1')
         .margin(20)
         .onClick((e:ClickEvent)=>{
+          console.log('++++++++++++++++++++++1.1')
           let uiContext: UIContext = this.getUIContext();
+          console.log('++++++++++++++++++++++1.2')
           uiContext.showTextPickerDialog({
             range: this.fruits,
-            selected: this.select,
+            selected: this.select as int,
             disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
             textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TextPickerResult) => {
-              this.select = value.index
+              this.select = value.index as int
               console.log(this.select + '')
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
             onScrollStop: () => {
               this.message1 = 'stop'
+              console.log('111111111111111111onScrollStop')
             },
             onDidAppear: () => {
              this.message1 = 'stop'
+              console.log('111111111111111111onDidAppear')
             },
             onDidDisappear: () => {
               console.info('DatePickerDialog:onDidDisappear()')
             },
           })
+          console.log('++++++++++++++++++++++1.3')
         })
     }
     .height('100%')

@@ -20,18 +20,19 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-
+// import { px2vp } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-function getRectCenterVp(rect: string) {
-  let regexp: RegExp = new RegExp('\\[', 'g');
-  let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
-  return [
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
-  ]
-}
+// function getRectCenterVp(rect: string) {
+//   let regexp: RegExp = new RegExp('\\[', 'g');
+//   let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
+//   let uiContext = AppStorage.get<UIContext>('uiContext');
+//   return [
+//     uiContext!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
+//     uiContext!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
+//   ]
+// }
 
 export default function enableCascadeTest() {
   describe('TimePickerApienableCascade', () => {
@@ -80,7 +81,7 @@ it('TimePickerApienableCascade_static_001', Level.LEVEL1, async (done: () => voi
       let driver: Driver = Driver.create();
       await Utils.sleep(1000);
       let clock24Button = await driver.findComponent(ON.id('24hour'));
-      await (clock24Button?.click() as Promise<void>);
+      clock24Button?.click();
       await Utils.sleep(1000);
       let clock12Button = await driver.findComponent(ON.id('12hour'));
       await (clock12Button?.click() as Promise<void>);

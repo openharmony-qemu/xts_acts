@@ -41,11 +41,11 @@ export default function componentSnapshotSync() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get componentSnapshotSync state pages:" + JSON.stringify(pages));
-        if (!("componentSnapshotSync" == pages.name)) {
+        if (!("componentSnapshotSync" == pages.name)) { //"componentSnapshotSync" == pages.name
           console.info("get componentSnapshotSync pages.name:" + '');
-          
-          
-          routerInstance.pushUrl(options);
+
+
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           
         }

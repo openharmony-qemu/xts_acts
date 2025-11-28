@@ -84,7 +84,7 @@ class MyNodeAdapter extends NodeAdapter {
 
   loadData(): void {
     for (let i = 0; i < this.totalNodeCount; i++) {
-      this.data[i] = 'Adapter ListItem ' + i + ' r:' + this.reloadTimes;
+      this.data[i] = 'Adapter ListItem ' + i + ' r:' + this.reloadTimes;   //name: RangeError message: Out of bounds
     }
   }
 

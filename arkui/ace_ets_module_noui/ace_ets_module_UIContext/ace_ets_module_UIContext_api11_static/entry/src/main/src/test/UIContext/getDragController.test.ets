@@ -28,6 +28,12 @@ interface optionsObj {
 
 export default function getDragController() {
   describe('getDragController', () => {
+    beforeAll(() => {
+      console.info("getDragController beforeEach start");
+
+      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async (): Promise<void> => {
       console.info("getDragController beforeEach start");
       let options: router.RouterOptions = {
@@ -37,14 +43,14 @@ export default function getDragController() {
         const routerInstance = AppStorage.get<Router>("router" ) as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
-        console.info("get getDragController state pages:" + JSON.stringify(pages));
-        if (!("getDragController" == pages.name)) {
+        console.info("get getDragController state pages:" + JSON.stringify(pages.name));
+        if (!("getDragController" == pages.name)) {  //getDragController" == pages.name
           console.info("get getDragController pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push getDragController page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getDragController page error:" + err);
@@ -65,8 +71,9 @@ export default function getDragController() {
 it('getDragController_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getDragController_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('dragFlag'));
+      console.log('++++++++++++findComponent',button)
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('Do_id');

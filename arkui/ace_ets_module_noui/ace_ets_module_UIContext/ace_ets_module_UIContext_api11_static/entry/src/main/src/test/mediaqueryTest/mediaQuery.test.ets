@@ -28,24 +28,33 @@ import emitter from '@ohos.events.emitter';
 
 export default function mediaQueryOffJsunit() {
   describe('mediaQueryOffTest', () => {
+    beforeAll(() => {
+      console.info("mediaQueryOffTest beforeEach start");
 
+      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async (): Promise<void> => {
       console.info("mediaQueryOffTest beforeEach start");
       let options: router.RouterOptions = {
         url:'MainAbility/pages/mediaquery/mediaQuery',
       }
       try {
-        const routerInstance = AppStorage.get<Router>("router" ) as Router
-        routerInstance.clear();
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        console.info('test router:'+ routerInstance)
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get mediaQueryOffTest state pages:" + JSON.stringify(pages));
-        if (!("mediaQuery" == pages.name)) {
-          console.info("get mediaQueryOffTest pages.name:" + '');
-          
-          
+        if (!("mediaQuery" == pages.name)) { //"mediaQuery" == pages.name
+          console.info("get mediaQueryOffTest pages.name:" + pages.name);
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
+          console.info("cui 111" + pages.name);
           routerInstance.pushUrl(options);
+          console.info("cui 222" + pages.name);
           await CommonFunc.sleep(2000);
-          
+          console.info("cui 333" + pages.name);
+          // console.info("push mediaQueryOffTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push mediaQueryOffTest page error:" + err);
@@ -73,7 +82,8 @@ it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      // console.info("[testmediaQueryOff0001] component width strJson11:" + JSON.stringify(obj));
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("100.00vp");
       console.info("[testmediaQueryOff0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
 
@@ -93,7 +103,7 @@ it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual("70.00vp");
       console.info("[testmediaQueryOff0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
 
@@ -113,7 +123,7 @@ it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual("20.00fp");
       console.info("[testmediaQueryOff0003] fontSize value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
 
@@ -133,9 +143,9 @@ it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('opacity')).assertEqual(1);
-      console.info("[testmediaQueryOff0004] opacity value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('opacity'));
+      expect(obj.getString('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity')).assertEqual(1);
+      console.info("[testmediaQueryOff0004] opacity value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity'));
 
     });
 
@@ -153,7 +163,7 @@ it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart");
       console.info("[testmediaQueryOff0005] align value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('align'));
 
@@ -173,7 +183,7 @@ it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff_static_0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual("#FFCCCCCC");
       console.info("[testmediaQueryOff_static_0006] fontColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
 
@@ -193,7 +203,7 @@ it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff_static_0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight')).assertEqual("25.00fp");
       console.info("[testmediaQueryOff_static_0007] lineHeight value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight'));
 
@@ -213,7 +223,7 @@ it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff_static_0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("10.00vp");
       console.info("[testmediaQueryOff_static_0009] padding value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding'));
 
@@ -233,7 +243,7 @@ it('testmediaQueryOff_static_0010', Level.LEVEL0, async  () => {
       let strJson = inspector.getInspectorByKey('offText');
       console.info("[testmediaQueryOff_static_0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign')).assertEqual("TextAlign.Center");
       console.info("[testmediaQueryOff_static_0010] textAlign value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign'));
 
@@ -261,7 +271,7 @@ it('testmediaQueryOff_static_0011', Level.LEVEL0, async  () => {
         }
         console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('offText', 10, "")));
         emitter.on(innerEventOne, callback1);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmediaQueryOff_static_0011 END');
@@ -285,12 +295,13 @@ it('testmatchMediaSync_static_0001', Level.LEVEL0, async  () => {
           priority: emitter.EventPriority.LOW
         }
         let callback1 = (eventData: emitter.EventData) => {
+          const data: Record<String,undefined|null|Object> = eventData.data as Record<String,undefined|null|Object>
           console.info("onRequestPopupData_0012 get event state result is: " + JSON.stringify(eventData));
-          expect((eventData.data as ESObject).getProperty('STATUS')).assertEqual(true);
+          expect(data['STATUS']).assertEqual(true);
         }
-        console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('matchMediaSyncText', 10, "")));
+        console.info("onSelect_0012 click result is: " + inspector.sendEventByKey('matchMediaSyncText', 10, "")); //没有执行页面的点击事件，appDied
         emitter.on(innerEventOne, callback1);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmatchMediaSync_static_0001 END');

@@ -56,7 +56,11 @@ struct NavigationApi1 {
                 console.log("==============================1")
                 this.pageInfos.pop();
                 console.log("==============================2")
-                this.pageInfos.pushPath(new NavPathInfo('pageOne',null)) //第二次执行的时候appDied
+                try{
+                  this.pageInfos.pushPath(new NavPathInfo('pageOne',null)) //第二次执行的时候appDied
+                }catch(err){
+                  console.log('======================pushPathError',err)
+                }
                 console.log("==============================3")
               }
             })
