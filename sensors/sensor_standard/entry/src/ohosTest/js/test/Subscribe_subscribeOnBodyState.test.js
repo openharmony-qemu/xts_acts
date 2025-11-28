@@ -50,10 +50,13 @@ describe("SensorJsTest_sensor_32", function () {
         console.info('afterEach caled')
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0010
-     * @tc.name: subscribeOnBodyState_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeOnBodyState_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeOnBodyState_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeOnBodyState_SensorJsTest001---------------------------');
@@ -78,10 +81,13 @@ describe("SensorJsTest_sensor_32", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0020
-     * @tc.name: subscribeOnBodyState_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeOnBodyState_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeOnBodyState_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeOnBodyState_SensorJsTest002---------------------------');
@@ -99,10 +105,13 @@ describe("SensorJsTest_sensor_32", function () {
         });
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0030
-     * @tc.name: subscribeOnBodyState_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeOnBodyState_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeOnBodyState_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeOnBodyState_SensorJsTest003---------------------------');
@@ -120,10 +129,13 @@ describe("SensorJsTest_sensor_32", function () {
         });
     })
 
-   /*
-     * @tc.number:SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0040
-     * @tc.name: subscribeOnBodyState_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeOnBodyState_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeOnBodyState_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeOnBodyState_SensorJsTest004---------------------------');
@@ -142,10 +154,13 @@ describe("SensorJsTest_sensor_32", function () {
         });
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0050
-     * @tc.name: subscribeOnBodyState_SensorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeOnBodyState_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_SubscribeOnBodyState_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeOnBodyState_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeOnBodyState_SensorJsTest005---------------------------');

@@ -58,13 +58,13 @@ export default function accelerometer_Uncalibrated_nop_Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Accelerometer_Uncalibrated_Sensor_nop_Test10
-     * @tc.name: Accelerometer_Uncalibrated_Sensor_nop_Test01
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Accelerometer_Uncalibrated_Sensor_nop_Test01
+     * @tc.number SUB_SensorsSystem_Accelerometer_Uncalibrated_Sensor_nop_Test10
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Accelerometer_Uncalibrated_Sensor_nop_Test01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -88,13 +88,13 @@ export default function accelerometer_Uncalibrated_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Accelerometer_Uncalibrated_Sensor_nop_Test11
-     * @tc.name: Accelerometer_Uncalibrated_Sensor_nop_Test02
-     * @tc.desc:Using the once method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Accelerometer_Uncalibrated_Sensor_nop_Test02
+     * @tc.number SUB_SensorsSystem_Accelerometer_Uncalibrated_Sensor_nop_Test11
+     * @tc.desc   Using the once method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Accelerometer_Uncalibrated_Sensor_nop_Test02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Accelerometer_Uncalibrated_Sensor_nop_Test02--------');
@@ -113,13 +113,13 @@ export default function accelerometer_Uncalibrated_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Accelerometer_Uncalibrated_Sensor_nop_Test12
-     * @tc.name: Accelerometer_Uncalibrated_Sensor_nop_Test03
-     * @tc.desc:Using the off method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Accelerometer_Uncalibrated_Sensor_nop_Test03
+     * @tc.number SUB_SensorsSystem_Accelerometer_Uncalibrated_Sensor_nop_Test12
+     * @tc.desc   Using the off method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Accelerometer_Uncalibrated_Sensor_nop_Test03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Accelerometer_Uncalibrated_Sensor_nop_Test03--------');
