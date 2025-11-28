@@ -37,15 +37,25 @@ async function getFd(fileName: string) {
   })
 }
 
-async function getImageSource(path: string): Promise<image.ImageSource> {
-  await getFd(path);
-  const imageSourceApi = image.createImageSource(fdNumber);
-  console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
+async function getImageSource(testName: string, pathUri: string): Promise<image.ImageSource> {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let array = new ArrayBuffer(300000000);
+  let path = `file://${testContext.filesDir}/${pathUri}`;
+  console.info(TAG, testName, `path: ${path}`);
+  const fd = await fs.open(path);
+  console.info(TAG, testName, `open: ${fd.fd}`);
+  await fs.close(fd );
+  let readLength = await fs.read(fd.fd, array);
+  console.info(TAG, testName, `readLength: ${readLength}`);
+  let ops: image.SourceOptions = {
+    sourceDensity: 98,
+  };
+  let imageSourceApi: image.ImageSource = image.createImageSource(array, ops);
   return imageSourceApi;
 }
 
 async function getPropertiesAbnormalPromiseTest(done: Function, testName: string, path: string,callback: (Metadata?: image.Metadata) => void) {
-  const imageSourceApi = await getImageSource(path);
+  const imageSourceApi = await getImageSource(testName ,path);
   let commodityPixelMap: image.PixelMap = await imageSourceApi.createPixelMap();
   let pictureObj: image.Picture = await image.createPicture(commodityPixelMap);
   let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
@@ -85,13 +95,14 @@ export default function getPropertiesTest() {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_001';
       const path = 'test_exif.jpg';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties(null);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties(null);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -107,13 +118,14 @@ export default function getPropertiesTest() {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_002';
       const path = 'test_exif.jpg';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties([]);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties([]);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -129,13 +141,14 @@ export default function getPropertiesTest() {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_003';
       const path = 'test_aisr.png';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties(null);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties(null);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -151,13 +164,14 @@ export default function getPropertiesTest() {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_004';
       const path = 'test_aisr.png';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties([]);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties([]);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -165,22 +179,23 @@ export default function getPropertiesTest() {
     /**
      * @tc.number     GET_PROPERTIES_ABNORMAL_TEST_005
      * @tc.name       GET_PROPERTIES_ABNORMAL_TEST_005
-     * @tc.desc       webp格式图片的第一个参数为null的覆盖
+     * @tc.desc       jpeg格式图片的第一个参数为null的覆盖
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 0
      */
     it('GET_PROPERTIES_ABNORMAL_TEST_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_005';
-      const path = 'test_large.webp';
+      const path = 'test.jpeg';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties(null);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+           await metaData?.getProperties(null);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -188,22 +203,23 @@ export default function getPropertiesTest() {
     /**
      * @tc.number     GET_PROPERTIES_ABNORMAL_TEST_006
      * @tc.name       GET_PROPERTIES_ABNORMAL_TEST_006
-     * @tc.desc       webp格式图片的第一个参数为空数组的覆盖
+     * @tc.desc       jpeg格式图片的第一个参数为空数组的覆盖
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 0
      */
     it('GET_PROPERTIES_ABNORMAL_TEST_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_006';
-      const path = 'test_large.webp';
+      const path = 'test.jpeg';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties([]);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties([]);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -220,13 +236,14 @@ export default function getPropertiesTest() {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_007';
       const path = 'mimeType_test.dng';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties(null);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties(null);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -242,13 +259,14 @@ export default function getPropertiesTest() {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_008';
       const path = 'mimeType_test.dng';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties([]);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties([]);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -265,13 +283,14 @@ export default function getPropertiesTest() {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_009';
       const path = 'mimeType_test.srw';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties(null);
+        await getPropertiesAbnormalPromiseTest(done, testName, path, async (metaData) => {
+          await metaData?.getProperties(null);
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
@@ -285,15 +304,16 @@ export default function getPropertiesTest() {
      */
     it('GET_PROPERTIES_ABNORMAL_TEST_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'GET_PROPERTIES_ABNORMAL_TEST_010';
-      const path = 'mimeType_test.srw';
+      const pathUri = 'mimeType_test.srw';
       try {
-        await getPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.getProperties([]);
+        await getPropertiesAbnormalPromiseTest(done, testName, pathUri, async (metaData) => {
+          await metaData?.getProperties([])
+          expect().assertFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect().assertFail();
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
