@@ -50,10 +50,13 @@ describe("ShortTaskMgrApiTest", function () {
          console.info('afterEach caled')
     })
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_007
-     * @tc.name      testRequestSuspendDelayFun001
-     * @tc.desc      test request a suspend daly reason is NumberType.
+    /**
+     * @tc.name   testRequestSuspendDelayFun001
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_007
+     * @tc.desc   test request a suspend daly reason is NumberType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRequestSuspendDelayFun001", Level.LEVEL0, async function (done) {
         console.info('----------------------testRequestSuspendDelayFun001---------------------------');
@@ -76,11 +79,14 @@ describe("ShortTaskMgrApiTest", function () {
         done();
     })
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_008
-     * @tc.name      testRequestSuspendDelayFun002
-     * @tc.desc      test request a suspend daly reason is BooleanType.
-     */
+ /**
+  * @tc.name   testRequestSuspendDelayFun002
+  * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_008
+  * @tc.desc   test request a suspend daly reason is BooleanType.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
  it("testRequestSuspendDelayFun002", Level.LEVEL0, async function (done) {
     console.info('----------------------testRequestSuspendDelayFun002---------------------------');
     function callback() {}
@@ -102,11 +108,14 @@ describe("ShortTaskMgrApiTest", function () {
     done();
 })
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_009
-     * @tc.name      testRequestSuspendDelayFun003
-     * @tc.desc      test request a suspend daly reason is NullType.
-     */
+/**
+ * @tc.name   testRequestSuspendDelayFun003
+ * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_009
+ * @tc.desc   test request a suspend daly reason is NullType.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
     console.info('----------------------testRequestSuspendDelayFun003---------------------------');
     function callback() {}
@@ -128,10 +137,13 @@ it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
     done();
 })
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_010
-     * @tc.name      testRequestSuspendDelayFun004
-     * @tc.desc      test request a suspend daly reason is EmptyString.
+    /**
+     * @tc.name   testRequestSuspendDelayFun004
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_010
+     * @tc.desc   test request a suspend daly reason is EmptyString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRequestSuspendDelayFun004", Level.LEVEL0, async function (done) {
         console.info('----------------------testRequestSuspendDelayFun004---------------------------');
@@ -155,10 +167,13 @@ it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
     })
 
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_011
-     * @tc.name      testRequestSuspendDelayFun005
-     * @tc.desc      test request a suspend daly reason Undefined.
+    /**
+     * @tc.name   testRequestSuspendDelayFun005
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_011
+     * @tc.desc   test request a suspend daly reason Undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRequestSuspendDelayFun005", Level.LEVEL0, async function (done) {
         console.info('----------------------testRequestSuspendDelayFun005---------------------------');
@@ -181,10 +196,13 @@ it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
         done();
     })
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_012
-     * @tc.name      testGetRemainingDelayTimeFun001
-     * @tc.desc      test getRemainingDelayTime Callback ,requestId non-existent.
+    /**
+     * @tc.name   testGetRemainingDelayTimeFun001
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_012
+     * @tc.desc   test getRemainingDelayTime Callback ,requestId non-existent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemainingDelayTimeFun001", Level.LEVEL0, async function (done) {
         console.info('----------------------testGetRemainingDelayTimeFun001---------------------------');
@@ -216,10 +234,13 @@ it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
         }, 500);
     })
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_013
-     * @tc.name      testGetRemainingDelayTimeFun002
-     * @tc.desc      test getRemainingDelayTime Promise ,requestId non-existent.
+    /**
+     * @tc.name   testGetRemainingDelayTimeFun002
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_013
+     * @tc.desc   test getRemainingDelayTime Promise ,requestId non-existent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemainingDelayTimeFun002", Level.LEVEL0, async function (done) {
         console.info('----------------------testGetRemainingDelayTimeFun002---------------------------');
@@ -249,10 +270,13 @@ it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
         }, 500);
     })   
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_014
-     * @tc.name      testGetRemainingDelayTimeFun003
-     * @tc.desc      test getRemainingDelayTime Promise ,requestId is null.
+    /**
+     * @tc.name   testGetRemainingDelayTimeFun003
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_014
+     * @tc.desc   test getRemainingDelayTime Promise ,requestId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemainingDelayTimeFun003", Level.LEVEL0, async function (done) {
         console.info('----------------------testGetRemainingDelayTimeFun003---------------------------');
@@ -275,10 +299,13 @@ it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
         }, 500);
     })   
 
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_015
-     * @tc.name      testGetRemainingDelayTimeFun004
-     * @tc.desc      test getRemainingDelayTime Callback ,requestId = -1.
+    /**
+     * @tc.name   testGetRemainingDelayTimeFun004
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_015
+     * @tc.desc   test getRemainingDelayTime Callback ,requestId = -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemainingDelayTimeFun004", Level.LEVEL0, async function (done) {
         console.info('----------------------testGetRemainingDelayTimeFun004---------------------------');
@@ -298,10 +325,13 @@ it("testRequestSuspendDelayFun003", Level.LEVEL0, async function (done) {
         }, 500);
     })
     
-    /*
-     * @tc.number    SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_016
-     * @tc.name      testGetRemainingDelayTimeFun005
-     * @tc.desc      test getRemainingDelayTime Promise ,requestId = 0.
+    /**
+     * @tc.name   testGetRemainingDelayTimeFun005
+     * @tc.number SUB_RESOURCESCHEDULE_SHORT_TASK_XTS_016
+     * @tc.desc   test getRemainingDelayTime Promise ,requestId = 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemainingDelayTimeFun005", Level.LEVEL0, async function (done) {
         console.info('----------------------testGetRemainingDelayTimeFun005---------------------------');

@@ -102,100 +102,130 @@ describe("ContinuousTaskJsTest", function () {
         }, 1000);
     }
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_001
-     * @tc.name:ContinuousTaskJsTest001
-     * @tc.desc:verify old startBackgroundrunning interface callback mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest001
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_001
+     * @tc.desc   verify old startBackgroundrunning interface callback mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest001", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest001 begin--------------------');
         startAbilityWithOption({ events: ["startTaskUseApi7Callback"] }, "testcase1", "startTaskUseApi7Callback", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_002
-     * @tc.name:ContinuousTaskJsTest002
-     * @tc.desc:verify cancelBackgroundrunning interface callback mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest002
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_002
+     * @tc.desc   verify cancelBackgroundrunning interface callback mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest002", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest002 begin--------------------');
         startAbilityWithOption({ events: ["stopTaskUseApi7Callback"] }, "testcase2", "stopTaskUseApi7Callback", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_003
-     * @tc.name:ContinuousTaskJsTest003
-     * @tc.desc:verify new startBackgroundrunning interface callback mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest003
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_003
+     * @tc.desc   verify new startBackgroundrunning interface callback mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest003", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest003 begin--------------------');
         startAbilityWithOption({ events: ["startTaskUseApi8Callback"] }, "testcase3", "startTaskUseApi8Callback", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_004
-     * @tc.name:ContinuousTaskJsTest004
-     * @tc.desc:verify new stopBackgroundrunning interface callback mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest004
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_004
+     * @tc.desc   verify new stopBackgroundrunning interface callback mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest004", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest004 begin--------------------');
         startAbilityWithOption({ events: ["stopTaskUseApi8Callback"] }, "testcase4", "stopTaskUseApi8Callback", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_005
-     * @tc.name:ContinuousTaskJsTest005
-     * @tc.desc:verify old startBackgroundrunning interface promise mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest005
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_005
+     * @tc.desc   verify old startBackgroundrunning interface promise mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest005", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest005 begin--------------------');
         startAbilityWithOption({ events: ["startTaskUseApi7Promise"] }, "testcase5", "startTaskUseApi7Promise", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_006
-     * @tc.name:ContinuousTaskJsTest006
-     * @tc.desc:verify cancelBackgroundrunning interface promise mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest006
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_006
+     * @tc.desc   verify cancelBackgroundrunning interface promise mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest006", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest006 begin--------------------');
         startAbilityWithOption({ events: ["stopTaskUseApi7Promise"] }, "testcase6", "stopTaskUseApi7Promise", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_007
-     * @tc.name:ContinuousTaskJsTest007
-     * @tc.desc:verify new startBackgroundrunning interface promise mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest007
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_007
+     * @tc.desc   verify new startBackgroundrunning interface promise mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest007", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest007 begin--------------------');
         startAbilityWithOption({ events: ["startTaskUseApi8Promise"] }, "testcase7", "startTaskUseApi8Promise", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_008
-     * @tc.name:ContinuousTaskJsTest008
-     * @tc.desc:verify new stopBackgroundrunning interface promise mode work properly
+    /**
+     * @tc.name   ContinuousTaskJsTest008
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_008
+     * @tc.desc   verify new stopBackgroundrunning interface promise mode work properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest008", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest008 begin--------------------');
         startAbilityWithOption({ events: ["stopTaskUseApi8Promise"] }, "testcase8", "stopTaskUseApi8Promise", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_009
-     * @tc.name:ContinuousTaskJsTest009
-     * @tc.desc:verify continuous task request failed with invalid background mode
+    /**
+     * @tc.name   ContinuousTaskJsTest009
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_009
+     * @tc.desc   verify continuous task request failed with invalid background mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest009", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest009 begin--------------------');
         startAbilityWithOption({ events: ["startTaskInvalidBgmode"] }, "testcase9", "startTaskInvalidBgmode", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0010
-     * @tc.name: ContinuousTaskJsTest010
-     * @tc.desc: test backgroudManager BackgroudMode constant
+    /**
+     * @tc.name   ContinuousTaskJsTest010
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0010
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest010", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest010 begin--------------------');
@@ -204,10 +234,13 @@ describe("ContinuousTaskJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0011
-     * @tc.name: ContinuousTaskJsTest011
-     * @tc.desc: test backgroudManager BackgroudMode constant
+    /**
+     * @tc.name   ContinuousTaskJsTest011
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0011
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest011", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest011 begin--------------------');
@@ -216,10 +249,13 @@ describe("ContinuousTaskJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0012
-     * @tc.name: ContinuousTaskJsTest012
-     * @tc.desc: test backgroudManager BackgroudMode constant
+    /**
+     * @tc.name   ContinuousTaskJsTest012
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0012
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest012", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest012 begin--------------------');
@@ -228,10 +264,13 @@ describe("ContinuousTaskJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0013
-     * @tc.name: ContinuousTaskJsTest013
-     * @tc.desc: test backgroudManager BackgroudMode constant
+    /**
+     * @tc.name   ContinuousTaskJsTest013
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0013
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest013", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest013 begin--------------------');
@@ -240,10 +279,13 @@ describe("ContinuousTaskJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0014
-     * @tc.name: ContinuousTaskJsTest014
-     * @tc.desc: test backgroudManager BackgroudMode constant
+    /**
+     * @tc.name   ContinuousTaskJsTest014
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0014
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest014", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest014 begin--------------------');
@@ -252,10 +294,13 @@ describe("ContinuousTaskJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0015
-     * @tc.name: ContinuousTaskJsTest015
-     * @tc.desc: test backgroudManager BackgroudMode constant
+    /**
+     * @tc.name   ContinuousTaskJsTest015
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0015
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest015", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest015 begin--------------------');
@@ -264,10 +309,13 @@ describe("ContinuousTaskJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0016
-     * @tc.name: ContinuousTaskJsTest016
-     * @tc.desc: test backgroudManager BackgroudMode constant
+    /**
+     * @tc.name   ContinuousTaskJsTest016
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0016
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest016", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest016 begin--------------------');
@@ -276,24 +324,26 @@ describe("ContinuousTaskJsTest", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_017
-     * @tc.name:ContinuousTaskJsTest017
-     * @tc.desc:verify continuous task updateBackgroundRunning
+    /**
+     * @tc.name   ContinuousTaskJsTest017
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_017
+     * @tc.desc   verify continuous task updateBackgroundRunning
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest017", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest017 begin--------------------');
         startAbilityWithOption({ events: ["updateTaskUseApi12Promise"] }, "testcase10", "updateTaskUseApi12Promise", done);
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0018
-     * @tc.name: ContinuousTaskJsTest018
-     * @tc.desc: test backgroudManager BackgroudMode constant
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+    /**
+     * @tc.name   ContinuousTaskJsTest018
+     * @tc.number SUB_RESOURCESCHEDULE_LONG_TASK_XTS_0018
+     * @tc.desc   test backgroudManager BackgroudMode constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ContinuousTaskJsTest018", Level.LEVEL0, async function (done) {
         console.info(TAG + '-----------------ContinuousTaskJsTest018 begin--------------------');
