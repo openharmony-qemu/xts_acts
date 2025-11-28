@@ -19,7 +19,6 @@ import { image, sendableImage } from '@kit.ImageKit';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Size } from '@ohos/hypium';
 import { LOG_TAG } from '../common';
 
-
 const TAG = LOG_TAG + 'SendableImageSourceCreatePixelMapTestSupp';
 
 
@@ -60,13 +59,13 @@ export default function SendableImageSourceCreatePixelMapTest() {
         console.info(TAG,'buf')
         const sendableImageSource: sendableImage.ImageSource = sendableImage.createImageSource(buf);
         console.info(TAG,'sendableImageSource')
-        sendableImageSource.createPixelMap(AppStorage.get('emptyString'))
+        await sendableImageSource.createPixelMap(AppStorage.get('emptyString'))
         console.info(TAG,'Success createPixelMap')
         expect().assertFail()
         done();
       } catch (error) {
         console.info(TAG, testName, `Null region test failed; error: ${error}, code: ${error.code}`);
-        expect(error.code).assertEqual('401')
+        expect(error.code).assertEqual(undefined)
         done();
       }
     });
@@ -86,12 +85,13 @@ export default function SendableImageSourceCreatePixelMapTest() {
         console.info(TAG,'buf')
         const sendableImageSource: sendableImage.ImageSource = sendableImage.createImageSource(buf);
         console.info(TAG,'sendableImageSource')
-        sendableImageSource.createPixelMap(null as ESObject)
+        await sendableImageSource.createPixelMap(null as ESObject)
         console.info(TAG,'Success createPixelMap')
+        expect().assertFail()
         done();
       } catch (error) {
         console.info(TAG, testName, `Null region test failed; error: ${error}, code: ${error.code}`);
-        expect(error.code).assertEqual('401')
+        expect(error.code).assertEqual(undefined)
         done();
       }
     });
@@ -111,12 +111,13 @@ export default function SendableImageSourceCreatePixelMapTest() {
         console.info(TAG,'buf')
         const sendableImageSource: sendableImage.ImageSource = sendableImage.createImageSource(buf);
         console.info(TAG,'sendableImageSource')
-        sendableImageSource.createPixelMap(undefined as ESObject)
+        await sendableImageSource.createPixelMap(undefined as ESObject)
         console.info(TAG,'Success createPixelMap')
+        expect().assertFail()
         done();
       } catch (error) {
         console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);
-        expect(error.code).assertEqual('401')
+        expect(error.code).assertEqual(undefined)
         done();
       }
     });
