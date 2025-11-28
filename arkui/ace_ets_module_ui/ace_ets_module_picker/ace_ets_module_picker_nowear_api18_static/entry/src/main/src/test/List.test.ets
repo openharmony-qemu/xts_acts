@@ -45,8 +45,8 @@ export default function testsuite() {
     datePickerDialogMode()
     timePickerDialogEnableHapticFeedback();
     EnableHapticFeedback();
-    textPickerDialogSelectedAreaTest();
-    timePickerDialogSelectedAreaTest();
+    textPickerDialogSelectedAreaTest();//11.17SDK pass:1
+    timePickerDialogSelectedAreaTest();//11.17SDK pass:1
     textPickerDialogEnableHapticFeedback();
     SliderEnableHapticFeedbackTest();
     textPickerDialogDefaultTextStyleTest();

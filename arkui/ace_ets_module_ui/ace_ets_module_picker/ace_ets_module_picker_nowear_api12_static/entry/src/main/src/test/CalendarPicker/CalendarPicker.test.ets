@@ -34,11 +34,12 @@ export default function calendarPickerJsunit() {
 
     beforeAll(() => {
       console.info("calendarPickerJsunit beforeAll start");
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       console.info("calendarPickerJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/CalendarPicker/calendarpicker',

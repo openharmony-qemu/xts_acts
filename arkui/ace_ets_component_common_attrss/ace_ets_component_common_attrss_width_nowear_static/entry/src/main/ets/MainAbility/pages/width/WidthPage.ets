@@ -60,7 +60,6 @@ import {
   ExpectedFrameRateRange,
   Scroll,
   Margin,
-  // Styles,
   CommonMethod,
   applyStyles,
   Resource,
@@ -125,14 +124,14 @@ import {
   WaterFlow,
   DataPanelType
 } from '@ohos.arkui.component'
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement'
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 
 @Entry
 @Component
 struct WidthPage {
-  @StorageProp("_width") _width: number = 0
+  @StoragePropRef("_width") _width: Length = 0
   //Use for TimePicker.
   private selectedTime: Date = new Date('2022-07-22T08:00:00')
   //Use for QRCode,Marquee.

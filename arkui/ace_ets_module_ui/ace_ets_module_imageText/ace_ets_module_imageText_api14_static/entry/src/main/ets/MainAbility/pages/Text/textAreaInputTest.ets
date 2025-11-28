@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, ColumnOptions, Text, TextArea, DragEvent, CopyOptions } from '@ohos.arkui.component';
+import { Entry, Component, Column, ColumnOptions, Text, TextArea, DragEvent, CopyOptions,DragItemInfo } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -34,8 +34,9 @@ struct TextAreaInputTestExample {
           .width('90%')
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-          .onDragStart((event: DragEvent, extraParams?: string):(() => void) => {
+          .onDragStart((event: DragEvent, extraParams?: string) => {
             this.text = 'Text--onDragStart'
+            return {} as DragItemInfo
           })
           .onDragEnd((event: DragEvent, extraParams?: string):void =>{
             this.text = 'Text--onDragEnd'

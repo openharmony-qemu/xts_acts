@@ -118,8 +118,8 @@ export default function testsuite() {
   router_getStateByUrl5();//11.13SDK pass:3
   router_back6();//11.13SDK pass:1
   router_back7();//11.13SDK pass:1
-  router_back8();//11.13SDK failed:1
-  router_back9();//11.13SDK failed:1   expect {} equals {"age":18}
+  router_back8();//11.13SDK failed:1 showAlertBeforeBackPage执行后不走后面的逻辑
+  router_back9();//11.13SDK pass:1
   router_back10();//11.13SDK pass:1
   router_back11();//11.13SDK pass:1
   router_back12();//11.13SDK pass:1
@@ -129,26 +129,26 @@ export default function testsuite() {
   router_getStateByIndex16();//11.13SDK pass:1
 
   replaceUrl2();//11.13SDK pass:1
-  replaceUrl3();//11.13SDK failed:1  code码问题
+  replaceUrl3();//11.26SDK pass:1
   replaceUrl5();//11.13SDK pass:1
-  replaceUrl6();//11.13SDK failed:1   code码问题
+  replaceUrl6();//11.26SDK pass:1
   replaceUrl8();//11.13SDK pass:1
   replaceUrl9();//11.13SDK pass:1
-  replaceUrl10();//11.17SDK failed:1   code码问题
+  replaceUrl10();//11.26SDK pass:1
   replaceUrl12();//11.13SDK pass:1
   replaceUrl13();//11.17SDK pass:1
-  replaceUrl14();//11.17SDK failed:1   code码问题
+  replaceUrl14();//11.26SDK pass:1
 
-  replaceNamedRoute2();//11.17SDK pass:1   replaceNamedRoute问题
-  replaceNamedRoute3();//11.17SDK failed:1   code码问题100002-100004
+  replaceNamedRoute2();//11.17SDK pass:1  
+  replaceNamedRoute3();//11.26SDK pass:1
   replaceNamedRoute5();//11.17SDK pass:1
-  replaceNamedRoute6();//11.17SDK failed:1   code码问题100002-100004
+  replaceNamedRoute6();//11.26SDK pass:1
   replaceNamedRoute8();//11.17SDK failed:1    expect undefined;replaceNamedRoute8_aboutToAppear equals undefined;replaceNamedRoute8_aboutToAppear;replaceNamedRoute8_aboutToAppear
   replaceNamedRoute9();//11.17SDK pass:1
-  replaceNamedRoute10();//11.17SDK failed:1   code码问题100002-100004
+  replaceNamedRoute10();//11.26SDK pass:1
   replaceNamedRoute12();//11.17SDK pass:1
   replaceNamedRoute13();//11.17SDK pass:1
-  replaceNamedRoute14();//11.17SDK failed:1   code码问题100002-100004
+  replaceNamedRoute14();//11.26SDK pass:1
 
   back1();//11.17SDK pass:1
   back2();//11.17SDK pass:1
@@ -162,9 +162,9 @@ export default function testsuite() {
   back10();//11.17SDK pass:1
   back11();//11.17SDK pass:1
 
-  clear1();//11.17SDK failed:1 getLength导致cppcrash
-  getLength1();//11.17SDK failed:1 getLength导致cppcrash
-  getLength2();//11.17SDK failed:1 getLength导致cppcrash
+  clear1();//11.26SDK pass:1
+  getLength1();//11.26SDK pass:1
+  getLength2();//11.26SDK pass:1
   getLength3();//11.17SDK failed:1 getLength导致cppcrash
   getState1();//11.17SDK pass:1
   getStateByIndex1();//11.17SDK pass:1
@@ -172,38 +172,38 @@ export default function testsuite() {
   pushUrl2();;//11.17SDK pass:1
   pushUrl3();//11.17SDK  expect  equals 100003,页面显示正常
   pushUrl4();;//11.17SDK pass:1
-  pushUrl6();//11.17SDK ui页面点击跳转无反应  callback回调确认是问题
+  pushUrl6();//11.26SDK pass:1
   pushUrl7();//11.17SDK ui页面点击跳转无反应
-  pushUrl8();//11.17SDK ui页面点击跳转无反应
+  pushUrl8();//11.26SDK pass:1
   pushUrl10();//11.17SDK pass:1
   pushUrl11();//11.17SDK pass:1
   pushUrl12();//11.17SDK pass:1
   pushUrl14();//11.17SDK pass:1
   pushUrl15();//11.17SDK pass:1
   pushUrl16();//11.17SDK pass:1
-  pushUrl18();//11.17SDK ui页面点击跳转无反应
+  pushUrl18();//11.26SDK pass:1
   pushUrl19();//11.17SDK ui页面点击跳转无反应
-  pushUrl20();//11.17SDK ui页面点击跳转无反应
-  pushUrl22();//11.17SDK ui页面点击跳转无反应
-  pushUrl23();//11.17SDK ui页面点击跳转无反应
-  pushUrl24();//11.17SDK ui页面点击跳转无反应
+  pushUrl20();//11.26SDK pass:1
+  pushUrl22();//11.26SDK pass:1
+  pushUrl23();//11.26SDK pass:1
+  pushUrl24();//11.26SDK pass:1
 
   pushNamedRoute2();//11.17SDK pass:1
-  pushNamedRoute3(); // expect 100002 equals 100003
-  pushNamedRoute4(); // expect 100002 equals 100004
-  pushNamedRoute6();
-  pushNamedRoute7();
-  pushNamedRoute8();
-  pushNamedRoute10();
-  pushNamedRoute11();
-  pushNamedRoute12();
-  pushNamedRoute14();
+  pushNamedRoute3(); //expect 100004 equals 100003
+  pushNamedRoute4();//11.26SDK pass:1
+  pushNamedRoute6();//11.26SDK pass:1
+  pushNamedRoute7();//expect 100004 equals 100003
+  pushNamedRoute8();//11.26SDK pass:1
+  pushNamedRoute10();//11.26SDK pass:1
+  pushNamedRoute11();//expect 100004 equals 100003
+  pushNamedRoute12();//11.26SDK pass:1
+  pushNamedRoute14();//11.26SDK pass:1
   pushNamedRoute15();//11.17SDK pass:1
-  pushNamedRoute16();
-  pushNamedRoute18();
-  pushNamedRoute19();
-  pushNamedRoute20();
-  pushNamedRoute22();
+  pushNamedRoute16();//11.26SDK pass:1
+  pushNamedRoute18();//11.26SDK pass:1
+  pushNamedRoute19();//expect 100004 equals 100003
+  pushNamedRoute20();//11.26SDK pass:1
+  pushNamedRoute22();//11.26SDK pass:1
   pushNamedRoute23();//11.17SDK pass:1
-  pushNamedRoute24();
+  pushNamedRoute24();//11.26SDK pass:1
 }

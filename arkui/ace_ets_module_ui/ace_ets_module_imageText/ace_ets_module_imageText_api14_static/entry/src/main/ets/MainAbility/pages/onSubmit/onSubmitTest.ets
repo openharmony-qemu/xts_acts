@@ -16,12 +16,13 @@
 import { Entry, Component, EnterKeyType, Builder, Text, TextAlign, Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea,
   SearchSubmitCallback, TextAreaSubmitCallback} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import inputMethod from '@ohos.inputMethod'
 @Entry
 @Component
 struct onSubmitTest {
   @State searchText :string = ''
   @State searchEventText :string = ''
-  @State enterKeyType:EnterKeyType = 0 as EnterKeyType
+  @State enterKeyType:EnterKeyType = EnterKeyType.Go
   @State textAreaEventText:string = ''
   @State isCallKeepEditableState :boolean = false
   @State textAreaIsEditing :boolean = false
@@ -61,13 +62,13 @@ struct onSubmitTest {
           .border({ width: 1 })
           .borderWidth(1)
           .borderColor(Color.Red)
-          .onSubmit((searchContent: string, event: SubmitEvent)  => {
+          .onSubmit((searchContent: string, event?: SubmitEvent):void  => {
             this.searchText = searchContent
-            this.searchEventText = event.text
+            this.searchEventText = event!.text
             console.log('trigger search onsubmit: '+searchContent );
-            console.log('trigger event onsubmit: '+event.text );
+            console.log('trigger event onsubmit: '+event?.text );
             if(this.isCallKeepEditableState) {
-              event.keepEditableState();
+              event?.keepEditableState();
             }
           } as SearchSubmitCallback)
           .onEditChange((isEditing: boolean) => {
@@ -108,14 +109,14 @@ struct onSubmitTest {
           .borderWidth(1)
           .borderColor(Color.Red)
           .enterKeyType(EnterKeyType.Done)
-          .onSubmit((enterKeyType: EnterKeyType, event: SubmitEvent) => {
+          .onSubmit((enterKeyType: EnterKeyType, event?: SubmitEvent):void => {
             this.enterKeyType = enterKeyType
-            this.textAreaEventText = event.text
+            this.textAreaEventText = event!.text
             if(this.isCallKeepEditableState) {
-              event.keepEditableState();
+              event?.keepEditableState();
             }
             console.log('trigger textArea onsubmit: '+enterKeyType );
-            console.log('trigger event onsubmit: '+event.text );
+            console.log('trigger event onsubmit: '+event?.text );
 
           } as TextAreaSubmitCallback)
           .onEditChange((isEditing: boolean) => {

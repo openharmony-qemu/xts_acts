@@ -53,7 +53,7 @@ export default function onSubmitTest() {
         console.info("get onSubmitTest state pages: " + JSON.stringify(pages));
         if (!("onHover" == pages.name)) {
           console.info("get onSubmitTest state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -73,10 +73,10 @@ export default function onSubmitTest() {
     it('onSubmitTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0010 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(500);
-      let TextArea: Component | null = await driver.findComponent(ON.id('TextArea'));
-      TextArea?.inputText('这是测试文本')
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
+      let TextArea = await driver.findComponent(ON.id('TextArea'));
+      await (TextArea?.inputText('这是测试文本') as Promise<void>)
+      await CommonFunc.sleep(1000);
       await driver.triggerKey(2054)
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('enterKeyType');
@@ -105,14 +105,14 @@ export default function onSubmitTest() {
     it('onSubmitTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0020 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('changeIsCallKeepEditableState'));
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       button?.click()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let TextArea: Component | null = await driver.findComponent(ON.id('TextArea'));
-      TextArea?.inputText('这是测试文本')
-      await CommonFunc.sleep(500);
+      await (TextArea?.inputText('这是测试文本') as Promise<void>)
+      await CommonFunc.sleep(1000);
       await driver.triggerKey(2054)
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('enterKeyType');
@@ -142,10 +142,10 @@ export default function onSubmitTest() {
     it('onSubmitTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0030 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let Search: Component | null = await driver.findComponent(ON.id('Search'));
-      Search?.inputText('这是测试文本')
-      await CommonFunc.sleep(500);
+      await (Search?.inputText('这是测试文本') as Promise<void>)
+      await CommonFunc.sleep(1000);
       await driver.triggerKey(2054)
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('searchText');
@@ -174,14 +174,14 @@ export default function onSubmitTest() {
     it('onSubmitTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0040 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('changeIsCallKeepEditableState'));
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       button?.click()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let Search: Component | null = await driver.findComponent(ON.id('Search'));
-      Search?.inputText('这是测试文本')
-      await CommonFunc.sleep(500);
+      await (Search?.inputText('这是测试文本') as Promise<void>)
+      await CommonFunc.sleep(1000);
       await driver.triggerKey(2054)
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('searchText');

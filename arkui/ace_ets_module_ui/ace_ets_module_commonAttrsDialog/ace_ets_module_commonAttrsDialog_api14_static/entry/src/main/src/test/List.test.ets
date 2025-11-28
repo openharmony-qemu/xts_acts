@@ -34,14 +34,14 @@ export default function testsuite() {
    actionSheetHoverMode();
    alertDialogHoverMode();
    bindSheetHoverMode();
-   bindSheetShowClose();
+   bindSheetShowClose();//std.core.ClassCastError
    bindSheetType();
    customDialogHoverMode();
-   popoverDialogTest();
-   followTransformOfTargetCustomPopup();
+   popoverDialogTest();// at std.core.NullPointerError
+   followTransformOfTargetCustomPopup();// at std.core.NullPointerError
    followTransformOfTargetPopup();
    showDialogHoverMode();
-   showToastHoverMode();
-   activeTest();
+   showToastHoverMode();//11.20SDK  showToastHoverMode_static_0200, expect enableHoverMode false equals enableHoverMode true
+   activeTest();//11.20SDK failed:2 expect enableHoverMode false equals true true;expect true true equals true false
 
 }

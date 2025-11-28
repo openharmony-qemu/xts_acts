@@ -19,8 +19,8 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct pickerDialogExample {
-  private select: int | int[] = 0;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
+  private select: Int | Int[] = 0
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
   @State v: string = '';
 
   build(){

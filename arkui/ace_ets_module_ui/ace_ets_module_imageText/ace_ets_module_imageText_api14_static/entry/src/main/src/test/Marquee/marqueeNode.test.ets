@@ -82,6 +82,7 @@ export default function MarqueeNodeTest() {
       console.info('[' + tagName + '] START============================');
 
       let strJson = inspector.getInspectorByKey('key_marquee_Node_001');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('700');
       console.info('[' + tagName + '] END ===========================');
@@ -100,6 +101,7 @@ export default function MarqueeNodeTest() {
       let tagName = 'marqueeNode0200';
       console.info('[' + tagName + '] START============================');
       let strJson = inspector.getInspectorByKey('key_marquee_Node_001');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('marqueeUpdateStrategy')).assertEqual('MarqueeUpdateStrategy.DEFAULT');
       console.info('[' + tagName + '] END ===========================');

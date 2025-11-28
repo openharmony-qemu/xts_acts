@@ -76,7 +76,7 @@ export default function SymbolGlyphNodeTest() {
       let strJson = inspector.getInspectorByKey('SymbolGlyph_Node_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphNodeTest_0010] component obj is: " + JSON.stringifyJsonElement(obj));
-      expect(obj.getElement('$type')).assertEqual('SymbolGlyph');
+      expect(obj.getString('$type')).assertEqual('SymbolGlyph');
       console.info('[SymbolGlyphNodeTest_0010] END');
       done();
     });

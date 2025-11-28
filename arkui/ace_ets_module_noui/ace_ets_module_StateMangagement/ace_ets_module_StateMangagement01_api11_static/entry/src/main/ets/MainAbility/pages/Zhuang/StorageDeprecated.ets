@@ -40,7 +40,7 @@ import {
 import {
   State,
   Link,StorageLink,
-  Prop,Provide,Consume,AppStorage,Environment,PersistentStorage,SubscribedAbstractProperty
+  Prop,Provide,Consume,AppStorage,Environment,PersistentStorage,AbstractProperty
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -61,24 +61,38 @@ PersistentStorage.persistProp<string>('ADPersistPropsB','HelloPersistPropsB')
 PersistentStorage.persistProp<string>('ADPersistPropsBa','HelloPersistPropsBa')
 PersistentStorage.persistProp<string>('ADPersistPropsBb','HelloPersistPropsBb')
 
-PersistentStorage.persistProp('ADPersistentStorageA', 'HelloPersistPropA')
-PersistentStorage.persistProp('ADPersistentStorageB', 'HelloPersistPropB')
+PersistentStorage.persistProp<string>('ADPersistentStorageA', 'HelloPersistPropA')
+PersistentStorage.persistProp<string>('ADPersistentStorageB', 'HelloPersistPropB')
 
 @Entry
 @Component
 struct StorageDeprecated {
-  private deprecatedKey: SubscribedAbstractProperty<string> = AppStorage.link<string>('ADKey') as SubscribedAbstractProperty<string>
-  private environmentKey: SubscribedAbstractProperty<string> = AppStorage.link<string>('languageCode') as SubscribedAbstractProperty<string>
+  private deprecatedKey: AbstractProperty<string> | undefined = AppStorage.ref<string>('ADKey')
+  private environmentKey: AbstractProperty<string> | undefined = AppStorage.ref<string>('languageCode')
   @State private isDelete: boolean = false
   @State private isDelKey: boolean = false
   @StorageLink('ADPersistPropsA') aPerA: string = ''
   @StorageLink('ADPersistPropsAb') aPerAb: string = ''
   @StorageLink('ADPersistentStorageA') aPerC: string = ''
+  aboutToAppear(){
+    try {
+      AppStorage.setOrCreate<string>('ADKey', 'HelloArkUI')
+      AppStorage.setOrCreate<string>('ADKey1', 'HelloArkUI')
+      Environment.envProps([{key: 'languageCode', defaultValue: 'en'}])
+      Environment.envProps([{key: 'languageCodeA', defaultValue: 'en'}])
 
+
+      this.deprecatedKey = AppStorage.ref<string>('ADKey')
+      this.environmentKey = AppStorage.ref<string>('languageCode')
+
+    } catch (error: Error) {
+      console.log('error ' + error);
+    }
+  }
   build() {
     Column() {
       if (AppStorage.has('ADKey')) {
-        Text(this.deprecatedKey.get().toString()).height('5%')
+        Text(this.deprecatedKey?.get().toString()).height('5%')
           .id('tvDeprecatedGet')
         Button('DeleteAppStorageCreate').height('5%')
           .id('btnDelASKey')
@@ -95,7 +109,7 @@ struct StorageDeprecated {
         Text(this.isDelKey.toString()).height('5%')
           .id('tvDeprecatedDel1')
       }
-      if (this.environmentKey.get() === 'zh') {
+      if (this.environmentKey?.get() === 'zh') {
         Text('你好Environment').height('5%')
       } else {
         Text('HelloEnvironment').height('5%')

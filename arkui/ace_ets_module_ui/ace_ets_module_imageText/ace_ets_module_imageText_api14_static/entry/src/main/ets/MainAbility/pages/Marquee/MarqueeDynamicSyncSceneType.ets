@@ -56,7 +56,10 @@ struct MarqueeDynamicSyncSceneTypeExample {
         .backgroundColor('#182431')
         .margin({ bottom: 2 } as Margin)
         .id('dynamicMarquee_type')
-        .onAppear(()=>{
+        .onAppear(() :void =>{
+          let result: Array<DynamicSyncScene> = this.getUIContext().requireDynamicSyncScene("dynamicMarquee_type");
+          let array: Array<MarqueeDynamicSyncScene> = result.map((item: DynamicSyncScene) => { return (item as MarqueeDynamicSyncScene) });
+          this.scenes = array
           // this.scenes = this.getUIContext().requireDynamicSyncScene('dynamicMarquee_type') as MarqueeDynamicSyncScene[]
         })
 
@@ -66,7 +69,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
           this.controller.start()
           this.scenes.forEach((scenes: MarqueeDynamicSyncScene) => {
             if (scenes.type == MarqueeDynamicSyncSceneType.ANIMATION) {
-              AppStorage.setOrCreate('MarqueeDynamicSyncSceneType', 'ANIMATION')
+              AppStorage.setOrCreate<string>('MarqueeDynamicSyncSceneType', 'ANIMATION')
               scenes.setFrameRateRange(this.ANIMATION)
             }
           });
@@ -79,7 +82,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
       TextClock({ timeZoneOffset: -8, controller: this.controller } )
         .format('hms')
         .onDateChange((value: Long) => {
-          this.src = this.convert2time(value) + AppStorage.get('MarqueeDynamicSyncSceneType');
+          this.src = this.convert2time(value) + AppStorage.get<string>('MarqueeDynamicSyncSceneType');
         })
         .margin(1)
         .fontSize(30)

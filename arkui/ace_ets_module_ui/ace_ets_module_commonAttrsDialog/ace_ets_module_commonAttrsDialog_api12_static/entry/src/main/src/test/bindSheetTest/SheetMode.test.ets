@@ -89,7 +89,7 @@ export default function SheetMode() {
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
-      windowClass = await window.getLastWindow(abilityStage as common.BaseContext);
+      windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[SheetMode_0100] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(1)

@@ -30,8 +30,6 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let uiContext = AppStorage.get<UIContext>('uiContext')
-console.log('uiContext33=====' + uiContext);
 
 
 
@@ -47,7 +45,14 @@ console.log('uiContext33=====' + uiContext);
 // }
 
 export default function layoutWeightRowTest() {
-  const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
+  console.info("layoutWeightRowTest beforeAll start 11111111111");
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+
+  console.info("layoutWeightRowTest beforeAll start 222222222222222");
+  const uiContext = AppStorage.get<UIContext>('uiContext')!
+  console.info("layoutWeightRowTest beforeAll start 33333333333333");
 
   let supportView: Array<string> = new Array<string>(
     'Select',
@@ -88,9 +93,7 @@ export default function layoutWeightRowTest() {
     beforeAll(() => {
       console.info("layoutWeightRowTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void>=> {
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');

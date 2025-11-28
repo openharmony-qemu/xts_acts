@@ -33,7 +33,11 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightTest() {
-  const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+
+  const uiContext = AppStorage.get<UIContext>('uiContent')!
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',
@@ -89,9 +93,7 @@ export default function layoutWeightTest() {
   describe('LayoutWeightTest', () => {
     beforeAll(() => {
       console.info("layoutWeightTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
