@@ -49,7 +49,7 @@ export default function ScrollTest2() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get Index state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/Index2" == pages.name)) {
+        if (!("Index2" == pages.name)) {
           console.info("get Index state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);

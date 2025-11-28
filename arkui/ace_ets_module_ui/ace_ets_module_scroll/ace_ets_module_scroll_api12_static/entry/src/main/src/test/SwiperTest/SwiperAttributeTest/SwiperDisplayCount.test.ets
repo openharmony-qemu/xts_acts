@@ -53,10 +53,11 @@ export default function SwiperMargin() {
       console.info("SwiperDisplayCount beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         await CommonFunc.sleep(1000);
         let pages = router.getState();
         console.info("get SwiperDisplayCount state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperDisplayCount" == pages.name)) {
+        if (!("SwiperDisplayCount" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperDisplayCount"
@@ -73,10 +74,7 @@ export default function SwiperMargin() {
       console.info("SwiperDisplayCount after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     
       

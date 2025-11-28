@@ -48,7 +48,7 @@ export default function listVisibleJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get listVisibleJsunit state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/listVisible" == pages.name)) {
+        if (!("listVisible" == pages.name)) {
           console.info("get listVisibleJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
         }

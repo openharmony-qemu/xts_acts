@@ -114,12 +114,12 @@ import offsetAlignEnd from './ListTest/contentOffset/offsetAlignEnd.test';
 import offsetAlignStart from './ListTest/contentOffset/offsetAlignStart.test';
 
 export default function testsuite() {
-  listJsunit(); // editMode废弃  3
+  listJsunit(); // editMode废弃（注释）  3
   ListDeleteTest();
   ListSwipeTest();
   ListReboundTest();
   ListScrollTest();
-  ListScrollToItemInGroup();
+  ListScrollToItemInGroup();  // stream=Error in ArkUI_List_Scroll_To_Item_In_Group_static_0001, expect 600 equals 551 1
   TabsApi();
   APIScrollflingSpeedLimitJsunit();
   APITabsBarBackgroundBlurStyleJsunit();
@@ -129,7 +129,7 @@ export default function testsuite() {
   tabsApi1();
   TouchTestStrategy();
   ScrollTest();
-  tabs();
+  tabs();  // 很多
   tabsSec();
   tabsThird();  // emit + tabs.padding 187
   ActsAlphabetIndexerUxTest();

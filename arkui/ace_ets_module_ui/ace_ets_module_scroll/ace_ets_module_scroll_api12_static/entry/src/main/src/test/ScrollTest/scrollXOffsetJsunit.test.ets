@@ -62,7 +62,7 @@ export default function scrollXOffsetJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get scrollXOffsetJsunit state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/scrollXOffset" == pages.name)) {
+        if (!("scrollXOffset" == pages.name)) {
           console.info("get scrollXOffsetJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

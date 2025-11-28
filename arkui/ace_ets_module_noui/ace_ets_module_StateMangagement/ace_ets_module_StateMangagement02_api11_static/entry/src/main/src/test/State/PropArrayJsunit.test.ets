@@ -65,9 +65,10 @@ export default function PropArrayJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropArrayJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/PropArray" == pages.name)) {
+        if (!("PropArray" == pages.name)) {
           console.info("get PropArrayJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,11 +81,7 @@ export default function PropArrayJsunit() {
       console.info("PropArrayJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
+  
     /*
      * @tc.number   PropArrayJsunit_static_0100
      * @tc.name     PropArrayJsunit_static_0100

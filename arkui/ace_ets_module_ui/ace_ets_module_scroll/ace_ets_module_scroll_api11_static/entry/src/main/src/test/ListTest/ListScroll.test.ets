@@ -64,7 +64,7 @@ export default function ListScrollTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages: router.RouterState = router.getState();
-        if (pages == null || !("MainAbility/pages/List/ListScroll" == pages.name)) {
+        if (pages == null || !("ListScroll" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           }).catch((err: Error) => {

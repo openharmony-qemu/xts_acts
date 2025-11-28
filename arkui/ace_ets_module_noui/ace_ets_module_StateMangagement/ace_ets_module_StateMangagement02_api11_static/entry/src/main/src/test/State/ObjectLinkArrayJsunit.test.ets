@@ -66,9 +66,10 @@ export default function ObjectLinkArrayJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkArrayJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/ObjectLinkArray" == pages.name)) {
+        if (!("ObjectLinkArray" == pages.name)) {
           console.info("get ObjectLinkArrayJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -79,11 +80,6 @@ export default function ObjectLinkArrayJsunit() {
         console.error("push ObjectLinkArrayJsunit page error:" + err);
       }
       console.info("ObjectLinkArrayJsunit beforeEach end");
-    });
-
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
     });
 
     afterEach(async (): Promise<void>  => {

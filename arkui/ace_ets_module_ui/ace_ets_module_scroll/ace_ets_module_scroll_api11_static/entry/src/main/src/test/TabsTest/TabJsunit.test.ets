@@ -61,7 +61,7 @@ export default function tabJsunit() {
         await sleep(1);
         let pages = routerAlp.getState();
         console.info("get Tab state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/Tab" == pages.name)) {
+        if (!("Tab" == pages.name)) {
           console.info("get Tab state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)

@@ -59,7 +59,7 @@ export default function ScrollJsunit() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get Scroll state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/ScrollA" == pages.name)) {
+        if (!("ScrollA" == pages.name)) {
           console.info("get Scroll state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);

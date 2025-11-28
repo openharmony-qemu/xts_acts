@@ -47,7 +47,7 @@ export default function alphabetAlignStyleTest() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get alphabetAlignStyleTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/AlphabetIndexer/alphabetAlignStyle" == pages.name)) {
+        if (!("alphabetAlignStyle" == pages.name)) {
           console.info("get alphabetAlignStyleTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -59,18 +59,14 @@ export default function alphabetAlignStyleTest() {
       console.info("alphabetAlignStyleTest beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
-
-    /*
-       * @tc.number   testAlphabetAlignStyle_static_001
-       * @tc.name     testAlphabetAlignStyle_static_001
-       * @tc.desc     testAlphabetAlignStyle_static_001
-       * @tc.level    Level.LEVEL0
-       */
+    /**
+     * @tc.number :   AlignStyle
+     * @tc.name   :   testAlphabetAlignStyle_static_001
+     * @tc.desc   :   test alphabet AlignStyle START.
+     * @tc.level  :   Level 1
+     * @tc.type   :   Function
+     * @tc.size   :   MediumTest
+     */
     it('testAlphabetAlignStyle_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testName: string = '[testAlphabetAlignStyle_static_001]';
       console.log(`${testName} start`);

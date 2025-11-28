@@ -55,7 +55,6 @@ export default function listAniDel() {
           console.info("get listAniDel pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push listAniDel page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push listAniDel page error:" + err);

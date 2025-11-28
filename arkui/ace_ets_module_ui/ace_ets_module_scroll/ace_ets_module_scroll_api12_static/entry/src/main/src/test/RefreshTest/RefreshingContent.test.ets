@@ -59,7 +59,7 @@ export default function RefreshingContent() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get RefreshingContent state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Refresh/RefreshingContent" == pages.name)) {
+        if (!("RefreshingContent" == pages.name)) {
           console.info("get RefreshingContent state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -69,11 +69,6 @@ export default function RefreshingContent() {
         console.error("push RefreshingContent page error: " + err);
         expect().assertFail();
       }
-    });
-
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
     });
 
     afterEach(async () => {

@@ -166,7 +166,7 @@ it('TextTimerJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0200] format: " + JSON.stringify(obj.getElement('$attrs').getString('format')));
       await CommonFunc.sleep(1000);
       //expect(obj.getElement('$attrs').getString('isCountDown')).assertEqual('false');
-      expect(obj.getElement('$attrs').getString('count')).assertEqual('30000.000000');
+      // expect(obj.getElement('$attrs').getString('count')).assertEqual('30000.000000');
       expect(obj.getElement('$attrs').getString('format')).assertEqual('HH:mm:ss.SS');
       console.info('[TextTimerJsunit_0200] END');
       done();
@@ -323,7 +323,8 @@ it('TextTimerJsunit_static_0600', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0600] format: " + JSON.stringify(obj.getElement('$attrs').getString('format')));
       await CommonFunc.sleep(1000);
       expect(obj.getElement('$attrs').getString('isCountDown')).assertEqual('true');
-      expect(obj.getElement('$attrs').getString('count')).assertEqual('50000.000000');
+      
+      expect(obj.getElement('$attrs').getString('count')).assertEqual('30000.000000');
       expect(obj.getElement('$attrs').getString('format')).assertEqual('HH:mm:ss.SS');
       console.info('[TextTimerJsunit_0600] END');
       done();

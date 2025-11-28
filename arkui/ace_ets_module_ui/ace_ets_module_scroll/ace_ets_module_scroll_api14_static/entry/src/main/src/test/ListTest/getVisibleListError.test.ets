@@ -48,13 +48,13 @@ export default function getVisibleListError() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get getVisibleListError state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/getVisibleListError" == pages.name)) {
+        if (!("getVisibleListError" == pages.name)) {
           console.info("get getVisibleListError pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push getVisibleListError page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push getVisibleListError page error:" + err);
@@ -62,10 +62,7 @@ export default function getVisibleListError() {
       console.info("getVisibleListError beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
 
     /*

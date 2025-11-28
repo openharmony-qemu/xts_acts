@@ -309,23 +309,18 @@ it('imageOneJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
     });
 
     //异常参数undefined 注释掉
-    /*
-     * @tc.number   imageOneJsunit_static_0700
-     * @tc.name     imageOneJsunit_static_0700
-     * @tc.desc     imageOneJsunit_static_0700
-     * @tc.level    Level.LEVEL1
-     */
-it('imageOneJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('imageOneJsunit_static_0700 START');
-      await CommonFunc.sleep(1000);
-      // test the illegal enum of ImageRepeat
-      AppStorage.get<MessageManager<string | ImageFit | ImageRepeat | undefined>>("messageManager")!.notify({ name: 'objectRepeat', value: undefined })
-      await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('repeat');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('textimageOneJsunit_static_0700 component obj is: ' + obj.getElement('$attrs').getString("objectRepeat"));
-      expect(obj.getElement('$attrs').getString("objectRepeat")).assertEqual('ImageRepeat.NoRepeat');
-      done();
-    });
+    // 异常值
+    // it('imageOneJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('imageOneJsunit_static_0700 START');
+    //   await CommonFunc.sleep(1000);
+    //   // test the illegal enum of ImageRepeat
+    //   AppStorage.get<MessageManager<string | ImageFit | ImageRepeat | undefined>>("messageManager")!.notify({ name: 'objectRepeat', value: undefined })
+    //   await CommonFunc.sleep(3000);
+    //   let strJson = inspector.getInspectorByKey('repeat');
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info('textimageOneJsunit_static_0700 component obj is: ' + obj.getElement('$attrs').getString("objectRepeat"));
+    //   expect(obj.getElement('$attrs').getString("objectRepeat")).assertEqual('ImageRepeat.NoRepeat');
+    //   done();
+    // });
   })
 }

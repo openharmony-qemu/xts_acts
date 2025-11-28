@@ -64,7 +64,7 @@ export default function ListScrollToItemInGroup() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages: router.RouterState = router.getState();
-        if (pages == null || !("MainAbility/pages/List/ListScrollToItemInGroup" == pages.name)) {
+        if (pages == null || !("ListScrollToItemInGroup" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           }).catch((err: Error) => {

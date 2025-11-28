@@ -55,7 +55,6 @@ export default function getItemError() {
           console.info("get getItemError pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push getItemError page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push getItemError page error:" + err);

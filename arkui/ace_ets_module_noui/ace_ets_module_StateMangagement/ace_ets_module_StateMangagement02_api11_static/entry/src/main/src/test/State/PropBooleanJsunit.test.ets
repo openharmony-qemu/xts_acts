@@ -65,9 +65,10 @@ export default function PropBooleanJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropBooleanJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/PropBoolean" == pages.name)) {
+        if (!("PropBoolean" == pages.name)) {
           console.info("get PropBooleanJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function PropBooleanJsunit() {
       console.info("PropBooleanJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
     /*
      * @tc.number   PropBooleanJsunit_static_0100

@@ -120,7 +120,7 @@ import {
   BreakpointsReference,
   CommonMethod,
   applyStyles,
-  LineJoinStyle,AlignRuleOption
+  LineJoinStyle,AlignRuleOption,NavDestination
 } from '@ohos.arkui.component'
 
 @Entry
@@ -209,15 +209,14 @@ struct AlignSelfStretchPage {
     } else if (this.targetView == 'Navigation') {
       Navigation(new NavPathStack()).applyStyles(this.commonStyle)
     } else if (this.targetView == 'NavRouter') {
-      // NavRouter() {
-      //   Row() {
-      //     Image($r('app.media.icon'))
-      //   }
-      //
-      //   NavDestination() {
-      //     Text('NavDestination').fontSize(10)
-      //   }
-      // }.applyStyles(this.commonStyle)
+      Navigation() {
+        Row() {
+          Image($r('app.media.icon'))
+        }
+        NavDestination() {
+          Text('NavDestination').fontSize(10)
+        }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Progress') {
       Progress({ value: 50, type: ProgressType.Linear }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'QRCode') {
@@ -332,10 +331,15 @@ struct AlignSelfStretchPage {
 
       .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigator') {
-      // Navigator({ target: 'MainAbility/pages/index/Index' }) {
-      //   Text('Navigator Go to index page')
-      //     .width('100%').textAlign(TextAlign.Center)
-      // }.applyStyles(this.commonStyle)
+      Navigation() {
+        Row() {
+          Image($r('app.media.icon'))
+        }
+
+        NavDestination() {
+          Text('NavDestination').fontSize(10)
+        }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
         Row()
@@ -349,13 +353,12 @@ struct AlignSelfStretchPage {
     } else if (this.targetView == 'Row') {
       Row().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Panel') {
-      // Panel(true) {
-      //   Column() {
-      //     Text('Panel')
-      //   }
-      // }
-      // .mode(PanelMode.Half)
-      //.applyStyles(this.commonStyle)
+      Column() {
+        Column() {
+          Text('Panel')
+        }
+      }
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {
         Text('Refresh').fontSize(30)

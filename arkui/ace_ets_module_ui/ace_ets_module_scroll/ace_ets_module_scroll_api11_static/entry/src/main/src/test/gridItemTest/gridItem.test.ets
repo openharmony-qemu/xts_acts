@@ -40,7 +40,7 @@ export default function gridItemOnSelectJsunit() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get gridItem state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/gridItem/gridItem" == pages.name)) {
+        if (!("gridItem/gridItem" == pages.name)) {
           console.info("get gridItem state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);

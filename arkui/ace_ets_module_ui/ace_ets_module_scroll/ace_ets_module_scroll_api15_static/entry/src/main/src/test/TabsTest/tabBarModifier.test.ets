@@ -61,7 +61,7 @@ export default function tabBarModifier() {
       try {
         let pages = tabBarModifier.getState();
         console.info("get tabBarModifier state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabBarModifier" == pages.name)) {
+        if (!("tabBarModifier" == pages.name)) {
           console.info("get tabBarModifier pages.name:" + JSON.stringify(pages.name));
           tabBarModifier.pushUrl(options);
           await CommonFunc.sleep(1000);
@@ -76,10 +76,7 @@ export default function tabBarModifier() {
       console.info("tabBarModifier after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
 
     /*

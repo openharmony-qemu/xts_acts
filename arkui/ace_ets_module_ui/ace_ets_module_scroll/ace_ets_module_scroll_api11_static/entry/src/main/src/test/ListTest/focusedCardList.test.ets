@@ -62,7 +62,7 @@ export default function focusedCardList() {
         router.clear();
         let pages = router.getState();
         console.info("get focusedCardList state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/focusedCardList" == pages.name)) {
+        if (!("focusedCardList" == pages.name)) {
           console.info("get focusedCardList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

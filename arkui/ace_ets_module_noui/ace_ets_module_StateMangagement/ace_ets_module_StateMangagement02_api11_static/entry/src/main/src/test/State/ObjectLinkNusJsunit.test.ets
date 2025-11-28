@@ -81,10 +81,7 @@ export default function ObjectLinkNusJsunit() {
       console.info("ObjectLinkNusJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
     /*
      * @tc.number   ObjectLinkNusJsunit_static_0100

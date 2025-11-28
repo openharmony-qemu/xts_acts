@@ -48,7 +48,7 @@ export default function listSwipeActionApi12Test() {
         router.clear();
         let pages = router.getState();
         console.info("get listSwipeActionApi12Test state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/listSwipeActionApi12" == pages.name)) {
+        if (!("listSwipeActionApi12" == pages.name)) {
           console.info("get listSwipeActionApi12Test state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

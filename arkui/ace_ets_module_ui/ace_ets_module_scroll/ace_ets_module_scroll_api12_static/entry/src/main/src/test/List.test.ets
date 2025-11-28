@@ -157,7 +157,7 @@ export default function testsuite() {
   childrenSizeError()
   flingError()        // this.scroller.fling(undefined) undefined 异常值 1
   symbolTabs()   // 使用BottomTabBarStyle，tabs不显示 1
-  TabsAp1()
+  TabsAp1() // 新问题
   ScrollApi1()
   scrollXOffsetJsunit();
   SwiperApi()
@@ -167,10 +167,10 @@ export default function testsuite() {
   getTest();
   alphabetEnableJsunit()
   alphabetBorderRadiusTest()  // BorderRadius 取值问题   2
-  swiperCountJsunit()
+  swiperCountJsunit() // 新问题
   ListAddApi()
   listOffsetJsunit()
-  swiperSyncType()
+  swiperSyncType()  // 新问题
   SwiperAttribute_1()
   SwiperAttribute_2()
   SwiperAttribute_3()
@@ -182,7 +182,7 @@ export default function testsuite() {
   SwiperAttribute_9()
   SwiperMargin_1()
   SwiperMargin_2()
-  SwiperMargin_3() // swiper组件设置loop为true时，影响prevMargin和nextMargin的值和预期不符 1
+  SwiperMargin_3()
   SwiperMargin_4()
   SwiperAutoPlay_1()
   SwiperAutoPlay_2()
@@ -196,17 +196,17 @@ export default function testsuite() {
   alphabetAlignStyle()
   outliersAlphabet()
   valueAlphabet()  // itemBorderRadius 默认8 取值 0   1
-  tabsCallBack1()  //  tabs: onWillShow1-onContentWillChange-onTabBarClick-onWillShow2-onWillHide1-onChange- 1  需改断言
-  tabsCallBack2()
-  tabsCallBack3()
-  tabsCallBack4()
+  tabsCallBack1()  //  tabs: onWillShow1-onContentWillChange-onTabBarClick-onWillShow2-onWillHide1-onChange- 1  有单
+  tabsCallBack2()  // 新问题
+  tabsCallBack3()  // 新问题
+  tabsCallBack4()  // 新问题
   tabsCallBack5()
   tabsCallBack6()
-  tabsCallBack7()
-  tabsCallBack8() //  onContentWillChange-onTabBarClick-onAnimationStart-onChange-onAnimationEnd 1
+  tabsCallBack7() // 新问题
+  tabsCallBack8() //  onContentWillChange-onTabBarClick-onAnimationStart-onChange-onAnimationEnd 1  有单同上
   tabsCallBack9()
-  verticalTrue()
-  tabsTransition()
+  verticalTrue()  // 新问题
+  tabsTransition() // 新问题
   swiperLoops()
   GridFlingCallback();
   ListFlingCallback();

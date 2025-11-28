@@ -65,9 +65,10 @@ export default function ObjectLinkSecJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkSecJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/ObjectLinkSec" == pages.name)) {
+        if (!("ObjectLinkSec" == pages.name)) {
           console.info("get ObjectLinkSecJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function ObjectLinkSecJsunit() {
       console.info("ObjectLinkSecJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+ 
 
     /*
      * @tc.number   ObjectLinkSecJsunit_static_0100

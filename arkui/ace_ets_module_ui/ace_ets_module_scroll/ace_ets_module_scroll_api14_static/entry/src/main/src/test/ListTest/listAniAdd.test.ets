@@ -50,11 +50,10 @@ export default function listAniAdd() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get listAniAdd state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/listAniAdd" == pages.name)) {
+        if (!("listAniAdd" == pages.name)) {
           console.info("get listAniAdd pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push listAniAdd page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push listAniAdd page error:" + err);
@@ -66,10 +65,7 @@ export default function listAniAdd() {
       console.info("listAniAdd after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
 
     /*

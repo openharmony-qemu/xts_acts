@@ -52,7 +52,7 @@ export default function finishTransSwiper() {
         router.clear();
         let pages = router.getState();
         console.info("get finishTransSwiper state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/finishTransSwiper" == pages.name)) {
+        if (!("finishTransSwiper" == pages.name)) {
           console.info("get finishTransSwiper pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
         }

@@ -65,9 +65,10 @@ export default function StateArrayJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateArrayJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StateArray" == pages.name)) {
+        if (!("StateArray" == pages.name)) {
           console.info("get StateArrayJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

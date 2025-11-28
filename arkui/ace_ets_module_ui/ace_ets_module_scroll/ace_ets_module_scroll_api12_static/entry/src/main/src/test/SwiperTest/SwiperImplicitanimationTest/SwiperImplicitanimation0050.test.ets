@@ -53,9 +53,10 @@ export default function SwiperImplicitanimation0050() {
       console.info("SwiperImplicitanimation0050 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperImplicitanimation0050 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0050" == pages.name)) {
+        if (!("SwiperImplicitanimation0050" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0050'
@@ -73,11 +74,7 @@ export default function SwiperImplicitanimation0050() {
       console.info("SwiperImplicitanimation0050 after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-    
+  
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050

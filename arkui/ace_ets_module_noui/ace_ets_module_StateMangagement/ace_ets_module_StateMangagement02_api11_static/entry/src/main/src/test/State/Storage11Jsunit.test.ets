@@ -64,9 +64,10 @@ export default function Storage11Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Storage11Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/Storage11" == pages.name)) {
+        if (!("Storage11" == pages.name)) {
           console.info("get Storage11Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -79,10 +80,7 @@ export default function Storage11Jsunit() {
       console.info("Storage11Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     //link给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     /*

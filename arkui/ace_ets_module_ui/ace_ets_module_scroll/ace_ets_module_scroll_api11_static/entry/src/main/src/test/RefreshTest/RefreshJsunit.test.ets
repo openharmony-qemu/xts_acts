@@ -58,7 +58,7 @@ export default function refreshJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get refresh state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Refresh/refresh" == pages.name)) {
+        if (!("refresh" == pages.name)) {
           console.info("get refresh state pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

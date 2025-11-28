@@ -321,7 +321,7 @@ it('ProvideJsunit_static_0006', Level.LEVEL0, async (done: () => void): Promise<
       await driver.delayMs(waitUiReadyMs);
       let ProvideA1 = await driver.findComponent(ON.id('ProvideA1'));
       let txt_ProvideA1 = await (ProvideA1?.getText() as Promise<string>)
-      expect(txt_ProvideA1).assertEqual("parent descent same nickname changed")
+      expect(txt_ProvideA1).assertEqual("parent descent same nickname 1")
       let ProvideA2 = await driver.findComponent(ON.id('ProvideA2'));
       let txt_ProvideA2 = await (ProvideA2?.getText() as Promise<string>)
       expect(txt_ProvideA2).assertEqual("parent none nickname same name dif type 0")
@@ -333,16 +333,16 @@ it('ProvideJsunit_static_0006', Level.LEVEL0, async (done: () => void): Promise<
       expect(txt_ProvideB1).assertEqual("reviewVotes 0")
       let ProvideB2 = await driver.findComponent(ON.id('ProvideB2'));
       let txt_ProvideB2 = await (ProvideB2?.getText() as Promise<string>)
-      expect(txt_ProvideB2).assertEqual("descent same nickname dif name dif type changed")
+      expect(txt_ProvideB2).assertEqual("descent same nickname dif name dif type 1")
       let ProvideB3 = await driver.findComponent(ON.id('ProvideB3'));
       let txt_ProvideB3 = await (ProvideB3?.getText() as Promise<string>)
       expect(txt_ProvideB3).assertEqual("descent none nickname same name dif type 0")
       let ProvideB4 = await driver.findComponent(ON.id('ProvideB4'));
       let txt_ProvideB4 = await (ProvideB4?.getText() as Promise<string>)
-      expect(txt_ProvideB4).assertEqual("descent same nickname dif name same type changed")
+      expect(txt_ProvideB4).assertEqual("descent same nickname dif name same type 1")
       let ProvideB5 = await driver.findComponent(ON.id('ProvideB5'));
       let txt_ProvideB5 = await (ProvideB5?.getText() as Promise<string>)
-      expect(txt_ProvideB5).assertEqual("descent same nickname same name same type changed")
+      expect(txt_ProvideB5).assertEqual("descent same nickname same name same type 1")
       let ProvideB6 = await driver.findComponent(ON.id('ProvideB6'));
       let txt_ProvideB6 = await (ProvideB6?.getText() as Promise<string>)
       expect(txt_ProvideB6).assertEqual("descent dif nickname dif same type 0")
@@ -367,7 +367,7 @@ it('ProvideJsunit_static_0007', Level.LEVEL0, async (done: () => void): Promise<
       expect(txt_ProvideA1).assertEqual("parent descent same nickname 0")
       let ProvideA2 = await driver.findComponent(ON.id('ProvideA2'));
       let txt_ProvideA2 = await (ProvideA2?.getText() as Promise<string>)
-      expect(txt_ProvideA2).assertEqual("parent none nickname same name dif type changed")
+      expect(txt_ProvideA2).assertEqual("parent none nickname same name dif type 1")
       let ProvideA3 = await driver.findComponent(ON.id('ProvideA3'));
       let txt_ProvideA3 = await (ProvideA3?.getText() as Promise<string>)
       expect(txt_ProvideA3).assertEqual("multi son single parent 0")
@@ -379,7 +379,7 @@ it('ProvideJsunit_static_0007', Level.LEVEL0, async (done: () => void): Promise<
       expect(txt_ProvideB2).assertEqual("descent same nickname dif name dif type 0")
       let ProvideB3 = await driver.findComponent(ON.id('ProvideB3'));
       let txt_ProvideB3 = await (ProvideB3?.getText() as Promise<string>)
-      expect(txt_ProvideB3).assertEqual("descent none nickname same name dif type changed")
+      expect(txt_ProvideB3).assertEqual("descent none nickname same name dif type 1")
       let ProvideB4 = await driver.findComponent(ON.id('ProvideB4'));
       let txt_ProvideB4 = await (ProvideB4?.getText() as Promise<string>)
       expect(txt_ProvideB4).assertEqual("descent same nickname dif name same type 0")
@@ -539,7 +539,7 @@ it('ProvideJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<
       await driver.delayMs(waitUiReadyMs);
       let ProvideA1 = await driver.findComponent(ON.id('ProvideA1'));
       let txt_ProvideA1 = await (ProvideA1?.getText() as Promise<string>)
-      expect(txt_ProvideA1).assertEqual("parent descent same nickname changed1")
+      expect(txt_ProvideA1).assertEqual("parent descent same nickname 2")
       let ProvideA2 = await driver.findComponent(ON.id('ProvideA2'));
       let txt_ProvideA2 = await (ProvideA2?.getText() as Promise<string>)
       expect(txt_ProvideA2).assertEqual("parent none nickname same name dif type 0")
@@ -551,16 +551,16 @@ it('ProvideJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<
       expect(txt_ProvideB1).assertEqual("reviewVotes 0")
       let ProvideB2 = await driver.findComponent(ON.id('ProvideB2'));
       let txt_ProvideB2 = await (ProvideB2?.getText() as Promise<string>)
-      expect(txt_ProvideB2).assertEqual("descent same nickname dif name dif type changed1")
+      expect(txt_ProvideB2).assertEqual("descent same nickname dif name dif type 2")
       let ProvideB3 = await driver.findComponent(ON.id('ProvideB3'));
       let txt_ProvideB3 = await (ProvideB3?.getText() as Promise<string>)
       expect(txt_ProvideB3).assertEqual("descent none nickname same name dif type 0")
       let ProvideB4 = await driver.findComponent(ON.id('ProvideB4'));
       let txt_ProvideB4 = await (ProvideB4?.getText() as Promise<string>)
-      expect(txt_ProvideB4).assertEqual("descent same nickname dif name same type changed1")
+      expect(txt_ProvideB4).assertEqual("descent same nickname dif name same type 2")
       let ProvideB5 = await driver.findComponent(ON.id('ProvideB5'));
       let txt_ProvideB5 = await (ProvideB5?.getText() as Promise<string>)
-      expect(txt_ProvideB5).assertEqual("descent same nickname same name same type changed1")
+      expect(txt_ProvideB5).assertEqual("descent same nickname same name same type 2")
       let ProvideB6 = await driver.findComponent(ON.id('ProvideB6'));
       let txt_ProvideB6 = await (ProvideB6?.getText() as Promise<string>)
       expect(txt_ProvideB6).assertEqual("descent dif nickname dif same type 0")
@@ -588,7 +588,7 @@ it('ProvideJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<
       expect(txt_ProvideA1).assertEqual("parent descent same nickname 0")
       let ProvideA2 = await driver.findComponent(ON.id('ProvideA2'));
       let txt_ProvideA2 = await (ProvideA2?.getText() as Promise<string>)
-      expect(txt_ProvideA2).assertEqual("parent none nickname same name dif type changed1")
+      expect(txt_ProvideA2).assertEqual("parent none nickname same name dif type 2")
       let ProvideA3 = await driver.findComponent(ON.id('ProvideA3'));
       let txt_ProvideA3 = await (ProvideA3?.getText() as Promise<string>)
       expect(txt_ProvideA3).assertEqual("multi son single parent 0")
@@ -600,7 +600,7 @@ it('ProvideJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<
       expect(txt_ProvideB2).assertEqual("descent same nickname dif name dif type 0")
       let ProvideB3 = await driver.findComponent(ON.id('ProvideB3'));
       let txt_ProvideB3 = await (ProvideB3?.getText() as Promise<string>)
-      expect(txt_ProvideB3).assertEqual("descent none nickname same name dif type changed1")
+      expect(txt_ProvideB3).assertEqual("descent none nickname same name dif type 2")
       let ProvideB4 = await driver.findComponent(ON.id('ProvideB4'));
       let txt_ProvideB4 = await (ProvideB4?.getText() as Promise<string>)
       expect(txt_ProvideB4).assertEqual("descent same nickname dif name same type 0")

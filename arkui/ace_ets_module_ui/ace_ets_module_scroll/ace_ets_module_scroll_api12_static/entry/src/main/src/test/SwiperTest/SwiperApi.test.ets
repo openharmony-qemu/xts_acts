@@ -56,7 +56,7 @@ export default function SwiperApi() {
         router.clear();
         let pages = router.getState();
         console.info("get SwiperApi state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperApi" == pages.name)) {
+        if (!("SwiperApi" == pages.name)) {
           console.info("get  Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/Swiper/SwiperApi" })
           await CommonFunc.sleep(2000);

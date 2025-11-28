@@ -31,7 +31,8 @@ import {
   BarState,
   ListItem,
   TouchTestStrategy,
-  TextAlign
+  TextAlign,
+  NestedScrollMode
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -88,6 +89,10 @@ struct TouchStrategyExample {
           }
           .listDirection(Axis.Vertical) // 排列方向
           .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
+          .nestedScroll({
+            scrollForward: NestedScrollMode.PARENT_FIRST,
+            scrollBackward: NestedScrollMode.SELF_FIRST
+          })
         }
       }
       .scrollable(ScrollDirection.Vertical)

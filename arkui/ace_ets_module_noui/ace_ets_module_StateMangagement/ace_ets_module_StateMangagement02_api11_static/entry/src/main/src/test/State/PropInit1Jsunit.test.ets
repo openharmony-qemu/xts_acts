@@ -65,9 +65,10 @@ export default function PropInit1Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropInit1Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/PropInit1" == pages.name)) {
+        if (!("PropInit1" == pages.name)) {
           console.info("get PropInit1Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function PropInit1Jsunit() {
       console.info("PropInit1Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   PropInit1Jsunit_static_0200

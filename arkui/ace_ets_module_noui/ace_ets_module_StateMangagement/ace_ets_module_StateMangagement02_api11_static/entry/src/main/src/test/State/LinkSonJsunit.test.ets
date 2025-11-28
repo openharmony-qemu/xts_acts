@@ -65,9 +65,10 @@ export default function LinkSonJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LinkSonJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/LinkSon" == pages.name)) {
+        if (!("LinkSon" == pages.name)) {
           console.info("get LinkSonJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -88,11 +89,7 @@ export default function LinkSonJsunit() {
       await CommonFunc.sleep(1000);
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
+ 
     /*
      * @tc.number   LinkSonJsunit_static_0100
      * @tc.name     LinkSonJsunit_static_0100

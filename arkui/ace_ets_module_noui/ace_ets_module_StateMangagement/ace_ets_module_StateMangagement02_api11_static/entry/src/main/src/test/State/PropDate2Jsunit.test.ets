@@ -65,9 +65,10 @@ export default function PropDate2Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropDate2Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/PropDate2" == pages.name)) {
+        if (!("PropDate2" == pages.name)) {
           console.info("get PropDate2Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function PropDate2Jsunit() {
       console.info("PropDate2Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
     /*
      * @tc.number   PropDate2Jsunit_static_0010
@@ -417,7 +415,7 @@ it('PropDate2Jsunit_static_0170', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0170] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0170] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the Time by 11628380800000");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the Time by 11662685261001");
       console.info('[PropDate2Jsunit_static_0170] END');
       done();
     });
@@ -439,7 +437,7 @@ it('PropDate2Jsunit_static_0180', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0180] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0180] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the Time by 11628380800001");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the Time by 11662685261002");
       console.info('[PropDate2Jsunit_static_0180] END');
       done();
     });
@@ -457,7 +455,7 @@ it('PropDate2Jsunit_static_0190', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0190] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0190] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCFullYear by 12021");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCFullYear by 12022");
       console.info('[PropDate2Jsunit_static_0190] END');
       done();
     });
@@ -479,7 +477,7 @@ it('PropDate2Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCFullYear by 12022");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCFullYear by 12023");
       console.info('[PropDate2Jsunit_static_0200] END');
       done();
     });
@@ -497,7 +495,7 @@ it('PropDate2Jsunit_static_0210', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0210] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0210] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMonth by 17");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMonth by 18");
       console.info('[PropDate2Jsunit_static_0210] END');
       done();
     });
@@ -519,7 +517,7 @@ it('PropDate2Jsunit_static_0220', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0220] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0220] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMonth by 18");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMonth by 19");
       console.info('[PropDate2Jsunit_static_0220] END');
       done();
     });
@@ -537,7 +535,7 @@ it('PropDate2Jsunit_static_0230', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0230] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0230] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCDate by 18");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCDate by 19");
       console.info('[PropDate2Jsunit_static_0230] END');
       done();
     });
@@ -559,7 +557,7 @@ it('PropDate2Jsunit_static_0240', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0240] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0240] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCDate by 19");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCDate by 110");
       console.info('[PropDate2Jsunit_static_0240] END');
       done();
     });
@@ -577,7 +575,7 @@ it('PropDate2Jsunit_static_0250', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0250] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0250] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCHour by 10");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCHour by 11");
       console.info('[PropDate2Jsunit_static_0250] END');
       done();
     });
@@ -598,7 +596,7 @@ it('PropDate2Jsunit_static_0260', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0260] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0260] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCHour by 11");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCHour by 12");
       console.info('[PropDate2Jsunit_static_0260] END');
       done();
     });
@@ -616,7 +614,7 @@ it('PropDate2Jsunit_static_0270', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0270] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0270] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMinute by 10");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMinute by 11");
       console.info('[PropDate2Jsunit_static_0270] END');
       done();
     });
@@ -638,7 +636,7 @@ it('PropDate2Jsunit_static_0280', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0280] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0280] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMinute by 11");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCMinute by 12");
       console.info('[PropDate2Jsunit_static_0280] END');
       done();
     });
@@ -656,7 +654,7 @@ it('PropDate2Jsunit_static_0290', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0290] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0290] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCSecond by 10");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCSecond by 11");
       console.info('[PropDate2Jsunit_static_0290] END');
       done();
     });
@@ -678,7 +676,7 @@ it('PropDate2Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropDate2Jsunit_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[PropDate2Jsunit_static_0300] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCSecond by 11");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("increase the UTCSecond by 12");
       console.info('[PropDate2Jsunit_static_0300] END');
       done();
     });

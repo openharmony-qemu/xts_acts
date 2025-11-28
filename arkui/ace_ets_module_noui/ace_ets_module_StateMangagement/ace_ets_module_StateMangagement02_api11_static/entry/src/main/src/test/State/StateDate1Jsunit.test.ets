@@ -65,9 +65,10 @@ export default function StateDate1Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateDate1Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StateDate1" == pages.name)) {
+        if (!("StateDate1" == pages.name)) {
           console.info("get StateDate1Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -89,10 +90,7 @@ export default function StateDate1Jsunit() {
       await CommonFunc.sleep(1000);
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   StateDate1Jsunit_static_0100

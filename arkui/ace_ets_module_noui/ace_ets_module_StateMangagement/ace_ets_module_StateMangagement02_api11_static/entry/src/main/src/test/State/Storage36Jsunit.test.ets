@@ -67,7 +67,7 @@ export default function Storage36Jsunit() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         let pages = routerInstance.getState();
         console.info("get Storage36Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/Storage36" == pages.name)) {
+        if (!("Storage36" == pages.name)) {
           console.info("get Storage36Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +80,7 @@ export default function Storage36Jsunit() {
       console.info("Storage36Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   Storage36Jsunit_static_0300

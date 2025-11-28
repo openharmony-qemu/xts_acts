@@ -41,7 +41,7 @@ struct MediaQueryOff {
   @State color: string = '#000'
   @State text: string = 'Test'
   listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)')
-  @StorageLink('result') result: boolean = false;
+  @StorageLink('result') result: boolean = true;
 
   onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
     if (mediaQueryResult.matches) {
@@ -51,10 +51,6 @@ struct MediaQueryOff {
       this.color = '#DB7093'
       this.text = 'Portrait'
     }
-  }
-
-  onPageShow() {
-    AppStorage.setOrCreate<boolean>('result', false);
   }
 
   offPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {

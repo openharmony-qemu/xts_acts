@@ -55,7 +55,6 @@ export default function groupHeight() {
           console.info("get groupHeight pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push groupHeight page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push groupHeight page error:" + err);

@@ -65,9 +65,10 @@ export default function ObjectLinkCanJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkCanJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/ObjectLinkCan" == pages.name)) {
+        if (!("ObjectLinkCan" == pages.name)) {
           console.info("get ObjectLinkCanJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -89,10 +90,7 @@ export default function ObjectLinkCanJsunit() {
       await CommonFunc.sleep(1000);
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   ObjectLinkCanJsunit_static_0100

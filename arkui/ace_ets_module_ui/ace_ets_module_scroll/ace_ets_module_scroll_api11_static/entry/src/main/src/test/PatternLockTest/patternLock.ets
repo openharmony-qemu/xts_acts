@@ -60,7 +60,7 @@ export default function patternLockTest() {
         router.clear();
         let pages = router.getState();
         console.info("get PatternLockIndex state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/PatternLock/PatternLockIndex" == pages.name)) {
+        if (!("PatternLockIndex" == pages.name)) {
           console.info("get PatternLockIndex state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
           await UtilsTest.msSleep(4000)

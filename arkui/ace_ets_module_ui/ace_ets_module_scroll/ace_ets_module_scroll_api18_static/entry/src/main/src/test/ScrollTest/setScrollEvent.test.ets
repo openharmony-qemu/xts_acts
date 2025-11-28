@@ -52,7 +52,7 @@ export default function setScrollEvent() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextClockApiTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/setScrollEvent" == pages.name)) {
+        if (!("setScrollEvent" == pages.name)) {
           console.info("get TextClockApiTest pages.name:" + JSON.stringify(pages.name));
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

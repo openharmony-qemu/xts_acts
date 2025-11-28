@@ -59,7 +59,7 @@ export default function tabIconJsunit() {
         const router = AppStorage.get<Router>("router") as Router
         let pages = router.getState();
         console.info("get tabIconJsunit state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabIcon" == pages.name)) {
+        if (!("tabIcon" == pages.name)) {
           console.info("get tabIconJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -71,10 +71,7 @@ export default function tabIconJsunit() {
       }
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     
       

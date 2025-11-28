@@ -62,7 +62,7 @@ export default function edgeEffectJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get edgeEffect state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/edgeEffect" == pages.name)) {
+        if (!("edgeEffect" == pages.name)) {
           console.info("get edgeEffect state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(1000);

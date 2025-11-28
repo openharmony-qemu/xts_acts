@@ -46,9 +46,10 @@ export default function GridScrollEdgeCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info('get GridScrollEdgeCallback state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/Grid/GridScrollEdgeCallback' == pages.name)) {
+        if (!('GridScrollEdgeCallback' == pages.name)) {
           console.info('get GridScrollEdgeCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -64,18 +65,14 @@ export default function GridScrollEdgeCallbackJsunit() {
       console.info('GridScrollEdgeCallback after each called');
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
-
-    /*
-       * @tc.number   GridScrollEdgeCallbackTest_1580
-       * @tc.name     GridScrollEdgeCallbackTest_1580
-       * @tc.desc     GridScrollEdgeCallbackTest_1580
-       * @tc.level    Level.LEVEL0
-       */
+    /**
+     * @tc.number GridScrollEdgeCallbackTest_1580
+     * @tc.name Test the properties of components
+     * @tc.desc Set attribute values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
+     */
     it('GridScrollEdgeCallbackTest_1580', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridScrollEdgeCallbackTest_1580 START');
       let driver1 = Driver.create();

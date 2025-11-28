@@ -48,7 +48,7 @@ export default function alignSelfTest() {
     'Marquee',
     'Menu',
     'Navigation',
-    // 'NavRouter',
+    'NavRouter',
     'ScrollBar',
     'Row',
     'RelativeContainer'

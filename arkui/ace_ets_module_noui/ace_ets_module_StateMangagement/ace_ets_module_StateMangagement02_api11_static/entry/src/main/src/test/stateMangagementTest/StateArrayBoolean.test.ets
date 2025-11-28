@@ -65,9 +65,10 @@ export default function StateArrayBoolean() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateArrayBoolean state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/stateMangagement/StateArrayBoolean" == pages.name)) {
+        if (!("StateArrayBoolean" == pages.name)) {
           console.info("get StateArrayBoolean pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -85,10 +86,7 @@ export default function StateArrayBoolean() {
       console.info("StateArrayBoolean after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
     
     /*
      * @tc.number   StateArrayBoolean_static_0100

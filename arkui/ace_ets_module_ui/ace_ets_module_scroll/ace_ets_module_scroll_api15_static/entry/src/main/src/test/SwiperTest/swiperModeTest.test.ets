@@ -54,13 +54,14 @@ export default function swiperModeTest() {
     beforeEach(async (): Promise<void> => {
       console.info("swiperModeTest beforeEach start");
       const swiperMode = AppStorage.get<Router>("router") as Router
+      swiperMode.clear()
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Swiper/swiperMode",
       }
       try {
         let pages = swiperMode.getState();
         console.info("get swiperModeTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/swiperMode" == pages.name)) {
+        if (!("swiperMode" == pages.name)) {
           console.info("get swiperModeTest pages.name:" + JSON.stringify(pages.name));
           swiperMode.pushUrl(options);
         }
@@ -74,10 +75,6 @@ export default function swiperModeTest() {
       console.info("swiperModeTest after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
 
     /*

@@ -52,6 +52,7 @@ export default function SwiperDrag0250() {
       console.info("SwiperDrag0250 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperDrag0250 state pages:" + JSON.stringify(pages));
         if (!("SwiperDrag0250" == pages.name)) {

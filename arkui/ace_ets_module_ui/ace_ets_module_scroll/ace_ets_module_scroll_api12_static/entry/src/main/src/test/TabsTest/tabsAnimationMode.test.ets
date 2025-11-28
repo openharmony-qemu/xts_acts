@@ -59,7 +59,7 @@ export default function tabsAnimationMode() {
         router.clear();
         let pages = router.getState();
         console.info("get tabsAnimationMode state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/tabsAnimationMode" == pages.name)) {
+        if (!("tabsAnimationMode" == pages.name)) {
           console.info("get tabsAnimationMode state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

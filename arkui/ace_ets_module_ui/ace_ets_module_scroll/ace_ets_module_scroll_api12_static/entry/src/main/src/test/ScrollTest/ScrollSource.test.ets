@@ -58,9 +58,10 @@ export default function ScrollSource() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get ScrollSource state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/ScrollSource" == pages.name)) {
+        if (!("ScrollSource" == pages.name)) {
           console.info("get ScrollSource state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
         }
@@ -70,10 +71,7 @@ export default function ScrollSource() {
       }
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     
       

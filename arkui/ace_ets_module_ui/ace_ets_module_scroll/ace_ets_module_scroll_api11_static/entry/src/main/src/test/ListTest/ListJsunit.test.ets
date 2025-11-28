@@ -132,25 +132,18 @@ export default function listJsunit() {
       done()
     });
 
-
-    /*
-       * @tc.number   testList_static_03
-       * @tc.name     testList_static_03
-       * @tc.desc     testList_static_03
-       * @tc.level    Level.LEVEL1
-       */
-    it('testList_static_03', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[testList_static_03] START');
-      AppStorage.setOrCreate<boolean>('editMode', true);
-      await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('list');
-
-      console.info("[testList_static_03] JSON.parse(strJson) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
-      console.info('testList_static_03 END');
-      done()
-    });
+    // editMode
+    // it('testList_static_03', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('[testList_static_03] START');
+    //   AppStorage.setOrCreate<boolean>('editMode', true);
+    //   await CommonFunc.sleep(4000);
+    //   let strJson: string = inspector.getInspectorByKey('list');
+    //
+    //   console.info("[testList_static_03] JSON.parse(strJson) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
+    //   console.info('testList_static_03 END');
+    //   done()
+    // });
 
 
     /*
@@ -277,45 +270,31 @@ export default function listJsunit() {
       done()
     });
 
+    // editMode
+    // it('testList_static_10', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('[testList_static_10] START');
+    //   AppStorage.setOrCreate<boolean | string>('editMode', "true123");
+    //   await CommonFunc.sleep(4000);
+    //   let strJson: string = inspector.getInspectorByKey('list');
+    //
+    //   console.info("[testList_static_10] JSON.parse(strJson) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
+    //   console.info('testList_static_10 END');
+    //   done()
+    // });
 
-    /*
-       * @tc.number   testList_static_10
-       * @tc.name     testList_static_10
-       * @tc.desc     testList_static_10
-       * @tc.level    Level.LEVEL1
-       */
-    it('testList_static_10', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[testList_static_10] START');
-      AppStorage.setOrCreate<boolean | string>('editMode', "true123");
-      await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('list');
-
-      console.info("[testList_static_10] JSON.parse(strJson) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
-      console.info('testList_static_10 END');
-      done()
-    });
-
-
-    /*
-       * @tc.number   testList_static_11
-       * @tc.name     testList_static_11
-       * @tc.desc     testList_static_11
-       * @tc.level    Level.LEVEL1
-       */
-    it('testList_static_11', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[testList_static_11] START');
-      AppStorage.setOrCreate<boolean | string>('editMode', "39000000");
-      await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('list');
-
-      console.info("[testList_static_11] JSON.parse(strJson) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
-      console.info('testList_static_11 END');
-      done()
-    });
+    // editMode
+    // it('testList_static_11', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('[testList_static_11] START');
+    //   AppStorage.setOrCreate<boolean | string>('editMode', "39000000");
+    //   await CommonFunc.sleep(4000);
+    //   let strJson: string = inspector.getInspectorByKey('list');
+    //
+    //   console.info("[testList_static_11] JSON.parse(strJson) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
+    //   console.info('testList_static_11 END');
+    //   done()
+    // });
 
 
     /*

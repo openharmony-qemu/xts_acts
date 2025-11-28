@@ -65,9 +65,10 @@ export default function PropStringJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropStringJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/PropString" == pages.name)) {
+        if (!("PropString" == pages.name)) {
           console.info("get PropStringJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

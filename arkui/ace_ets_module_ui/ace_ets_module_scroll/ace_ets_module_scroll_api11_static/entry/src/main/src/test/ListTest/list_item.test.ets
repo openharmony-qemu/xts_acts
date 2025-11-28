@@ -63,7 +63,7 @@ export default function list_itemOnSelectJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get list_item state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/list_item" == pages.name)) {
+        if (!("list_item" == pages.name)) {
           console.info("get list_item state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -93,8 +93,9 @@ export default function list_itemOnSelectJsunit() {
       console.info("[testlist_itemOnSelect_static_0001] component border strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('ListItem');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editable')).assertTrue();
-      console.info("[testlist_itemOnSelect_static_0001] editable value :" +
+      // 废弃属性
+      // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editable')).assertTrue();
+      console.info("[testlist_itemOnSelect_static_0001] editable value :" + 
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editable'));
       done()
     });

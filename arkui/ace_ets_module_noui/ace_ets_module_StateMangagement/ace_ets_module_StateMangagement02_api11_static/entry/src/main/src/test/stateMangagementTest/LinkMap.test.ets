@@ -65,9 +65,10 @@ export default function LinkMap() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LinkMap state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/stateMangagement/LinkMap" == pages.name)) {
+        if (!("LinkMap" == pages.name)) {
           console.info("get LinkMap pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,6 @@ export default function LinkMap() {
       console.info("LinkMap beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
     
     /*

@@ -53,7 +53,7 @@ export default function flexBasisTest() {
     'DataPanel',
     'DatePicker',
     'Divider',
-    // 'Gauge',
+    'Gauge',
     'Image',
   // 'ImageAnimator',
   // 'LoadingProgress',

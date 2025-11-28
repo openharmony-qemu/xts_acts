@@ -55,7 +55,6 @@ export default function getListVisible() {
           console.info("get getListVisible pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push getListVisible page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push getListVisible page error:" + err);
@@ -65,10 +64,6 @@ export default function getListVisible() {
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("getListVisible after each called");
-    });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
     });
 
 

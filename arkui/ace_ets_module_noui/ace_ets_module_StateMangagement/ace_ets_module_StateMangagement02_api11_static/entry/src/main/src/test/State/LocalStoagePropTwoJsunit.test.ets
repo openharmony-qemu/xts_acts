@@ -82,10 +82,7 @@ export default function LocalStoagePropTwoJsunit() {
       console.info("LocalStoagePropTwoJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   LocalStoagePropTwoJsunit_static_0100

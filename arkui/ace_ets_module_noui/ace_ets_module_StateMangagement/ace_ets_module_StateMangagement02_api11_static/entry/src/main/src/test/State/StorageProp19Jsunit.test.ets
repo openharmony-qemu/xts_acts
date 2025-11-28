@@ -65,9 +65,10 @@ export default function StorageProp19Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageProp19Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StorageProp19" == pages.name)) {
+        if (!("StorageProp19" == pages.name)) {
           console.info("get StorageProp19Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function StorageProp19Jsunit() {
       console.info("StorageProp19Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+ 
 
     /*
      * @tc.number   StorageProp19Jsunit_static_0200

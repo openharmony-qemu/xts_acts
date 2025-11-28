@@ -45,9 +45,10 @@ export default function swiperLoops() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get swiperLoops state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/swiperLoops" == pages.name)) {
+        if (!("swiperLoops" == pages.name)) {
           console.info("get swiperLoops pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -62,10 +63,7 @@ export default function swiperLoops() {
       console.info("swiperLoops after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+  
 
     
       

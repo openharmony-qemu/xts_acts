@@ -53,7 +53,7 @@ export default function gridItemJsunit() {
         await sleep(1);
         let pages = routerAlp.getState();
         console.info("get GridItem state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/grid/GridItem" == pages.name)) {
+        if (!("GridItem" == pages.name)) {
           console.info("get GridItem state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)

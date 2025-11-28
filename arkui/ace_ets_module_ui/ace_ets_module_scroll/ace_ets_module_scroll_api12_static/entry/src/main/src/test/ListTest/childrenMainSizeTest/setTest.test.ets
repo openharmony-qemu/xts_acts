@@ -58,7 +58,7 @@ export default function setTest() {
         router.clear();
         let pages = router.getState();
         console.info("get setTest state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/childrenMainSize/set" == pages.name)) {
+        if (!("set" == pages.name)) {
           console.info("get setTest state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
         }

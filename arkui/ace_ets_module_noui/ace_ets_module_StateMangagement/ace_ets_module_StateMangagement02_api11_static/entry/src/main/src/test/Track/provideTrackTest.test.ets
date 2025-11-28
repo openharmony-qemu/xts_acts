@@ -68,7 +68,7 @@ export default function provideTrackTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get provideTrackTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("provideTrack" == pages.name)) {
           console.info("get provideTrackTest pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

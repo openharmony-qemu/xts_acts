@@ -50,6 +50,7 @@ struct RefreshCreateComponent {
           .fontSize(30)
           .margin(10)
       }
+      .id('refresh')
       .pullDownRatio(1)
       .onStateChange((refreshStatus: RefreshStatus) => {
         console.info('Refresh onStateChange state is ' + refreshStatus);

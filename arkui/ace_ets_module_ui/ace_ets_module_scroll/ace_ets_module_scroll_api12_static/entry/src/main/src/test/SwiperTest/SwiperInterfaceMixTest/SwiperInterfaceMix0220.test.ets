@@ -53,9 +53,10 @@ export default function SwiperInterfaceMix0220() {
       console.info("SwiperInterfaceMix0220 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperInterfaceMix0220 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperInterfaceMix/SwiperInterfaceMix0220" == pages.name)) {
+        if (!("SwiperInterfaceMix0220" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperInterfaceMix/SwiperInterfaceMix0220'
@@ -72,10 +73,7 @@ export default function SwiperInterfaceMix0220() {
       await CommonFunc.sleep(1000);
       console.info("SwiperInterfaceMix0220 after each called");
     });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+ 
     
       
   /*

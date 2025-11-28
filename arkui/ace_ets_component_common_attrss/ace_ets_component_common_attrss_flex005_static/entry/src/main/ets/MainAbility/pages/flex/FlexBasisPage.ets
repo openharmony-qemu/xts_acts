@@ -328,13 +328,12 @@ struct FlexBasisPage {
     } else if (this.targetView == 'Row') {
       Row().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Panel') {
-      // Panel(true) {
-      //   Column() {
-      //     Text('Panel')
-      //   }
-      // }
-      // .mode(PanelMode.Half)
-      //.applyStyles(this.commonStyle)
+      Column() {
+        Column() {
+          Text('Panel')
+        }
+      }
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {
         Text('Refresh').fontSize(30)
@@ -429,16 +428,21 @@ struct FlexBasisPage {
         .stroke(Color.Transparent)
         .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Shape') {
-      // Shape() {
-      //   Path().width(20).height(20).commands('M0 0 L400 0 L400 150 Z')
-      // }
-      // .viewPort({ x: -20, y: -5, width: 310, height: 90 })
-      // .fill(0x317AF7)
-      // .stroke(0xEE8443)
-      // .strokeWidth(10)
-      // .strokeLineJoin(LineJoinStyle.Miter)
-      // .strokeMiterLimit(5)
-      // .applyStyles(this.commonStyle)
+      Shape() {
+        Path().width(20).height(20).commands('M0 0 L400 0 L400 150 Z')
+      }
+      .viewPort({
+        x: -20,
+        y: -5,
+        width: 310,
+        height: 90
+      })
+      .fill(0x317AF7)
+      .stroke(0xEE8443)
+      .strokeWidth(10)
+      .strokeLineJoin(LineJoinStyle.Miter)
+      .strokeMiterLimit(5)
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'ColumnSplit') {
       ColumnSplit() {
         Text('1').width('100%').height(20).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)

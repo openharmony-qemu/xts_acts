@@ -116,12 +116,12 @@ export default function testsuite() {
   stateManagementGetSharedJsunit();
   //
   LocalStoageLinkOneJsunit();
-  LocalStoageLinkTwoJsunit();  // LocalStoageLink 1
-  LocalStoageLinkThreeJsunit(); // LocalStoageLink 1
+  LocalStoageLinkTwoJsunit();  // JSON.stringify   1
+  LocalStoageLinkThreeJsunit(); // // 0702不合入,只能切master分支
   LocalStoagePropFourJsunit();
   LocalStoagePropTwoJsunit();  // JSON.stringify  1
   LocalStorage39Jsunit();  // JSON.stringify(Object.keys(storage39))取值有问题 1       PropA：47 equals get PropA：1  1
-  ProvideJsunit();   // Provide和 Consume 需要类型一致.代码不一致 12
+  ProvideJsunit();  
   Storage11Jsunit();
   Storage35Jsunit();
   Storage36Jsunit();
@@ -139,13 +139,13 @@ export default function testsuite() {
   StateComponentJsunit();
   StateDate1Jsunit();
   StateDate2Jsunit();
-  LinkDataJsunit();    // @Link修饰类  1  单独的@Link无法再观测对象的属性变化，仅能观测对象整体的赋值
+  LinkDataJsunit();   
   LinkClassArrJsunit();
   LinkSonJsunit();
   ObjectLinkFirJsunit();
   ObjectLinkSecJsunit();
   ObjectLinkFarJsunit();
-  ObjectLinkSplJsunit();  //  @State修饰类时，修改@PropRef装饰对象的属性仍会在父组件中体现   1
+  ObjectLinkSplJsunit();  
   ObjectLinkCanJsunit();
   ObjectLinkNusJsunit();
   ObjectLinkArrayJsunit();
@@ -156,8 +156,8 @@ export default function testsuite() {
   CombinationState8Jsunit();
   PropArrayJsunit();
   PropBooleanJsunit();
-  PropClassObjectJsunit(); // @State修饰类时，修改@PropRef装饰对象的属性仍会在父组件中体现 1
-  PropDate2Jsunit();  // @State修饰时间Date（对象类型）时，修改@PropRef装饰对象的属性仍会在父组件中体现  14
+  PropClassObjectJsunit(); 
+  PropDate2Jsunit(); 
   PropEnumJsunit();
   PropInit1Jsunit();
   PropNumberJsunit();

@@ -65,9 +65,10 @@ export default function StorageLinkJsunit1() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageLinkJsunit1 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StorageLink1" == pages.name)) {
+        if (!("StorageLink1" == pages.name)) {
           console.info("get StorageLinkJsunit1 pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,6 @@ export default function StorageLinkJsunit1() {
       console.info("StorageLinkJsunit1 beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
     /*
      * @tc.number   StorageLinkJsunit1_static_0100

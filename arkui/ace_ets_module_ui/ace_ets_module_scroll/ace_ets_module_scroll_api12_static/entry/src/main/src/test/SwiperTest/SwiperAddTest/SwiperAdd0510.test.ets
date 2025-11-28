@@ -52,10 +52,11 @@ export default function SwiperAdd0510() {
       console.info("SwiperAdd0510 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperAdd0510 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperAdd/SwiperAdd0510" == pages.name)) {
-          console.info("get Context pages.name:" + JSON.stringify(pages.name));
+        if (!("SwiperAdd0510" == pages.name)) {
+	          console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperAdd/SwiperAdd0510'
           })
@@ -72,11 +73,7 @@ export default function SwiperAdd0510() {
       console.info("SwiperAdd0510 after each called");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-    
+
       
   /*
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510

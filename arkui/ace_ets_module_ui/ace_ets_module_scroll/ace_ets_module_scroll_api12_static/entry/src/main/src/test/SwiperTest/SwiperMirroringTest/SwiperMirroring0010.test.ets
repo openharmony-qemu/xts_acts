@@ -52,9 +52,10 @@ export default function SwiperMirroring0010() {
       console.info("SwiperMirroring0010 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get SwiperMirroring0010 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/SwiperMirroring/SwiperMirroring0010" == pages.name)) {
+        if (!("SwiperMirroring0010" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperMirroring/SwiperMirroring0010'
@@ -71,10 +72,7 @@ export default function SwiperMirroring0010() {
       await CommonFunc.sleep(1000);
       console.info("SwiperMirroring0010 after each called");
     });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
     
       
   /*

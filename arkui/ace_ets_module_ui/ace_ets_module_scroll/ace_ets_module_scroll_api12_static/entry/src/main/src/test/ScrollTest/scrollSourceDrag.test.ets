@@ -50,7 +50,7 @@ export default function scrollSourceDrag() {
         router.clear();
         let pages = router.getState();
         console.info("get scrollSourceDrag state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/scrollSourceDrag" == pages.name)) {
+        if (!("scrollSourceDrag" == pages.name)) {
           console.info("get scrollSourceDrag pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

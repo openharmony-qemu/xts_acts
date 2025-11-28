@@ -59,7 +59,7 @@ export default function alphabetEnableJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get alphabetEnableJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/AlphabetIndexer/alphabetEnable" == pages.name)) {
+        if (!("alphabetEnable" == pages.name)) {
           console.info("get alphabetEnableJsunit pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

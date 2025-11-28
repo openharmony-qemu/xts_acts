@@ -51,7 +51,7 @@ export default function gridJsunit1() {
         await sleep(1);
         let pages = routerAlp.getState();
         console.info("get Grid state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/grid/Grid" == pages.name)) {
+        if (!("Grid" == pages.name)) {
           console.info("get Grid state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)

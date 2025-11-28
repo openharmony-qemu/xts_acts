@@ -60,7 +60,7 @@ export default function iconTabs() {
       try {
         let pages = iconTabs.getState();
         console.info("get iconTabs state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/iconTabs" == pages.name)) {
+        if (!("iconTabs" == pages.name)) {
           console.info("get iconTabs pages.name:" + JSON.stringify(pages.name));
           iconTabs.pushUrl(options);
         }

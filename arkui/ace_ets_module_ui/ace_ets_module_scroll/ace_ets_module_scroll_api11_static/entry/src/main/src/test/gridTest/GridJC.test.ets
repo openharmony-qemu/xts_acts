@@ -40,7 +40,7 @@ export default function ActsGridTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get grid state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/grid/GridJC" == pages.name)) {
+        if (!("GridJC" == pages.name)) {
           console.info("get grid state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);

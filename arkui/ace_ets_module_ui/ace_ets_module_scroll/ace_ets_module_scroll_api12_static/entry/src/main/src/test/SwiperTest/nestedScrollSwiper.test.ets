@@ -48,7 +48,7 @@ export default function nestedScrollSwiper() {
         router.clear();
         let pages = router.getState();
         console.info("get nestedScrollSwiper state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/nestedScrollSwiper" == pages.name)) {
+        if (!("nestedScrollSwiper" == pages.name)) {
           console.info("get nestedScrollSwiper pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
         }

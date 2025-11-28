@@ -43,15 +43,15 @@ export default function alignSelfTest() {
   await UtilsTest.msSleep(4000)
   const uiContext = AppStorage.get<UIContext>('uiContext')!;
   let supportView = [
-    // 'TextArea',
-    // 'TextClock',
-    // 'TextInput',
-    // 'TextPicker',
-    // 'TimePicker',
-    // 'Toggle',
+    'TextArea',
+    'TextClock',
+    'TextInput',
+    'TextPicker',
+    'TimePicker',
+    'Toggle',
     'Badge',
-    // 'Column',
-    // 'Counter'
+    'Column',
+    'Counter'
   ]
 
   let containerView = ['Row', 'Column', 'FlexRow', 'FlexRowReverse', 'FlexColumn', 'FlexColumnReverse']

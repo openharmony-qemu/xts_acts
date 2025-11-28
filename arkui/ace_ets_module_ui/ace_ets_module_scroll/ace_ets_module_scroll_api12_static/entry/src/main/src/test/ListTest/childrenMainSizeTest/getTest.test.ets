@@ -58,7 +58,7 @@ export default function getTest() {
         router.clear();
         let pages = router.getState();
         console.info("get getTest state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/childrenMainSize/get" == pages.name)) {
+        if (!("get" == pages.name)) {
           console.info("get getTest state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
         }

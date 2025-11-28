@@ -46,9 +46,10 @@ export default function verticalTrue() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get verticalTrue state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Tabs/verticalTrue" == pages.name)) {
+        if (!("verticalTrue" == pages.name)) {
           console.info("get verticalTrue pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -60,10 +61,6 @@ export default function verticalTrue() {
       console.info("verticalTrue beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
 
     
       

@@ -65,9 +65,10 @@ export default function PropEnumJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropEnumJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/PropEnum" == pages.name)) {
+        if (!("PropEnum" == pages.name)) {
           console.info("get PropEnumJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -89,10 +90,7 @@ export default function PropEnumJsunit() {
       await CommonFunc.sleep(1000);
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   PropEnumJsunit_static_0200

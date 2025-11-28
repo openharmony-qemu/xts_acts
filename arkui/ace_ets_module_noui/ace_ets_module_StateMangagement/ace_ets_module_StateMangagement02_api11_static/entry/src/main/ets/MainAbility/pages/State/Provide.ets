@@ -64,8 +64,8 @@ struct ProvideB {
   }
 
   @Consume reviewVotes: number
-  @Consume('a') c: string
-  @Consume sad: string
+  @Consume('a') c: number
+  @Consume sad: number
   @Consume('a') d: number
   @Consume('a') b: number
   @Consume('o') i: number
@@ -92,13 +92,13 @@ struct ProvideB {
           .height('5%')
           .width('50%')
           .onClick((e: ClickEvent) => {
-            this.c = "changed"
+            this.c += 1
           }).id("ProvideBChangeA")
         Button("change d")
           .height('5%')
           .width('50%')
           .onClick((e: ClickEvent) => {
-            this.sad = "changed"
+            this.sad += 1
           }).id("ProvideBChangeD")
       }
 

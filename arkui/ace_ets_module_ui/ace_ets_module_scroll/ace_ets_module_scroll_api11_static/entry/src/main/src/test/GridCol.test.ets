@@ -63,7 +63,7 @@ export default function gridColXlJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get gridCol state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/gridCol" == pages.name)) {
+        if (!("gridCol" == pages.name)) {
           console.info("get gridCol state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await Utils.sleep(2000);

@@ -66,9 +66,10 @@ export default function StateComponentJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateComponentJsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/StateComponent" == pages.name)) {
+        if (!("StateComponent" == pages.name)) {
           console.info("get StateComponentJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -81,10 +82,7 @@ export default function StateComponentJsunit() {
       console.info("StateComponentJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
     /*
      * @tc.number   StateComponentJsunit_static_0100

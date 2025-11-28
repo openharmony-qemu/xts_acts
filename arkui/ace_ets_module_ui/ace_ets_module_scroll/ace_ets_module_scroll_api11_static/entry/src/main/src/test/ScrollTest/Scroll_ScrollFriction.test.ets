@@ -50,7 +50,7 @@ export default function scroll_ScrollFrictionTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get ScrollFrictionPage state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Scroll/ScrollFrictionPage" == pages.name)) {
+        if (!("ScrollFrictionPage" == pages.name)) {
           console.info("get Scroll_ScrollInitialIndex1 pages.name:" + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);

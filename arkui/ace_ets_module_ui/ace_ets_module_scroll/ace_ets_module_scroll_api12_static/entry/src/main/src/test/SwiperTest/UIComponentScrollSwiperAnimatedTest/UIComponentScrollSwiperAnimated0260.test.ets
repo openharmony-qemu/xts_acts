@@ -52,9 +52,10 @@ export default function UIComponentScrollSwiperAnimated0260() {
       console.info("UIComponentScrollSwiperAnimated0260 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get UIComponentScrollSwiperAnimated0260 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Swiper/UIComponentScrollSwiperAnimated/UIComponentScrollSwiperAnimated0260" == pages.name)) {
+        if (!("UIComponentScrollSwiperAnimated0260" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: 'MainAbility/pages/Swiper/UIComponentScrollSwiperAnimated/UIComponentScrollSwiperAnimated0260'
@@ -71,10 +72,7 @@ export default function UIComponentScrollSwiperAnimated0260() {
       await CommonFunc.sleep(1000);
       console.info("UIComponentScrollSwiperAnimated0260 after each called");
     });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+ 
     
       
   /*

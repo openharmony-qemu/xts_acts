@@ -62,10 +62,10 @@ export default function testsuite() {
   gridNode();
   griditemNode();
   nodeTypeGrid()
-  listScrollerBar()
+  listScrollerBar() // 新问题
   cachedShowGrid()
   cachedShowList()
-  getItemError()  // getItemRect getItemIndex 参数不能为undefined  2
+  getItemError()  // getItemRect getItemIndex 参数不能为undefined  3
   getVisibleListError() // getVisibleListContentInfo 参数不能为undefined  错误码  4
-  itemInGroupError()  // scrollToItemInGroup 参数不能为undefined  2
+  itemInGroupError()  // scrollToItemInGroup 参数不能为undefined  3
 }

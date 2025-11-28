@@ -62,8 +62,8 @@ export default function listUxTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages: router.RouterState = router.getState();
-        console.info('xyb: push ' + pages.name)
-        if (!("MainAbility/pages/List/list_ux" == pages.name)) {
+        console.info('xyb: push ' +pages.name)
+        if (!("list_ux" == pages.name)) {
           console.info('xyb: push')
           router.pushUrl(options)
           await CommonFunc.sleep(4000);

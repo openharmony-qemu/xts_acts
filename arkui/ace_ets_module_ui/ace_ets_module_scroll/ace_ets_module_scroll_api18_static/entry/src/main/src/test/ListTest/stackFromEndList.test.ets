@@ -55,9 +55,10 @@ export default function stackFromEndList() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear()
         let pages = router.getState();
         console.info("get   state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/stackFromEndList" == pages.name)) {
+        if (!("stackFromEndList" == pages.name)) {
           console.info("get stackFromEndList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
         }

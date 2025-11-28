@@ -65,9 +65,10 @@ export default function CombinationState8Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CombinationState8Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/State/CombinationState8" == pages.name)) {
+        if (!("CombinationState8" == pages.name)) {
           console.info("get CombinationState8Jsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -80,10 +81,7 @@ export default function CombinationState8Jsunit() {
       console.info("CombinationState8Jsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+ 
 
     /*
      * @tc.number   CombinationState8Jsunit_static_0100

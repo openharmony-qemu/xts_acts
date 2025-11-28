@@ -52,8 +52,7 @@ struct AlphabetIndexerOnSelect {
   }
 
   showToast(message: string) {
-    const prompt = new PromptAction()
-    prompt.showToast({
+    this.getUIContext().getPromptAction().showToast({
       message: message,
       duration: 2000
     });

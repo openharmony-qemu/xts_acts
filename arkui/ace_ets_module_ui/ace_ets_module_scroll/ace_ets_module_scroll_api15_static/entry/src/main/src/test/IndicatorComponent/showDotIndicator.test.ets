@@ -52,9 +52,10 @@ export default function showDotIndicator() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
+        router.clear();
         let pages = router.getState();
         console.info("get showDotIndicator state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/IndicatorComponent/showDotIndicator" == pages.name)) {
+        if (!("showDotIndicator" == pages.name)) {
           console.info("get showDotIndicator pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(1000);
@@ -65,10 +66,7 @@ export default function showDotIndicator() {
       console.info("showDotIndicator beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
+
 
 
     /*

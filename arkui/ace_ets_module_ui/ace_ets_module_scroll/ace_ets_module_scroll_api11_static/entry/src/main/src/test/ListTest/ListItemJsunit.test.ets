@@ -73,7 +73,7 @@ export default function listItemJsunit() {
         await sleep(1);
         let pages = router.getState();
         console.info("get ListItem state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/List/ListItem" == pages.name)) {
+        if (!("ListItem" == pages.name)) {
           console.info("get ListItem state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
           // console.info("push ListItem page success " + JSON.stringify(result));

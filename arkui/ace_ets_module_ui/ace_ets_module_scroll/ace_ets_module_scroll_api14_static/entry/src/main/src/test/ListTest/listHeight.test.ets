@@ -55,7 +55,6 @@ export default function listHeight() {
           console.info("get listHeight pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push listHeight page result:" + JSON.stringify(result));
         }
       } catch (err: Error) {
         console.error("push listHeight page error:" + err);
