@@ -47,10 +47,20 @@
                 ]
             }
         ],
+        "extensionAbilities": [
+          {
+            "name": "DynamicNotificationSubscriberExtensionAbility",
+            "srcEntry": "./ets/extensionability/DynamicNotificationSubscriberExtensionAbility.ets",
+            "description": "$string:StaticNotificationSubscriber_desc",
+            "icon": "$media:layered_image",
+            "type": "notificationSubscriber",
+            "label": "$string:StaticNotificationSubscriber_label"
+          }
+        ], 
         "requestPermissions": [
-      {
-        "name": "ohos.permission.SUBSCRIBE_NOTIFICATION"
-      }
-    ]
+          {
+            "name": "ohos.permission.SUBSCRIBE_NOTIFICATION"
+          }
+        ]
     }
 }
