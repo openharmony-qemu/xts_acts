@@ -379,9 +379,9 @@ export default function MessageTest() {
           expect(false).assertFail();
         } finally {
           try {
-            worker.quitSafely();
+            worker.quit();
           } catch (error) {
-            console.warn(`${TAG} catch quitSafely error: code =>  message => ${error.message}`);
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
           done();
@@ -2329,7 +2329,7 @@ export default function MessageTest() {
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
-          eaw.quitSafely();
+          eaw.quit();
           done();
         }
       });
@@ -2364,7 +2364,7 @@ export default function MessageTest() {
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
-          eaw.quitSafely();
+          eaw.quit();
           done();
         }
       });
@@ -2399,7 +2399,7 @@ export default function MessageTest() {
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
-          eaw.quitSafely();
+          eaw.quit();
           done();
         }
       });
@@ -2435,7 +2435,7 @@ export default function MessageTest() {
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
-          eaw.quitSafely();
+          eaw.quit();
           done();
         }
       });
@@ -2471,7 +2471,7 @@ export default function MessageTest() {
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
-          eaw.quitSafely();
+          eaw.quit();
           done();
         }
       });

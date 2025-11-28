@@ -27,6 +27,7 @@ import {
 } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
+import {quitErrorMsg} from './Util.test';
 
 type Literal = 'success' | 'failure' | 'pending';
 
@@ -1481,7 +1482,12 @@ export default function EAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.join();
+          } catch (err) {
+            err = err as Error;
+            console.error(`${TAG} catch quit error: code =>  message => ${err.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1588,8 +1594,8 @@ export default function EAWorkerTest() {
           expect(worker1).assertEqual(undefined);
         } catch (err) {
           err = err as Error;
+          expect(err.message).assertContain(quitErrorMsg);
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -1870,7 +1876,12 @@ export default function EAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.join();
+          } catch (err) {
+            err = err as Error;
+            console.error(`${TAG} catch quit error: code =>  message => ${err.message}`);
+          }
           console.info(`${TAG} test end`);
           Done();
         }
@@ -2645,7 +2656,12 @@ export default function EAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.join();
+          } catch (err) {
+            err = err as Error;
+            console.error(`${TAG} catch quit error: code =>  message => ${err.message}`);
+          }
           console.info(`${TAG} test end`);
           Done();
         }
@@ -2695,7 +2711,12 @@ export default function EAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.join();
+          } catch (err) {
+            err = err as Error;
+            console.error(`${TAG} catch quit error: code =>  message => ${err.message}`);
+          }
           console.info(`${TAG} test end`);
           Done();
         }
