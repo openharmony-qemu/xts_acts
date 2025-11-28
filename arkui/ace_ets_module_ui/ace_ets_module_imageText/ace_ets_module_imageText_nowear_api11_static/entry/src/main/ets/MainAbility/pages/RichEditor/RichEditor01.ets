@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,15 +22,13 @@ import { State } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
-
 @Entry
 @Component
 struct RichEditor01 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  private start: Int = -1;
-  private end: Int = -1;
+  private start: int = -1;
+  private end: int = -1;
   @State message: string = "[-1, -1]"
   @State content: string = ""
   @State text: string = ""
@@ -58,23 +57,21 @@ struct RichEditor01 {
       Row() {
         Button("获取选择内容").onClick((e:ClickEvent) => {
           this.content = "";
-          this.controller.getSpans({
+          this.controller!.getSpans({
             start: this.start,
             end: this.end
-          } as RichEditorRange)!.forEach(item => {
-            if((item as RichEditorImageSpanResult).imageStyle != 'undefined'){
+          })!.forEach(item => {
+            if((item as RichEditorImageSpanResult).imageStyle){
               this.content += (item as RichEditorImageSpanResult).valueResourceStr;
               this.content += "\n"
-            }
-            else {
+            } else {
               this.content += (item as RichEditorTextSpanResult).value;
               this.content += "\n"
             }
           })
-        }
-        ).key('RichEditor01GetSpans')
+        }).key('RichEditor01GetSpans')
         Button("删除选择内容").onClick((e:ClickEvent) => {
-          this.controller.deleteSpans({
+          this.controller!.deleteSpans({
             start: 0,
             end: 1
           } as RichEditorRange)
@@ -91,10 +88,10 @@ struct RichEditor01 {
       Row() {
         Button("获取组件信息").onClick((e:ClickEvent) => {
           let strJson = inspector.getInspectorByKey('RichEditorKey');
-          this.text = JSON.stringify(JSON.parseJsonElement(strJson))
+          this.text = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson))
         })
         Button("获取光标位置").onClick((e:ClickEvent) => {
-          this.content = this.controller.getCaretOffset() +''
+          this.content = this.controller.getCaretOffset() + ''
         }).key('getCaretOffset')
 
       }
@@ -104,7 +101,9 @@ struct RichEditor01 {
       .height("10%")
       Row() {
         Button("设置光标位置1").onClick((e:ClickEvent) => {
-          this.content = this.controller.setCaretOffset(1) + ''
+          this.content = this.controller!.setCaretOffset(1) + ''
+          let add = this.controller!.getCaretOffset() as int
+          console.log('this.point_position111:' + this.content + add);
         }).key('setCaretOffset01')
         Button("设置光标位置100").onClick((e:ClickEvent) => {
           this.content = this.controller.setCaretOffset(100) + ''
@@ -153,7 +152,7 @@ struct RichEditor01 {
               console.log("spanIndex:" + item.spanPosition.spanIndex)
               console.log("spanRange:[" + item.spanPosition.spanRange[0] + "," + item.spanPosition.spanRange[1] + "]")
               console.log("offsetInSpan:[" + item.offsetInSpan[0] + "," + item.offsetInSpan[1] + "]")
-              if (typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined') {
+              if ((item as RichEditorImageSpanResult).imageStyle) {
                 console.log("image:" + (item as RichEditorImageSpanResult).valueResourceStr)
               } else {
                 console.log("text:" + (item as RichEditorTextSpanResult).value)
@@ -168,6 +167,8 @@ struct RichEditor01 {
           .borderColor(Color.Green)
           .width("100%")
           .height("30%")
+
+
       }
       .borderWidth(1)
       .borderColor(Color.Red)

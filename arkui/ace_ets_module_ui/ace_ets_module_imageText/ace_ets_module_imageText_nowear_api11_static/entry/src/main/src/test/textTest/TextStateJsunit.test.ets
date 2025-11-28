@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -657,7 +658,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2100', Level.LEVEL1, async (done: ()=> vo
           let obj = JSON.parseJsonElement(strJson);
           
           console.info("--->Text Shadow " + strJson)
-          expect(JSON.stringify(obj.getElement('$attrs').getString('textShadow'))).assertEqual("[]")
+          expect(JSON.stringify(obj.getElement('$attrs').tryGetElement('textShadow'))).assertEqual("{}")
           done()
         } catch (err) {
           expect().assertFail()

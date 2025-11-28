@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,26 +34,27 @@ import QrcodeJsunit from './QrcodeTest/QrcodeJsunit.test';
 import QRCodeUIJsunit from './QrcodeTest/QRCodeUIJsunit.test';
 import SearchJsunit from './SearchTest/SearchJsunit.test';
 export default function testsuite() {
-  // advancedCounter();//@ohos.arkui.advanced.Counter未交付 2
-  // CounterComponentTest();//@ohos.arkui.advanced.Counter未交付 1
-  // datapanel();//fail 1 in ArkUX_Stage_DataPanel_TrackShadow_static_0200, expect 5.000000 equals 20.000000
-  // gauge3Jsunit(); //fail 1 gauge3Jsunit_static_0400,
-  // GaugeJsunit();//fail: 1  testGauge_static_003,testGauge_static_008,
-  gaugeux();//fail 2 // 2.trackShadow(null)编译问题--fail 1  3.in ArkUX_Gauge_Colors_InterfaceName_static_1900, expect 0.0 equals 0.1--fail 1
+  advancedCounter();//@ohos.arkui.advanced.Counter未交付 2
+  CounterComponentTest();//@ohos.arkui.advanced.Counter未交付 1
+  datapanel();//fail 1 in ArkUX_Stage_DataPanel_TrackShadow_static_0200, expect 5.000000 equals 20.000000
 
-  // QRCodeUIJsunit();
-  // SearchJsunit();
-  // badge();
-  // Badge3Jsunit();
-  // BadgeJsunit();
-  // CounterEnable();
-  // CounterJsunit();
-  // datalPanelUIJsunit();
-  // DataPanelJsunit();
-  // gauge1();
-  // loadingProgress();
-  // PatternLockJsunit();
-  // QrCode3Jsunit();
-  // QrcodeJsunit();
+  gaugeux();//fail 2 // ArkUX_Gauge_TrackShadow_InterfaceName_static_1400  ArkUX_Gauge_Indicator_InterfaceName_static_1400 .trackShadow(undefined)和.indicator(undefined)会导致app died
+  gauge3Jsunit();
+  GaugeJsunit();
+  QRCodeUIJsunit();
+  SearchJsunit();
+  badge();
+
+  Badge3Jsunit();
+  BadgeJsunit();
+  CounterEnable();
+  CounterJsunit();
+  datalPanelUIJsunit();
+  DataPanelJsunit();
+  gauge1();
+  loadingProgress();
+  PatternLockJsunit();
+  QrCode3Jsunit();
+  QrcodeJsunit();
 
 }

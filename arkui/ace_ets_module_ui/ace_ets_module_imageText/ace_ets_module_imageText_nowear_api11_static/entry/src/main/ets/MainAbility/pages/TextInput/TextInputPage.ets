@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  Entry,ResourceColor,
   Component,
   ClickEvent,
   InputType,
@@ -35,16 +36,16 @@ import {
 } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback,Message } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import events_emitter from '@ohos.events.emitter'
 @Entry
 @Component
 struct TextInputPage {
   @State placeholder: string = 'input your word...'
   @State type: InputType = InputType.Email
-  @State placeholderColor : Color = Color.Grey
+  @State placeholderColor : ResourceColor = Color.Grey
   @State placeholderFont : Font = { size: 14, weight: 400 } as Font
   @State enterKeyType: EnterKeyType = EnterKeyType.Search
-  @State caretColor: Color = Color.Blue
+  @State caretColor: ResourceColor = Color.Blue
   @State maxLength: int = 10
   @State copyOption: CopyOptions = CopyOptions.InApp
   @State showPasswordIcon: boolean = false
@@ -57,67 +58,47 @@ struct TextInputPage {
   @State onCut: string = ''
   @State onPaste: string = ''
   controller: TextInputController = new TextInputController()
-  messageManager:MessageManager<string|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign|number> = new MessageManager<string|number|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign>()
-
-  onPageShow() {
-    console.info('TextInput onPageShow')
-    AppStorage.setOrCreate<MessageManager<string|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign|number>>("messageManager", this.messageManager);
-
-    let callback: (message: Message<string|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign|number>) => void = (message: Message<string|number|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'placeholder') {
-        this.placeholder = (message as Message<string>).value
+  private stateChangCallBack : (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
+    if (eventData != null) {
+      let eventD = eventData.data as Record<String,undefined|null|Object>
+      if (eventD!['textAlign'] != null) {
+        console.info("[SearchPage page textAlign]" + eventD!['textAlign']);
+        this.textAlign =  eventD!['textAlign'] as TextAlign;
       }
-      if (message.name == 'text') {
-        this.text = (message as Message<string>).value
+      if (eventD!['maxLength'] != null) {
+        console.info("[SearchPage page]" + eventD!['maxLength']);
+        this.maxLength =  eventD!['maxLength'] as int;
       }
-      if (message.name == 'type') {
-        this.type = (message as Message<InputType>).value
+      if (eventD!['caretColor'] != null) {
+        console.info("[SearchPage page]" + eventD!['caretColor']);
+        this.caretColor =  eventD!['caretColor'] as ResourceColor;
       }
-      if (message.name == 'placeholderColor') {
-        this.placeholderColor = (message as Message<Color>).value
+      if (eventD!['enterKeyType'] != null) {
+        console.info("[SearchPage page]" + eventD!['enterKeyType']);
+        this.enterKeyType =  eventD!['enterKeyType'] as EnterKeyType;
+      }if (eventD!['placeholderFont'] != null) {
+        console.info("[SearchPage page]" + eventD!['placeholderFont']);
+        this.placeholderFont =  eventD!['placeholderFont'] as Font;
+      }if (eventD!['placeholderColor'] != null) {
+        console.info("[SearchPage page]" + eventD!['placeholderColor']);
+        this.placeholderColor =  eventD!['placeholderColor'] as ResourceColor;
+      }if (eventD!['type'] != null) {
+        console.info("[SearchPage page]" + eventD!['type']);
+        this.type =  eventD!['type'] as InputType;
       }
-      if (message.name == 'placeholderFont') {
-        this.placeholderFont = (message as Message<Font>).value
-      }
-      if (message.name == 'enterKeyType') {
-        this.enterKeyType = (message as Message<EnterKeyType>).value
-      }
-      if (message.name == 'caretColor') {
-        this.caretColor = (message as Message<Color>).value
-      }
-      if (message.name == 'maxLength') {
-        this.maxLength = (message as Message<int>).value
-      }
-      if (message.name == 'copyOption') {
-        this.copyOption = (message as Message<CopyOptions>).value
-      }
-      if (message.name == 'showPasswordIcon') {
-        this.showPasswordIcon = (message as Message<boolean>).value
-      }
-      if (message.name == 'style') {
-        this.style = (message as Message<TextInputStyle>).value
-      }
-      if (message.name == 'textAlign') {
-        this.textAlign = (message as Message<TextAlign>).value
-      }
-      if (message.name == 'onSubmit') {
-        this.onSubmit = (message as Message<string>).value
-      }
-      if (message.name == 'onEditChange') {
-        this.onEditChange = (message as Message<string>).value
-      }
-      if (message.name == 'onCopy') {
-        this.onCopy = (message as Message<string>).value
-      }
-      if (message.name == 'onCut') {
-        this.onCut = (message as Message<string>).value
-      }
-      if (message.name == 'onPaste') {
-        this.onPaste = (message as Message<string>).value
+      if (eventD!['placeholder'] != null) {
+        console.info("[SearchPage page]" + eventD!['placeholder']);
+        this.placeholder =  eventD!['placeholder'] as string;
       }
     }
-    this.messageManager.registerCallback(callback)
+  }
+  onPageShow() {
+    console.info('SearchPage onPageShow')
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 811,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +26,7 @@ export default function testsuite() {
   gauge()
   PatternLockActivateCircleStyle1()
   progress()
-  ProgressMask()
+  ProgressMask()//fail 1 ����JSON.stringify ����
   BounceSymbolEffect_APITest()
   ReplaceSymbolEffect_APITest()
   ACTION_FIRST_APITest()

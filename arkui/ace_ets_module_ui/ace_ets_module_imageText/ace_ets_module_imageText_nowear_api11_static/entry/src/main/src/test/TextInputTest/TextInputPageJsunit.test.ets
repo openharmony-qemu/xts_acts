@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,6 +33,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import events_emitter from '@ohos.events.emitter'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -66,8 +68,11 @@ export default function TextInputPageJsunit() {
       }
       console.info("TextInputPageJsunit beforeEach end");
     });
-    
-    
+
+    afterEach(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
+    })
     
     
     /*
@@ -109,9 +114,9 @@ it('TextInputPageJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       done();
     });
 
-    
-    
-    
+
+
+
     /*
      * @tc.number   TextInputPageJsunit_static_0200
      * @tc.name     TextInputPageJsunit_static_0200
@@ -161,30 +166,25 @@ it('TextInputPageJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
 it('TextInputPageJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       // Modify the properties of TextInput component
       console.info('[TextInputPageJsunit_0300] START');
-      const message:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
-      message.notify({name:'placeholder', value:'place input your word...'})
-      await CommonFunc.sleep(1000);
-      const message1:MessageManager<InputType> = AppStorage.get<MessageManager<InputType>>("messageManager")!
-      message1.notify({name:'type', value:InputType.Normal})
-      await CommonFunc.sleep(1000);
-      const message2:MessageManager<Color> = AppStorage.get<MessageManager<Color>>("messageManager")!
-      message2.notify({name:'placeholderColor', value:Color.Green})
-      await CommonFunc.sleep(1000);
-      const message3:MessageManager<Font> = AppStorage.get<MessageManager<Font>>("messageManager")!
-      message3.notify({name:'placeholderFont', value:{ size: 18, weight: 500 }})
-      await CommonFunc.sleep(1000);
-      const message4:MessageManager<EnterKeyType> = AppStorage.get<MessageManager<EnterKeyType>>("messageManager")!
-      message4.notify({name:'enterKeyType', value:EnterKeyType.Done})
-      await CommonFunc.sleep(1000);
-      const message5:MessageManager<Color> = AppStorage.get<MessageManager<Color>>("messageManager")!
-      message5.notify({name:'caretColor', value:Color.Red})
-      await CommonFunc.sleep(1000);
-      const message6:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-      message6.notify({name:'maxLength', value:8})
-      await CommonFunc.sleep(1000);
-      const message7:MessageManager<TextAlign> = AppStorage.get<MessageManager<TextAlign>>("messageManager")!
-      message7.notify({name:'textAlign', value:TextAlign.Start})
-      await CommonFunc.sleep(1000);
+
+  let eventData: events_emitter.EventData = {
+    data: {
+      "textAlign":  TextAlign.Start,
+      'maxLength': 8 as int,
+      'caretColor':Color.Red,
+      'enterKeyType':EnterKeyType.Done,
+      'placeholderFont':{ size: 18, weight: 500 } as Font,
+      'placeholderColor':Color.Green,
+      'type':InputType.Normal,
+      'placeholder':'place input your word...'
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
 
       // Get the propoties value of the TextInput component
       let strJson = inspector.getInspectorByKey('textInput');

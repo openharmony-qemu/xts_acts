@@ -1,4 +1,4 @@
-
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,7 +44,7 @@ struct PositionSetting {
   @State position2: Position = {x: '50%', y: '70%'} as Position;
   @State anchor: Position = {x: 25, y: 25} as Position;
   @State offsetT: Position = {x: 10, y: 15} as Position;
-  @State opacityValue: number = 1;
+  @State opacityValue: double = 1;
 
   build() {
     Column() {
@@ -132,48 +132,29 @@ struct PositionSetting {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    let directionChangeEvent: events_emitter.InnerEvent = {
-      eventId: 26,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(directionChangeEvent, this.stateChangCallBack);
-
-    let positionChangeEvent: events_emitter.InnerEvent = {
-      eventId: 27,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(positionChangeEvent, this.stateChangCallBack);
-
-    let markAnchorChangeEvent: events_emitter.InnerEvent = {
-      eventId: 28,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(markAnchorChangeEvent, this.stateChangCallBack);
-
-    let offsetChangeEvent: events_emitter.InnerEvent = {
-      eventId: 29,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(offsetChangeEvent, this.stateChangCallBack);
   }
   stateChangCallBack:(eventData: events_emitter.EventData) => void =  (eventData: events_emitter.EventData) =>  {
-    console.info("position page stateChangCallBack" + JSON.stringify(eventData));
-    if (eventData != null && eventData.data != null) {
-      if (((eventData.data) as ESObject)?.getProperty('textAlign')) {
+    console.info("position page stateChangCallBack" + eventData);
+    let eventD = eventData.data as Record<String,undefined|null|Object>
+    if (eventData != null && eventD != null) {
+      if (eventD!['textAlign']) {
         this.alignT = Alignment.BottomEnd;
-      } else if (((eventData.data) as ESObject).getProperty('direction')) {
-        this.directionT =  ((eventData.data) as ESObject).getProperty('direction').toStaticObject() as Direction;
-      } else if (((eventData.data) as ESObject).getProperty('position1')) {
-        this.position1 = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('position1').toString()) as Position;
-        this.position2 = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('position2').toString()) as Position;
+      } else if (eventD!['directionT']!= null) {
+        console.info('directionTdirectionTdirectionT',eventD!['directionT'])
+        this.directionT =  eventD!['directionT'] as Direction;
+        console.info('directionTdirectionTdirectionT22',this.directionT)
+      } else if (eventD!['position1']!= null) {
+        this.position1 = eventD!['position1'] as Position;
+        this.position2 = eventD!['position2'] as Position;
 
-      } else if (((eventData.data) as ESObject).getProperty('markAnchor')) {
-        this.anchor = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('markAnchor').toString())as Position;
-      } else if (((eventData.data) as ESObject).getProperty('offset')) {
-        this.offsetT = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('offset').toString())as Position;
-      } else if (((eventData.data) as ESObject).getProperty('opacityValue')) {
-        this.opacityValue = ((eventData.data) as ESObject).getProperty('opacityValue').toNumber();
+      } else if (eventD!['anchor']!= null) {
+        this.anchor = eventD!['anchor'] as Position;
+      } else if (eventD!['offsetT']!= null) {
+        this.offsetT = eventD!['offsetT'] as Position;
+      } else if (eventD!['opacityValue']!= null) {
+        console.info('opacityValueopacityValue',eventD!['directionT'])
+        this.opacityValue = eventD!['opacityValue'] as double;
+        console.info('opacityValueopacityValue', this.opacityValue)
       }
     }
   }

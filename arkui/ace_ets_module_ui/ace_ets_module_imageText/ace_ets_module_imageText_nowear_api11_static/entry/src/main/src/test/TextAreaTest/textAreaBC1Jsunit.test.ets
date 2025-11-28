@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +27,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import events_emitter from '@ohos.events.emitter'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -46,7 +48,7 @@ export default function textAreaBC1Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaBC1Jsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
@@ -60,6 +62,8 @@ export default function textAreaBC1Jsunit() {
       console.info("textAreaBC1Jsunit beforeEach end");
     });
     afterEach(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url: 'MainAbility/pages/index/index'});
       await CommonFunc.sleep(2000);
     })
     /*
@@ -103,7 +107,7 @@ it('textAreaBC1Jsunit_static_0200', Level.LEVEL3, async (done: ()=>void) => {
       let strJson1 = inspector.getInspectorByKey('change');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('textAreaBC1Jsunit_0200 obj1 is: ' + obj1.getElement('$attrs').getString('content'));
-  expect(obj1.getElement('$attrs').getString('content')).assertEqual('123');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('123');
       let strJsont = inspector.getInspectorByKey('isEdit');
       let objt = JSON.parseJsonElement(strJsont);
       console.info('textAreaBC1Jsunit_0200 objt is: ' + objt.getElement('$attrs').getString('content'));
@@ -121,7 +125,7 @@ it('textAreaBC1Jsunit_static_0200', Level.LEVEL3, async (done: ()=>void) => {
       expect(objt1.getElement('$attrs').getString('content')).assertEqual('doing');
       done();
     });
-    
+
     /*
      * @tc.number   textAreaBC1Jsunit_static_0300
      * @tc.name     textAreaBC1Jsunit_static_0300
@@ -142,12 +146,19 @@ it('textAreaBC1Jsunit_static_0300', Level.LEVEL3, async (done: ()=>void) => {
 
       await CommonFunc.sleep(1000);
       console.info('textAreaBC1Jsunit_0300 START');
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'placeholderColor', value:'#FFFFFFFF'})
-      await CommonFunc.sleep(2000);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'textColor', value:'#FF66DD00'})
-      await CommonFunc.sleep(2000);
-  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'fontSize', value:12})
-      await CommonFunc.sleep(2000);
+  let eventData: events_emitter.EventData = {
+    data: {
+      "placeholderColor":  '#FFFFFFFF',
+      'textColor': '#FF66DD00',
+      'testFontSize':12 as int,
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('textArea1');
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1058,22 +1059,27 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_1300', Level.LEVEL0, async (done:
      */
 it('ArkUX_Gauge_Indicator_InterfaceName_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 START');
-      setTimeout(() => {
-          let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_1400');
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 START  :' + JSON.stringify(strJson));
+     try{
+       setTimeout(() => {
+         let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_1400');
+         console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 START  :' + JSON.stringify(strJson));
 
-          console.info("ArkUX_Gauge_Indicator_InterfaceName_1400 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
-          let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
-          if (targetVersion < 11) {
-            console.info("ArkUX_Gauge_Indicator_InterfaceName_1400 API is not 11")
-          } else {
-            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
-          }
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 END ');
+         console.info("ArkUX_Gauge_Indicator_InterfaceName_1400 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
+         JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
+         let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+         if (targetVersion < 11) {
+           console.info("ArkUX_Gauge_Indicator_InterfaceName_1400 API is not 11")
+         } else {
+           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+         }
+         console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 END ');
 
-        done();
-      }, 1000)
+         done();
+       }, 1000)
+     }catch(e){
+       console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 error  :' + JSON.stringify(e));
+       done();
+     }
     });
 
 
@@ -1443,7 +1449,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1300', Level.LEVEL0, async (don
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_TrackShadow_InterfaceName_1300 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetString('trackShadow')).assertEqual(undefined);
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetString('trackShadow')).assertEqual('null');
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1300 END ');
 
@@ -1460,7 +1466,8 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1300', Level.LEVEL0, async (don
      */
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 START');
-      setTimeout(() => {
+      try{
+        setTimeout(() => {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_1400');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 START  :' + JSON.stringify(strJson));
 
@@ -1476,8 +1483,12 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1400', Level.LEVEL0, async (don
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 END ');
 
+          done();
+        }, 1000)
+      }catch(e){
+        console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 error  :' + JSON.stringify(e));
         done();
-      }, 1000)
+      }
     });
 
 

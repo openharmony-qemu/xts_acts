@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +39,6 @@ import { TextMenuController } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct SetMenuOptions1 {
-  @State TextMenuController1: TextMenuController = this.getUIContext().getTextMenuController()
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
 
@@ -71,7 +71,7 @@ struct SetMenuOptions1 {
         Button('DEFAULT').id('button_DEFAULT')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            this.TextMenuController1
+            this.getUIContext().getTextMenuController()
               .setMenuOptions(
                 {
                   showMode: TextMenuShowMode.DEFAULT
@@ -81,7 +81,7 @@ struct SetMenuOptions1 {
           .height('5%')
           .id('button_PREFER_WINDOW')
           .onClick((e:ClickEvent) => {
-            this.TextMenuController1
+            this.getUIContext().getTextMenuController()
               .setMenuOptions(
                 {
                   showMode: TextMenuShowMode.PREFER_WINDOW
@@ -91,7 +91,7 @@ struct SetMenuOptions1 {
           .height('5%')
           .id('button_undefined')
           .onClick((e:ClickEvent) => {
-            this.TextMenuController1
+            this.getUIContext().getTextMenuController()
               .setMenuOptions(
                 {
                   showMode: undefined
@@ -101,7 +101,7 @@ struct SetMenuOptions1 {
           .height('5%')
           .id('button_null')
           .onClick((e:ClickEvent) => {
-            this.TextMenuController1
+            this.getUIContext().getTextMenuController()
               .setMenuOptions(
                 {
                   showMode: undefined

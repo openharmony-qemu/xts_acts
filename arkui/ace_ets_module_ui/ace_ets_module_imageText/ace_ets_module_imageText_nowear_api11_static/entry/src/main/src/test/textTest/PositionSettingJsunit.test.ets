@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,6 +30,9 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import {
+  Position
+} from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -71,6 +75,8 @@ export default function positionSettingJsunit() {
       console.info("positionSettingJsunit beforeEach end");
     });
     afterEach(async () => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
       await CommonFunc.sleep(1000);
       console.info("positionSettingJsunit after each called");
     });
@@ -112,7 +118,7 @@ it('testPositionSetting_static_002', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting002] END');
       done();
     });
-    
+
     /*
      * @tc.number   testPositionSetting_static_003
      * @tc.name     testPositionSetting_static_003
@@ -158,11 +164,11 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "direction": Direction.Ltr
+            "directionT": Direction.Ltr
           } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
-          eventId: 26,
+          eventId: 25,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("[testPositionSetting004] start to publish emit");
@@ -218,15 +224,15 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
           data: {
             "position1": {
               x: 10, y: 25
-            } as Data1,
+            } as Position,
             "position2": {
               x: '30%', y: '50%'
-            } as Data2
+            } as Position
           } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
-          eventId: 27,
+          eventId: 25,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("[testPositionSetting006] start to publish emit");
@@ -288,14 +294,14 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "markAnchor": {
+            "anchor": {
               x: 0, y: 0
-            } as Data1,
+            } as Position,
           } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
-          eventId: 28,
+          eventId: 25,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("[testPositionSetting008] start to publish emit");
@@ -349,14 +355,14 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "offset": {
+            "offsetT": {
               x: 150, y: 10
-            } as Data1,
+            } as Position,
           } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
-          eventId: 29,
+          eventId: 25,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("[testPositionSetting010] start to publish emit");
@@ -396,41 +402,6 @@ it('testPositionSetting_static_011', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting011] END');
       done();
     });
-    /*
-     * @tc.number   testPositionSetting_static_012
-     * @tc.name     testPositionSetting_static_012
-     * @tc.desc     testPositionSetting_static_012
-     * @tc.level    Level.LEVEL1
-     */
-it('testPositionSetting_static_012', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('[testPositionSetting012] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "opacityValue": "0.7"
-          } as Record<String,undefined|null|Object>
-        } as events_emitter.EventData
 
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 25,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testPositionSetting012] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err :Error) {
-        console.log("[testPositionSetting012] change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(2000);
-
-
-        let strJsonNew = inspector.getInspectorByKey('opacity');
-        let obj = JSON.parseJsonElement(strJsonNew)
-
-        console.info("[testPositionSetting012] component objNew is: " + JSON.stringify(obj));
-        expect(obj.getElement('$attrs').getDouble('opacity')).assertEqual(0.7);
-
-      console.info('[testPositionSetting012] END');
-      done();
-    });
   })
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -95,7 +96,7 @@ struct TextState {
       Text(this.message)
         .key('ArkUX_Stage_Text_TextShadow_1000')
         .height(20)
-        .textShadow({ radius: 1, color: $r("app.color.textShadow_Color").toString() } as ShadowOptions)
+        .textShadow({ radius: 1, color: $r("app.color.textShadow_Color")} as ShadowOptions)
 
       Text(this.message)
         .key('ArkUX_Stage_Text_TextShadow_1100')

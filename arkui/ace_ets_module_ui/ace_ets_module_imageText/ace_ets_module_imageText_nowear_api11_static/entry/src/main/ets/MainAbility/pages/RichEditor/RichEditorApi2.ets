@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,7 +59,8 @@ struct RichEditorApi22Com {
       Button('getSpans')
         .id('RichEditorApi2_getSpans')
         .onClick((e:ClickEvent) => {
-          this.controller2.getSpans()!.forEach(item=> {
+          this.controller2!.getSpans()!
+            .forEach(item => {
               if (typeof ((item as RichEditorTextSpanResult).symbolSpanStyle) != 'undefined') {
                 this.text2 += (item as RichEditorTextSpanResult).symbolSpanStyle?.renderingStrategy
                 this.text3 += (item as RichEditorTextSpanResult).symbolSpanStyle?.effectStrategy

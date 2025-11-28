@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,18 +31,18 @@ import {
 } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import events_emitter from '@ohos.events.emitter'
 @Entry
 @Component
 struct TextAreaExampleBC1 {
-  @State text:string = 'test1'
+  @State areaText:string = 'test1'
   @State sizeT:number = 16
   @State weightT:int = 400
   @State placeholderFont:string ="#FFAACCEE"
   @State placeholderColor:string ="#FFAACCEE"
   @State textAlign:TextAlign = TextAlign.Start
-  @State caretColor:string = "#ACDEFF"
-  @State fontSize:number = 16
+  @State caretColor:string | int = "#ACDEFF"
+  @State testFontSize:int = 16
   @State textColor:string = '#000000'
   @State copyOption:CopyOptions = CopyOptions.LocalDevice
   @State placeholder:string ="The text area can hold an unlimited amount of text. input your word..."
@@ -53,73 +54,40 @@ struct TextAreaExampleBC1 {
   @State message4:string = 'text'
   @State text2:string = 'test2'
   @State message5:string = 'start'
-  messageManager:MessageManager<string | number|int|TextAlign|CopyOptions> = new MessageManager<string | number|int|TextAlign|CopyOptions>()
-  onPageShow() {
-    console.info('TextArea onPageShow')
-    AppStorage.setOrCreate<MessageManager<string | number|int|TextAlign|CopyOptions>>("messageManager", this.messageManager);
+  stateChangCallBack : (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
+    if (eventData != null) {
+      let eventD = eventData.data as Record<String,undefined|null|Object>
 
-    let callback: (message: Message<string | number|int|TextAlign|CopyOptions>) => void = (message: Message<string | number|int|TextAlign|CopyOptions>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'text') {
-        this.text = (message as Message<string>).value
+      if (eventD!['placeholderColor'] != null) {
+        console.info("[SearchPage page]" + eventD!['placeholderColor']);
+        this.placeholderColor =  eventD!['placeholderColor'] as string;
       }
-      if (message.name == 'text2') {
-        this.text2 = (message as Message<string>).value
+      if (eventD!['textColor'] != null) {
+        console.info("[SearchPage page]" + eventD!['textColor']);
+        this.textColor =  eventD!['textColor'] as string;
       }
-      if (message.name == 'message5') {
-        this.message5 = (message as Message<string>).value
+      if (eventD!['testFontSize'] != null) {
+        console.info("[SearchPage page]" + eventD!['testFontSize']);
+        this.testFontSize =  eventD!['testFontSize'] as int;
       }
-      if (message.name == 'message1') {
-        this.message1 = (message as Message<string>).value
-      }
-      if (message.name == 'sizeT') {
-        this.sizeT = (message as Message<number>).value
-      }
-      if (message.name == 'weightT') {
-        this.weightT = (message as Message<int>).value
-      }
-      if (message.name == 'placeholderFont') {
-        this.placeholderFont = (message as Message<string>).value
-      }
-      if (message.name == 'placeholderColor') {
-        this.placeholderColor = (message as Message<string>).value
-      }
-      if (message.name == 'textAlign') {
-        this.textAlign = (message as Message<TextAlign>).value
-      }
-      if (message.name == 'caretColor') {
-        this.caretColor = (message as Message<string>).value
-      }
-      if (message.name == 'fontSize') {
-        this.fontSize = (message as Message<number>).value
-      }
-      if (message.name == 'textColor') {
-        this.textColor = (message as Message<string>).value
-      }
-      if (message.name == 'copyOption') {
-        this.copyOption = (message as Message<CopyOptions>).value
-      }
-      if (message.name == 'placeholder') {
-        this.placeholder = (message as Message<string>).value
-      }
-      if (message.name == 'message2') {
-        this.message2 = (message as Message<string>).value
-      }
-      if (message.name == 'message3') {
-        this.message3 = (message as Message<string>).value
-      }
-      if (message.name == 'message4') {
-        this.message4 = (message as Message<string>).value
-      }
+
     }
-    this.messageManager.registerCallback(callback)
   }
+  onPageShow() {
+    console.info('SearchPage onPageShow')
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 811,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+  }
+
   build() {
     Column() {
       TextArea({
         placeholder: this.placeholder,
         controller: this.controller1,
-        text: this.text
+        text: this.areaText
       })
         .focusable(true)
         .placeholderFont({ size: this.sizeT, weight: this.weightT })
@@ -127,13 +95,14 @@ struct TextAreaExampleBC1 {
         .width(336)
         .key('textArea1')
         .height('10%')
-        .fontSize(this.fontSize)
+        .fontSize(this.testFontSize)
         .fontColor(this.textColor)
         .textAlign(this.textAlign)
         .caretColor(this.caretColor)
         .backgroundColor('#FFFFFF')
         .copyOption(this.copyOption)
         .onChange((value: string):void => {
+          console.info('message1message1',value)
           this.message1 = value
         })
         .onCopy((value:string) => {

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,12 +43,7 @@ struct richEditorApi1 {
           )
         })
         .onPaste((event?:PasteEvent):void => {
-          // if(event != undefined && event != null){
-          //   event.preventDefault = ():void => {
-          //     this.text1 = '222'
-          //   }
-          // }
-          // event?.preventDefault?.();
+          this.text1 = '222'
         })
         .key("RichEditor1")
         .borderWidth(1)

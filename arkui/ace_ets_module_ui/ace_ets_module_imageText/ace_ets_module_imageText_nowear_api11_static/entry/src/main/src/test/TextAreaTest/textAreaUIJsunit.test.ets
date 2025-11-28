@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,6 +34,7 @@ import { UtilsTest } from '../Util.test';
 import {
  ResourceColor
 } from '@ohos.arkui.component'
+import events_emitter from '@ohos.events.emitter'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -58,7 +60,7 @@ export default function textAreaUIJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaUIJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaUI" == pages.name)) {
           console.info("get textAreaUIJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -105,10 +107,18 @@ it('textAreaUIJsunit_static_0100', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0200 START');
-  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'sizeT', value:20})
-      await CommonFunc.sleep(2000);
-  AppStorage.get<MessageManager<int>>("messageManager")!.notify({name:'weightT', value:300})
-      await CommonFunc.sleep(2000);
+  let eventData: events_emitter.EventData = {
+    data: {
+      "sizeT":  20 as int,
+      "weightT": 300 as int
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
      let obj = JSON.parseJsonElement(strJson);
@@ -125,15 +135,23 @@ it('textAreaUIJsunit_static_0200', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       console.info('marqueeJsunit_0300 START');
       await CommonFunc.sleep(1000);
-  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'sizeT', value:-30})
-      await CommonFunc.sleep(200);
-  AppStorage.get<MessageManager<int>>("messageManager")!.notify({name:'weightT', value:-300})
-      await CommonFunc.sleep(200);
+  let eventData: events_emitter.EventData = {
+    data: {
+      "sizeT":  -30 as int,
+      "weightT": -300 as int
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_0300 component obj is: ' + obj.getElement('$attrs').getString('placeholderFont'));
-        expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"-30.00fp","fontWeight":"FontWeight.Normal","fontFamily":"sans-serif"}');
+        expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"16.00fp","weight":"400","fontFamily":"sans-serif"}');
 
       done();
    });
@@ -146,10 +164,19 @@ it('textAreaUIJsunit_static_0300', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0400', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0400 START');
-  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:'#FFFFFF'})
-      await CommonFunc.sleep(2000);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'#EEFFFF'})
-      await CommonFunc.sleep(2000);
+
+  let eventData: events_emitter.EventData = {
+    data: {
+      "placeholderColor":  '#FFFFFF',
+      "caretColor": '#EEFFFF'
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
@@ -168,10 +195,19 @@ it('textAreaUIJsunit_static_0400', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_0500', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0500 START');
       // modify the Color attribute normal value of textArea dynamically
-  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:'rgb(238, 130, 238)'})
-      await CommonFunc.sleep(2000);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'rgb(238, 131, 233)'})
-      await CommonFunc.sleep(2000);
+
+  let eventData: events_emitter.EventData = {
+    data: {
+      "placeholderColor":  'rgb(238, 130, 238)',
+      "caretColor": 'rgb(238, 131, 233)'
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
@@ -192,10 +228,19 @@ it('textAreaUIJsunit_static_0500', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_0600', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0600 START');
       // modify the Color attribute normal value of textArea dynamically
-  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:Color.Green})
-      await CommonFunc.sleep(2000);
-  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'caretColor', value:Color.Red})
-      await CommonFunc.sleep(2000);
+
+  let eventData: events_emitter.EventData = {
+    data: {
+      "placeholderColor":  Color.Green,
+      "caretColor": Color.Red
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
@@ -220,10 +265,19 @@ it('textAreaUIJsunit_static_0600', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_0700', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0700 START');
       // modify the Color attribute illegal value of textArea dynamically
-  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:'#AED'})
-      await CommonFunc.sleep(2000);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'#ACD'})
-      await CommonFunc.sleep(2000);
+
+  let eventData: events_emitter.EventData = {
+    data: {
+      "placeholderColor":  '#AED',
+      "caretColor": '#ACD'
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
      let obj = JSON.parseJsonElement(strJson);
@@ -241,8 +295,17 @@ it('textAreaUIJsunit_static_0700', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0800', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0800 START');
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'text', value:''})
-      await CommonFunc.sleep(1000);
+  let eventData: events_emitter.EventData = {
+    data: {
+      "areaText":  ''
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       // test the change event
@@ -367,7 +430,16 @@ it('textAreaUIJsunit_static_1000', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_1100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_1100 START');
       // modify the Color attribute normal value of textArea dynamically
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'rgba(0, 255, 0, 1)'})
+  let eventData: events_emitter.EventData = {
+    data: {
+      "caretColor":  'rgba(0, 255, 0, 1)'
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
@@ -392,8 +464,17 @@ it('textAreaUIJsunit_static_1100', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_1200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_1200 START');
       // modify the Color attribute normal value of textArea dynamically
-  AppStorage.get<MessageManager<int>>("messageManager")!.notify({name:'caretColor', value:0xffc0cb})
-      await CommonFunc.sleep(2000);
+  let eventData: events_emitter.EventData = {
+    data: {
+      "caretColor":  0xffc0cb
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
@@ -420,7 +501,17 @@ it('textAreaUIJsunit_static_1300', Level.LEVEL0, async (done: ()=>void) => {
       console.info("[textAreaUIJsunit_1300]: " + JSON.stringify(newJson));
 
       let caretColor = $r('sys.color.ohos_id_color_connected');
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:`${$r('sys.color.ohos_id_color_connected')}`})
+  let eventData: events_emitter.EventData = {
+    data: {
+      "caretColor":  caretColor
+    } as Record<String,undefined|null|Object>
+  }
+  let innerEvent: events_emitter.InnerEvent = {
+    eventId: 811,
+    priority: events_emitter.EventPriority.LOW
+  }
+  events_emitter.emit(innerEvent, eventData)
+  await CommonFunc.sleep(2000);
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('textArea');

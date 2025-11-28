@@ -1,4 +1,4 @@
-
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,11 +33,12 @@ import {
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
  import { MessageManager, Callback,Message } from '../../common/MessageManager';
+import events_emitter from '@ohos.events.emitter'
 @Entry
 @Component
 struct TextAreaExample {
-  @State text:string = 'test1'
-  @State sizeT:number = 16
+  @State areaText:string = 'test1'
+  @State sizeT:int = 16
   @State weightT:int = 400
   @State placeholderFont:string ="#FFAACCEE"
   @State placeholderColor:ResourceColor ="#FFAACCEE"
@@ -51,59 +52,40 @@ struct TextAreaExample {
   @State message2:string = 'text'
   @State message3:string = 'text'
   @State message4:string = 'text'
+  stateChangCallBack : (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
+    if (eventData != null) {
+      let eventD = eventData.data as Record<String,undefined|null|Object>
 
-  messageManager:MessageManager<string | number|int|TextAlign|CopyOptions|ResourceColor> = new MessageManager<string | number|int|TextAlign|CopyOptions|ResourceColor>()
+      if (eventD!['caretColor'] != null) {
+        console.info("[SearchPage page caretColor]" + eventD!['caretColor']);
+        this.caretColor =  eventD!['caretColor'] as ResourceColor;
+      }
+      if (eventD!['sizeT'] != null) {
+        console.info("[SearchPage page sizeT]" + eventD!['sizeT']);
+        this.sizeT =  eventD!['sizeT'] as int;
+      }
+      if (eventD!['weightT'] != null) {
+        console.info("[SearchPage page weightT]" + eventD!['weightT']);
+        this.weightT =  eventD!['weightT'] as int;
+      }
+      if (eventD!['placeholderColor'] != null) {
+        console.info("[SearchPage page placeholderColor]" + eventD!['placeholderColor']);
+        this.placeholderColor =  eventD!['placeholderColor'] as ResourceColor;
+      }
+      if (eventD!['areaText'] != null) {
+        console.info("[SearchPage page areaText]" + eventD!['areaText']);
+        this.areaText =  eventD!['areaText'] as string;
+      }
 
-  onPageShow() {
-    console.info('TextArea onPageShow')
-    AppStorage.setOrCreate<MessageManager<string | number|int|TextAlign|CopyOptions|ResourceColor>>("messageManager", this.messageManager);
-
-    let callback: (message: Message<string | number|int|TextAlign|CopyOptions|ResourceColor>) => void = (message: Message<string | number|int|TextAlign|CopyOptions|ResourceColor>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'text') {
-          this.text = (message as Message<string>).value
-      }
-      if (message.name == 'message1') {
-          this.message1 = (message as Message<string>).value
-      }
-      if (message.name == 'sizeT') {
-          this.sizeT = (message as Message<number>).value
-      }
-      if (message.name == 'weightT') {
-          this.weightT = (message as Message<int>).value
-      }
-      if (message.name == 'placeholderFont') {
-          this.placeholderFont = (message as Message<string>).value
-      }
-      if (message.name == 'placeholderColor') {
-          this.placeholderColor = (message as Message<ResourceColor>).value
-      }
-      if (message.name == 'textAlign') {
-          this.textAlign = (message as Message<TextAlign>).value
-      }
-      if (message.name == 'caretColor') {
-          this.caretColor = (message as Message<ResourceColor>).value
-      }
-      if (message.name == 'fontSize') {
-          this.fontSize = (message as Message<number>).value
-      }
-      if (message.name == 'copyOption') {
-          this.copyOption = (message as Message<CopyOptions>).value
-      }
-      if (message.name == 'placeholder') {
-          this.placeholder = (message as Message<string>).value
-      }
-      if (message.name == 'message2') {
-          this.message2 = (message as Message<string>).value
-      }
-      if (message.name == 'message3') {
-          this.message3 = (message as Message<string>).value
-      }
-      if (message.name == 'message4') {
-          this.message4 = (message as Message<string>).value
-      }
     }
-    this.messageManager.registerCallback(callback)
+  }
+  onPageShow() {
+    console.info('SearchPage onPageShow')
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 811,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {
@@ -111,7 +93,7 @@ struct TextAreaExample {
       TextArea({
         placeholder: this.placeholder,
         controller: this.controller,
-        text: this.text
+        text: this.areaText
       })
         .placeholderFont({ size: this.sizeT, weight: this.weightT })
         .placeholderColor(this.placeholderColor)
@@ -144,7 +126,7 @@ struct TextAreaExample {
       TextArea({
         placeholder: this.placeholder,
         controller: this.controller,
-        text: this.text
+        text: this.areaText
       })
         .caretColor($r('sys.color.ohos_id_color_connected'))
         .key('textAreaResource')
