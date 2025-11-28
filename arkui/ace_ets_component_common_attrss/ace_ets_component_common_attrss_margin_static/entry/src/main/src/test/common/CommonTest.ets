@@ -15,7 +15,7 @@
  */
 
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '../../../../hypium';
+import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
@@ -99,6 +99,7 @@ export default class CommonTest {
             await Utils.sleep(1000);
             //Check test result
             let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
+              await Utils.sleep(2000);
             console.info('[' + caseTag + '] ================== strJson: ' + strJson);
             data.viewObj = JSON.parseJsonElement(strJson);
             await (functions[functions.length - 1] as CallbackWithReturn)(data);

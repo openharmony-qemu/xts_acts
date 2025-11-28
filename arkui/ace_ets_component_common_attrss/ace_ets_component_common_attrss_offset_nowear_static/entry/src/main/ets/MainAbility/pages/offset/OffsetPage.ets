@@ -29,7 +29,7 @@ import {
   ListItem,FlowItem,FlexDirection,MenuItemGroup,Blank,applyStyles,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -42,7 +42,7 @@ struct Offset {
   private scroller: Scroller = new Scroller() //For Scroll and ScrollBar
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
   @State show: boolean = false //For Panel
-  @StorageProp("_offset") _offset: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef("_offset") _offset: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 200

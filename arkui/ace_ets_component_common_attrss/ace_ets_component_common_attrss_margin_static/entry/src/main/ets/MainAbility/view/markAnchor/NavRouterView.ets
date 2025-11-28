@@ -16,57 +16,53 @@
 
 import {
   Component,
-  Text,
+  Text,FlexDirection,Flex,$r,
   Row,
   ClickEvent,
   Column,
   List,
   Image,
   ForEach,
-  Position,
+  Position,Padding,
   Margin,
-  // NavRouter,
   TextAlign,
   Color,
   NavDestination
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { StoragePropRef, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _markAnchor!: Position;
+  @StoragePropRef("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
 
   build() {
-    // NavRouter() {
-    //   Row() {
-    //     Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
-    //     Text(`NavRouter`)
-    //       .fontSize(22)
-    //       .fontWeight(500)
-    //       .textAlign(TextAlign.Center)
-    //   }
-    //   .width(180)
-    //   .height(72)
-    //   .backgroundColor('#fff')
-    //   .borderRadius(24)
-    //
-    //   NavDestination() {
-    //     Text(`NavDestination`).fontSize(50)
-    //     Flex({ direction: FlexDirection.Row }) {
-    //       Row() {
-    //         Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 })
-    //         Text('NavDestination content').fontSize(30)
-    //       }.padding({ left: 15 })
-    //     }
-    //   }.backgroundColor('#ccc')
-    //   .title(`NavDestination`)
-    // }.onStateChange((isActivated: boolean) => {
-    //   console.info('isActivated = ' + isActivated);
-    // })
-    // .markAnchor(this._markAnchor)
-    // .key(this.componentKey)
+    Column() {
+      Row() {
+        Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
+        Text(`NavRouter`)
+          .fontSize(22)
+          .fontWeight(500)
+          .textAlign(TextAlign.Center)
+      }
+      .width(180)
+      .height(72)
+      .backgroundColor('#fff')
+      .borderRadius(24)
+
+      NavDestination() {
+        Text(`NavDestination`).fontSize(50)
+        Flex({ direction: FlexDirection.Row }) {
+          Row() {
+            Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+            Text('NavDestination content').fontSize(30)
+          }.padding({ left: 15 } as Padding)
+        }
+      }.backgroundColor('#ccc')
+      .title(`NavDestination`)
+    }.markAnchor(this._markAnchor)
+    .key(this.componentKey)
   }
 }

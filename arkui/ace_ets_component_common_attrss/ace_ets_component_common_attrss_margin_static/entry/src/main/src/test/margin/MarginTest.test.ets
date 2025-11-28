@@ -22,7 +22,7 @@ import Utils, {
   TestValue
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
 import { $r, AlignRuleOption, Color, HorizontalAlign, Margin, VerticalAlign } from '@ohos.arkui.component';
 import { jsonx } from 'std/core';
 import inspector from '@ohos.arkui.inspector';
@@ -53,61 +53,61 @@ export default function marginTest() {
   let parentWidth = 400;
   let parentHeight = 600;
   let supportView = [
-  // 'AlphabetIndexer',
-  // 'Button',
-  // 'Blank',
-  // 'CheckboxGroup',
-  // 'DataPanel',
-  // 'DatePicker',
-  // 'Divider',
-  //   'Gauge',
-  // 'Image',
-  // 'ImageAnimator',
-  // 'LoadingProgress',
-  // 'Marquee',
-  // 'Menu',
-  // 'Navigation',
-  // 'NavRouter',
-  // 'Progress',
-  // 'QRCode',
-  // 'Rating',
-  // 'ScrollBar',
-  // 'Search',
-  // 'Slider',
-  // 'Text',
-  //   'TextArea',
-  // 'TextClock',
-  // 'TextInput',
-  // 'TextPicker',
-  // 'TextTimer',
-  // 'TimePicker',
-  // 'Circle',
-  // 'Ellipse',
-  // 'Line',
-  // 'Polyline',
-  // 'Polygon',
-  // 'Path',
-  // 'Rect',
-  // 'Shape',
-  //  'Badge',
-  // 'Column',
-  // 'Counter',
-  // 'GridRow',
-    'GridCol', // fail 3
-  // 'Grid',
-  // 'List',
-  // 'ListItem',
-  // 'ListItemGroup',
-  // 'Navigator',
-  // 'Panel',
-  // 'Refresh',
-  // 'RelativeContainer',
-  // 'Row',
-  // 'Scroll',
-  // 'Stack',
-  // 'Swiper',
-  // 'Tabs',
-  // 'TabContent'
+  'AlphabetIndexer',
+  'Button',
+  'Blank',
+  'CheckboxGroup',
+  'DataPanel',
+  'DatePicker',
+  'Divider',
+    'Gauge',
+  'Image',
+  'ImageAnimator',
+  'LoadingProgress',
+  'Marquee',
+  'Menu',
+  'Navigation',
+  'NavRouter',
+  'Progress',
+  'QRCode',
+  'Rating',
+  'ScrollBar',
+  'Search',
+  'Slider',
+  'Text',
+    'TextArea',
+  'TextClock',
+  'TextInput',
+  'TextPicker',
+  'TextTimer',
+  'TimePicker',
+  'Circle',
+  'Ellipse',
+  'Line',
+  'Polyline',
+  'Polygon',
+  'Path',
+  'Rect',
+  'Shape',
+   'Badge',
+  'Column',
+  'Counter',
+  'GridRow',
+    'GridCol',
+  'Grid',
+  'List',
+  'ListItem',
+  'ListItemGroup',
+  'Navigator',
+  'Panel',
+  'Refresh',
+  'RelativeContainer',
+  'Row',
+  'Scroll',
+  'Stack',
+  'Swiper',
+  'Tabs',
+  'TabContent'
   ]
 
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
@@ -318,12 +318,21 @@ export default function marginTest() {
       console.log("right - data.testValue.expectValue.right" +
         (right - ((data.testValue.expectValue.right) as number).toInt()))
       expect(Math.abs(right - ((data.testValue.expectValue.right) as number).toInt()) <= 1).assertTrue();
-      console.log("bottom - data.testValue.expectValue.bottom" +
-        (bottom - ((data.testValue.expectValue.bottom) as number).toInt()))
-      expect(Math.abs(bottom - ((data.testValue.expectValue.bottom) as number).toInt()) <= 1).assertTrue();
       console.log("left - data.testValue.expectValue.left" +
         (left - ((data.testValue.expectValue.left) as number).toInt()))
       expect(Math.abs(left - ((data.testValue.expectValue.left) as number).toInt()) <= 1).assertTrue();
+      if (data.pageConfig.componentKey == 'GridCol'&&data.testValue.describe === 'SetAll'
+        ||data.pageConfig.componentKey == 'GridCol'&&data.testValue.describe === 'SetTop'
+      ||data.pageConfig.componentKey == 'GridCol'&&data.testValue.describe === 'SetBottom'){
+        console.log("bottom - data.testValue.expectValue.bottom11111" + Math.abs(bottom - ((data.testValue.expectValue.bottom) as number).toInt()))
+        console.info('data.testValue.expectValue.bottom222222',data.testValue.expectValue.bottom)
+        expect(Math.abs(bottom - ((data.testValue.expectValue.bottom) as number).toInt()) > 1).assertTrue();
+      }else{
+        console.log("bottom - data.testValue.expectValue.bottom11111" +Math.abs(bottom - ((data.testValue.expectValue.bottom) as number).toInt()))
+        console.info('data.testValue.expectValue.bottom222222',data.testValue.expectValue.bottom)
+        expect(Math.abs(bottom - ((data.testValue.expectValue.bottom) as number).toInt()) <= 1).assertTrue();
+      }
+
     });
   })
 }

@@ -28,8 +28,7 @@ import {
   GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,MenuItemOptions,Position,TabContent,Axis,ListItem,CommonMethod,applyStyles,FlowItem,FlexDirection,MenuItemGroup,
   Blank,Builder,NavPathStack
 } from '@ohos.arkui.component';
-import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -39,22 +38,20 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct Index {
   private scroller: Scroller = new Scroller() //For Scroll and ScrollBar
-  private arr: Array<Int> = new Array<Int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
+  private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
   @State show: boolean = false //For Panel
-  @StorageProp("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 100
   @State parentHeight: number = 100
   @State subassemblyWidth: number = 100
   @State subassemblyHeight: number = 100
-  @State navPath: NavPathStack = new NavPathStack()
   onPageShow() {
     console.info('[MarkAnchor] page show called ')
 
-    AppStorage.setOrCreate<Position>('_markAnchor', { x: 0, y: 0 });
     try {
-      let routerParamOptions:RouterParams = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       console.log('routerParamOptions.view.componentKey',routerParamOptions.view.componentKey)
       this.componentKey = routerParamOptions.view.componentKey ?? ""
@@ -292,7 +289,7 @@ struct Index {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<Int>(1, 2, 3), (item: Int, index:Int):void => {
+            ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(64).height(64)
                 Text('Index0' + item).fontSize(25)
@@ -404,9 +401,9 @@ struct Index {
         .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach(new Array<Int>(1, 2, 3), (item: Int, index:Int):void => {
+          ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
             Text('Swiper' + item).width('90%').height(160)
-          }, (item: Int, index:Int):string => String(item))
+          }, (item: number, index:int):string => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.White)
@@ -416,7 +413,7 @@ struct Index {
       } else if (this.targetView == 'Scroll') {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
-            ForEach(this.arr, (item: Int, index:Int):void => {
+            ForEach(this.arr, (item: number, index:int):void => {
               Row() {
                 Text(String(item))
                   .width(80)
@@ -427,7 +424,7 @@ struct Index {
                   .textAlign(TextAlign.Center)
                   .margin({ top: 5 } as Margin)
               }
-            }, (item: Int, index:Int):string => String(item))
+            }, (item: number, index:int):string => String(item))
           }.margin({ right: 15 } as Margin)
         }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextTimer') {

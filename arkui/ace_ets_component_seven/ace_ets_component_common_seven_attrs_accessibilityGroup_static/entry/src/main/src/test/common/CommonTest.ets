@@ -33,9 +33,9 @@ export default class CommonTest {
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     supportView.forEach(targetView => {
 
-      
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index: Int) => {
+      //Obtain the last index of cases that need to be executed.
+      let lastIndex: int = 0;
+      testValues.forEach((temp: TestValue, index: int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }

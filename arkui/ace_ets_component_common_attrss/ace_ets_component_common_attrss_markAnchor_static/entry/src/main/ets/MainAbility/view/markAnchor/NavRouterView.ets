@@ -29,13 +29,13 @@ import {
   Color,
   NavDestination
 } from '@ohos.arkui.component';
-import { StorageProp, State } from '@ohos.arkui.stateManagement';
+import { StoragePropRef, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @StorageProp("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
 
   build() {

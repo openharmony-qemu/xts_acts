@@ -17,10 +17,10 @@
 import {
   Component,
   Text,
-  Button,
+  Button,ForEach,
   ClickEvent,
   Column,
-  List,ForEach,
+  List,
   ListItemGroup,
   Stepper,
   StepperItem,
@@ -33,17 +33,17 @@ import {
   Builder,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { Link,StorageProp } from '@ohos.arkui.stateManagement';
+import { StoragePropRef } from '@ohos.arkui.stateManagement';
 
 
 @Component
 export struct ListItemGroupView {
-  @StorageProp("_offset") _offset: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef('_offset') _offset: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
-  private parentWidth: number = 0;
-  private parentHeight: number = 0;
-  private subassemblyWidth: number = 0;
-  private subassemblyHeight: number = 0;
+  private parentWidth: number = 100;
+  private parentHeight: number = 600;
+  private subassemblyWidth: number = 100;
+  private subassemblyHeight: number = 600;
   private parentComponentKey: string = '';
   private referenceComponentKey: string = '';
   private projects: string[] = ['Chinese', 'mathematics', 'English']

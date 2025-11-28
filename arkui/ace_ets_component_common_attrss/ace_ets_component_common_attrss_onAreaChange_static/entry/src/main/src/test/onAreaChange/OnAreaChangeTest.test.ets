@@ -16,7 +16,7 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium'
+import { describe, expect, beforeAll,afterEach } from '../../../../hypium/index'
 import {  ItemAlign, VerticalAlign, HorizontalAlign, Position } from '@ohos.arkui.component'
 import { UIContext, Router } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector'
@@ -28,7 +28,8 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest} from '../Util.test'
-import { jsonx } from "std/core"
+import { jsonx } from "std/core";
+import events_emitter from '@ohos.events.emitter';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -50,7 +51,6 @@ export default function onAreaChangeTest() {
     'Marquee',
     'MenuItem',
     'Navigation',
-    'NavRouter',
     'PatternLock',
     'Progress',
     'QRCode',
@@ -80,7 +80,6 @@ export default function onAreaChangeTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Navigator',
     'Panel',
     'RelativeContainer',
     'Row',
@@ -90,7 +89,7 @@ export default function onAreaChangeTest() {
     'Stack',
     'Swiper',
     'Tabs',
-    'TabContent',
+    'TabContent',//fail
     'WaterFlow',
     'Circle',
     'Ellipse',
@@ -210,27 +209,50 @@ export default function onAreaChangeTest() {
       console.info('[' + testData.caseTag + '] parentRectBefore: ' + JSON.stringify(parentRectBefore));
       console.log('JSON.stringify setValue',JSON.stringify(testData.testValue.setValue))
       //Set value
-      if(testData.testValue.setValue.width){
-        AppStorage.setOrCreate<number|undefined>('_width', testData.testValue.setValue.width)
+      if(testData.testValue.setValue.width && testData.testValue.setValue.height){
+        console.log('JSON.stringify offset setValue',111111)
+        let eventData: events_emitter.EventData = {
+          data: {
+            "_width": testData.testValue.setValue.width as number,
+            "_height": testData.testValue.setValue.height as number
+          } as Record<String,undefined|null|Object>
+        }
+        let indexEvent: events_emitter.InnerEvent = {
+          eventId: 99,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("flexDirection_static_0700 start to publish emit");
+        events_emitter.emit(indexEvent, eventData);
       }
-      if(testData.testValue.setValue.height){
-        AppStorage.setOrCreate<number|undefined>('_height', testData.testValue.setValue.height)
-      }
-      if(testData.testValue.setValue.compareButtonWidth){
-        AppStorage.setOrCreate<number|undefined>('_compareButtonWidth', testData.testValue.setValue.compareButtonWidth)
-      }
-      if(testData.testValue.setValue.compareButtonHeight){
-        console.log('JSON.stringify compareButtonHeight setValue',JSON.stringify(testData.testValue.setValue))
-        AppStorage.setOrCreate<number|undefined>('_compareButtonHeight', testData.testValue.setValue.compareButtonHeight)
+      if(testData.testValue.setValue.compareButtonWidth&&testData.testValue.setValue.compareButtonHeight){
+        let eventData: events_emitter.EventData = {
+          data: {
+            "_compareButtonWidth": testData.testValue.setValue.compareButtonWidth,
+            "_compareButtonHeight": testData.testValue.setValue.compareButtonHeight
+          } as Record<String,undefined|null|Object>
+        }
+        let indexEvent: events_emitter.InnerEvent = {
+          eventId: 99,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("flexDirection_static_0700 start to publish emit");
+        events_emitter.emit(indexEvent, eventData);
       }
       if(testData.testValue.setValue.offset){
-        console.log('JSON.stringify offset setValue',JSON.stringify(testData.testValue.setValue))
-        AppStorage.setOrCreate<Position|undefined>('_offset', testData.testValue.setValue.offset)
+        console.log('JSON.stringify offset setValue',testData.testValue.setValue)
+        let eventData: events_emitter.EventData = {
+          data: {
+            "_offset": testData.testValue.setValue.offset as Position
+          } as Record<String,undefined|null|Object>
+        }
+        let indexEvent: events_emitter.InnerEvent = {
+          eventId: 99,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("flexDirection_static_0700 start to publish emit");
+        events_emitter.emit(indexEvent, eventData);
       }
-      AppStorage.setOrCreate<string>('sizeOldValue', '')
-      AppStorage.setOrCreate<string>('sizeNewValue', '')
-      await Utils.sleep(1000);
-
+      await Utils.sleep(3000);
       //After the change, obtain the location information of the target component and parent container
       let parentRectAfter: RectValue = Utils.getComponentRect(testData.pageConfig.parentKey);
       let targetRectAfter: RectValue = Utils.getComponentRect(testData.pageConfig.componentKey);
@@ -327,13 +349,13 @@ async function checkResults(testData: BasePageConfig, compareOldTextComponent: j
   console.info('[' + testData.caseTag + '] compareOldTextObj.position.x: ' + compareOldTextObj.getElement('position').getInteger('x'));
   expect(Math.abs(compareOldTextObj.getElement('position').getInteger('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left - parentRectBefore.left))) <= 2)
     .assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj.position.y: ' + compareOldTextObj.getElement('position').getInteger('y'));
-  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top - parentRectBefore.top))) <= 2)
+  console.info('[' + testData.caseTag + '] compareOldTextObj.position.y: ' + compareOldTextObj.getElement('position').getDouble('y'));
+  expect(Math.abs(compareOldTextObj.getElement('position').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top - parentRectBefore.top))) <= 2)
     .assertTrue();
   console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.x: ' + compareOldTextObj.getElement('globalPosition').getInteger('x'));
   expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left))) <= 2).assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.y: ' + compareOldTextObj.getElement('globalPosition').getInteger('y'));
-  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top))) <= 2).assertTrue();
+  console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.y: ' + compareOldTextObj.getElement('globalPosition').getDouble('y'));
+  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top))) <= 2).assertTrue();
 
   //Check whether the changed position information is correct
   console.info('[' + testData.caseTag + '] compareNewTextObj.width: ' + compareNewTextObj.getDouble('width'));

@@ -31,13 +31,13 @@ import {
   $r,
   Padding
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { StoragePropRef, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _offset!: Position;
+  @StoragePropRef('_offset') _offset: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
 
   build() {

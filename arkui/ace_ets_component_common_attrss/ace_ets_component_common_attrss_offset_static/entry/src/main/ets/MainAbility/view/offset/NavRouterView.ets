@@ -31,13 +31,13 @@ import {
   $r,
   Padding
 } from '@ohos.arkui.component';
-import { Link, State,StorageProp } from '@ohos.arkui.stateManagement';
+import { StoragePropRef, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @StorageProp("_offset") _offset: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef('_offset') _offset: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
 
   build() {
@@ -64,11 +64,7 @@ export struct NavRouterView {
         }
       }.backgroundColor('#ccc')
       .title(`NavDestination`)
-    }
-    // .onStateChange((isActivated: boolean) => {
-    //   console.info('isActivated = ' + isActivated);
-    // })
-    .offset(this._offset)
+    }.offset(this._offset)
     .key(this.componentKey)
   }
 }

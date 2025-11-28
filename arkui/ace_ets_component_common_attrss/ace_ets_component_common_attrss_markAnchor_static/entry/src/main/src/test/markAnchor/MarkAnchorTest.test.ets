@@ -15,8 +15,8 @@
  */
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
-import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect,afterEach } from '../../../../hypium';
+import CommonTest from '../common/CommonTest';
+import { describe, beforeAll, expect,afterEach } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,  Position, $r } from '@ohos.arkui.component';
 import { UIContext } from "@ohos.arkui.UIContext";
 import hilog from '@ohos.hilog'
@@ -36,17 +36,18 @@ export default function MarkAnchorTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
     'Text'
-    // , 'Button', 'Radio', 'Blank', 'Checkbox', 'CheckboxGroup', 'DataPanel',
-    // 'DatePicker', 'Divider',
-    // 'Gauge',
-    // 'LoadingProgress', 'Marquee', 'Navigation', 'Image', 'ImageAnimator',
-    // 'AlphabetIndexer', 'NavRouter', 'Progress', 'QRCode', 'Rating', 'Search', 'Slider', 'TextArea', 'TextClock',
-    // 'TextInput', 'TextPicker', 'TimePicker', 'Toggle', 'Badge', 'Column', 'Counter', 'Flex', 'Grid', 'GridRow',
-    // 'List', 'Row', 'Scroll', 'Stack', 'Tabs', 'Circle', 'Ellipse', 'Line',
-    // 'Polyline', 'Polygon', 'Path', 'Rect', 'Shape', 'Panel', 'Refresh', 'TabContent', 'ListItem',
-    // 'RelativeContainer', 'Swiper', 'Navigator', 'TextTimer', 'GridCol',
-    // 'GridItem', 'ScrollBar', 'Menu', 'MenuItem', 'MenuItemGroup',
-    // 'ListItemGroup'
+    , 'Button', 'Radio', 'Blank', 'Checkbox', 'CheckboxGroup', 'DataPanel',
+    'DatePicker', 'Divider',
+    'Gauge',
+    'LoadingProgress', 'Marquee', 'Navigation', 'Image', 'ImageAnimator',
+    'AlphabetIndexer', 'NavRouter', 'Progress', 'QRCode', 'Rating', 'Search', 'Slider', 'TextArea', 'TextClock',
+    'TextInput', 'TextPicker', 'TimePicker', 'Toggle', 'Badge', 'Column', 'Counter', 'Flex', 'Grid', 'GridRow',
+    'List', 'Row', 'Scroll', 'Stack', 'Tabs', 'Circle', 'Ellipse', 'Line',
+    'Polyline', 'Polygon', 'Path', 'Rect', 'Shape',
+    'Refresh', 'TabContent', 'ListItem',
+    'RelativeContainer', 'Swiper', 'Navigator', 'TextTimer', 'GridCol',
+    'GridItem', 'ScrollBar', 'Menu', 'MenuItem', 'MenuItemGroup',
+    'ListItemGroup'
   )
 
 
@@ -79,34 +80,34 @@ export default function MarkAnchorTest() {
       left: AppStorage.get<UIContext>('uiContext')?.vp2px(50), top: AppStorage.get<UIContext>('uiContext')?.vp2px(50)
     }
   },
-// {
-//     describe: 'StringPx',
-//     setValue: {
-//       x: '150px', y: '150px'
-//     },
-//     expectValue: {
-//       x: '150.00px', y: '150.00px', left: 150, top: 150
-//     }
-//   },
-//     {
-//     describe: 'StringPercent',
-//     setValue: {
-//       x: '50%', y: '50%'
-//     },
-//     expectValue: {
-//       x: '50.00%', y: '50.00%'
-//     }
-//   },
-// {
-//     describe: 'Resource',
-//     setValue: {
-//       x: $r('app.float.50vp'), y: $r('app.float.50vp')
-//     },
-//     expectValue: {
-//       x: '50.00vp', y: '50.00vp',
-//       left: AppStorage.get<UIContext>('uiContext')?.vp2px(50), top: AppStorage.get<UIContext>('uiContext')?.vp2px(50)
-//     }
-//   }
+{
+    describe: 'StringPx',
+    setValue: {
+      x: '150px', y: '150px'
+    },
+    expectValue: {
+      x: '150.00px', y: '150.00px', left: 150, top: 150
+    }
+  },
+    {
+    describe: 'StringPercent',
+    setValue: {
+      x: '50%', y: '50%'
+    },
+    expectValue: {
+      x: '50.00%', y: '50.00%'
+    }
+  },
+{
+    describe: 'Resource',
+    setValue: {
+      x: $r('app.float.50vp'), y: $r('app.float.50vp')
+    },
+    expectValue: {
+      x: '50.00vp', y: '50.00vp',
+      left: AppStorage.get<UIContext>('uiContext')?.vp2px(50), top: AppStorage.get<UIContext>('uiContext')?.vp2px(50)
+    }
+  }
   ]
 
   describe('MarkAnchorTest', () => {
@@ -185,15 +186,15 @@ export default function MarkAnchorTest() {
         expect(Math.abs(Number(initialPosition.top - targetRectAfter.top) -
         Number((targetRectAfter.bottom - targetRectAfter.top) * 0.5)) <= 1).assertTrue();
       } else {
-        // console.log('initialPosition.left - targetRectAfter.left',initialPosition.left - targetRectAfter.left)
-        // console.log('testData.testValue.expectValue.left',testData.testValue.expectValue.left)
-        // console.log('initialPosition.left - targetRectAfter.top',initialPosition.left - targetRectAfter.top)
-        // console.log('testData.testValue.expectValue.top',testData.testValue.expectValue.top)
-        // //When set to the basic type, verify the calculated shifting
-        // expect(Math.abs(Number(initialPosition.left - targetRectAfter.left) -
-        // Number(testData.testValue.expectValue.left)) <= 1).assertTrue();
-        // expect(Math.abs(Number(initialPosition.top - targetRectAfter.top) -
-        // Number(testData.testValue.expectValue.top)) <= 1).assertTrue();
+        console.log('initialPosition.left - targetRectAfter.left',initialPosition.left - targetRectAfter.left)
+        console.log('testData.testValue.expectValue.left',testData.testValue.expectValue.left)
+        console.log('initialPosition.left - targetRectAfter.top',initialPosition.left - targetRectAfter.top)
+        console.log('testData.testValue.expectValue.top',testData.testValue.expectValue.top)
+        //When set to the basic type, verify the calculated shifting
+        expect(Math.abs(Number(initialPosition.left - targetRectAfter.left) -
+        Number(testData.testValue.expectValue.left)) <= 1).assertTrue();
+        expect(Math.abs(Number(initialPosition.top - targetRectAfter.top) -
+        Number(testData.testValue.expectValue.top)) <= 1).assertTrue();
       }
     })
   })

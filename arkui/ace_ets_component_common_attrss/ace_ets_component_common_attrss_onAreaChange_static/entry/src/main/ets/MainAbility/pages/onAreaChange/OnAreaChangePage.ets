@@ -30,16 +30,17 @@ import { Entry, Component, ItemAlign, Position, Builder, AlphabetIndexer, Button
   ImageFit, BreakpointsReference, TextTimerController, MenuItemOptions, MenuItemGroup, ListItemGroup, PatternLock,
   RichText, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import events_emitter from '@ohos.events.emitter';
 @Entry
 @Component
 struct OnAreaChangePage {
-  @StoragePropRef('_width') _width: number|undefined = 30;
-  @StoragePropRef('_height') _height: number|undefined = 30;
-  @StoragePropRef('_compareButtonWidth') _compareButtonWidth: number|undefined = 30;
-  @StoragePropRef('_compareButtonHeight') _compareButtonHeight: number|undefined = 30;
-  @StoragePropRef('sizeOldValue') sizeOldValue: string = '';
-  @StoragePropRef('sizeNewValue') sizeNewValue: string = '';
-  @StoragePropRef('_offset') _offset: Position|undefined = { x: 0, y: 0 } as Position;
+  @State _width: number = 30;
+  @State _height: number = 30;
+  @State _compareButtonWidth: number = 30;
+  @State _compareButtonHeight: number = 30;
+  @State sizeOldValue: string = '';
+  @State sizeNewValue: string = '';
+  @State _offset: Position = { x: 0, y: 0 } as Position;
   @State parentMargin: number = 0
   @State parentWidth: number =  0
   @State parentHeight: number =  0
@@ -67,13 +68,6 @@ struct OnAreaChangePage {
   }
   onPageShow() {
     console.info('OnAreaChangePage show called')
-    AppStorage.setOrCreate<number|undefined>('_width', 30)
-    AppStorage.setOrCreate<number|undefined>('_height', 30)
-    AppStorage.setOrCreate<number|undefined>('_compareButtonWidth', 30)
-    AppStorage.setOrCreate<number|undefined>('_compareButtonHeight', 30)
-    AppStorage.setOrCreate<Position|undefined>('_offset', { x: 0, y: 0 })
-    AppStorage.setOrCreate<string>('sizeOldValue', '')
-    AppStorage.setOrCreate<string>('sizeNewValue', '')
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('routerParamOptions',JSON.stringify(routerParamOptions))
@@ -89,6 +83,32 @@ struct OnAreaChangePage {
       this.compareNewTextKey = routerParamOptions.view.compareNewTextKey
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
+    }
+    let stateChangeEvent3: events_emitter.InnerEvent = {
+      eventId: 99,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent3, this.stateChangCallBack)
+  }
+
+  private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
+    if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      console.info("swiper page state change called:" + JSON.stringify(eventData));
+      if (data['_width'] != null && data['_height'] != null) {
+        this._width = data['_width'] as number;
+        this._height = data['_height'] as number;
+      }
+      if (data['_compareButtonWidth'] != null && data['_compareButtonHeight'] != null) {
+        this._compareButtonWidth = data['_compareButtonWidth'] as number;
+        this._compareButtonHeight = data['_compareButtonHeight'] as number;
+      }
+
+      if (data['_offset'] != null) {
+        this._offset = data['_offset'] as Position;
+      }
+      this.sizeOldValue = ''
+      this.sizeNewValue = ''
     }
   }
 

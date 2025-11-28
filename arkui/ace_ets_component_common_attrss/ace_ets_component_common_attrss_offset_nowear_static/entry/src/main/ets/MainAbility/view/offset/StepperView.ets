@@ -32,7 +32,7 @@ import {
   ItemState,
   Margin
 } from '@ohos.arkui.component';
-import { Link, State,StorageProp } from '@ohos.arkui.stateManagement';
+import { StoragePropRef, State } from '@ohos.arkui.stateManagement';
 
 function itemStyle(this: ColumnAttribute): this {
   this.width(336)
@@ -59,7 +59,7 @@ export struct StepperView {
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
-  @StorageProp("_offset") _offset: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef('_offset') _offset: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
 
   build() {
