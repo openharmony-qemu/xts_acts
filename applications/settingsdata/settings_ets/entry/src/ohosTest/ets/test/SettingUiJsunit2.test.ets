@@ -15,7 +15,6 @@
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import settings from '@ohos.settings';
-import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { mContext } from '../testability/TestAbility'
 
