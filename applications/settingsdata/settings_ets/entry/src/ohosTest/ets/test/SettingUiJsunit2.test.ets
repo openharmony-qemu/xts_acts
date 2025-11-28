@@ -1694,7 +1694,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let value = 'brightness111'; //值
       try {
-        let result: boolean =
+        let result =
           await settings.setValue(mContext, '', value, settings.domainName.DEVICE_SHARED);
         console.info("[settings_set_value_key_empty] result = " + result);
         expect(result).assertTrue();
@@ -1741,7 +1741,7 @@ export default function settingUiJsunit() {
      */
     it('settings_set_value_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let result: boolean =
+        let result =
           await settings.setValue(mContext, 'setvalueempty', '', settings.domainName.DEVICE_SHARED);
         console.info("[settings_set_value_value_empty] result = " + result);
         expect(result).assertTrue();
@@ -1764,7 +1764,7 @@ export default function settingUiJsunit() {
      */
     it('settings_set_value_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let result: boolean =
+        let result =
           await settings.setValue(mContext, 'setvalue1', 'value1', '');
         expect(result === null).assertTrue();
         done();
