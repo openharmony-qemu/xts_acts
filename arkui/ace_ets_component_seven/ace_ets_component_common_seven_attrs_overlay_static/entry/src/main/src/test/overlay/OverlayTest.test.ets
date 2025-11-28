@@ -81,7 +81,6 @@ export default function OverlayTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the target component properties.
       console.info('[' + data.caseTag + '] overlayTest');
-      // console.info('[' + data.caseTag + '] check overlay.' + ` ${data.testValue.setValue.overlay.options.align} ${data.testValue.setValue.overlay.options.offset.x} ${data.testValue.setValue.overlay.options.offset.y} ${data.testValue.setValue.overlay.value}`);
       console.info('[' + data.testValue.expectValue.overlay + '] expectValue');
       console.info('[' + data.viewObj!.getElement('$attrs').getElement('overlay') + '] viewObj.$attrs.overlay');
       expect(data.viewObj!.getElement('$attrs').getElement('overlay').getString('title')).assertEqual(data.testValue.expectValue.overlay.value);

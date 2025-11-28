@@ -38,7 +38,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,TranslateOptions,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, TranslateOptions } from '@ohos.arkui.component'
-import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -344,30 +344,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 		instance.translate(this.mTranslate)
 	}
 }
-
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-// 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
-//
-// 	applyNormalAttribute(instance: NavigatorAttribute): void {
-// 		instance.translate(this.mTranslate)
-// 	}
-// }
-//
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-// 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
-//
-// 	applyNormalAttribute(instance: NavRouterAttribute): void {
-// 		instance.translate(this.mTranslate)
-// 	}
-// }
-//
-// class PanelModifier implements AttributeModifier<PanelAttribute> {
-// 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
-//
-// 	applyNormalAttribute(instance: PanelAttribute): void {
-// 		instance.translate(this.mTranslate)
-// 	}
-// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
@@ -1150,9 +1126,6 @@ struct TranslatePage {
 	@State _translateMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
 	@State _translateNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
 	@State _translateNavigationModifier: NavigationModifier = new NavigationModifier()
-	// @State _translateNavigatorModifier: NavigatorModifier = new NavigatorModifier()
-	// @State _translateNavRouterModifier: NavRouterModifier = new NavRouterModifier()
-	// @State _translatePanelModifier: PanelModifier = new PanelModifier()
 	@State _translatePathModifier: PathModifier = new PathModifier()
 	@State _translatePolygonModifier: PolygonModifier = new PolygonModifier()
 	@State _translatePolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1203,7 +1176,7 @@ struct TranslatePage {
   @State gutter: number =  0
   @State parentBackGroundColor: string =  '#FFFF00'
   @State parentComponentKey: string =  '';
-	@StorageProp('_translateObj') _translate: SetValue = {
+	@StoragePropRef('_translateObj') _translate: SetValue = {
 	height: 0, translate: { x: 0, y: 0, z: 0}
 }
 
@@ -1313,18 +1286,6 @@ struct TranslatePage {
 					.attributeModifier(this._translateMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
-				// NavRouter() {
-				// 	Row() {
-				// 		Image($r('app.media.icon'))
-				// 	}
-				//
-				// 	NavDestination() {
-				// 		Text('NavDestination')
-				// 			.fontSize(10)
-				// 	}
-				// }
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._translateNavRouterModifier)
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
@@ -1614,22 +1575,8 @@ struct TranslatePage {
 					.height('100%')
 			}
 			if (this.targetView == 'Navigator') {
-				// Navigator() {
-				// 	Text('Go to back page')
-				// 		.width('100%')
-				// 		.height(20)
-				// }
-				// 	.backgroundColor(Color.Red)
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._translateNavigatorModifier)
 			}
 			if (this.targetView == 'Panel') {
-				// Panel(true) {
-				// 	Text('Text')
-				// }
-				// 	.backgroundColor(Color.Yellow)
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._translatePanelModifier)
 			}
 			if (this.targetView == 'Refresh') {
 				Refresh({ refreshing: true }) {

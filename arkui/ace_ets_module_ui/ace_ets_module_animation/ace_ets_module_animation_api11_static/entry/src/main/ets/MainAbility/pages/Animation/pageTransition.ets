@@ -39,7 +39,6 @@ struct PageTransitionExample1 {
 
   build() {
     Column() {
-      // Navigator({ target: 'pages/pageTransition2', type: NavigationType.Push }) {
       Navigation() {
         Image($rawfile('test.png'))
           .width("100%")

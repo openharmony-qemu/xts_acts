@@ -192,7 +192,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component';
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -528,20 +528,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mSaturate: number = 10
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
-//     instance.saturate(this.mSaturate)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mSaturate: number = 10
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
-//     instance.saturate(this.mSaturate)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mSaturate: number = 10
 
@@ -1205,7 +1191,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.height('100%')
+
   this.key(componentKey)
   return this
 }
@@ -1363,7 +1349,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct saturatePage {
-  @StorageProp('_saturate') _saturate: SetValue = {
+  @StoragePropRef('_saturate') _saturate: SetValue = {
     height: 0, saturate: 0
   }
   @State _saturateAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
@@ -1402,9 +1388,7 @@ struct saturatePage {
   @State _saturateMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _saturateMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _saturateNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _saturateNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _saturateNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _saturateNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _saturatePatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _saturatePluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _saturateQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1523,15 +1507,6 @@ struct saturatePage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._saturateMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._saturateNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1709,13 +1684,7 @@ struct saturatePage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._saturateNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

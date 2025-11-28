@@ -47,7 +47,6 @@ struct geometryTransitionExample {
             follow: true
           })
           .key('geometry_follow_2')
-        // .transition(TransitionEffect.OPACITY)
       } else {
         Column() {
           Column() {
@@ -66,8 +65,6 @@ struct geometryTransitionExample {
           follow: true
         })
         .key('geometry_follow_1')
-
-        // .transition(TransitionEffect.OPACITY)
       }
     }
     .onClick((e: ClickEvent) => {

@@ -34,11 +34,11 @@ export default function defaultFocusValueTest() {
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    // 'Stepper',
-    // 'StepperItem',
-    'Web',
-    // 'ColumnSplit',
-    // 'RowSplit',
+    'Stepper',
+    'StepperItem',
+    // 'Web',
+    'ColumnSplit',
+    'RowSplit',
   )
 
   //Custom params.

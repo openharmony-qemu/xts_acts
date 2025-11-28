@@ -54,7 +54,7 @@ export default function AnimatorResultTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get AnimatorResultTest state pages:" + JSON.stringify(pages));
-        if (!("AnimatorResultTest" == pages.name)) {
+        if (!("AnimatorResult" == pages.name)) {
           console.info("get AnimatorResultTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
@@ -68,8 +68,6 @@ export default function AnimatorResultTest() {
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
       console.info("AnimatorResultTest after each called");
     });
     

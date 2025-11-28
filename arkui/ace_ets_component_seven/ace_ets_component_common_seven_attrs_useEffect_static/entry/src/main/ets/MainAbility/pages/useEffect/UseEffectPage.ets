@@ -302,20 +302,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
    instance.useEffect(this.mUseEffect)
   }
 }
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mUseEffect: boolean = true
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
-//    instance.useEffect(this.mUseEffect)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mUseEffect: boolean = true
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
-//    instance.useEffect(this.mUseEffect)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -1101,9 +1087,7 @@ struct useEffectPage {
   @State _useEffectMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _useEffectMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _useEffectNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _useEffectNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _useEffectNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _useEffectNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _useEffectPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _useEffectPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _useEffectQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1197,9 +1181,7 @@ struct useEffectPage {
       this._useEffectMenuItemMod.mUseEffect = value.useEffect
       this._useEffectMenuItemGroupMod.mUseEffect = value.useEffect
       this._useEffectNavDestinationMod.mUseEffect = value.useEffect
-      // this._useEffectNavRouterMod.mUseEffect = value.useEffect
       this._useEffectNavigationMod.mUseEffect = value.useEffect
-      // this._useEffectNavigatorMod.mUseEffect = value.useEffect
       this._useEffectPatternLockMod.mUseEffect = value.useEffect
       this._useEffectPluginComponentMod.mUseEffect = value.useEffect
       this._useEffectQRCodeMod.mUseEffect = value.useEffect
@@ -1239,13 +1221,6 @@ struct useEffectPage {
   
     })
   }
-
-  // @Styles commonStyle(){
-  //  .useEffect(this._useEffect)
-  //   .height('100%')
-  //   .gridSpan(1)
-  //   .key(this.componentKey)
-  // }
 
   build() {
     GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
@@ -1289,13 +1264,6 @@ struct useEffectPage {
         } else if (this.targetView == 'LoadingProgress') {
           LoadingProgress().commonStyle(this.componentKey).attributeModifier(this._useEffectLoadingProgressMod)
         } else if (this.targetView == 'Marquee') {
-          // Marquee({
-          //   start: true,
-          //   step: 50,
-          //   loop: Infinity,
-          //   fromStart: true,
-          //   src: 'Running Marquee starts rolling'
-          // }).commonStyle(this.componentKey).attributeModifier(this._useEffectMarqueeMod)
         } else if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
           }.commonStyle(this.componentKey).attributeModifier(this._useEffectNavigationMod)
@@ -1304,15 +1272,6 @@ struct useEffectPage {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._useEffectMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._useEffectNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1471,13 +1430,7 @@ struct useEffectPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._useEffectNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

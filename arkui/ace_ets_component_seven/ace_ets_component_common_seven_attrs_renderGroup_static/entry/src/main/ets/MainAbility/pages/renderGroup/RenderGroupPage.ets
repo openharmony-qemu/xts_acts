@@ -203,7 +203,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -539,20 +539,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mRenderGroup: boolean = true
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     console.info(`renderGroup page show ${JSON.stringify(this.mRenderGroup)}`)
-//    instance.renderGroup(this.mRenderGroup)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mRenderGroup: boolean = true
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     console.info(`renderGroup page show ${JSON.stringify(this.mRenderGroup)}`)
-//    instance.renderGroup(this.mRenderGroup)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mRenderGroup: boolean = true
 
@@ -1215,7 +1201,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.height('100%')
+ 
   this.key(componentKey)
   return this
 }
@@ -1409,9 +1395,7 @@ struct renderGroupPage {
   @State _renderGroupMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _renderGroupMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _renderGroupNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _renderGroupNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _renderGroupNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _renderGroupNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _renderGroupPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _renderGroupPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _renderGroupQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1455,7 +1439,7 @@ struct renderGroupPage {
   @State columns: number = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
-  @StorageProp('_renderGroup') _renderGroup: SetValue = {
+  @StoragePropRef('_renderGroup') _renderGroup: SetValue = {
     height: 0, renderGroup: false
   }
 
@@ -1536,15 +1520,6 @@ struct renderGroupPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._renderGroupMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._renderGroupNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1722,13 +1697,7 @@ struct renderGroupPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._renderGroupNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

@@ -75,7 +75,6 @@ struct Index {
           { value: 'ggg' }
         ])
           .key("ArkUX_Select_Visual_0040")
-          // .menuAlign(null)
           .backgroundColor(Color.Blue)
           .value('TTTT')
           .optionBgColor(Color.Blue)

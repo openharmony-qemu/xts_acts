@@ -14,30 +14,30 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
+  AttributeModifier,
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  Color,
   Column,
-  Row,
-  Text,
   ColumnOptions,
-  TouchType,
+  Component,
   CustomBuilder,
   DragItemInfo,
-  Color,
-  Button,
-  TouchEvent,
-  Margin,
-  Scroll,
+  Entry,
+  FlexAlign,
   GestureEvent,
   LongPressGesture,
+  Margin,
+  Row,
+  Scroll,
   TapGesture,
-  ClickEvent,
-  FlexAlign,
-  AttributeModifier,
-  ButtonAttribute
+  Text,
+  TouchEvent,
+  TouchType
 } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, State } from '@ohos.arkui.stateManagement'
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 class MyButtonModifier2 implements AttributeModifier<ButtonAttribute> {
   isDark: boolean = false
@@ -56,7 +56,8 @@ struct AttributeModifierDemoAPI02 {
   build() {
     Row() {
       Column() {
-        Button("检测此button").key('AttributeModifierDemoAPI02ButtonFocus')
+        Button("检测此button")
+          .key('AttributeModifierDemoAPI02ButtonFocus')
           .width('90%')
           .height(80)
           .attributeModifier(this.modifier)

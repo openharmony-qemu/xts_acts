@@ -55,10 +55,8 @@ export default function ParticleAttributeTest() {
         console.info("get ParticleAttributeTest state pages:" + JSON.stringify(pages));
         if (!("particleAttributeTest" == pages.name)) {
           console.info("get ParticleAttributeTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ParticleAttributeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ParticleAttributeTest page error:" + err);

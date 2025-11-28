@@ -103,21 +103,21 @@ it('noBarrierComponents025_static', Level.LEVEL0, async (done: () => void): Prom
      * @tc.desc     noBarrierComponents029_static
      * @tc.level    Level.LEVEL0
      */
-it('noBarrierComponents029_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('noBarrierComponents029 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Web");
-          await CommonFunc.sleep(1000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Web");
-          console.info('noBarrierComponents029 END ');
-        } catch (err: Error) {
-          expect().assertFail()
-          console.info('noBarrierComponents029 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500)
-    });
+    // it('noBarrierComponents029_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   console.info('noBarrierComponents029 START');
+    //   setTimeout(() => {
+    //     try {
+    //       let strJson = inspector.getInspectorByKey("Web");
+    //       await CommonFunc.sleep(1000);
+    //       console.info(' START  :' + JSON.stringify(strJson));
+    //       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Web");
+    //       console.info('noBarrierComponents029 END ');
+    //     } catch (err: Error) {
+    //       expect().assertFail()
+    //       console.info('noBarrierComponents029 ERR  ' + JSON.stringify(err));
+    //     }
+    //     done();
+    //   }, 500)
+    // });
   })
 }

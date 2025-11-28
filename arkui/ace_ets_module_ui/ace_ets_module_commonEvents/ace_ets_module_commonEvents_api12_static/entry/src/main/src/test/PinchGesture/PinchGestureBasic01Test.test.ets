@@ -125,10 +125,13 @@ it('PinchGestureBasic01Test_static_0010', Level.LEVEL0, async (done: () => void)
         x: Math.round(areaObj1.right - areaWidth1 * 0.3) as Int,
         y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
       } as Point);
+
+      // await CommonFunc.sleep(4000);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('PinchGestureBasic01_Father');
+      await CommonFunc.sleep(1000);
       let FatherObjHeight = FatherObj.bottom - FatherObj.top
       let FatherObjWidth = FatherObj.right - FatherObj.left
       console.log('PinchGestureBasic01Test_0010 FatherObj', FatherObj.left, FatherObj.top, FatherObj.right,

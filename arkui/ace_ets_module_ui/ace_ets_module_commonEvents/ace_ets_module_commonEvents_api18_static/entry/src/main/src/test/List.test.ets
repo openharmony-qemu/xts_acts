@@ -48,7 +48,7 @@ export default function testsuite() {
   nextFocus();  // 1 pass 1
   nextFocus2(); // 1 pass 1
   panGestureDistanceTest(); // 3 getDistanceMap 接口未交付
-  panGestureOnOffTest(); // 1 List-ForEach
+  panGestureOnOffTest(); // 1 observer.off
   enableEdgeAutoScroll_false(); // 1 pass 1
   enableEdgeAutoScroll_true(); // 1 pass 1
   onVisiable(); // 1 pass 1

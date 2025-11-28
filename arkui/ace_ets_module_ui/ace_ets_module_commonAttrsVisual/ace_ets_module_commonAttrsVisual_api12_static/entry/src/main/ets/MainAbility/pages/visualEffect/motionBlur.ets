@@ -53,9 +53,9 @@ struct motionBlurTest1 {
   @State widthSize: number = 400
   @State heightSize: number = 320
   @State flag: boolean = true
-  @State radius: number = 0
-  @State x: number = 0
-  @State y: number = 0
+  @State radius: Double = 0
+  @State x: Double = 0
+  @State y: Double = 0
 
   build() {
     Column() {
@@ -79,7 +79,7 @@ struct motionBlurTest1 {
           })
           .animation({
             duration: 2000,
-            // curve: Curves.springCurve(10, 1, 228, 30),
+            // curve: Curves.springCurve(10.0, 1.0, 228.0, 30.0),
             onFinish: () => {
               this.radius = 0;
             }

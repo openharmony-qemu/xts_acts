@@ -33,11 +33,6 @@ struct RouteType2 {
 
   build() {
     Column() {
-      // Navigator({ target: 'pages/RouteType1', type: NavigationType.Push }) {
-      //   Image($r('app.media.icon'))
-      //     .width('100%')
-      //     .height('100%') // 图片存放在media文件夹下
-      // }
     }
     .width('100%')
     .height('100%')

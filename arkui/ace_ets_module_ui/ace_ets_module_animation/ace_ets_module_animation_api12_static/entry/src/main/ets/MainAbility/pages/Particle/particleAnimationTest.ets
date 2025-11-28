@@ -144,7 +144,8 @@ struct ParticleExample {
 
           }
         ]
-      }).width(300).height(300).disturbanceFields([{
+      })
+      .width(300).height(300).disturbanceFields([{
         strength: 10,
         shape: DisturbanceFieldShape.RECT,
         size: { width: 100, height: 100 },

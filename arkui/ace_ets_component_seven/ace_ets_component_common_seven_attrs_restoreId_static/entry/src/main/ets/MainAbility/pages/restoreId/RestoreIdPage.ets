@@ -205,7 +205,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 // add Modifier
@@ -505,16 +505,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     instance.restoreId(this.mRestoreId)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     instance.restoreId(this.mRestoreId)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mRestoreId: int = 2;
 
@@ -1140,7 +1130,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.restoreId(2)
+
   this.key(componentKey)
   return this
 }
@@ -1334,9 +1324,7 @@ struct restoreIdPage {
   @State _restoreIdMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _restoreIdMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _restoreIdNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _restoreIdNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _restoreIdNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _restoreIdNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _restoreIdPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _restoreIdPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _restoreIdQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1380,7 +1368,7 @@ struct restoreIdPage {
   @State columns: number = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
-  @StorageProp('_restoreId') restoreId: Int = 0
+  @StoragePropRef('_restoreId') restoreId: Int = 0
 
   onPageShow() {
     console.info('restoreId page show called ')
@@ -1455,15 +1443,6 @@ struct restoreIdPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1633,13 +1612,7 @@ struct restoreIdPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

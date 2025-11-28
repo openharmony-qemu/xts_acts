@@ -111,7 +111,7 @@ import {
   VerticalAlign,
   WaterFlow,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
@@ -122,7 +122,7 @@ import Utils, { DefaultAlign, RectValue, RouterParams } from '../../common/Utils
 @Component
 struct FlexBasisPage {
   // @State _flexBasis: number | string = 0.0
-  @StorageProp("_flexBasis") _flexBasis: number | string = 0.0
+  @StoragePropRef("_flexBasis") _flexBasis: number | string = 0.0
   @State targetView: string = ''
   @State containerView: string = ''
   @State componentKey: string = ''

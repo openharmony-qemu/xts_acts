@@ -77,7 +77,6 @@ struct ImageAnimatorExampleu {
         .state(this.state)
         .reverse(this.reverse)
         .fixedSize(false)
-        // .preDecode(2)
         .fillMode(FillMode.None)
         .iterations(this.iterations)
         .width(325)

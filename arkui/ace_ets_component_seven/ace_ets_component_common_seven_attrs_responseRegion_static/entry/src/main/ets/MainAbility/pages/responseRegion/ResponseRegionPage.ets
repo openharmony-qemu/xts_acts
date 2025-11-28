@@ -693,31 +693,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     instance.responseRegion(this.mResponseRegion)
   }
 }
-
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-// 	mResponseRegion: Array<Rectangle> = [{ x: 13, y: 17, width: '19%', height: '23%' }]
-//
-// 	applyNormalAttribute(instance: NavigatorAttribute): void {
-// 		instance.responseRegion(this.mResponseRegion)
-// 	}
-// }
-//
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-// 	mResponseRegion: Array<Rectangle> = [{ x: 13, y: 17, width: '19%', height: '23%' }]
-//
-// 	applyNormalAttribute(instance: NavRouterAttribute): void {
-// 		instance.responseRegion(this.mResponseRegion)
-// 	}
-// }
-//
-// class PanelModifier implements AttributeModifier<PanelAttribute> {
-// 	mResponseRegion: Array<Rectangle> = [{ x: 13, y: 17, width: '19%', height: '23%' }]
-//
-// 	applyNormalAttribute(instance: PanelAttribute): void {
-// 		instance.responseRegion(this.mResponseRegion)
-// 	}
-// }
-
 class PathModifier implements AttributeModifier<PathAttribute> {
   mResponseRegion: Array<Rectangle> = [{
     x: 13,
@@ -1011,9 +986,6 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
     width: '19%',
     height: '23%'
   }]
-  // applyNormalAttribute(instance: SpanAttribute): void {
-  // instance.responseRegion(this.mResponseRegion)
-  // }
 }
 
 class StackModifier implements AttributeModifier<StackAttribute> {
@@ -1708,9 +1680,6 @@ struct ResponseRegionPage {
   @State _responseRegionMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _responseRegionNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
   @State _responseRegionNavigationModifier: NavigationModifier = new NavigationModifier()
-  // @State _responseRegionNavigatorModifier: NavigatorModifier = new NavigatorModifier()
-  // @State _responseRegionNavRouterModifier: NavRouterModifier = new NavRouterModifier()
-  // @State _responseRegionPanelModifier: PanelModifier = new PanelModifier()
   @State _responseRegionPathModifier: PathModifier = new PathModifier()
   @State _responseRegionPolygonModifier: PolygonModifier = new PolygonModifier()
   @State _responseRegionPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1877,18 +1846,6 @@ struct ResponseRegionPage {
         .attributeModifier(this._responseRegionMenuModifier)
       }
       if (this.targetView == 'NavRouter') {
-        // NavRouter() {
-        // 	Row() {
-        // 		Image($r('app.media.icon'))
-        // 	}
-        //
-        // 	NavDestination() {
-        // 		Text('NavDestination')
-        // 			.fontSize(10)
-        // 	}
-        // }
-        // 	.commonStyle(this.componentKey)
-        // 	.attributeModifier(this._responseRegionNavRouterModifier)
       }
       if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Eclipse })
@@ -2198,22 +2155,8 @@ struct ResponseRegionPage {
         .height('100%')
       }
       if (this.targetView == 'Navigator') {
-        // Navigator() {
-        // 	Text('Go to back page')
-        // 		.width('100%')
-        // 		.height(20)
-        // }
-        // 	.backgroundColor(Color.Red)
-        // 	.commonStyle(this.componentKey)
-        // 	.attributeModifier(this._responseRegionNavigatorModifier)
       }
       if (this.targetView == 'Panel') {
-        // Panel(true) {
-        // 	Text('Text')
-        // }
-        // 	.backgroundColor(Color.Yellow)
-        // 	.commonStyle(this.componentKey)
-        // 	.attributeModifier(this._responseRegionPanelModifier)
       }
       if (this.targetView == 'Refresh') {
         Refresh({ refreshing: true }) {

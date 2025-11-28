@@ -97,7 +97,7 @@ export default class CommonTest {
               testValue: testValue,
             }
 
-            AppStorage.setOrCreate<boolean>('_defaultFocus', data.testValue.setValue)
+            // AppStorage.setOrCreate<boolean>('_defaultFocus', data.testValue.setValue)
             // await Utils.sleep(4000);
 
             //Check test result

@@ -204,7 +204,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -540,20 +540,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mRenderFit: RenderFit = RenderFit.RIGHT
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
-//    instance.renderFit(this.mRenderFit)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mRenderFit: RenderFit = RenderFit.RIGHT
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
-//    instance.renderFit(this.mRenderFit)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mRenderFit: RenderFit = RenderFit.RIGHT
 
@@ -1216,7 +1202,6 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1374,7 +1359,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct renderFitPage {
-  @StorageProp('_renderFit') _renderFit: SetValue = {
+  @StoragePropRef('_renderFit') _renderFit: SetValue = {
     height: 0, renderFit: RenderFit.LEFT
   }
   @State _renderFitAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
@@ -1413,9 +1398,7 @@ struct renderFitPage {
   @State _renderFitMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _renderFitMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _renderFitNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _renderFitNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _renderFitNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _renderFitNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _renderFitPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _renderFitPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _renderFitQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1536,15 +1519,6 @@ struct renderFitPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._renderFitMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._renderFitNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1722,13 +1696,7 @@ struct renderFitPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._renderFitNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

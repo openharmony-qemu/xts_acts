@@ -38,7 +38,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, SweepGradientOptions } from '@ohos.arkui.component'
-import { State, StorageProp, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -612,51 +612,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	}
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-// 	mSweepGradient: SweepGradientOptions = {
-// 		center: [20, 30],
-// 		start: 25,
-// 		end: 35,
-// 		rotation: 12,
-// 		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
-// 		repeating: true
-// 	}
-//
-// 	applyNormalAttribute(instance: NavigatorAttribute): void {
-// 		instance.sweepGradient(this.mSweepGradient)
-// 	}
-// }
-//
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-// 	mSweepGradient: SweepGradientOptions = {
-// 		center: [20, 30],
-// 		start: 25,
-// 		end: 35,
-// 		rotation: 12,
-// 		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
-// 		repeating: true
-// 	}
-//
-// 	applyNormalAttribute(instance: NavRouterAttribute): void {
-// 		instance.sweepGradient(this.mSweepGradient)
-// 	}
-// }
-//
-// class PanelModifier implements AttributeModifier<PanelAttribute> {
-// 	mSweepGradient: SweepGradientOptions = {
-// 		center: [20, 30],
-// 		start: 25,
-// 		end: 35,
-// 		rotation: 12,
-// 		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
-// 		repeating: true
-// 	}
-//
-// 	applyNormalAttribute(instance: PanelAttribute): void {
-// 		instance.sweepGradient(this.mSweepGradient)
-// 	}
-// }
-
 class PathModifier implements AttributeModifier<PathAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
@@ -998,7 +953,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		// instance.sweepGradient(this.mSweepGradient)
+
 	}
 }
 
@@ -1730,9 +1685,6 @@ struct SweepGradientPage {
 	@State _sweepGradientMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
 	@State _sweepGradientNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
 	@State _sweepGradientNavigationModifier: NavigationModifier = new NavigationModifier()
-	// @State _sweepGradientNavigatorModifier: NavigatorModifier = new NavigatorModifier()
-	// @State _sweepGradientNavRouterModifier: NavRouterModifier = new NavRouterModifier()
-	// @State _sweepGradientPanelModifier: PanelModifier = new PanelModifier()
 	@State _sweepGradientPathModifier: PathModifier = new PathModifier()
 	@State _sweepGradientPolygonModifier: PolygonModifier = new PolygonModifier()
 	@State _sweepGradientPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1783,7 +1735,7 @@ struct SweepGradientPage {
 	@State gutter: number = 0
 	@State parentBackGroundColor: string = '#FFFF00'
   @State parentComponentKey: string = '';
-	@StorageProp('_sweepGradient') _sweepGradient: SetValue = {
+	@StoragePropRef('_sweepGradient') _sweepGradient: SetValue = {
 		height: 0,sweepGradient: {
 			center: [0, 0],
 			start: 0,
@@ -1806,11 +1758,6 @@ struct SweepGradientPage {
 		this.parentComponentKey = viewElement.getString("parentComponentKey")
 		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}
-
-  // @Styles
-  // commonStyle() {
-  //   .key(this.componentKey)
-  // }
 
 	build() {
 		Column() {
@@ -1892,7 +1839,7 @@ struct SweepGradientPage {
         Navigation(new NavPathStack()) {
 				}
 					.commonStyle(this.componentKey)
-					// .attributeModifier(this._sweepGradientNavigationModifier)
+
 			}
 			if (this.targetView == 'Menu') {
 				Menu() {
@@ -1903,18 +1850,6 @@ struct SweepGradientPage {
 					.attributeModifier(this._sweepGradientMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
-				// NavRouter() {
-				// 	Row() {
-				// 		Image($r('app.media.icon'))
-				// 	}
-				//
-				// 	NavDestination() {
-				// 		Text('NavDestination')
-				// 			.fontSize(10)
-				// 	}
-				// }
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._sweepGradientNavRouterModifier)
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
@@ -2204,22 +2139,8 @@ struct SweepGradientPage {
 					.height('100%')
 			}
 			if (this.targetView == 'Navigator') {
-				// Navigator() {
-				// 	Text('Go to back page')
-				// 		.width('100%')
-				// 		.height(20)
-				// }
-				// 	.backgroundColor(Color.Red)
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._sweepGradientNavigatorModifier)
 			}
 			if (this.targetView == 'Panel') {
-				// Panel(true) {
-				// 	Text('Text')
-				// }
-				// 	.backgroundColor(Color.Yellow)
-				// 	.commonStyle(this.componentKey)
-				// 	.attributeModifier(this._sweepGradientPanelModifier)
 			}
 			if (this.targetView == 'Refresh') {
 				Refresh({ refreshing: true }) {

@@ -729,20 +729,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
-//   mPixelStretchEffect: PixelStretchEffectOptions = {top:10,left:10,right:10,bottom:10 }
-//   applyNormalAttribute(instance: NavigatorAttribute): void {
-//     console.info(`pixelStretchEffect page show ${JSON.stringify(this.mPixelStretchEffect)}`)
-//    instance.pixelStretchEffect(this.mPixelStretchEffect)
-//   }
-// }
-// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
-//   mPixelStretchEffect: PixelStretchEffectOptions = {top:10,left:10,right:10,bottom:10 }
-//   applyNormalAttribute(instance: NavRouterAttribute): void {
-//     console.info(`pixelStretchEffect page show ${JSON.stringify(this.mPixelStretchEffect)}`)
-//    instance.pixelStretchEffect(this.mPixelStretchEffect)
-//   }
-// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mPixelStretchEffect: PixelStretchEffectOptions = {
     top: 10,
@@ -1586,7 +1572,6 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1786,9 +1771,7 @@ struct pixelStretchEffectPage {
   @State _pixelStretchEffectMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _pixelStretchEffectMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _pixelStretchEffectNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  // @State _pixelStretchEffectNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _pixelStretchEffectNavigationMod: NavigationModifier = new NavigationModifier()
-  // @State _pixelStretchEffectNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _pixelStretchEffectPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _pixelStretchEffectPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _pixelStretchEffectQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1922,15 +1905,6 @@ struct pixelStretchEffectPage {
           .commonStyle(this.componentKey)
           .attributeModifier(this._pixelStretchEffectMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }.commonStyle(this.componentKey).attributeModifier(this._pixelStretchEffectNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -2112,13 +2086,7 @@ struct pixelStretchEffectPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._pixelStretchEffectNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

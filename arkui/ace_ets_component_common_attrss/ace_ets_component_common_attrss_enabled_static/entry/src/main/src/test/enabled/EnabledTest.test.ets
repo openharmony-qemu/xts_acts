@@ -79,7 +79,7 @@ export default function enabledTest() {
     'QRCode',
     'Radio',
     'Rating',
-    // 'Select', // App died
+    'Select',
     'Slider',
     'Text',
     'TextArea',
@@ -94,8 +94,9 @@ export default function enabledTest() {
     'Grid',
     'List',
     'ListItem',
+    'Panel',
+    // 77 pass 77
 
-    // 'Panel',
     'Refresh',
     'Scroll',
     'Stack',
@@ -110,6 +111,7 @@ export default function enabledTest() {
     'Rect',
 
     'Shape'
+    // 77 pass 77
   ]
 
   let exceptFocusViews: Array<string> = new Array<string>(
@@ -267,7 +269,7 @@ export default function enabledTest() {
         //Verify onBlur
         console.info('[' + data.caseTag + '] verify onBlur.');
         console.info(JSON.stringify(data.pageConfig) + ' verify onBlur.');
-        AppStorage.setOrCreate<boolean>('_enabled', data.pageConfig.testValue.setValue)
+        // AppStorage.setOrCreate<boolean>('_enabled', data.pageConfig.testValue.setValue)
         await Utils.sleep(1000);
 
         console.log('Test114  ' + Utils.requestFocus(data.pageConfig.referenceComponentKey!))

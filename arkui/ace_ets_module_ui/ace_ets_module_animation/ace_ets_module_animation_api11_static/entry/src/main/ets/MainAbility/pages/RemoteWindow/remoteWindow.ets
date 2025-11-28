@@ -23,17 +23,14 @@ import {
   Length,
   LocalizedPosition,
   Position,
-  RemoteWindow,
   Row,
   Text,
   TextAlign,
   TextOverflow,
-  WindowAnimationTarget
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
 import { UIContext } from '@ohos.arkui.UIContext';
-import windowAnimationManager from '@ohos.animation.windowAnimationManager';
 
 const TAG = 'ets_apiLack_add';
 
@@ -41,7 +38,6 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct FormComponentFormDimension {
-  @State target: WindowAnimationTarget | undefined = undefined // 通过windowAnimationManager获取
   uiContext: UIContext = this.getUIContext()
 
   aboutToAppear() {
@@ -69,17 +65,6 @@ struct FormComponentFormDimension {
           .textOverflow({ overflow: TextOverflow.None })
           .key("formComponentFormDimensionWindowBoundsText")
 
-        // RemoteWindow(this.target as WindowAnimationTarget)
-        // .translate({ x: 100, y: 200 })
-        // .scale({ x: 0.5, y: 0.5 })
-        // .opacity(0.8)
-        // .position({
-        //   x: this.uiContext.px2vp((this.target?.windowBounds.left) as Double) as Length,
-        //   y: this.uiContext.px2vp((this.target?.windowBounds.top) as Double) as Length,
-        // } as Position)
-        // .width(this.uiContext.px2vp((this.target?.windowBounds.width) as number))
-        // .height(this.uiContext.px2vp((this.target?.windowBounds.height) as number))
-        // .key('remoteWindow')
       }
       .width('100%')
     }

@@ -114,7 +114,7 @@ import {
   VerticalAlign,
   WaterFlow
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
@@ -124,9 +124,9 @@ import Utils, { DefaultAlign, RectValue, RouterParams } from '../../common/Utils
 @Entry
 @Component
 struct AlignSelfStretchPage {
-  @StorageProp("_alignSelf") _alignSelf: ItemAlign = ItemAlign.Auto;
-  @StorageProp("_wrap") _wrap: FlexWrap = FlexWrap.NoWrap;
-  @StorageProp("_direction") _direction: FlexDirection = FlexDirection.Row;
+  @StoragePropRef("_alignSelf") _alignSelf: ItemAlign = ItemAlign.Auto;
+  @StoragePropRef("_wrap") _wrap: FlexWrap = FlexWrap.NoWrap;
+  @StoragePropRef("_direction") _direction: FlexDirection = FlexDirection.Row;
   @State containerView: string = ''
   @State targetView: string = ''
   @State componentKey: string | RectValue = ''

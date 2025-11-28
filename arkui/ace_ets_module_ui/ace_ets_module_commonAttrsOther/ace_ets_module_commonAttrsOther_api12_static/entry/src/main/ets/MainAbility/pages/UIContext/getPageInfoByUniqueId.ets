@@ -70,12 +70,12 @@ struct getPageInfoByUniqueIdExample {
 
 @Component
 struct MyComponentUniqueId {
-  @State pageInfo: string = 'Init'
+  @State pageInfo1: string = 'Init'
   @State navigationInfo: string = 'Init'
 
   build() {
     Column() {
-      Button(this.pageInfo).id('getPageInfoByUniqueId')
+      Button(this.pageInfo1).id('getPageInfoByUniqueId')
       Button(this.navigationInfo).id('getNavigationInfoByUniqueId')
         .onClick((e: ClickEvent) => {
           try {
@@ -84,13 +84,13 @@ struct MyComponentUniqueId {
             console.log('test start getData uniqueId is: ' + uniqueId)
 
             const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId);
-            console.log('test start getData pageInfo is: ' + JSON.stringify(pageInfo))
-            this.pageInfo = '' + JSON.stringify(pageInfo.routerPageInfo?.index)
-            console.info('test start getData pageInfo is: ' + this.pageInfo);
+            // console.log('test start getData pageInfo is: ' + JSON.stringify(pageInfo))
+
+            this.pageInfo1 = '' + JSON.stringify(pageInfo.routerPageInfo?.index)
+            // console.info('test start getData pageInfo is: ' + this.pageInfo);
 
             this.navigationInfo = '' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId)?.navigationId)
-
-            console.info('navigationInfo: ' + this.navigationInfo);
+            // console.info('navigationInfo: ' + this.navigationInfo);
           } catch (err) {
             console.log('test start get error is: ' + err)
           }

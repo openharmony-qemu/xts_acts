@@ -111,25 +111,12 @@ struct noBarrierComponents {
   @State passwords: Array<Int> = [] as Array<Int>;
   @State message: String = 'please input password!';
   @State rating: number = 3.5;
-  @State target?: WindowAnimationTarget = {
-    bundleName: '',
-    abilityName: '',
-    windowBounds: {
-      left: 0.0,
-      top: 0.0,
-      width: 0.0,
-      height: 0.0,
-      radius: 0.0
-    } as RRect,
-    missionId: 0 as Int
-  } as WindowAnimationTarget;
   @State data: String = '<h1 style="text-align: center;">h1标题</h1>';
   @State changeValue: String = '';
   @State submitValue: String = '';
   controller: SearchController = new SearchController();
   @State outSetValueOne: number = 40;
   @State isMilitaryTime: boolean = false;
-  // controller1: webview.WebviewController = new webview.WebviewController();
   xcomponentController: XComponentController = new XComponentController();
   private arr: Array<number> = [0, 1] as Array<number>;
   private arrayA: Array<String> = ['安'] as Array<String>;
@@ -490,19 +477,6 @@ struct noBarrierComponents {
             this.rating = value
           })
 
-        // RemoteWindow(this.target as WindowAnimationTarget)
-        //   .translate({ x: 100, y: 200 })
-        //   .scale({ x: 0.5, y: 0.5 })
-        //   .opacity(0.8)
-        //   .position({
-        //     x: uiContext.px2vp(this.target?.windowBounds.left ?? 0),
-        //     y: uiContext.px2vp(this.target?.windowBounds.top ?? 0)
-        //   } as Position)
-        //   .width(uiContext.px2vp(this.target?.windowBounds.width ?? 0))
-        //   .height(uiContext.px2vp(this.target?.windowBounds.height ?? 0))
-        //   .key("RemoteWindow")
-        //   .accessibilityText("我是无障碍组件")
-
         RichText(this.data)
           .onStart(() => {
             console.info('RichText onStart');
@@ -567,21 +541,21 @@ struct noBarrierComponents {
           .key("Toggle")
           .accessibilityText("我是无障碍组件")
 
-        // XComponent({
-        //   id: 'xcomponent',
-        //   type: XComponentType.SURFACE,
-        //   nativeXComponentHandler: ((value: long): void => {
-        //   }),
-        //   controller: this.xcomponentController
-        // } as XComponentParameters)
-        //   .onLoad((): void => {
-        //     this.xcomponentController.setXComponentSurfaceRect({ surfaceWidth: 1920, surfaceHeight: 1080 });
-        //     this.surfaceId = this.xcomponentController.getXComponentSurfaceId()
-        //   })
-        //   .width('640px')
-        //   .height('480px')
-        //   .key("XComponent")
-        //   .accessibilityText("我是无障碍组件")
+        XComponent({
+          id: 'xcomponent',
+          type: XComponentType.SURFACE,
+          nativeXComponentHandler: ((value: long): void => {
+          }),
+          controller: this.xcomponentController
+        } as XComponentParameters)
+          .onLoad((): void => {
+            this.xcomponentController.setXComponentSurfaceRect({ surfaceWidth: 1920, surfaceHeight: 1080 });
+            this.surfaceId = this.xcomponentController.getXComponentSurfaceId()
+          })
+          .width('640px')
+          .height('480px')
+          .key("XComponent")
+          .accessibilityText("我是无障碍组件")
 
       }
     }

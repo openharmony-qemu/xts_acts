@@ -41,7 +41,6 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 
 export default function PanGestureExample03Test() {
@@ -65,10 +64,8 @@ export default function PanGestureExample03Test() {
         console.info("get PanGestureExample03Test state pages:" + JSON.stringify(pages));
         if (!("PanGestureExample03" == pages.name)) {
           console.info("get PanGestureExample03Test pages.name:" + JSON.stringify(pages.name));
-          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push PanGestureExample03Test page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PanGestureExample03Test page error:" + err);
@@ -116,18 +113,23 @@ it('PanGestureExample03Test_static_0010', Level.LEVEL0, async (done: () => void)
         x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,
         y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
       } as Point);
+      await CommonFunc.sleep(1000);
       pointers.setPoint(0, 1, {
         x: Math.round(areaObj1.left + areaWidth1 * 0.7) as Int,
         y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
       } as Point);
+
+      await CommonFunc.sleep(1000);
       pointers.setPoint(1, 0, {
         x: Math.round(areaObj1.left + areaWidth1 * 0.3) as Int,
         y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
       } as Point);
+      await CommonFunc.sleep(1000);
       pointers.setPoint(1, 1, {
         x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,
         y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
       } as Point);
+      await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息
@@ -239,6 +241,7 @@ it('PanGestureExample03Test_static_0010', Level.LEVEL0, async (done: () => void)
       // fingerList[0]
       await CommonFunc.sleep(200);
       let text12 = inspector.getInspectorByKey('PanGestureExample03_fingerList_localX');
+      await CommonFunc.sleep(2000);
       let obj12 = JSON.parseJsonElement(text12);
       console.log('PanGestureExample03Test_0010 obj12 $attrs content',
         uiContext.vp2px(Number(obj12.getElement('$attrs').getString('content'))),

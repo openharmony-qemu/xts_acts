@@ -19,15 +19,15 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import common from "@ohos.app.ability.common";
+import common from '@ohos.app.ability.common';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 export default class EntryAbility extends UIAbility {
-  onCreate(want, launchParam) {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 

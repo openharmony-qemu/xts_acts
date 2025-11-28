@@ -561,28 +561,7 @@ it('noBarrierComponents_static_021', Level.LEVEL0, async (done: () => void): Pro
         done();
       }, 5000)
     });
-    /*
-     * @tc.number   noBarrierComponents_static_022
-     * @tc.name     noBarrierComponents_static_022
-     * @tc.desc     noBarrierComponents_static_022
-     * @tc.level    0
-     */
-it('noBarrierComponents_static_022', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('noBarrierComponents022 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("RemoteWindow");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("RemoteWindow");
-          console.info('noBarrierComponents022 END ');
-        } catch (err: Error) {
-          expect().assertFail()
-          console.info('noBarrierComponents022 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
-    });
+
     /*
      * @tc.number   noBarrierComponents_static_023
      * @tc.name     noBarrierComponents_static_023

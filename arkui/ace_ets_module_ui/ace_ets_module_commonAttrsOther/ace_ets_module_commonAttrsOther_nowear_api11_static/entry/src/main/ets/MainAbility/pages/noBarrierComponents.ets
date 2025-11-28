@@ -41,7 +41,6 @@ import {
   TouchEvent,
   TouchType,
   Web,
-  WindowAnimationTarget,
   XComponentController
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
@@ -59,7 +58,6 @@ struct noBarrierComponents {
   @State passwords: Array<number> = new Array<number>();
   @State message: string = 'please input password!';
   @State rating: number = 3.5;
-  @State target?: WindowAnimationTarget = undefined;
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
   @State changeValue: string = '';
   @State submitValue: string = '';
@@ -109,10 +107,6 @@ struct noBarrierComponents {
             console.info('Select:' + index)
           })
 
-
-        // Web({ src: $rawfile("index.html"), controller: this.controller1 })
-        //   .key("Web")
-        //   .accessibilityText("我是无障碍组件")
       }
     }
   }

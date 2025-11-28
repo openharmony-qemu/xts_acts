@@ -112,7 +112,7 @@ import {
   VerticalAlign,
   WaterFlow,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
@@ -128,11 +128,11 @@ struct AlignSelfPage {
   @State parentComponentKey: String | RectValue = ''
   @State parentWidth: number = 0.0
   @State parentHeight: number = 0.0
-  @StorageProp("_alignSelf") _alignSelf: ItemAlign = ItemAlign.Auto
-  @StorageProp("_alignItemsForFlex") _alignItemsForFlex: ItemAlign = ItemAlign.Start
-  @StorageProp("_alignItemsForRow") _alignItemsForRow: VerticalAlign = VerticalAlign.Top
-  @StorageProp("_alignItemsForColumn") _alignItemsForColumn: HorizontalAlign = HorizontalAlign.Start
-  @StorageProp("_alignItemsForGridRow") _alignItemsForGridRow: ItemAlign = ItemAlign.Start
+  @StoragePropRef("_alignSelf") _alignSelf: ItemAlign = ItemAlign.Auto
+  @StoragePropRef("_alignItemsForFlex") _alignItemsForFlex: ItemAlign = ItemAlign.Start
+  @StoragePropRef("_alignItemsForRow") _alignItemsForRow: VerticalAlign = VerticalAlign.Top
+  @StoragePropRef("_alignItemsForColumn") _alignItemsForColumn: HorizontalAlign = HorizontalAlign.Start
+  @StoragePropRef("_alignItemsForGridRow") _alignItemsForGridRow: ItemAlign = ItemAlign.Start
 
   onPageShow() {
     console.info('AlignSelf page show called ')

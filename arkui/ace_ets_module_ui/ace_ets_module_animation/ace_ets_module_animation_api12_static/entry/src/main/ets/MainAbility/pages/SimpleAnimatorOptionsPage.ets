@@ -85,8 +85,9 @@ struct SimpleAnimatorOptionsPage {
       console.log('test start onFinish')
       this.endTime = new Date().getTime();
       this.testTime = this.endTime - this.startTime;
-      AppStorage.setOrCreate('testTime', this.testTime);
-      AppStorage.setOrCreate('cube_size', this.cube_size);
+      AppStorage.setOrCreate<number>('testTime', this.testTime);
+      AppStorage.setOrCreate<number>('cube_size', this.cube_size);
+      console.log('test start getData is: ' + this.testTime + '[]' + this.cube_size)
     }
 
   }
