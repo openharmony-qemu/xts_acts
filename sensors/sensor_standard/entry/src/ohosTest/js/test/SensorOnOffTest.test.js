@@ -42,14 +42,14 @@ describe('SystemParameterTest', function () {
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let TAG  = '';
 
-   /**
-   * @tc.number:SUB_SENSORS_Sensor_JSTest_0010
-   * @tc.name:testRegisterSensortest001
-   * @tc.desc:test get sensor data by wrong sensor id.
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
-   */
+    /**
+     * @tc.name   testRegisterSensortest001
+     * @tc.number SUB_SENSORS_Sensor_JSTest_0010
+     * @tc.desc   test get sensor data by wrong sensor id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRegisterSensortest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'testRegisterSensortest001'
         console.info(TAG + ' in');
@@ -82,14 +82,14 @@ describe('SystemParameterTest', function () {
         console.info(TAG + ' end');
     })
 
-   /**
-   * @tc.number:SUB_SENSORS_Sensor_JSTest_0020
-   * @tc.name:testRegisterSensortest002
-   * @tc.desc:test precision
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
-   */
+    /**
+     * @tc.name   testRegisterSensortest002
+     * @tc.number SUB_SENSORS_Sensor_JSTest_0020
+     * @tc.desc   test precision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRegisterSensortest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'testRegisterSensortest002'
         console.info(TAG + ' in');
@@ -134,12 +134,12 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.number:SUB_SENSORS_Sensor_OnOff_JSTest_001
-     * @tc.name:testOnOffSensorStatusChange001
-     * @tc.desc:test stop listening on device status changes
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   testOnOffSensorStatusChange001
+     * @tc.number SUB_SENSORS_Sensor_OnOff_JSTest_001
+     * @tc.desc   test stop listening on device status changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnOffSensorStatusChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'testOnOffSensorStatusChange001'
@@ -168,15 +168,15 @@ describe('SystemParameterTest', function () {
         console.info(TAG + ' end');
     })
 
-    /**
-     * @tc.number:SUB_SENSORS_Sensor_OnOff_JSTest_002
-     * @tc.name:testOnOffSensorStatusChange002
-     * @tc.desc:test get sensor status event by wrong prameter
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
 
+    /**
+     * @tc.name   testOnOffSensorStatusChange002
+     * @tc.number testOnOffSensorStatusChange002
+     * @tc.desc   testOnOffSensorStatusChange002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnOffSensorStatusChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'testOnOffSensorStatusChange002';
         console.info(TAG + ' in');

@@ -72,10 +72,13 @@ describe("SensorJsTest_sensor_51", function () {
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let invalid  = -1;
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0140
-     * @tc.name: newLinear_Accelerometer_SensorJsTest014
-     * @tc.desc: Functional Use Cases
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0140
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("newLinear_Accelerometer_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('---------newLinear_Accelerometer_SensorJsTest014--------------');
@@ -86,10 +89,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0150
-     * @tc.name: newLinear_Accelerometer_SensorJsTest015
-     * @tc.desc: Illegal ID passed in
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest015
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0150
+     * @tc.desc   Illegal ID passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newLinear_Accelerometer_SensorJsTest015--------------');
@@ -107,10 +113,13 @@ describe("SensorJsTest_sensor_51", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0160
-     * @tc.name: newLinear_Accelerometer_SensorJsTest016
-     * @tc.desc: For normal scenarios
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0160
+     * @tc.desc   For normal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------SensorJsTest003--------------');
@@ -123,10 +132,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0170
-     * @tc.name: newLinear_Accelerometer_SensorJsTest017
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newLinear_Accelerometer_SensorJsTest017--------------');
@@ -152,10 +164,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0180
-     * @tc.name: newLinear_Accelerometer_SensorJsTest018
-     * @tc.desc: Once Normal Subscription Scenario Use Case
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0180
+     * @tc.desc   Once Normal Subscription Scenario Use Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.LINEAR_ACCELEROMETER, callback);
@@ -165,10 +180,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0190
-     * @tc.name: newLinear_Accelerometer_SensorJsTest019
-     * @tc.desc: Use case of illegal parameter passed into once interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest019
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0190
+     * @tc.desc   Use case of illegal parameter passed into once interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onceSensorCallback(data) {
@@ -186,10 +204,13 @@ describe("SensorJsTest_sensor_51", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0200
-     * @tc.name: newLinear_Accelerometer_SensorJsTest020
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest020
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onceSensorCallback(data) {
@@ -209,10 +230,13 @@ describe("SensorJsTest_sensor_51", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0210
-     * @tc.name: newLinear_Accelerometer_SensorJsTest021
-     * @tc.desc: Use case of illegal parameter passed into off interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest021
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0210
+     * @tc.desc   Use case of illegal parameter passed into off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -225,10 +249,13 @@ describe("SensorJsTest_sensor_51", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0220
-     * @tc.name: newLinear_Accelerometer_SensorJsTest022
-     * @tc.desc: Unsubscribe directly without waiting after starting subscription
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest022
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0220
+     * @tc.desc   Unsubscribe directly without waiting after starting subscription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onSensorCallback(data) {
@@ -244,10 +271,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0230
-     * @tc.name: newLinear_Accelerometer_SensorJsTest023
-     * @tc.desc:SensorId1000000 of incoming exception
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest023
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0230
+     * @tc.desc   SensorId1000000 of incoming exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onSensorCallback(data) {
@@ -264,10 +294,13 @@ describe("SensorJsTest_sensor_51", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0240
-     * @tc.name: newLinear_Accelerometer_SensorJsTest024
-     * @tc.desc:Call interface multiple times
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest024
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0240
+     * @tc.desc   Call interface multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.on(sensor.SensorId.LINEAR_ACCELEROMETER, (data)=>{
@@ -292,10 +325,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0250
-     * @tc.name: newLinear_Accelerometer_SensorJsTest025
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest025
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0250
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -308,10 +344,13 @@ describe("SensorJsTest_sensor_51", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0260
-     * @tc.name: newLinear_Accelerometer_SensorJsTest026
-     * @tc.desc:Call on interface and once interface respectively, and use an off interface to close
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest026
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0260
+     * @tc.desc   Call on interface and once interface respectively, and use an off interface to close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newLinear_Accelerometer_SensorJsTest026--------------');
@@ -337,10 +376,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0270
-     * @tc.name: newLinear_Accelerometer_SensorJsTest027
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest027
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0270
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newLinear_Accelerometer_SensorJsTest027--------------');
@@ -366,10 +408,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0280
-     * @tc.name: newLinear_Accelerometer_SensorJsTest028
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest028
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0280
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newLinear_Accelerometer_SensorJsTest028--------------');
@@ -399,10 +444,13 @@ describe("SensorJsTest_sensor_51", function () {
         }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0290
-     * @tc.name: newLinear_Accelerometer_SensorJsTest029
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest029
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0290
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newLinear_Accelerometer_SensorJsTest029--------------');
@@ -425,10 +473,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 1000);
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0300
-     * @tc.name: newLinear_Accelerometer_SensorJsTest030
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest030
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0300
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newLinear_Accelerometer_SensorJsTest030--------------');
@@ -452,13 +503,13 @@ describe("SensorJsTest_sensor_51", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0310
-     * @tc.name: newLinear_Accelerometer_SensorJsTest031
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newLinear_Accelerometer_SensorJsTest031
+     * @tc.number SUB_SensorsSystem_LINEAR_ACCELEROMETER_JSTest_0310
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newLinear_Accelerometer_SensorJsTest031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newLinear_Accelerometer_SensorJsTest031--------------');
