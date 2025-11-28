@@ -340,7 +340,7 @@ export default function actslocationTest() {
                     };
                     try{
                         geoLocationManager.getAddressesFromLocationName(geoCodeRequest).then((result:Array<geoLocationManager.GeoAddress>) => {
-                            expect(Array.isArray(result)).assertTrue;
+                            expect(Array.isArray(result)).assertTrue();
                             done();
                         }).catch((error) => {
                             expect((error as BusinessError).code).assertEqual(3301400);
@@ -379,7 +379,7 @@ export default function actslocationTest() {
                                 expect(err.code).assertEqual(3301400);
                                 done();
                             }else{
-                                expect(Array.isArray(data)).assertTrue;
+                                expect(Array.isArray(data)).assertTrue();
                                 done();
                             }
                         })
@@ -2369,8 +2369,8 @@ export default function actslocationTest() {
             let callback = (code: geoLocationManager.CountryCode): void => {
                 console.info('countryCodeChange: ' + JSON.stringify(code));
                 expect(true).assertEqual(code!=null);
-                expect(typeof code.country).assertEqual("string")
-                expect(typeof code.type).assertEqual("object")
+                expect(typeof code.country).assertEqual("string");
+                expect(code.type != null).assertTrue();
               }
               try {
                 geoLocationManager.offCountryCodeChange(callback);
@@ -2396,7 +2396,7 @@ export default function actslocationTest() {
                 expect(true).assertEqual(result!=null);
                 expect(typeof result.deviceId).assertEqual("string");
                 expect(typeof result.rssi).assertEqual("number");
-                expect(typeof result.data).assertEqual("object");
+                expect(result.data != null).assertTrue();
                 expect(typeof result.deviceName).assertEqual("string");
                 expect(typeof result.connectable).assertEqual("boolean");
               };
@@ -2470,8 +2470,8 @@ export default function actslocationTest() {
           'scenario': 0x301,
           "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
         };
-        expect(typeof requestInfo.scenario).assertEqual("object");
-        expect(typeof requestInfo.geofence).assertEqual("object");
+        expect(requestInfo.scenario != null).assertTrue();
+        expect(requestInfo.geofence != null).assertTrue();
         done();
       })   
 
@@ -2489,7 +2489,7 @@ export default function actslocationTest() {
           if (geoLocationManager.isPoiServiceSupported()) {
             geoLocationManager.getPoiInfo().then((poiInfo) => {
               if (poiInfo !== undefined) {
-                expect(typeof poiInfo.poiArray).assertEqual("object");
+                expect(poiInfo.poiArray != null).assertTrue();
                 expect(typeof poiInfo.timestamp	).assertEqual("number")
               }
             })
