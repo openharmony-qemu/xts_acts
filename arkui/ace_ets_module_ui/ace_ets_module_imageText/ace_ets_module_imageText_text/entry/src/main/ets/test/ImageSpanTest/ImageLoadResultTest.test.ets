@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeEach, it, expect,afterAll, Level } from "@ohos/hypium"
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
@@ -40,6 +40,13 @@ export default function ImageLoadResultTest() {
       }
       done();
     });
+    afterAll((done: Function) => {
+      AppStorage.delete('ImageLoadResult.width')
+      AppStorage.delete('ImageLoadResult.height')
+      AppStorage.delete('ImageLoadResult.componentWidth')
+      AppStorage.delete('ImageLoadResult.componentHeight')
+      done();
+    })
 
     /**
      * @tc.name   ImageLoadResultTest_0010
@@ -55,8 +62,6 @@ export default function ImageLoadResultTest() {
       console.info("[ImageLoadResultTest_0010] width:" + JSON.stringify(AppStorage.get('ImageLoadResult.width')));
       console.info("[ImageLoadResultTest_0010] height:" + JSON.stringify(AppStorage.get('ImageLoadResult.height')));
       expect(AppStorage.get('ImageLoadResult.width')).assertEqual(AppStorage.get('ImageLoadResult.height'));
-      AppStorage.delete('ImageLoadResult.width')
-      AppStorage.delete('ImageLoadResult.height')
       console.info('[ImageLoadResultTest_0010] END');
       done();
     });
@@ -77,8 +82,6 @@ export default function ImageLoadResultTest() {
       console.info("[ImageLoadResultTest_0020] componentHeight:"
         + JSON.stringify(AppStorage.get('ImageLoadResult.componentHeight')));
       expect(AppStorage.get('ImageLoadResult.componentWidth')).assertEqual(AppStorage.get('ImageLoadResult.componentHeight'));
-      AppStorage.delete('ImageLoadResult.componentWidth')
-      AppStorage.delete('ImageLoadResult.componentHeight')
       console.info('[ImageLoadResultTest_0020] END');
       done();
     });
