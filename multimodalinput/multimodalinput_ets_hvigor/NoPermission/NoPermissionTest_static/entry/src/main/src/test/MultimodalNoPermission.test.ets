@@ -42,12 +42,12 @@ export default function MultimodalNoPermissionTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_NoPermission_0100
-     * @tc.name: SUB_MMI_Input_Api_NoPermission_0100
-     * @tc.desc: Test promise setFunctionKeyEnabled interface to set non-permission.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_NoPermission_0100
+     * @tc.number SUB_MMI_Input_Api_NoPermission_0100
+     * @tc.desc   Test promise setFunctionKeyEnabled interface to set non-permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MMI_Input_Api_NoPermission_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -67,12 +67,12 @@ export default function MultimodalNoPermissionTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_NoPermission_0200
-     * @tc.name: SUB_MMI_Input_Api_NoPermission_0200
-     * @tc.desc: Test transmitInfrared interface to set non-permission.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_NoPermission_0200
+     * @tc.number SUB_MMI_Input_Api_NoPermission_0200
+     * @tc.desc   Test transmitInfrared interface to set non-permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_NoPermission_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -93,12 +93,12 @@ export default function MultimodalNoPermissionTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_NoPermission_0300
-     * @tc.name: SUB_MMI_Input_Api_NoPermission_0300
-     * @tc.desc: Test getInfraredFrequencies interface to set non-permission.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_NoPermission_0300
+     * @tc.number SUB_MMI_Input_Api_NoPermission_0300
+     * @tc.desc   Test getInfraredFrequencies interface to set non-permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_NoPermission_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

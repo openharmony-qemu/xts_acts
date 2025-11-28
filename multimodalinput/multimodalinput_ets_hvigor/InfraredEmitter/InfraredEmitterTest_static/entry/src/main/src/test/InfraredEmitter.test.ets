@@ -26,12 +26,12 @@ export default function InfraredEmitterTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
-     * @tc.desc: Test getInfraredFrequencies interface to query the frequency range of infrared signals supported by the phone.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
+     * @tc.desc   Test getInfraredFrequencies interface to query the frequency range of infrared signals supported by the phone.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
