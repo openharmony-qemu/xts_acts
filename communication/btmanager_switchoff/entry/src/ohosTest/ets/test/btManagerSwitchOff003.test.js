@@ -2557,7 +2557,7 @@ export default function btManagerError003Test() {
                 try {
                     await gattClient.updateConnectionParam(ble.ConnectionParam.LOW_POWER);
 					console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
-                    expect().assertFail();
+                    expect(true).assertFalse();
                 } catch (e) {
                     console.error( `updateConnectionParam get error, error code is: ${e.code}, error message is: ${e.message}`);
                     expect(Number(e.code)).assertEqual(2900003);
@@ -2582,7 +2582,7 @@ export default function btManagerError003Test() {
                     let serviceUuid = '00001888-0000-1000-8000-00805f9b34fb';
 					let returu_gattservice = gattServer.getService(serviceUuid);
 					console.info('[bt_arkts]gattServer getService get return_values is ' + JSON.stringify(returu_gattservice));
-                    expect().assertFail();
+                    expect(true).assertFalse();
                 } catch (e) {
                     console.error( `getService error, error code is: ${e.code}, error message is: ${e.message}`);
                     expect(Number(e.code)).assertEqual(2900003);
@@ -2607,7 +2607,7 @@ export default function btManagerError003Test() {
                     let return_list = gattServer.getServices();
 					console.info('[bt_arkts] return_list is' + JSON.stringify(return_list));
 					console.info('[bt_arkts] return_list length is ' + return_list.length);
-                    expect().assertFail();
+                    expect(true).assertFalse();
                 } catch (e) {
                     console.error( `getServices error, error code is: ${e.code}, error message is: ${e.message}`);
                     expect(Number(e.code)).assertEqual(2900003);
@@ -2631,7 +2631,7 @@ export default function btManagerError003Test() {
                 try {
                     let return_status = gattServer.getConnectedState('01:02:00:02:03:01');
 					console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
-                    expect().assertFail();
+                    expect(true).assertFalse();
                 } catch (e) {
                     console.error( `GattServer getConnectedState error, error code is: ${e.code}, error message is: ${e.message}`);
                     expect(Number(e.code)).assertEqual(2900003);
@@ -2655,7 +2655,7 @@ export default function btManagerError003Test() {
                 try {
                     let return_status=gattClient.getConnectedState();
 					console.info('[bt_arkts]client ProfileConnectionState 0200 is' + JSON.stringify(return_status))
-                    expect().assertFail();
+                    expect(true).assertFalse();
                 } catch (e) {
                     console.error( `GattClientDevice getConnectedState error, error code is: ${e.code}, error message is: ${e.message}`);
                     expect(Number(e.code)).assertEqual(2900003);
