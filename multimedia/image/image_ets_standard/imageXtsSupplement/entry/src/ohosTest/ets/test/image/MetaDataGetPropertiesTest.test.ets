@@ -91,7 +91,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -113,7 +113,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -135,7 +135,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -157,7 +157,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -180,7 +180,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -203,7 +203,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -226,7 +226,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -248,7 +248,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -271,7 +271,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -293,7 +293,7 @@ export default function getPropertiesTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
