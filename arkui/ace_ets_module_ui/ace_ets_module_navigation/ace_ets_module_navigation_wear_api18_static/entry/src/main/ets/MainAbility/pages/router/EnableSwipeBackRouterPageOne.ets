@@ -27,7 +27,7 @@ struct EnableSwipeBackRouterPageOne {
     Column({ space: '5vp' } as ColumnOptions) {
       Button(`enable swipe back: ${this.isEnable}`).onClick((e: ClickEvent) => {
         this.isEnable = !this.isEnable;
-        this.getUIContext().enableSwipeBack(this.isEnable);//没有这个方法
+        this.getUIContext().enableSwipeBack(this.isEnable);////SDK11.25在这里appDied   Cannot find method 'enableSwipeBack
       })
         .height('10%')
         .id('enableId')

@@ -15,22 +15,23 @@
  */
 import { typeNode, NodeController, FrameNode } from  '@ohos.arkui.node';
 import {
-  Entry, Component, Builder,NodeContainer, CheckBoxShape,
+  Entry, Component, Builder,NodeContainer, CheckBoxShape,Text,
   Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox, HorizontalAlign,
   Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions,  ImageAnalyzerController, ImageBitmap,  ImageAnalyzerConfig,
   Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
+
 class MyNodeController extends  NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-    
-    
-    
-    
+    let checkbox = typeNode.createCheckboxNode(uiContext)
+    checkbox.initialize({name:'checkbox1',group:'CheckboxGroup'})
+      .key('key_checkbox_01')
+    col.appendChild(checkbox)
     node.appendChild(col)
     return node
   }

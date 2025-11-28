@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
+// checkbox
+import {SliderModifier}from '@ohos.arkui.modifier'
 import {
   Entry, Component, Builder,NodeContainer, CheckBoxShape,
   Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox, SliderChangeMode, Slider, SliderStyle,
@@ -26,16 +26,16 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct CheckboxExample {
 
-  @State mOutSetValueOne: double = 40
-  @State mOutSetValueTwo: double = 40
-  
-  
-  
-  
-  
-  
-  
-  
+  @State mOutSetValueOne: number = 40
+  @State mOutSetValueTwo: number = 40
+  @State modifier: SliderModifier = new SliderModifier().onChange((value: number, mode: SliderChangeMode) => {
+    this.mOutSetValueOne = value
+    console.info('form005 Slider_Modifier_value1111:' + value + 'mode:' + mode.toString())
+  })
+  @State modifier1: SliderModifier = new SliderModifier().onChange((value: number, mode: SliderChangeMode) => {
+    this.mOutSetValueTwo = value
+    console.info('form005 Slider_Modifier_value1111:' + value + 'mode:' + mode.toString())
+  })
 
 
   build() {
@@ -57,7 +57,7 @@ struct CheckboxExample {
             style: SliderStyle.OutSet
           })
             .showTips(true)
-            
+            .attributeModifier(this.modifier as SliderModifier)
           Text(this.mOutSetValueOne.toString()).key('mOutSetValueOneKey')
         }
         Column(){
@@ -68,7 +68,7 @@ struct CheckboxExample {
             style: SliderStyle.OutSet
           })
             .showSteps(true)
-            
+            .attributeModifier(this.modifier1 as SliderModifier)
           Text(this.mOutSetValueTwo.toString()).key('mOutSetValueTwoKey')
         }
       }

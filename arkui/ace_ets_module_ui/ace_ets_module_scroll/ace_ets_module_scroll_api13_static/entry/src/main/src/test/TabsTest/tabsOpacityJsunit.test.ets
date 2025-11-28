@@ -88,7 +88,7 @@ export default function tabsOpacityJsunit() {
       let strJson = inspector.getInspectorByKey('tabContent_bar_2');
       console.info("[tabsOpacityJsunit_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[tabsOpacityJsunit_static_0100] content: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[tabsOpacityJsunit_static_0100] tabBar: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('tabBar')));
+      console.info("[tabsOpacityJsunit_static_0100] tabBar: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('tabBar')));
       await CommonFunc.sleep(1000);
       let text01: Component = await driver.findComponent(ON.text("pink")) as Component
       let textContent01:string = await (text01?.getText() as Promise<string>);

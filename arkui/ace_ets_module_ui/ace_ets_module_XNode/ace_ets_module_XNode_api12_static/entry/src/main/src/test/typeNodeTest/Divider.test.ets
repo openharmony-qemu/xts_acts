@@ -73,7 +73,7 @@ export default function typeNodeDividerTest() {
       let strJson: string = inspector.getInspectorByKey('TypeNode_Divider');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DividerTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('Divider');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('Divider');
       console.info('[DividerTest_0100] END');
       done();
     });

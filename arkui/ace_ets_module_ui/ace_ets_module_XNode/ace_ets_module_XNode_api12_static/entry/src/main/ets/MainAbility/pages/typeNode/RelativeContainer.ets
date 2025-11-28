@@ -71,6 +71,7 @@ struct TypeNodeRelativeContainer {
       Button(this.nodeType).id("TypeNode_RelativeContainer")
         .onClick((e:ClickEvent)=>{
           this.nodeType = storage.get<string>('RelativeContainerType') as string
+          console.log('++++++++++',this.nodeType)  //设置值为RelativeContainer
         })
       NodeContainer(this.myNodeController);
 

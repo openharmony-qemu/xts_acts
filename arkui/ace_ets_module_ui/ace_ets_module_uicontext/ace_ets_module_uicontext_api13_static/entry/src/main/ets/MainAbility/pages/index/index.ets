@@ -39,7 +39,7 @@ struct Index {
       let indexRouter = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', indexRouter );
       AppStorage.setOrCreate<UIContext>('uiCOntext', this.getUIContext() );
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

@@ -78,7 +78,7 @@ struct ResourceFloat {
           Column() {
             Column() {
               Text('float test').fontSize(20)
-              Text('float').fontSize($r(`app.float.float_${String(item)}`)).id('float')
+              Text('float').fontSize($r(`app.float.float_${String(item)}`)).id('float') //设置的值不对，期望40vp，实际是320vp
             }.border({ width: 2 }).margin(30)
 
           }
@@ -94,7 +94,7 @@ struct ResourceFloat {
       .loop(true)
       .duration(1000)
       .itemSpace(0)
-      .height('90%')
+      .height('60%')
       .width('100%')
 
       Row({ space: 12 } as RowOptions) {
@@ -107,7 +107,7 @@ struct ResourceFloat {
           .onClick((e: ClickEvent) => {
             this.swiperController.showPrevious()
           })
-      }.margin(5)
+      }.margin(5).height('10%')
     }
     .height('100%')
     .width('100%')

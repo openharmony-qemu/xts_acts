@@ -76,7 +76,7 @@ export default function typeNodechildrenMainSizeTest() {
       let strJson: string = inspector.getInspectorByKey('ChildernMainSize_');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[childrenMainSizeTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('100');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('100');
       console.info('[childrenMainSizeTest_0100] END');
       done();
     });
@@ -97,13 +97,14 @@ export default function typeNodechildrenMainSizeTest() {
       let button1 = await driver.findComponent(ON.id('ChildernMainSize_2'));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('ChildernMainSize_'));
+      let button2 = await driver.findComponent(ON.id('ChildernMainSize_1'));
       await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('ChildernMainSize_');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[childrenMainSizeTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('100');
+      console.info("[childrenMainSizeTest_0100] component obj.label is: " + obj.getElement('$attrs').getString('label'));
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('100');
       console.info('[childrenMainSizeTest_0100] END');
       done();
     });

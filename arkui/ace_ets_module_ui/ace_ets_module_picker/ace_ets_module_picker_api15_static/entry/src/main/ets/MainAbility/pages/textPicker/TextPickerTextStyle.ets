@@ -88,6 +88,9 @@ struct TextPickerTextStyleExample {
           .height('8%')
           .key('TextPickerTextStyle_Null')
           .onClick((e:ClickEvent) => {
+            // this.minFontSize = null
+            // this.maxFontSize = null
+            // this.overflow = null
           })
       }
 

@@ -83,7 +83,7 @@ struct RenderNodeDisposeIndex {
         .width('100%')
       Button('result').id('result_id').height('10%')
         .onClick((e:ClickEvent) => {
-          this.flag = this.myNodeController.getRenderNode();
+          this.flag = this.myNodeController.getRenderNode(); //期望是false，实际是true
           if(this.flag){
             this.result = 'dispose fail'
           }else{

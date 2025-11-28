@@ -99,12 +99,12 @@ class MyFrameNode extends FrameNode {
 
   onDraw(context: DrawContext) {
     const canvas = context.canvas;
-    // const pen = new drawing.Pen();
-    // pen.setStrokeWidth(5);
-    // pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
-    // canvas.attachPen(pen);
-    // canvas.drawRect({ left: 0, right: this.width, top: 0, bottom: this.width });
-    // canvas.detachPen();
+    const pen = new drawing.Pen();
+    pen.setStrokeWidth(5);
+    pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    canvas.attachPen(pen);
+    canvas.drawRect({ left: 0, right: this.width, top: 0, bottom: this.width });
+    canvas.detachPen();
   }
 
   addWidth() {
@@ -141,6 +141,7 @@ struct setLayoutExample {
             this.nodeController?.rootNode?.invalidate();
             this.nodeController?.rootNode?.setNeedsLayout();
             this.getPositionToScreen = this.nodeController?.rootNode?.getLayoutPosition().x.toString()
+            console.log('+++++++++++++',this.nodeController?.rootNode?.getLayoutPosition().x.toString()) //值不对，取到310，期望是0
           })
         Text(this.getPositionToScreen)
           .id("setLayoutValue")

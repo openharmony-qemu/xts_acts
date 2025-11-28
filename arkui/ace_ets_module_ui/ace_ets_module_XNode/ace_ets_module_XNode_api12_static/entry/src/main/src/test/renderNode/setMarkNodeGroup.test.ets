@@ -73,7 +73,7 @@ export default function setMarkNodeGroupTest() {
       let strJson: string = inspector.getInspectorByKey('SetMarkNodeGroup_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setMarkNodeGroupTest_0010] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('true');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('true');
       console.info('[setMarkNodeGroupTest_0010] END');
       done();
     }); 

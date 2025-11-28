@@ -17,6 +17,10 @@
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import {
+  Rectangle
+} from '@ohos.arkui.component'
+import {AppStorage } from '@ohos.arkui.stateManagement'
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
@@ -99,8 +103,11 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-              console.info('[' + caseTag + '] setValue BasePageConfig : ' + JSON.stringify(data));
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue[0].x));
+              console.info('[' + caseTag + '] setValue data.testValue.expectValue?.responseRegion[0]: ' + JSON.stringify(data.testValue.expectValue?.responseRegion[0].x));
+              AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue)
+              AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+              AppStorage.setOrCreate<string>('eventCallBackStr', '')
               await Utils.sleep(1000);
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey);

@@ -81,7 +81,7 @@ export default function TextPickerTextStyleTest() {
       console.info('[TextPickerTextStyleTest_static_0100 obj Normal1 $attrs.defaultTextStyle]:' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('defaultTextStyle')));
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize')).assertEqual('18.00fp');
-      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('28.00fp');
+      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('28.00fp');  //maxFontSize默认单位变成vp
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       await CommonFunc.sleep(1000);
       console.info('[TextPickerTextStyleTest_static_0100] END');

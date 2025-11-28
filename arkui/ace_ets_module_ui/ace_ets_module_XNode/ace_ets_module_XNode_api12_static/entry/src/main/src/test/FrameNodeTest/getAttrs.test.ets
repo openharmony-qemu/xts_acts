@@ -50,7 +50,7 @@ export default function getAttrsTest() {
         if (!("getAttrs" == pages.name)) {
           console.info("get getAttrsTest state pages.name: " + JSON.stringify(pages.name));
           //let result = await router.pushUrl(options);
-          router.pushUrl(options);
+          router.replaceUrl(options);
           await CommonFunc.sleep(2000);
           //console.info("push getAttrsTest success: " + JSON.stringify(result));
         }

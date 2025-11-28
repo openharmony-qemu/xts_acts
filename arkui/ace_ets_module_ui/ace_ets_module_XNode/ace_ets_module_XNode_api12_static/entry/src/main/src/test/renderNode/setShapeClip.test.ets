@@ -73,7 +73,7 @@ export default function setShapeClipTest() {
       let strJson: string = inspector.getInspectorByKey('SetShapeClip_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setShapeClipTest_0010] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('{"rect":{"left":0,"right":150,"top":0,"bottom":150},"roundRect":null,"circle":null,"oval":null,"path":null}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('label'))).assertEqual('{"rect":{"left":0,"right":150,"top":0,"bottom":150},"roundRect":null,"circle":null,"oval":null,"path":null}');
       console.info('[setShapeClipTest_0010] END');
       done();
     });  

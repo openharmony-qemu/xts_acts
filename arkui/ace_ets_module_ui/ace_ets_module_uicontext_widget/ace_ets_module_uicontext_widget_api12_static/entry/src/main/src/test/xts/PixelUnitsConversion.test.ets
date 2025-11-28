@@ -37,7 +37,7 @@ export default function PixelUnitsConversionJsunit() {
     beforeAll(() => {
       console.info("PixelUnitsConversionTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.uicontext_widget_api12_static", "EntryAbility")
+      await startAbility("com.example.myapplication.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {

@@ -89,9 +89,9 @@ export default function offsetRemainScroll() {
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('scroll_offsetRemain_text');
       console.info("[offsetRemainScroll_static_0100] component obj is: " + strJson);
-      console.info("[offsetRemainScrol_static_0100] content: " + JSON.parseJsonElement('strJson').getElement('$attrs').getString('content'));
+      console.info("[offsetRemainScrol_static_0100] content: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement('strJson').getElement('$attrs').getString('content')).assertEqual('scrollPosition: 1');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('scrollPosition: 1');
       console.info('[offsetRemainScroll_static_0100] END');
       done();
     });

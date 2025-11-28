@@ -104,9 +104,10 @@ struct CanvasAttrsTest {
                   console.log('Canvas onReady 1')
                   this.context.font = '30vp sans-serif'
                   console.log('Canvas onReady 2',this.node)
-                  this.node?.commonEvent.setOnVisibleAreaApproximateChange(  //回调没执行 11.4sdk
+                  this.node?.commonEvent.setOnVisibleAreaApproximateChange(  //回调没执行 11.17sdk
                     { ratios: [0, 1], expectedUpdateInterval: 10 },
                     (isVisible: boolean, currentRatio: number) => {
+                      console.log('+++++++++++++++setOnVisibleAreaApproximateChange')
                       if (!isVisible && currentRatio <= 0.0) {
                         this.message = 'Canvas is completely invisible.'
                         console.info('Canvas is completely invisible.')

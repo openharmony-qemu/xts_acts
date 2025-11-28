@@ -15,7 +15,7 @@
  */
 
 import {MessageManager,Callback} from '../../common/MessageManager';
-
+// import{TextPickerModifier} from '@ohos.arkui.modifier'
 
 import {
   Entry, Component, Builder,NodeContainer, TextCascadePickerRangeContent, TextPickerRangeContent,
@@ -29,31 +29,31 @@ class Bottom {
   public bottom:number = 50
 }
 let bott:Bottom = new Bottom()
-
-
-
-
-
-
-
-
+// class CustomModifier extends TextPickerModifier {
+//   applyNormalAttribute(instance: TextPickerAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//   resetOnChange(){
+//     this.onChange(null);
+//   }
+// }
 @Entry
 @Component
 struct TimePickerPage {
   @State isLunar: boolean = false
   @State onChangeOff: string = 'false'
   @State onDateChangeOff: string = 'false'
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // @State modifier:TextPickerModifier = new TextPickerModifier()
+  //   .onChange((value: string | string[], index: int | int[]) => {
+  //     console.info('check003 TextPickerOnChangeModifier 单列 Picker item changed, value: ' + value + ', index: ' + index)
+  //     this.onChangeOff = 'true'
+  // })
+  //
+  // @State modifier1:TextPickerModifier = new TextPickerModifier()
+  //   .onScrollStop((value: string | string[], index: number | number[]) => {
+  //     console.info('check003 TextPickerOnScrollStopeModifier Picker item changed, value: ' + value + ', index: ' + index)
+  //     this.onDateChangeOff = 'true'
+  // })
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4']
   private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4']
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4']
@@ -107,7 +107,7 @@ struct TimePickerPage {
       icon:$r('sys.media.ohos_ic_public_more')
     } as TextPickerRangeContent
   ]
-  private select: int = 1;
+  private select: number = 1
 
 
   build() {
@@ -117,11 +117,11 @@ struct TimePickerPage {
         .onClick((e:ClickEvent) => {
           this.isLunar = !this.isLunar
         }).id('LunarBtn')
-      TextPicker({ range: this.apfruits, selected: this.select })
-      
-      
-      
-      
+      TextPicker({ range: this.apfruits, selected: this.select as int})
+      // .attributeModifier(this.modifier as TextPickerModifier)
+      // .attributeModifier(this.modifier1 as TextPickerModifier)
+      // .margin(50)
+      // .id('TextPicker')
       Text(this.onChangeOff.toString()).key('onChangeOff')
       Text(this.onDateChangeOff.toString()).key('onScrollStopOff')
     }

@@ -80,8 +80,8 @@ export class AttrsManager {
           if (message && message?.value) {
             this.callBack!(message!.value!)
           }
-        } catch (error) {
-          console.error("fail :", error);
+        } catch (e: Error) {
+          console.error("fail :", e);
         }
       }
     }

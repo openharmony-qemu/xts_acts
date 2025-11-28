@@ -110,7 +110,7 @@ export default function getPosition() {
       let strJson: string = inspector.getInspectorByKey('getPositionToParentWithTransformValue');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getPosition_static_0200] component obj is: " + JSON.stringify(obj));
-      expect(Math.floor(obj.getElement('$attrs').getInteger('content'))).assertEqual(0);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
       console.info('[getPosition_static_0200] END');
       done();
     });
@@ -134,7 +134,8 @@ export default function getPosition() {
       let strJson: string = inspector.getInspectorByKey('getPositionToWindowWithTransformValue');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getPosition_static_0300] component obj is: " + JSON.stringify(obj));
-      expect(Math.floor(obj.getElement('$attrs').getInteger('content'))).assertEqual(0);
+      console.info("[getPosition_static_0300] component obj is1: " + obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
       console.info('[getPosition_static_0300] END');
       done();
     });

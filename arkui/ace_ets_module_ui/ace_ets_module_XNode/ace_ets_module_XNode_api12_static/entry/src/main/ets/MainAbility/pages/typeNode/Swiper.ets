@@ -48,7 +48,7 @@ class MyNodeController extends NodeController {
     swiper.initialize().width('100%').height('100%').margin({ top: 5 } as Margin);
     col.appendChild(swiper);
     storage.set('SwiperType', '' + swiper.getNodeType());
-
+    console.log('+++++++++++',swiper.getNodeType())  //这个值是Swiper
     return node;
   }
 }
@@ -63,7 +63,8 @@ struct TypeNodeSwiper {
     Row() {
       Button(this.nodeType).id("TypeNode_Swiper")
         .onClick((e:ClickEvent)=>{
-          this.nodeType = storage.get<string>('SwiperType') as string
+          this.nodeType = storage.get<string>('SwiperType') as string  //11.22 值修改后，页面没刷新
+          console.log('+++++++++++this.nodeType',this.nodeType,'storage.get<string>',storage.get<string>('SwiperType'))
         })
       NodeContainer(this.myNodeController);
 

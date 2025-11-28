@@ -15,6 +15,5 @@
  */
 import responseRegionTest from './responseRegion/ResponseRegionTest.test';
 export default function testsuite() {
-  console.log('++++++++++++++++testsuite start')
   responseRegionTest();
 }

@@ -80,7 +80,7 @@ export default function setLayout() {
       let strJson: string = inspector.getInspectorByKey('setLayoutValue');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setLayout_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(Math.floor(obj.getElement('$attrs').getInteger('content'))).assertEqual(0);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
       console.info('[setLayout_static_0100] END');
       done();
     });

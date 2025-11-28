@@ -73,19 +73,19 @@ struct PostFrameCallbackIndex {
           .height('5%')
           .id('postFrameCallback_value_id')
           .onClick((e:ClickEvent) => {
-            this.result1 = this.myFrameCallback1.ret;
+            this.result1 = this.myFrameCallback1.ret;  // onFrame的方法未执行
           })
         Button('postDelayedFrameCallback结果')
           .height('5%')
           .id('postDelayedFrameCallback_value_id')
           .onClick((e:ClickEvent) => {
-            this.result2 = this.myFrameCallback2.ret;
+            this.result2 = this.myFrameCallback2.ret;  // onFrame的方法未执行
           })
         Button('postDelayedFrameCallback null结果')
           .height('5%')
           .id('postDelayedFrameCallback_null_value_id')
           .onClick((e:ClickEvent) => {
-            this.result3 = this.myFrameCallback2.ret;
+            this.result3 = this.myFrameCallback2.ret;  // onFrame的方法未执行
           })
       }
       .width('100%')

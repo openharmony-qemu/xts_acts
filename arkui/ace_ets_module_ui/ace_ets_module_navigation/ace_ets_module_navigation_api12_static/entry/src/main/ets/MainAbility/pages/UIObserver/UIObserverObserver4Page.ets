@@ -59,12 +59,8 @@ struct UIObserverObserver4Page {
 
   aboutToAppear() {
     if (this.firstTime == false) {
-      try{
         uiObserver.onNavDestinationSwitch( this.getUIContext(), { navigationId: 'myNavId' }, callBackFuncOn) //页面加载失败 sdk11.5
         this.firstTime = true
-      }catch(err){
-        console.log('++++++++++++++++++++++onNavDestinationSwitchError',err)
-      }
     }
   }
 
@@ -72,7 +68,9 @@ struct UIObserverObserver4Page {
     Column() {
       Navigation(this.stack) {
         Button('push').onClick((e: ClickEvent) => {
-          this.stack.pushPath(new NavPathInfo('pageOne',null))
+          console.log('+++++++++++++++++++++++push1')
+          this.stack.pushPath(new NavPathInfo('pageOne',null))  //跳转pageOne后appDied  SDK11.17
+          console.log('+++++++++++++++++++++++push2')
         })
           .id('UIObserverObserver4_btn_push')
         Button('off observer').onClick((e: ClickEvent) => {

@@ -23,8 +23,8 @@ import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, ShapeMask, FrameNode, NodeController  } from "@ohos.arkui.node";
 
-const uiContext = new UIContext();
-const vp2px = uiContext.vp2px
+const uiContext =  AppStorage.get<UIContext>('uiContext');
+const vp2px = uiContext!.vp2px
 const mask = new ShapeMask();
 mask.setRectShape({ left: 0, right: vp2px(150), top: 0, bottom: vp2px(150) });
 mask.fillColor = 0X55FF0000;

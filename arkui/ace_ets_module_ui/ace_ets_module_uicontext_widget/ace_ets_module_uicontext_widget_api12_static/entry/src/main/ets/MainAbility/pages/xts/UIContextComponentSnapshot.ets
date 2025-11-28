@@ -18,10 +18,10 @@ import image from '@ohos.multimedia.image'
 import hilog from '@ohos.hilog';
 import componentSnapshot from '@ohos.arkui.componentSnapshot'
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,
-  ColumnOptions,Scroller,Scroll, Padding, Gauge, ScrollDirection, BarState, Color, EdgeEffect, Row,Image,
+  ColumnOptions,Scroller,Scroll, Padding, Gauge, ScrollDirection, BarState, Color, EdgeEffect, Row,Image,LinearGradient,Resource
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router,ComponentSnapshot } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
 import { ClickEvent } from '@ohos.arkui.component';
@@ -37,35 +37,38 @@ struct UIContextComponentSnapshot {
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
-      Text('Component Snapshot').fontColor(0x000000).fontSize(16).width('90%').height('5%')
+      Text('Component Snapshot').fontColor('0x000000').fontSize(16).width('90%').height('5%')
       Scroll(this.scroller) {
         Column({ space: 5 } as ColumnOptions) {
           Gauge({ value: 30, min: 0, max: 100 })
             .id('snapshot_4')
             .startAngle(210)
             .endAngle(150)
-            .colors([[0x317AF7, 0.1], [0x5BA854, 0.2], [0xE08C3A, 0.3], [0x9C554B, 0.4]])
+            .colors([['0x317AF7', 0.1], ['0x5BA854', 0.2], ['0xE08C3A', 0.3], ['0x9C554B', 0.4]] as  Array<[LinearGradient|Color|Int|String|Resource, number]>) //造成创建页面失败
             .strokeWidth(20)
             .width(200)
             .height(200)
+
         }
         .width('100%')
-        .backgroundColor(0x13ff7e)
+        .backgroundColor('0x13ff7e')
         .padding({ top: 5 } as Padding)
       }
-      .scrollable(ScrollDirection.Vertical) 
-      .scrollBar(BarState.On) 
-      .scrollBarColor(Color.Gray) 
-      .scrollBarWidth(10) 
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .friction(0.6)
       .height('35%')
       .edgeEffect(EdgeEffect.Fade)
 
-      Text(`上面是要截取的图下面是所截的图`).fontColor(0x000000).fontSize(16).width('90%').margin(15).height('5%')
+      Text(`上面是要截取的图下面是所截的图`).fontColor('0x000000').fontSize(16).width('90%').margin(15).height('5%')
       Row() {
         Column({ space: 5 } as ColumnOptions) {
-          Button('新增Callback').onClick((e:ClickEvent) => { 
-            this.uiContext.getComponentSnapshot()
+          Button('新增Callback')
+            .onClick((e:ClickEvent) => { // 这里
+              console.log('wj+++++++++++++++++++++++++++')
+            this.getUIContext().getComponentSnapshot() // 执行后appDied
               .get('snapshot_4', (err: BusinessError<void>|null, pixmap: image.PixelMap|undefined):void => {
                 if (err) {
                   hilog.error(0x0000, 'testTag', 'getComponentSnapshot pixmap_text_1 error %{public}s', JSON.stringify(err) ?? '');
@@ -73,7 +76,7 @@ struct UIContextComponentSnapshot {
                 }
                 this.pixmap_2 = pixmap!
                 console.info('UIContextComponentSnapshot pixmap_text_1 start')
-                this.pixmap_text_1 = 'snapshot'
+                this.pixmap_text_1 = 'snapshot'   //这里没执行
               }, {
                 scale: 1, waitUntilRenderFinished: true,
                 region: {
@@ -83,11 +86,15 @@ struct UIContextComponentSnapshot {
                   bottom: 200
                 }
               })
-          }).width('90%').margin(10).id('getComponentSnapshot_01').height('5%')
+          })
+            .width('90%')
+            .margin(10)
+            .id('getComponentSnapshot_01')
+            .height('5%')
 
 
-          Button('新增Promise').onClick((e:ClickEvent) => { 
-            this.uiContext.getComponentSnapshot()
+          Button('新增Promise').onClick((e:ClickEvent) => { // 这里
+            this.uiContext!.getComponentSnapshot()!  //导致白屏
               .get('snapshot_4',{
                 scale: 1, waitUntilRenderFinished: true,
                 region: {
@@ -108,16 +115,16 @@ struct UIContextComponentSnapshot {
               })
           }).width('90%').margin(10).id('getComponentSnapshot_02').height('5%')
           Image(this.pixmap_2).width(200).height(200)
-          Text('' + this.pixmap_text_1).fontColor(0x000000)
+          Text('' + this.pixmap_text_1).fontColor('0x000000')
             .fontSize(16).width('90%').key('key_getComponentSnapshot_text_01').height('5%')
-          Text('' + this.pixmap_text_2).fontColor(0x000000)
+          Text('' + this.pixmap_text_2).fontColor('0x000000')
             .fontSize(16).width('90%').key('key_getComponentSnapshot_text_02').height('5%')
         }.width('100%')
       }
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .padding({ top: 5 } as Padding)
   }
 }

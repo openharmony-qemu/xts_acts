@@ -15,17 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
@@ -176,42 +166,41 @@ export default function webViewPageattrLackJsunit() {
     )
 
     /*
-         * @tc.number   testWebviewpageLackattr_static_03
-         * @tc.name     testWebviewpageLackattr_static_03
-         * @tc.desc     testWebviewpageLackattr_static_03
-         * @tc.level    Level.LEVEL0
-         */
-    it("testWebviewpageLackattr_static_03", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("testWebviewpageLackattr_static_03 START")
-      await Utils.sleep(2000)
-      try {
-        let callback = (indexEvent: emitter.EventData) => {
-          console.info(
-            "testWebviewpageLackattr_static_03 get state result is: " +
-            JSON.stringify(indexEvent)
-          )
-          expect(JSON.parseJsonElement((indexEvent.data as ESObject).getProperty('STATUS').toString())
-            .getString('extra')).assertEqual(
-            "hello"
-          )
-        }
-        let indexEvent: emitter.InnerEvent = {
-          eventId: 90203,
-          priority: emitter.EventPriority.LOW,
-        }
-        inspector.sendEventByKey("getHitTestValue", 10, "")
-        emitter.on(indexEvent, callback)
-      } catch (err) {
-        console.info(
-          "testWebviewpageLackattr_static_03events_emitter err : " +
-          JSON.stringify(err)
+     * @tc.number   testWebviewpageLackattr_static_03
+     * @tc.name     testWebviewpageLackattr_static_03
+     * @tc.desc     testWebviewpageLackattr_static_03
+     * @tc.level    Level.LEVEL0
+     */
+        it("testWebviewpageLackattr_static_03", Level.LEVEL0, async (done: () => void): Promise<void> => {
+                console.info("testWebviewpageLackattr_static_03 START")
+                await Utils.sleep(2000)
+                try {
+                    let callback = (indexEvent: emitter.EventData) => {
+                        console.info(
+                            "testWebviewpageLackattr_static_03 get state result is: " +
+                            JSON.stringify(indexEvent)
+                        )
+                        expect(JSON.parseJsonElement((indexEvent.data as ESObject).getProperty('STATUS').toString()).getString('extra')).assertEqual(
+                            "hello"
+                        )
+                    }
+                    let indexEvent: emitter.InnerEvent = {
+                        eventId: 90203,
+                        priority: emitter.EventPriority.LOW,
+                    }
+                    inspector.sendEventByKey("getHitTestValue", 10, "")
+                    emitter.on(indexEvent, callback)
+                } catch (err) {
+                    console.info(
+                        "testWebviewpageLackattr_static_03events_emitter err : " +
+                        JSON.stringify(err)
+                    )
+                }
+                console.info("testWebviewpageLackattr_static_03 END")
+                done()
+            }
         )
-      }
-      console.info("testWebviewpageLackattr_static_03 END")
-      done()
-    }
-    )
-
+        
 
     /*
      * @tc.number   testgetOriginQuota005
@@ -237,33 +226,32 @@ export default function webViewPageattrLackJsunit() {
      * @tc.level    Level.LEVEL0
      */
     it('testWebviewpageLackattr_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("testWebviewpageLackattr_static_06 START")
-      await Utils.sleep(2000)
-      try {
-        let callback = (indexEvent: emitter.EventData) => {
-          console.info(
-            "testWebviewpageLackattr_static_06 get state result is: " +
-            JSON.stringify(indexEvent)
-          )
-          expect(JSON.parseJsonElement((indexEvent.data as ESObject).getProperty('STATUS').toString())
-            .getString('usage')).assertEqual(0)
-        }
-        let indexEvent: emitter.InnerEvent = {
-          eventId: 90206,
-          priority: emitter.EventPriority.LOW,
-        }
-        inspector.sendEventByKey("getOriginUsage", 10, "")
-        emitter.on(indexEvent, callback)
-      } catch (err) {
-        console.info(
-          "testWebviewpageLackattr_static_06events_emitter err : " +
-          JSON.stringify(err)
-        )
-      }
-      console.info("testWebviewpageLackattr_static_06 END")
-      done()
-    })
-
+            console.info("testWebviewpageLackattr_static_06 START")
+            await Utils.sleep(2000)
+            try {
+                let callback = (indexEvent: emitter.EventData) => {
+                    console.info(
+                        "testWebviewpageLackattr_static_06 get state result is: " +
+                        JSON.stringify(indexEvent)
+                    )
+                    expect(JSON.parseJsonElement((indexEvent.data as ESObject).getProperty('STATUS').toString()).getString('usage')).assertEqual(0)
+                }
+                let indexEvent: emitter.InnerEvent = {
+                    eventId: 90206,
+                    priority: emitter.EventPriority.LOW,
+                }
+                inspector.sendEventByKey("getOriginUsage", 10, "")
+                emitter.on(indexEvent, callback)
+            } catch (err) {
+                console.info(
+                    "testWebviewpageLackattr_static_06events_emitter err : " +
+                    JSON.stringify(err)
+                )
+            }
+            console.info("testWebviewpageLackattr_static_06 END")
+            done()
+        })
+        
 
     /*
      * @tc.number   testWebviewpageLackattr_static_07

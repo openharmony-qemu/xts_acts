@@ -73,7 +73,7 @@ export default function typeNodeGridColTest() {
       let strJson: string = inspector.getInspectorByKey('TypeNode_GridCol');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridColTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('GridCol');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('GridCol');
       console.info('[GridColTest_0100] END');
       done();
     });

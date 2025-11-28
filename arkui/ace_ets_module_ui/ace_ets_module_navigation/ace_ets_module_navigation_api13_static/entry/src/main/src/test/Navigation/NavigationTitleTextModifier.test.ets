@@ -93,9 +93,9 @@ export default function NavigationTitleTextModifier() {
       await CommonFunc.sleep(1000);
 
       expect(obj1.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getElement('$attrs').getString('fontColor')).assertEqual("#FFFFC000");
-      console.info("[NavigationTitleTextModifier_0100] main title equal: " + '#FFFFC000');
+      console.info("[NavigationTitleTextModifier_0100] main title equal: " + '#FFFFC000',' act:',obj1.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getElement('$attrs').getString('fontColor'));
       expect(obj1.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getArray("$children")[1].getElement('$attrs').getString('fontColor')).assertEqual("#FFFFCEEE");
-      console.info("[NavigationTitleTextModifier_0100] sub title equal: " + '#FFFFCEEE');
+      console.info("[NavigationTitleTextModifier_0100] sub title equal: " + '#FFFFCEEE',' act： ',obj1.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getArray("$children")[1].getElement('$attrs').getString('fontColor'));
 
       console.info('NavigationTitleTextModifier_0100 END');
       done();

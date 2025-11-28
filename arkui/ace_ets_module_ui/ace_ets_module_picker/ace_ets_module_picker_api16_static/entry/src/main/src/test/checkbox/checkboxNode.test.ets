@@ -76,8 +76,8 @@ it('checkboxNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
       let tagName = 'checkboxNode_static_0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_checkbox_01');
-      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual('Checkbox');
+      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
+      expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual('Checkbox');
       console.info('[' + tagName + '] END ===========================');
       done();
     });

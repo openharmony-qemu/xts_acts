@@ -47,19 +47,19 @@ class MyNodeController extends NodeController {
 
     const stack = typeNode.createStackNode(this.uiContext!)
     const column = typeNode.createColumnNode(this.uiContext!)
-    // const button = typeNode.createButtonNode(this.uiContext!, 'Button')
+    const button = typeNode.createButtonNode(this.uiContext!)
     stack.attribute.id('Stack')
     stack.attribute.backgroundColor(Color.Green)
-    // button.attribute.width(200)
-    // button.attribute.height(100)
-    // button.initialize(this.buttonText)
+    button.attribute.width(200)
+    button.attribute.height(100)
+    button.initialize(this.buttonText)
     column.attribute.id('Column')
     this.stackNode = stack
     this.columnNode = column
-    // this.button = button
+    this.button = button
     this.rootNode!.appendChild(this.stackNode!)
     this.rootNode!.appendChild(this.columnNode!)
-    // this.stackNode!.appendChild(this.button!)
+    this.stackNode!.appendChild(this.button!)
 
     return this.rootNode
   }
@@ -102,8 +102,9 @@ struct frameNodeMoveTwo {
       }
     }.width('100%').height(100).padding(5).id('popup_id')
     .onClick((e:ClickEvent) => {
+      console.log('++++++++++++++++++')
       const uiContext: UIContext = this.getUIContext();
-      console.log('kkk2' + JSON.stringify(uiContext));
+      // console.log('kkk2' + JSON.stringify(uiContext)); //appDied
       const node2: FrameNode | null = uiContext.getFrameNodeById('Stack') || null
       if (node2){
         console.log('kkk2 getNode2 successfully');
@@ -140,8 +141,10 @@ struct frameNodeMoveTwo {
 
       Button('CustomPopupOptions').height('10%').id('customPopupOptions_id')
         .onClick((e:ClickEvent) => {
+          console.log('+++++++++++1')
           const uiContext: UIContext = this.getUIContext();
-          console.log('kkk' + JSON.stringify(uiContext));
+          console.log('+++++++++++2')
+          // console.log('kkk' + JSON.stringify(uiContext));  //appDied
           const node1: FrameNode | null = uiContext.getFrameNodeById('Column') || null
           const node2: FrameNode | null = uiContext.getFrameNodeById('Stack') || null
           if (node1 ){

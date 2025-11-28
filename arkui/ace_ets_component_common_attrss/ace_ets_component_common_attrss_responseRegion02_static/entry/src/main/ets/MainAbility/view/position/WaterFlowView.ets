@@ -40,7 +40,7 @@ export struct WaterFlowView {
   @State minSize: number = 50
   @State maxSize: number = 100
   @State fontSize: number = 24
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State colors: string[] = ['0xFFC0CB', '0xDA70D6', '0x6B8E23', '0x6A5ACD', '0x00FFFF', '0x00FF7F'] as string[]
   scroller: Scroller = new Scroller()
   private itemWidthArray: int[] = [] as int[]
   private itemHeightArray: int[] = [] as int[]
@@ -84,7 +84,7 @@ export struct WaterFlowView {
         }
         .width(this.itemWidthArray[item])
         .height(this.itemHeightArray[item])
-        .backgroundColor(this.colors[item % 5] as int)
+        .backgroundColor(this.colors[item % 5])
       }, (item: int) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')
@@ -102,7 +102,7 @@ export struct WaterFlowView {
     .onReachEnd(() => {
       console.info('onReachEnd')
     })
-    .backgroundColor(0xFAEEE0)
+    .backgroundColor('0xFAEEE0')
     .width('100%')
     .height('80%')
     .layoutDirection(FlexDirection.Column)

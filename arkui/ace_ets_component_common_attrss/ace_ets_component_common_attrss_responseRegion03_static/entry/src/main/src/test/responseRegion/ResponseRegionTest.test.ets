@@ -35,7 +35,9 @@ let testAbilityContext:common.UIAbilityContext;
 const uiContext = new UIContext();
 
 async function clickPoint(data: BasePageConfig, xPoint: number, yPoint: number) {
-  // await Utils.performClickPoint(xPoint, yPoint);
+  await Utils.performClickPoint(xPoint, yPoint);
+  console.log("===================================================  click " + xPoint + " " + yPoint);
+  await Utils.sleep(1000);
   if ('Select' == data.pageConfig.componentKey) {
     await Utils.sleep(2000);
     await eventResult(data, 'onClick');
@@ -52,6 +54,8 @@ async function resetStatus(data: BasePageConfig) {
   console.info('[' + data.caseTag + '] reset status.');
   // AttrsManager.change(data.caseTag, data.testValue.setValue);
   AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue as Array<Rectangle>)
+  AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+  AppStorage.setOrCreate<string>('eventCallBackStr', '')
   await Utils.sleep(1000);
 }
 
@@ -65,11 +69,12 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
     await Utils.sleep(1000)
   }
   let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
-  console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getString('content'));
+  await Utils.sleep(1000);
+  console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getElement('$attrs').getString('content'));
   if ('' == expectationValue) {
-    expect(referenceComponent.getString('content')).assertEqual(expectationValue);
+    expect(referenceComponent.getElement('$attrs').getString('content')).assertEqual(expectationValue);
   } else {
-    expect(referenceComponent.getString('content')).assertContain(expectationValue);
+    expect(referenceComponent.getElement('$attrs').getString('content')).assertContain(expectationValue);
   }
 }
 
@@ -78,7 +83,6 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 export default function responseRegionTest() {
   let supportView:Array<string> = new Array<string>(
     'Text',
-    'Navigator',
     'Panel',
     'Refresh',
     'RelativeContainer',
@@ -94,7 +98,8 @@ export default function responseRegionTest() {
     'Path',
     'Rect',
     'Shape',
-    'Line'
+    'Line',
+    'Navigator'
   )
   //Custom params.
   let targetWidth = 200;
@@ -111,7 +116,8 @@ export default function responseRegionTest() {
     referenceText: 'referenceText'
   }
 
-  let testValues: TestValue[] = [{
+  let testValues: TestValue[] = [
+    {
     describe: 'SetNumber',
     setValue: [{
       x: 50, y: 50, width: 200, height: 200
@@ -119,7 +125,7 @@ export default function responseRegionTest() {
     expectValue: {
       responseRegion: [{
         x: '50.00vp', y: '50.00vp', width: '200.00vp', height: '200.00vp'
-      } as SetValue]
+      }]
     } as ResponseRegion}
     ,{
       describe: 'SetStringPx',
@@ -136,7 +142,7 @@ export default function responseRegionTest() {
       expectValue: {
         responseRegion: [{
           x: '100.00px', y: '100.00px', width: '200.00px', height: '200.00px'
-        } as SetValue]
+        }]
       } as ResponseRegion
     }, {
       describe: 'SetPercent',
@@ -153,15 +159,15 @@ export default function responseRegionTest() {
       expectValue: {
         responseRegion: [{
           x: '20.00%', y: '20.00%', width: '100.00%', height: '100.00%'
-        } as SetValue]
+        }]
       } as ResponseRegion
     }, {
       describe: 'SetResource',
       setValue: [{
-        x: String($r('app.float.50vp')),
-        y: String($r('app.float.50vp')),
-        width: String($r('app.float.200vp')),
-        height: String($r('app.float.200vp')),
+        x: $r('app.float.50vp'),
+        y: $r('app.float.50vp'),
+        width: $r('app.float.200vp'),
+        height: $r('app.float.200vp'),
         // numberX: 50,
         // numberY: 50,
         // numberWidth: 200,
@@ -170,7 +176,7 @@ export default function responseRegionTest() {
       expectValue: {
         responseRegion: [{
           x: '50.00vp', y: '50.00vp', width: '200.00vp', height: '200.00vp'
-        } as SetValue]
+        }]
       } as ResponseRegion
     }, {
       describe: 'SetOutsideArea',
@@ -185,7 +191,7 @@ export default function responseRegionTest() {
       expectValue: {
         responseRegion: [{
           x: '-200.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-        } as SetValue]
+        }]
       } as ResponseRegion
     }, {
       describe: 'SetIntraArea',
@@ -200,9 +206,10 @@ export default function responseRegionTest() {
       expectValue: {
         responseRegion: [{
           x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-        } as SetValue]
+        }]
       } as ResponseRegion
-    }, {
+    },
+    {
       describe: 'SetMultiArea',
       exceptView: ['Search'],
       setValue: [{
@@ -223,9 +230,10 @@ export default function responseRegionTest() {
       expectValue: {
         responseRegion: [{
           x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-        } as SetValue, {
+        },
+          {
           x: '-200.00vp', y: '-200.00vp', width: '100.00%', height: '100.00%'
-        } as SetValue]
+        }]
       } as ResponseRegion
     }
   ]
@@ -247,17 +255,19 @@ export default function responseRegionTest() {
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
       // AttrsManager.change(data.caseTag, data.testValue.setValue);
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue as Array<Rectangle>)
+      AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+      AppStorage.setOrCreate<string>('eventCallBackStr', '')
       await Utils.sleep(1000);
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[wll]'+viewObj)
       if ('SetMultiArea' == data.testValue.describe) {
-        expect((viewObj.getArray('responseRegion'))[0])
-          .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion[0]));
-        expect((viewObj.getArray('responseRegion'))[1])
-          .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion[1]));
+        expect(JSON.stringifyJsonElement(viewObj.getElement('$attrs').getElement('responseRegion')[0]).replaceAll('\\', ''))
+          .assertEqual(`"${JSON.stringify(data.testValue.expectValue?.responseRegion[0])}"`);
+        expect(JSON.stringifyJsonElement(viewObj.getElement('$attrs').getElement('responseRegion')[1]).replaceAll('\\', ''))
+          .assertEqual(`"${JSON.stringify(data.testValue.expectValue?.responseRegion[1])}"`);
       } else {
-        expect((viewObj.getArray('responseRegion'))[0])
-          .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion));
+        expect(JSON.stringifyJsonElement(viewObj.getElement('$attrs').getElement('responseRegion')[0]).replaceAll('\\', ''))
+          .assertEqual(`"${JSON.stringify(data.testValue.expectValue?.responseRegion[0])}"`);
       }
       let offsetX:number | undefined = 0;
       let offsetY:number | undefined = 0;
@@ -340,7 +350,9 @@ export default function responseRegionTest() {
         yPoint = Number(Number(rect.top + (secondOffsetY as number) + (secondOffsetHeight as number) / 2).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
+        console.log("================================ SetMultiArea clickPoint 2 rect.top " + rect.top);
         await clickPoint(data, xPoint, yPoint);
+        console.log("================================ SetMultiArea clickPoint 2");
         //Click on the outer points of multiple hotspot areas
         if ((rect.left + (firstOffsetX as number) + (firstOffsetWidth as number)) >= (rect.left + (secondOffsetX as number) + (secondOffsetY as number))) {
           xPoint = Number(Number(rect.left + (firstOffsetX as number) + (firstOffsetWidth as number) + Number(uiContext!.vp2px(10))).toFixed(0));
@@ -351,7 +363,9 @@ export default function responseRegionTest() {
         }
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
-        // await Utils.performClickPoint(xPoint, yPoint);
+        console.log("================================ SetMultiArea performClickPoint 3");
+        await Utils.performClickPoint(xPoint, yPoint);
+        console.log("================================ SetMultiArea performClickPoint 3");
         await eventResult(data, notClick);
       } else {
         //Click on the center point of the hotspot area
@@ -371,7 +385,8 @@ export default function responseRegionTest() {
         yPoint = Number(Number(rect.top + (offsetY as number) + (offsetHeight as number) + Number(uiContext!.vp2px(10))).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
-        // await Utils.performClickPoint(xPoint, yPoint);
+        await Utils.performClickPoint(xPoint, yPoint);
+        console.log("===================================================  click " + xPoint + " " + yPoint);
         await eventResult(data, notClick);
       }
     });

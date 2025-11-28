@@ -43,7 +43,7 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct ResponseRegionPage {
-  @State eventCallBackStr: string = ''
+  @StoragePropRef('eventCallBackStr') eventCallBackStr: string = ''
   @StoragePropRef('_responseRegion') _responseRegion: Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' } ]
   @State targetView: string = ''
   @State componentKey: string =  ''
@@ -55,7 +55,7 @@ struct ResponseRegionPage {
   onPageShow() {
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-      AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
+      // AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
       console.info('[wll]after'+JSON.stringify(routerParamOptions.view.testValue.setValue[0]))
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey

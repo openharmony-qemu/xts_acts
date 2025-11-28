@@ -22,8 +22,9 @@ import {
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, FrameNode, NodeController, borderStyles } from "@ohos.arkui.node";
-let borderStyleValue = renderNode.borderColor;
+
 const renderNode = new RenderNode();
+let borderStyleValue = renderNode.borderColor;
 renderNode.frame = { x: 0, y: 0, width: 150, height: 150 };
 renderNode.backgroundColor = 0XFF00FF00;
 renderNode.borderWidth = { left: 8, top: 8, right: 8, bottom: 8 };

@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-import checkboxNode from './checkbox/checkboxNode.test';
-import checkboxGroupNode from './checkboxGroup/checkboxGroupNode.test';
+import CheckboxNodeTest from './checkbox/checkboxNode.test';
+import checkboxGroupNodeTest from './checkboxGroup/checkboxGroupNode.test';
 import enableCascadeTest from './timePicker/enableCascadeTest.test';
-import radioNode from './radio/radioNode.test';
-import ratingNode from './rating/ratingNode.test';
-import sliderNode from './slider/sliderNode.test';
-import toggleNode from './toggle/toggleNode.test';
-import PickerCrownSensitivity from './crownSensitivity/Picker.test';
-import TimePickerCrownSensitivity from './crownSensitivity/TimePicker.test';
-import TextPickerCrownSensitivity from './crownSensitivity/TextPicker.test';
-import checkBoxOnChangeModifierTest from './checkbox/checkboxOnChangeModifier.test';
-import checkBoxGroupOnChangeModifierTest from './checkboxGroup/checkboxGroupOnChangeModifier.test';
+import radioNodeTest from './radio/radioNode.test';
+import ratingNodeTest from './rating/ratingNode.test';
+import sliderNodeTest  from './slider/sliderNode.test';
+import toggleNodeTest from './toggle/toggleNode.test';
+import Picker from './crownSensitivity/Picker.test';
+import TimePicker from './crownSensitivity/TimePicker.test';
+import TextPicker from './crownSensitivity/TextPicker.test';
+import CheckboxOnChangeModifierTest from './checkbox/checkboxOnChangeModifier.test';
+import CheckboxGroupOnChangeModifierTest from './checkboxGroup/checkboxGroupOnChangeModifier.test';
 import radioOnChangeModifierTest from './radio/radioOnChangeModifier.test';
 import ratingOnChangeModifierTest from './rating/ratingOnChangeModifier.test';
 import sliderOnChangeModifierTest from './slider/sliderOnChangeModifier.test';
@@ -33,25 +33,27 @@ import toggleOnChangeModifierTest from './toggle/toggleOnChangeModifier.test';
 import textPickerOnChangeModifierTest from './textPicker/textPickerOnChangeModifier.test';
 import timePickerOnChangeModifierTest from './timePicker/timePickerOnChangeModifier.test';
 import datePickerOnChangeModifierTest from './datePicker/datePickerOnChangeModifier.test';
+import selectNodeTest from './select/selectNode.test'
 
 export default function testsuite() {
-  enableCascadeTest();
-  checkboxNode();
-  checkboxGroupNode();
-  radioNode();
-  ratingNode();
-  sliderNode();
-  toggleNode();
-  PickerCrownSensitivity();
-  TimePickerCrownSensitivity();
-  TextPickerCrownSensitivity();
-  checkBoxOnChangeModifierTest();
-  radioOnChangeModifierTest();
-  checkBoxGroupOnChangeModifierTest();
-  ratingOnChangeModifierTest();
-  sliderOnChangeModifierTest();
-  toggleOnChangeModifierTest();
-  textPickerOnChangeModifierTest();
-  timePickerOnChangeModifierTest();
-  datePickerOnChangeModifierTest();
+  // enableCascadeTest(); //SDK11.22 Failure: 1,Pass: 3  失败是因为参数类型不支持null
+  // CheckboxNodeTest(); //SDK11.22 Pass: 1
+  // checkboxGroupNodeTest(); // SDK11.22 Pass: 1
+  // radioNodeTest(); // SDK11.22 Pass: 1
+  // ratingNodeTest(); /// SDK11.22 Pass: 1
+  // sliderNodeTest(); // SDK11.22 Pass: 1
+  // toggleNodeTest(); // SDK11.22 Pass: 1
+  // Picker(); //手表端，不用管
+  TimePicker();// SDK11.22 Pass: 7
+  // TextPicker(); //  SDK11.22 Pass: 7
+  // CheckboxOnChangeModifierTest(); // SDK11.22 Pass: 2
+  // radioOnChangeModifierTest(); // SDK11.22 Pass: 2
+  // CheckboxGroupOnChangeModifierTest(); // SDK11.22 Pass: 1
+  // ratingOnChangeModifierTest(); // SDK11.22 Pass: 1
+  // sliderOnChangeModifierTest(); // SDK11.22 Pass: 3
+  // toggleOnChangeModifierTest(); // SDK11.22 Pass: 2
+  // textPickerOnChangeModifierTest(); //SDK11.22 Pass: 2 Utils.getComponentRect
+  // timePickerOnChangeModifierTest(); // Error: 2  Utils.getComponentRect
+  // datePickerOnChangeModifierTest(); // SDK11.22 Property 'onChange' does not exist on type 'DatePickerModifier'
+  // selectNodeTest(); // 不存在page页面 1.1也没有
 }

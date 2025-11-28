@@ -202,15 +202,6 @@ struct frameNodeMoveOne {
             console.log('++++++++++++++++++++1')
             this.myNodeController.addFrame2()
             console.log('++++++++++++++++++++2')
-            if(this.myNodeController.rootNode!==null){
-              console.log('+++++++++++++++++this.myNodeController.rootNode null')
-              if(this.myNodeController.rootNode!.getFirstChild()==null){
-                console.log('+++++++++++++++++this.myNodeController.rootNode!.getFirstChild() null')
-                if(this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount() == null ){
-                  console.log('+++++++++++++++++this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount() null')
-                }
-              }
-            }
             this.frame1ChildCount = this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount()
 
             console.log('++++++++++++++++++++3')
@@ -247,8 +238,10 @@ struct frameNodeMoveOne {
         .onClick((e:ClickEvent) => {
           this.frame1ChildCount = this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount()
           this.frame2ChildCount = this.myNodeController.rootNode!.getChild(1)!.getChildrenCount()
-          this.frame3ChildCount = this.myNodeController.rootNode!.getChildrenCount()
-          this.getNodeParentId = this.getUIContext().getFrameNodeById('text_id')?.getParent()?.getId() + ''
+          this.frame3ChildCount = this.myNodeController.rootNode!.getChildrenCount()  //取值为 "2"
+          console.log('+++++++this.frame3ChildCount ',this.frame3ChildCount )
+          this.getNodeParentId = this.getUIContext().getFrameNodeById('text_id')?.getParent()?.getId() + ''  //取值为 "undefined"
+          console.log('+++++++this.getNodeParentId  ',this.getNodeParentId  )
         })
     }
     .height('100%')

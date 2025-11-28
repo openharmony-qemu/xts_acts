@@ -59,8 +59,8 @@ struct EnableSwipeBackPageOne {
       Button(`enable swipe back: ${this.isEnable}`).onClick((e: ClickEvent) => {
         console.log('++++++++++++++++++enableId1')
         this.isEnable = !this.isEnable;
-        console.log('++++++++++++++++++enableId2')
-        this.getUIContext().enableSwipeBack(this.isEnable); //在这里appDied
+        console.log('++++++++++++++++++enableId2',this.isEnable)
+        this.getUIContext().enableSwipeBack(this.isEnable); //SDK11.25在这里appDied  Cannot find method 'enableSwipeBack
         console.log('++++++++++++++++++enableId3')
       })
       .height('10%')

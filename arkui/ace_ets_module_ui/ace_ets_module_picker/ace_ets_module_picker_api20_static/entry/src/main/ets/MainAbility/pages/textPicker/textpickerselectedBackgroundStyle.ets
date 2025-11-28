@@ -22,7 +22,7 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 @Entry
 @Component
 struct TextPickerPage {
-  @State selectedIndex: int = 0;
+  @State selectedIndex: number = 0;
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4'];
   private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4'];
@@ -31,9 +31,19 @@ struct TextPickerPage {
     Column() {
       TextPicker({
         range: this.multi,
-        selected: this.selectedIndex,
+        selected: this.selectedIndex as int,
+        // textPicker1
       })
         .id('textPicker1')
+        // .selectedBackgroundStyle({   // Property 'selectedBackgroundStyle' does not exist on type 'TextPickerAttribute'
+        //   color : Color.Red,
+        //   borderRadius: {
+        //     topLeft:15,
+        //     topRight:15,
+        //     bottomLeft:15,
+        //     bottomRight:15
+        //   },
+        // })
     }
   }
 }

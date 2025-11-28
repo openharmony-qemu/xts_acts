@@ -17,6 +17,10 @@
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import {
+  Rectangle
+} from '@ohos.arkui.component'
+import {AppStorage } from '@ohos.arkui.stateManagement'
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
@@ -30,11 +34,14 @@ export default class CommonTest {
    */
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     console.log('functionsfunctions' + functions?.length)
+    console.log('++++++++++++++++++++++++++++++++++++pageConfig',JSON.stringify(pageConfig))
+    console.log('++++++++++++++++++++++++++++++++++++supportView',JSON.stringify(supportView))
+    console.log('++++++++++++++++++++++++++++++++++++testValues',JSON.stringify(testValues))
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
       let lastIndex: number = 0;
-
+      console.log("====================================== testValues " + JSON.stringify(testValues));
       testValues.forEach((temp: TestValue, index: int, p3: Array<TestValue>) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
@@ -50,7 +57,7 @@ export default class CommonTest {
           if (pageConfig.sharePage != undefined) {
             sharePage = pageConfig.sharePage!;
           }
-
+          console.log("====================================== testValue " + JSON.stringify(testValue));
           //Create case name.
           let caseTag = pageConfig.testName + targetView + '_static_' + testValue.describe;
 
@@ -76,7 +83,8 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            // try {
+            console.log('++++++++++++++++pushPage')
+            try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
@@ -95,7 +103,11 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue[0].x));
+              console.info('[' + caseTag + '] setValue data.testValue.expectValue?.responseRegion[0]: ' + JSON.stringify(data.testValue.expectValue?.responseRegion[0].x));
+              AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue)
+              AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
+              AppStorage.setOrCreate<string>('eventCallBackStr', '')
               await Utils.sleep(1000);
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
@@ -104,15 +116,15 @@ export default class CommonTest {
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            // } catch (err: Error) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect().assertFail();
-            //   }
-            // }
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect().assertFail();
+              }
+            }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

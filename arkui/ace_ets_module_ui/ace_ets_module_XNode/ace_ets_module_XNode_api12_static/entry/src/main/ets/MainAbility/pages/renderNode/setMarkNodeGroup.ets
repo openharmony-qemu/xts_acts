@@ -28,12 +28,12 @@ class MyRenderNode extends RenderNode {
   draw(context: DrawContext) {
     const canvas = context.canvas;
     const brush = new drawing.Brush();
-    // brush.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    brush.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
     canvas.attachBrush(brush);
     canvas.drawRect({ left: 0, right: 200, top: 0, bottom: 200 });
     canvas.detachBrush();
 
-    // brush.setColor({ alpha: 255, red: 0, green: 255, blue: 0 });
+    brush.setColor({ alpha: 255, red: 0, green: 255, blue: 0 });
     canvas.attachBrush(brush);
     canvas.drawRect({ left: 100, right: 300, top: 100, bottom: 300 });
     canvas.detachBrush();
@@ -74,6 +74,7 @@ struct SetMarkNodeGroup {
       Button(this.getMarkNodeGroup).margin(100).id("SetMarkNodeGroup_id")
         .onClick((e:ClickEvent)=>{
           this.getMarkNodeGroup = "" + renderNode.markNodeGroup
+          console.log('+++++++++++',renderNode.markNodeGroup)  //取值为false，期望值为true
         })
       NodeContainer(this.myNodeController)
     }

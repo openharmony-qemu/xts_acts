@@ -64,7 +64,10 @@ export default function APINodeContentTest() {
       }
       console.info("APINodeContentTest beforeEach end");
     });
-
+    afterEach(async (): Promise<void> => {
+      await CommonFunc.sleep(2000);
+      console.info('AxisEvent after each called');
+    })
 
     
     /*
@@ -125,8 +128,8 @@ export default function APINodeContentTest() {
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('APINodeContent_Text');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[APINodeContentTest_static_0200] component obj is: ",obj, obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      console.info("[APINodeContentTest_static_0200] component obj is 1 : ", obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');  //取值是1，断言是0.
       await CommonFunc.sleep(500);
       let button4 = await driver.findComponent(ON.id('APINodeContent_Button_AddToSlot'));
       console.log('+++++++++++++++++++++++++++++++9')
@@ -145,8 +148,8 @@ export default function APINodeContentTest() {
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('APINodeContent_Text') ;
       let obj2 = JSON.parseJsonElement(strJson)
-      console.info("[APINodeContentTest_static_0200] component obj is: ",obj2, obj2.getElement('$attrs').getString('content'));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('2');
+      console.info("[APINodeContentTest_static_0200] component obj is 2 : ", obj2.getElement('$attrs').getString('content'));
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('2');  //取值是1，断言是2
       console.info('[APINodeContentTest_static_0200] END');
       done();
     });

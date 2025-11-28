@@ -99,7 +99,7 @@ export default function EnableSwipeBackPage() {
         let bottom = navRect.bottom;
         console.info('[EnableSwipeBackPage_0100] right is ', right);
         console.info('[EnableSwipeBackPage_0100] bottom is ', bottom);
-  console.log('++++++++++++++++++11111')  //在下面卡住
+  console.log('++++++++++++++++++11111')
         let uiContext = AppStorage.get<UIContext>('uiContext');
         await driver.fling({x: Math.round(uiContext!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
   console.log('++++++++++++++++++22222')

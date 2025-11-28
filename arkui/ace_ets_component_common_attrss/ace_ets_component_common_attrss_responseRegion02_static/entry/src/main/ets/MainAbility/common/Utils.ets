@@ -24,6 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
 import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
+import { jsonx } from "std/core"
 
 export class RectValue {
   left: number = 0;
@@ -37,14 +38,14 @@ export class RouterParams {
 }
 
 export class ResponseRegion {
-  responseRegion: SetValue[] = [];
+  responseRegion: Rectangle[] = [];
 }
 
 export class TestValue {
   describe: string = ""
-  exceptView:string[] = []
-  setValue: Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' } as Rectangle];
+  setValue: Array<Rectangle> = []
   expectValue?: ResponseRegion = {};
+  exceptView:string[] = []
 }
 
 export class SetValue{
@@ -52,18 +53,6 @@ export class SetValue{
   y: number | string = 0;
   width: number | string = 0;
   height: number | string = 0;
-  numberX: number = 0;
-  numberY: number = 0;
-  numberPxX:number = 0;
-  numberPxY:number = 0;
-  ratioX:number = 0;
-  ratioY:number = 0;
-  numberWidth: number = 0;
-  numberHeight: number = 0;
-  ratioWidth: number = 0;
-  ratioHeight: number = 0;
-  numberPxWidth: number = 0;
-  numberPxHeight: number = 0;
 }
 
 export class BasePageConfig {
@@ -129,7 +118,9 @@ export default class Utils {
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
         await Utils.back();
+        console.log('++++++++++++++back1')
         pages = router.getState();
+        console.log('++++++++++++++back2')
       }
 
       if (!(obj.pageName == pages.name)) {
@@ -140,21 +131,29 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
+        console.log('++++++++++++++pushUrl1')
         await Utils.sleep(1000);
       }
+      console.log('++++++++++++++pushUrl2')
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
     }
+    console.log('++++++++++++++++++pushPage123')
   }
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!('Index' == router.getState().name)) {
+    console.log('++++++++++++++router.getState().name',router.getState().name)
+    if (!('Index' == router.getState().name)) { //'Index' == router.getState().name
       router.back()
     }
+    console.log('++++++++++++++++++++++1')
     AttrsManager.unRegisterDataChange();
+    console.log('++++++++++++++++++++++2')
     await Utils.sleep(1000);
+    console.log('++++++++++++++++++++++3')
     router.clear();
+    console.log('++++++++++++++++++++++4')
   }
 
   static async backOnly() {
@@ -199,7 +198,7 @@ export default class Utils {
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(1000);
+    await Utils.sleep(3000);
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -279,7 +278,7 @@ export default class Utils {
       id: 0,
       x: x,
       y: y,
-    })
+    })  //sendTouchEvent报错
 
     console.info('performTouch result : ' + result);
 

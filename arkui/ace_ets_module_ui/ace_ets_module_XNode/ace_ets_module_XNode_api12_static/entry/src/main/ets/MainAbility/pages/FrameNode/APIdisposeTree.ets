@@ -77,10 +77,11 @@ struct TestComponent {
   @State text: string = 'start'
   build() {
     Column() {
-      Text(`start${this.text}`).id('APIdisposeTree_Text')
+      Text(`start${this.text}`).id('APIdisposeTree_Text')  //SDK11.22 状态改变，页面没改
         .onClick((e:ClickEvent)=>{
           let strJson: string = inspector.getInspectorByKey('APIdisposeTree_Text');
-          this.text = JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight') + ''
+          this.text = JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight') + '' //得到700，但页面没刷新
+          console.log('++++++++++++++++',JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'),'this.text:',this.text)
         })
         .fontSize(36)
         .fontWeight(700)

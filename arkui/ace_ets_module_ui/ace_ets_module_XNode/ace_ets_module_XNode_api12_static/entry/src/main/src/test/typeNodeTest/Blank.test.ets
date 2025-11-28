@@ -73,7 +73,7 @@ export default function typeNodeBlankTest() {
       let strJson: string = inspector.getInspectorByKey('TypeNode_Blank');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[BlankTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('Blank');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('Blank');
       console.info('[BlankTest_0100] END');
       done();
     });

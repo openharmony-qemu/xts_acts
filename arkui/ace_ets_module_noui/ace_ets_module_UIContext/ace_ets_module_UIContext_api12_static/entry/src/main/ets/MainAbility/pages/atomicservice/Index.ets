@@ -38,12 +38,12 @@ struct NavigationExample {
           .height(40)
           .margin(20)
           .onClick((e:ClickEvent) => {
-            
-            
-            
-            
-            
-            
+            // this.helper.pushPath('hsptest1', { name: 'pageOne' }, false)
+            //   .catch((error: BusinessError) => {
+            //     console.error(`[pushPath]failed, error code = ${error.code}, error.message = ${error.message}.`);
+            //   }).then(() => {
+            //   console.error('[pushPath]success.');
+            // }); // 将name指定的NavDestination页面信息入栈。
           })
       }
     }.title('NavIndex')

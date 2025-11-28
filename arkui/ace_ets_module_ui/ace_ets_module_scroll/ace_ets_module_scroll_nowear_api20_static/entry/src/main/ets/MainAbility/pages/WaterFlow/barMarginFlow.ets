@@ -42,7 +42,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Component
 struct scrollBarMarginWaterFlow {
   scroller: Scroller = new Scroller();
-  @State colors: Array<int> = new Array<int>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F);
+  @State colors: Array<string> = new Array<string>('0xFFC0CB', '0xDA70D6', '0x6B8E23', '0x6A5ACD', '0x00FFFF', '0x00FF7F');
   @State arr: Array<number> = new Array<number>();
 
   aboutToAppear(): void {
@@ -64,7 +64,7 @@ struct scrollBarMarginWaterFlow {
               .borderRadius(10)
           }
           .width('80%')
-          .backgroundColor(this.colors[item.toInt() % 5])
+          .backgroundColor(this.colors[(item % 5).toInt()])
         }, (item: number) => item.toString())
       }
       .id('flow_bar_margin')
@@ -75,6 +75,10 @@ struct scrollBarMarginWaterFlow {
       .rowsGap(5)
       .scrollBarColor(Color.Blue)
       .scrollBarWidth(20)
+      // .scrollBarMargin({
+      //   start: LengthMetrics.px(40),
+      //   end: LengthMetrics.vp(20)
+      // })
       .edgeEffect(EdgeEffect.Spring)
       .direction(Direction.Ltr)
       .border({

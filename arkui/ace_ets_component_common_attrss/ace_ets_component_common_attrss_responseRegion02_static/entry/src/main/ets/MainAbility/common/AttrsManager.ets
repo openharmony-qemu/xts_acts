@@ -18,21 +18,22 @@ import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
 import { SetValue } from '../../../ets/MainAbility/common/Utils';
+import { Rectangle } from '@ohos.arkui.component'
 
 export interface Message {
-  value: SetValue[]
+  value: Rectangle[]
 }
 
 interface EventMessage {
   src: Message
 }
 
-export type Callback = (message: SetValue[]) => void;
+export type Callback = (message: Rectangle[]) => void;
 
 export class AttrsManager {
   callBack?: Callback = undefined;
 
-  static change(caseName: string, setValue: SetValue[]) {
+  static change(caseName: string, setValue: Rectangle[]) {
     const message: Message = { value: setValue };
 
     const eventData: events_emitter.EventData = {

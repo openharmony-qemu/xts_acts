@@ -47,10 +47,12 @@ struct StartImageAnalyzerErrorCode {
       Row(){
         Text(this.ErrorCode).id('TextErrorCode1').width(55).height(25)
         Button('flag').onClick((event: ClickEvent) => {
+          console.log('++++++1')
           this.flag = !this.flag
         }).id('FlagButton1').width(55).height(25)
 
         Button('enable').onClick((event: ClickEvent) => {
+          console.log('++++++2')
           this.enable = !this.enable
         }).id('EnableButton1').width(65).height(25)
       }
@@ -58,11 +60,12 @@ struct StartImageAnalyzerErrorCode {
         Button('start')
           .width(55).height(25)
           .onClick((event: ClickEvent) => {
+            console.log('++++++3')
             this.context.startImageAnalyzer(this.config)
               .then(() => {
                 console.log('abc analysis complete')
               })
-              .catch( (error: BusinessError<void> | null): void => {
+              .catch( (error: BusinessError<void> | null): void => {   //SDK 11.22 catch未执行
                 console.log('abc error code: ' + error?.code)
                 this.ErrorCode = error?.code.toString()
               })
@@ -70,11 +73,13 @@ struct StartImageAnalyzerErrorCode {
         Button('stop')
           .width(55).height(25)
           .onClick((event: ClickEvent) => {
+            console.log('++++++4')
             this.context.stopImageAnalyzer()
           })
         Button('getTypes')
           .width(55).height(25)
           .onClick((event: ClickEvent) => {
+            console.log('++++++5')
             this.aiController.getImageAnalyzerSupportTypes()
           })
       }

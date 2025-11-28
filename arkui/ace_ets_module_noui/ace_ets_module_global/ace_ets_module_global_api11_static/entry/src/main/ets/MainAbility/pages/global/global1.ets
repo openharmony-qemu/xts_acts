@@ -51,7 +51,7 @@ struct GlobalLack {
           .fontSize(16)
           .textAlign(TextAlign.Center)
           .borderRadius(10)
-          .backgroundColor(0xFFFFFF)
+          .backgroundColor('0xFFFFFF')
         }
         .key("ListItem")
         .selectable(false)
@@ -60,7 +60,7 @@ struct GlobalLack {
       .sticky(StickyStyle.None)
     }
     .padding(10)
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .width('100%')
     .height('100%')
   }

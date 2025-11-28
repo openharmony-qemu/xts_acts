@@ -74,6 +74,7 @@ struct TextPickerTextStyleAnimation {
           .height('5%')
           .key('TextStyleAnimation_NULL')
           .onClick((e:ClickEvent) => {
+            // this.textStyleAnimation = null
           })
       }
     }.width('100%').height('100%')

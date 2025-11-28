@@ -73,7 +73,7 @@ export default function typeNodeSwiperTest() {
       let strJson: string = inspector.getInspectorByKey('TypeNode_Swiper');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SwiperTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('Swiper');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('Swiper');
       console.info('[SwiperTest_0100] END');
       done();
     });

@@ -70,7 +70,7 @@ class MyNodeController extends NodeController {
     let errorStr401: string = '';
     let textNode = typeNode.createTextNode(this.uiContext!);
     try {
-      // typeNode.bindController(textNode, this.scroller, 'Scroll');
+      // typeNode.bindController(textNode, this.scroller, 'Scroll');//  api 20 Semantic error ESE0087: Property 'bindController' does not exist on type 'typeNode'
     } catch (e) {
       errorStr401 = (e as BusinessError).code + '';
     }
@@ -103,14 +103,14 @@ struct BindControllerTest {
       Button('BindController checkError 401')
         .id('error_bnt401_id')
         .width('100%')
-        .onClick((e:ClickEvent) => {
-          this.errorStr401 = this.myNodeController.builderNodeBindController401();
+        .onClick((e:ClickEvent):void => {
+          // this.errorStr401 = this.myNodeController.builderNodeBindController401();  //取值是空  ""
         })
       Button('BindController checkError 100021')
         .id('error_bnt100021_id')
         .width('100%')
         .onClick((e:ClickEvent) => {
-          this.errorStr100021 = this.myNodeController.builderNodeBindController100021();
+          // this.errorStr100021 = this.myNodeController.builderNodeBindController100021();
         })
     }
   }

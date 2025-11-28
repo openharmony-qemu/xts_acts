@@ -23,8 +23,10 @@ import {
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, FrameNode, NodeController, edgeColors } from "@ohos.arkui.node";
-let edgeColorsValue = renderNode.borderColor;
+
 const renderNode = new RenderNode();
+let edgeColorsValue = renderNode.borderColor;
+
 renderNode.frame = { x: 0, y: 0, width: 150, height: 150 };
 renderNode.backgroundColor = 0XFF00FF00;
 renderNode.borderWidth = { left: 8, top: 8, right: 8, bottom: 8 };
@@ -52,18 +54,19 @@ class MyNodeController extends NodeController {
 @Component
 struct edgeColorsExample {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State edgeColorsValue: number = 0
+  @State edgeColorsValue: long = 0
 
   build() {
     Column() {
       NodeContainer(this.myNodeController)
-      Text('edgeColorsValue:' + this.edgeColorsValue).margin(10).id("edgeColorsValue") //4278190335
+      Text('edgeColorsValue:' + this.edgeColorsValue).margin(10).id("edgeColorsValue") //期望4278190335，实际-16776961
       Button('click edgeColorsValue')
         .id("edgeColorsClick")
         .onClick((e:ClickEvent) => {
           renderNode.borderColor = edgeColors(0xFF0000FF)
           renderNode.invalidate()
-          this.edgeColorsValue = renderNode!.borderColor!.left
+          this.edgeColorsValue = renderNode!.borderColor!.left as long
+          console.log('+++++++++',renderNode!.borderColor!.left  as long)//-16776961 转16进制 0xFF0000FF
         })
     }
   }

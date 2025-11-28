@@ -73,7 +73,7 @@ export default function setLabelTest() {
       let strJson: string = inspector.getInspectorByKey('SetLabel_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setLabelTest_0010] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('customRenderChildNode');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('customRenderChildNode');
       console.info('[setLabelTest_0010] END');
       done();
     });

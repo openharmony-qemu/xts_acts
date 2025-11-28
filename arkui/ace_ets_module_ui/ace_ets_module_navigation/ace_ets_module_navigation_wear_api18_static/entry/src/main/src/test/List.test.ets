@@ -16,6 +16,6 @@
 import EnableSwipeBackPage from './Navigation/EnableSwipeBackPage.test'
 import EnableSwipeBackRouter from './router/EnableSwipeBackRouter.test'
 export default function testsuite() {
-  EnableSwipeBackPage()  // (page53)consume 造成页面加载失败，导致（test91）无法获取component 2个用例
-  EnableSwipeBackRouter()   // 用例2 app died   （page29）没有this.getUIContext().enableSwipeBack 造成 appDied
+  // EnableSwipeBackPage()  // SDK11.25 DTS2025102045282(2) this.getUIContext().enableSwipeBack(this.isEnable)appDied 在基础框架问了三个开发
+  EnableSwipeBackRouter()   // SDK11.25 DTS2025102045282(2) this.getUIContext().enableSwipeBack(this.isEnable)appDied 在基础框架问了三个开发
 }

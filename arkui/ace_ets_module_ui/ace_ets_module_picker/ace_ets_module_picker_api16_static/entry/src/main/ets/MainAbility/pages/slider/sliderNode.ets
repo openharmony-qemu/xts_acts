@@ -28,17 +28,19 @@ class MyNodeController extends  NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    let slider = typeNode.createSliderNode(uiContext)
+    slider.initialize(
+    //   {
+    //   value:null,
+    //   min: null,
+    //   max: null,
+    //   style:  null,
+    //   direction: null,
+    //   reverse: null,
+    // }
+    )
+    .key('key_Slider_001')
+    col.appendChild(slider)
     node.appendChild(col)
     return node
   }

@@ -34,7 +34,7 @@ struct PluginProviderExample {
         .height(100)
         .margin({ top: 20 } as Margin)
         .onClick((e:ClickEvent) => {
-
+          // plugin.onListener()
           console.log("Button('Register Push Listener')")
         })
       Button('Push')
@@ -43,7 +43,7 @@ struct PluginProviderExample {
         .height(100)
         .margin({ top: 20 } as Margin)
         .onClick((e:ClickEvent) => {
-
+          // plugin.Push()
           this.message = "Button('Push')"
           console.log("Button('Push')")
         })
