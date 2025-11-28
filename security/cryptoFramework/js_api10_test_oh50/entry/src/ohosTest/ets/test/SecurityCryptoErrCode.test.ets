@@ -43,12 +43,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0100
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0100
-     * @tc.name 传人损坏的私钥数据，convertKey返回17630001
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -68,12 +68,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0200
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0200
-     * @tc.name 传人损坏的私钥数据，convertKeySync返回17630001
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -93,12 +93,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0300
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0300
-     * @tc.name convertKeySync返回401
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -114,12 +114,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0400
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0400
-     * @tc.name convertKey 中KeyBlob值为空；期望 返回401
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -138,12 +138,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0500
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0500
-     * @tc.name convertKey 中KeyBlob值为空；期望 返回401
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -164,12 +164,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0600
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0600
-     * @tc.name generateRandom返回17620001错误码
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -191,12 +191,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0900
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0900
-     * @tc.name doFinalSync返回17630001
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -220,12 +220,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1000
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1000
-     * @tc.name updateSync为空数组
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -246,12 +246,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1100
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1100
-     * @tc.name setCipherSpec返回801
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -268,12 +268,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1200
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1200
-     * @tc.name getCipherSpec 返回801
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -289,12 +289,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1300
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1300
-     * @tc.name initSync 返回17630001
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -313,12 +313,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1400
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1400
-     * @tc.name priKey.getAsyKeySpec 返回 17630001
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -355,12 +355,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1500
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1500
-     * @tc.name pubKey.getAsyKeySpec 返回 17630001
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -398,12 +398,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1600
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1600
-     * @tc.name hkdf 返回 801
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -426,12 +426,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1700
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1700
-     * @tc.name hkdf 返回 401
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -455,12 +455,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1800
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1800
-     * @tc.name ECCKeyUtil 返回 401
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -487,12 +487,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_1900
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1900
-     * @tc.name ECCKeyUtil 返回 401
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_1900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -509,12 +509,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_2000
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_2000
-     * @tc.name getEncoded判断是否返回801
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_2000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -531,12 +531,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_2100
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_2100
-     * @tc.name setSignSpec判断是否返回801
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_2100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -568,12 +568,12 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_2200
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_2200
-     * @tc.name genECCCommonParamsSpec判断是否返回801
-     * @tc.desc convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ErrCode_Func_2200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {

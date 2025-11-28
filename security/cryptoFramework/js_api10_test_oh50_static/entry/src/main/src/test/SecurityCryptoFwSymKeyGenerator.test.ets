@@ -35,12 +35,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0100
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0100
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0100
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -61,12 +61,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0200
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0200
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0200
-     * @tc.desc algorithm is AES192
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES192
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -87,12 +87,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0300
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0300
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0300
-     * @tc.desc algorithm is AES256
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -113,12 +113,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0400
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0400
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0400
-     * @tc.desc algorithm is 3DES192
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is 3DES192
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -139,12 +139,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0500
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0500
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0500
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -165,12 +165,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0600
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0600
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0600
-     * @tc.desc algorithm is HMAC|SHA1
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC|SHA1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -191,12 +191,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0700
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0700
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0700
-     * @tc.desc algorithm is HMAC|SHA224
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC|SHA224
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -217,12 +217,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0800
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0800
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0800
-     * @tc.desc algorithm is HMAC|SHA256
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC|SHA256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -243,12 +243,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0900
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0900
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0900
-     * @tc.desc algorithm is HMAC|SHA384
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC|SHA384
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -269,12 +269,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1000
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1000
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1000
-     * @tc.desc algorithm is HMAC|SHA512
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC|SHA512
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -295,12 +295,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1100
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1100
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1100
-     * @tc.desc algorithm is HMAC|SM3
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC|SM3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -321,12 +321,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1200
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1200
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1200
-     * @tc.desc algorithm is SM4_256
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -341,12 +341,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1300
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1300
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1300
-     * @tc.desc algorithm is AES128|AES192
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128|AES192
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -363,12 +363,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1400
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1400
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1400
-     * @tc.desc algorithm is AES192|AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES192|AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -385,12 +385,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1500
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1500
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1500
-     * @tc.desc algorithm is HMAC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -413,12 +413,12 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1600
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1600
-     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1600
-     * @tc.desc algorithm is HMAC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is HMAC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {

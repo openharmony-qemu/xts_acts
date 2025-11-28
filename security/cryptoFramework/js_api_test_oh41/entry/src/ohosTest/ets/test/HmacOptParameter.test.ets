@@ -42,11 +42,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0100
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0100
-     * @tc.name Test symKey with HMAC|SHA1, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA1
-     * @tc.desc 2. MAC with algName SHA1
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -61,11 +62,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0200
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0200
-     * @tc.name Test symKey with HMAC|SHA224, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA224
-     * @tc.desc 2. MAC with algName SHA224
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -80,11 +82,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0300
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0300
-     * @tc.name Test symKey with HMAC|SHA256, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA256
-     * @tc.desc 2. MAC with algName SHA256
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -99,11 +102,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0400
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0400
-     * @tc.name Test symKey with HMAC|SHA384, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA384
-     * @tc.desc 2. MAC with algName SHA384
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -118,11 +122,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0500
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0500
-     * @tc.name Test symKey with HMAC|SHA512, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA512
-     * @tc.desc 2. MAC with algName SHA512
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -137,11 +142,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0600
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0600
-     * @tc.name Test symKey with HMAC|SM3, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SM3
-     * @tc.desc 2. MAC with algName SM3
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -156,10 +162,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0700
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0700
-     * @tc.name Test symKey with invalid parameters or MAC with invalid  parameters, HMAC process is failed
-     * @tc.desc 1. SymKeyGenerator with invalid  parameters or MAC with invalid  parameters
-     * @tc.desc 2. Test interface with AsyncCallback style
+     * @tc.desc   2. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -180,11 +188,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0800
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0800
-     * @tc.name Test symKey with HMAC and symkey with any length[1,4096], HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC
-     * @tc.desc 2. MAC with algName SHA512
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyBlob: cryptoFramework.DataBlob = {
@@ -202,11 +211,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_0900
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_0900
-     * @tc.name Test symKey with HMAC and symkey with superlarge length, HMAC process is failed
-     * @tc.desc 1. SymKeyGenerator with algName HMAC
-     * @tc.desc 2. MAC with algName SM3
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let strLen: number = 4097;
@@ -229,11 +239,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1000
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1000
-     * @tc.name Test symKey with HMAC and symkey with 0 length, HMAC process is failed
-     * @tc.desc 1. SymKeyGenerator with algName HMAC
-     * @tc.desc 2. MAC with algName SM3
-     * @tc.desc 3. Test interface with AsyncCallback style
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyBlob: cryptoFramework.DataBlob = {
@@ -249,11 +260,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1100
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1100
-     * @tc.name Test symKey with HMAC|SHA1, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA1
-     * @tc.desc 2. MAC with algName SHA1
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -268,11 +280,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1200
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1200
-     * @tc.name Test symKey with HMAC|SHA224, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA224
-     * @tc.desc 2. MAC with algName SHA224
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -287,11 +300,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1300
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1300
-     * @tc.name Test symKey with HMAC|SHA256, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA256
-     * @tc.desc 2. MAC with algName SHA256
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -306,11 +320,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1400
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1400
-     * @tc.name Test symKey with HMAC|SHA384, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA384
-     * @tc.desc 2. MAC with algName SHA384
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -325,11 +340,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1500
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1500
-     * @tc.name Test symKey with HMAC|SHA512, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SHA512
-     * @tc.desc 2. MAC with algName SHA512
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -344,11 +360,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1600
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1600
-     * @tc.name Test symKey with HMAC|SM3, HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC|SM3
-     * @tc.desc 2. MAC with algName SM3
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -363,10 +380,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1700
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1700
-     * @tc.name Test symKey with invalid parameters or MAC with invalid  parameters, HMAC process is failed
-     * @tc.desc 1. SymKeyGenerator with invalid  parameters or MAC with invalid  parameters
-     * @tc.desc 2. Test interface with Promise style
+     * @tc.desc   2. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -387,11 +406,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1800
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1800
-     * @tc.name Test symKey with HMAC and symkey with any length[1,4096], HMAC process is successful
-     * @tc.desc 1. SymKeyGenerator with algName HMAC
-     * @tc.desc 2. MAC with algName SHA384
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyBlob: cryptoFramework.DataBlob = {
@@ -409,11 +429,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_1900
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_1900
-     * @tc.name Test symKey with HMAC and symkey with superlarge length, HMAC process is failed
-     * @tc.desc 1. SymKeyGenerator with algName HMAC
-     * @tc.desc 2. MAC with algName SHA256
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let strLen: number = 4097;
@@ -436,11 +457,12 @@ export default function cryptoHmacOptParaJsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_HmacOptPara_Func_2000
      * @tc.number Security_CryptoFramework_HmacOptPara_Func_2000
-     * @tc.name Test symKey with HMAC and symkey with 0 length, HMAC process is failed
-     * @tc.desc 1. SymKeyGenerator with algName HMAC
-     * @tc.desc 2. MAC with algName SHA1
-     * @tc.desc 3. Test interface with Promise style
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_HmacOptPara_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyBlob: cryptoFramework.DataBlob = {

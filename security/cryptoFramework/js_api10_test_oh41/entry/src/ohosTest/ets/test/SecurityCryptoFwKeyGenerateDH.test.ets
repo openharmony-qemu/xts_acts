@@ -45,12 +45,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100
-     * @tc.name Test convertKey with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100";
@@ -69,12 +69,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200
-     * @tc.name Test convertKey with dh, Callback style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200";
@@ -93,12 +93,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300
-     * @tc.name Test key generate with dh, Promise style, process success
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300";
@@ -120,12 +120,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400
-     * @tc.name Test key generate with dh, Callback style, process success
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400";
@@ -147,11 +147,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500
-     * @tc.name Test key generate with dh, process success, AsyKeyGeneratorBySpec with CommonSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500";
@@ -169,12 +170,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600
-     * @tc.name Test key generate with dh, process success
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGeneratorBySpec with CommonSpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600";
@@ -192,12 +193,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700
-     * @tc.name Test key generate with dh, process fail
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGeneratorBySpec with CommonSpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700";
@@ -215,12 +216,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800
-     * @tc.name Test key generate with dh, process fail
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGeneratorBySpec with CommonSpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800";
@@ -238,12 +239,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900
-     * @tc.name Test key generate with dh, process fail
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGeneratorBySpec with CommonSpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900";
@@ -261,12 +262,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000
-     * @tc.name Test key compare Spec with dh, Promise style, process success
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generateKeyPair by DH_ffdhe2048, compare Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGeneratorBySpec with CommonSpec, generateKeyPair by DH_ffdhe2048, compare Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000";
@@ -294,12 +295,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
-     * @tc.desc generatePubKey by spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   generatePubKey by spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100";
@@ -319,12 +320,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
-     * @tc.desc generatePubKey by spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   generatePubKey by spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200";
@@ -344,12 +345,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
-     * @tc.desc generatePriKey by spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   generatePriKey by spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300";
@@ -369,12 +370,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
-     * @tc.desc generatePriKey by spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   generatePriKey by spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400";
@@ -394,13 +395,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
-     * @tc.desc generateKeyPair by spec
-     * @tc.desc getAsyKeySpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   getAsyKeySpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500";
@@ -422,12 +422,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
-     * @tc.desc generateKeyPair by spec, getAsyKeySpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   generateKeyPair by spec, getAsyKeySpec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600";
@@ -449,12 +449,12 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700
-     * @tc.name Test key format/algName with dh. Promise style. Process success
-     * @tc.desc generateKeyPair by DH_modp1536
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   generateKeyPair by DH_modp1536
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700";

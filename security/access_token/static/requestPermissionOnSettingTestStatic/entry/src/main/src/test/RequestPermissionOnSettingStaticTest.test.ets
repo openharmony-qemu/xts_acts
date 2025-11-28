@@ -102,12 +102,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_001
      * @tc.number Test_requestPermissionOnSetting_001
-     * @tc.name Test_requestPermissionOnSetting_001
-     * @tc.desc The Context is undefined, throw 401.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   The Context is undefined, throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionOnSetting_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 start");
@@ -123,12 +123,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_002
      * @tc.number Test_requestPermissionOnSetting_002
-     * @tc.name Test_requestPermissionOnSetting_002
-     * @tc.desc The permissionList is empty, throw 401.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   The permissionList is empty, throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionOnSetting_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 start");
@@ -143,12 +143,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_003
      * @tc.number Test_requestPermissionOnSetting_003
-     * @tc.name Test_requestPermissionOnSetting_003
-     * @tc.desc Invalid permission, throw 12100001
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Invalid permission, throw 12100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionOnSetting_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_003 start");
@@ -170,12 +170,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_004
      * @tc.number Test_requestPermissionOnSetting_004
-     * @tc.name Test_requestPermissionOnSetting_004
-     * @tc.desc Apply permission not be declared in module.json, throw 12100001.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Apply permission not be declared in module.json, throw 12100001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionOnSetting_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_004 start");
@@ -196,12 +196,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_005
      * @tc.number Test_requestPermissionOnSetting_005
-     * @tc.name Test_requestPermissionOnSetting_005
-     * @tc.desc Apply for the system_grant permission, throw 12100001.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Apply for the system_grant permission, throw 12100001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionOnSetting_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_005 start");
@@ -222,12 +222,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_006
      * @tc.number Test_requestPermissionOnSetting_006
-     * @tc.name Test_requestPermissionOnSetting_006
-     * @tc.desc apply for permissions of different permission groups, throw 12100001.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   apply for permissions of different permission groups, throw 12100001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionOnSetting_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_006 start");
@@ -248,12 +248,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_007
      * @tc.number Test_requestPermissionOnSetting_007
-     * @tc.name Test_requestPermissionOnSetting_007
-     * @tc.desc test requestPermissionOnSetting error.code 12100011 and 12100012
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionOnSetting error.code 12100011 and 12100012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestPermissionOnSetting_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_007 start");
@@ -296,12 +296,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_008
      * @tc.number Test_requestPermissionOnSetting_008
-     * @tc.name Test_requestPermissionOnSetting_008
-     * @tc.desc test requestPermissionOnSetting error.code 12100011 and 12100012
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionOnSetting error.code 12100011 and 12100012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestPermissionOnSetting_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, 'Test_requestPermissionOnSetting_008 start');
@@ -378,12 +378,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_009
      * @tc.number Test_requestPermissionOnSetting_009
-     * @tc.name Test_requestPermissionOnSetting_009
-     * @tc.desc Apply for 1 permission and be prohibited, and next pop-up box again (repeat 4 times)
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Apply for 1 permission and be prohibited, and next pop-up box again (repeat 4 times)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestPermissionOnSetting_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 start");
@@ -483,12 +483,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_010
      * @tc.number Test_requestPermissionOnSetting_010
-     * @tc.name Test_requestPermissionOnSetting_010
-     * @tc.desc call request twice and different permissions, there will be one pop-up boxes
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   call request twice and different permissions, there will be one pop-up boxes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestPermissionOnSetting_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 start");
@@ -542,12 +542,12 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_011
      * @tc.number Test_requestPermissionOnSetting_011
-     * @tc.name Test_requestPermissionOnSetting_011
-     * @tc.desc call request twice and different permissions, there will be two pop-up boxes
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   call request twice and different permissions, there will be two pop-up boxes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestPermissionOnSetting_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_011 start");

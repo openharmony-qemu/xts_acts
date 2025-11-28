@@ -41,12 +41,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0100
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0100
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0100
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -67,12 +67,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0200
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0200
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0200
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -93,12 +93,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0300
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0300
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0300
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -121,12 +121,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
 
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0400
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0400
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0400
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -152,12 +152,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0500
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0500
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0500
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -179,12 +179,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0600
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0600
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0600
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -206,12 +206,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0700
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0700
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0700
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -230,12 +230,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0800
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0800
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0800
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -255,12 +255,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_0900
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_0900
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_0900
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -278,13 +278,13 @@ export default function SecurityCryptoFwSha3TestUnit() {
         done();
       });
 
-      /**
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_1000
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_1000
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_1000
-     * @tc.desc algorithm is digest - 标准测试向量验证（空字符串）
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest - 标准测试向量验证（空字符串）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -303,12 +303,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_1100
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_1100
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_1100
-     * @tc.desc algorithm is digest - 标准测试向量验证
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest - 标准测试向量验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -331,12 +331,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_1200
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_1200
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_1200
-     * @tc.desc algorithm is digest - 多种数据长度边界测试
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest - 多种数据长度边界测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_1200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -362,12 +362,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_1300
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_1300
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_1300
-     * @tc.desc algorithm is digest - 二进制模式数据测试
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest - 二进制模式数据测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -397,12 +397,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_1400
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_1400
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_1400
-     * @tc.desc algorithm is digest - 重复性和一致性验证
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest - 重复性和一致性验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -432,12 +432,12 @@ export default function SecurityCryptoFwSha3TestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Sha3_Func_1500
      * @tc.number SUB_Security_CryptoFramework_Sha3_Func_1500
-     * @tc.name SUB_Security_CryptoFramework_Sha3_Func_1500
-     * @tc.desc algorithm is digest - 大数据量性能测试
-     * @tc.size Large
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   algorithm is digest - 大数据量性能测试
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_CryptoFramework_Sha3_Func_1500",
       TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {

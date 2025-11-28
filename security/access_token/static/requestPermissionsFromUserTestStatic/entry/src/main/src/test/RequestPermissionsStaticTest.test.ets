@@ -85,12 +85,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_001
      * @tc.number Test_requestPermissionsFromUser_001
-     * @tc.name Test_requestPermissionsFromUser_001
-     * @tc.desc test requestPermissionsFromUser with invalid context, throw 401.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionsFromUser with invalid context, throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionsFromUser_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 start");
@@ -106,12 +106,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_002
      * @tc.number Test_requestPermissionsFromUser_002
-     * @tc.name Test_requestPermissionsFromUser_002
-     * @tc.desc test requestPermissionsFromUser with empty permissionList, throw 401.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionsFromUser with empty permissionList, throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionsFromUser_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_002 start");
@@ -126,12 +126,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_003
      * @tc.number Test_requestPermissionsFromUser_003
-     * @tc.name Test_requestPermissionsFromUser_003
-     * @tc.desc test requestPermissionsFromUser with invalid permissionList.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionsFromUser with invalid permissionList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionsFromUser_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_003 start");
@@ -160,12 +160,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_004
      * @tc.number Test_requestPermissionsFromUser_004
-     * @tc.name Test_requestPermissionsFromUser_004
-     * @tc.desc test requestPermissionsFromUser with system_grant permission.
-     * @tc.level: Level0
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionsFromUser with system_grant permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_requestPermissionsFromUser_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_004 start");
@@ -192,12 +192,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_005
      * @tc.number Test_requestPermissionsFromUser_005
-     * @tc.name Test_requestPermissionsFromUser_005
-     * @tc.desc request multiple permissions in the same permission group.
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   request multiple permissions in the same permission group.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_requestPermissionsFromUser_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_005 start");
@@ -245,12 +245,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_006
      * @tc.number Test_requestPermissionsFromUser_006
-     * @tc.name Test_requestPermissionsFromUser_006
-     * @tc.desc request multiple permissions in the different permission group.
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   request multiple permissions in the different permission group.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_requestPermissionsFromUser_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_006 start");
@@ -304,12 +304,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_007
      * @tc.number Test_requestPermissionsFromUser_007
-     * @tc.name Test_requestPermissionsFromUser_007
-     * @tc.desc request permission with not declare in module.json.
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   request permission with not declare in module.json.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_requestPermissionsFromUser_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_007 start");
@@ -336,12 +336,12 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestPermissionsFromUser_008
      * @tc.number Test_requestPermissionsFromUser_008
-     * @tc.name Test_requestPermissionsFromUser_008
-     * @tc.desc test requestPermissionsFromUser callbck with invalid context, throw 401.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionsFromUser callbck with invalid context, throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionsFromUser_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_008 start");
@@ -361,12 +361,12 @@ export default function requestPermissionsStaticTest() {
     })
     
     /**
+     * @tc.name   Test_requestPermissionsFromUser_009
      * @tc.number Test_requestPermissionsFromUser_009
-     * @tc.name Test_requestPermissionsFromUser_009
-     * @tc.desc test requestPermissionsFromUser callback with empty permissionList, throw 401.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionsFromUser callback with empty permissionList, throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_requestPermissionsFromUser_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_009 start");

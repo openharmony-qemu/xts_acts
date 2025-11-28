@@ -46,12 +46,12 @@ export default function OpenPermissionTest() {
 
 
     /**
+     * @tc.name   Test_openPermissionOnSetting_0100
      * @tc.number Test_openPermissionOnSetting_0100
-     * @tc.name Test_openPermissionOnSetting_0100.
-     * @tc.desc openPermissionOnSetting Permissions.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   openPermissionOnSetting Permissions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_openPermissionOnSetting_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("Test_openPermissionOnSetting_0100 start ");
@@ -74,12 +74,12 @@ export default function OpenPermissionTest() {
     })
 
     /**
+     * @tc.name   Test_openPermissionOnSetting_0200
      * @tc.number Test_openPermissionOnSetting_0200
-     * @tc.name Test_openPermissionOnSetting_0200.
-     * @tc.desc openPermissionOnSetting Permissions.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   openPermissionOnSetting Permissions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_openPermissionOnSetting_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("Test_openPermissionOnSetting_0200 start ");
@@ -102,12 +102,12 @@ export default function OpenPermissionTest() {
     })
 
     /**
+     * @tc.name   Test_openPermissionOnSetting_0300
      * @tc.number Test_openPermissionOnSetting_0300
-     * @tc.name Test_openPermissionOnSetting_0300.
-     * @tc.desc openPermissionOnSetting with result REJECTED.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   openPermissionOnSetting with result REJECTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_openPermissionOnSetting_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("Test_openPermissionOnSetting_0300 start ");
@@ -139,12 +139,12 @@ export default function OpenPermissionTest() {
     })
 
     /**
+     * @tc.name   Test_openPermissionOnSetting_0400
      * @tc.number Test_openPermissionOnSetting_0400
-     * @tc.name Test_openPermissionOnSetting_0400.
-     * @tc.desc openPermissionOnSetting with result OPENED.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   openPermissionOnSetting with result OPENED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_openPermissionOnSetting_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("Test_openPermissionOnSetting_0400 start ");

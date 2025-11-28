@@ -58,12 +58,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessTokenSync_001
      * @tc.number Test_verifyAccessTokenSync_001
-     * @tc.name Test_verifyAccessTokenSync_001
-     * @tc.desc Test verifyAccessTokenSync, After the installation, user_grant permission is not granted by default.
-     * @tc.level: Level0
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessTokenSync, After the installation, user_grant permission is not granted by default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_verifyAccessTokenSync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_001 start");
@@ -79,12 +79,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessTokenSync_002
      * @tc.number Test_verifyAccessTokenSync_002
-     * @tc.name Test_verifyAccessTokenSync_002
-     * @tc.desc Test verifyAccessTokenSync, After the installation, system_grant permission is granted by default.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessTokenSync, After the installation, system_grant permission is granted by default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_verifyAccessTokenSync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_002 start");
@@ -99,12 +99,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessTokenSync_003
      * @tc.number Test_verifyAccessTokenSync_003
-     * @tc.name Test_verifyAccessTokenSync_003
-     * @tc.desc Test verifyAccessTokenSync, invalid TokenID(0).
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessTokenSync, invalid TokenID(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_verifyAccessTokenSync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_003 start");
@@ -120,12 +120,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessTokenSync_004
      * @tc.number Test_verifyAccessTokenSync_004
-     * @tc.name Test_verifyAccessTokenSync_004
-     * @tc.desc Test verifyAccessTokenSync, permissionName is empty.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessTokenSync, permissionName is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_verifyAccessTokenSync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_004 start");
@@ -143,12 +143,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessTokenSync_005
      * @tc.number Test_verifyAccessTokenSync_005
-     * @tc.name Test_verifyAccessTokenSync_005
-     * @tc.desc Test verifyAccessTokenSync, permissionName exceeds 256 characters.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessTokenSync, permissionName exceeds 256 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_verifyAccessTokenSync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_005 start");
@@ -166,12 +166,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessTokenSync_006
      * @tc.number Test_verifyAccessTokenSync_006
-     * @tc.name Test_verifyAccessTokenSync_006
-     * @tc.desc Test verifyAccessTokenSync, noexist tokenid.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessTokenSync, noexist tokenid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_verifyAccessTokenSync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_006 start");
@@ -189,12 +189,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessTokenSync_007
      * @tc.number Test_verifyAccessTokenSync_007
-     * @tc.name Test_verifyAccessTokenSync_007
-     * @tc.desc Test verifyAccessTokenSync, noexist permission.
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessTokenSync, noexist permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_verifyAccessTokenSync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_007 start");
@@ -212,12 +212,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessTokenSync_001
      * @tc.number Test_checkAccessTokenSync_001
-     * @tc.name Test_checkAccessTokenSync_001
-     * @tc.desc Test checkAccessTokenSync, After the installation, user_grant permission is not granted by default.
-     * @tc.level: Level0
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessTokenSync, After the installation, user_grant permission is not granted by default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_checkAccessTokenSync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_001 start");
@@ -233,12 +233,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessTokenSync_002
      * @tc.number Test_checkAccessTokenSync_002
-     * @tc.name Test_checkAccessTokenSync_002
-     * @tc.desc Test checkAccessTokenSync, After the installation, system_grant permission is granted by default.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessTokenSync, After the installation, system_grant permission is granted by default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_checkAccessTokenSync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_002 start");
@@ -254,12 +254,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessTokenSync_003
      * @tc.number Test_checkAccessTokenSync_003
-     * @tc.name Test_checkAccessTokenSync_003
-     * @tc.desc Test checkAccessTokenSync, invalid TokenID(0).
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessTokenSync, invalid TokenID(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_checkAccessTokenSync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_003 start");
@@ -275,12 +275,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessTokenSync_004
      * @tc.number Test_checkAccessTokenSync_004
-     * @tc.name Test_checkAccessTokenSync_004
-     * @tc.desc Test checkAccessTokenSync, permissionName is empty.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessTokenSync, permissionName is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_checkAccessTokenSync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_004 start");
@@ -298,12 +298,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessTokenSync_005
      * @tc.number Test_checkAccessTokenSync_005
-     * @tc.name Test_checkAccessTokenSync_005
-     * @tc.desc Test checkAccessTokenSync, permissionName exceeds 256 characters.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessTokenSync, permissionName exceeds 256 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_checkAccessTokenSync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_005 start");
@@ -321,12 +321,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessTokenSync_006
      * @tc.number Test_checkAccessTokenSync_006
-     * @tc.name Test_checkAccessTokenSync_006
-     * @tc.desc Test checkAccessTokenSync, noexist tokenid.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessTokenSync, noexist tokenid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_checkAccessTokenSync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_006 start");
@@ -344,12 +344,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessTokenSync_007
      * @tc.number Test_checkAccessTokenSync_007
-     * @tc.name Test_checkAccessTokenSync_007
-     * @tc.desc Test checkAccessTokenSync, noexist permission.
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessTokenSync, noexist permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_checkAccessTokenSync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_007 start");
@@ -367,12 +367,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessToken_Promise_001
      * @tc.number Test_checkAccessToken_Promise_001
-     * @tc.name Test_checkAccessToken_Promise_001
-     * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
-     * @tc.level: Level0
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   After the installation, user_grant permission is not granted by default(Promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_checkAccessToken_Promise_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_001 start");
@@ -388,12 +388,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessToken_Promise_002
      * @tc.number Test_checkAccessToken_Promise_002
-     * @tc.name Test_checkAccessToken_Promise_002
-     * @tc.desc After the installation, system_grant permission is granted by default(Promise).
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   After the installation, system_grant permission is granted by default(Promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_checkAccessToken_Promise_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_002 start");
@@ -409,12 +409,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessToken_Promise_003
      * @tc.number Test_checkAccessToken_Promise_003
-     * @tc.name Test_checkAccessToken_Promise_003
-     * @tc.desc Test checkAccessToken(promise), invalid TokenID(0).
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessToken(promise), invalid TokenID(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_checkAccessToken_Promise_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_003 start");
@@ -432,12 +432,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessToken_Promise_004
      * @tc.number Test_checkAccessToken_Promise_004
-     * @tc.name Test_checkAccessToken_Promise_004
-     * @tc.desc Test checkAccessToken(promise), permissionName is empty.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessToken(promise), permissionName is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_checkAccessToken_Promise_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_004 start");
@@ -457,12 +457,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessToken_Promise_005
      * @tc.number Test_checkAccessToken_Promise_005
-     * @tc.name Test_checkAccessToken_Promise_005
-     * @tc.desc Test checkAccessToken(promise), permissionName exceeds 256 characters.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessToken(promise), permissionName exceeds 256 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_checkAccessToken_Promise_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_005 start");
@@ -482,12 +482,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessToken_Promise_006
      * @tc.number Test_checkAccessToken_Promise_006
-     * @tc.name Test_checkAccessToken_Promise_006
-     * @tc.desc Test checkAccessToken(promise), noexist tokenid.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessToken(promise), noexist tokenid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_checkAccessToken_Promise_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_006 start");
@@ -506,12 +506,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_checkAccessToken_Promise_007
      * @tc.number Test_checkAccessToken_Promise_007
-     * @tc.name Test_checkAccessToken_Promise_007
-     * @tc.desc Test checkAccessToken(promise), noexist permission.
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test checkAccessToken(promise), noexist permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_checkAccessToken_Promise_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_007 start");
@@ -530,12 +530,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessToken_Promise_001
      * @tc.number Test_verifyAccessToken_Promise_001
-     * @tc.name Test_verifyAccessToken_Promise_001
-     * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
-     * @tc.level: Level0
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   After the installation, user_grant permission is not granted by default(Promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_verifyAccessToken_Promise_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_001 start");
@@ -551,12 +551,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessToken_Promise_002
      * @tc.number Test_verifyAccessToken_Promise_002
-     * @tc.name Test_verifyAccessToken_Promise_002
-     * @tc.desc After the installation, system_grant permission is granted by default(Promise).
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   After the installation, system_grant permission is granted by default(Promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_verifyAccessToken_Promise_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_002 start");
@@ -572,12 +572,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessToken_Promise_003
      * @tc.number Test_verifyAccessToken_Promise_003
-     * @tc.name Test_verifyAccessToken_Promise_003
-     * @tc.desc Test verifyAccessToken(promise), invalid TokenID(0).
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessToken(promise), invalid TokenID(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_verifyAccessToken_Promise_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 start");
@@ -593,12 +593,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessToken_Promise_004
      * @tc.number Test_verifyAccessToken_Promise_004
-     * @tc.name Test_verifyAccessToken_Promise_004
-     * @tc.desc Test verifyAccessToken(promise), permissionName is empty.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessToken(promise), permissionName is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_verifyAccessToken_Promise_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_004 start");
@@ -616,12 +616,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessToken_Promise_005
      * @tc.number Test_verifyAccessToken_Promise_005
-     * @tc.name Test_verifyAccessToken_Promise_005
-     * @tc.desc Test verifyAccessToken(promise), permissionName exceeds 256 characters.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessToken(promise), permissionName exceeds 256 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_verifyAccessToken_Promise_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_005 start");
@@ -639,12 +639,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessToken_Promise_006
      * @tc.number Test_verifyAccessToken_Promise_006
-     * @tc.name Test_verifyAccessToken_Promise_006
-     * @tc.desc Test verifyAccessToken(promise), noexist tokenid.
-     * @tc.level: Level1
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessToken(promise), noexist tokenid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_verifyAccessToken_Promise_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_006 start");
@@ -663,12 +663,12 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_verifyAccessToken_Promise_007
      * @tc.number Test_verifyAccessToken_Promise_007
-     * @tc.name Test_verifyAccessToken_Promise_007
-     * @tc.desc Test verifyAccessToken(promise), noexist permission.
-     * @tc.level: Level2
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   Test verifyAccessToken(promise), noexist permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_verifyAccessToken_Promise_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_007 start");
