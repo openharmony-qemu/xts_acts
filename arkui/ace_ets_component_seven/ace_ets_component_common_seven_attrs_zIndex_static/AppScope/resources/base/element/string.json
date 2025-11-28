@@ -2,11 +2,7 @@
   "string": [
     {
       "name": "app_name",
-      "value": "ActsAceEtsComponentCommonSevenAttrsZIndexTest"
-    },
-    {
-      "name": "description_application",
-      "value": "ActsAceEtsComponentCommonSevenAttrsZIndexTest"
+      "value": "HelloWorld"
     }
   ]
 }

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { attrsManager } from '../../common/AttrsManager'
 import router from '@ohos.router'
-import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,Builder,
+import events_emitter from '@ohos.events.emitter'
+import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,Builder,ResourceColor,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
   Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
-  RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
+  RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,Resource,
   FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
@@ -39,7 +39,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,Navigation,NavDestination,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, EffectComponentAttribute,CommonMethod,applyStyles,
   FormComponentAttribute, ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
-import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef,Observed } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -64,10 +64,11 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
-  mColorBlend: Color = Color.Green
+@Observed
+class _colorBlendButttonMod implements AttributeModifier<ButtonAttribute> {
+  mColorBlend: Color | string = Color.Green
   applyNormalAttribute(instance: ButtonAttribute): void {
-    console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
+    console.log('this.mColorBlend',this.mColorBlend)
     instance.colorBlend(this.mColorBlend)
   }
 }
@@ -572,13 +573,10 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 @Entry
 @Component
 struct colorBlendPage {
-  @StoragePropRef('_zIndexButtonModifier') _colorBlend: SetValue = {
-    colorBlend:Color.Red
-  }
   @State _colorBlendAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _colorBlendBadgeMod: BadgeModifier = new BadgeModifier()
   @State _colorBlendBlankMod: BlankModifier = new BlankModifier()
-  @State _colorBlendButttonMod: ButtonModifier = new ButtonModifier()
+  @State _colorBlendButttonMod: _colorBlendButttonMod = new _colorBlendButttonMod()
   @State _colorBlendCalendarPickerMod: CalendarPickerModifier = new CalendarPickerModifier()
   @State _colorBlendCheckboxMod: CheckboxModifier = new CheckboxModifier()
   @State _colorBlendCheckboxGroupMod: CheckboxGroupModifier = new CheckboxGroupModifier()
@@ -663,7 +661,16 @@ struct colorBlendPage {
   @Builder PanelBuilder(){
     Text('Panel')
   }
-
+  private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<string, Object | null | undefined>
+      if (data!['colorBlend'] != null) {
+        console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend',data!['colorBlend'] as Color|string);
+        this._colorBlendButttonMod.mColorBlend = data!['colorBlend'] as Color|string
+        console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend2',this._colorBlendButttonMod.mColorBlend);
+      }
+    }
+  }
   onPageShow() {
     console.log('aboutToAppear routerParamOptions before' + this.targetView)
     let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
@@ -674,94 +681,15 @@ struct colorBlendPage {
     this.columns = routerParamOptions.view.columns
     this.gutter = routerParamOptions.view.gutter
     this.parentComponentKey = routerParamOptions.view.parentComponentKey
-    AppStorage.setOrCreate<SetValue>('_zIndexButtonModifier', routerParamOptions.view.testValue.setValue);
-    console.log('aboutToAppear routerParamOptions success' + this.targetView)
-    console.info('22222 colorBlend page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      console.info('22222 [registerDataChange] ' + JSON.stringify(value.colorBlend))
-      this._colorBlendAlphabetIndexerMod.mColorBlend = value.colorBlend;
-      this._colorBlendBadgeMod.mColorBlend = value.colorBlend;
-      this._colorBlendBlankMod.mColorBlend = value.colorBlend;
-      this._colorBlendButttonMod.mColorBlend = value.colorBlend;
-      this._colorBlendCalendarPickerMod.mColorBlend = value.colorBlend;
-      this._colorBlendCheckboxMod.mColorBlend = value.colorBlend;
-      this._colorBlendCheckboxGroupMod.mColorBlend = value.colorBlend;
-      this._colorBlendColumnMod.mColorBlend = value.colorBlend;
-      this._colorBlendColumnSplitMod.mColorBlend = value.colorBlend;
-      this._colorBlendCounterMod.mColorBlend = value.colorBlend;
-      this._colorBlendDataPanelMod.mColorBlend = value.colorBlend;
-      this._colorBlendDatePickerMod.mColorBlend = value.colorBlend;
-      this._colorBlendDividerMod.mColorBlend = value.colorBlend;
-      this._colorBlendEffectComponentMod.mColorBlend = value.colorBlend;
-      this._colorBlendFlexMod.mColorBlend = value.colorBlend;
-      this._colorBlendFlowItemMod.mColorBlend = value.colorBlend;
-      this._colorBlendFormComponentMod.mColorBlend = value.colorBlend;
-      this._colorBlendFormLinkMod.mColorBlend = value.colorBlend;
-      this._colorBlendGaugeMod.mColorBlend = value.colorBlend;
-      this._colorBlendGridMod.mColorBlend = value.colorBlend;
-      this._colorBlendGridColMod.mColorBlend = value.colorBlend;
-      this._colorBlendGridItemMod.mColorBlend = value.colorBlend;
-      this._colorBlendGridRowMod.mColorBlend = value.colorBlend;
-      this._colorBlendHyperlinkMod.mColorBlend = value.colorBlend;
-      this._colorBlendImageAnimatorMod.mColorBlend = value.colorBlend;
-      this._colorBlendImageSpanMod.mColorBlend = value.colorBlend;
-      this._colorBlendImageMod.mColorBlend = value.colorBlend;
-      this._colorBlendListMod.mColorBlend = value.colorBlend;
-      this._colorBlendListItemMod.mColorBlend = value.colorBlend;
-      this._colorBlendListItemGroupMod.mColorBlend = value.colorBlend;
-      this._colorBlendLoadingProgressMod.mColorBlend = value.colorBlend;
-      this._colorBlendMarqueeMod.mColorBlend = value.colorBlend;
-      this._colorBlendMenuMod.mColorBlend = value.colorBlend;
-      this._colorBlendMenuItemMod.mColorBlend = value.colorBlend;
-      this._colorBlendMenuItemGroupMod.mColorBlend = value.colorBlend;
-      this._colorBlendNavDestinationMod.mColorBlend = value.colorBlend;
-      this._colorBlendNavRouterMod.mColorBlend = value.colorBlend;
-      this._colorBlendNavigationMod.mColorBlend = value.colorBlend;
-      this._colorBlendNavigatorMod.mColorBlend = value.colorBlend;
-      this._colorBlendPatternLockMod.mColorBlend = value.colorBlend;
-      this._colorBlendPluginComponentMod.mColorBlend = value.colorBlend;
-      this._colorBlendQRCodeMod.mColorBlend = value.colorBlend;
-      this._colorBlendRadioMod.mColorBlend = value.colorBlend;
-      this._colorBlendRatingMod.mColorBlend = value.colorBlend;
-      this._colorBlendRefreshMod.mColorBlend = value.colorBlend;
-      this._colorBlendRelativeContainerMod.mColorBlend = value.colorBlend;
-      this._colorBlendRemoteWindowMod.mColorBlend = value.colorBlend;
-      this._colorBlendRichEditorMod.mColorBlend = value.colorBlend;
-      this._colorBlendRichTextMod.mColorBlend = value.colorBlend;
-      this._colorBlendRowMod.mColorBlend = value.colorBlend;
-      this._colorBlendRowSplitMod.mColorBlend = value.colorBlend;
-      this._colorBlendScrollMod.mColorBlend = value.colorBlend;
-      this._colorBlendScrollBarMod.mColorBlend = value.colorBlend;
-      this._colorBlendSearchMod.mColorBlend = value.colorBlend;
-      this._colorBlendSelectMod.mColorBlend = value.colorBlend;
-      this._colorBlendSideBarContainerMod.mColorBlend = value.colorBlend;
-      this._colorBlendSliderMod.mColorBlend = value.colorBlend;
-      this._colorBlendStackMod.mColorBlend = value.colorBlend;
-      this._colorBlendStepperMod.mColorBlend = value.colorBlend;
-      this._colorBlendStepperItemMod.mColorBlend = value.colorBlend;
-      this._colorBlendSwiperMod.mColorBlend = value.colorBlend;
-      this._colorBlendTabContentMod.mColorBlend = value.colorBlend;
-      this._colorBlendTabsMod.mColorBlend = value.colorBlend;
-      this._colorBlendTextMod.mColorBlend = value.colorBlend;
-      this._colorBlendTextAreaMod.mColorBlend = value.colorBlend;
-      this._colorBlendTextClockMod.mColorBlend = value.colorBlend;
-      this._colorBlendTextInputMod.mColorBlend = value.colorBlend;
-      this._colorBlendTextPickerMod.mColorBlend = value.colorBlend;
-      this._colorBlendTextTimerMod.mColorBlend = value.colorBlend;
-      this._colorBlendTimePickerMod.mColorBlend = value.colorBlend;
-      this._colorBlendToggleMod.mColorBlend = value.colorBlend;
-      this._colorBlendUIExtensionComponentMod.mColorBlend = value.colorBlend;
-      this._colorBlendWaterFlowMod.mColorBlend = value.colorBlend;
-      this._colorBlendWebMod.mColorBlend = value.colorBlend;
-      this._colorBlendXComponentMod.mColorBlend = value.colorBlend;
-
-    })
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 184,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
 commonStyle(instance: CommonMethod){
-  instance.colorBlend(this._colorBlend.colorBlend)
   instance.height('100%')
-  // instance.gridSpan(1)
   instance.key(this.componentKey)
   }
 

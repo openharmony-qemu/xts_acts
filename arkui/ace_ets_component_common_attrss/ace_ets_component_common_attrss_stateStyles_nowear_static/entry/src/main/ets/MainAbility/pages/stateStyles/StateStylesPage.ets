@@ -17,18 +17,109 @@ import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import { StepperView } from '../../view/alignRules/StepperView';
 import {
-  MenuItemGroup,MenuItemGroupOptions,ImageFit,FlowItem,TabContent,ListItemGroup,ListItem,StepperItem,SliderStyle,BadgeParamWithNumber,Blank,Entry,Component,$r,
-  AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,RowOptions,LazyForEach,
-  Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,CommonMethod,applyStyles,Builder,
-  Color,Scroller,Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,
-  Circle,WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,GridRow,Grid,Flex,Counter,Badge,Toggle,TimePicker,TextPicker,TextInput,TextClock,TextArea,Slider,
-  Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,
-  Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,
-  GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,
-  MenuItemOptions,CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,Stepper
+  MenuItemGroup,
+  MenuItemGroupOptions,
+  ImageFit,
+  FlowItem,
+  TabContent,
+  ListItemGroup,
+  ListItem,
+  StepperItem,
+  SliderStyle,
+  BadgeParamWithNumber,
+  Blank,
+  Entry,
+  Component,
+  $r,
+  AlignRuleOption,
+  Row,
+  Button,
+  Column,
+  ColumnOptions,
+  Text,
+  FlexAlign,
+  VerticalAlign,
+  HorizontalAlign,
+  RelativeContainer,
+  CommonMethod,
+  Builder,
+  Color,
+  Scroller,
+  Menu,
+  ScrollBar,
+  TextTimer,
+  ColumnSplit,
+  RowSplit,
+  Refresh,
+  Shape,
+  Rect,
+  Path,
+  Polygon,
+  Polyline,
+  Line,
+  Ellipse,
+  Circle,
+  WaterFlow,
+  Tabs,
+  Swiper,
+  Stack,
+  SideBarContainer,
+  Scroll,
+  List,
+  GridRow,
+  Grid,
+  Flex,
+  Counter,
+  Badge,
+  Toggle,
+  TimePicker,
+  TextPicker,
+  TextInput,
+  TextClock,
+  TextArea,
+  Slider,
+  Search,
+  Rating,
+  QRCode,
+  Progress,
+  AlphabetIndexer,
+  ImageAnimator,
+  Image,
+  Navigation,
+  Marquee,
+  LoadingProgress,
+  Gauge,
+  Divider,
+  DatePicker,
+  DataPanel,
+  CheckboxGroup,
+  Checkbox,
+  Select,
+  Radio,
+  MenuItem,
+  ProgressType,
+  ToggleType,
+  ForEach,
+  GridRowDirection,
+  BarState,
+  SideBarContainerType,
+  TextAlign,
+  GridItem,
+  GridCol,
+  GridColOptions,
+  GridColColumnOption,
+  ColumnOptions,
+  MenuItemOptions,
+  CheckboxGroupOptions,
+  DataPanelOptions,
+  DatePickerOptions,
+  ProgressOptions,
+  RadioOptions,
+  Stepper,
+  applyStyles
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -40,6 +131,7 @@ struct StateStylesPage {
   @StoragePropRef("_isEnable") _isEnable: boolean = true
   @State targetView: string = ''
   @State componentKey: string = ''
+
   @Builder
   myBuilder() {
     Column() {
@@ -54,7 +146,7 @@ struct StateStylesPage {
   }
 
   onPageShow() {
-    console.info('StateStylesPage show called ',this._isEnable)
+    console.info('StateStylesPage show called ', this._isEnable)
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
@@ -65,21 +157,22 @@ struct StateStylesPage {
   }
 
   disabledStyles(instance: CommonMethod) {
-    console.info('StateStylesPage show disabledStyles ',this._isEnable)
+    console.info('StateStylesPage show disabledStyles ', this._isEnable)
     instance.zIndex(2)
     instance.backgroundColor(Color.Blue)
   }
+
   normalStyles(instance: CommonMethod) {
-    console.info('StateStylesPage show normalStyles ',this._isEnable)
+    console.info('StateStylesPage show normalStyles ', this._isEnable)
     instance.zIndex(1)
     instance.backgroundColor(Color.Red)
   }
 
-  commonStyle(instance: CommonMethod){
-    console.info('StateStylesPage show called2 ',this._isEnable)
+  commonStyle(instance: CommonMethod) {
+    console.info('StateStylesPage show called2 ', this._isEnable)
     instance.enabled(this._isEnable)
     instance.key(this.componentKey)
-    console.info('StateStylesPage show called3 ',this._isEnable)
+    console.info('StateStylesPage show called3 ', this._isEnable)
     instance.stateStyles({
       normal: this.normalStyles,
       disabled: this.disabledStyles
@@ -93,11 +186,10 @@ struct StateStylesPage {
           Button('button1').applyStyles(this.commonStyle)
         } else if (this.targetView == 'Text') {
           Text('text1').applyStyles(this.commonStyle)
-        }
-        else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }).applyStyles(this.commonStyle)
-        }
-        else if (this.targetView == 'Blank') {
+        } else if (this.targetView == 'AlphabetIndexer') {
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
+            .applyStyles(this.commonStyle)
+        } else if (this.targetView == 'Blank') {
           Row() {
             Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           }.width('100%').height('100%')
@@ -146,7 +238,7 @@ struct StateStylesPage {
         } else if (this.targetView == 'Menu') {
           Menu() {
           }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
-        }  else if (this.targetView == 'Progress') {
+        } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse } as ProgressOptions).applyStyles(this.commonStyle)
         } else if (this.targetView == 'QRCode') {
           QRCode('Running Marquee starts rolling').applyStyles(this.commonStyle)
@@ -177,7 +269,7 @@ struct StateStylesPage {
             min: 0,
             max: 100,
             style: SliderStyle.OutSet
-          } )
+          })
             .showTips(true)
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Stepper') {
@@ -236,7 +328,12 @@ struct StateStylesPage {
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
-            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            style: {
+              color: 0xFFFFFF,
+              fontSize: 16,
+              badgeSize: 20,
+              badgeColor: Color.Red
+            }
           } as BadgeParamWithNumber) {
             Button('message')
               .width(100)
@@ -274,7 +371,14 @@ struct StateStylesPage {
           }) {
             ForEach([Color.Red, Color.Orange, Color.Yellow, Color.Green,
               Color.Pink, Color.Grey, Color.Blue, Color.Brown], (color: Color) => {
-              GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }  as GridColOptions) {
+              GridCol({
+                span: {
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  lg: 4
+                } as GridColColumnOption
+              } as GridColOptions) {
                 Row()
                   .width('100%')
                   .height('20vp')
@@ -338,13 +442,13 @@ struct StateStylesPage {
           }.backgroundColor(Color.Pink)
           .width('100%')
           .height('100%')
-        }  else if (this.targetView == 'Panel') {
-          Column(){
+        } else if (this.targetView == 'Panel') {
+          Column() {
             Text('Text')
           }
           .backgroundColor(Color.Yellow)
           .applyStyles(this.commonStyle)
-          .bindSheet(true,this.myBuilder)
+          .bindSheet(true, this.myBuilder)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
@@ -358,7 +462,7 @@ struct StateStylesPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption )
+              } as AlignRuleOption)
               .id('responseRegion')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Row') {
@@ -372,13 +476,13 @@ struct StateStylesPage {
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:int) => {
-                Text('Scroll' + item+'')
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
+                Text('Scroll' + item + '')
                   .width('90%')
                   .height(50)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: Int,index:int) => item+'')
+              }, (item: Int, index: int) => item + '')
             }.width('100%')
           }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {

@@ -16,7 +16,7 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll,beforeEach } from '../../../../hypium';
+import { describe, expect, beforeAll,beforeEach } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -36,10 +36,10 @@ let testAbilityContext:common.UIAbilityContext;
 export default function stateStylesTestTwo() {
   let supportView: Array<string> = Array<string>(
     'Checkbox',
-    // 'CheckboxGroup',
-    // 'Radio',
-    // 'Toggle',
-    // 'MenuItem'
+    'CheckboxGroup',
+    'Radio',
+    'Toggle',
+    'MenuItem'
   )
 
   let pageConfig: PageConfig = {

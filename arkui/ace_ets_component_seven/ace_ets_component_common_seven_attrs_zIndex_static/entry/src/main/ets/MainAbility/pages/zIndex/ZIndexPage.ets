@@ -13,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { attrsManager } from '../../common/AttrsManager';
-import { RouterParams, ZIndex } from '../../common/Utils';
+import events_emitter from '@ohos.events.emitter'
+import { RouterParams } from '../../common/Utils';
 import Router from '@system.router'
 import {
   DataReloadOperation,Flex,GridRow,Grid,List,Polyline,Badge,GridRowDirection,GridCol,GridItem,ListItem,ListItemGroup,DataOperationType,Ellipse,Line,Polygon,Path,Rect,Shape,Shape,ColumnSplit,Counter,Refresh,RelativeContainer,AlignRuleOption,Entry,Select,Select,Stepper,TextArea,TextClock,TextInput,TextPicker,
   Toggle,
   Web,Circle,Text,ImageAnimator,ImageAnimator,Marquee,Navigation,Menu,Radio,Rating,ScrollBar,ImageFit,MenuItemGroup,TextAttribute,Blank,Checkbox,CheckboxGroup,CheckboxGroup,DataPanel,DatePicker,Divider,Gauge,
-  $r,
+  $r,WebviewController,
   CalendarPicker,
   Column,
   SliderAttribute,
@@ -130,7 +129,6 @@ import {
   DividerAttribute,
   EllipseAttribute,
   FlexAttribute,
-
   CounterAttribute,
   DataPanelAttribute,
   DatePickerAttribute,
@@ -171,7 +169,7 @@ import {
   CommonMethod,
   applyStyles
 } from '@ohos.arkui.component'
-import { State, Link, StoragePropRef,AppStorage } from '@ohos.arkui.stateManagement'
+import { State, Link, Prop,StorageProp,AppStorage,Observed } from '@ohos.arkui.stateManagement'
 import webview from '@ohos.web.webview';
 import { ItemState } from '@ohos.arkui.advanced.ToolBar'
 
@@ -193,7 +191,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
     instance.zIndex(this.mZIndex)
   }
 }
-
+@Observed
 class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mZIndex: int = 7
 
@@ -666,13 +664,6 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
-  mZIndex: int = 7
-
-  applyNormalAttribute(instance: SpanAttribute): void {
-    /* zIndex not supported */
-  }
-}
 
 class StackModifier implements AttributeModifier<StackAttribute> {
   mZIndex: int = 7
@@ -829,9 +820,6 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 @Entry
 @Component
 struct ZIndexPage {
-  @StoragePropRef("ZIndex") _ZIndex: ZIndex = {
-    zIndex:0
-  };
   @State _zIndexAlphabetIndexerModifier: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _zIndexBadgeModifier: BadgeModifier = new BadgeModifier()
   @State _zIndexButtonModifier: ButtonModifier = new ButtonModifier()
@@ -895,7 +883,6 @@ struct ZIndexPage {
   @State _zIndexShapeModifier: ShapeModifier = new ShapeModifier()
   @State _zIndexSideBarContainerModifier: SideBarContainerModifier = new SideBarContainerModifier()
   @State _zIndexSliderModifier: SliderModifier = new SliderModifier()
-  @State _zIndexSpanModifier: SpanModifier = new SpanModifier()
   @State _zIndexStackModifier: StackModifier = new StackModifier()
   @State _zIndexStepperModifier: StepperModifier = new StepperModifier()
   @State _zIndexStepperItemModifier: StepperItemModifier = new StepperItemModifier()
@@ -917,123 +904,48 @@ struct ZIndexPage {
   @State _zIndexXComponentModifier: XComponentModifier = new XComponentModifier()
   @State targetView: string = ''
   @State componentKey: string = ''
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number =  0
+  @State parentHeight: number =  0
+  @State columns: number = 0
+  @State gutter: number = 0
   @State parentBackGroundColor: string = '#FFFF00';
   @State parentComponentKey: string = ''
-  controller: webview.WebviewController = new webview.WebviewController();
 
   @Builder
   PanelBuilder() {
     Text('Text')
   }
-
+  private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<string, Object | null | undefined>                        //��Ҫ�Ȼ�ȡ����������֮��  �ٷ��ʳ�Ա����
+      if (data!['mZIndex'] != null) {
+        console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend',data!['mZIndex']);
+        this._zIndexButtonModifier.mZIndex = data!['mZIndex'] as int
+        console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend2',this._zIndexButtonModifier.mZIndex);
+      }
+    }
+  }
   onPageShow() {
     console.info('zIndex translate page show called ')
-    AppStorage.setOrCreate<ButtonModifier>('_zIndexButtonModifier',new ButtonModifier())
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
-      this.componentKey = routerParamOptions.view.componentKey as string
+      this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
-      this.columns = (routerParamOptions.view.columns).toInt()
-      this.gutter = (routerParamOptions.view.gutter).toInt()
+      this.columns = routerParamOptions.view.columns
+      this.gutter = routerParamOptions.view.gutter
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
-      console.log('aboutToAppear routerParamOptions success' + this.targetView)
-    } catch (error) {
+      let stateChangeEvent: events_emitter.InnerEvent = {
+        eventId: 184,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
-    attrsManager.registerDataChange((value: number) => {
-      console.info('zIndex [registerDataChange] ' + JSON.stringify(value + ''))
-      this._zIndexAlphabetIndexerModifier.mZIndex = value as int
-      this._zIndexBadgeModifier.mZIndex = value  as int
-      this._zIndexButtonModifier.mZIndex = value  as int
-      this._zIndexBlankModifier.mZIndex = value  as int
-      this._zIndexCalendarPickerModifier.mZIndex = value  as int
-      this._zIndexCanvasModifier.mZIndex = value  as int
-      this._zIndexCheckboxModifier.mZIndex = value  as int
-      this._zIndexCheckboxGroupModifier.mZIndex = value  as int
-      this._zIndexCircleModifier.mZIndex = value as int
-      this._zIndexColumnModifier.mZIndex = value as int
-      this._zIndexColumnSplitModifier.mZIndex = value as int
-      this._zIndexCounterModifier.mZIndex = value as int
-      this._zIndexDataPanelModifier.mZIndex = value as int
-      this._zIndexDatePickerModifier.mZIndex = value as int
-      this._zIndexDividerModifier.mZIndex = value as int
-      this._zIndexEllipseModifier.mZIndex = value as int
-      this._zIndexFlexModifier.mZIndex = value as int
-      this._zIndexFlowItemModifier.mZIndex = value as int
-      this._zIndexFormLinkModifier.mZIndex = value as int
-      this._zIndexGaugeModifier.mZIndex = value as int
-      this._zIndexGridModifier.mZIndex = value as int
-      this._zIndexGridColModifier.mZIndex = value as int
-      this._zIndexGridItemModifier.mZIndex = value as int
-      this._zIndexGridRowModifier.mZIndex = value as int
-      this._zIndexHyperlinkModifier.mZIndex = value as int
-      this._zIndexImageModifier.mZIndex = value as int
-      this._zIndexImageAnimatorModifier.mZIndex = value as int
-      this._zIndexLineModifier.mZIndex = value as int
-      this._zIndexListModifier.mZIndex = value as int
-      this._zIndexListItemModifier.mZIndex = value as int
-      this._zIndexListItemGroupModifier.mZIndex = value as int
-      this._zIndexLoadingProgressModifier.mZIndex = value as int
-      this._zIndexMarqueeModifier.mZIndex = value as int
-      this._zIndexMenuModifier.mZIndex = value as int
-      this._zIndexMenuItemModifier.mZIndex = value as int
-      this._zIndexMenuItemGroupModifier.mZIndex = value as int
-      this._zIndexNavDestinationModifier.mZIndex = value as int
-      this._zIndexNavigationModifier.mZIndex = value as int
-      this._zIndexNavigatorModifier.mZIndex = value as int
-      this._zIndexNavRouterModifier.mZIndex = value as int
-      this._zIndexPanelModifier.mZIndex = value as int
-      this._zIndexPathModifier.mZIndex = value as int
-      this._zIndexPolygonModifier.mZIndex = value as int
-      this._zIndexPolylineModifier.mZIndex = value as int
-      this._zIndexProgressModifier.mZIndex = value as int
-      this._zIndexQRCodeModifier.mZIndex = value as int
-      this._zIndexRadioModifier.mZIndex = value as int
-      this._zIndexRatingModifier.mZIndex = value as int
-      this._zIndexRectModifier.mZIndex = value as int
-      this._zIndexRefreshModifier.mZIndex = value as int
-      this._zIndexRelativeContainerModifier.mZIndex = value as int
-      this._zIndexRemoteWindowModifier.mZIndex = value as int
-      this._zIndexRichEditorModifier.mZIndex = value as int
-      this._zIndexRichTextModifier.mZIndex = value as int
-      this._zIndexRowModifier.mZIndex = value as int
-      this._zIndexRowSplitModifier.mZIndex = value as int
-      this._zIndexScrollModifier.mZIndex = value as int
-      this._zIndexScrollBarModifier.mZIndex = value as int
-      this._zIndexSearchModifier.mZIndex = value as int
-      this._zIndexSelectModifier.mZIndex = value as int
-      this._zIndexShapeModifier.mZIndex = value as int
-      this._zIndexSideBarContainerModifier.mZIndex = value as int
-      this._zIndexSliderModifier.mZIndex = value as int
-      this._zIndexSpanModifier.mZIndex = value as int
-      this._zIndexStackModifier.mZIndex = value as int
-      this._zIndexStepperModifier.mZIndex = value as int
-      this._zIndexStepperItemModifier.mZIndex = value as int
-      this._zIndexSwiperModifier.mZIndex = value as int
-      this._zIndexTabContentModifier.mZIndex = value as int
-      this._zIndexTabsModifier.mZIndex = value as int
-      this._zIndexTextModifier.mZIndex = value as int
-      this._zIndexTextAreaModifier.mZIndex = value as int
-      this._zIndexTextClockModifier.mZIndex = value as int
-      this._zIndexTextInputModifier.mZIndex = value as int
-      this._zIndexTextPickerModifier.mZIndex = value as int
-      this._zIndexTextTimerModifier.mZIndex = value as int
-      this._zIndexTimePickerModifier.mZIndex = value as int
-      this._zIndexToggleModifier.mZIndex = value as int
-      this._zIndexVideoModifier.mZIndex = value as int
-      this._zIndexWaterFlowModifier.mZIndex = value as int
-      this._zIndexWebModifier.mZIndex = value as int
-      this._zIndexWindowSceneModifier.mZIndex = value as int
-      this._zIndexXComponentModifier.mZIndex = value as int
-    })
   }
 
   fancy(instance: CommonMethod) {
@@ -1085,7 +997,7 @@ struct ZIndexPage {
       }
       if (this.targetView == 'Gauge') {
         Gauge({ value: 105 })
-          .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
+          .colors([[Color.Red, 1], [Color.Red, 1], [Color.Red, 1], [Color.Red, 1]])
           .applyStyles(this.fancy)
           .attributeModifier(this._zIndexGaugeModifier)
       }
@@ -1109,7 +1021,7 @@ struct ZIndexPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: 1,
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -1117,7 +1029,7 @@ struct ZIndexPage {
           .attributeModifier(this._zIndexMarqueeModifier)
       }
       if (this.targetView == 'Navigation') {
-        Navigation() {
+        Navigation({}) {
         }
         .applyStyles(this.fancy)
         .attributeModifier(this._zIndexNavigationModifier)
@@ -1271,7 +1183,7 @@ struct ZIndexPage {
           .attributeModifier(this._zIndexToggleModifier)
       }
       if (this.targetView == 'Web') {
-        Web({ src: 'www.example.com', controller: this.controller })
+        Web({ src: 'www.example.com', controller: new WebviewController() })
           .applyStyles(this.fancy)
           .attributeModifier(this._zIndexWebModifier)
       }
@@ -1739,7 +1651,6 @@ struct ZIndexPage {
         Text() {
           Span('Span1')
             .applyStyles(this.fancy)
-            .attributeModifier(this._zIndexSpanModifier)
         }
       }
     }

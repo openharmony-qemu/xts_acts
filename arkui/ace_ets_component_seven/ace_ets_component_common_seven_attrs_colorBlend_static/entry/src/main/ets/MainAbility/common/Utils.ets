@@ -17,7 +17,7 @@
 import router from '@ohos.router';
 import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {Color,Length, TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, BorderOptions } from '@ohos.arkui.component';
+import {Color,Length, TouchType, KeyType, MouseButton, MouseAction,ResourceColor, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, BorderOptions } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
@@ -43,10 +43,10 @@ export interface CurrentRatio{
   isVisible: boolean
 };
 export interface SetValue {
-  colorBlend: Color;
+  colorBlend: ResourceColor;
 }
 export interface ExpectValue {
-  colorBlend: Color;
+  colorBlend: ResourceColor;
 }
 export class RouterParams {
   view: PageConfig = new PageConfig()
