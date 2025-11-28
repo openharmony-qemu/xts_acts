@@ -23,7 +23,8 @@ import {
   DEFAULT_USER_ID,
   INVALID_USER_ID,
   HAP_FILE_PATH,
-  EDM_INSTALL_PARAM
+  EDM_INSTALL_PARAM,
+  MARKET_APPS
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -606,6 +607,27 @@ export default function bundleManagerTest() {
         expect(error.code == 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_install_market_apps_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_0100
+     * @tc.desc   test install market apps without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     });
