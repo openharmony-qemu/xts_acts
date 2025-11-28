@@ -39,7 +39,6 @@ export default function BrightnessTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_brightness_Manager_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
      * @tc.desc   Test the third-party application call setValue will be blocked
@@ -60,7 +59,6 @@ export default function BrightnessTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_brightness_Manager_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
      * @tc.desc   Test the third-party application call setValue will be blocked
@@ -81,7 +79,6 @@ export default function BrightnessTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_brightness_Manager_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0060
      * @tc.desc   Test the third-party application call setValue will be blocked
