@@ -155,7 +155,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
          * @tc.desc   Test startBLEScan api10
@@ -193,7 +192,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
          * @tc.desc   Test stopBLEScan api10
@@ -217,7 +215,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
          * @tc.desc   Test on-BLEDeviceFind api10
@@ -237,7 +234,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
          * @tc.desc   Test off-BLEDeviceFind api10
@@ -257,7 +253,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -280,7 +275,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -304,7 +298,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -328,7 +321,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -352,7 +344,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -383,7 +374,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -412,7 +402,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -443,7 +432,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -474,7 +462,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -505,7 +492,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -536,7 +522,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.desc   Test constant PhyType api12
@@ -556,7 +541,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
          * @tc.desc   Test constant PhyType api12
@@ -576,7 +560,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
          * @tc.desc   Test startBLEScan api10
@@ -596,7 +579,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
          * @tc.desc   Test createBleScanner
@@ -617,7 +599,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
          * @tc.desc   Test startScan
@@ -665,7 +646,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
          * @tc.desc   Test stopScan
@@ -703,7 +683,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
          * @tc.desc   Test startScan 401
@@ -725,7 +704,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
          * @tc.desc   Test startScan again
@@ -771,7 +749,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
          * @tc.desc   Test ScanReportType
@@ -795,7 +772,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
          * @tc.desc   Test ScanReportMode
@@ -823,7 +799,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
          * @tc.desc   Test getConnectedBLEDevices api21
@@ -874,7 +849,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
          * @tc.desc   Test BleProfile api21
@@ -1065,7 +1039,7 @@ export default function bluetoothBleTest() {
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
                 let returu_gattservice: bluetooth.GattService = gattServer.getService(null);
-                expect(false).assertTrue();
+                expect().assertFail();
             } catch (error) {
                 console.error(`[bt_arkts] gattServer getService input is null, code is ${error.code},message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
