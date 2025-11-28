@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,6 +60,7 @@ struct ProgressPrivacySensitive {
             this.isSensitive = undefined
           })
           Button('NULL').id('nullFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
+            this.isSensitive = undefined
           })
         }
       }

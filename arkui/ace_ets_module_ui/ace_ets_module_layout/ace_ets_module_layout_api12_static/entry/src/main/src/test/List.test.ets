@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,15 +31,15 @@ import APIaccessibilityTextHint from './Column/APIaccessibilityTextHint.test'
 import RelativeContainerStartApi from './RelativeContainerStart/RelativeContainerStartApi.test'
 
 export default function testsuite() {
-  // FlexSpaceTest();
-  RelativeContainerLocalizedDirectionStartTest();// barrier会导致页面白屏
-  // SpaceMainNumberJsunit();
-  // SpaceMain5JustifyContentJsunit();
-  // SpaceCross5AlignItemsJsunit();
-  // RelativeContainerApi();
-  // APIremoveGestureByTag();
-  // APIaccessibilityTextHint();
-  // ColumnReverseTest();
-  // RowReverseTest();
-  // RelativeContainerStartApi()
+  FlexSpaceTest();
+  RelativeContainerLocalizedDirectionStartTest();
+  SpaceMainNumberJsunit();
+  SpaceMain5JustifyContentJsunit();
+  SpaceCross5AlignItemsJsunit();
+  RelativeContainerApi();
+  APIremoveGestureByTag();
+  APIaccessibilityTextHint();
+  ColumnReverseTest();
+  RowReverseTest();
+  RelativeContainerStartApi()
 }

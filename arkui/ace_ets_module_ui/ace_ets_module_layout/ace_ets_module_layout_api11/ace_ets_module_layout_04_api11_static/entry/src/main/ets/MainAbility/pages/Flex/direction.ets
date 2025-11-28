@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,15 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, ItemAlign, FlexAlign, FlexDirection,Text, Flex, Button } from '@ohos.arkui.component'
-import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct Index {
-  @StorageProp('sDirection') sDirection: FlexDirection = FlexDirection.Column
+  @StoragePropRef('flexDirection') flexDirection: FlexDirection = FlexDirection.Column
   build() {
-    Flex({ direction: this.sDirection, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction: this.flexDirection, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(60)
         .fontWeight(500)

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,13 @@
  * limitations under the License.
  */
 import { Entry, Component, LineCapStyle,ResourceColor, Color, Flex, ClickEvent, Margin, FlexDirection, ItemAlign, FlexAlign, Text, Divider, FlexWrap, Row } from '@ohos.arkui.component'
-import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { State,AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct DividerExample2 {
-  @StorageProp('color') color: ResourceColor = 0xCCCCCC
+  @StoragePropRef('diColor') diColor: ResourceColor = Color.Red
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
       Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)
@@ -42,7 +43,7 @@ struct DividerExample2 {
         .key('Divider')
         .vertical(false)
         .strokeWidth(5)
-        .color(this.color)
+        .color(this.diColor)
         .lineCap(LineCapStyle.Round)
       Row().width('100%').height(40).backgroundColor(0xF1F3F5)
     }

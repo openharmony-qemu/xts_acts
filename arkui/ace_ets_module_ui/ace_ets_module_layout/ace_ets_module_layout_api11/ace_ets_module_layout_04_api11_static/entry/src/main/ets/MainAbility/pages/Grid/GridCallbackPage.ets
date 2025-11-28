@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +41,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridCallbackPage {
-  @State Number01: String[] = ['0', '1', '2', '3', '4'] as string[]
+  @State numAry: String[] = new Array<string>('0', '1', '2', '3', '4')
   @State columnsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State rowsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State columnsGap: number = 10
@@ -213,8 +214,8 @@ struct GridCallbackPage {
       .key('grid_default')
 
       Grid() {
-        ForEach(this.Number01, (day: string) => {
-          ForEach(this.Number01, (day: string) => {
+        ForEach(this.numAry, (day: string) => {
+          ForEach(this.numAry, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -272,8 +273,8 @@ struct GridCallbackPage {
 
       Text('scroll').fontColor(0xCCCCCC).fontSize(9).width('90%')
       Grid(this.scroller) {
-        ForEach(this.Number01, (row: string) => {
-          ForEach(this.Number01, (column: string) => {
+        ForEach(this.numAry, (row: string) => {
+          ForEach(this.numAry, (column: string) => {
             GridItem() {
               Text(row + '-' + column)
                 .fontSize(16)

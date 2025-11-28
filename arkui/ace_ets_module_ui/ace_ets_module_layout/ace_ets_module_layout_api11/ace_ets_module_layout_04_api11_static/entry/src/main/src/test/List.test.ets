@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -117,25 +118,28 @@ import rowJsunit2 from './Row/RowJsunit2.test';
 import flexDirectionJsunit from './Flex/FlexDirectionJsunit.test';
 import DividerJsunit from './DividerTest/DividerJsunit1.test';
 export default function testsuite() {
-  GridRows2();
-  GridRows1();
-
+  directionJsunit();
+  gradientDirectionJsunit();
   OnlyRowsTemplate3();
   OnlyRowsTemplate5();
-  OnlyRowsTemplate2();
-  OnlyRowsTemplate1();
   OnlyRowsTemplate4();
-
   OnlyColumnsTemplate4();
   OnlyColumnsTemplate1();
   OnlyColumnsTemplate5();
+  ColumnsTemplateAndRowsTemplate1();
+  dividerUIJsunit();
+  dividerJsunitt();
+
+  flexWrapJsunit();
+  flexDirectionJsunit();
+  GridRows2();
+  GridRows1();
+  OnlyRowsTemplate2();
+  OnlyRowsTemplate1();
   OnlyColumnsTemplate2();
   OnlyColumnsTemplate3();
-
-  ColumnsTemplateAndRowsTemplate1();
   ColumnsTemplateAndRowsTemplate2();
   ColumnsTemplateAndRowsTemplateNoSet();
-
   CalcJsunit01();
   CalcJsunit02();
 
@@ -188,21 +192,18 @@ export default function testsuite() {
   useShadowBatching();
 
   dividerJsunit();
-  dividerUIJsunit();
-  dividerJsunitt();
+
   DividerJsunit();
 
   flexJsunit();
-  flexWrapJsunit();
 
-  gradientDirectionJsunit();
   rowJsunit2();
   enumsVerticalAlignJsunit();
 
-  directionJsunit();
+
   direction2Jsunit();
   placementJsunit();
-  flexDirectionJsunit();
+
 
   gridContainerJsunit();
 

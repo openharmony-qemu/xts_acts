@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -59,6 +60,11 @@ export default function ProgressPrivacySensitiveTest() {
       }
       console.info('ProgressPrivacySensitiveTest beforeEach end');
     });
+    afterEach(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
+      await Utils.sleep(2500);
+    })
     /*
      * @tc.number   ProgressPrivacySensitiveTest_static_001
      * @tc.name     ProgressPrivacySensitiveTest_static_001
