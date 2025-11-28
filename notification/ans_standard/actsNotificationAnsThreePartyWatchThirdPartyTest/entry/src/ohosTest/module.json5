@@ -50,7 +50,7 @@
         "name": "DynamicNotificationSubscriberExtensionAbility",
         "srcEntry": "./ets/extensionability/DynamicNotificationSubscriberExtensionAbility.ets",
         "description": "$string:StaticNotificationSubscriber_desc",
-        "icon": "$media:layered_image",
+        "icon": "$media:icon",
         "type": "notificationSubscriber",
         "label": "$string:StaticNotificationSubscriber_label"
       }
