@@ -62,13 +62,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0100
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0100
+     * @tc.number SUB_Request_Agent_TaskSaveas_0100
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Agent_TaskSaveas_0100', Level.LEVEL1, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0100 is starting-----------------------");
@@ -128,13 +128,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0200
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0200
+     * @tc.number SUB_Request_Agent_TaskSaveas_0200
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Agent_TaskSaveas_0200', Level.LEVEL1, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0200 is starting-----------------------");
@@ -195,13 +195,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0300
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0300
+     * @tc.number SUB_Request_Agent_TaskSaveas_0300
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_0300', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0300 is starting-----------------------");
@@ -253,13 +253,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0400
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0400
+     * @tc.number SUB_Request_Agent_TaskSaveas_0400
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_0400', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0400 is starting-----------------------");
@@ -311,13 +311,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0500
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0500
+     * @tc.number SUB_Request_Agent_TaskSaveas_0500
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_0500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0400 is starting-----------------------");
@@ -342,13 +342,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0600
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0600
+     * @tc.number SUB_Request_Agent_TaskSaveas_0600
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Agent_TaskSaveas_0600', Level.LEVEL1, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0600 is starting-----------------------");
@@ -400,13 +400,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0700
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0700
+     * @tc.number SUB_Request_Agent_TaskSaveas_0700
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_0700', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0700 is starting-----------------------");
@@ -458,13 +458,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0800
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0800
+     * @tc.number SUB_Request_Agent_TaskSaveas_0800
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_0800', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0800 is starting-----------------------");
@@ -519,13 +519,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0900
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_0900
+     * @tc.number SUB_Request_Agent_TaskSaveas_0900
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_0900', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0900 is starting-----------------------");
@@ -577,13 +577,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_1000
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_1000
+     * @tc.number SUB_Request_Agent_TaskSaveas_1000
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_1000', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1000 is starting-----------------------");
@@ -608,13 +608,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_1010
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_1010
+     * @tc.number SUB_Request_Agent_TaskSaveas_1010
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_1010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1010 is starting-----------------------");
@@ -646,13 +646,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_1100
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_1100
+     * @tc.number SUB_Request_Agent_TaskSaveas_1100
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_1100', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1100 is starting-----------------------");
@@ -704,13 +704,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_1200
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_1200
+     * @tc.number SUB_Request_Agent_TaskSaveas_1200
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_1200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1200 is starting-----------------------");
@@ -735,13 +735,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_1300
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_1300
+     * @tc.number SUB_Request_Agent_TaskSaveas_1300
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_1300', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1300 is starting-----------------------");
@@ -793,13 +793,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_1400
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_1400
+     * @tc.number SUB_Request_Agent_TaskSaveas_1400
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_1400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1400 is starting-----------------------");
@@ -824,13 +824,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_0900
-     * @tc.name: different saveas of config
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TaskSaveas_1500
+     * @tc.number SUB_Request_Agent_TaskSaveas_0900
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_1500', Level.LEVEL2, (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1500 is starting-----------------------");
@@ -884,13 +884,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_0100
-     * @tc.name: supports the response header of the listening task.
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Agent_onResponse_0100
+     * @tc.number SUB_Request_Agent_onResponse_0100
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Agent_onResponse_0100', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0100 is starting-----------------------");
@@ -931,13 +931,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_0200
-     * @tc.name: supports the response header of the listening task.
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_onResponse_0200
+     * @tc.number SUB_Request_Agent_onResponse_0200
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_onResponse_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0200 is starting-----------------------");
@@ -975,13 +975,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_0300
-     * @tc.name: supports the response header of the listening task.
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Agent_onResponse_0300
+     * @tc.number SUB_Request_Agent_onResponse_0300
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Agent_onResponse_0300', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0300 is starting-----------------------");
@@ -1025,13 +1025,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_0400
-     * @tc.name: supports the response header of the listening task.
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_onResponse_0400
+     * @tc.number SUB_Request_Agent_onResponse_0400
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_onResponse_0400', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_Request_Agent_onResponse_0400 is starting-----------------------');
@@ -1087,13 +1087,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_0500
-     * @tc.name: supports the response header of the listening task.
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_onResponse_0500
+     * @tc.number SUB_Request_Agent_onResponse_0500
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_onResponse_0500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0500 is starting-----------------------");
@@ -1142,13 +1142,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_0600
-     * @tc.name: supports the response header of the listening task.
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Agent_onResponse_0600
+     * @tc.number SUB_Request_Agent_onResponse_0600
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Agent_onResponse_0600', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0600 is starting-----------------------");
@@ -1179,13 +1179,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_0700
-     * @tc.name: supports the response header of the listening task.
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_onResponse_0700
+     * @tc.number SUB_Request_Agent_onResponse_0700
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_onResponse_0700', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0700 is starting-----------------------");
@@ -1240,13 +1240,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_proxy_0200
-     * @tc.name: incorrect parameters of the upload proxy
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_proxy_0200
+     * @tc.number SUB_Request_Agent_proxy_0200
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_proxy_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_proxy_0200 is starting-----------------------");
@@ -1273,14 +1273,14 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-    * @tc.number: SUB_Request_Agent_proxy_0400
-    * @tc.name: SUB_Request_Agent_proxy_0400
-    * @tc.desc: incorrect parameters of the download proxy
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   SUB_Request_Agent_proxy_0400
+     * @tc.number SUB_Request_Agent_proxy_0400
+     * @tc.desc   incorrect parameters of the download proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Request_Agent_proxy_0400', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_Request_Agent_proxy_0400 is starting-----------------------');
       let config:request.agent.Config = {
@@ -1306,13 +1306,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_ErrorDetailed_0100
-     * @tc.name: SUB_Request_Agent_ErrorDetailed_0100
-     * @tc.desc: incorrect error of PARAM
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_ErrorDetailed_0100
+     * @tc.number SUB_Request_Agent_ErrorDetailed_0100
+     * @tc.desc   incorrect error of PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_ErrorDetailed_0100', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_Request_Agent_ErrorDetailed_0100 is starting-----------------------');
@@ -1348,13 +1348,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TrafficStatistics_0200
-     * @tc.name: SUB_Request_Agent_TrafficStatistics_0200
-     * @tc.desc: incorrect error of PARAM
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_TrafficStatistics_0200
+     * @tc.number SUB_Request_Agent_TrafficStatistics_0200
+     * @tc.desc   incorrect error of PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TrafficStatistics_0200', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_Request_Agent_TrafficStatistics_0200 is starting-----------------------');
@@ -1420,12 +1420,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Agent_ContinueDown_0300
      * @tc.number SUB_Request_Agent_ContinueDown_0300
-     * @tc.name SUB_Request_Agent_ContinueDown_0300
-     * @tc.desc  After the download is completed, resume the breakpoint transmission
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   After the download is completed, resume the breakpoint transmission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_ContinueDown_0300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_ContinueDown_0300 is starting-----------------------");
@@ -1473,12 +1473,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Agent_ContinueDown_0310
      * @tc.number SUB_Request_Agent_ContinueDown_0310
-     * @tc.name SUB_Request_Agent_ContinueDown_0310
-     * @tc.desc  After the download is completed, resume the breakpoint transmission
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   After the download is completed, resume the breakpoint transmission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_ContinueDown_0310', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_ContinueDown_0310 is starting-----------------------");
@@ -1522,12 +1522,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Agent_ContinueDown_0500
      * @tc.number SUB_Request_Agent_ContinueDown_0500
-     * @tc.name SUB_Request_Agent_ContinueDown_0500
-     * @tc.desc  download task
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_ContinueDown_0500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_ContinueDown_0500 is starting-----------------------");
@@ -1575,13 +1575,13 @@ export default function requestConfigSavesTest() {
       });
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_PauseError_callback_0100
-     * @tc.name: SUB_Request_Agent_PauseError_callback_0100
-     * @tc.desc: pause errcode.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_PauseError_callback_0100
+     * @tc.number SUB_Request_Agent_PauseError_callback_0100
+     * @tc.desc   pause errcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_PauseError_callback_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_PauseError_callback_0100 is starting-----------------------");
@@ -1620,13 +1620,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_PauseError_promise_0100
-     * @tc.name: SUB_Request_Agent_PauseError_promise_0100
-     * @tc.desc: pause errcode.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_PauseError_promise_0100
+     * @tc.number SUB_Request_Agent_PauseError_promise_0100
+     * @tc.desc   pause errcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_PauseError_promise_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_PauseError_promise_0100 is starting-----------------------");
@@ -1657,13 +1657,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_ResumeError_callback_0100
-     * @tc.name: SUB_Request_Agent_ResumeError_callback_0100
-     * @tc.desc: resume errcode.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_ResumeError_callback_0100
+     * @tc.number SUB_Request_Agent_ResumeError_callback_0100
+     * @tc.desc   resume errcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_ResumeError_callback_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_ResumeError_callback_0100 is starting-----------------------");
@@ -1702,13 +1702,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_ResumeError_promise_0100
-     * @tc.name: SUB_Request_Agent_ResumeError_promise_0100
-     * @tc.desc: resume errcode.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_ResumeError_promise_0100
+     * @tc.number SUB_Request_Agent_ResumeError_promise_0100
+     * @tc.desc   resume errcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_ResumeError_promise_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_ResumeError_promise_0100 is starting-----------------------");
@@ -1739,13 +1739,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_StopError_callback_0100
-     * @tc.name: SUB_Request_Agent_StopError_callback_0100
-     * @tc.desc: stop errcode.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_StopError_callback_0100
+     * @tc.number SUB_Request_Agent_StopError_callback_0100
+     * @tc.desc   stop errcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_StopError_callback_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_StopError_callback_0100 is starting-----------------------");
@@ -1784,13 +1784,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_StopError_promise_0100
-     * @tc.name: SUB_Request_Agent_StopError_promise_0100
-     * @tc.desc: stop errcode.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_StopError_promise_0100
+     * @tc.number SUB_Request_Agent_StopError_promise_0100
+     * @tc.desc   stop errcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_StopError_promise_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_StopError_promise_0100 is starting-----------------------");
@@ -1821,13 +1821,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Download_minSped_0100
-     * @tc.name: SUB_Request_Download_minSped_0100
-     * @tc.desc: speed error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Download_minSped_0100
+     * @tc.number SUB_Request_Download_minSped_0100
+     * @tc.desc   speed error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_minSped_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_minSped_0100 is starting-----------------------");
@@ -1862,13 +1862,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Download_minSped_0200
-     * @tc.name: SUB_Request_Download_minSped_0200
-     * @tc.desc: duration error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Download_minSped_0200
+     * @tc.number SUB_Request_Download_minSped_0200
+     * @tc.desc   duration error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_minSped_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_minSped_0200 is starting-----------------------");
@@ -1903,13 +1903,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Download_minSped_0400
-     * @tc.name: SUB_Request_Download_minSped_0400
-     * @tc.desc: minSpeed less duration.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Download_minSped_0400
+     * @tc.number SUB_Request_Download_minSped_0400
+     * @tc.desc   minSpeed less duration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Download_minSped_0400', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_minSped_0400 is starting-----------------------");
@@ -1952,13 +1952,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Download_minSped_0900
-     * @tc.name: SUB_Request_Download_minSped_0900
-     * @tc.desc: maxSpeed less than minSpeed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Download_minSped_0900
+     * @tc.number SUB_Request_Download_minSped_0900
+     * @tc.desc   maxSpeed less than minSpeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_minSped_0900', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_minSped_0900 is starting-----------------------");
@@ -1995,13 +1995,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Download_minSped_1000
-     * @tc.name: SUB_Request_Download_minSped_1000
-     * @tc.desc: minSpeed right.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Download_minSped_1000
+     * @tc.number SUB_Request_Download_minSped_1000
+     * @tc.desc   minSpeed right.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Download_minSped_1000', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_minSped_1000 is starting-----------------------");
@@ -2045,13 +2045,13 @@ export default function requestConfigSavesTest() {
     });
 
 
-    /*
-     * @tc.number: SUB_Request_Download_minSped_1100
-     * @tc.name: SUB_Request_Download_minSped_1100
-     * @tc.desc: minSpeed right.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Request_Download_minSped_1100
+     * @tc.number SUB_Request_Download_minSped_1100
+     * @tc.desc   minSpeed right.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Download_minSped_1100', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_minSped_1100 is starting-----------------------");
@@ -2095,12 +2095,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_off_faultOccur_0100
-     * @tc.name    SUB_Request_Download_off_faultOccur_0100
-     * @tc.desc    on faultOccur.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_off_faultOccur_0100
+     * @tc.number SUB_Request_Download_off_faultOccur_0100
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_off_faultOccur_0100', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_off_faultOccur_0100 is starting-----------------------");
@@ -2149,12 +2149,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_off_faultOccur_0200
-     * @tc.name    SUB_Request_Download_off_faultOccur_0200
-     * @tc.desc    on faultOccur.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_off_faultOccur_0200
+     * @tc.number SUB_Request_Download_off_faultOccur_0200
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_off_faultOccur_0200', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_off_faultOccur_0200 is starting-----------------------");
@@ -2205,12 +2205,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_on_faultOccur_0300
-     * @tc.name    SUB_Request_Download_on_faultOccur_0300
-     * @tc.desc    on faultOccur.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_on_faultOccur_0300
+     * @tc.number SUB_Request_Download_on_faultOccur_0300
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_on_faultOccur_0300', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_on_faultOccur_0300 is starting-----------------------");
@@ -2258,12 +2258,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_timeOut_0200
-     * @tc.name    SUB_Request_Download_timeOut_0200
-     * @tc.desc    connectionTimeout error.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_timeOut_0200
+     * @tc.number SUB_Request_Download_timeOut_0200
+     * @tc.desc   connectionTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_timeOut_0200', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_timeOut_0200 is starting-----------------------");
@@ -2294,12 +2294,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_timeOut_0300
-     * @tc.name    SUB_Request_Download_timeOut_0300
-     * @tc.desc    totalTimeout error.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_timeOut_0300
+     * @tc.number SUB_Request_Download_timeOut_0300
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_timeOut_0300', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_timeOut_0300 is starting-----------------------");
@@ -2330,12 +2330,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_timeOut_0400
-     * @tc.name    SUB_Request_Download_timeOut_0400
-     * @tc.desc    totalTimeout error.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_timeOut_0400
+     * @tc.number SUB_Request_Download_timeOut_0400
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_timeOut_0400', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_timeOut_0400 is starting-----------------------");
@@ -2366,12 +2366,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_timeOut_0500
-     * @tc.name    SUB_Request_Download_timeOut_0500
-     * @tc.desc    totalTimeout error.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_timeOut_0500
+     * @tc.number SUB_Request_Download_timeOut_0500
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_timeOut_0500', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_timeOut_0500 is starting-----------------------");
@@ -2402,12 +2402,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_timeOut_0600
-     * @tc.name    SUB_Request_Download_timeOut_0600
-     * @tc.desc    totalTimeout error.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_timeOut_0600
+     * @tc.number SUB_Request_Download_timeOut_0600
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_timeOut_0600', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_timeOut_0600 is starting-----------------------");
@@ -2445,12 +2445,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Download_visibility_1200
      * @tc.number SUB_Request_Download_visibility_1200
-     * @tc.name: SUB_Request_Download_visibility_1200
-     * @tc.desc visibility is three
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.desc   visibility is three
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1200 is starting-----------------------");
@@ -2485,12 +2485,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Download_visibility_1300
      * @tc.number SUB_Request_Download_visibility_1300
-     * @tc.name: SUB_Request_Download_visibility_1300
-     * @tc.desc visibility is undefined
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.desc   visibility is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1300 is starting-----------------------");
@@ -2525,12 +2525,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Download_visibility_1400
      * @tc.number SUB_Request_Download_visibility_1400
-     * @tc.name: SUB_Request_Download_visibility_1400
-     * @tc.desc visibility is 0
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.desc   visibility is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1400 is starting-----------------------");
@@ -2561,12 +2561,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number SUB_Request_Download_visibility_1500
      * @tc.name   SUB_Request_Download_visibility_1500
+     * @tc.number SUB_Request_Download_visibility_1500
      * @tc.desc   request group visibility is 3
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1500 is starting-----------------------");
@@ -2621,12 +2621,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number SUB_Request_Download_visibility_1600
      * @tc.name   SUB_Request_Download_visibility_1600
+     * @tc.number SUB_Request_Download_visibility_1600
      * @tc.desc   request group visibility is undefined
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1600', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1600 is starting-----------------------");
@@ -2651,12 +2651,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number SUB_Request_Download_visibility_1700
      * @tc.name   SUB_Request_Download_visibility_1700
+     * @tc.number SUB_Request_Download_visibility_1700
      * @tc.desc   request group visibility is undefined
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1700', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1700 is starting-----------------------");
@@ -2680,12 +2680,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Download_visibility_1800
      * @tc.number SUB_Request_Download_visibility_1800
-     * @tc.name: SUB_Request_Download_visibility_1800
-     * @tc.desc visibility is one
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.desc   visibility is one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1800', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1800 is starting-----------------------");
@@ -2720,12 +2720,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_Download_visibility_1900
      * @tc.number SUB_Request_Download_visibility_1900
-     * @tc.name: SUB_Request_Download_visibility_1900
-     * @tc.desc visibility is two
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.desc   visibility is two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_1900', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_1900 is starting-----------------------");
@@ -2760,12 +2760,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number SUB_Request_Download_visibility_2000
      * @tc.name   SUB_Request_Download_visibility_2000
+     * @tc.number SUB_Request_Download_visibility_2000
      * @tc.desc   request group visibility is one
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_2000', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_2000 is starting-----------------------");
@@ -2820,12 +2820,12 @@ export default function requestConfigSavesTest() {
     });
 
     /**
-     * @tc.number SUB_Request_Download_visibility_2100
      * @tc.name   SUB_Request_Download_visibility_2100
+     * @tc.number SUB_Request_Download_visibility_2100
      * @tc.desc   request group visibility is two
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_visibility_2100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_visibility_2100 is starting-----------------------");
@@ -2879,13 +2879,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_NotificationrJumping_0800
-     * @tc.name: SUB_Request_Agent_NotificationrJumping_0800
-     * @tc.desc: wantAgent test.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Request_Agent_NotificationrJumping_0800
+     * @tc.number SUB_Request_Agent_NotificationrJumping_0800
+     * @tc.desc   wantAgent test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Request_Agent_NotificationrJumping_0800', Level.LEVEL3, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_NotificationrJumping_0800 is starting-----------------------");
@@ -2942,13 +2942,13 @@ export default function requestConfigSavesTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_NotificationrJumping_0900
-     * @tc.name: SUB_Request_Agent_NotificationrJumping_0900
-     * @tc.desc: wantAgent is undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Request_Agent_NotificationrJumping_0900
+     * @tc.number SUB_Request_Agent_NotificationrJumping_0900
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Request_Agent_NotificationrJumping_0900', Level.LEVEL3, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_NotificationrJumping_0900 is starting-----------------------");
