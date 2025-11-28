@@ -14,47 +14,32 @@
  * limitations under the License.
  */
 
-// import ActionSheet1 from './ActionSheetTest/ActionSheet1.test.ets';
-// import ActionSheet2 from './ActionSheetTest/ActionSheet2.test.ets';
-// import ActionSheet3 from './ActionSheetTest/ActionSheet3.test.ets';
-// import AlertDialog1 from './AlertDialogTest/AlertDialog1.test.ets';
-// import AlertDialog2 from './AlertDialogTest/AlertDialog2.test.ets';
-// import AlertDialog3 from './AlertDialogTest/AlertDialog3.test.ets';
-// import CustomDialog1 from './CustomDialogTest/CustomDialog1.test.ets';
-// import CustomDialog2 from './CustomDialogTest/CustomDialog2.test.ets';
-// import CustomDialog3 from './CustomDialogTest/CustomDialog3.test.ets';
-// import openCustomDialog1 from './openCustomDialogTest/openCustomDialog1.test.ets';
-// import openCustomDialog2 from './openCustomDialogTest/openCustomDialog2.test.ets';
-// import openCustomDialog3 from './openCustomDialogTest/openCustomDialog3.test.ets';
-// import closeCustomDialog from './promptActionTest/closeCustomDialog.test';
-// import openCustomDialog from './promptActionTest/openCustomDialog.test';
-// import updateCustomDialog from './promptActionTest/updateCustomDialog.test';
-// import onHeightDidChange from './onHeightDidChange.test';
-//
-// import CloseCustomDialogTest from './CustomDialogTest/UIContextTest/CloseCustomDialog.test.ets';
-// import openCustomDialogTest from './CustomDialogTest/UIContextTest/OpenCustomDialog.test.ets';
-// import dialogApi from './Dialog/dialogApi.test';
-// import CustomDialogRouter from './CustomDialogTest/CustomDialogRouter.test.ets';
-// import menuItemDivider from './Menu/menuItemDivider.test.ets';
-// import IconApiTest from './MenuTest/MenuApiTest/IconApiTest.test';
-// import menuItemGroupDivider from './Menu/menuItemGroupDivider.test.ets';
-// import subMenuExpandingMode from './Menu/subMenuExpandingMode.test.ets';
-// import SubMenuExpandingModeTest_SIDE from './MenuTest/MenuApiTest/SubMenuExpandingModeTest_SIDE.test';
-// import SubMenuExpandingModeTest_EMBEDDED from './MenuTest/MenuApiTest/SubMenuExpandingModeTest_EMBEDDED.test';
-// import closeBindSheetTest from './UIContextTest/closeBindSheetTest.test'
-// import openBindSheetTest from './UIContextTest/openBindSheetTest.test'
-// import updateBindSheetTest from './UIContextTest/updateBindSheetTest.test'
-// import uiCloseCustomDialogTest from './UIContextTest/uiCloseCustomDialogTest.test'
-// import uiOpenCustomDialogTest from './UIContextTest/uiOpenCustomDialogTest.test'
-// import uiUpdateCustomDialogTest from './UIContextTest/uiUpdateCustomDialogTest.test'
-// import subMenuExpandingModeTest_STACK_EXPAND from './MenuTest/MenuApiTest/subMenuExpandingModeTest_STACK_EXPAND.test';
-// import interstitialDialogActionTest from './Dialog/InterstitialDialogAction.test';
-// import showToastTest from './promptActionTest/showToast.test';
-// import PromptActionTest from './CustomDialogTest/KeyboardAvoidMode/PromptActionTest.test';
-// import arrowOffset from './popup/arrowOffset.test';
-// import showDialogTest from './promptActionTest/showDialogTest.test';
-// import menuTransition from './Menu/menuTransition.test';
-
+import ActionSheet1 from './ActionSheetTest/ActionSheet1.test.ets';
+import ActionSheet2 from './ActionSheetTest/ActionSheet2.test.ets';
+import ActionSheet3 from './ActionSheetTest/ActionSheet3.test.ets';
+import AlertDialog1 from './AlertDialogTest/AlertDialog1.test.ets';
+import AlertDialog2 from './AlertDialogTest/AlertDialog2.test.ets';
+import AlertDialog3 from './AlertDialogTest/AlertDialog3.test.ets';
+import openCustomDialog1 from './openCustomDialogTest/openCustomDialog1.test.ets';
+import openCustomDialog2 from './openCustomDialogTest/openCustomDialog2.test.ets';
+import openCustomDialog3 from './openCustomDialogTest/openCustomDialog3.test.ets';
+import closeCustomDialog from './promptActionTest/closeCustomDialog.test';
+import openCustomDialog from './promptActionTest/openCustomDialog.test';
+import updateCustomDialog from './promptActionTest/updateCustomDialog.test';
+import onHeightDidChange from './OnHeightDidChanges.test';
+import IconApiTest from './MenuTest/MenuApiTest/IconApiTest.test';
+import SubMenuExpandingModeTest_SIDE from './MenuTest/MenuApiTest/SubMenuExpandingModeTest_SIDE.test';
+import SubMenuExpandingModeTest_EMBEDDED from './MenuTest/MenuApiTest/SubMenuExpandingModeTest_EMBEDDED.test';
+import closeBindSheetTest from './UIContextTest/closeBindSheetTest.test'
+import openBindSheetTest from './UIContextTest/openBindSheetTest.test'
+import updateBindSheetTest from './UIContextTest/updateBindSheetTest.test'
+import uiCloseCustomDialogTest from './UIContextTest/uiCloseCustomDialogTest.test'
+import uiOpenCustomDialogTest from './UIContextTest/uiOpenCustomDialogTest.test'
+import uiUpdateCustomDialogTest from './UIContextTest/uiUpdateCustomDialogTest.test'
+import subMenuExpandingModeTest_STACK_EXPAND from './MenuTest/MenuApiTest/subMenuExpandingModeTest_STACK_EXPAND.test';
+import showToastTest from './promptActionTest/showToast.test';
+import arrowOffset from './popup/arrowOffset.test';
+import showDialogTest from './promptActionTest/showDialogTest.test';
 import CustomDialogTest from './CustomDialogTest/KeyboardAvoidMode/CustomDialogTest.test';
 import BaseDialogTest from './CustomDialogTest/KeyboardAvoidMode/BaseDialogTest.test';
 import UpdateCustomDialogTest from './CustomDialogTest/UIContextTest/UpdateCustomDialog.test.ets';
@@ -75,43 +60,30 @@ export default function testsuite() {
   UpdateCustomDialogTest();
   BaseDialogTest();
   CustomDialogTest();
-  // arrowOffset()
-  // showDialogTest()
-  // menuTransition()
-  // dialogApi();
-  // ActionSheet1();
-  // ActionSheet2();
-  // ActionSheet3();
-  // AlertDialog1();
-  // AlertDialog2();
-  // AlertDialog3();
-  // CustomDialog1();
-  // CustomDialog2();
-  // CustomDialog3();
-  // openCustomDialog1();
-  // openCustomDialog2();
-  // openCustomDialog3();
-  // onHeightDidChange();
-  // closeCustomDialog();
-  // openCustomDialog();
-  // updateCustomDialog();
-  // CloseCustomDialogTest();
-  // openCustomDialogTest();
-  // CustomDialogRouter();
-  // IconApiTest();
-  // menuItemDivider();
-  // menuItemGroupDivider();
-  // subMenuExpandingMode();
-  // SubMenuExpandingModeTest_SIDE();
-  // SubMenuExpandingModeTest_EMBEDDED();
-  // closeBindSheetTest();
-  // openBindSheetTest();
-  // updateBindSheetTest();
-  // uiCloseCustomDialogTest();
-  // uiOpenCustomDialogTest();
-  // uiUpdateCustomDialogTest();
-  // subMenuExpandingModeTest_STACK_EXPAND();
-  // interstitialDialogActionTest();
-  // showToastTest();
-  // PromptActionTest();
+  arrowOffset();
+  closeCustomDialog();
+  showDialogTest()
+  ActionSheet1();
+  ActionSheet2();
+  ActionSheet3();
+  AlertDialog1();
+  AlertDialog2();
+  AlertDialog3();
+  openCustomDialog1();
+  openCustomDialog2();
+  openCustomDialog3();
+  onHeightDidChange();
+  openCustomDialog();
+  updateCustomDialog();
+  IconApiTest();
+  SubMenuExpandingModeTest_SIDE();
+  SubMenuExpandingModeTest_EMBEDDED();
+  closeBindSheetTest();
+  openBindSheetTest();
+  updateBindSheetTest();
+  uiCloseCustomDialogTest();
+  uiOpenCustomDialogTest();
+  uiUpdateCustomDialogTest();
+  subMenuExpandingModeTest_STACK_EXPAND();
+  showToastTest();
 }
