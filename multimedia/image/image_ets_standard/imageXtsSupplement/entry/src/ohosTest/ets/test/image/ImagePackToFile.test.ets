@@ -60,7 +60,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -91,7 +91,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -122,7 +122,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -155,7 +155,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = await image.createImageSource(array, ops);
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -188,7 +188,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = await image.createImageSource(array, ops);
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -221,7 +221,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = await image.createImageSource(array, ops);
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -252,7 +252,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -283,7 +283,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -314,7 +314,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -345,7 +345,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -376,7 +376,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -407,7 +407,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -438,7 +438,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -469,7 +469,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -500,7 +500,7 @@ export default function imagePackerPackToFileTest() {
         const imageSourceApi: image.ImageSource = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(imageSourceApi,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await imageSourceApi.release();
         await imagePackerApi.release();
         done();
@@ -531,7 +531,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -562,7 +562,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -593,7 +593,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -627,7 +627,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = await image.createPixelMap(color, opts);
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -661,7 +661,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = await image.createPixelMap(color, opts);
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -695,7 +695,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = await image.createPixelMap(color, opts);
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -726,7 +726,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -757,7 +757,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -788,7 +788,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -819,7 +819,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -850,7 +850,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -881,7 +881,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -912,7 +912,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = '' as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -943,7 +943,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = null as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
@@ -974,7 +974,7 @@ export default function imagePackerPackToFileTest() {
         const pixelmap: image.PixelMap = undefined as ESObject;
         const imagePackerApi: image.ImagePacker = await image.createImagePacker();
         await imagePackerApi.packToFile(pixelmap,file.fd, packOpts);
-        expect(imagePackerApi !== undefined).assertTrue()
+        except().assertFail;
         await pixelmap.release();
         await imagePackerApi.release();
         done();
