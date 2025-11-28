@@ -33,14 +33,12 @@ export default function atomicFileTest() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_atomicFile_test start');
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_000
      * @tc.number SUB_DF_ATOMIC_FILE_0000
-     * @tc.name fileIO_test_atomicFile_static_000
-     * @tc.desc Test the startWrite() interface of class AtomicFile
-     * Create a file when file path is "", throw exception
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the startWrite() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_000 start');
@@ -54,14 +52,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_001
      * @tc.number SUB_DF_ATOMIC_FILE_0100
-     * @tc.name fileIO_test_atomicFile_static_001
-     * @tc.desc Test the startWrite() interface of class AtomicFile
-     * Create a file when file is exist, overwrite original file
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the startWrite() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_001 start');
@@ -81,14 +77,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_003
      * @tc.number SUB_DF_ATOMIC_FILE_0300
-     * @tc.name fileIO_test_atomicFile_static_003
-     * @tc.desc Test the startWrite() interface of class AtomicFile
-     * Create a file when path is not exist, create a new file
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the startWrite() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_003 start');
@@ -104,14 +98,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_004
      * @tc.number SUB_DF_ATOMIC_FILE_0400
-     * @tc.name fileIO_test_atomicFile_static_004
-     * @tc.desc Test the readFully() interface of class AtomicFile
-     * Open an existing file, read content
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the readFully() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_004 start');
@@ -132,14 +124,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_005
      * @tc.number SUB_DF_ATOMIC_FILE_0500
-     * @tc.name fileIO_test_atomicFile_static_005
-     * @tc.desc Test the openRead() interface of class AtomicFile
-     * Open an existing file, create readStream read content
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the openRead() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_005 start');
@@ -165,14 +155,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_006
      * @tc.number SUB_DF_ATOMIC_FILE_0600
-     * @tc.name fileIO_test_atomicFile_static_006
-     * @tc.desc Test the failedWrite() interface of class AtomicFile
-     * Open an existing file, create writeStream write content, call failedWrite will preserve source file
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the failedWrite() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_006 start');
@@ -197,14 +185,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_007
      * @tc.number SUB_DF_ATOMIC_FILE_0700
-     * @tc.name fileIO_test_atomicFile_static_007
-     * @tc.desc Test the function interface of class AtomicFile
-     * readFully() read one file, startWrite() create a new file, write() write content, finishWrite() close file
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the function interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_007 start');
@@ -239,14 +225,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_008
      * @tc.number SUB_DF_ATOMIC_FILE_0800
-     * @tc.name fileIO_test_atomicFile_static_008
-     * @tc.desc Test the delete() interface of class AtomicFile
-     * startWrite() create one nwe file, delete() will remove the new file
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the delete() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_008 start');
@@ -270,14 +254,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_009
      * @tc.number SUB_DF_ATOMIC_FILE_0900
-     * @tc.name fileIO_test_atomicFile_static_009
-     * @tc.desc Test the getBaseFile() interface of class AtomicFile
-     * AtomicFile() create one file name, getBaseFile() will get the file name
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the getBaseFile() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_009 start');
@@ -293,14 +275,12 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.name   fileIO_test_atomicFile_static_010
      * @tc.number SUB_DF_ATOMIC_FILE_1000
-     * @tc.name fileIO_test_atomicFile_static_010
-     * @tc.desc Test the getBaseFile() interface of class AtomicFile
-     * AtomicFile() create one file name, getBaseFile() will get the file name
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the getBaseFile() interface of class AtomicFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_atomicFile_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_010 start');

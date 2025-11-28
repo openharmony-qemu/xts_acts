@@ -33,13 +33,12 @@ export default function FileManagementFileUri(){
     })
 
     /**
+     * @tc.name   FileUriErrCodeErrOk001
      * @tc.number SUB_FILEURI_ERRCODE_ERR_OK_0100
-     * @tc.name FileUriErrCodeErrOk001
-     * @tc.desc test ERR_OK
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriErrCodeErrOk001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -54,13 +53,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriErrCodeErrInvalidParameter001
      * @tc.number SUB_FILEURI_ERRCODE_ERR_INVALIDPARAMETER_0100
-     * @tc.name FileUriErrCodeErrInvalidParameter001
-     * @tc.desc test ERR_INVALID_PARAMETER
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriErrCodeErrInvalidParameter001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -75,13 +73,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriErrCodeErrUnknown001
      * @tc.number SUB_FILEURI_ERRCODE_ERR_UNKNOWN_0100
-     * @tc.name FileUriErrCodeErrUnknown001
-     * @tc.desc test ERR_UNKNOWN
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriErrCodeErrUnknown001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -96,13 +93,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriErrCodeErrEnoent001
      * @tc.number SUB_FILEURI_ERRCODE_ERR_ENOENT_0100
-     * @tc.name FileUriErrCodeErrEnoent001
-     * @tc.desc test ERR_ENOENT
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_ENOENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriErrCodeErrEnoent001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -117,13 +113,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetUriFromPath001
      * @tc.number SUB_FILEURI_GETURIFROMPATH_0100
-     * @tc.name FileUriGetUriFromPath001
-     * @tc.desc test OH_FileUri_GetUriFromPath
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetUriFromPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetUriFromPath001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -138,13 +133,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetUriFromPath002
      * @tc.number SUB_FILEURI_GETURIFROMPATH_0200
-     * @tc.name FileUriGetUriFromPath002
-     * @tc.desc test OH_FileUri_GetUriFromPath
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetUriFromPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetUriFromPath002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -159,13 +153,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetUriFromPath003
      * @tc.number SUB_FILEURI_GETURIFROMPATH_0300
-     * @tc.name FileUriGetUriFromPath003
-     * @tc.desc test OH_FileUri_GetUriFromPath
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetUriFromPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetUriFromPath003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -180,13 +173,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetPathFromUri001
      * @tc.number SUB_FILEURI_GETPATHFROMURI_0100
-     * @tc.name FileUriGetPathFromUri001
-     * @tc.desc test OH_FileUri_GetPathFromUri
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetPathFromUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetPathFromUri001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -201,13 +193,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetPathFromUri002
      * @tc.number SUB_FILEURI_GETPATHFROMURI_0200
-     * @tc.name FileUriGetPathFromUri002
-     * @tc.desc test OH_FileUri_GetPathFromUri
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetPathFromUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetPathFromUri002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -222,13 +213,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetPathFromUri003
      * @tc.number SUB_FILEURI_GETPATHFROMURI_0300
-     * @tc.name FileUriGetPathFromUri003
-     * @tc.desc test OH_FileUri_GetPathFromUri
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetPathFromUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetPathFromUri003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -243,13 +233,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetFullDirectoryUri001
      * @tc.number SUB_FILEURI_GETFULLDIRECTORYURI_0100
-     * @tc.name FileUriGetFullDirectoryUri001
-     * @tc.desc test OH_FileUri_GetFullDirectoryUri
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetFullDirectoryUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetFullDirectoryUri001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -264,13 +253,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetFullDirectoryUri002
      * @tc.number SUB_FILEURI_GETFULLDIRECTORYURI_0200
-     * @tc.name FileUriGetFullDirectoryUri002
-     * @tc.desc test OH_FileUri_GetFullDirectoryUri
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetFullDirectoryUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetFullDirectoryUri002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -285,13 +273,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetFullDirectoryUri003
      * @tc.number SUB_FILEURI_GETFULLDIRECTORYURI_0300
-     * @tc.name FileUriGetFullDirectoryUri003
-     * @tc.desc test OH_FileUri_GetFullDirectoryUri
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetFullDirectoryUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetFullDirectoryUri003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -306,13 +293,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetFileName001
      * @tc.number SUB_FILEURI_GETFILENAME_0100
-     * @tc.name FileUriGetFileName001
-     * @tc.desc test OH_FileUri_GetFileName
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetFileName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetFileName001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -327,13 +313,12 @@ export default function FileManagementFileUri(){
     });
 
     /**
+     * @tc.name   FileUriGetFileName002
      * @tc.number SUB_FILEURI_GETFILENAME_0200
-     * @tc.name FileUriGetFileName002
-     * @tc.desc test OH_FileUri_GetFileName
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileUri_GetFileName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileUriGetFileName002', Level.LEVEL1, async (done: Function) => {
       try {
