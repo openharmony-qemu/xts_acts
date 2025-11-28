@@ -168,10 +168,12 @@ export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject)
         mirror: false
     }
     //使用当前拍照设置进行拍照。
+    console.info(`${TAG} start take first photo`);
     await photoOutput.capture(photoCaptureSetting);
-    await sleep(5000);
+    await sleep(10000);
+    console.info(`${TAG} start take second photo`);
     await photoOutput.capture(photoCaptureSetting);
-    await sleep(5000);
+    await sleep(10000);
     console.info(`${TAG} capture two images success`);
 }
 
