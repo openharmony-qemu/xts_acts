@@ -6,7 +6,7 @@ import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
 import bundleManager from '@ohos.bundle.bundleManager';
 let commonTag: string = "GetUserGrantedEnableBundles"
-let bundleName: string = "com.huawei.actsNotificationAnsThreePartyWatchThirdParty"
+let bundleName: string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
 export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles3Test() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');

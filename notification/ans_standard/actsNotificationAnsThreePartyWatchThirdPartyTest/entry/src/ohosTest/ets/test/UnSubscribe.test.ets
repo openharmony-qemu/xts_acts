@@ -5,7 +5,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
 let commonTag: string = "UnSubscribe"
-let bundleName:string = "com.huawei.actsNotificationAnsThreePartyWatchThirdParty"
+let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
 export default function actsNotificationAnsThreePartyUnSubscribeTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
@@ -82,6 +82,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
      */
     it('Sub_Notification_Ans_ThreePartyWatch_1014', Level.LEVEL1, async (done: Function) => {
       let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1014 ";
+      let count : number = 0
       let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
         {
           addr: '01:23:45:67:89:AB', // 使用动态获取的蓝牙地址
@@ -116,7 +117,8 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       // 4、再次调用取消订阅接口unsubscribe(): Promise<void>
       await notificationExtensionSubscription.unsubscribe().then(() => {
         console.info(TAG+"unsubscribe successtttttttt1111");
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done();
       }).catch((err: BusinessError) => {
         console.error(TAG+`unubscribe fail11111111: ${JSON.stringify(err)}`);

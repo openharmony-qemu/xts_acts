@@ -15,7 +15,7 @@
 
 {
     "app": {
-        "bundleName": "com.huawei.actsNotificationAnsThreePartyWatchThirdPartyNoAbility",
+        "bundleName": "com.example.actsNotificationAnsThreePartyWatchThirdPartyNoAbility",
         "vendor": "example",
         "versionCode": 1000000,
         "versionName": "1.0.0",

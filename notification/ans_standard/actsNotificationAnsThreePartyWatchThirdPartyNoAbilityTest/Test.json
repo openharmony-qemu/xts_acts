@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "com.huawei.actsNotificationAnsThreePartyWatchThirdPartyNoAbility",
+        "bundle-name": "com.example.actsNotificationAnsThreePartyWatchThirdPartyNoAbility",
         "module-name": "entry_test",
         "shell-timeout": "600000",
         "testcase-timeout": 70000
@@ -19,7 +19,7 @@
         {
             "type":"ShellKit",
             "run-command":[
-                "anm setting -e com.huawei.actsNotificationAnsThreePartyWatchThirdPartyNoAbility:0:1"
+                "anm setting -e com.example.actsNotificationAnsThreePartyWatchThirdPartyNoAbility:0:1"
             ],
             "cleanup-apps":true
         }

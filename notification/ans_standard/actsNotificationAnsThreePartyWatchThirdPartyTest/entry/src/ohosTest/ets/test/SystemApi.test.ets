@@ -5,7 +5,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
 let commonTag: string = "SystemApi";
-let bundleName: string = "com.huawei.actsNotificationAnsThreePartyWatchThirdParty"; // 3方应用包名
+let bundleName: string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"; // 3方应用包名
 // 被查询的穿戴app包名（假设与测试应用包名一致，可根据实际情况修改）
 const wearableBundle: notificationExtensionSubscription.BundleOption = {
   bundle: bundleName

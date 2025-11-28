@@ -7,7 +7,7 @@ import Base, { BusinessError } from '@ohos.base';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let commonTag: string = "OpenSubscriptionSettings"
-let bundleName:string = "com.huawei.actsNotificationAnsThreePartyWatchThirdParty"
+let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
 export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');

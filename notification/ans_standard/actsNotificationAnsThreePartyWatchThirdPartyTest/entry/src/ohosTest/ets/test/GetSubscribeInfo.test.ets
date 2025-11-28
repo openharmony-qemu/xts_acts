@@ -4,7 +4,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
 let commonTag: string = "GetSubscribeInfo"
-let bundleName:string = "com.huawei.actsNotificationAnsThreePartyWatchThirdParty"
+let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
 export default function actsNotificationAnsThreePartyGetSubscribeInfoTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
