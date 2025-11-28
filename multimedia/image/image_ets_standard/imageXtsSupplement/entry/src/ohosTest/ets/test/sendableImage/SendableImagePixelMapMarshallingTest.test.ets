@@ -32,7 +32,6 @@ async function marshallingTest(done: Function, testName: string ,callback :(pixe
   const pixelMap = await image.createPixelMap(readBuffer, opts);
   if (pixelMap !== undefined) {
     callback(pixelMap);
-    console.info(TAG, testName, '1111111111');
   }
 
 }
@@ -72,6 +71,7 @@ export default function PixelMapMarshallingTest() {
         await marshallingTest(done, testName,  async (pixelMap) => {
           pixelMap.marshalling(null);
         });
+        except().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, ' marshalling error', error.message, error.code);
@@ -93,6 +93,7 @@ export default function PixelMapMarshallingTest() {
         await marshallingTest(done, testName,  async (pixelMap) => {
           pixelMap.marshalling(undefined);
         });
+        except().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, ' marshalling error', error.message, error.code);
@@ -115,6 +116,7 @@ export default function PixelMapMarshallingTest() {
           let data: rpc.MessageSequence = rpc.MessageSequence.create();
           pixelMap.marshalling(data);
         });
+        except().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, ' marshalling error', error.message, error.code);
