@@ -103,7 +103,7 @@ export default function actslocationTest() {
                 expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER == 1)
                 expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT == 2)
 
-                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.CONSTELLATION_CATEGORY_UNKNOWN == 0)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_NULL == 0)
                 expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_EPHEMERIS_DATA_EXIST == 1)
                 expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_ALMANAC_DATA_EXIST == 2)
                 expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_USED_IN_FIX == 4)
@@ -143,7 +143,7 @@ export default function actslocationTest() {
                 expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
                 expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED == -3)
                 expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_SWITCH_OFF == -4)
-                expect(true).assertEqual(geoLocationManager.LocationError.LLOCATING_FAILED_INTERNET_ACCESS_FAILURE == -5)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_INTERNET_ACCESS_FAILURE == -5)
 
                 done();
 
@@ -2467,46 +2467,13 @@ export default function actslocationTest() {
       */
       it('Sub_Location_GeofenceRequest_Property_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
         let requestInfo: geoLocationManager.GeofenceRequest = {
-          'scenario': 0x301,
+          'scenario': geoLocationManager.LocationRequestScenario.UNSET,
           "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
         };
         expect(requestInfo.scenario != null).assertTrue();
         expect(requestInfo.geofence != null).assertTrue();
         done();
       })   
-
-
-      /*
-      * @tc.number: Sub_Location_PoiInfo_Property_0100
-      * @tc.name: Sub_Location_PoiInfo_Property_0100
-      * @tc.desc: offBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
-      * @tc.level: Level 0
-      * @tc.type: Function
-      * @tc.size: MEDIUMTEST
-      */
-      it('Sub_Location_PoiInfo_Property_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
-        try {
-          if (geoLocationManager.isPoiServiceSupported()) {
-            geoLocationManager.getPoiInfo().then((poiInfo) => {
-              if (poiInfo !== undefined) {
-                expect(poiInfo.poiArray != null).assertTrue();
-                expect(typeof poiInfo.timestamp	).assertEqual("number")
-              }
-            })
-          }
-        } catch (error) {
-          console.error("getPoiInfo errCode:" ", errMessage:");
-        }
-      })
-
-
-
-
-
-
-
-
-
 
 
 
