@@ -1275,12 +1275,17 @@ export default function preferenceTest() {
      * @tc.level  LEVEL2
      */
     it('PreferencesBaseDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await mPreferences.clear();
-      mPreferences.flushSync();
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_int');
       let baseInt: int = 123;
-      await mPreferences.put('base_int', baseInt);
-      const ret = mPreferences.getSync('base_int', 0);
+      await preferences.put('base_int', baseInt);
+      await preferences.flush();
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, value:" + baseInt);
+      let ret: int = preferences.getSync("base_int", 0);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, ret:" + ret);
       expect(baseInt).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, typeof(ret):" + typeof(ret));
+      expect(typeof(ret)).assertEqual("int");
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_int');
       done();
     })
 
@@ -1294,12 +1299,19 @@ export default function preferenceTest() {
      * @tc.level  LEVEL2
      */
     it('PreferencesBaseDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await mPreferences.clear();
-      mPreferences.flushSync();
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_double');
       let baseDouble: double = 1239999999.1;
-      await mPreferences.put('base_double', baseDouble);
-      const ret = mPreferences.getSync('base_double', 0.0);
+      await preferences.put('base_double', baseDouble);
+      await preferences.flush();
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType002 key base_double, value:" + baseDouble);
+      let ret = preferences.getSync("base_double", 0.0) as double;
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType002 key base_double, ret:" + ret);
       expect(baseDouble).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType002 key base_double, typeof(ret):" + typeof(ret));
+      expect(typeof(ret)).assertEqual("number");
+      let numberData: number = 777;
+      expect(true).assertEqual(typeof(ret) == typeof(numberData));
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_double');
       done();
     })
 
@@ -1313,12 +1325,17 @@ export default function preferenceTest() {
      * @tc.level  LEVEL2
      */
     it('PreferencesBaseDataType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await mPreferences.clear();
-      mPreferences.flushSync();
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_long');
       let baseLong: long = 123888888888;
-      await mPreferences.put('base_long', baseLong);
-      const ret = mPreferences.getSync('base_long', 0);
+      await preferences.put('base_long', baseLong);
+      await preferences.flush();
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType003 key base_long, value:" + baseLong);
+      let ret: long = preferences.getSync("base_long", 0);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType003 key base_long, ret:" + ret);
       expect(baseLong).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType003 key base_long, typeof(ret):" + typeof(ret));
+      expect(typeof(ret)).assertEqual("long");
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_long');
       done();
     })
   })
