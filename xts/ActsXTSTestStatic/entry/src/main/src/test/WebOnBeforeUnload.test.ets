@@ -54,7 +54,6 @@ export default function webOnBeforeUnload() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testOnBeforeUnloadStatic001
      * @tc.number SUB_WEB_ONBEFOREUNLOAD_0100
      * @tc.desc   test OnBeforeUnload when refresh
@@ -78,7 +77,6 @@ export default function webOnBeforeUnload() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testOnBeforeUnloadStatic002
      * @tc.number SUB_WEB_ONBEFOREUNLOAD_0200
      * @tc.desc   test OnBeforeUnload when loadUrl
