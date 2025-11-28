@@ -53,6 +53,11 @@ export default function imageJsTest() {
       return fdNumber;
     };
 
+    const getFilePath = async (fileName: string): Promise<string> => {
+      let filePath = filesDir + "/" + fileName;
+      return filePath;
+    }
+
     const getBuffer = (fileName: string) => {
       const filePath = filesDir + '/' + fileName;
       let file = fs.openSync(filePath);
@@ -2614,5 +2619,46 @@ export default function imageJsTest() {
         'SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_STATIC_0900', 'wrong_suffix_dng.jpg',
         'image/x-adobe-dng', 'CallbackNumber');
     });
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_STATIC_0100
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_STATIC_0100
+     * @tc.desc       1.test Image getDecodeSupportedFormats
+     * @tc.size       MediumTest
+     * @tc.type       Functional
+     * @tc.level      Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_STATIC_0100', Level.LEVEL0, async (done:() => void)=>{
+      let logger = "SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_STATIC_0100";
+      const srcSupportedFormatsList: Array<string> = image.getImageSourceSupportedFormats();
+      let filePath = await getFilePath("test.jpg");
+      const dstSupportedFormatsList: Array<string> = image.createImageSource(filePath)!.supportedFormats;
+      console.log(`${logger}, srcSupportedFormatsList: ` + JSON.stringify(srcSupportedFormatsList));
+      console.log(`${logger}, dstSupportedFormatsList: ` + JSON.stringify(dstSupportedFormatsList));
+      const ret = (JSON.stringify(srcSupportedFormatsList) == JSON.stringify(dstSupportedFormatsList));
+      console.log("compare result is: " + ret);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_STATIC_0100
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_STATIC_0100
+     * @tc.desc       1.test image getEncodeSupportedFormats
+     * @tc.size       MediumTest
+     * @tc.type       Functional
+     * @tc.level      Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_STATIC_0100', Level.LEVEL0, async (done:() => void)=>{
+      let logger = "SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_STATIC_0100";
+      const srcSupportedFormatsList: Array<string> = image.getImagePackerSupportedFormats();
+      const dstSupportedFormatsList: Array<string> = image.createImagePacker().supportedFormats;
+      console.log(`${logger}, srcSupportedFormatsList: ` + JSON.stringify(srcSupportedFormatsList));
+      console.log(`${logger}, dstSupportedFormatsList: ` + JSON.stringify(dstSupportedFormatsList));
+      const ret = (JSON.stringify(srcSupportedFormatsList) == JSON.stringify(dstSupportedFormatsList));
+      console.log("compare result is: " + ret);
+      expect(ret).assertTrue();
+      done();
+    })
   })
 }
