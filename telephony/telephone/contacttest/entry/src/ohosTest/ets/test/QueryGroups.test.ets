@@ -242,12 +242,12 @@ export default function QueryGroupsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_0100
-     * @tc.name       : testTelephonyContactQueryGroups0100
-     * @tc.desc       : Query all groups of contacts and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryGroups0100
+     * @tc.number SUB_Telephony_Contact_QueryGroups_0100
+     * @tc.desc   Query all groups of contacts and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryGroups0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups0100";
@@ -287,12 +287,12 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_0200
-     * @tc.name       : testTelephonyContactQueryGroups0200
-     * @tc.desc       : Query all groups of contacts and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryGroups0200
+     * @tc.number SUB_Telephony_Contact_QueryGroups_0200
+     * @tc.desc   Query all groups of contacts and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryGroups0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups0200";
@@ -332,12 +332,12 @@ export default function QueryGroupsTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_0400
-     * @tc.name       : testTelephonyContactQueryGroups0400
-     * @tc.desc       : Query all groups of contacts and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryGroups0400
+     * @tc.number SUB_Telephony_Contact_QueryGroups_0400
+     * @tc.desc   Query all groups of contacts and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryGroups0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups0400";
@@ -379,12 +379,12 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_0500
-     * @tc.name       : testTelephonyContactQueryGroups0500
-     * @tc.desc       : Query all groups of contacts and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryGroups0500
+     * @tc.number SUB_Telephony_Contact_QueryGroups_0500
+     * @tc.desc   Query all groups of contacts and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryGroups0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups0500";
@@ -422,12 +422,12 @@ export default function QueryGroupsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_0700
-     * @tc.name       : testTelephonyContactQueryGroups0700
-     * @tc.desc       : Query all groups of contacts and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryGroups0700
+     * @tc.number SUB_Telephony_Contact_QueryGroups_0700
+     * @tc.desc   Query all groups of contacts and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryGroups0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups0700";
@@ -469,12 +469,12 @@ export default function QueryGroupsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_1100
-     * @tc.name       : testTelephonyContactQueryGroups1100
-     * @tc.desc       : Query all groups of contacts and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryGroups1100
+     * @tc.number SUB_Telephony_Contact_QueryGroups_1100
+     * @tc.desc   Query all groups of contacts and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryGroups1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups1100";
@@ -516,12 +516,12 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_1200
-     * @tc.name       : testTelephonyContactQueryGroups1200
-     * @tc.desc       : Query all groups of contacts and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryGroups1200
+     * @tc.number SUB_Telephony_Contact_QueryGroups_1200
+     * @tc.desc   Query all groups of contacts and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryGroups1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups1200";
@@ -561,12 +561,12 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryGroups_1300
-     * @tc.name       : testTelephonyContactQueryGroups1300
-     * @tc.desc       : Query all groups of contacts and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryGroups1300
+     * @tc.number SUB_Telephony_Contact_QueryGroups_1300
+     * @tc.desc   Query all groups of contacts and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryGroups1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryGroups1300";

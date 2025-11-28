@@ -66,13 +66,13 @@ export default function Sim1Public() {
       });
     });
 
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetDefaultVoiceSimId_0100
-     * @tc.name   : testTelephonySimGetDefaultVoiceSimId_static_0100
-     * @tc.desc   : Obtain the SIM card ID of the default voice service. Use callback for asynchronous callback.Need to insert SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+    /**
+     * @tc.name   testTelephonySimGetDefaultVoiceSimId_static_0100
+     * @tc.number SUB_Telephony_Sim_GetDefaultVoiceSimId_0100
+     * @tc.desc   Obtain the SIM card ID of the default voice service. Use callback for asynchronous callback.Need to insert SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetDefaultVoiceSimId_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -134,13 +134,13 @@ export default function Sim1Public() {
         }
       });
 
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetDefaultVoiceSimId_0300
-     * @tc.name   : testTelephonySimGetDefaultVoiceSimId_static_0300
-     * @tc.desc   : Obtain the SIM card ID of the default voice service. Use Promise for asynchronous callback. Need to insert SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+    /**
+     * @tc.name   testTelephonySimGetDefaultVoiceSimId_static_0300
+     * @tc.number SUB_Telephony_Sim_GetDefaultVoiceSimId_0300
+     * @tc.desc   Obtain the SIM card ID of the default voice service. Use Promise for asynchronous callback. Need to insert SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetDefaultVoiceSimId_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -205,13 +205,13 @@ export default function Sim1Public() {
         }
       });
 
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_0700
-     * @tc.name   : testTelephonySimGetSimSpn_static_0700
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testTelephonySimGetSimSpn_static_0700
+     * @tc.number SUB_Telephony_Sim_GetSimSpn_0700
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetSimSpn_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -256,13 +256,13 @@ export default function Sim1Public() {
         done();
       });
       
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1500
-     * @tc.name   : testTelephonySimGetSimAuthentication_static_1500
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testTelephonySimGetSimAuthentication_static_1500
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1500
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetSimAuthentication_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -312,13 +312,13 @@ export default function Sim1Public() {
         }
       });
 
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1600
-     * @tc.name   : testTelephonySimGetSimAuthentication_static_1600
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testTelephonySimGetSimAuthentication_static_1600
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1600
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetSimAuthentication_static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -368,13 +368,13 @@ export default function Sim1Public() {
         }
       });
 
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetSimAuthentication_1700
-     * @tc.name   : testTelephonySimGetSimAuthentication_static_1700
-     * @tc.desc   : Performs SIM card authentication. Need to insert SIM card.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+    /**
+     * @tc.name   testTelephonySimGetSimAuthentication_static_1700
+     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1700
+     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetSimAuthentication_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -421,12 +421,12 @@ export default function Sim1Public() {
       });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_0300
-     * @tc.name   : testTelephonySimGetOpKey_static_0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testTelephonySimGetOpKey_static_0300
+     * @tc.number SUB_Telephony_Sim_GetOpKey_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetOpKey_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -473,12 +473,12 @@ export default function Sim1Public() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_0600
-     * @tc.name   : testTelephonySimGetOpKey_static_0600
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpKey_static_0600
+     * @tc.number SUB_Telephony_Sim_GetOpKey_0600
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetOpKey_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -526,12 +526,12 @@ export default function Sim1Public() {
       });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpKey_1000
-     * @tc.name   : testTelephonySimGetOpKey_static_1000
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpKey_static_1000
+     * @tc.number SUB_Telephony_Sim_GetOpKey_1000
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetOpKey_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -584,12 +584,12 @@ export default function Sim1Public() {
         }
       });
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpName_0100
-     * @tc.name   : testTelephonySimGetOpName_static_0100
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetOpName_static_0100
+     * @tc.number SUB_Telephony_Sim_GetOpName_0100
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetOpName_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -636,12 +636,12 @@ export default function Sim1Public() {
       });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetOpName_0300
-     * @tc.name   : testTelephonySimGetOpName_static_0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testTelephonySimGetOpName_static_0300
+     * @tc.number SUB_Telephony_Sim_GetOpName_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise asynchronous callbacks. Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetOpName_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -686,12 +686,12 @@ export default function Sim1Public() {
       });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_1200
-     * @tc.name   : testTelephonySimGetSimSpn_static_1200
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testTelephonySimGetSimSpn_static_1200
+     * @tc.number SUB_Telephony_Sim_GetSimSpn_1200
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use Promise for asynchronous callback.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetSimSpn_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -740,13 +740,13 @@ export default function Sim1Public() {
         }
       });
 
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetOpNameSync_0300
-     * @tc.name   : testTelephonySimGetOpNameSync_static_0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+    /**
+     * @tc.name   testTelephonySimGetOpNameSync_static_0300
+     * @tc.number SUB_Telephony_Sim_GetOpNameSync_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetOpNameSync_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -785,13 +785,13 @@ export default function Sim1Public() {
         }
       });
 
-    /*
-     * @tc.number : SUB_Telephony_Sim_GetOpKeySync_0300
-     * @tc.name   : testTelephonySimGetOpKeySync_static_0300
-     * @tc.desc   : Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+    /**
+     * @tc.name   testTelephonySimGetOpKeySync_static_0300
+     * @tc.number SUB_Telephony_Sim_GetOpKeySync_0300
+     * @tc.desc   Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonySimGetOpKeySync_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

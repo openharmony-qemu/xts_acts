@@ -47,12 +47,12 @@ export default function networkSecurityTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0100
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0100
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerification_static_0100
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification_0100
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNetworkMgrNetworkSecurityCertVerification_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0100';
@@ -85,12 +85,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0200
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0200
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerification_static_0200
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification_0200
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerification_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0200';
@@ -123,12 +123,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0300
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0300
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerification_static_0300
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification_0300
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerification_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0300';
@@ -162,12 +162,12 @@ export default function networkSecurityTest() {
 
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0700
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0700
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerification_static_0700
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification_0700
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerification_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0700';
@@ -200,12 +200,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0900
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0900
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerification_static_0900
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification_0900
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerification_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0900';
@@ -238,12 +238,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0100
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0100
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSync_static_0100
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0100
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0100';
@@ -276,12 +276,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0200
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0200
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSync_static_0200
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0200
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0200';
@@ -314,12 +314,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0300
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0300
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSync_static_0300
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0300
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0300';
@@ -352,12 +352,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0700
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0700
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSync_static_0700
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0700
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0700';
@@ -390,12 +390,12 @@ export default function networkSecurityTest() {
         });
 
         /**
-         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0900
-         * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0900
-         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSync_static_0900
+         * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0900
+         * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0900';

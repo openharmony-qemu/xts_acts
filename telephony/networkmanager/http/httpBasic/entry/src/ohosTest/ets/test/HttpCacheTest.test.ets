@@ -38,12 +38,12 @@ export default  function HttpCacheTest() {
   describe('HttpCacheTest',  () =>{
 
     /**
+     * @tc.name   testTelephonyNetStackHttpTestBasicGet0100
      * @tc.number SUB_Telephony_NetStack_HttpTestBasicGet_0100
-     * @tc.name testTelephonyNetStackHttpTestBasicGet0100
-     * @tc.desc usingCache test
-     * @tc.level Level 1
-     * @tc.type FUNCTION
-     * @tc.size MediumTest
+     * @tc.desc   usingCache test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonyNetStackHttpTestBasicGet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) =>{
       let caseName = 'testTelephonyNetStackHttpTestBasicGet0100';
@@ -77,12 +77,12 @@ export default  function HttpCacheTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttpTestBasicGet0200
      * @tc.number SUB_Telephony_NetStack_HttpTestBasicGet_0200
-     * @tc.name  testTelephonyNetStackHttpTestBasicGet0200
-     * @tc.desc  usingCache test
+     * @tc.desc   usingCache test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
-     * @tc.type FUNCTION
-     * @tc.size MediumTest
      */
     it('testTelephonyNetStackHttpTestBasicGet0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) =>{
       let caseName = 'testTelephonyNetStackHttpTestBasicGet0200';
@@ -116,12 +116,12 @@ export default  function HttpCacheTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttpTestCacheFlush_0100
      * @tc.number SUB_Telephony_NetStack_HttpTestCacheFlush_0100
-     * @tc.name  testTelephonyNetStackHttpTestCacheFlush_0100
-     * @tc.desc  cache flush test
-     * @tc.level  Level 1
-     * @tc.type FUNCTION
-     * @tc.size MediumTest
+     * @tc.desc   cache flush test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonyNetStackHttpTestCacheFlush_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) =>{
       let caseName = 'testTelephonyNetStackHttpTestCacheFlush_0100';
@@ -163,12 +163,12 @@ export default  function HttpCacheTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttpTestCacheFlush_0200
      * @tc.number SUB_Telephony_NetStack_HttpTestCacheFlush_0200
-     * @tc.name  testTelephonyNetStackHttpTestCacheFlush_0200
-     * @tc.desc cache flush test
-     * @tc.level Level 1
-     * @tc.type FUNCTION
-     * @tc.size MediumTest
+     * @tc.desc   cache flush test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonyNetStackHttpTestCacheFlush_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) =>{
       let caseName = 'testTelephonyNetStackHttpTestCacheFlush_0200';
@@ -206,12 +206,12 @@ export default  function HttpCacheTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttpTestCacheDelete0100
      * @tc.number SUB_Telephony_NetStack_HttpTestCacheDelete_0100
-     * @tc.name  testTelephonyNetStackHttpTestCacheDelete0100
-     * @tc.desc cache flush test
-     * @tc.level Level 1
-     * @tc.type FUNCTION
-     * @tc.size MediumTest
+     * @tc.desc   cache flush test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonyNetStackHttpTestCacheDelete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) =>{
       let caseName = 'testTelephonyNetStackHttpTestCacheDelete0100';
@@ -254,12 +254,12 @@ export default  function HttpCacheTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttpTestCacheDelete0200
      * @tc.number SUB_Telephony_NetStack_HttpTestCacheDelete_0200
-     * @tc.name  testTelephonyNetStackHttpTestCacheDelete0200
-     * @tc.desc cache flush test
-     * @tc.level Level 3
-     * @tc.type FUNCTION
-     * @tc.size MediumTest
+     * @tc.desc   cache flush test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetStackHttpTestCacheDelete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       let caseName = 'testTelephonyNetStackHttpTestCacheDelete0200';

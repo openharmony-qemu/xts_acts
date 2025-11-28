@@ -103,12 +103,12 @@ export default function SelectContactsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0100
-     * @tc.name       : testTelephonyContactSelectContacts0100
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0100
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0100
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -148,12 +148,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0200
-     * @tc.name       : testTelephonyContactSelectContacts0200
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0200
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0200
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -193,12 +193,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0300
-     * @tc.name       : testTelephonyContactSelectContacts0300
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0300
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0300
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -238,12 +238,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0400
-     * @tc.name       : testTelephonyContactSelectContacts0400
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0400
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0400
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -283,12 +283,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0500
-     * @tc.name       : testTelephonyContactSelectContacts0500
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0500
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0500
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -328,12 +328,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0600
-     * @tc.name       : testTelephonyContactSelectContacts0600
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0600
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0600
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -373,12 +373,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0700
-     * @tc.name       : testTelephonyContactSelectContacts0700
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0700
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0700
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -424,12 +424,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0800
-     * @tc.name       : testTelephonyContactSelectContacts0800
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0800
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0800
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -475,12 +475,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_0900
-     * @tc.name       : testTelephonyContactSelectContacts0900
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts0900
+     * @tc.number SUB_Telephony_Contact_SelectContacts_0900
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -526,12 +526,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_1000
-     * @tc.name       : testTelephonyContactSelectContacts1000
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts1000
+     * @tc.number SUB_Telephony_Contact_SelectContacts_1000
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -580,12 +580,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_1100
-     * @tc.name       : testTelephonyContactSelectContacts1100
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts1100
+     * @tc.number SUB_Telephony_Contact_SelectContacts_1100
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -634,12 +634,12 @@ export default function SelectContactsTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SelectContacts_1200
-     * @tc.name       : testTelephonyContactSelectContacts1200
-     * @tc.desc       : Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSelectContacts1200
+     * @tc.number SUB_Telephony_Contact_SelectContacts_1200
+     * @tc.desc   Call the contact SelectContacts interface, and use the Promise method as an asynchronous method for the SelectContacts contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSelectContacts1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);

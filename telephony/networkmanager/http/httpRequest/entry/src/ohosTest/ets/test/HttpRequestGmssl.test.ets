@@ -133,14 +133,14 @@ function copyToSandBox(rawfilePath: string, sandboxFilePath: string, context: Co
 export default function HttpRequestGmssl() {
    
     describe('HttpRequestGmssl', () => {
-    /* *
-    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0100
-    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0100
-    * @tc.desc:    test performanceTiming
-    * @tc.size:    SmallTest
-    * @tc.type:    Function
-    * @tc.level:   level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpRequestGmsslHttpRequestOptions0100
+     * @tc.number SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0100
+     * @tc.desc   test performanceTiming
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0100";
         console.info(`${caseName} test Start`);
@@ -188,14 +188,14 @@ export default function HttpRequestGmssl() {
         console.info(`${caseName} test End`);
       });  
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0200
-    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0200
-    * @tc.desc:    test performanceTiming
-    * @tc.size:    SmallTest
-    * @tc.type:    Function
-    * @tc.level:   level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpRequestGmsslHttpRequestOptions0200
+     * @tc.number SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0200
+     * @tc.desc   test performanceTiming
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0200";
         console.info(`${caseName} test Start`);
@@ -249,14 +249,14 @@ export default function HttpRequestGmssl() {
         console.info(`${caseName} test End`);
       });   
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0300
-    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0300
-    * @tc.desc:    test performanceTiming
-    * @tc.size:    SmallTest
-    * @tc.type:    Function
-    * @tc.level:   level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpRequestGmsslHttpRequestOptions0300
+     * @tc.number SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0300
+     * @tc.desc   test performanceTiming
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0300";
       console.info(`${caseName} test Start`);
@@ -309,14 +309,14 @@ export default function HttpRequestGmssl() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0400
-    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0400
-    * @tc.desc:    test performanceTiming
-    * @tc.size:    SmallTest
-    * @tc.type:    Function
-    * @tc.level:   level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpRequestGmsslHttpRequestOptions0400
+     * @tc.number SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0400
+     * @tc.desc   test performanceTiming
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0400";
       console.info(`${caseName} test Start`);
@@ -370,14 +370,14 @@ export default function HttpRequestGmssl() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0500
-    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0500
-    * @tc.desc:    test performanceTiming
-    * @tc.size:    SmallTest
-    * @tc.type:    Function
-    * @tc.level:   level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpRequestGmsslHttpRequestOptions0500
+     * @tc.number SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0500
+     * @tc.desc   test performanceTiming
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0500";
       console.info(`${caseName} test Start`);
@@ -431,14 +431,14 @@ export default function HttpRequestGmssl() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0600
-    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0600
-    * @tc.desc:    test performanceTiming
-    * @tc.size:    SmallTest
-    * @tc.type:    Function
-    * @tc.level:   level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpRequestGmsslHttpRequestOptions0600
+     * @tc.number SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0600
+     * @tc.desc   test performanceTiming
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0600";
       console.info(`${caseName} test Start`);

@@ -50,12 +50,12 @@ export default function abilityTest() {
     let success_number = 1111;
 
     /**
-     * @tc.number   NETWORKMANAGER_CONNECTION_OHNetConnGetAllNets_0100
-     * @tc.name    test_OHNetConnGetAllNets401
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   Test_OHNetConnGetAllNets_0100
+     * @tc.number NETWORKMANAGER_CONNECTION_OHNetConnGetAllNets_0100
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_OHNetConnGetAllNets_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "Test_OHNetConnGetAllNets_0100";
@@ -72,12 +72,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number   NETWORKMANAGER_CONNECTION_OHNetConnGetAllNets_0200
-     * @tc.name    test_OHNetConnGetAllNets0
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   Test_OHNetConnGetAllNets_0200
+     * @tc.number NETWORKMANAGER_CONNECTION_OHNetConnGetAllNets_0200
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_OHNetConnGetAllNets_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "Test_OHNetConnGetAllNets_0200";

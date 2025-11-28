@@ -35,14 +35,14 @@ export default function ActsCellularDataAbnormalTest() {
   describe("ActsCellularDataAbnormalTest", () => {
     const ERR_SLOT_ID = 3;
 
-    /*
-    * @tc.number: SUB_Telephony_CellularData_isCellularDataEnabled_Async_0100
-    * @tc.name  : testTelephonyCellularDataisCellularDataEnabledAsync_0100
-    * @tc.desc  : verify that the isCellularDataEnabled takes effect
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   testTelephonyCellularDataisCellularDataEnabledAsync_0100
+     * @tc.number SUB_Telephony_CellularData_isCellularDataEnabled_Async_0100
+     * @tc.desc   verify that the isCellularDataEnabled takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testTelephonyCellularDataisCellularDataEnabledAsync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataEnabledAsync_0100';
       console.info(`${caseName} test start `);
@@ -67,14 +67,14 @@ export default function ActsCellularDataAbnormalTest() {
 
     })
 
-    /*
-    * @tc.number: SUB_Telephony_CellularData_getCellularDataState_Async_0100
-    * @tc.name  : testTelephonyCellularDataGetCellularDataStateAsync0100
-    * @tc.desc  : verify that the getCellularDataState takes effect
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   testTelephonyCellularDataGetCellularDataStateAsync0100
+     * @tc.number SUB_Telephony_CellularData_getCellularDataState_Async_0100
+     * @tc.desc   verify that the getCellularDataState takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testTelephonyCellularDataGetCellularDataStateAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataStateAsync0100';
       console.info(`${caseName} test start `);
@@ -98,13 +98,13 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Telephony_CellularData_getCellularDataFlowType_Async_0100
-     * @tc.name  : testTelephonyCellularDataGetCellularDataFlowTypeAsync0100
-     * @tc.desc  : verify that the getCellularDataFlowType takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyCellularDataGetCellularDataFlowTypeAsync0100
+     * @tc.number SUB_Telephony_CellularData_getCellularDataFlowType_Async_0100
+     * @tc.desc   verify that the getCellularDataFlowType takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyCellularDataGetCellularDataFlowTypeAsync0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataFlowTypeAsync0100';
@@ -129,14 +129,14 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-    * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0100
-    * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100
-    * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100
+     * @tc.number SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0100
+     * @tc.desc   verify that the isCellularDataRoamingEnabled takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100';
       console.info(`${caseName} test start `);
@@ -161,14 +161,14 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-    * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0200
-    * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0200
-    * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0200
+     * @tc.number SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0200
+     * @tc.desc   verify that the isCellularDataRoamingEnabled takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0200';
       console.info(`${caseName} test start `);
@@ -191,14 +191,14 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-    * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0300
-    * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300
-    * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300
+     * @tc.number SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0300
+     * @tc.desc   verify that the isCellularDataRoamingEnabled takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300';
       console.info(`${caseName} test start `);
@@ -220,13 +220,13 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Telephony_CellularData_getDefaultCellularDataSlotId_Async_0500
-     * @tc.name  : testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500
-     * @tc.desc  : verify that the getDefaultCellularDataSlotId takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500
+     * @tc.number SUB_Telephony_CellularData_getDefaultCellularDataSlotId_Async_0500
+     * @tc.desc   verify that the getDefaultCellularDataSlotId takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500';
@@ -251,14 +251,14 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-    * @tc.number: SUB_Telephony_CellularData_isCellularDataEnabled_Promise_0100
-    * @tc.name  : testTelephonyCellularDataisCellularDataEnabledPromise_0100
-    * @tc.desc  : verify that the isCellularDataEnabled takes effect
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   testTelephonyCellularDataisCellularDataEnabledPromise_0100
+     * @tc.number SUB_Telephony_CellularData_isCellularDataEnabled_Promise_0100
+     * @tc.desc   verify that the isCellularDataEnabled takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testTelephonyCellularDataisCellularDataEnabledPromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataEnabledPromise_0100';
       console.info(`${caseName} test start `);
@@ -282,13 +282,13 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Telephony_CellularData_getCellularDataState_Promise_0100
-     * @tc.name  : testTelephonyCellularDataGetCellularDataStatePromise_0100
-     * @tc.desc  : verify that the getCellularDataState takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyCellularDataGetCellularDataStatePromise_0100
+     * @tc.number SUB_Telephony_CellularData_getCellularDataState_Promise_0100
+     * @tc.desc   verify that the getCellularDataState takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyCellularDataGetCellularDataStatePromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataStatePromise_0100';
@@ -308,13 +308,13 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Telephony_CellularData_getCellularDataFlowType_Promise_0100
-     * @tc.name  : testTelephonyCellularDataGetCellularDataFlowTypePromise_0100
-     * @tc.desc  : verify that the getCellularDataFlowType takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyCellularDataGetCellularDataFlowTypePromise_0100
+     * @tc.number SUB_Telephony_CellularData_getCellularDataFlowType_Promise_0100
+     * @tc.desc   verify that the getCellularDataFlowType takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyCellularDataGetCellularDataFlowTypePromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataFlowTypePromise_0100';
@@ -337,13 +337,13 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Promise_0200
-     * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledPromise_0200
-     * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyCellularDataisCellularDataRoamingEnabledPromise_0200
+     * @tc.number SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Promise_0200
+     * @tc.desc   verify that the isCellularDataRoamingEnabled takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyCellularDataisCellularDataRoamingEnabledPromise_0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledPromise_0200';
@@ -362,13 +362,13 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Telephony_CellularData_getDefaultCellularDataSlotId_Promise_0500
-     * @tc.name  : testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_0500
-     * @tc.desc  : verify that the getDefaultCellularDataSlotId takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_0500
+     * @tc.number SUB_Telephony_CellularData_getDefaultCellularDataSlotId_Promise_0500
+     * @tc.desc   verify that the getDefaultCellularDataSlotId takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_0500';
@@ -391,13 +391,13 @@ export default function ActsCellularDataAbnormalTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Telephony_CellularData_getDefaultCellularDataSlotIdSync_0100
-     * @tc.name  : testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_0100
-     * @tc.desc  : verify that the getCellularDataState takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_0100
+     * @tc.number SUB_Telephony_CellularData_getDefaultCellularDataSlotIdSync_0100
+     * @tc.desc   verify that the getCellularDataState takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataEnabledAsync_0100';
@@ -417,12 +417,12 @@ export default function ActsCellularDataAbnormalTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0200
-     * @tc.name   : testTelephonyDataIsCellularDataEnabledSync0200
-     * @tc.desc   : Sync checks if cellular data roaming service is enabled.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyDataIsCellularDataEnabledSync0200
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0200
+     * @tc.desc   Sync checks if cellular data roaming service is enabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyDataIsCellularDataEnabledSync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataEnabledSync0200';
@@ -441,15 +441,15 @@ export default function ActsCellularDataAbnormalTest() {
       }
     });
 
-    /**
-     * @tc.number : SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0200
-     * @tc.name   : testTelephonyDataIsCellularDataRoamingEnabledSync0200
-     * @tc.desc   : Sync checks if cellular data roaming service is enabled.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
 
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabledSync0200
+     * @tc.number testTelephonyDataIsCellularDataRoamingEnabledSync0200
+     * @tc.desc   testTelephonyDataIsCellularDataRoamingEnabledSync0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyDataIsCellularDataRoamingEnabledSync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSync0200';
       console.info(`${caseName} test start `);

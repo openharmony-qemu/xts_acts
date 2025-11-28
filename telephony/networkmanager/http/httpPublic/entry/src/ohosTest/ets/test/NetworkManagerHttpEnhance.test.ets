@@ -235,12 +235,12 @@ export default function NetworkManagerHttpEnhanceTest() {
 
   describe('NetworkManagerHttpEnhanceTest', () => {
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_On_DataSendProgress_0100
-     * @tc.name: testNetworkMgrHTTPOnDataSendProgress0100
-     * @tc.desc: http::on
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPOnDataSendProgress0100
+     * @tc.number SUB_NetworkMgr_HTTP_On_DataSendProgress_0100
+     * @tc.desc   http::on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPOnDataSendProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPOnDataSendProgress0100';
@@ -270,12 +270,12 @@ export default function NetworkManagerHttpEnhanceTest() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_On_DataSendProgress_0200
-     * @tc.name: testNetworkMgrHTTPOnDataSendProgress0200
-     * @tc.desc: http::on
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPOnDataSendProgress0200
+     * @tc.number SUB_NetworkMgr_HTTP_On_DataSendProgress_0200
+     * @tc.desc   http::on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPOnDataSendProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPOnDataSendProgress0200';
@@ -294,12 +294,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_On_DataSendProgress_0300
-     * @tc.name: testNetworkMgrHTTPOnDataSendProgress0300
-     * @tc.desc: http::on
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPOnDataSendProgress0300
+     * @tc.number SUB_NetworkMgr_HTTP_On_DataSendProgress_0300
+     * @tc.desc   http::on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPOnDataSendProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPOnDataSendProgress0300';
@@ -318,12 +318,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_On_DataSendProgress_0400
-     * @tc.name: testNetworkMgrHTTPOnDataSendProgress0400
-     * @tc.desc: http::on
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPOnDataSendProgress0400
+     * @tc.number SUB_NetworkMgr_HTTP_On_DataSendProgress_0400
+     * @tc.desc   http::on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPOnDataSendProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPOnDataSendProgress0400';
@@ -352,12 +352,12 @@ export default function NetworkManagerHttpEnhanceTest() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkManager_HTTP_Off_DataSendProgress_0200
-     * @tc.name: testNetworkManagerHTTPOffDataSendProgress0200
-     * @tc.desc: http::off
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkManagerHTTPOffDataSendProgress0200
+     * @tc.number SUB_NetworkManager_HTTP_Off_DataSendProgress_0200
+     * @tc.desc   http::off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkManagerHTTPOffDataSendProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkManagerHTTPOffDataSendProgress0200';
@@ -375,12 +375,12 @@ export default function NetworkManagerHttpEnhanceTest() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Off_DataSendProgress_0300
-     * @tc.name: testNetworkMgrHTTPOffDataSendProgress0300
-     * @tc.desc: http::off
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPOffDataSendProgress0300
+     * @tc.number SUB_NetworkMgr_HTTP_Off_DataSendProgress_0300
+     * @tc.desc   http::off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPOffDataSendProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPOffDataSendProgress0300';
@@ -398,12 +398,12 @@ export default function NetworkManagerHttpEnhanceTest() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ResumeFrom_0100
-     * @tc.name: testNetworkMgrHTTPRequestResumeFrom0100
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestResumeFrom0100
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ResumeFrom_0100
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestResumeFrom0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestResumeFrom0100';
@@ -431,12 +431,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ResumeFrom_0300
-     * @tc.name: testNetworkMgrHTTPRequestResumeFrom0300
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestResumeFrom0300
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ResumeFrom_0300
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestResumeFrom0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestResumeFrom0300';
@@ -464,12 +464,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ResumeFrom_0200
-     * @tc.name: testNetworkMgrHTTPRequestResumeFrom0200
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestResumeFrom0200
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ResumeFrom_0200
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestResumeFrom0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestResumeFrom0200';
@@ -497,12 +497,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ResumeFrom_0400
-     * @tc.name: testNetworkMgrHTTPRequestResumeFrom0400
-     * @tc.desc: test http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestResumeFrom0400
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ResumeFrom_0400
+     * @tc.desc   test http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestResumeFrom0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestResumeFrom0400';
@@ -530,12 +530,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ResumeFrom_0500
-     * @tc.name: testNetworkMgrHTTPRequestResumeFrom0500
-     * @tc.desc http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestResumeFrom0500
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ResumeFrom_0500
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestResumeFrom0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestResumeFrom0500';
@@ -563,12 +563,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ClientCert_0100
-     * @tc.name: testNetworkMgrHTTPRequestClientCert0100
-     * @tc.desc http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestClientCert0100
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ClientCert_0100
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestClientCert0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestClientCert0100';
@@ -596,12 +596,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ClientCert_0200
-     * @tc.name: testNetworkMgrHTTPRequestClientCert0200
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestClientCert0200
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ClientCert_0200
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestClientCert0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestClientCert0200';
@@ -629,12 +629,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ClientCert_0300
-     * @tc.name: testNetworkMgrHTTPRequestClientCert0300
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestClientCert0300
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ClientCert_0300
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestClientCert0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestClientCert0300';
@@ -662,12 +662,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ClientCert_0400
-     * @tc.name: testNetworkMgrHTTPRequestClientCert0400
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestClientCert0400
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ClientCert_0400
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestClientCert0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestClientCert0400';
@@ -695,12 +695,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_ClientCert_0500
-     * @tc.name: testNetworkMgrHTTPRequestClientCert0500
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestClientCert0500
+     * @tc.number SUB_NetworkMgr_HTTP_Request_ClientCert_0500
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestClientCert0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestClientCert0500';
@@ -728,12 +728,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0100
-     * @tc.name: testNetworkMgrHTTPRequestDnsOverHttps0100
-     * @tc.desc http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0100
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0100
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsOverHttps0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsOverHttps0100';
@@ -761,12 +761,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0200
-     * @tc.name: testNetworkMgrHTTPRequestDnsOverHttps0200
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0200
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0200
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsOverHttps0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsOverHttps0200';
@@ -794,12 +794,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0300
-     * @tc.name: testNetworkMgrHTTPRequestDnsOverHttps0300
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0300
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0300
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsOverHttps0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsOverHttps0300';
@@ -827,12 +827,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0400
-     * @tc.name: testNetworkMgrHTTPRequestDnsOverHttps0400
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0400
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0400
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsOverHttps0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsOverHttps0400';
@@ -860,12 +860,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsServers_0100
-     * @tc.name: testNetworkMgrHTTPRequestDnsServers0100
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsServers0100
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0100
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsServers0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsServers0100';
@@ -893,12 +893,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsServers_0200
-     * @tc.name: testNetworkMgrHTTPRequestDnsServers0200
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsServers0200
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0200
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsServers0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsServers0200';
@@ -926,12 +926,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsServers_0300
-     * @tc.name: testNetworkMgrHTTPRequestDnsServers0300
-     * @tc.desc http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsServers0300
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0300
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsServers0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsServers0300';
@@ -959,12 +959,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_DnsServers_0400
-     * @tc.name: testNetworkMgrHTTPRequestDnsServers0400
-     * @tc.desc: http::request
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestDnsServers0400
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0400
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestDnsServers0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestDnsServers0400';
@@ -992,12 +992,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HTTP_Request_PerformanceTiming_0100
-     * @tc.name: testNetworkMgrHTTPRequestPerformanceTiming0100
-     * @tc.desc: Test PerformanceTiming property
-     * @tc.level: level3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHTTPRequestPerformanceTiming0100
+     * @tc.number SUB_NetworkMgr_HTTP_Request_PerformanceTiming_0100
+     * @tc.desc   Test PerformanceTiming property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPRequestPerformanceTiming0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHTTPRequestPerformanceTiming0100';

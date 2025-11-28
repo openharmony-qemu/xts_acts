@@ -53,12 +53,12 @@ export default function telephonyNdkTest() {
     })
 
     /**
+     * @tc.name   testOHTelephonyGetDefaultCellularDataSlotId_0100
      * @tc.number SUB_TELEPHONY_CELLULAR_DATA_OHTELEPHONYGETDEFAULTCELLULARDATASLOTID_0100.
-     * @tc.name testOHTelephonyGetDefaultCellularDataSlotId_0100.
-     * @tc.desc Obtains the default cellular data slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Obtains the default cellular data slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHTelephonyGetDefaultCellularDataSlotId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let idNdk = telAPI.OHTelephonyGetDefaultCellularDataSlotId();
@@ -70,12 +70,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot_0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATEFORSLOT_0100.
-     * @tc.name testOHTelephonyGetNetworkStateForSlot_0100.
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkStateForSlot_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = telAPI.OHTelephonyGetNetworkStateForSlotParam(CASE_INDEX_1);
@@ -85,12 +85,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot_0200
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATEFORSLOT_0200.
-     * @tc.name testOHTelephonyGetNetworkStateForSlot_0200.
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkStateForSlot_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = telAPI.OHTelephonyGetNetworkStateForSlotParam(CASE_INDEX_2);
@@ -100,12 +100,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot_0300
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATEFORSLOT_0300.
-     * @tc.name testOHTelephonyGetNetworkStateForSlot_0300.
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkStateForSlot_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = telAPI.OHTelephonyGetNetworkStateForSlotParam(CASE_INDEX_3);
@@ -115,12 +115,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot_0400
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATEFORSLOT_0400.
-     * @tc.name testOHTelephonyGetNetworkStateForSlot_0400.
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHTelephonyGetNetworkStateForSlot_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = telAPI.OHTelephonyGetNetworkStateForSlotParam(CASE_INDEX_4);
@@ -130,12 +130,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot_0500
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATEFORSLOT_0500.
-     * @tc.name testOHTelephonyGetNetworkStateForSlot_0500.
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkStateForSlot_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = telAPI.OHTelephonyGetNetworkStateForSlotParam(CASE_INDEX_5);
@@ -145,12 +145,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot_0600
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATEFORSLOT_0600.
-     * @tc.name testOHTelephonyGetNetworkStateForSlot_0600.
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkStateForSlot_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let slotid = data.getDefaultCellularDataSlotIdSync();
@@ -172,12 +172,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot_0700
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATEFORSLOT_0700.
-     * @tc.name testOHTelephonyGetNetworkStateForSlot_0700.
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkStateForSlot_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       for (let slotid = 0; slotid < 10; slotid++) {
@@ -197,12 +197,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkState_0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATE_0100.
-     * @tc.name testOHTelephonyGetNetworkState_0100.
-     * @tc.desc Obtains the radio network state.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkState_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = telAPI.OHTelephonyGetNetworkStateParam(CASE_INDEX_1);
@@ -212,12 +212,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkState_0200
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATE_0200.
-     * @tc.name testOHTelephonyGetNetworkState_0200.
-     * @tc.desc Obtains the radio network state.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkState_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = telAPI.OHTelephonyGetNetworkStateParam(CASE_INDEX_2);
@@ -227,12 +227,12 @@ export default function telephonyNdkTest() {
     });
 
     /**
+     * @tc.name   testOHTelephonyGetNetworkState_0300
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATE_0300.
-     * @tc.name testOHTelephonyGetNetworkState_0300.
-     * @tc.desc Obtains the radio network state.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Obtains the radio network state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHTelephonyGetNetworkState_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let stateNdk = telAPI.OHTelephonyGetNetworkState();

@@ -60,12 +60,12 @@ export default function HttpCaPathTest() {
 
 
     /**
+     * @tc.name   testTelephonyNetStackHTTPSCertificateManagement0100
      * @tc.number SUB_Telephony_NetStack_HTTPSCertificateManagement_0100
-     * @tc.name testTelephonyNetStackHTTPSCertificateManagement0100
-     * @tc.desc request: input https://www.openharmony.cn/ & error of caPath by Async
-     * @tc.level 2
-     * @tc.type Function
-     * @tc.size SmallTest
+     * @tc.desc   request: input https://www.openharmony.cn/ & error of caPath by Async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHTTPSCertificateManagement0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let CASE_NAME = 'testTelephonyNetStackHTTPSCertificateManagement0100';
@@ -86,12 +86,12 @@ export default function HttpCaPathTest() {
     })
 
     /**
+     * @tc.name   testTelephonyNetStackHTTPSCertificateManagement0200
      * @tc.number SUB_Telephony_NetStack_HTTPSCertificateManagement_0200
-     * @tc.name testTelephonyNetStackHTTPSCertificateManagement0200
-     * @tc.desc request: input https://www.openharmony.cn/ & null of caPath by Async
-     * @tc.level 2
-     * @tc.type Function
-     * @tc.size SmallTest
+     * @tc.desc   request: input https://www.openharmony.cn/ & null of caPath by Async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHTTPSCertificateManagement0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let CASE_NAME = 'testTelephonyNetStackHTTPSCertificateManagement0200';
@@ -112,12 +112,12 @@ export default function HttpCaPathTest() {
     })
 
     /**
+     * @tc.name   testTelephonyNetStackHTTPSCertificateManagement0300
      * @tc.number SUB_Telephony_NetStack_HTTPSCertificateManagement_0300
-     * @tc.name testTelephonyNetStackHTTPSCertificateManagement0300
-     * @tc.desc request: input https://www.openharmony.cn/ & default of caPath by Async
-     * @tc.level 2
-     * @tc.type Function
-     * @tc.size SmallTest
+     * @tc.desc   request: input https://www.openharmony.cn/ & default of caPath by Async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHTTPSCertificateManagement0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let CASE_NAME = 'testTelephonyNetStackHTTPSCertificateManagement0300';
