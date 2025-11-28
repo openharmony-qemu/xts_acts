@@ -33,7 +33,6 @@ export default function DeviceStatusUnitTest() {
         }
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0100
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0100
          * @tc.desc   Stationary callback interface test
@@ -76,7 +75,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0200
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0200
          * @tc.desc   Stationary callback interface test
@@ -119,7 +117,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0300
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0300
          * @tc.desc   Stationary callback interface test
@@ -165,7 +162,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0400
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0400
          * @tc.desc   Stationary callback interface test
@@ -208,7 +204,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0500
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0500
          * @tc.desc   Stationary callback interface test
