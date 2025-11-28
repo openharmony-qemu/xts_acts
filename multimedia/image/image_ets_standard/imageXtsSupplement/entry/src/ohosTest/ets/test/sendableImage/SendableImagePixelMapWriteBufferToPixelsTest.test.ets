@@ -60,12 +60,11 @@ export default function sendablePixelMapWriteBufferToPixelsTest() {
         console.info(TAG,testName,'createPixelMap success')
         if (PixelMap != undefined) {
           await PixelMap.writeBufferToPixels(AppStorage.get('emptyString') as ArrayBuffer)
-          console.info(TAG,testName,'1111111111')
         }
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -93,7 +92,7 @@ export default function sendablePixelMapWriteBufferToPixelsTest() {
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -120,7 +119,7 @@ export default function sendablePixelMapWriteBufferToPixelsTest() {
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
