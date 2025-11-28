@@ -74,7 +74,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties(null)
-        // expect().assertFail()
+        expect().assertFail()
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
@@ -97,7 +97,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties([])
-        // expect().assertFail()
+        expect().assertFail()
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
@@ -120,6 +120,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties(null)
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
@@ -142,6 +143,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties([])
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
@@ -164,6 +166,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties(null)
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
@@ -186,6 +189,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties([])
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
@@ -208,6 +212,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties(null)
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
@@ -230,6 +235,7 @@ export default function getImagePropertiesTest() {
       try {
         const imageSourceApi = await getImageSource(path);
         await imageSourceApi.getImageProperties([])
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'getImageProperties error', error.message, error.code);
