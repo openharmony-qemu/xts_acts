@@ -63,7 +63,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -95,7 +95,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -127,7 +127,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -159,7 +159,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -196,7 +196,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -228,7 +228,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -260,7 +260,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -292,7 +292,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -324,7 +324,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -361,7 +361,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -393,7 +393,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -425,7 +425,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -457,7 +457,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -489,7 +489,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
@@ -526,7 +526,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-        expect(imageSource !== undefined).assertTrue()
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
