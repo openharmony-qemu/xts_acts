@@ -26,12 +26,12 @@ const DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL = 1400003;
 export default function DisplayTest() {
   describe('DisplayTest', () => {
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEDISPLAYMANAGER_CAPTURESCREENPIXELMAP_0100
-     * @tc.name    : testCaptureScreenPixelmapInvalidParamOrDeviceNotSupported
-     * @tc.desc    : Test get CaptureScreenPixelmapInvalidParamOrDeviceNotSupported's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCaptureScreenPixelmapInvalidParamOrDeviceNotSupported
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEDISPLAYMANAGER_CAPTURESCREENPIXELMAP_0100
+     * @tc.desc   Test get CaptureScreenPixelmapInvalidParamOrDeviceNotSupported's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCaptureScreenPixelmapInvalidParamOrDeviceNotSupported', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -48,12 +48,12 @@ export default function DisplayTest() {
       }
     })
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEDISPLAYMANAGER_CAPTURESCREENPIXELMAP_0200
-     * @tc.name    : testCaptureScreenPixelmapNoPermission
-     * @tc.desc    : Test get CaptureScreenPixelmapNoPermission's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCaptureScreenPixelmapNoPermission
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEDISPLAYMANAGER_CAPTURESCREENPIXELMAP_0200
+     * @tc.desc   Test get CaptureScreenPixelmapNoPermission's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCaptureScreenPixelmapNoPermission', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

@@ -98,12 +98,12 @@ export default function ErrorCode201() {
         })
 
         /**
-         * @tc.number       testSetWindowPrivacyModePromiseErrCode201_0100
-         * @tc.name         testSetWindowPrivacyModePromiseErrCode201_static_0100
-         * @tc.desc         testSetWindowPrivacyModePromiseErrCode201_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowPrivacyModePromiseErrCode201_static_0100
+         * @tc.number testSetWindowPrivacyModePromiseErrCode201_0100
+         * @tc.desc   testSetWindowPrivacyModePromiseErrCode201_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowPrivacyModePromiseErrCode201_static_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName :string = "testSetWindowPrivacyModePromiseErrCode201_static_0100";
@@ -128,12 +128,12 @@ export default function ErrorCode201() {
             }
         })
         /**
-         * @tc.number       testSetWindowPrivacyModeCallbackErrCode201_0100
-         * @tc.name         testSetWindowPrivacyModeCallbackErrCode201_static_0200
-         * @tc.desc         testSetWindowPrivacyModeCallbackErrCode201_static_0200
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowPrivacyModeCallbackErrCode201_static_0200
+         * @tc.number testSetWindowPrivacyModeCallbackErrCode201_0100
+         * @tc.desc   testSetWindowPrivacyModeCallbackErrCode201_static_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowPrivacyModeCallbackErrCode201_static_0200', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName :string = "testSetWindowPrivacyModeCallbackErrCode201_static_0200";
@@ -161,12 +161,12 @@ export default function ErrorCode201() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0010
-         * @tc.name        testCreateFloatWindowPermission_Promise_static_0100
-         * @tc.desc        create Floating window permission check
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 0
+         * @tc.name   testCreateFloatWindowPermission_Promise_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0010
+         * @tc.desc   create Floating window permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCreateFloatWindowPermission_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCreateFloatWindowPermission_Promise';
@@ -194,13 +194,12 @@ export default function ErrorCode201() {
             }
         })
         /**
-         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0020
-         * @tc.name        testCreateFloatWindowPermission_Callback_static_0100
-         * @tc.desc        create Floating window permission check
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testCreateFloatWindowPermission_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0020
+         * @tc.desc   create Floating window permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testCreateFloatWindowPermission_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCreateFloatWindowPermission_Callback';
@@ -231,12 +230,12 @@ export default function ErrorCode201() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_Static_0200
-         * @tc.name        testSetWindowShadowEnabledwithoutPermission_Static
-         * @tc.desc        testSetWindowShadowEnabledwithoutPermission_Static
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 2
+         * @tc.name   testSetWindowShadowEnabledwithoutPermission_Static
+         * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_Static_0200
+         * @tc.desc   testSetWindowShadowEnabledwithoutPermission_Static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testSetWindowShadowEnabledwithoutPermission_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = "testSetWindowShadowEnabledwithoutPermission_Static";
@@ -265,12 +264,12 @@ export default function ErrorCode201() {
             }
         })
         /**
-         * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_Static_0700
-         * @tc.name       testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static
-         * @tc.desc       testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level 0
+         * @tc.name   testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static
+         * @tc.number SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_Static_0700
+         * @tc.desc   testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static';
