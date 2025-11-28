@@ -124,6 +124,7 @@ import customDialogGetstateTest from './customDialogTest/customdialog4.test';
 import closeToastTest from './promptActionTest/closeToastTest2.test';
 
 export default function testsuite() {
+	overlayManagerTest();
 	CustomDialogAJsunit()
 	CustomDialog()
 	CustomDialogFalse()

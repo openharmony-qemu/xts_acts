@@ -50,7 +50,7 @@ import triggerSelectTest from './selectTest/triggerSelect.test'
 import selectJsunit2 from './select/SelectJsunit.test'
 
 export default function testsuite() {
-
+	SelectJsunit01();
     selectApi1();
     triggerSelect()
     selectJsunit2()
