@@ -112,6 +112,8 @@ import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test'
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 
+import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
+import SendableImageTest from './image/SendableImageTest.test';
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -210,4 +212,6 @@ export default function testsuite() {
   modifyImagePropertyValueTest();
   ImagePictureSetAuxiliaryPictureTest();
   ImagePixelMapCropTest();
+  UpdateDataTest();
+  SendableImageTest();
 }
