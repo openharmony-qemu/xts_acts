@@ -20,10 +20,13 @@ export default function ActscommonEventSupportTest() {
     let TAG = 'SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST START`)
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2100
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : This commonEvent means the device state
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2100
+     * @tc.number Sub_Notification_Ces_Publish_Support_2100
+     * @tc.desc   This commonEvent means the device state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2100', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2100 START`)
@@ -34,10 +37,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2100 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2200
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : This commonEvent means the device battery state
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2200
+     * @tc.number Sub_Notification_Ces_Publish_Support_2200
+     * @tc.desc   This commonEvent means the device battery state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2200', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2200 START`)
@@ -48,10 +54,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2200 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2300
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : This commonEvent means the screen,the thermal state level
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2300
+     * @tc.number Sub_Notification_Ces_Publish_Support_2300
+     * @tc.desc   This commonEvent means the screen,the thermal state level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2300', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2300 START`)
@@ -63,10 +72,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2400
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : This commonEvent means the time changed , the dialog to dismiss
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2400
+     * @tc.number Sub_Notification_Ces_Publish_Support_2400
+     * @tc.desc   This commonEvent means the time changed , the dialog to dismiss
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2400', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2400 START`)
@@ -79,10 +91,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2400 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2500
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : This commonEvent means when a new version application package
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2500
+     * @tc.number Sub_Notification_Ces_Publish_Support_2500
+     * @tc.desc   This commonEvent means when a new version application package
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2500', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2500 START`)
@@ -98,10 +113,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2500 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2600
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : This commonEvent of package
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2600
+     * @tc.number Sub_Notification_Ces_Publish_Support_2600
+     * @tc.desc   This commonEvent of package
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2600', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2600 START`)
@@ -116,10 +134,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2600 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2700
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : Sent by system package verifier
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2700
+     * @tc.number Sub_Notification_Ces_Publish_Support_2700
+     * @tc.desc   Sent by system package verifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2700', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2700 START`)
@@ -131,10 +152,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2700 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2800
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : Send by the smart function when the system in mode
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2800
+     * @tc.number Sub_Notification_Ces_Publish_Support_2800
+     * @tc.desc   Send by the smart function when the system in mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2800', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2800 START`)
@@ -147,10 +171,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2800 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_2900
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : Remind previous user of that the service
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_2900
+     * @tc.number Sub_Notification_Ces_Publish_Support_2900
+     * @tc.desc   Remind previous user of that the service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_2900', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2900 START`)
@@ -165,10 +192,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_2900 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3000
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : WIFI state
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3000
+     * @tc.number Sub_Notification_Ces_Publish_Support_3000
+     * @tc.desc   WIFI state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3000', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3000 START`)
@@ -189,10 +219,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3000 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3200
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : Bluetooth
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3100
+     * @tc.number Sub_Notification_Ces_Publish_Support_3200
+     * @tc.desc   Bluetooth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3100', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3100 START`)
@@ -222,10 +255,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3100 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3200
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : Bluetooth.handsfreeunit
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3200
+     * @tc.number Sub_Notification_Ces_Publish_Support_3200
+     * @tc.desc   Bluetooth.handsfreeunit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3200', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3200 START`)
@@ -236,10 +272,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3200 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3300
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : Bluetooth.host
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3300
+     * @tc.number Sub_Notification_Ces_Publish_Support_3300
+     * @tc.desc   Bluetooth.host
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3300', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3300 START`)
@@ -254,10 +293,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3400
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : Bluetooth.a2dp,Nfc
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3400
+     * @tc.number Sub_Notification_Ces_Publish_Support_3400
+     * @tc.desc   Bluetooth.a2dp,Nfc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3400', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3400 START`)
@@ -270,10 +312,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3400 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3500
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : charging battery,device's ,User,ability,Gps
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3500
+     * @tc.number Sub_Notification_Ces_Publish_Support_3500
+     * @tc.desc   charging battery,device's ,User,ability,Gps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3500', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3500 START`)
@@ -290,10 +335,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3500 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3600
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : ivi
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3600
+     * @tc.number Sub_Notification_Ces_Publish_Support_3600
+     * @tc.desc   ivi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3600', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3600 START`)
@@ -311,10 +359,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3600 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3700
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : USB
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3700
+     * @tc.number Sub_Notification_Ces_Publish_Support_3700
+     * @tc.desc   USB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3700', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3700 START`)
@@ -325,10 +376,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3700 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3800
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : protected common event
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3800
+     * @tc.number Sub_Notification_Ces_Publish_Support_3800
+     * @tc.desc   protected common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3800', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3800 START`)
@@ -343,10 +397,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3800 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_3900
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : protected common event
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_3900
+     * @tc.number Sub_Notification_Ces_Publish_Support_3900
+     * @tc.desc   protected common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_3900', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3900 START`)
@@ -356,10 +413,13 @@ export default function ActscommonEventSupportTest() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_3900 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_4000
-     * @tc.name      : commonEvent.Support
-     * @tc.desc      : protected common event
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_4000
+     * @tc.number Sub_Notification_Ces_Publish_Support_4000
+     * @tc.desc   protected common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_4000', Level.LEVEL2, async  function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_4000 START`)

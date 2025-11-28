@@ -22,10 +22,13 @@ export default function ActsNotificationManagerDistributedTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_IS_DISTRIBUTED_ENABLED_TEST START')
 
     /**
-    * @tc.number  Sub_Notification_Ans_Distributed_Enable_Static_4100
-    * @tc.name    Sub_Notification_Ans_Distributed_Enable_Static_4100
-    * @tc.desc    Obtains whether the device supports distributed notification
-    */
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_Static_4100
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Static_4100
+     * @tc.desc   Obtains whether the device supports distributed notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Distributed_Enable_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
       let TAG:string = "Sub_Notification_Ans_Distributed_Enable_Static_4100"
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4100 START`)
@@ -50,10 +53,13 @@ export default function ActsNotificationManagerDistributedTest() {
     })
 
     /**
-    * @tc.number  Sub_Notification_Ans_Distributed_Enable_Static_4200
-    * @tc.name    Sub_Notification_Ans_Distributed_Enable_Static_4200
-    * @tc.desc    Obtains whether the device supports distributed notification
-    */
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_Static_4200
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Static_4200
+     * @tc.desc   Obtains whether the device supports distributed notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Distributed_Enable_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = "Sub_Notification_Ans_Distributed_Enable_Static_4200"
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4200 START`)
@@ -71,13 +77,13 @@ export default function ActsNotificationManagerDistributedTest() {
     })
 
     /**
-    * @tc.number  Sub_Notification_Ans_Is_Notification_Enable_Static_0100
-    * @tc.name    Sub_Notification_Ans_Is_Notification_Enable_Static_0100
-    * @tc.desc    test function isNotificationEnabledSync
-    * @tc.size    MediumTest
-    * @tc.type    Function test
-    * @tc.level   Level0
-    */
+     * @tc.name   Sub_Notification_Ans_Is_Notification_Enable_Static_0100
+     * @tc.number Sub_Notification_Ans_Is_Notification_Enable_Static_0100
+     * @tc.desc   test function isNotificationEnabledSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Is_Notification_Enable_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = "Sub_Notification_Ans_Is_Notification_Enable_Static_0100"
       console.info(`${TAG} Sub_Notification_Ans_Is_Notification_Enable_0100 START`);
