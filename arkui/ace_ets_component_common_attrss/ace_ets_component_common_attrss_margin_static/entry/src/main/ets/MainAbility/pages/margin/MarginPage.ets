@@ -147,8 +147,8 @@ struct MarginPage {
   @State parentComponentKey: string = ''
   @State childWidth: number = 0
   @State childHeight: number = 0
-  @State parentWidth: number = 0
-  @State parentHeight: number = 0
+  @State parentWidth: number = 400
+  @State parentHeight: number = 600
   @State buttonComponentKey: string = ''
 
   onPageShow() {

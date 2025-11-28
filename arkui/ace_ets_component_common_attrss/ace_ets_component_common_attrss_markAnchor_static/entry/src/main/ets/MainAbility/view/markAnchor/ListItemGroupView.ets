@@ -31,17 +31,17 @@ import {
   Color,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { StorageProp } from '@ohos.arkui.stateManagement';
+import { StoragePropRef } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct ListItemGroupView {
-  @StorageProp("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef('_markAnchor') _markAnchor: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
-  private parentWidth: number;
-  private parentHeight: number;
-  private subassemblyWidth: number;
-  private subassemblyHeight: number;
-  private projects: string[] = ['Chinese', 'mathematics', 'English']
+  private parentWidth: number = 100;
+  private parentHeight: number = 600;
+  private subassemblyWidth: number = 100;
+  private subassemblyHeight: number = 600;
+  private projects: string[] = new Array<string>('Chinese', 'mathematics', 'English')
 
   @Builder
   itemHead(text: string) {

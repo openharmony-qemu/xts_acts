@@ -24,7 +24,7 @@ import {
   Polyline,Polygon,Path,Rect,Shape,Badge,Refresh,ProgressType,BarState,BadgeParamWithNumber,RelativeContainer,WaterFlow,FlowItem,HorizontalAlign,VerticalAlign
 } from '@ohos.arkui.component'
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement'
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
@@ -38,7 +38,7 @@ struct sizePage {
   private value: string[] = ['#', 'A', 'B']
   //Use for Scroll,Grid,DataPanel.
   public valueArr: Array<number> = new Array<number>(5, 10, 10, 7, 9, 10, 10, 10, 10)
-  @StorageProp('_size') _size: SizeOptions = { width: 0, height: 0 } as SizeOptions;
+  @StoragePropRef('_size') _size: SizeOptions = { width: 0, height: 0 } as SizeOptions;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 0

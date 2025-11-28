@@ -16,7 +16,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
-import { describe, beforeAll, expect } from "../../../../hypium"
+import { describe, beforeAll, expect } from "../../../../hypium/index"
 import { focusControl, $r } from '@ohos.arkui.component'
 import { Color } from '@ohos.arkui.component';
 import { UIContext } from "@ohos.arkui.UIContext";

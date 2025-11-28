@@ -42,7 +42,7 @@ export struct TabsView {
   private componentKey: string = '';
 
   @Builder
-  TabBuilder(index: number, name: string) {
+  TabBuilder(index: int, name: string) {
     Column() {
       Text(name)
         .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)

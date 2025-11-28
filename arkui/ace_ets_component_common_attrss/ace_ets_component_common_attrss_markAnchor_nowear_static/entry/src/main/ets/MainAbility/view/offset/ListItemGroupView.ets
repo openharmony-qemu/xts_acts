@@ -33,17 +33,17 @@ import {
   Builder,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { Link } from '@ohos.arkui.stateManagement';
+import { StoragePropRef } from '@ohos.arkui.stateManagement';
 
 
 @Component
 export struct ListItemGroupView {
-  @Link _offset!: Position;
+  @StoragePropRef('_offset') _offset: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
-  private parentWidth: number = 0;
-  private parentHeight: number = 0;
-  private subassemblyWidth: number = 0;
-  private subassemblyHeight: number = 0;
+  private parentWidth: number = 100;
+  private parentHeight: number = 600;
+  private subassemblyWidth: number = 100;
+  private subassemblyHeight: number = 600;
   private parentComponentKey: string = '';
   private referenceComponentKey: string = '';
   private projects: string[] = ['Chinese', 'mathematics', 'English']

@@ -17,7 +17,6 @@ import { StepperView } from '../../view/markAnchor/StepperView';
 import { StepperItemView } from '../../view/markAnchor/StepperItemView';
 import { ListItemGroupView } from '../../view/markAnchor/ListItemGroupView';
 import { NavRouterView } from '../../view/markAnchor/NavRouterView';
-import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams, SetV } from '../../common/Utils';
 import router from '@ohos.router'
 import {
@@ -165,7 +164,6 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage, State,StoragePropRef  } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
-import { attrsManager } from '../../common/AttrsManager';
 import router from '@ohos.router'
 import udmfType from '@ohos.data.uniformTypeDescriptor';
 
@@ -691,10 +689,10 @@ struct accessibilityLevelDropPage {
   @State _accessibilityLevelXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = ''
   @State componentKey: string = ''
-  @State parentWidth: double = 0
-  @State parentHeight: double = 0
-  @State columns: int = 0
-  @State gutter: int = 0
+  @State parentWidth: number = 0
+  @State parentHeight: number = 0
+  @State columns: number = 0
+  @State gutter: number = 0
   @State parentComponentKey: string = ''
   @State isShow: boolean = false
   pathStack: NavPathStack = new NavPathStack()
@@ -710,90 +708,11 @@ struct accessibilityLevelDropPage {
     this.componentKey = routerParamOptions.view.componentKey as string
     this.parentWidth = routerParamOptions.view.parentWidth
     this.parentHeight = routerParamOptions.view.parentHeight
-    this.columns = routerParamOptions.view.columns as int
-    this.gutter = routerParamOptions.view.gutter as int
+    this.columns = routerParamOptions.view.columns
+    this.gutter = routerParamOptions.view.gutter
     this.parentComponentKey = routerParamOptions.view.parentComponentKey
     console.log('aboutToAppear routerParamOptions success' + this.targetView)
     console.info('22222 translate page show called ')
-    attrsManager.registerDataChange((value: SetV) => {
-      console.info('22222 [registerDataChange] ' + JSON.stringify(value.accessibilityLevel))
-      this._accessibilityLevelAlphabetIndexerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelBadgeMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelBlankMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelButttonMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelCalendarPickerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelCheckboxMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelCheckboxGroupMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelColumnMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelColumnSplitMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelCounterMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelDataPanelMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelDatePickerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelDividerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelEffectComponentMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelFlexMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelFlowItemMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelFormComponentMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelFormLinkMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelGaugeMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelGridMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelGridColMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelGridItemMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelGridRowMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelHyperlinkMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelImageAnimatorMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelImageSpanMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelImageMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelListMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelListItemMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelListItemGroupMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelLoadingProgressMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelMarqueeMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelMenuMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelMenuItemMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelMenuItemGroupMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelNavDestinationMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelNavRouterMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelNavigationMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelNavigatorMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelPatternLockMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelPluginComponentMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelQRCodeMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRadioMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRatingMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRefreshMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRelativeContainerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRemoteWindowMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRichEditorMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRichTextMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRowMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelRowSplitMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelScrollMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelScrollBarMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelSearchMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelSelectMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelSideBarContainerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelSliderMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelStackMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelStepperMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelStepperItemMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelSwiperMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTabContentMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTabsMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTextMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTextAreaMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTextClockMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTextInputMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTextPickerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTextTimerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelTimePickerMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelToggleMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelUIExtensionComponentMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelWaterFlowMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelWebMod.mAccessibilityLevel = value.accessibilityLevel
-      this._accessibilityLevelXComponentMod.mAccessibilityLevel = value.accessibilityLevel
-
-    })
   }
 
   fancy(instance: CommonMethod) {
@@ -806,7 +725,6 @@ struct accessibilityLevelDropPage {
   }
 
   build() {
-    GridCol({ span: this.columns, offset: this.gutter, order: 0 }) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
@@ -863,7 +781,7 @@ struct accessibilityLevelDropPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: 1,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           })
@@ -1115,7 +1033,7 @@ struct accessibilityLevelDropPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption)
+              })
               .id('constraintSize')
           }
           .applyStyles(this.fancy).attributeModifier(this._accessibilityLevelRelativeContainerMod)
@@ -1296,7 +1214,7 @@ struct accessibilityLevelDropPage {
       .height(this.parentHeight)
       .backgroundColor(Color.Pink)
       .key(this.parentComponentKey)
+      .width(this.parentWidth)
 
-    }.width(this.parentWidth).height(this.parentHeight).backgroundColor(Color.Yellow)
   }
 }

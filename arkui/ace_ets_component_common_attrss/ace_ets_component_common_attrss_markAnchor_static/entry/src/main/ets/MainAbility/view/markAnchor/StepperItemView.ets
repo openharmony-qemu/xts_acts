@@ -31,7 +31,7 @@ import {
   Color,
   ItemState
 } from '@ohos.arkui.component';
-import { StorageProp, State } from '@ohos.arkui.stateManagement';
+import { StoragePropRef, State } from '@ohos.arkui.stateManagement';
 
 function itemStyle(this: ColumnAttribute): this {
   this.width(336)
@@ -57,7 +57,7 @@ export struct StepperItemView {
   @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
-  @StorageProp("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;

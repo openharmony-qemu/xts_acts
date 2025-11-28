@@ -50,7 +50,7 @@ export struct NavigationView {
       List({ space: 12, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
-            // NavRouter() {
+            Column() {
               Row() {
                 Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
                 Text(`NavRouter${item + 1}`)
@@ -73,10 +73,8 @@ export struct NavigationView {
                 }
               }.backgroundColor('#ccc')
               .title(`NavDestination${item + 1}`)
-            // }.onStateChange((isActivated: boolean) => {
-            //   console.info('isActivated = ' + isActivated);
-            //   this.dex = index
-            // })
+            }.position(this._position)
+            .key(this.componentKey)
           }
         }, (item: number) => String(item))
       }

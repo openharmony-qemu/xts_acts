@@ -902,10 +902,10 @@ struct accessibilityGroupTestDropPage {
   @State _accessibilityGroupXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = ''
   @State componentKey: string = ''
-  @State parentWidth: double = 0
-  @State parentHeight: double =  0
-  @State columns: int =  0
-  @State gutter: int =  0
+  @State parentWidth: number = 0
+  @State parentHeight: number =  0
+  @State columns: number =  0
+  @State gutter: number =  0
   @State parentComponentKey: string = ''
   @State isShow: boolean = false
   pathStack:NavPathStack = new NavPathStack()
@@ -924,8 +924,8 @@ struct accessibilityGroupTestDropPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     console.log('aboutToAppear routerParamOptions success' + this.targetView)
     attrsManager.registerDataChange((value: SetValue) => {
@@ -1027,7 +1027,6 @@ struct accessibilityGroupTestDropPage {
   }
 
   build() {
-    GridCol({ span: this.columns, offset: this.gutter, order: 0 }) {
     Row() {
       if (this.targetView == 'Button') {
         Button('button1')
@@ -1109,7 +1108,7 @@ struct accessibilityGroupTestDropPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: 1,
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -1431,7 +1430,7 @@ struct accessibilityGroupTestDropPage {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            } as AlignRuleOption)
+            })
             .id('constraintSize')
         }
         .applyStyles(this.fancy)
@@ -1636,11 +1635,10 @@ struct accessibilityGroupTestDropPage {
         }.width('100%').height('100%').backgroundColor(Color.Green)
       }
     }
-    .width('100%')
+    .width(this.parentWidth)
     .height(this.parentHeight)
     .backgroundColor(Color.Pink)
     .key(this.parentComponentKey)
 
-    }.width(this.parentWidth).height(this.parentHeight).backgroundColor(Color.Yellow)
   }
 }

@@ -73,9 +73,10 @@ export struct NavigationView {
                 }
               }.backgroundColor('#ccc')
               .title(`NavDestination${item + 1}`)
-            }
+            }.position(this._position)
+            .key(this.componentKey)
           }
-        }, (item: number,index:Int) => String(item))
+        }, (item: number) => String(item))
       }
       .height('100%')
       .width('100%')
