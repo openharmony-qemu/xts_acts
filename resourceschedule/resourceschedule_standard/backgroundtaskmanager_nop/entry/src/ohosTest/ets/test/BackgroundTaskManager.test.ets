@@ -59,13 +59,13 @@ export default function BackgroundTaskManagerTest() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_001
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_001
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -105,13 +105,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_002
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_002
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -154,13 +154,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_002 end---');
       })
 
-      /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_003
-     * @tc.desc:Test that the updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_003
+     * @tc.desc   Test that the updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -200,13 +200,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_003 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_004
-     * @tc.desc:Test that the on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_004
+     * @tc.desc   Test that the on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -235,13 +235,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_004 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_005
-     * @tc.desc:Test that the off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_005
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_005
+     * @tc.desc   Test that the off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -270,13 +270,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_005 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_006
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_006
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_006
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -316,13 +316,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_006 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_007
-     * @tc.desc:Test that the suspend on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_007
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_007
+     * @tc.desc   Test that the suspend on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -352,13 +352,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_007 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_008
-     * @tc.desc:Test that the suspend off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_008
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_008
+     * @tc.desc   Test that the suspend off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -388,13 +388,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_008 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_009
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_009
-     * @tc.desc:Test that the active on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_009
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_009
+     * @tc.desc   Test that the active on function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -422,13 +422,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_009 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_010
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_010
-     * @tc.desc:Test that the active off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_010
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_010
+     * @tc.desc   Test that the active off function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -456,13 +456,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_010 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_011
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_011
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_011
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_011
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -501,13 +501,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_011 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_012
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_012
-     * @tc.desc:Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_012
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_012
+     * @tc.desc   Test that the startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -547,13 +547,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_012 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_013
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_013
-     * @tc.desc:Test that the  api12 updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_013
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_013
+     * @tc.desc   Test that the  api12 updateBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -599,13 +599,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_013 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_014
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_014
-     * @tc.desc:Test that the api12 startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_014
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_014
+     * @tc.desc   Test that the api12 startBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -651,13 +651,13 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_014 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_015
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_015
-     * @tc.desc:Test that the backgroundTaskManager isModeSupported function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_015
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_015
+     * @tc.desc   Test that the backgroundTaskManager isModeSupported function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -677,13 +677,13 @@ export default function BackgroundTaskManagerTest() {
         }
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016
-     * @tc.desc:Test that the continuousTaskRequest function requestAuthFromUser does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016
+     * @tc.desc   Test that the continuousTaskRequest function requestAuthFromUser does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -703,13 +703,13 @@ export default function BackgroundTaskManagerTest() {
         }
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017
-     * @tc.desc:Test that the continuousTaskRequest function requestAuthFromUser does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017
+     * @tc.desc   Test that the continuousTaskRequest function requestAuthFromUser does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
