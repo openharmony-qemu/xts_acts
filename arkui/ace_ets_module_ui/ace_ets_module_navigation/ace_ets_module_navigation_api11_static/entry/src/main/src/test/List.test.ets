@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,12 +25,10 @@ import QueryNavDestinationInfoNavDestinationJsunit from './NavDestinationTest/Qu
 import NavigationAttr from './NavigationTest/NavigationAttr.test'
 import navigationApi1 from './NavigationTest/navigationApi/navigationApi1.test'
 import NavRouterJsunit from './NavRouter/NavRouterJsunit.test';
-import NavDestinationJsunit from './NavDestinationTest/NavDestinationJsunit.test';
 import NavigationJsunit from './Navigation/NavigationJsunit.test';
 import navigationNavbar02 from './Navigation/navigationNavbar02.test';
 import navigationPosition from './Navigation/navigationPosition.test';
 import navigationNavbar01 from './Navigation/navigationNavbar01.test';
-import NavigationStack01Jsunit from './Navigation/NavigationStack01Jsunit.test';
 import NavigationStack10Jsunit from './Navigation/NavigationStack10Jsunit.test';
 import NavigationStack11Jsunit from './Navigation/NavigationStack11Jsunit.test';
 import NavigationStack12Jsunit from './Navigation/NavigationStack12Jsunit.test';
@@ -83,10 +82,10 @@ import navigatorCodeJsunit from './Navigation/NavigatorCodeJsunit.test';
 
 export default function testsuite() {
   NavDestinationInfoStateJsunit(); //fail 2 observer.onNavDestinationUpdate app died
-  // QueryNavDestinationInfoNavDestinationJsunit(); // fail 2 observer.onNavDestinationUpdate app died
-  // navigationApi1();//fail 1 customNavContentTransition app died
-  // NavDestinationJsunit();// fail 3  NavDestinationJsunit_static_0700,0800,0900, The key 'hideTitleBar' was not found in the JSON object
-  // NavigationStack01Jsunit();//fail 1 导航Navigation组件 失败1个用例  onFocus未触发
+  QueryNavDestinationInfoNavDestinationJsunit(); // fail 2 observer.onNavDestinationUpdate app died
+  navigationApi1();//fail 1 customNavContentTransition app died
+  NavigationAttr();//fail 1 customNavContentTransition app died
+  NavDestination_onBackPressed();//fail 1 可能JSON.stringify问题 Error in NavDestination_onBackPressed_static_0100, expect {} equals {"number":1}
   // navigationNavbar01();
   // navigationTypeTest();
   // NavigationParamTest();
@@ -96,13 +95,13 @@ export default function testsuite() {
   // NavPathStackApi1();
   // NavPathStackApi2();
   // NavPathStackApi3();
-  // NavigationAttr();
-
+  //
+  //
   // navigationJsunit();
   // navigatorJsunit();
   // NavRouterJsunit();
-
-
+  //
+  //
   // NavigationJsunit();
   // navigationNavbar02();
   // navigationPosition();
@@ -139,7 +138,6 @@ export default function testsuite() {
   // NavigationMode15Jsunit();
   // NavigationMode16Jsunit();
   // NavigationMode17Jsunit();
-  // NavDestination_onBackPressed();
   // navigationuxtest()
   // transitionJsunit();
   // sharedTransitionJsunit();

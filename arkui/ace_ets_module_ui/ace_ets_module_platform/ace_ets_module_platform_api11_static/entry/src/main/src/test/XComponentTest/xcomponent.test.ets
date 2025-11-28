@@ -114,8 +114,11 @@ export default function xcomponentGetXComponentContextJsunit() {
       let strJson = inspector.getInspectorByKey('setXComponentSurfaceSizeText');
       //console
       let obj = JSON.parseJsonElement(strJson);
+      console.info("setXComponentSurfaceSize0001 strJsonstringify is: " + JSON.stringify(strJson));
+      console.info("setXComponentSurfaceSize0001 strJson is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("setXComponentSurfaceSize0001 strJson obj is: " + obj);
       expect(obj.getString('$type')).assertEqual("Text");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('surfaceWidth')).assertEqual(undefined);
+      expect(obj.getElement('$attrs').tryGetElement('surfaceWidth')).assertEqual(undefined);
       console.info('testxcomponentSetXComponentSurfaceSize0001 END');
 
     });
@@ -134,7 +137,7 @@ export default function xcomponentGetXComponentContextJsunit() {
       //console
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual("Text");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('surfaceHeight')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('surfaceHeight')).assertEqual(undefined);
       console.info('testxcomponentSetXComponentSurfaceSizeStatic0002 END');
 
     });

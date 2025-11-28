@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
+import { TextCase, TextDecorationType, Resource, DatePickerOptions } from '@ohos.arkui.component';
 
 export class Message {
   name: string = ''
-  value: string | number | TextCase | TextDecorationType | boolean | Resource | Array<string> = ''
+  value: string | number | TextCase | TextDecorationType | boolean | Resource | Array<string> | DatePickerOptions | double = ''
 }
 
 export type Callback = (message: Message) => void

@@ -41,7 +41,6 @@ import {
   SelectStatus
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
-import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -89,7 +88,7 @@ struct CheckBoxGroupPart {
 
       CheckboxGroup({ group: 'checkboxGroup' })
         .key('CheckboxGroup')
-        .selectedColor(0xed6f21)
+        .selectedColor('0xed6f21')
         .onChange((itemName: CheckboxGroupResult):void => {
           console.info("TextPicker::dialogResult is" + JSON.stringify(itemName))
           console.info("TextPicker::dialogResult is" + JSON.stringify(itemName.status))
@@ -97,7 +96,7 @@ struct CheckBoxGroupPart {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": itemName.status
-              } as Record<String, RecordData>
+              } as Record<string, Object | null | undefined>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60301,
@@ -117,7 +116,7 @@ struct CheckBoxGroupPart {
       Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
         .key('Checkbox1')
         .select(true)
-        .selectedColor(0xed6f21)
+        .selectedColor('0xed6f21')
         .onChange((value: boolean):void => {
           console.info('Checkbox1 change is' + value)
         })

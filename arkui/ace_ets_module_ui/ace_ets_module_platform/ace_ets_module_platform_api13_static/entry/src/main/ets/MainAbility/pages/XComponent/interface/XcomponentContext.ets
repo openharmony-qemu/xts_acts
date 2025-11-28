@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export default interface XComponentContext {
-  drawPattern() : void;
+export default class XComponentContext {
+  drawPattern: ()=>void=()=>{};
   a : number;
-  play():void;
-  grtStatus() : XComponentContextStatus;
+  play: ()=>void=()=>{};
+  grtStatus: XComponentContextStatus = new XComponentContextStatus();
 };
 class XComponentContextStatus {
   private hasDraw : boolean = false;

@@ -13,24 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,NavPathStack,Scroll,Component,XComponent,Image,ImageSize, XComponentType,XComponentParameters,$r,ResourceStr,Builder,List,ListItem,Resource,NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,NavPathStack,Scroll,Component,XComponent,Image,ImageSize, XComponentType,
+  XComponentParameters,$r,ResourceStr,Builder,List,ListItem,Resource,NavigationTitleMode,
+  NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,
+  EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
+  Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,
+  EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
+  TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import XComponentContext from './interface/XcomponentContext'
 import componentSnapshot from '@ohos.arkui.componentSnapshot'
 import image from '@ohos.multimedia.image'
 import { BusinessError } from '@ohos.base'
-
+import CommonFunc from '../../common/Common'
 @Entry
 @Component
 struct SurfaceComponent {
   private xComponentContext:XComponentContext | undefined = undefined;
   @State isSecure_:boolean = false;
-  @State pixmap:image.PixelMap | undefined = undefined
-  // @State img:string = 'undefined';
+  @State pixmap: image.PixelMap | undefined = undefined
   build() {
     Scroll(){
       Column({space:10} as ColumnOptions){
@@ -38,6 +43,7 @@ struct SurfaceComponent {
         Button(`${this.isSecure_?'关闭':'开启'}隐私图层`)
         .id('enableSecureTest_button1')
 		.onClick((event: ClickEvent) => {
+          console.info('enableSecureTest_static_0010 onClick',!this.isSecure_);
           this.isSecure_ = !this.isSecure_;
         })
 
@@ -45,15 +51,14 @@ struct SurfaceComponent {
           XComponent({
             id : 'xcomponentId',
             type : XComponentType.SURFACE,
-            nativeXComponentHandler: ((value0: long): void => {}),
-            // libraryname:'nativerender'
+            nativeXComponentHandler: ((value0: long): void => {})
           } as XComponentParameters)
-            // .onLoad((xComponentContext:Object|undefined):void|undefined => {
-            //   this.xComponentContext = xComponentContext as XComponentContext;
-            //   if (this.xComponentContext) {
-            //     this.xComponentContext?.drawPattern();
-            //   }
-            // })
+            .onLoad((): void => {
+              this.xComponentContext = new XComponentContext();
+              if (this.xComponentContext) {
+                this.xComponentContext?.drawPattern();
+              }
+            })
             .onDestroy((): void =>{
               console.log('onDestroy');
             })
@@ -67,20 +72,14 @@ struct SurfaceComponent {
         Button('xcomponent区域截图')
           .id('enableSecureTest_button2')
           .onClick((event: ClickEvent) => {
-          //   componentSnapshot.get('xcomponent',(error : BusinessError|null,pixmap:image.PixelMap|undefined) => {
-          //   if (error) {
-          //     console.log('error:' + JSON.stringify(error))
-          //     return;
-          //   }
-          //   this.pixmap = pixmap
-          // })
-        })
-        Image(this.pixmap as image.PixelMap)
-          .id('enableSecureTest_image')
-          .width('80%')
-          .height('30%')
-          .border({color:Color.Black,width:1
+            this.getUIContext().getComponentSnapshot().get('xcomponent',(error : BusinessError|null,pixmap:image.PixelMap|undefined) => {
+            if (error) {
+              console.log('xcomponent区域截图error:' + JSON.stringify(error))
+              return;
+            }
+            this.pixmap = pixmap
           })
+        })
       }
       .width('100%')
       .backgroundImageSize(ImageSize.Cover)
