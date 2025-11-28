@@ -27,7 +27,6 @@
 #include <string>
 #include <unordered_map>
 #include <condition_variable>
-#include <mutex>
 
 #include "native_avcodec_base.h"
 #include "native_avdemuxer.h"
@@ -123,7 +122,6 @@ public:
     bool finishLastPush = false;
     bool bframe = false;
     bool DEMUXER_FLAG = false;
-    std::mutex fileMutex;
 
 private:
     OHNativeWindow *window = nullptr;
