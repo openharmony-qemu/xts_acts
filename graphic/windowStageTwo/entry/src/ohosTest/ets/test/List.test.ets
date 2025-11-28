@@ -44,7 +44,6 @@ export default function testsuite() {
   windowImmersiveTest();
   windowEventTest();
   windowPCTest();
-  windowEventTest();
   windowControlsTest();
   windowKeyBorad()
   windowRotationTest();
