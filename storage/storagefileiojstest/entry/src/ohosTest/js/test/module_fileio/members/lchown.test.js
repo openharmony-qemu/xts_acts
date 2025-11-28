@@ -23,13 +23,12 @@ export default function fileioLchown() {
 describe('fileio_lchown', function () {
 
   /**
+   * @tc.name   fileio_test_lchown_sync_000
    * @tc.number SUB_DF_FILEIO_LCHOWN_SYNC_0000
-   * @tc.name fileio_test_lchown_sync_000
-   * @tc.desc Test lchownSync() interface, invalid path. The test file was modified successfully.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lchownSync() interface, invalid path. The test file was modified successfully.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_lchown_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_lchown_sync_000');
@@ -49,13 +48,12 @@ describe('fileio_lchown', function () {
   });
 
   /**
+   * @tc.name   fileio_test_lchown_async_000
    * @tc.number SUB_DF_FILEIO_LCHOWN_ASYNC_0000
-   * @tc.name fileio_test_lchown_async_000
-   * @tc.desc Test the lchownASync() interface with promise,
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the lchownASync() interface with promise,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_lchown_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_lchown_async_000');
@@ -76,13 +74,12 @@ describe('fileio_lchown', function () {
   });
 
   /**
+   * @tc.name   fileio_test_lchown_async_001
    * @tc.number SUB_DF_FILEIO_LCHOWNASYNC_0100
-   * @tc.name fileio_test_lchown_async_001
-   * @tc.desc Test the chownAsync() interface with callback. The test file was modified successfully.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the chownAsync() interface with callback. The test file was modified successfully.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_lchown_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_lchown_async_001');

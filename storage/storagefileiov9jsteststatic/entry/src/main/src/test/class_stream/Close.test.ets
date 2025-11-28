@@ -29,14 +29,12 @@ export default function fileIOStreamClose() {
   describe('fileIO_fs_stream_close', (): void => {
 
     /**
+     * @tc.name   fileIO_test_stream_close_sync_static_000
      * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_SYNC_0000
-     * @tc.name fileIO_test_stream_close_sync_static_000
-     * @tc.desc Test the closeSync() interface of class Stream.
-     * Open a file stream, close file stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the closeSync() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_close_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_close_sync_static_000');
@@ -54,14 +52,12 @@ export default function fileIOStreamClose() {
     })
 
     /**
+     * @tc.name   fileIO_test_stream_close_sync_static_001
      * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_SYNC_0100
-     * @tc.name fileIO_test_stream_close_sync_static_001
-     * @tc.desc Test the closeSync() interface of class Stream.
-     * The file stream has been closed.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the closeSync() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_close_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_close_sync_static_001');
@@ -81,14 +77,12 @@ export default function fileIOStreamClose() {
     })
 
     /**
+     * @tc.name   fileIO_test_stream_close_async_static_000
      * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_ASYNC_0000
-     * @tc.name fileIO_test_stream_close_async_static_000
-     * @tc.desc Test the close() interface of class Stream. Promise.
-     * Open a file stream, close file stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   Test the close() interface of class Stream. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_close_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_close_async_static_000');
@@ -107,14 +101,12 @@ export default function fileIOStreamClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_stream_close_async_static_001
      * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_ASYNC_0100
-     * @tc.name fileIO_test_stream_close_async_static_001
-     * @tc.desc Test the close() interface of class Stream. Callback.
-     * Open a file stream, close file stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   Test the close() interface of class Stream. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_close_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_close_async_static_001');
@@ -134,14 +126,12 @@ export default function fileIOStreamClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_stream_close_async_static_002
      * @tc.number SUB_DF_FILEIO_STREAM_CLOSE_ASYNC_0200
-     * @tc.name fileIO_test_stream_close_async_static_002
-     * @tc.desc Test the close() interface of class Stream. Promise.
-     * The file stream has been closed.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the close() interface of class Stream. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_close_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_close_async_static_002');

@@ -76,14 +76,12 @@ export default function fileIOCopyDir() {
     }
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_000
    * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0000
-   * @tc.name fileIO_test_copyDir_sync_000
-   * @tc.desc Test copyDirSync() interface.
-   * There is no target folder(src) under path dest. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_sync_000', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_000';
@@ -121,14 +119,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_001
    * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0100
-   * @tc.name fileIO_test_copyDir_sync_001
-   * @tc.desc Test copyDirSync() interface.
-   * There is a file with a different name from the source folder in the target folder. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_sync_001', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_001';
@@ -172,14 +168,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_002
    * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0200
-   * @tc.name fileIO_test_copyDir_sync_002
-   * @tc.desc Test copyDirSync() interface.
-   * There is a file with the same name as the source folder in the target folder. Mode is DIRMODE_FILE_COPY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_copyDir_sync_002', Level.LEVEL0, async function () {
     let dpath = await readyFiles('fileIO_test_copyDir_sync_002');
@@ -214,14 +208,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_003
    * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0300
-   * @tc.name fileIO_test_copyDir_sync_003
-   * @tc.desc Test copyDirSync() interface.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_copyDir_sync_003', Level.LEVEL0, async function () {
     let dpath = await readyFiles('fileIO_test_copyDir_sync_003');
@@ -254,14 +246,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_004
    * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0400
-   * @tc.name fileIO_test_copyDir_sync_004
-   * @tc.desc Test copyDirSync() interface.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_sync_004', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_004';
@@ -287,14 +277,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_005
    * @tc.number SUB_DF_FILEIO_COPYDIRSYNC_0500
-   * @tc.name fileIO_test_copyDir_sync_005
-   * @tc.desc Test copyDirSync() interface.
-   * The path point to a file, not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_sync_005', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_copyDir_sync_005');
@@ -316,14 +304,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_006
    * @tc.number SUB_DF_FILEIO_COPYDIRSYNC_0600
-   * @tc.name fileIO_test_copyDir_sync_006
-   * @tc.desc Test copyDirSync() interface.
-   * Invalid path. Can not move the same path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_sync_006', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_006';
@@ -348,14 +334,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_007
    * @tc.number SUB_DF_FILEIO_COPYDIRSYNC_0700
-   * @tc.name fileIO_test_copyDir_sync_007
-   * @tc.desc Test copyDirSync() interface.
-   * Invalid path. Can not move subPath.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_sync_007', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_007';
@@ -384,14 +368,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_008
    * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0800
-   * @tc.name fileIO_test_copyDir_sync_008
-   * @tc.desc Test copyDirSync() interface.
-   * There is no target folder(src) under path dest. Mode is undefined.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_sync_008', Level.LEVEL3, async function () {
     let dpath = await readyFiles('fileIO_test_copyDir_sync_008');
@@ -426,14 +408,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_000
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0000
-   * @tc.name fileIO_test_copyDir_async_000
-   * @tc.desc Test copyDir() interface.Promise.
-   * There is no target folder(src) under path dest. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_000', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_000';
@@ -472,14 +452,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_001
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0100
-   * @tc.name fileIO_test_copyDir_async_001
-   * @tc.desc Test copyDir() interface.Callback.
-   * There is no target folder(src) under path dest. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_001', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_001';
@@ -523,14 +501,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_002
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0200
-   * @tc.name fileIO_test_copyDir_async_002
-   * @tc.desc Test copyDir() interface.Promise.
-   * There is a file with a different name from the source folder in the target folder. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_002', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_002';
@@ -575,14 +551,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_003
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0300
-   * @tc.name fileIO_test_copyDir_async_003
-   * @tc.desc Test copyDir() interface.Callback.
-   * There is a file with a different name from the source folder in the target folder. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_003', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_003';
@@ -632,14 +606,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_004
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0400
-   * @tc.name fileIO_test_copyDir_async_004
-   * @tc.desc Test copyDir() interface.Promise.
-   * There is a file with the same name as the source folder in the target folder. Mode is DIRMODE_FILE_COPY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_copyDir_async_004', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_004');
@@ -675,14 +647,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_005
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0500
-   * @tc.name fileIO_test_copyDir_async_005
-   * @tc.desc Test copyDir() interface.Callback.
-   * There is a file with the same name as the source folder in the target folder. Mode is DIRMODE_FILE_COPY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_copyDir_async_005', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_005');
@@ -722,14 +692,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_006
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0600
-   * @tc.name fileIO_test_copyDir_async_006
-   * @tc.desc Test copyDir() interface.Promise.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_copyDir_async_006', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_006');
@@ -763,14 +731,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_007
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0700
-   * @tc.name fileIO_test_copyDir_async_007
-   * @tc.desc Test copyDir() interface.Callback.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_COPY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_copyDir_async_007', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_007');
@@ -809,14 +775,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_008
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0800
-   * @tc.name fileIO_test_copyDir_async_008
-   * @tc.desc Test copyDir() interface.Promise.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_008', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_008');
@@ -834,14 +798,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_009
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0900
-   * @tc.name fileIO_test_copyDir_async_009
-   * @tc.desc Test copyDir() interface.Callback.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_009', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_009');
@@ -863,14 +825,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_010
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1000
-   * @tc.name fileIO_test_copyDir_async_010
-   * @tc.desc Test copyDir() interface.Promise.
-   * The path point to a file, not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_010', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_010');
@@ -887,14 +847,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_011
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1100
-   * @tc.name fileIO_test_copyDir_async_011
-   * @tc.desc Test copyDir() interface.Callback.
-   * The path point to a file, not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_011', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_011');
@@ -915,14 +873,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_012
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1200
-   * @tc.name fileIO_test_copyDir_async_012
-   * @tc.desc Test copyDir() interface.
-   * Invalid path.Can not move the same path.Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_012', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_012');
@@ -939,14 +895,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_013
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1300
-   * @tc.name fileIO_test_copyDir_async_013
-   * @tc.desc Test copyDir() interface.
-   * Invalid path.Can not move the same path.Callback.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_013', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_013');
@@ -967,14 +921,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_014
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1400
-   * @tc.name fileIO_test_copyDir_async_014
-   * @tc.desc Test copyDir() interface.
-   * Invalid path.Can not move subPath.Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_014', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_014';
@@ -1002,14 +954,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_015
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1500
-   * @tc.name fileIO_test_copyDir_async_015
-   * @tc.desc Test copyDir() interface.
-   * Invalid path.Can not move subPath.Callback.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_015', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_015';
@@ -1041,14 +991,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_016
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1600
-   * @tc.name fileIO_test_copyDir_async_016
-   * @tc.desc Test copyDir() interface.Promise.
-   * There is no target folder(src) under path dest. Mode is undefined.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_016', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_016');
@@ -1084,14 +1032,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_017
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1700
-   * @tc.name fileIO_test_copyDir_async_017
-   * @tc.desc Test copyDir() interface.Callback.
-   * There is no target folder(src) under path dest. Mode is undefined.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_017', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_017');
@@ -1131,14 +1077,12 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_async_018
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1800
-   * @tc.name fileIO_test_copyDir_async_018
-   * @tc.desc Test copyDir() interface.Callback.
-   * There is no target folder(src) under path dest. ConflictFiles.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copyDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_copyDir_async_018', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_copyDir_async_018');

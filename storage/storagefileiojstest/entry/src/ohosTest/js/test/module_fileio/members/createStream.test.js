@@ -23,13 +23,12 @@ export default function fileioCreateStream() {
 describe('fileio_createStream', function () {
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_async_000
    * @tc.number SUB_DF_FILEIO_STREAM_CREATE_STREAM_ASYNC_0000
-   * @tc.name fileio_test_stream_create_stream_async_000
-   * @tc.desc Test createStreamAsync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamAsync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_create_stream_async_000');
@@ -49,13 +48,12 @@ describe('fileio_createStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_async_001
    * @tc.number SUB_DF_FILEIO_STREAM_CREATE_STREAM_ASYNC_0010
-   * @tc.name fileio_test_stream_create_stream_async_001
-   * @tc.desc Test createStreamAsync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamAsync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_create_stream_async_001');
@@ -74,13 +72,12 @@ describe('fileio_createStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_async_002
    * @tc.number SUB_DF_FILEIO_STREAM_CREATE_STREAM_ASYNC_0020
-   * @tc.name fileio_test_stream_create_stream_async_002
-   * @tc.desc Test createStreamAsync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamAsync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_create_stream_async_002');
@@ -100,13 +97,12 @@ describe('fileio_createStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_async_003
    * @tc.number SUB_DF_FILEIO_STREAM_CREATE_STREAM_ASYNC_0030
-   * @tc.name fileio_test_stream_create_stream_async_003
-   * @tc.desc Test createStreamAsync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamAsync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_create_stream_async_003');
@@ -122,13 +118,12 @@ describe('fileio_createStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_async_004
    * @tc.number SUB_DF_FILEIO_STREAM_CREATE_STREAM_ASYNC_0030
-   * @tc.name fileio_test_stream_create_stream_async_003
-   * @tc.desc Test createStreamSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test createStreamSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_create_stream_async_004');
