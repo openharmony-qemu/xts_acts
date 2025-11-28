@@ -26,7 +26,6 @@ export default function wallpaperJSUnit() {
     describe('WallpaperJsunitTest', () => {
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testWALLPAPER_SYSTEM
          * @tc.number testWALLPAPER_SYSTEM
          * @tc.desc   Function test
@@ -44,7 +43,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testWALLPAPER_LOCKSCREEN
          * @tc.number testWALLPAPER_LOCKSCREEN
          * @tc.desc   Function test
@@ -62,7 +60,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetIdCallbackSystem101
          * @tc.number testGetIdCallbackSystem101
          * @tc.desc   Function test
@@ -91,7 +88,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetIdPromiseSystem101
          * @tc.number testGetIdPromiseSystem101
          * @tc.desc   Function test
@@ -114,7 +110,6 @@ export default function wallpaperJSUnit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetIdCallbackLock102
          * @tc.number testGetIdCallbackLock102
          * @tc.desc   Function test
@@ -143,7 +138,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetIdPromiseLock102
          * @tc.number testGetIdPromiseLock102
          * @tc.desc   Function test
@@ -168,7 +162,6 @@ export default function wallpaperJSUnit() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetMinHeightCallback101
          * @tc.number testGetMinHeightCallback101
          * @tc.desc   Function test
@@ -197,7 +190,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetMinHeightPromise101
          * @tc.number testGetMinHeightPromise101
          * @tc.desc   Function test
@@ -220,7 +212,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetMinWidthCallback101
          * @tc.number testGetMinWidthCallback101
          * @tc.desc   Function test
@@ -249,7 +240,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetMinWidthPromise101
          * @tc.number testGetMinWidthPromise101
          * @tc.desc   Function test
@@ -272,7 +262,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsChangePermittedCallback101
          * @tc.number testIsChangePermittedCallback101
          * @tc.desc   Function test
@@ -302,7 +291,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsChangePermittedPromise101
          * @tc.number testIsChangePermittedPromise101
          * @tc.desc   Function test
@@ -326,7 +314,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsOperationAllowedCallback101
          * @tc.number testIsOperationAllowedCallback101
          * @tc.desc   Function test
@@ -356,7 +343,6 @@ export default function wallpaperJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsOperationAllowedPromise101
          * @tc.number testIsOperationAllowedPromise101
          * @tc.desc   Function test
