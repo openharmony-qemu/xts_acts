@@ -33,7 +33,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CustomDialogTest() {
   describe('CustomDialogTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -46,15 +45,15 @@ export default function CustomDialogTest() {
       }
       try {
         const CustomDialogTest = AppStorage.get<Router>("router") as Router
-        CustomDialogTest.clear();
+        // CustomDialogTest.clear();
         let pages:router.RouterState = CustomDialogTest.getState();
         console.info("get CustomDialogTest state pages: " + JSON.stringify(pages));
         if (!("CustomDialogTest" == pages.name)) {
           console.info("get CustomDialogTest state pages.name: " + JSON.stringify(pages.name));
-          // let result = await CustomDialogTest.pushUrl(options);
+          
           CustomDialogTest.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CustomDialogTest success: " + JSON.stringify(result));
+          
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -66,7 +65,6 @@ export default function CustomDialogTest() {
 
 
 
-    
     
 /*
      * @tc.number   CustomDialogTest_static_0100
@@ -90,7 +88,6 @@ it('CustomDialogTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
       done();
     });
 
-    
     
 /*
      * @tc.number   CustomDialogTest_static_0200

@@ -13,37 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LevelOrder } from '@ohos.promptAction'
 import { BusinessError } from '@ohos.base'
 import { UIContext } from '@ohos.arkui.UIContext'
 import {  PromptAction } from '@ohos.arkui.UIContext'
 import   promptAction  from '@ohos.promptAction'
-import { ComponentContent } from '@ohos.arkui.node';
 import {
   Entry,
   Component,
-  $r,
-  Column,wrapBuilder,
+  Column,
+  wrapBuilder,
   ColumnOptions,
   Text,
-  Color,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,PromptActionDialogController,
-  ClickEvent,Error,
-  Week,ComponentV2,BorderStyle,ShadowStyle,
-  FontWeight,RowOptions,DismissDialogAction,DismissReason,ShadowType,
-  Axis,AlertDialogParamWithButtons,$r,DialogAlignment,DialogButtonStyle,DialogAlignment,
-  Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,CustomBuilderT
+  Button,
+  PromptActionDialogController,
+  ClickEvent,
+  ComponentV2,
+  FontWeight,
+  FlexAlign,
+  Builder,
+  CustomBuilderT
 } from '@ohos.arkui.component';
+import { ComponentContent } from '@ohos.arkui.node'
 import {
-  State,
-  Link,
-  Prop,AppStorage,Local
+  Local
 } from '@ohos.arkui.stateManagement';
 let promptAction = new PromptAction()
 class Params {

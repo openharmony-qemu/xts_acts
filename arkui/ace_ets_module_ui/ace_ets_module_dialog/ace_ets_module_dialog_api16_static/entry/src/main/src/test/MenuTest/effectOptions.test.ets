@@ -79,61 +79,43 @@ export default function effectOptions() {
      * @tc.desc     EffectOptionsTest_static_0101
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('EffectOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.info('EffectOptionsTest_static_0101 START');
-        const SLEEP_TIME = 1000;
-        await CommonFunc.sleep(SLEEP_TIME);
-        inspector.sendEventByKey('EffectOptions_btn1', 10, '');
-        await CommonFunc.sleep(SLEEP_TIME);
-        console.info('EffectOptionsTest_static_0101 click after');
-        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await CommonFunc.sleep(SLEEP_TIME);
-        let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')
-          .length);
-        let menu: object = {} as object;
-        if (tree && tree === '2') {
-          menu = obj.getArray('$children')[1].getArray('$children')[0];
-        } else {
-          menu = obj.getArray('$children')[0].getArray('$children')[0];
-        }
-        let uniRenderFlag: string = menu.getElement('$attrs').getString('uniRender');
-        console.info('[EffectOptionsTest_static_0101] uniRenderFlag is: ' + uniRenderFlag);
-        if (uniRenderFlag === 'false') {
-          let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-            .getArray('$children')[1]
-            .getArray('$children')[0]
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color');
-          expect(text).assertEqual('#00000000');
-        } else if (tree && tree === '2') {
-          let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-            .getArray('$children')[1]
-            .getArray('$children')[0]
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color');
-          expect(text).assertEqual('#FFFFA500');
-        } else {
-          let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-            .getArray('$children')[0]
-            .getArray('$children')[0]
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('brightness');
-          expect(text).assertEqual('1');
-        }
-        await CommonFunc.sleep(SLEEP_TIME);
-        inspector.sendEventByKey('EffectOptions_btn1', 10, '');
-        await CommonFunc.sleep(SLEEP_TIME);
-        console.info('EffectOptionsTest_static_0101 END');
-        done();
-      });
+    it('EffectOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('EffectOptionsTest_static_0101 START');
+      const SLEEP_TIME = 1000;
+      await CommonFunc.sleep(SLEEP_TIME);
+      inspector.sendEventByKey('EffectOptions_btn1', 10, '');
+      await CommonFunc.sleep(SLEEP_TIME);
+      console.info('EffectOptionsTest_static_0101 click after');
+      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      await CommonFunc.sleep(SLEEP_TIME);
+      let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree())).getArray('$children').length);
+      let menu:object = {} as object;
+      if (tree && tree === '2') {
+        menu = obj.getArray('$children')[1].getArray('$children')[0];
+      } else {
+        menu = obj.getArray('$children')[0].getArray('$children')[0];
+      }
+      let uniRenderFlag: string = menu.getElement('$attrs').getString('uniRender');
+      console.info('[EffectOptionsTest_static_0101] uniRenderFlag is: ' + uniRenderFlag);
+      if (uniRenderFlag === 'false') {
+        let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color');
+        expect(text).assertEqual('#00000000');
+      } else if (tree && tree === '2') {
+        let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color');
+        expect(text).assertEqual('#FFFFA500');
+      } else {
+        let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[0].getArray('$children')[0].getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('brightness');
+        expect(text).assertEqual('1');
+      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      inspector.sendEventByKey('EffectOptions_btn1', 10, '');
+      await CommonFunc.sleep(SLEEP_TIME);
+      console.info('EffectOptionsTest_static_0101 END');
+      done();
+    });
 
 
     /*
@@ -142,42 +124,29 @@ export default function effectOptions() {
      * @tc.desc     EffectOptionsTest_static_0102
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('EffectOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.info('EffectOptionsTest_static_0102 START');
-        const SLEEP_TIME = 2000;
-        await CommonFunc.sleep(SLEEP_TIME);
-        inspector.sendEventByKey('EffectOptions_btn2', 10, '');
-        await CommonFunc.sleep(SLEEP_TIME);
-        console.info('EffectOptionsTest_static_0102 click after');
-        let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')
-          .length);
-        if (tree && tree === '2') {
-          let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-            .getArray('$children')[1]
-            .getArray('$children')[0]
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color');
-          expect(text).assertEqual('#00000000');
-        } else {
-          let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-            .getArray('$children')[0]
-            .getArray('$children')[0]
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color');
-          expect(text).assertEqual('#00000000');
-        }
-        await CommonFunc.sleep(SLEEP_TIME);
-        inspector.sendEventByKey('EffectOptions_btn2', 10, '');
-        await CommonFunc.sleep(SLEEP_TIME);
-        console.info('EffectOptionsTest_static_0102 END');
-        done();
-      });
+    it('EffectOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('EffectOptionsTest_static_0102 START');
+      const SLEEP_TIME = 2000;
+      await CommonFunc.sleep(SLEEP_TIME);
+      inspector.sendEventByKey('EffectOptions_btn2', 10, '');
+      await CommonFunc.sleep(SLEEP_TIME);
+      console.info('EffectOptionsTest_static_0102 click after');
+      let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree())).getArray('$children').length);
+      if (tree && tree === '2') {
+        let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color');
+        expect(text).assertEqual('#00000000');
+      } else {
+        let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[0].getArray('$children')[0].getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color');
+        expect(text).assertEqual('#00000000');
+      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      inspector.sendEventByKey('EffectOptions_btn2', 10, '');
+      await CommonFunc.sleep(SLEEP_TIME);
+      console.info('EffectOptionsTest_static_0102 END');
+      done();
+    });
 
 
     /*
@@ -186,42 +155,29 @@ export default function effectOptions() {
      * @tc.desc     EffectOptionsTest_static_0103
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('EffectOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        console.info('EffectOptionsTest_static_0103 START');
-        const SLEEP_TIME = 2000;
-        await CommonFunc.sleep(SLEEP_TIME);
-        inspector.sendEventByKey('EffectOptions_btn3', 10, '');
-        await CommonFunc.sleep(SLEEP_TIME);
-        console.info('EffectOptionsTest_static_0103 click after');
-        let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')
-          .length);
-        console.info('color3' + tree);
-        if (tree && tree === '2') {
-          let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-            .getArray('$children')[1]
-            .getArray('$children')[0]
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color');
-          expect(text).assertEqual('#00000000');
-        } else {
-          let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-            .getArray('$children')[0]
-            .getArray('$children')[0]
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color');
-          expect(text).assertEqual('#00000000');
-        }
-        await CommonFunc.sleep(SLEEP_TIME);
-        inspector.sendEventByKey('EffectOptionsc_btn3', 10, '');
-        await CommonFunc.sleep(SLEEP_TIME);
-        console.info('EffectOptionsTest_static_0103 END');
-        done();
-      });
+    it('EffectOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('EffectOptionsTest_static_0103 START');
+      const SLEEP_TIME = 2000;
+      await CommonFunc.sleep(SLEEP_TIME);
+      inspector.sendEventByKey('EffectOptions_btn3', 10, '');
+      await CommonFunc.sleep(SLEEP_TIME);
+      console.info('EffectOptionsTest_static_0103 click after');
+      let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree())).getArray('$children').length);
+      console.info('color3' + tree);
+      if (tree && tree === '2') {
+        let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color');
+        expect(text).assertEqual('#00000000');
+      } else {
+        let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[0].getArray('$children')[0].getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color');
+        expect(text).assertEqual('#00000000');
+      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      inspector.sendEventByKey('EffectOptionsc_btn3', 10, '');
+      await CommonFunc.sleep(SLEEP_TIME);
+      console.info('EffectOptionsTest_static_0103 END');
+      done();
+    });
   })
 }

@@ -51,10 +51,8 @@ export default function buttonMaxFontSize() {
         console.info("get buttonMaxFontSize state pages: " + JSON.stringify(pages));
         if (!("buttonMaxFontSize" == pages.name)) {
           console.info("get buttonMaxFontSize state pages.name: " + JSON.stringify(pages.name));
-          // let result = await buttonMaxFontSize.pushUrl(options);
           buttonMaxFontSize.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push buttonMaxFontSize success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -63,7 +61,6 @@ export default function buttonMaxFontSize() {
         expect().assertFail();
       }
     });
-    
     
 /*
      * @tc.number   buttonMaxFontSize_static_0100
@@ -85,8 +82,7 @@ it('buttonMaxFontSize_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.
     });
 
     
-    
-/*
+    /*
      * @tc.number   buttonMaxFontSize_static_0200
      * @tc.name     buttonMaxFontSize_static_0200
      * @tc.desc     buttonMaxFontSize_static_0200

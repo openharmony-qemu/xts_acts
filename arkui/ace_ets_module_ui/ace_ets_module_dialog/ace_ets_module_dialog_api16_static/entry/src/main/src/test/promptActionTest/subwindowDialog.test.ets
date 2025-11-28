@@ -107,9 +107,7 @@ export default function subwindowDialog() {
       expect(propertiesSecond.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(Number(AppStorage.get<number>("winLeft")) +
-      UIContext.getFocusedUIContext()!.vp2px(100)) as int,
-        Math.round(Number(AppStorage.get<number>('winTop')) + UIContext.getFocusedUIContext()!.vp2px(100)) as int);
+      await driver.click(Math.round(Number(AppStorage.get<number>("winLeft")) + UIContext.getFocusedUIContext()!.vp2px(100)) as int,Math.round(Number(AppStorage.get<number>('winTop')) + UIContext.getFocusedUIContext()!.vp2px(100)) as int);
       await CommonFunc.sleep(1000);
       let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
       if (buttonCloseDialog) {

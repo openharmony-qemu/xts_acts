@@ -97,7 +97,8 @@ it('ObserverPageId_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let obj2 = JSON.parseJsonElement(strJson2);
       await CommonFunc.sleep(1000);
       console.info("[ObserverPageId_0100] obj2 is: " + JSON.stringifyJsonElement(obj2));
-      console.info("[ObserverPageId_0100] obj2 content: " + obj.getElement('$attrs').getString('content'));
+      console.info("[ObserverPageId_0100] obj content: " + obj.getElement('$attrs').getString('content'));
+      console.info("[ObserverPageId_0100] obj2 content: " + obj2.getElement('$attrs').getString('content'));
 
       expect(obj.getElement('$attrs').getString('content')).assertEqual(obj2.getElement('$attrs').getString('content'));
 

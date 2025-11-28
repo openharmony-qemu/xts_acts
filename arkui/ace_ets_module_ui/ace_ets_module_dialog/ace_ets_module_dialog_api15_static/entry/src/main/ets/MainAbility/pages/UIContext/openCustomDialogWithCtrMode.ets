@@ -22,9 +22,41 @@ import {
   Button,
   ClickEvent,
   Text,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  Row,
+  AlertDialogParamWithButtons,
+  FlexOptions,
+  ColumnOptions,
+  RowOptions,
+  Flex,
+  Builder,
+  Scroll,
+  FontWeight,
+  TextAlign,
+  ForEach,
+  ListItem,
+  LocalizedBorderRadiuses,
+  $$,
+  SheetOptions,
+  FlexAlign,
+  CustomDialogController,
+  TextInput,
+  CustomDialogControllerOptions,
+  ButtonType,
+  Scroller,
+  Color,
+  Rectangle,
+  LevelMode,
+  ActionSheetOptions,
+  ControlSize,
+  DialogAlignment,
+  TextInputController,
+  Margin,
+  BorderRadiuses,
+  CustomStyles,
+  CommonMethod,
+  TextAttribute,
+  ColumnAttribute,
+  wrapBuilder
 } from '@ohos.arkui.component'
 import {
   State,
@@ -36,14 +68,14 @@ import {
 import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-import { BuilderNode,FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode,LevelMode } from '@ohos.promptAction';
-import { LengthMetrics,ComponentContent } from '@ohos.arkui.node';
-import { Callback,BusinessError } from '@ohos.base';
+import { BuilderNode, FrameNode } from '@ohos.arkui.node';
+import { ImmersiveMode } from '@ohos.promptAction';
+import { LengthMetrics, ComponentContent } from '@ohos.arkui.node';
+import { Callback, BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
 import promptAction from '@ohos.promptAction';
-let router1 =new Router()
-let promptAction = new PromptAction()
+
+let router1 = new Router()
 
 //@Preview
 @Component
@@ -51,16 +83,12 @@ export struct MyComponent {
   title: string = 'test'
   func: () => void = () => {
   }
-
-  // @Styles
-  // pressedStyle(){
-  //   .backgroundColor(0x238E23)
-  // }
-  //
-  // @Styles
-  // normalStyles() {
-  //   .backgroundColor(0x0000ff)
-  // }
+  NormalStyles: CustomStyles = (instance: CommonMethod): void => {
+    instance.backgroundColor(Color.Gray);
+  };
+  PressedStyles: CustomStyles = (instance: CommonMethod): void => {
+    instance.backgroundColor(Color.Blue);
+  };
 
   build() {
     Text(this.title)
@@ -70,7 +98,7 @@ export struct MyComponent {
       .fontColor(0xffffff)
       .padding(5)
       .onClick(this.func)
-     // .stateStyles({ pressed: this.pressedStyle, normal: this.normalStyles })
+      .stateStyles({ pressed: this.PressedStyles, normal: this.NormalStyles })
   }
 }
 
@@ -82,16 +110,16 @@ function customDialogDemo() {
     Button(`router`)
       .height('8%')
       .id('router')
-      .onClick(():void => {
-        router1.pushUrl({
-          url: 'MainAbility/pages/UIContext/index'
-        }, router.RouterMode.Standard)
+      .onClick((event: ClickEvent) => {
+        // router1.pushUrl({
+        //   url: 'MainAbility/pages/UIContext/index'
+        // }, router.RouterMode.Standard)
       })
     Text('返回')
       .height('8%')
-      //.componentTextStyle()
-      .onClick(():void => {
-        router1.back(1)
+      .superFancyText2()
+      .onClick((event: ClickEvent) => {
+        // router1.back(1)
       })
       .id('back')
   }
@@ -101,28 +129,29 @@ function customDialogDemo() {
 }
 
 
-// @Extend(Text)
-// function paramTextStyle() {
-//   .fontSize(9)
-//   .width('100%')
-// }
+function superFancyText1(this: TextAttribute): this {
+  this.fontSize(9);
+  this.width('100%');
+  return this;
+}
 
-// @Extend(Text)
-// function componentTextStyle() {
-//   .fontSize(15)
-//   .backgroundColor(Color.Orange)
-//   .margin(3)
-//   .padding(3)
-//   .borderWidth(1.0)
-// }
+function superFancyText2(this: TextAttribute): this {
+  this.fontSize(15);
+  this.backgroundColor(Color.Orange)
+  this.width('100%');
+  this.margin(3)
+  this.padding(3)
+  this.borderWidth(1.0)
+  return this;
+}
 
-// @Extend(Column)
-// function columnStyle() {
-//   .borderWidth(1.0)
-//   .padding(10)
-//   .width('100%')
-//   .backgroundColor(Color.Pink)
-// }
+function superFancyColumn(this: ColumnAttribute): this {
+  this.backgroundColor(Color.Pink)
+  this.width('100%');
+  this.padding(10)
+  this.borderWidth(1.0)
+  return this;
+}
 
 
 @Entry
@@ -130,11 +159,11 @@ function customDialogDemo() {
 struct openCustomDialogWithCtrMode {
   scroller: Scroller = new Scroller()
   @State showInSubWindow: boolean = false
-  @State levelMode: LevelMode | undefined|Int   = 0
+  @State levelMode: LevelMode | undefined = undefined
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: long | undefined | Int = this.getUniqueId()
-  @State immersiveMode: ImmersiveMode | undefined | null | Int   = 0
+  @State levelUniqueId: int | undefined  = undefined
+  @State immersiveMode: ImmersiveMode | undefined  = undefined
   @State isModal: boolean = true
   @State maskRect: Rectangle = {
     x: 0,
@@ -155,12 +184,12 @@ struct openCustomDialogWithCtrMode {
     console.info('---1237---    dialog onDidDisappear')
   }
   @State uiContext: UIContext = this.getUIContext();
-  promptAction:PromptAction = this.uiContext.getPromptAction();
-  // contentNode:ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(customDialogDemo));
+  promptAction: PromptAction = this.uiContext.getPromptAction();
+  contentNode: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(customDialogDemo));
   private dialogWithController: promptAction.DialogController = new promptAction.DialogController()
 
   aboutToAppear() {
-    this.levelUniqueId = this.getUniqueId();
+    this.levelUniqueId = this.getUniqueId().toInt();
   }
 
   build() {
@@ -168,9 +197,9 @@ struct openCustomDialogWithCtrMode {
       Column({ space: 5 } as ColumnOptions) {
         Row() {
           Text('关闭弹窗')
-            //.componentTextStyle()
-            .onClick(():void => {
-              // this.promptAction.closeCustomDialog(this.contentNode)
+            .superFancyText2()
+            .onClick((event: ClickEvent) => {
+              this.promptAction.closeCustomDialog(this.contentNode)
             })
             .id('close')
         }
@@ -180,8 +209,8 @@ struct openCustomDialogWithCtrMode {
 
           Row({ space: 3 }  as RowOptions ) {
             MyComponent({
-              title: 'levelMode: OVERLAY', func: () :void => {
-                //this.levelMode = 0
+              title: 'levelMode: OVERLAY', func: (): void => {
+                this.levelMode = LevelMode.OVERLAY
               }
             })
             MyComponent({
@@ -192,13 +221,13 @@ struct openCustomDialogWithCtrMode {
           }
           Row({ space: 3 }  as RowOptions ) {
             MyComponent({
-              title: 'undefined', func: () :void => {
-                  //this.levelMode = undefined
+              title: 'undefined', func: (): void => {
+                this.levelMode = undefined
               }
             })
             MyComponent({
-              title: 'null', func: () :void => {
-                //this.levelMode = null
+              title: 'null', func: (): void => {
+                this.levelMode = undefined
               }
             })
           }
@@ -208,12 +237,12 @@ struct openCustomDialogWithCtrMode {
             MyComponent({
               title: 'uniqId: Normal value', func: () :void => {
                 const node: FrameNode | null = this.getUIContext().getFrameNodeById('pageCol') || null;
-                this.levelUniqueId = node?.getUniqueId();
+                this.levelUniqueId = node!.getUniqueId().toInt();
               }
             })
             MyComponent({
-              title: 'uniqId: Abnormal value', func: () :void => {
-                this.levelUniqueId = 1237 as Int
+              title: 'uniqId: Abnormal value', func: (): void => {
+                this.levelUniqueId = 1237
               }
             })
           }
@@ -221,13 +250,13 @@ struct openCustomDialogWithCtrMode {
 
           Row({ space: 3 }  as RowOptions ) {
             MyComponent({
-              title: 'imMode: default', func: () :void => {
-                //this.immersiveMode = 0
+              title: 'imMode: default', func: (): void => {
+                this.immersiveMode = ImmersiveMode.DEFAULT
               }
             })
             MyComponent({
-              title: 'imMode: extend', func: () :void => {
-                //this.immersiveMode = 1
+              title: 'imMode: extend', func: (): void => {
+                this.immersiveMode = ImmersiveMode.EXTEND
               }
             })
           }
@@ -237,25 +266,25 @@ struct openCustomDialogWithCtrMode {
         Column({ space: 5 } as ColumnOptions) {
           Text(`uiContext_openCustomDialogWithCtr`)
             .id('openCustomDialogWithCtr')
-            //.componentTextStyle()
-            .onClick(():void => {
+            .superFancyText2()
+            .onClick((event: ClickEvent) => {
               try {
-                // this.promptAction.openCustomDialogWithController(this.contentNode, this.dialogWithController, {
-                //     //levelMode: this.levelMode,
-                //   //levelUniqueId: this.levelUniqueId,
-                //   immersiveMode: this.immersiveMode,
-                //
-                //   showInSubWindow: this.showInSubWindow,
-                //   isModal: this.isModal,
-                //
-                //   onWillAppear: this.WillAppear,
-                //   onDidAppear: this.DidAppear,
-                //   onWillDisappear: this.willDisappear,
-                //   onDidDisappear: this.DidDisappear,
-                //
-                //   maskRect: this.maskRect,
-                //   alignment:DialogAlignment.Bottom
-                // });
+                this.promptAction.openCustomDialogWithController(this.contentNode, this.dialogWithController, {
+                  levelMode: this.levelMode,
+                  levelUniqueId: this.levelUniqueId,
+                  immersiveMode: this.immersiveMode,
+
+                  showInSubWindow: this.showInSubWindow,
+                  isModal: this.isModal,
+
+                  onWillAppear: this.WillAppear,
+                  onDidAppear: this.DidAppear,
+                  onWillDisappear: this.willDisappear,
+                  onDidDisappear: this.DidDisappear,
+
+                  maskRect: this.maskRect,
+                  alignment: DialogAlignment.Bottom
+                });
               } catch (error) {
                 let message = (error as BusinessError).message;
                 let code = (error as BusinessError).code;

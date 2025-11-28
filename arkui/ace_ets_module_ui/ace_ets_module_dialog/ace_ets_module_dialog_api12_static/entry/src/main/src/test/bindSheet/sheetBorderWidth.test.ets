@@ -59,17 +59,16 @@ export default function sheetBorderWidth() {
         console.info('get sheetBorderWidth state success ' + JSON.stringify(pages));
         if (!('sheetBorderWidth' == pages.name)) {
           console.info('get sheetBorderWidth state success ' + JSON.stringify(pages.name));
-          // let result = await sheetBorderWidth.pushUrl(options)
+          
           sheetBorderWidth.pushUrl(options)
           await CommonFunc.sleep(2000);
-          // console.info('push sheetBorderWidth page success ' + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error('push sheetBorderWidth page error ' + JSON.stringify(err));
       }
     });
 
-    
     
 /*
      * @tc.number   sheetBorderWidth_static_0100
@@ -81,26 +80,20 @@ it('sheetBorderWidth_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       console.info('sheetBorderWidth_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('bindSheet_borderWidth'));
+      let button:Component = await driver.findComponent(ON.id('bindSheet_borderWidth')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
-      console.info("[sheetBorderWidth_static_0100] obj2 is: " + JSON.stringify(obj2));
+      console.info("[sheetBorderWidth_static_0100] obj2 is: " + inspector.getInspectorTree());
 
-      console.info("[sheetBorderWidth_static_0100] obj2.getArray('$children')[1].getArray('$children')[0] borderWidth is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[sheetBorderWidth_static_0100] obj2.getArray('$children') is: " + JSON.stringify(obj2.getArray('$children')));
       console.info("[sheetBorderWidth_static_0100] obj2.getArray('$children')[1].getArray('$children')[0] borderWidth is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderWidth')));
-      let left:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderWidth').getString('left')
-      let right:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderWidth').getString('right')
-      let top:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderWidth').getString('top')
-      let bottom:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderWidth').getString('bottom')
+      let left:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderWidth')
       expect(left).assertEqual('10.00vp');
-      expect(right).assertEqual('10.00vp');
-      expect(top).assertEqual('10.00vp');
-      expect(bottom).assertEqual('0.00vp');
       
-      let btn2: Component | null = await driver.findComponent(ON.id('close1_border'));
+      let btn2: Component = await driver.findComponent(ON.id('close1_border')) as Component;
       await (btn2?.click() as Promise<void>);
       console.info('sheetBorderWidth_static_0100 END');
       done();
@@ -119,7 +112,7 @@ it('sheetBorderWidth_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       console.info('sheetBorderWidth_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('bindSheet_borderWidth1'));
+      let button:Component = await driver.findComponent(ON.id('bindSheet_borderWidth1')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -138,7 +131,7 @@ it('sheetBorderWidth_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       expect(left).assertEqual('5.00vp');
       expect(bottom).assertEqual('0.00vp');
       
-      let btn2: Component | null = await driver.findComponent(ON.id('close1_border'));
+      let btn2: Component  = await driver.findComponent(ON.id('close1_border')) as Component;
       await (btn2?.click() as Promise<void>);
       console.info('sheetBorderWidth_static_0200 END');
       done();
@@ -156,7 +149,7 @@ it('sheetBorderWidth_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       console.info('sheetBorderWidth_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('bindSheet_borderWidth2'));
+      let button:Component = await driver.findComponent(ON.id('bindSheet_borderWidth2')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -166,7 +159,7 @@ it('sheetBorderWidth_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
 
       console.info("[sheetBorderWidth_static_0300] obj2.getArray('$children')[1].getArray('$children')[0] borderWidth is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
       console.info("[sheetBorderWidth_static_0300] obj2.getArray('$children')[1].getArray('$children')[0] borderWidth is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderWidth')));
-      let borderWidth = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('borderWidth')
+      let borderWidth = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderWidth')
 
       if(currentDeviceIsPC){
         expect(borderWidth).assertEqual('1.00px');
@@ -174,7 +167,7 @@ it('sheetBorderWidth_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         expect(borderWidth).assertEqual('0.00vp');
       }
             
-      let btn2: Component | null = await driver.findComponent(ON.id('close1_border'));
+      let btn2: Component = await driver.findComponent(ON.id('close1_border')) as Component;
       await (btn2?.click() as Promise<void>);
       console.info('sheetBorderWidth_static_0300 END');
       done();

@@ -48,7 +48,7 @@ export default function promptActionKeyboardAvoidDistance() {
       }
       try {
         const promptActionKeyboardAvoidDistance = AppStorage.get<Router>("router") as Router
-        promptActionKeyboardAvoidDistance.clear();
+        // promptActionKeyboardAvoidDistance.clear();
         let pages:router.RouterState = promptActionKeyboardAvoidDistance.getState();
         console.info("get promptActionKeyboardAvoidDistance state pages: " + JSON.stringify(pages));
         if (!("promptActionKeyboardAvoidDistance" == pages.name)) {
@@ -128,7 +128,7 @@ it('PromptActionKeyboardAvoidDistance_static_0200', TestType.FUNCTION | Size.MED
       await ( btn2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let input = (await driver.findComponent(ON.id('input1'))) as Component;
-      await input.click();
+      await (input?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let column:Component =( await driver.findComponent(ON.type('Column').isAfter(ON.type('Dialog')))) as Component;
       let rect = await column.getBounds();

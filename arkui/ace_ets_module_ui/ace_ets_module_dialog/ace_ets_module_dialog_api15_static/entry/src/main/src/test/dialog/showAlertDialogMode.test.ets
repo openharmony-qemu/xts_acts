@@ -144,7 +144,7 @@ it('showAlertDialogMode_static_0200', Level.LEVEL1, async (done: () => void): Pr
       console.info('[showAlertDialogMode_static_0200] back');
 
       await CommonFunc.sleep(1000);
-      let btn4: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
+      let btn4 = await driver.findComponent(ON.text('ok'));
       expect(btn4 != null).assertFalse();
       // await ( btn4?.click() as Promise<void>);
       console.info('[showAlertDialogMode_static_0200] END');

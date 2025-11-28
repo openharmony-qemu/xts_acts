@@ -24,7 +24,7 @@ import {
   Text,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses,TextAttribute
 } from '@ohos.arkui.component'
 import {
   State,
@@ -45,24 +45,26 @@ import promptAction from '@ohos.promptAction';
 let promptAction = new PromptAction()
 let router1 =new Router()
 
-// @Extend(Text)
-// function componentTextStyle() {
-//   .fontSize(15)
-//   .backgroundColor(Color.Orange)
-//   .margin(3)
-//   .padding(3)
-//   .borderWidth(1.0)
-// }
+function superFancyText2(this: TextAttribute): this {
+  this.fontSize(15);
+  this.backgroundColor(Color.Orange)
+  this.margin(3)
+  this.padding(3)
+  this.borderWidth(1.0)
+  return this;
+}
+
 @Entry
 @Component
 struct Index {
   build() {
+    const dialogRouter = AppStorage.get<Router>("router") as Router
     Column({ space: 5 } as ColumnOptions) {
       Row(){
         Text('返回')
-          //.componentTextStyle()
-          .onClick(():void => {
-            router1.back(1)
+          .superFancyText2()
+          .onClick((event: ClickEvent) => {
+            dialogRouter.back(1)
           })
           .id('back1')
       }

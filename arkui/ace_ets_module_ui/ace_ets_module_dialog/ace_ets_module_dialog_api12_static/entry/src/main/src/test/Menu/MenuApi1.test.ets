@@ -52,10 +52,8 @@ export default function MenuApi1() {
         console.info("get MenuApi1 state pages: " + JSON.stringify(pages));
         if (!("MenuApi1" == pages.name)) {
           console.info("get MenuApi1 state pages.name: " + JSON.stringify(pages.name));
-          // let result = await MenuApi1.pushUrl(options);
           MenuApi1.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push MenuApi1 success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -70,8 +68,7 @@ export default function MenuApi1() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   MenuApi1_static_0100
      * @tc.name     MenuApi1_static_0100
      * @tc.desc     MenuApi1_static_0100
@@ -82,14 +79,18 @@ it('MenuApi1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
 
       if (AppStorage.get<number>("winLeft") == 0) {
-        inspector.sendEventByKey('MenuApi1_static_btn1',10,"")
+        console.log("-------sendEventByKey")
+        inspector.sendEventByKey('MenuApi1_btn1',10,"")
         await CommonFunc.sleep(1000);
-
-        inspector.sendEventByKey('MenuApi1_static_btn2',10,"")
+        console.log("-------sendEventByKey")
+        inspector.sendEventByKey('MenuApi1_btn2',10,"")
         await CommonFunc.sleep(1000);
-
-        let text1 = inspector.getInspectorByKey('MenuApi1_static_text1');
-        expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('undefined')
+        console.log("-------getInspectorByKey")
+        console.log("-------" + inspector.getInspectorByKey('MenuApi1_text1'))
+        console.log("-------getInspectorByKey")
+        let text1 = inspector.getInspectorByKey('MenuApi1_text1');
+        console.log("-------assertEqual")
+        expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('undefined')
         await CommonFunc.sleep(1000);
       }
 

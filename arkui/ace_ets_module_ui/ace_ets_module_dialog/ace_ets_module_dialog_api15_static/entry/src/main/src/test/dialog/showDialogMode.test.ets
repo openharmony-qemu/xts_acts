@@ -145,7 +145,7 @@ it('showDialogMode_static_0200', Level.LEVEL1, async (done: () => void): Promise
       console.info('[showDialogMode_static_0200] back');
 
       await CommonFunc.sleep(1000);
-      let btn4: Component = ( await driver.findComponent(ON.text('button1')) ) as Component;
+      let btn4 = await driver.findComponent(ON.text('button1'));
       expect(btn4 != null).assertFalse();
       // await ( btn4?.click() as Promise<void>);
       console.info('[showDialogMode_static_0200] END');

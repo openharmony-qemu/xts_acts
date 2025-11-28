@@ -84,16 +84,15 @@ export default function menuFontsizeModifierTest() {
       await (buttonOnchange?.click() as Promise<void>);
       await CommonFunc.sleep(1000)
 
-      let strJsonNew = inspector.getInspectorByKey('MenuFontSizeValueKey');
-      console.info("ArkUX_Modifier_Menu_FontSize_static_1001 component  is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('50px');
-      console.info('ArkUX_Modifier_Menu_FontSize_static_1001 END');
-      await (buttonOnchange?.click() as Promise<void>);
-      await CommonFunc.sleep(1000)
-      done();
-    });
+        let strJsonNew = inspector.getInspectorByKey('MenuFontSizeValueKey');
+        console.info("ArkUX_Modifier_Menu_FontSize_static_1001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('50px');
+        console.info('ArkUX_Modifier_Menu_FontSize_static_1001 END');
+        await (buttonOnchange?.click() as Promise<void>);
+        await CommonFunc.sleep(1000)
+        done();
+      });
 
 
     /*
@@ -112,16 +111,15 @@ export default function menuFontsizeModifierTest() {
       await (buttonOnchange?.click() as Promise<void>);
       await CommonFunc.sleep(1000)
 
-      let strJsonNew = inspector.getInspectorByKey('MenuFontSizeValueKey');
-      console.info("ArkUX_Modifier_Menu_FontSize_static_1002 component  is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('-20');
-      console.info('ArkUX_Modifier_Menu_FontSize_static_1002 END');
-      await (buttonOnchange?.click() as Promise<void>);
-      await CommonFunc.sleep(1000)
-      done();
-    });
+        let strJsonNew = inspector.getInspectorByKey('MenuFontSizeValueKey');
+        console.info("ArkUX_Modifier_Menu_FontSize_static_1002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('-20');
+        console.info('ArkUX_Modifier_Menu_FontSize_static_1002 END');
+        await (buttonOnchange?.click() as Promise<void>);
+        await CommonFunc.sleep(1000)
+        done();
+      });
 
 
     /*
@@ -140,15 +138,14 @@ export default function menuFontsizeModifierTest() {
       await (buttonOnchange?.click() as Promise<void>);
       await CommonFunc.sleep(1000)
 
-      let strJsonNew = inspector.getInspectorByKey('MenuFontSizeValueKey');
-      console.info("ArkUX_Modifier_Menu_FontSize_static_1003 component  is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('0');
-      console.info('ArkUX_Modifier_Menu_FontSize_static_1003 END');
-      await (buttonOnchange?.click() as Promise<void>);
-      await CommonFunc.sleep(1000)
-      done();
-    });
-  })
+        let strJsonNew = inspector.getInspectorByKey('MenuFontSizeValueKey');
+        console.info("ArkUX_Modifier_Menu_FontSize_static_1003 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('0');
+        console.info('ArkUX_Modifier_Menu_FontSize_static_1003 END');
+        await (buttonOnchange?.click() as Promise<void>);
+        await CommonFunc.sleep(1000)
+        done();
+      });
+    })
 }

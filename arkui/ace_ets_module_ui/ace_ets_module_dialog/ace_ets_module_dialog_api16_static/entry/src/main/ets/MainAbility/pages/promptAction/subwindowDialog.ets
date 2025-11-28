@@ -32,13 +32,13 @@ import {
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
+import { ComponentContent } from '@ohos.arkui.node';
 import promptAction from '@ohos.promptAction';
-import { PromptAction } from '@ohos.arkui.UIContext';
+
 
 @Entry
 @Component
 struct subwindowDialogExample {
-  promptAction:PromptAction = this.getUIContext().getPromptAction()
   private customDialogComponentId: int = 0
   private iconStr: ResourceStr = $r('app.media.icon')
   @State mText1: string = ''
@@ -57,7 +57,7 @@ struct subwindowDialogExample {
   }
 
   @Builder
-  customDialogComponent() {
+  customDialogComponent(): void {
     Column({ space: 5 } as ColumnOptions) {
       Text('长按触发Menu弹出')
         .id('subwindowDialogLongClickMenu')
@@ -72,7 +72,7 @@ struct subwindowDialogExample {
           })
         .backgroundColor('#ff3df2f5')
       Button('关闭弹窗').onClick((e: ClickEvent) => {
-        this.promptAction.closeCustomDialog(this.customDialogComponentId)
+        this.getUIContext().getPromptAction().closeCustomDialog(this.customDialogComponentId)
       }).id('subwindowDialogClickClose')
 
     }
@@ -90,7 +90,7 @@ struct subwindowDialogExample {
       Button('弹出弹窗')
         .id('subwindowDialogClickOpen')
         .onClick((e: ClickEvent) => {
-          this.promptAction.openCustomDialog({
+          this.getUIContext().getPromptAction().openCustomDialog({
             builder: () => {
               this.customDialogComponent()
             },

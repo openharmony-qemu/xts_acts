@@ -18,7 +18,6 @@ import { BusinessError } from '@ohos.base'
 import { UIContext } from '@ohos.arkui.UIContext'
 import {  PromptAction } from '@ohos.arkui.UIContext'
 import   promptAction  from '@ohos.promptAction'
-import { ComponentContent } from '@ohos.arkui.node';
 import {
   Entry,
   Component,
@@ -40,6 +39,7 @@ import {
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController
 } from '@ohos.arkui.component';
+import { ComponentContent } from '@ohos.arkui.node'
 import {
   State,
   Link,

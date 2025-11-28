@@ -38,7 +38,6 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-
 export default function MaxwidthTest() {
   describe('MaxwidthTest', () => {
     beforeAll(() => {
@@ -76,18 +75,17 @@ export default function MaxwidthTest() {
      * @tc.level    Level.LEVEL2
      */
     it('popup_maxWidth_static_0101', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('popup_maxWidth_static_0101 START');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('PopupApi1_btn1', 10, "")
-      await CommonFunc.sleep(1000);
-      console.info('popup_maxWidth_static_0101 click after')
-      let text = inspector.getInspectorByKey('PopupApi1_text1');
-      expect(JSON.stringify(JSON.parseJsonElement(text).getElement('$attrs').getString('content')))
-        .assertEqual('\"300.00vp\"');
-      await CommonFunc.sleep(1000);
-      console.info('popup_maxWidth_0100 END');
-      done();
-    });
+        console.info('popup_maxWidth_static_0101 START');
+        await CommonFunc.sleep(1000);
+        inspector.sendEventByKey('PopupApi1_btn1',10,"")
+        await CommonFunc.sleep(1000);
+        console.info('popup_maxWidth_static_0101 click after')
+        let text = inspector.getInspectorByKey('PopupApi1_text1');
+        expect(JSON.stringify(JSON.parseJsonElement(text).getElement('$attrs').getString('content'))).assertEqual('\"300.00vp\"');
+        await CommonFunc.sleep(1000);
+        console.info('popup_maxWidth_0100 END');
+        done();
+      });
 
 
     /*

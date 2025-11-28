@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { ComponentContent, PromptAction, LevelOrder, promptAction, UIContext } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 import { PromptAction,UIContext } from '@ohos.arkui.UIContext';
-import promptAction from '@ohos.promptAction';
-import { LevelOrder } from '@ohos.promptAction';
+import  promptAction  from '@ohos.promptAction';
 import {
   Entry,
   Component,
@@ -35,10 +33,12 @@ import {
   Week,
   FontWeight,
   Axis,
-  Margin,TransitionEffect,FlexAlign,TransitionEdge,
+  Margin,TransitionEffect,FlexAlign,TransitionEdge, CustomBuilderT,wrapBuilder,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
 } from '@ohos.arkui.component';
+import { LevelOrder } from '@ohos.promptAction';
+import { ComponentContent } from '@ohos.arkui.node'
 import {
   State,
   Link,
@@ -71,8 +71,7 @@ struct dialogTransitionTest {
   @State text:string = ''
   private ctx: UIContext = this.getUIContext()
   private promptAction: PromptAction = this.ctx.getPromptAction()
-  // private contentNode: ComponentContent<Object> =
-  //   new ComponentContent(this.ctx, wrapBuilder(buildText), new Params(this.message))
+  private contentNode: ComponentContent<Params> = new ComponentContent<Params>(this.ctx, wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message))
   private baseDialogOptions: promptAction.BaseDialogOptions = {
     showInSubWindow: false,
     transition: this.isEnableTransition ? TransitionEffect.move(TransitionEdge.BOTTOM)
@@ -81,7 +80,7 @@ struct dialogTransitionTest {
     levelOrder: LevelOrder.clamp(30.1),
     onWillAppear:()=>{
       this.text = 'onWillAppear'
-      AppStorage.setOrCreate('text',this.text)
+      AppStorage.setOrCreate<string>('text',this.text)
       console.log('onWillAppear')
     },
     onDidAppear:()=>{
@@ -92,7 +91,7 @@ struct dialogTransitionTest {
     },
     onDidDisappear:()=>{
       this.text = 'onDidDisappear'
-      AppStorage.setOrCreate('text',this.text)
+      AppStorage.setOrCreate<string>('text',this.text)
       console.log('onDidDisappear')
     }
   } as promptAction.BaseDialogOptions
@@ -101,17 +100,17 @@ struct dialogTransitionTest {
     Column({ space: 10 } as ColumnOptions) {
       Button('openCustomDialog')
         .id('open')
-        .onClick(():void => {
-          // this.promptAction.openCustomDialog(this.contentNode, this.baseDialogOptions)
-          //   .catch((err: BusinessError) => {
-          //     console.error('openCustomDialog error: ' + err.code + ' ' + err.message)
-          //   })
-          //   .then(() => {
-          //     let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
-          //     if (bottomOrder !== undefined) {
-          //       console.error('bottomOrder: ' + bottomOrder.getOrder());
-          //     }
-          //   })
+        .onClick((e:ClickEvent):void => {
+          this.promptAction.openCustomDialog(this.contentNode, this.baseDialogOptions)
+            .catch((err: Error) => {
+              console.error('openCustomDialog error: ' + err.code + ' ' + err.message)
+            })
+            .then(() => {
+              let bottomOrder: LevelOrder = this.promptAction.getBottomOrder()!;
+              if (bottomOrder !== undefined) {
+                console.error('bottomOrder: ' + bottomOrder.getOrder());
+              }
+            })
         })
     }.height('100%')
     .width('100%')

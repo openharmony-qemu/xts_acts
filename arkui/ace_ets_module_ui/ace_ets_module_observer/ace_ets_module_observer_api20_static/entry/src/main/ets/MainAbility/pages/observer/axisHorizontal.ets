@@ -58,12 +58,12 @@ struct scrollAxisHorizontalIndex {
             .id('axisHorizontal_on')
             .onClick((e: ClickEvent) => {
               console.log('++++++++++++++++++++++++++1')
-              uiObserver.onScrollEvent( this.options as uiObserver.ObserverOptions, (info: uiObserver.ScrollEventInfo) => {
-                this.Id1 = info!.id as string
-                // this.axis1 = info!.axis as Axis//Property 'axis' does not exist on type 'ScrollEventInfo'  //SDK11.13 暂时不支持，以后会支持
-                console.info('scrollEventInfo');
-                // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
-              });
+              // uiObserver.onScrollEvent( this.options, (info: uiObserver.ScrollEventInfo) => {
+              //   this.Id1 = info.id
+              //   this.axis1 = info.axis   //Property 'axis' does not exist on type 'ScrollEventInfo'  //SDK11.13 暂时不支持，以后会支持
+              //   console.info('scrollEventInfo');
+              //   // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
+              // });
               console.log('++++++++++++++++++++++++++2')
             })
           Button('observerWithId off')

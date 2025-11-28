@@ -53,10 +53,10 @@ export default function dialogTransitionTest() {
         console.info("get dialogTransitionTest state pages: " + JSON.stringify(pages));
         if (!("dialogTransitionTest" == pages.name)) {
           console.info("get dialogTransitionTest state pages.name: " + JSON.stringify(pages.name));
-          // let result = await dialogTransitionTest.pushUrl(options);
+          
           dialogTransitionTest.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push dialogTransitionTest success: " + JSON.stringify(result));
+          
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -69,7 +69,7 @@ export default function dialogTransitionTest() {
 
 
     afterEach(async () => {
-      if(AppStorage.get('text')!= undefined){
+      if(AppStorage.get<string>('text')!= undefined){
         AppStorage.delete('text')
       }
       await CommonFunc.sleep(1000);
@@ -88,14 +88,14 @@ it('dialogTransitionTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Lev
       console.info('dialogTransitionTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('open'));
+      let button:Component = await driver.findComponent(ON.id('open')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      let text: string = AppStorage.get('text')! as string
+      let text: string = AppStorage.get<string>('text')!
       expect(text).assertEqual('onWillAppear');
       await driver.triggerKey(2070);
       await CommonFunc.sleep(2000);
-      let text1: string = AppStorage.get('text')! as string
+      let text1: string = AppStorage.get<string>('text')!
       expect(text1).assertEqual('onDidDisappear');
       console.info('dialogTransitionTest_static_0100 END');
       done();
