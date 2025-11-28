@@ -2543,5 +2543,128 @@ export default function btManagerError003Test() {
             }
               done();
             })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_OFF_0100
+         * @tc.desc   Test updateConnectionParam Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await gattClient.updateConnectionParam(ble.ConnectionParam.LOW_POWER);
+					console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `updateConnectionParam get error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })        
+		
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100
+         * @tc.desc   Test getService Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let serviceUuid = '00001888-0000-1000-8000-00805f9b34fb';
+					let returu_gattservice = gattServer.getService(serviceUuid);
+					console.info('[bt_arkts]gattServer getService get return_values is ' + JSON.stringify(returu_gattservice));
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `getService error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_OFF_0100
+         * @tc.desc   Test getServices Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let return_list = gattServer.getServices();
+					console.info('[bt_arkts] return_list is' + JSON.stringify(return_list));
+					console.info('[bt_arkts] return_list length is ' + return_list.length);
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `getServices error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_OFF_0100
+         * @tc.desc   Test GattServer getConnectedState Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let return_status = gattServer.getConnectedState('01:02:00:02:03:01');
+					console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `GattServer getConnectedState error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+	
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100
+         * @tc.desc   Test GattClientDevice getConnectedState Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let return_status=gattClient.getConnectedState();
+					console.info('[bt_arkts]client ProfileConnectionState 0200 is' + JSON.stringify(return_status))
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `GattClientDevice getConnectedState error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
 })
 }
