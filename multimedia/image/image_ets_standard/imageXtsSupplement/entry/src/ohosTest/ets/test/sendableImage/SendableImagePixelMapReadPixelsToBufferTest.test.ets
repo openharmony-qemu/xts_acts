@@ -23,6 +23,7 @@ const TAG = 'readPixelsToBufferSupp';
 
 export default function sendablePixelMapReadPixelsToBufferTest() {
   describe('sendableReadPixelsToBufferTest', () => {
+
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       AppStorage.setOrCreate('undefined', undefined)
@@ -30,12 +31,15 @@ export default function sendablePixelMapReadPixelsToBufferTest() {
       AppStorage.setOrCreate('emptyString', '')
 
     });
+
     beforeEach(() => {
       console.info(TAG, 'beforeEach case.');
     });
+
     afterEach(() => {
       console.info(TAG, 'afterEach case.');
     });
+
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
       AppStorage.delete('undefined')
@@ -61,12 +65,11 @@ export default function sendablePixelMapReadPixelsToBufferTest() {
         console.info(TAG,testName,'createPixelMap success')
         if (PixelMap != undefined) {
           await PixelMap.readPixelsToBuffer(AppStorage.get('emptyString') as ArrayBuffer)
-          console.info(TAG,testName,'1111111111')
         }
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -94,7 +97,7 @@ export default function sendablePixelMapReadPixelsToBufferTest() {
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -121,7 +124,7 @@ export default function sendablePixelMapReadPixelsToBufferTest() {
         done();
       } catch (error) {
         console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
