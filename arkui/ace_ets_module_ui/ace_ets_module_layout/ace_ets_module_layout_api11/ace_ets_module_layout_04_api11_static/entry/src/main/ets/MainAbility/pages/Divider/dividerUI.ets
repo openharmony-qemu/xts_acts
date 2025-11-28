@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,16 +17,16 @@ import { GlobalContext } from './../../common/GlobalContext';
 import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import { Entry, Component, LineCapStyle, Color,Length, Flex,Resource,ResourceColor, Row, Column, ClickEvent, FlexDirection, ItemAlign, FlexAlign, Text, Divider, Button, Margin } from '@ohos.arkui.component'
-import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { State,AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct DividerExample {
-  @StorageProp('vertical') vertical:boolean = false
-  @StorageProp('color') color:ResourceColor|undefined = Color.Red
-  @StorageProp('strokeWidth') strokeWidth:number|string|undefined = 20 as number
-  @StorageProp('lineCapStyle') lineCapStyle: LineCapStyle = LineCapStyle.Butt
-  @StorageProp('widthK') widthK: undefined|string|number|Resource = 0 as number
+  @StoragePropRef('vertical') vertical:boolean = false
+  @StoragePropRef('color') color:ResourceColor|undefined = Color.Red
+  @StoragePropRef('strokeWidth') strokeWidth:number|string|undefined = 20 as number
+  @StoragePropRef('lineCapStyle') lineCapStyle: LineCapStyle = LineCapStyle.Butt
+  @StoragePropRef('widthK') widthK: undefined|string|number|Resource = 0 as number
 
   build() {
     Column() {

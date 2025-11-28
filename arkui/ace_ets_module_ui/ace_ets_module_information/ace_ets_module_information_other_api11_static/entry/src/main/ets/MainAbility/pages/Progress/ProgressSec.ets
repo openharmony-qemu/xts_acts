@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +16,9 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { MessageManager, Message, Callback } from '../../common/MessageManager';
-import { Entry, Component, ProgressMask, Row, Column, List, ListItem, Image, $r, Color, ClickEvent, Button,
+import { Entry, Component, ProgressMask, Row, Column, List, ListItem, Image, $r, Color, ClickEvent, Button,ProgressStyleOptions,
   HorizontalAlign, Flex, FlexDirection, ItemAlign, FontWeight,FlexAlign, Alignment, TextOverflow, ProgressType,ResourceColor,
-  RowOptions, ColumnOptions, Text, Progress, Margin, ProgressStyle, Resource, ProgressStatus, LinearGradient, FontStyle,
+  RowOptions, ColumnOptions, Text, Progress, Margin, ProgressStyle, Resource, ProgressStatus, LinearGradient, FontStyle,LinearStyleOptions,
   CapsuleStyleOptions, RingStyleOptions
 } from '@ohos.arkui.component'
 import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
@@ -307,7 +308,7 @@ struct progressSecTest {
         .style({
           enableScanEffect: this.progress_linear_enableScanEffect_boolean,
           enableSmoothEffect: this.progress_linear_enableSmoothEffect_boolean
-        } as RingStyleOptions)
+        } as LinearStyleOptions)
 
       Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_number')
@@ -341,7 +342,7 @@ struct progressSecTest {
         .color(this.progress_ring_color_purity)
         .style({
           enableSmoothEffect: this.progress_eclipse_enableSmoothEffect_boolean
-        } as RingStyleOptions)
+        } as ProgressStyleOptions)
 
       Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_number')
@@ -375,7 +376,7 @@ struct progressSecTest {
         .color(this.progress_ring_color_purity)
         .style({
           enableSmoothEffect: this.progress_scaleRing_enableSmoothEffect_boolean
-        } as RingStyleOptions)
+        } as ProgressStyleOptions)
 
       Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_number')

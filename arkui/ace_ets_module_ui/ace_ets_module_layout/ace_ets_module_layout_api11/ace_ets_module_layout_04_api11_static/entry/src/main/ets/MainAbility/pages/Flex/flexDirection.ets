@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Row, FlexAlign, Margin, Column, ColumnOptions, Text, Flex, FlexDirection, Color } from '@ohos.arkui.component'
+import { Entry, Component, Row, FlexAlign, Margin, Column, ColumnOptions, Text, Flex, FlexDirection, Color,ResourceColor } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
 
@@ -20,8 +21,8 @@ import events_emitter from '@ohos.events.emitter'
 @Component
 struct flexDirectionExample {
   @State sWidth: string = '20%'
-  @State sHeight: number = 40
-  @State sBackgroundColor: Color = Color.Red
+  @State sHeight: string = '40'
+  @State sBackgroundColor: ResourceColor = Color.Red
 
   build() {
     Column() {
@@ -90,10 +91,10 @@ struct flexDirectionExample {
         this.sWidth = data['width'] as string;
       }
       if (data['height'] != null) {
-        this.sHeight = data['height'] as number;
+        this.sHeight = data['height'] as string;
       }
       if (data['backgroundColor'] != null) {
-        this.sBackgroundColor = data['backgroundColor'] as Color;
+        this.sBackgroundColor = data['backgroundColor'] as ResourceColor;
       }
     }
   }

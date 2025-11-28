@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,15 @@
  * limitations under the License.
  */
 import { Entry, Component, Row, FlexAlign,ResourceColor,Resource, Length,Margin, Column, ColumnOptions, Text, Flex, FlexDirection, FlexWrap, Color } from '@ohos.arkui.component'
-import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { State,AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
 
 @Entry
 @Component
 struct FlexWrapExample {
-  @StorageProp('sWidth') sWidth: Length = '20%'
-  @StorageProp('sHeight') sHeight: undefined|string|number|Resource = 40 as number
-  @StorageProp('sBackgroundColor') sBackgroundColor: ResourceColor = 0xD2B48C
+  @StoragePropRef('sWidth') sWidth: Length = '20%'
+  @StoragePropRef('sHeight') sHeight: undefined|string|number|Resource = 40 as number
+  @StoragePropRef('sBackgroundColor') sBackgroundColor: ResourceColor = 0xD2B48C
 
   build() {
     Column() {

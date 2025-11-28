@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +22,7 @@ import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridRowCol {
-  @State Number01: String[] = ['0', '1', '2', '3', '4'] as String[]
+  @State numAry: String[] = new Array<string>('0', '1', '2', '3', '4')
   scroller: Scroller = new Scroller()
   @State columnsTemplate: string = '1fr 1fr 1fr'
   messageManager: MessageManager<string> = new MessageManager<string>()
@@ -41,8 +42,8 @@ struct GridRowCol {
   build() {
     Column({ space: 5 } as ColumnOptions)  {
       Grid() {
-        ForEach(this.Number01, (day: string ,index1:int|undefined) => {
-          ForEach(this.Number01, (day: string ,index2:int|undefined) => {
+        ForEach(this.numAry, (day: string ,index1:int|undefined) => {
+          ForEach(this.numAry, (day: string ,index2:int|undefined) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
