@@ -25,7 +25,7 @@ import {
   Text,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,List,ListItemAlign,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
@@ -76,7 +76,7 @@ struct Index {
           .height('40vp')
           .backgroundColor('#ff53ecd9')
           .borderRadius(10)
-          .onClick(():void => {
+          .onClick((event: ClickEvent) => {
             this.message = 'Page:' + item.utl
             this.getUIContext().getRouter().pushUrl({ url: item.utl })
           })

@@ -61,6 +61,7 @@ import {
   Scroller,
   Color,
   Rectangle,
+  LevelMode,
   ActionSheetOptions,
   ControlSize,
   DialogAlignment,

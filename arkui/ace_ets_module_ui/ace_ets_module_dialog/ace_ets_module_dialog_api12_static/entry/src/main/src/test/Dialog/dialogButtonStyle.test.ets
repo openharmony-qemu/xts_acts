@@ -52,10 +52,10 @@ export default function dialogButtonStyle() {
         console.info("get dialogButtonStyle state pages: " + JSON.stringify(pages));
         if (!("dialogButtonStyle" == pages.name)) {
           console.info("get dialogButtonStyle state pages.name: " + JSON.stringify(pages.name));
-          // let result = await dialogButtonStyle.pushUrl(options);
+          
           dialogButtonStyle.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push dialogButtonStyle success: " + JSON.stringify(result));
+          
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -84,11 +84,11 @@ it('dialogButtonStyle_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.
       console.info('dialogButtonStyle_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('alertDialog'));
+      let button:Component = await driver.findComponent(ON.id('alertDialog')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let btn2: Component|null = (await driver.findComponent(ON.text('ok'))) ;
+      let btn2: Component = (await driver.findComponent(ON.text('ok'))) as Component;
       expect(btn2 != null ).assertTrue();
       await (btn2?.click() as Promise<void>);
       console.info('dialogButtonStyle_static_0100 END');

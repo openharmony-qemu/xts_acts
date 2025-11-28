@@ -80,8 +80,6 @@ import { Callback, BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
 import promptAction from '@ohos.promptAction';
 
-let router1 = new Router()
-let promptAction = new PromptAction()
 
 const TAG: string = 'OpenDialogTest';
 

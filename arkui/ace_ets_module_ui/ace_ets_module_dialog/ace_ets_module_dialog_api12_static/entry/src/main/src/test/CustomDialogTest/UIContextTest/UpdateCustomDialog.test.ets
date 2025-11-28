@@ -51,10 +51,10 @@ export default function UpdateCustomDialogTest() {
         console.info("get UpdateCustomDialogTest state pages: " + JSON.stringify(pages));
         if (!("UpdateCustomDialogTest" == pages.name)) {
           console.info("get UpdateCustomDialogTest state pages.name: " + JSON.stringify(pages.name));
-          // let result = await UpdateCustomDialogTest.pushUrl(options);
+          
           UpdateCustomDialogTest.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push UpdateCustomDialogTest success: " + JSON.stringify(result));
+          
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -70,7 +70,6 @@ export default function UpdateCustomDialogTest() {
       console.info("UpdateCustomDialogTest after each called");
     });
 
-    
     
 /*
      * @tc.number   UpdateCustomDialogTest_static_001
