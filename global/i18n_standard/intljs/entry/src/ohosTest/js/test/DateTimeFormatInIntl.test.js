@@ -336,7 +336,7 @@ describe('DateTimeFormatInIntlTest', function () {
             dateStyle: 'full'
         });
         console.log('dateTimeFormat_test_1300 ' + datefmt.formatRange(startdate, enddate));
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, 20 – Monday, 21 December 2020');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday 20 December – Monday 21 December 2020');
     })
 
     /**
@@ -354,7 +354,7 @@ describe('DateTimeFormatInIntlTest', function () {
             dateStyle: 'full'
         });
         console.log('dateTimeFormat_test_1400 ' + datefmt.formatRange(startdate, enddate));
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, 20 December 2020');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday 20 December 2020');
     })
 
     /**
@@ -387,7 +387,7 @@ describe('DateTimeFormatInIntlTest', function () {
         let option = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
         let datefmt = new Intl.DateTimeFormat('en', option);
         console.log('dateTimeFormat_test_1600 ' + datefmt.formatRange(startdate, enddate));
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
     })
 
     /**

@@ -60,7 +60,7 @@ describe('etsIntlFunTest', function () {
                 hour: "2-digit", minute: "2-digit", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("en-US", options).format;
         console.log("intlDateTimeFormatTest003::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
+        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
     })
 
     /**
@@ -77,7 +77,7 @@ describe('etsIntlFunTest', function () {
                 hour: "2-digit", minute: "2-digit", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("en", options).format;
         console.log("intlDateTimeFormatTest004::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
+        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
     })
 
     /**
@@ -95,7 +95,7 @@ describe('etsIntlFunTest', function () {
             timeZoneName: "short", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat(["pt-BR", "pt-PT"], options).format;
         console.log("intlDateTimeFormatTest005::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("8 de outubro de 2022 00:00 UTC");
+        expect(intlObj(newDate)).assertEqual("8 de outubro de 2022 às 00:00 UTC");
     })
 
     /**
@@ -1037,7 +1037,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(100, 'second');
         console.log('RelativeTimeFormatTest007 :' + value);
-        expect(value).assertEqual('in 100 sec.');
+        expect(value).assertEqual('in 100s');
     })
 
     /**
@@ -1052,7 +1052,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(-1, 'day');
         console.log('RelativeTimeFormatTest008 :' + value);
-        expect(value).assertEqual('1 day ago');
+        expect(value).assertEqual('1d ago');
     })
 
     /**
@@ -1082,7 +1082,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(2, 'day');
         console.log('RelativeTimeFormatTest010 :' + value);
-        expect(value).assertEqual('in 2 days');
+        expect(value).assertEqual('in 2d');
     })
 
     /**
@@ -1257,7 +1257,7 @@ describe('etsIntlFunTest', function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "always", style: 'narrow'});
         var value = relativetimefmt.format(1, 'quarter');
         console.log('RelativeTimeFormatTest021 :' + value);
-        expect(value).assertEqual('in 1 qtr.');
+        expect(value).assertEqual('in 1q');
         expect(relativetimefmt.resolvedOptions().numeric).assertEqual('always');
         expect(relativetimefmt.resolvedOptions().style).assertEqual('narrow');
     })
@@ -1401,7 +1401,7 @@ describe('etsIntlFunTest', function () {
         var listform = new Intl.ListFormat("zh", {style: 'narrow'});
         var value = listform.format(vehicles);
         console.log('ListFormatTest006 :' + value);
-        expect(value).assertEqual('Motorcycle、Bus和Car');
+        expect(value).assertEqual('Motorcycle、Bus、Car');
     })
 
     /**

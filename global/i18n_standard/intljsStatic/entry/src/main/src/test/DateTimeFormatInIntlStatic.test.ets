@@ -348,7 +348,7 @@ export default function DateTimeFormatInIntlTest() {
       if (devType == '2in1') {
         expect(datefmt.formatRange(startdate, enddate)).assertEqual('20–21 Dec 2020');
       } else {
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('20/12/2020 – 21/12/2020');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('20/12/2020 – 21/12/2020');
       }
     })
 
@@ -413,7 +413,7 @@ export default function DateTimeFormatInIntlTest() {
       };
       let datefmt = new intl.DateTimeFormat('en', option);
       console.log('dateTimeFormat_test_static_1600 ' + datefmt.formatRange(startdate, enddate));
-      expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
+      expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
     })
 
     /**

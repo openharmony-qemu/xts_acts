@@ -15,9 +15,8 @@
 
 import Ability from '@ohos.app.ability.UIAbility';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { intl } from '@kit.LocalizationKit';
+import { i18n, intl } from '@kit.LocalizationKit';
 import { LengthMetrics } from '@kit.ArkUI';
-import i18n from '@ohos.i18n'
 
 export default function FivePointOne_i18nStageTest() {
   describe("FivePointOne_i18nStageTest", () => {
@@ -781,7 +780,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024 上午6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 上午 6:30:25")
     })
 
     /**
@@ -798,7 +797,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("2024/12/13 上午6:30:25")
+      expect(dateFormatted).assertEqual("2024/12/13 上午 6:30:25")
     })
 
     /**
@@ -815,7 +814,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024 上午6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 上午 6:30:25")
     })
 
     /**
@@ -832,7 +831,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("12/13/2024، چ ب 6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 6:30:25 چ ب")
     })
 
     /**
@@ -866,7 +865,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024, 6:30:25 am")
+      expect(dateFormatted).assertEqual("13/12/2024, 6:30:25 am")
     })
 
     /**
@@ -882,7 +881,7 @@ export default function FivePointOne_i18nStageTest() {
       let date: Date = new Date(2024, 11, 13, 6, 30, 25);
       let skeletonFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMdhms', locale);
       let dateFormatted: string = skeletonFormatter.format(date);
-      expect(dateFormatted).assertEqual("12/13/2024, 6:30:25 AM")
+      expect(dateFormatted).assertEqual("12/13/2024, 6:30:25 AM")
     })
 
     /**
