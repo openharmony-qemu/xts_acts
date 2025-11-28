@@ -20,6 +20,7 @@ import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { RepeatMode, GradientDirection,Color } from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
 
 export default function ColorBlendTest() {
   //A list of components that support the position attribute, which is required.
@@ -51,10 +52,10 @@ export default function ColorBlendTest() {
   let testValues:TestValue[]= [{
     describe: 'SetColorBlend',
     setValue: {
-      colorBlend: Color.Blue
+      colorBlend: '#FF123456'
     },
     expectValue: {
-      colorBlend: Color.Blue
+      colorBlend: '#FF123456'
     }
   }]
 
@@ -74,13 +75,15 @@ export default function ColorBlendTest() {
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the target component properties.
-      AppStorage.setOrCreate<SetValue>('_zIndexButtonModifier',data.testValue.setValue)
-      console.error('[' + data.caseTag + '] colorBlendTest');
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+
       console.error('[' + data.caseTag + '] check colorBlend.' + ` ${data.testValue.setValue.colorBlend}`);
       console.error('[' + data.testValue.expectValue.colorBlend + '] expectValue');
       console.error('[' + data.viewObj!.getElement('$attrs').getString('colorBlend') + '] viewObj.$attrs.colorBlend');
-      expect(data.viewObj!.getElement('$attrs').getElement('colorBlend').asString()).assertEqual(data.testValue.expectValue.colorBlend.toString());
+      let strJson = inspector.getInspectorByKey(data.pageConfig.componentKey);
+      console.info('strJsonstrJsonstrJson2' + strJson);
+      await Utils.sleep(2000);
+      let colorBlendStrJson = JSON.parseJsonElement(strJson);
+      expect(colorBlendStrJson.getElement('$attrs').getString('colorBlend')).assertEqual(data.testValue.expectValue.colorBlend);
 
     });
   })

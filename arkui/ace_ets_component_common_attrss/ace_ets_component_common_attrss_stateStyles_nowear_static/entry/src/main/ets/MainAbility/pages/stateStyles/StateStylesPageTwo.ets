@@ -17,19 +17,31 @@ import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import { StepperView } from '../../view/alignRules/StepperView';
 import {
-  MenuItemGroup,MenuItemGroupOptions,ImageFit,FlowItem,TabContent,ListItemGroup,ListItem,StepperItem,SliderStyle,BadgeParamWithNumber,Blank,Entry,Component,$r,
-  AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,RowOptions,LazyForEach,
-  Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,CommonMethod,applyStyles,Builder,
-  Color,Scroller,Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,
-  Circle,WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,GridRow,Grid,Flex,Counter,Badge,Toggle,TimePicker,TextPicker,TextInput,TextClock,TextArea,Slider,
-  Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,
-  Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,
-  GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,
-  MenuItemOptions,CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,Stepper
+  Entry,
+  Component,
+  $r,
+  Row,
+  Column,
+  ColumnOptions,
+  Text,
+  CommonMethod,
+  applyStyles,
+  Builder,
+  Color,
+  Menu,
+  Stack,
+  Toggle,
+  CheckboxGroup,
+  Checkbox,
+  Radio,
+  MenuItem,
+  ToggleType,
+  MenuItemOptions,
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+
 @Entry
 @Component
 struct StateStylesPageTwo {
@@ -47,6 +59,7 @@ struct StateStylesPageTwo {
       console.log(' routerParamOptions error ' + error);
     }
   }
+
   @Builder
   myBuilder() {
     Column() {
@@ -62,12 +75,13 @@ struct StateStylesPageTwo {
     instance.zIndex(2)
     instance.backgroundColor(Color.Blue)
   }
+
   normalStyles(instance: CommonMethod) {
     instance.zIndex(1)
     instance.backgroundColor(Color.Red)
   }
 
-  commonStyle(instance: CommonMethod){
+  commonStyle(instance: CommonMethod) {
     instance.key(this.componentKey)
     instance.stateStyles({
       normal: this.normalStyles,
@@ -75,12 +89,11 @@ struct StateStylesPageTwo {
     })
   }
 
-
   build() {
     Row() {
       Stack() {
         if (this.targetView == 'Checkbox') {
-          console.log('CheckboxCheckbox',this._isSelect)
+          console.log('CheckboxCheckbox', this._isSelect)
           Checkbox().select(this._isSelect).applyStyles(this.commonStyle)
         } else if (this.targetView == 'CheckboxGroup') {
           CheckboxGroup({ group: 'checkboxGroup' }).selectAll(this._isSelect).applyStyles(this.commonStyle)
@@ -102,6 +115,7 @@ struct StateStylesPageTwo {
       .width('100%')
       .width('100%')
     }
+
     // .backgroundColor(Color.Yellow)
   }
 }

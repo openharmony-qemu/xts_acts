@@ -19,7 +19,7 @@ import Utils, { BasePageConfig, PageConfig, TestValue, SetValue } from '../../..
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import events_emitter from '@ohos.events.emitter'
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
@@ -71,7 +71,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            //try {
+            try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
@@ -91,23 +91,34 @@ export default class CommonTest {
                 testValue: testValue,
               }
 
-              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-              AppStorage.setOrCreate<SetValue>('_zIndexButtonModifier', data.testValue.setValue);
-              await Utils.sleep(1000);
+              console.info('[' + caseTag + '] setValue : ' + data.testValue.setValue.colorBlend + pageConfig.componentKey);
+              let eventData: events_emitter.EventData = {
+                data: {
+                  "colorBlend": data.testValue.setValue.colorBlend
+                } as Record<string, Object | null | undefined>
+              }
+              let innerEvent: events_emitter.InnerEvent = {
+                eventId: 184,
+                priority: events_emitter.EventPriority.LOW
+              }
+              events_emitter.emit(innerEvent, eventData);
+              await Utils.sleep(2000);
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              console.info('strJsonstrJsonstrJson' + strJson);
+              await Utils.sleep(2000);
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            // } catch (err) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect(msg).assertTrue();
-            //   }
-            // }
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect(msg).assertTrue();
+              }
+            }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

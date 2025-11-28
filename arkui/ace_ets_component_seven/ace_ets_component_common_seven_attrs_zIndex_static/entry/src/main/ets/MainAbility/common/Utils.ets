@@ -15,7 +15,6 @@
  */
 
 import router from '@ohos.router';
-import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {
   TouchType,
@@ -92,7 +91,7 @@ export class PageConfig {
   referenceComponentKey: string = '';
   targetView: string = '';
   testValue: TestValue = new TestValue();
-  componentKey?: string = '';
+  componentKey: string = '';
   sharePage?: boolean;
   containerView?: string;
   columns:number=0;
@@ -133,14 +132,6 @@ export default class Utils {
       let pages = router.getState();
       let pageParams = router.getParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      
-      
-      
-      
-      
-      
-      
-
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
@@ -162,7 +153,6 @@ export default class Utils {
     if (!('Index' == router.getState().name)) {
       router.back()
     }
-    AttrsManager.unRegisterDataChange();
     await Utils.sleep(1000);
     router.clear();
   }

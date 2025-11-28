@@ -14,57 +14,43 @@
  * limitations under the License.
  */
 
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level,Hypium
-} from '../../../../../hypium/index';
-import testsuite from '../../../test/List.test';
-import {
-  DataReloadOperation,
-  DataOperationType,
   Entry,
   Text,
   TextAttribute,
   Column,
   Component,
-  Stack,
-  WaterFlow,
-  LazyForEach,
-  FlowItem,
-  DataOperation,
-  Color,
-  TextAlign,
-  DataChangeListener,
-  IDataSource,
   Button,
   ButtonAttribute,
   ClickEvent,
-
   Image,
-  Search,
-  Row,FlexOptions,
-  Column,Flex,FlexDirection,ItemAlign,FlexAlign,FontWeight,
-  SearchController,ComponentV2,ForEach,
-  ColumnOptions,WaterFlowSections,Scroller,SectionOptions
+  ImageFit,
+  Scroller,
+  Flex,
+  Margin,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  FontWeight,
+  ButtonType,
+  ClickEvent,
+  Margin,
+  FontWeight
 } from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct Index {
-  aboutToAppear() {
-    console.info('start run testcase!!!!')
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    console.info('start run testcase!!!')
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+
+  aboutToAppear(){
+    try {
+      let router1 = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router1);
+    } catch (error) {
+      console.log('error ' + error);
+    }
   }
 
   build() {
@@ -72,7 +58,7 @@ struct Index {
       direction: FlexDirection.Column,
       alignItems: ItemAlign.Center,
       justifyContent: FlexAlign.Center
-    } as FlexOptions) {
+    }) {
       Text('ACE ETS TEST')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
