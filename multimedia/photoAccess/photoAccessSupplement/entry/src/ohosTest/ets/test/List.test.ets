@@ -44,6 +44,8 @@ import MediaAssetChangeRequestSaveCameraPhoto from './photoAccess/MediaAssetChan
 import PhotoShowAssetsCreationDialogTest from './photoAccess/PhotoAccessHelperShowAssetsCreationDialog.test';
 import PhotoCreateAssetWithShortTermPermissionTest
   from './photoAccess/PhotoAccessHelperCreateAssetWithShortTermPermission.test';
+import GetBurstAssets from './photoAccess/GetBurstAssets.test';
+import getPhotoAccessHelper from './photoAccess/GetPhotoAccessHelper.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -87,4 +89,6 @@ export default function testsuite() {
   MediaAssetChangeRequestSaveCameraPhoto();
   PhotoShowAssetsCreationDialogTest();
   PhotoCreateAssetWithShortTermPermissionTest();
+  GetBurstAssets();
+  getPhotoAccessHelper();
 }
