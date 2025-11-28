@@ -200,7 +200,6 @@ export default function testsuite() {
 	openCustomDialogWithConOrder()
 	presentCustomDialogOrder()
 	getDialogControllerTest()
-	getDialogControllerReturnTest()
 	showAlertDialogBlurStyleOptionsTest()
 	UIOpenCustomDialogBackgroundEffectTest()
 	UIOpenCustomDialogBlurStyleOptionsTest()
@@ -221,4 +220,5 @@ export default function testsuite() {
 	showDialogCallbackBlurStyleOptionsTest()
 	customDialogGetstateTest()
 	closeToastTest()
+	getDialogControllerReturnTest()
 }
