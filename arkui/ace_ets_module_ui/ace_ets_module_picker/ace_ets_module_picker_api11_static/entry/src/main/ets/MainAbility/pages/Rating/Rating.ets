@@ -39,7 +39,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct rating_testcase {
-  @State rating: double = 2
+  @State rating: number = 2
   onPageShow() {
     console.info('Rating page show called');
   }
@@ -62,7 +62,7 @@ struct rating_testcase {
             foregroundUri: '/resources/rawfile/star-1-3.png',
             secondaryUri: '/resources/rawfile/star-1-2.png'
           })
-          .onChange((value: double): void => {
+          .onChange((value: number): void => {
             this.rating = value
           })
           .key('rating1')

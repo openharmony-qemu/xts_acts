@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,NavPathStack,Component,$r,List,ResourceStr,ListItem,Builder,Resource,NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,NavPathStack,Component,$r,ListItemOptions,List,RowOptions,ResourceStr,ListItem,Builder,Resource,NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -57,16 +58,16 @@ struct NavDestinationInfoState {
   infoSta1t:observer.NavDestinationState = observer.NavDestinationState.ON_HIDDEN
 
   onPageShow() {
-//     observer.onNavDestinationUpdate((info) => {
-// console.info('infoinfoinfoinfo',info.state)
-//       // if (info.state == this.infoStat) {
-//       //   this.tState = "ON_SHOWN"
-//       // }
-//       //
-//       // if (info.state == this.infoSta1t) {
-//       //   this.tState = "ON_HIDDEN"
-//       // }
-//     });
+    observer.onNavDestinationUpdate((info) => {
+console.info('infoinfoinfoinfo',info.state)
+      // if (info.state == this.infoStat) {
+      //   this.tState = "ON_SHOWN"
+      // }
+      //
+      // if (info.state == this.infoSta1t) {
+      //   this.tState = "ON_HIDDEN"
+      // }
+    });
   }
 
   @Builder

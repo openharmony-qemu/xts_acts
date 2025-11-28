@@ -70,7 +70,7 @@ struct CheckboxExample {
         .select(true)
         .key('Checkbox1')
 
-        .selectedColor(0xed6f21)
+        .selectedColor('0xed6f21')
         .onChange((value: boolean):void => {
           console.info('Checkbox1 change is' + value)
         })
