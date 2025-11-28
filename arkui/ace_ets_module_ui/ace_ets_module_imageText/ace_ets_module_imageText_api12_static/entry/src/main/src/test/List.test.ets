@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -579,32 +580,29 @@ export default function testsuite() {
   // RichEditorQueryLayout022();
   // RichEditorQueryLayout023();
   // RichEditorQueryLayout024();
-
-  // getStyles();//fail 2 getStyles和subStyledString 401问题   expect  equals 401
-  // replaceString();//fail 9 insertStyledString和replaceStyledString和removeStyles 401问题 expect  equals 401
+  // RichEditorBreak001();
+  // RichEditorBreak002();
+  // RichEditorBreak003();
+  // RichEditorBreak004();
+  // RichEditorBreak005();
+  // RichEditorAttributeStrings005();
   //
-  // getLayout() // fail 6 组件2组 Text 失败6个用例
-  // getLineMetrics(); //fail 1  组件2组 text组件 失败1个用例 Property 'getLineMetrics' does not exist on type 'LayoutManager'
-  // TextMaxLines();//fail 1 组件2组 text组件 失败1个用例 expect 5.00vp equals 5.00fp
-
-
-
-  // RichEditor020();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
-  // RichEditor021();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
-  // RichEditor022();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
-  // RichEditor023();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 3 is not larger than 3
-
-  // 以下fail 5
-  // RichEditorBreak001(); // 富文本组 RichEditor组件 失败1个用例  expect false equals true wordBreak默认值为{}
-  // RichEditorBreak002(); // 富文本组 RichEditor组件 失败1个用例  expect false equals true wordBreak值为{}
-  // RichEditorBreak003(); // 富文本组 RichEditor组件 失败1个用例
-  // RichEditorBreak004();// app died 可能getParagraphs导致
-  // RichEditorBreak005(); // 富文本组 RichEditor组件 失败1个用例
-
-  // RichEditorAttributeStrings005();// fail 1 SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0033, expect false, spans:undefined do not have  spans:[{"offsetInSpan":[0,1],"spanPosition":{"spanIndex":0,"spanRange":[0,1]}}]
+  // // 11.19 甘志伟拉群确认是问题，让周柯辰30053602优先提单到6.1 18dev版本（11个用例）
+  // getStyles();//fail 2 getStyles和subStyledString 401问题   expect  equals 401  11.19 甘志伟拉群确认是问题，让周柯辰30053602优先提单到6.1 18dev版本
+  // replaceString();//fail 9 insertStyledString和replaceStyledString和removeStyles 401问题 expect  equals 401 11.19 甘志伟拉群确认是问题，让周柯辰30053602优先提单到6.1 18dev版本
+  //
+  //
+  // // 甘志伟说有单跟踪：DTS2025111137078（3个用例）
   // RichEditorSetStyledString005();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0013, expect false, content:width:20.00vp;height:20.00vp;verticalAlign:3;objectFit:0{} do not have  verticalAlign:1;objectFit:1{"topLeft":10,"topRight":10,"bottomLeft":10,"bottomRight":10}
   // RichEditorSetStyledString006();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0015, expect false, content:width:30.00vp;height:30.00vp;verticalAlign:2;objectFit:0{} do not have  verticalAlign:2;objectFit:1{"topLeft":20,"topRight":20,"bottomLeft":20,"bottomRight":20}
   // RichEditorSetStyledString017();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0054, expect false, styleStr:1,0,0,0, do not have  styleStr:1,0,undefined,undefined
+  // getLayout()//fail 6 自定义布局
+  // RichEditor020();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013, 2 is not larger than 2
+  // RichEditor021();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0011, 2 is not larger than 2
+  // RichEditor022();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0012, 2 is not larger than 2
+  // RichEditor023();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0015, 3 is not larger than 3
+  // getLineMetrics();
+  // TextMaxLines();
   // RichEditorOnWillChange018();
   // RichEditorApi9();
   // RichEditorOnWillChange019();
@@ -635,7 +633,7 @@ export default function testsuite() {
   // RichEditorStringSpan005();
   // MarqueeApi();
   // SearchApi1();
-  // SearchEvent();
+  // SearchEvent();//fail
   // SearchEvent2();
   // SymbolGlyphApi();
   // TextCommonTextComputing1();
@@ -827,77 +825,77 @@ export default function testsuite() {
   // RichEditorTextChange015();
   // RichEditorTextChange016();
   // RichEditorTextChange017();
-  // RichEditorOnSelectionChange001();
-  // RichEditorOnSelectionChange002();
-  // RichEditorOnSelectionChange003();
-  // RichEditorOnSelectionChange004();
-  // RichEditorOnSelectionChange005();
-  // RichEditorOnSelectionChange006();
-  // RichEditorOnSelectionChange007();
-  // RichEditorOnSelectionChange008();
-  // RichEditorOnSelectionChange009();
-  // RichEditorOnSelectionChange011();
-  // RichEditorOnSelectionChange012();
-  // RichEditorOnSelectionChange013();
-  // RichEditorOnSelectionChange014();
-  // RichEditorOnSelectionChange015();
-  // RichEditorOnSelectionChange016();
-  // RichEditorOnSelectionChange017();
-  // RichEditorOnSelectionChange018();
-  // RichEditorOnSelectionChange019();
-  // RichEditorKeyBoard001();
-  // RichEditorKeyBoard002();
-  // RichEditorKeyBoard003();
-  // RichEditorKeyBoard004();
-  // RichEditorKeyBoard005();
-  // RichEditorKeyBoard006();
-  // RichEditorKeyBoard007();
-  // RichEditorKeyBoard008();
-  // RichEditorLineBreakStrategy001();
-  // RichEditorLineBreakStrategy002();
-  // RichEditorLineBreakStrategy003();
-  // RichEditorPreventDefault001();
-  // RichEditorPreventDefault002();
-  // RichEditorPreventDefault003();
-  // RichEditorPreventDefault004();
-  // RichEditorPreventDefault005();
-  // RichEditorPreventDefault006();
-  // RichEditorPreventDefault007();
-  //
-  //
-  //
-  // RichEditorTransformation001();
-  // RichEditorTransformation002();
-  // RichEditorTransformation003();
-  //
-  // RichEditorTransformation005();
-  // RichEditorGetNumber001();
-  // RichEditorGetNumber002();
-  // RichEditorGetNumber003();
-  // RichEditorGetNumber004();
-  // RichEditorGetNumber005();
-  // RichEditorGetNumber006();
-  // RichEditorGetNumber007();
-  // RichEditorGetNumber008();
-  // RichEditorGetNumber009();
-  // RichEditorGetNumber010();
-  // RichEditorGetNumber011();
-  // RichEditorGetNumber012();
-  // RichEditorGetNumber013();
-  // RichEditorGetNumber014();
-  // RichEditorGetNumber015();
-  // RichEditorGetNumber016();
-  //
-  // RichEditorShortCutKeys001();
-  // RichEditorShortCutKeys002();
-  // RichEditorShortCutKeys003();
-  // RichEditorShortCutKeys004();
-  // RichEditorShortCutKeys005();
-  //
-  // RichEditorShortCutKeys007();
-  // RichEditorShortCutKeys008();
-  //
-  //
+  RichEditorOnSelectionChange001();
+  RichEditorOnSelectionChange002();
+  RichEditorOnSelectionChange003();
+  RichEditorOnSelectionChange004();
+  RichEditorOnSelectionChange005();
+  RichEditorOnSelectionChange006();
+  RichEditorOnSelectionChange007();
+  RichEditorOnSelectionChange008();
+  RichEditorOnSelectionChange009();
+  RichEditorOnSelectionChange011();
+  RichEditorOnSelectionChange012();
+  RichEditorOnSelectionChange013();
+  RichEditorOnSelectionChange014();
+  RichEditorOnSelectionChange015();
+  RichEditorOnSelectionChange016();
+  RichEditorOnSelectionChange017();
+  RichEditorOnSelectionChange018();
+  RichEditorOnSelectionChange019();
+  RichEditorKeyBoard001();
+  RichEditorKeyBoard002();
+  RichEditorKeyBoard003();
+  RichEditorKeyBoard004();
+  RichEditorKeyBoard005();
+  RichEditorKeyBoard006();
+  RichEditorKeyBoard007();
+  RichEditorKeyBoard008();
+  RichEditorLineBreakStrategy001();
+  RichEditorLineBreakStrategy002();
+  RichEditorLineBreakStrategy003();
+  RichEditorPreventDefault001();
+  RichEditorPreventDefault002();
+  RichEditorPreventDefault003();
+  RichEditorPreventDefault004();
+  RichEditorPreventDefault005();
+  RichEditorPreventDefault006();
+  RichEditorPreventDefault007();
+
+
+
+  RichEditorTransformation001();
+  RichEditorTransformation002();
+  RichEditorTransformation003();
+
+  RichEditorTransformation005();
+  RichEditorGetNumber001();
+  RichEditorGetNumber002();
+  RichEditorGetNumber003();
+  RichEditorGetNumber004();
+  RichEditorGetNumber005();
+  RichEditorGetNumber006();
+  RichEditorGetNumber007();
+  RichEditorGetNumber008();
+  RichEditorGetNumber009();
+  RichEditorGetNumber010();
+  RichEditorGetNumber011();
+  RichEditorGetNumber012();
+  RichEditorGetNumber013();
+  RichEditorGetNumber014();
+  RichEditorGetNumber015();
+  RichEditorGetNumber016();
+
+  RichEditorShortCutKeys001();
+  RichEditorShortCutKeys002();
+  RichEditorShortCutKeys003();
+  RichEditorShortCutKeys004();
+  RichEditorShortCutKeys005();
+
+  RichEditorShortCutKeys007();
+  RichEditorShortCutKeys008();
+
+
   // RichEditorAttributeStrings001();
   // RichEditorAttributeStrings002();
   // RichEditorAttributeStrings003();
@@ -927,9 +925,9 @@ export default function testsuite() {
   // RichEditorDoubleClick006();
   // RichEditorDoubleClick007();
   // RichEditorDoubleClick008();
-  // RichEditorDoubleClick009();
-  // RichEditorDoubleClick010();
-  // RichEditorDoubleClick011();
+  // RichEditorDoubleClick009();//fail 1
+  // RichEditorDoubleClick010();//fail 1
+  // RichEditorDoubleClick011();//fail 1
   // RichEditorDoubleClick012();
   // RichEditorDoubleClick013();
   // RichEditorDoubleClick014();
@@ -940,7 +938,7 @@ export default function testsuite() {
   // RichEditorDoubleClick019();
   // APIClipMaskShape();
   // imageAddApi();
-  // imageAddApi2();
+  // imageAddApi2();//fail 1
   // imageAddApi3();
   // dstIndexTest();
   // srcIndexTest();

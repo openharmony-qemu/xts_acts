@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,7 +119,18 @@ build() {
 
       Button('cusFromStyledString').onClick((e: ClickEvent) => {
         console.log('styleStrstyleStr',JSON.stringify(this.styleStr))
+        this.controller!.addTextSpan('0123',
+          {
+            style:
+            {
+              fontColor: Color.Orange,
+              fontSize: 20,
+              textShadow: { radius: 10, color: Color.Blue, offsetX: 10, offsetY: 0 }
+            }
+          })
         let array = this.controller!.fromStyledString(this.styleStr);
+        console.log('styleStrstyleStr',JSON.stringify(array))
+        console.log('styleStrstyleStr',array)
         this.spans = JSON.stringify(array);
       }).id('cusFromStyledString')
 

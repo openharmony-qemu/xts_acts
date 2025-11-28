@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,11 +61,12 @@ build() {
 
         Button('get Point Position').onClick((e: ClickEvent) => {
           this.pointPosition = this.controller!.getCaretOffset() as int;
-          console.log('this.point_position:' + this.pointPosition);
+
         }).id('get_position')
 
         Button('set select').onClick((e: ClickEvent) => {
           this.controller!.setSelection(2, 4);
+
         }).id('set_select')
       }
       .borderWidth(1)

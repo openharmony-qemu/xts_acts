@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +21,6 @@ import {
   PositionWithAffinity
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-
 @Entry
 @Component
 struct getLineMetricsText {
@@ -64,11 +64,11 @@ struct getLineMetricsText {
         Text('LineMetrics').fontSize(9).fontColor(Color.Red).width('90%').padding(10)
         Button('getLineMetrics').id('lineMetrics_get')
           .onClick((e:ClickEvent) => {
-            let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager
-            // let lineMetrics = layoutManager.getLineMetrics(0)
-            // this.startIndex = 'startIndex: ' + JSON.stringify(lineMetrics.startIndex)
+            let layoutManager = this.controller!.getLayoutManager() as LayoutManager
+            let lineMetrics = layoutManager!.getLineMetrics(0)
+            this.startIndex = 'startIndex: ' + JSON.stringify(lineMetrics!.startIndex)
             // this.lineMetrics = 'lineMetrics is ' + JSON.stringify(lineMetrics) + '\n\n'
-            // let runMetrics = lineMetrics.runMetrics
+            // let runMetrics = lineMetrics!.runMetrics
             // runMetrics!.forEach((value, key) => {
             //   this.lineMetrics += 'runMetrics key is ' + key + ' ' + JSON.stringify(value) + '\n\n'
             // });
