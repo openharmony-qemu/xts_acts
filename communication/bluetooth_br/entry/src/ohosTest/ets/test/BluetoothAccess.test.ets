@@ -127,7 +127,7 @@ export default function btAccessTest() {
                 if (Number(error.code) == 801) {
                     expect(Number(error.code)).assertEqual(801);
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
             }
 
@@ -141,7 +141,7 @@ export default function btAccessTest() {
                     console.info('[bluetooth_js]enablebluetooth is not support');
                     expect(true).assertTrue();
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
                 expect(Number(error.code)).assertEqual(2900099);
             }
@@ -185,7 +185,7 @@ export default function btAccessTest() {
                     console.info('[bluetooth_js]disablebluetooth is not support');
                     expect(true).assertTrue();
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
             }
             done();
@@ -209,7 +209,7 @@ export default function btAccessTest() {
                     console.info('[bluetooth_js]getState is not support');
                     expect(true).assertTrue();
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
                 expect(Number(error.code)).assertEqual(2900099);
             }
@@ -243,7 +243,7 @@ export default function btAccessTest() {
                     console.info('[bluetooth_js]OnStateChange is not support');
                     expect(true).assertTrue();
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
                 expect(Number(error.code)).assertEqual(2900099);
             }
@@ -280,7 +280,7 @@ export default function btAccessTest() {
                     if (Number(error.code) == 801) {
                         expect(Number(error.code)).assertEqual(801);
                     } else {
-                        expect().assertFail();
+                        expect(false).assertTrue();
                     }
                 }
             } catch (error) {
@@ -289,7 +289,7 @@ export default function btAccessTest() {
                     console.info('[bluetooth_js]OffStateChange is not support');
                     expect(true).assertTrue();
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
                 expect(Number(error.code)).assertEqual(2900099);
             }
@@ -348,7 +348,7 @@ export default function btAccessTest() {
                     console.info("getPersistentDeviceIds is not support");
                     expect(true).assertTrue();
                 }else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
             }
             done();
@@ -373,7 +373,7 @@ export default function btAccessTest() {
                     console.info("isValidRandomDeviceId is not support");
                     expect(true).assertTrue();
                 }else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
             }
             done();
@@ -391,7 +391,7 @@ export default function btAccessTest() {
             try {
                 let isValidRandom = bluetooth.isValidRandomDeviceId(null);
                 console.info("[bluetooth_js]isValidRandomDeviceId result:" + JSON.stringify(isValidRandom));
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (error) {
                 console.info("isValidRandomDeviceId errCode:" + error.code + ",errMessage:" + error.message);
                 expect(Number(error.code)).assertEqual(401);
@@ -412,7 +412,7 @@ export default function btAccessTest() {
                 await bluetooth.addPersistentDeviceId('00:00:00:00:00:00').then(() => {
                     console.info('[bluetooth_js] addPersistentDeviceId success');
                 });
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (error) {
                 console.info("addPersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
                 if (Number(error.code) == 801) {
@@ -438,7 +438,7 @@ export default function btAccessTest() {
                 await bluetooth.deletePersistentDeviceId('00:00:00:00:00:00').then(() => {
                     console.info('[bluetooth_js] deletePersistentDeviceId success');
                 });
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (error) {
                 console.info("deletePersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
                 if (Number(error.code) == 801) {
@@ -462,7 +462,7 @@ export default function btAccessTest() {
         it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 bluetooth.on('stateChange', null);
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (error) {
                 console.error(`[bluetooth_js]enable StateChange error, code is ${error.code},message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
@@ -481,7 +481,7 @@ export default function btAccessTest() {
         it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 bluetooth.off('stateChange', null);
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (error) {
                 console.error(`[bluetooth_js]enable StateChange error, code is ${error.code},message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
@@ -510,7 +510,7 @@ export default function btAccessTest() {
                         expect(true).assertTrue();
                         isNotSupport = true;
                     } else {
-                        expect().assertFail();
+                        expect(false).assertTrue();
                     }
                 });
                 await sleep(2000);
@@ -539,7 +539,7 @@ export default function btAccessTest() {
                         expect(true).assertTrue();
                         isNotSupports = true;
                     } else {
-                        expect().assertFail();
+                        expect(false).assertTrue();
                     }
                 });
                 await sleep(2000);
@@ -578,9 +578,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0100 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
@@ -604,9 +602,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0200 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
@@ -630,9 +626,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0300 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
@@ -655,7 +649,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
+                    expect(Number(error.code)).assertEqual(801);
                 }else{
                     expect(Number(error.code)).assertEqual(401);
                 }
