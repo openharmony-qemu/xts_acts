@@ -57,6 +57,7 @@ export default function AVPlayerOnMessageReceivedTest() {
           console.info('seiMessageReceived playbackPosition ' + playbackPosition);
         });
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -80,6 +81,7 @@ export default function AVPlayerOnMessageReceivedTest() {
         let avPlayer = await media.createAVPlayer();
         avPlayer.on('seiMessageReceived',[5],[] as ESObject )
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -104,6 +106,7 @@ export default function AVPlayerOnMessageReceivedTest() {
           console.info('seiMessageReceived playbackPosition ' + playbackPosition);
         });
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -126,6 +129,7 @@ export default function AVPlayerOnMessageReceivedTest() {
         let avPlayer = await media.createAVPlayer();
         avPlayer.on('seiMessageReceived',[5], null)
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -148,6 +152,7 @@ export default function AVPlayerOnMessageReceivedTest() {
         let avPlayer = await media.createAVPlayer();
         avPlayer.on('seiMessageReceived',[5], undefined)
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);

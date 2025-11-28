@@ -16,6 +16,7 @@ import { media } from '@kit.MediaKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
+import { sleep } from '../common';
 
 const TAG ='AVImageXts.FetchFrameByTime';
 async function ImageFetchFrameByTime1(testName: string, callback :(avImageGenerator: media.AVImageGenerator) =>void ,){
@@ -59,6 +60,7 @@ export default function AVImageFetchFrameByTime() {
       AppStorage.delete('testString');
       AppStorage.delete('testArray');
       console.info(TAG, 'afterAll case.');
+      await sleep(2000);
     });
 
     /**
@@ -78,10 +80,12 @@ export default function AVImageFetchFrameByTime() {
               if (error) {
                 console.error(TAG, testName, `Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
                 expect(error.code).assertEqual(401);
+                AVImageGenerator.release()
                 done();
                 return;
               }
               console.info(TAG, testName, 'pixelMap', pixelMap);
+              AVImageGenerator.release()
               done();
             });
         });
@@ -108,10 +112,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -140,10 +146,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -170,10 +178,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -200,10 +210,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -232,10 +244,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -262,10 +276,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -292,10 +308,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -324,10 +342,12 @@ export default function AVImageFetchFrameByTime() {
             if (error) {
               console.error(TAG,testName,`Failed to fetch FrameByTime, error: ${error},code: ${error?.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
               return;
             }
             console.info(TAG, testName,'pixelMap',pixelMap);
+            AVImageGenerator.release()
             done();
           });
         });
@@ -357,6 +377,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -387,6 +408,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -418,6 +440,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -447,6 +470,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -477,6 +501,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -508,6 +533,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -537,6 +563,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -567,6 +594,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -598,6 +626,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -627,6 +656,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -657,6 +687,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -688,6 +719,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -717,6 +749,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -747,6 +780,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -778,6 +812,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -807,6 +842,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -837,6 +873,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })
@@ -868,6 +905,7 @@ export default function AVImageFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(401);
+              AVImageGenerator.release()
               done();
             });
         })

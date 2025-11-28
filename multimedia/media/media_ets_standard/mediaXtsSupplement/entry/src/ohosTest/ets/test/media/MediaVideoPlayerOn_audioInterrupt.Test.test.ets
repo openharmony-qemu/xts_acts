@@ -55,6 +55,7 @@ export default function MediaVideoPlayerOn_audioInterruptTest() {
         avPlayer.on(null, (info: audio.InterruptEvent) => {
           console.info('audioInterrupt called,and InterruptEvent info is:' + info);
         });
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' audioInterrupt error', error.message, error.code);
@@ -78,6 +79,7 @@ export default function MediaVideoPlayerOn_audioInterruptTest() {
         avPlayer.on(undefined, (info: audio.InterruptEvent) => {
           console.info('audioInterrupt called,and InterruptEvent info is:' + info);
         });
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' audioInterrupt error', error.message, error.code);
@@ -101,6 +103,7 @@ export default function MediaVideoPlayerOn_audioInterruptTest() {
         avPlayer.on(AppStorage.get('emptyString') as ESObject, (info: audio.InterruptEvent) => {
           console.info('audioInterrupt called,and InterruptEvent info is:' + info);
         });
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG,testName, ' audioInterrupt error', error.message, error.code);
@@ -124,6 +127,7 @@ export default function MediaVideoPlayerOn_audioInterruptTest() {
         console.info(TAG,testName,'avPlayer')
         avPlayer.on('audioInterrupt', null as ESObject)
         console.info(TAG,testName,'audioInterrupt')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' audioInterrupt error', error.message, error.code);
@@ -146,6 +150,7 @@ export default function MediaVideoPlayerOn_audioInterruptTest() {
         console.info(TAG,testName,'avPlayer')
         avPlayer.on('audioInterrupt', undefined as ESObject)
         console.info(TAG,testName,'audioInterrupt')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, ' audioInterrupt error', error.message, error.code);
@@ -168,6 +173,7 @@ export default function MediaVideoPlayerOn_audioInterruptTest() {
         console.info(TAG,testName,'avPlayer')
         avPlayer.on('audioInterrupt', AppStorage.get('emptyString') as ESObject)
         console.info(TAG,testName,'audioInterrupt')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG,testName, ' audioInterrupt error', error.message, error.code);

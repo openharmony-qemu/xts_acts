@@ -51,6 +51,7 @@ export default function AVPlayerSetMediaSourceSuppTest() {
     });
     afterEach(async () => {
       console.info('afterEach case');
+      await avPlayer.release();
     });
     afterAll(async () => {
       console.info('afterAll case');

@@ -58,6 +58,7 @@ export default function MediaVideoPlayerSeekTest() {
         console.info(TAG,'timeMs')
         await avPlayer.seek(timeMs, seekMode);
         console.info(TAG,'succeed seek')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);
@@ -84,6 +85,7 @@ export default function MediaVideoPlayerSeekTest() {
         console.info(TAG,'timeMs')
         await avPlayer.seek(timeMs, seekMode);
         console.info(TAG,'succeed seek')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);
@@ -110,6 +112,7 @@ export default function MediaVideoPlayerSeekTest() {
         console.info(TAG,'timeMs')
         await avPlayer.seek(timeMs, seekMode);
         console.info(TAG,'succeed seek')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);
@@ -135,6 +138,7 @@ export default function MediaVideoPlayerSeekTest() {
         console.info(TAG,'timeMs')
         await avPlayer.seek(timeMs, seekMode);
         console.info(TAG,'succeed seek')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);
@@ -160,6 +164,7 @@ export default function MediaVideoPlayerSeekTest() {
         console.info(TAG,'timeMs')
         await avPlayer.seek(timeMs, seekMode);
         console.info(TAG,'succeed seek')
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);

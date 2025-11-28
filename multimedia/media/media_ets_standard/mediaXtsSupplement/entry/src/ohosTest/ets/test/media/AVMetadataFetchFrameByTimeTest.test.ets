@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { media } from "@kit.MediaKit";
 import { image } from "@kit.ImageKit";
 import { BusinessError } from '@kit.BasicServicesKit';
+import { sleep } from "../common";
 
 const TAG ='MediaXts.fetchFrameByTime';
 async function testFetchFrameByTime(testName: string, callback :(avMetadataExtractor: media.AVMetadataExtractor) =>void ,){
@@ -42,6 +43,7 @@ export default function AVMetaFetchFrameByTime() {
       AppStorage.delete('testString');
       AppStorage.delete('testArray');
       console.info(TAG, 'afterAll case.');
+      await sleep(2000);
     });
 
     /**
@@ -64,6 +66,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -95,6 +98,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -128,6 +132,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -158,6 +163,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -188,6 +194,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -220,6 +227,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -250,6 +258,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -280,6 +289,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })
@@ -312,6 +322,7 @@ export default function AVMetaFetchFrameByTime() {
             .catch((error: BusinessError) => {
               console.error(TAG, testName,`Failed to fetch FrameByTime, error message:${error.message},${error.code}`);
               expect(error.code).assertEqual(5400108);
+              AVMetadataExtractor.release();
               done();
             });
         })

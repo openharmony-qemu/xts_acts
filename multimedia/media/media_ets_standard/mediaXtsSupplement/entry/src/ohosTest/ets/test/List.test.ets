@@ -18,7 +18,6 @@ import AVMetaFetchFrameByTime from './media/AVMetadataFetchFrameByTimeTest.test'
 import AVPlayerLocalDeprecatedTest from './media/AVPlayerLocalDeprecatedTest.test';
 import AVPlayerLocalSuppTest from './media/AVPlayerLocalTest.test';
 import SetUrISourceTest from './media/MediaSetUrlSourceTest.test';
-import RespondDataTest from './media/RespondDataTest.test';
 import AVPlayerSetMediaSourceSuppTest from './media/AVPlayerMediaSourceSupp.test';
 import AVPlayerSetMediaMutedSuppTest from './media/AVPlayerSetMediaMutedSupp.test';
 import AVPlayerSetPlaybackRangeSuppTest from './media/AVPlayerSetPlaybackRangeSupp.test';
@@ -31,6 +30,7 @@ import MediaSourceSetMediaResourceLoaderDelegateTest from './media/MediaSourceSe
 import MediaVideoPlayerOn_audioInterruptTest from './media/MediaVideoPlayerOn_audioInterrupt.Test.test';
 import MediaVideoPlayerSeekTest from './media/MediaVideoPlayerSeek.Test.test';
 import AVPlayerSetSpeedTest from './media/AVPlayerSetSpeed.test';
+import RespondDataTest from './media/RespondDataTest.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -38,7 +38,6 @@ export default function testsuite() {
   AVImageFetchFrameByTime();
   AVMetaFetchFrameByTime();
   SetUrISourceTest();
-  RespondDataTest();
   AVPlayerSetPlaybackRangeSuppTest();
   AVPlayerSetMediaMutedSuppTest();
   AVPlayerSetMediaSourceSuppTest();
@@ -51,6 +50,6 @@ export default function testsuite() {
   MediaVideoPlayerOn_audioInterruptTest();
   MediaVideoPlayerSeekTest();
   AVPlayerSetSpeedTest();
-
+  RespondDataTest();
 }
 
