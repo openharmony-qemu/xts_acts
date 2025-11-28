@@ -453,7 +453,7 @@ export default function btSocketTest() {
                 }
                 let number = await functionSppConnect();
                 console.info(`sppConnect ${number}`);
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (error) {
                 console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
@@ -494,7 +494,7 @@ export default function btSocketTest() {
                 await bluetooth.sppWriteAsync(0, data).then(() => {
                     console.info('[bluetooth_js]:sppWriteAsync success');
                 });
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (err) {
                 console.error("sppWriteAsync: errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -520,7 +520,7 @@ export default function btSocketTest() {
                 await bluetooth.sppReadAsync(0).then((data: ArrayBuffer) => {
                     console.info('[bluetooth_js]:sppReadAsync success, result:' + JSON.stringify(data));
                 });
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (err) {
                 console.error("sppReadAsync: errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -545,7 +545,7 @@ export default function btSocketTest() {
             try {
                 let deviceId = bluetooth.getDeviceId(0);
                 console.info('[bluetooth_js]:getDeviceId success, result:' + JSON.stringify(deviceId));
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (err) {
                 console.error("getDeviceId: errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(401);
@@ -565,7 +565,7 @@ export default function btSocketTest() {
             try {
                 let psm = bluetooth.getL2capPsm(0);
                 console.info('[bluetooth_js]:getL2capPsm success, result:' + JSON.stringify(psm));
-                expect().assertFail();
+                expect(false).assertTrue();
             } catch (err) {
                 console.error("getL2capPsm: errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(401);
@@ -594,7 +594,7 @@ export default function btSocketTest() {
                 expect(SPP_L2CAP_BLE).assertEqual(2);
             } catch (err) {
                 console.error("SppType get: errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
+                expect(false).assertTrue();
             }
             done();
         })
@@ -622,47 +622,49 @@ export default function btSocketTest() {
                     console.info('[bluetooth_js]sppListen is not support or profile not support');
                     expect(true).assertTrue();
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }
             }
             done();
         })
 
         /**
-         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100
-         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100
-         * @tc.desc   20251113API22用例覆盖 getMaxReceiveDataSize 1-1.
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100
+         * @tc.desc   20251113API22用例覆盖 getMaxReceiveDataSize 401.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let clientSocket = 0;
                 let return_max_receive = bluetooth.getMaxReceiveDataSize(clientSocket);
                 console.info('[bluetooth_js]:getMaxReceiveDataSize success, result:' + JSON.stringify(return_max_receive));
+                expect(false).assertTrue();
             } catch (error) {
-                console.error(`[bt_arkts]getMaxTransmitDataSize 0200 is failed, code is ${error.code}, message is ${error.message}`);
+                console.error(`[bt_arkts]getMaxReceiveDataSize is failed, code is ${error.code}, message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
             }
             done();
         })
 
         /**
-         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200
-         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200
-         * @tc.desc   20251113API22用例覆盖 getMaxTransmitDataSize 1-1.
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_0100
+         * @tc.desc   20251113API22用例覆盖 getMaxTransmitDataSize 401.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let clientSocket = 1;
                 let return_max_transmit = bluetooth.getMaxTransmitDataSize(clientSocket);
                 console.info('[bluetooth_js]:getMaxTransmitDataSize success, result:' + JSON.stringify(return_max_transmit));
+                expect(false).assertTrue();
             } catch (error) {
-                console.error(`[bt_arkts]getMaxTransmitDataSize 0200 is failed, code is ${error.code}, message is ${error.message}`);
+                console.error(`[bt_arkts]getMaxTransmitDataSize is failed, code is ${error.code}, message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
             }
             done();
@@ -671,7 +673,7 @@ export default function btSocketTest() {
         /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
-         * @tc.desc   20251113API22用例覆盖 isConnected 2-1.
+         * @tc.desc   20251113API22用例覆盖 isConnected 返回值为布尔值.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
@@ -681,11 +683,12 @@ export default function btSocketTest() {
                 let clientSocket = 1;
                 let return_boolean = bluetooth.isConnected(clientSocket);
                 console.info('[bluetooth_js]:isConnected success, result_boolean is:' + JSON.stringify(return_boolean));
+                expect(return_boolean).assertFalse();
             } catch (error) {
                 console.error(`[bt_arkts]isConnected 0100 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801) {
                     console.info('[bluetooth_js]isConnected is not support');
-                    expect(true).assertTrue();
+                    expect(Number(error.code)).assertEqual(801);
                 } else {
                     console.info("isConnected: errCode:" + error.code + ",errMessage:" + error.message);
                     expect(Number(error.code)).assertEqual(401);
@@ -693,27 +696,6 @@ export default function btSocketTest() {
             }
             done();
         })
-
-        /**
-         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200
-         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200
-         * @tc.desc   20251113API22用例覆盖 isConnected 2-2.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-            try {
-                let clientSocket = 2;
-                let return_boolean = bluetooth.isConnected(clientSocket);
-                console.info('[bluetooth_js]isConnected success, result_boolean is:' + JSON.stringify(return_boolean));
-                expect(return_boolean).assertFalse();
-            } catch (error) {
-                console.error(`[bt_arkts]isConnected 0200 is failed, code is ${error.code}, message is ${error.message}`);
-                expect(Number(error.code)).assertEqual(401);
-            }
-            done();
-        })
-
+		
     })
 }
