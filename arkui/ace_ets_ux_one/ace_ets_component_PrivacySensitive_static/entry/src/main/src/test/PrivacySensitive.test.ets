@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../hypium';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import Utils from '../../ets/MainAbility/common/Utils';
@@ -73,7 +73,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Text_privacySensitive_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_static_0100');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_0100');
           console.info('ArkUIHDS_Text_privacySensitive_static_0100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Text_privacySensitive_static_0100 component obj.$attrs.privacySensitive is: " +
@@ -100,7 +100,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Text_privacySensitive_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_static_0200');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_0200');
           console.info('ArkUIHDS_Text_privacySensitive_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Text_privacySensitive_static_0200 component obj.$attrs.privacySensitive is: " +
@@ -127,7 +127,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Text_privacySensitive_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_static_0300');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_0300');
           console.info('ArkUIHDS_Text_privacySensitive_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Text_privacySensitive_static_0300 component obj.$attrs.privacySensitive is: " +
@@ -154,7 +154,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Text_privacySensitive_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_static_0400');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Text_privacySensitive_0400');
           console.info('ArkUIHDS_Text_privacySensitive_static_0400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Text_privacySensitive_static_0400 component obj.$attrs.privacySensitive is: " +
@@ -181,7 +181,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Image_privacySensitive_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_static_0100');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_0100');
           console.info('ArkUIHDS_Image_privacySensitive_static_0100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Image_privacySensitive_static_0100 component obj.$attrs.privacySensitive is: " +
@@ -208,7 +208,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Image_privacySensitive_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_static_0200');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_0200');
           console.info('ArkUIHDS_Image_privacySensitive_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Image_privacySensitive_static_0200 component obj.$attrs.privacySensitive is: " +
@@ -235,7 +235,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Image_privacySensitive_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_static_0300');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_0300');
           console.info('ArkUIHDS_Image_privacySensitive_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Image_privacySensitive_static_0300 component obj.$attrs.privacySensitive is: " +
@@ -262,7 +262,7 @@ export default function TextPrivacySensitive() {
       console.info('ArkUIHDS_Image_privacySensitive_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_static_0400');
+          let strJson = inspector.getInspectorByKey('ArkUIHDS_Image_privacySensitive_0400');
           console.info('ArkUIHDS_Image_privacySensitive_static_0400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUIHDS_Image_privacySensitive_static_0400 component obj.$attrs.privacySensitive is: " +

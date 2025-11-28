@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,104 +109,104 @@ import globalShortcutKeyTest2 from './globalShotCutKeyTest/globalShortcutKey2.te
 
 
 export default function testsuite() {
-  requestFocus19();// 基础框架 requestFocus 失败1个用例
-  requestFocus20();// 基础框架 requestFocus 失败1个用例
-  requestFocus22();// 基础框架 requestFocus 失败1个用例
-  requestFocus23();// 基础框架 requestFocus 失败1个用例 断言不符合预期
-  onWillApplyTheme()// 基础框架 theme 失败1个用例
-  FocusScopePriority14();// 基础框架 focusScopePriority 失败1个用例 expect false equals true
-  FocusScopePriority15();// 基础框架 focusScopePriority 失败1个用例 expect false equals true
+  requestFocus19();// 交互框架 requestFocus 失败1个用例
+  requestFocus20();// 交互框架 requestFocus 失败1个用例
+  requestFocus22();// 交互框架 requestFocus 失败1个用例
+  requestFocus23();// 交互框架 requestFocus 失败1个用例 断言不符合预期
+  onWillApplyTheme()// 交互框架 theme 失败1个用例
+  FocusScopePriority14();// 交互框架 focusScopePriority 失败1个用例 expect false equals true
+  FocusScopePriority15();// 交互框架 focusScopePriority 失败1个用例 expect false equals true
   FocusScopeId005();// focusBox配置项LengthMetrics/ColorMetrics会导致页面空指针，注释可pass
-  FocusScopeId007();// 基础框架 focusScopeId、focusOnTouch、focusBox 失败1个用例  expect false equals true
-  FocusScopeId016();// 基础框架 focusScopeId、focusOnTouch、focusBox 失败1个用例 expect false equals true
-  FocusScopeId017();// 基础框架 focusScopeId、focusOnTouch、focusBox 失败1个用例 expect false equals true
-  FocusScopeId13();// 基础框架 focusScopeId 失败1个用例 expect false equals true
-  FocusScopeId14();// 基础框架 focusScopeId 失败1个用例 expect false equals true
-  ACTION_CANCELED_BEFORE_DRAG_APITest();// 基础框架 onPreDrag 失败1个用例  expect init equals ACTION_CANCELED_BEFORE_DRAG
-  globalShortcutKeyTest();// 基础框架 keyboardShortcut 失败3个用例 expect  equals I clicked Button 8
-  requestFocus6();// 基础框架 requestFocus 失败1个用例
-  requestFocus7();// 基础框架 requestFocus 失败1个用例
-  requestFocus8();// 基础框架 requestFocus 失败1个用例
-  requestFocus9();// 基础框架 requestFocus 失败1个用例
-  requestFocus2();// 基础框架 requestFocus 失败1个用例 断言不符合预期
-  requestFocus3();// 基础框架 requestFocus 失败1个用例
-  requestFocus4();// 基础框架 requestFocus 失败1个用例
-  requestFocus13();// 基础框架 requestFocus 失败1个用例
-  requestFocus15();// 基础框架 requestFocus 失败1个用例
-  requestFocus17();// 基础框架 requestFocus 失败1个用例
+  FocusScopeId007();// 交互框架 focusScopeId、focusOnTouch、focusBox 失败1个用例  expect false equals true
+  FocusScopeId016();// 交互框架 focusScopeId、focusOnTouch、focusBox 失败1个用例 expect false equals true
+  FocusScopeId017();// 交互框架 focusScopeId、focusOnTouch、focusBox 失败1个用例 expect false equals true
+  FocusScopeId13();// 交互框架 focusScopeId 失败1个用例 expect false equals true
+  FocusScopeId14();// 交互框架 focusScopeId 失败1个用例 expect false equals true
+  ACTION_CANCELED_BEFORE_DRAG_APITest();// 交互框架 onPreDrag 失败1个用例  expect init equals ACTION_CANCELED_BEFORE_DRAG
+  globalShortcutKeyTest();// 交互框架 keyboardShortcut 失败3个用例 expect  equals I clicked Button 8
+  requestFocus6();// 交互框架 requestFocus 失败1个用例
+  requestFocus7();// 交互框架 requestFocus 失败1个用例
+  requestFocus8();// 交互框架 requestFocus 失败1个用例
+  requestFocus9();// 交互框架 requestFocus 失败1个用例
+  requestFocus2();// 交互框架 requestFocus 失败1个用例 断言不符合预期
+  requestFocus3();// 交互框架 requestFocus 失败1个用例
+  requestFocus4();// 交互框架 requestFocus 失败1个用例
+  requestFocus13();// 交互框架 requestFocus 失败1个用例
+  requestFocus15();// 交互框架 requestFocus 失败1个用例
+  requestFocus17();// 交互框架 requestFocus 失败1个用例
 
-  // requestFocus1();
-  // requestFocus5();
-  // requestFocus21();
-  // requestFocus10();
-  // requestFocus11();
-  // requestFocus12();
-  //
-  // requestFocus14();
-  //
-  // requestFocus16();
-  //
-  // requestFocus18();
-  //
-  // requestFocus24();
-  // requestFocus25();
-  // onHoverStatusChange()
-  // onTouchIntercept()
-  //
-  // FocusApi1();
-  // FocusScopePriority1();
-  // FocusScopePriority2();
-  // FocusScopePriority3();
-  // FocusScopePriority4();
-  // FocusScopePriority5();
-  // FocusScopePriority6();
-  // FocusScopePriority7();
-  // FocusScopePriority8();
-  // FocusScopePriority9();
-  // FocusScopePriority10();
-  // FocusScopePriority11();
-  // FocusScopePriority12();
-  // FocusScopePriority13();
-  //
-  // FocusScopeId001();
-  // FocusScopeId002();
-  // FocusScopeId003();
-  // FocusScopeId004();
-  //
-  // FocusScopeId006();
-  //
-  // FocusScopeId008();
-  // FocusScopeId009();
-  // FocusScopeId010();
-  // FocusScopeId011();
-  // FocusScopeId012();
-  // FocusScopeId013();
-  // FocusScopeId014();
-  // FocusScopeId015();
-  //
-  // FocusScopeId018();
-  // FocusScopeId019();
-  // FocusScopeId020();
-  // FocusScopeId021();
-  // FocusScopeId1();
-  // FocusScopeId2();
-  // FocusScopeId3();
-  // FocusScopeId5();
-  // FocusScopeId6();
-  // FocusScopeId7();
-  // FocusScopeId8();
-  // FocusScopeId9();
-  // FocusScopeId10();
-  // FocusScopeId11();
-  // FocusScopeId12();
-  //
-  // FocusScopeId15();
-  // FocusScopeId17();
-  // FocusScopeId18();
-  // FocusScopeId19();
-  // FocusScopeId16();
-  // FocusScopeId4();
-  //
-  // globalShortcutKeyTest2();
-  // globalShortcutKeyTest3();
+  requestFocus1();
+  requestFocus5();
+  requestFocus21();
+  requestFocus10();
+  requestFocus11();
+  requestFocus12();
+
+  requestFocus14();
+
+  requestFocus16();
+
+  requestFocus18();
+
+  requestFocus24();
+  requestFocus25();
+  onHoverStatusChange()
+  onTouchIntercept()
+
+  FocusApi1();
+  FocusScopePriority1();
+  FocusScopePriority2();
+  FocusScopePriority3();
+  FocusScopePriority4();
+  FocusScopePriority5();
+  FocusScopePriority6();
+  FocusScopePriority7();
+  FocusScopePriority8();
+  FocusScopePriority9();
+  FocusScopePriority10();
+  FocusScopePriority11();
+  FocusScopePriority12();
+  FocusScopePriority13();
+
+  FocusScopeId001();
+  FocusScopeId002();
+  FocusScopeId003();
+  FocusScopeId004();
+
+  FocusScopeId006();
+
+  FocusScopeId008();
+  FocusScopeId009();
+  FocusScopeId010();
+  FocusScopeId011();
+  FocusScopeId012();
+  FocusScopeId013();
+  FocusScopeId014();
+  FocusScopeId015();
+
+  FocusScopeId018();
+  FocusScopeId019();
+  FocusScopeId020();
+  FocusScopeId021();
+  FocusScopeId1();
+  FocusScopeId2();
+  FocusScopeId3();
+  FocusScopeId5();
+  FocusScopeId6();
+  FocusScopeId7();
+  FocusScopeId8();
+  FocusScopeId9();
+  FocusScopeId10();
+  FocusScopeId11();
+  FocusScopeId12();
+
+  FocusScopeId15();
+  FocusScopeId17();
+  FocusScopeId18();
+  FocusScopeId19();
+  FocusScopeId16();
+  FocusScopeId4();
+
+  globalShortcutKeyTest2();
+  globalShortcutKeyTest3();
 }
