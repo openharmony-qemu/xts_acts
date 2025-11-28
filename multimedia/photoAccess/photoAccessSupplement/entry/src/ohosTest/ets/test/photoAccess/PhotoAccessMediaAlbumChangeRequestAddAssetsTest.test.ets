@@ -67,7 +67,7 @@ export default function PhotoAccessMediaAlbumChangeRequestAddAssetsTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG , testName, `addAssetsDemo failed with error: ${err.code}, ${err.message}`);
-        expect(err.code).assertEqual('14000011');
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG , testName, 'done begin call');
       done();

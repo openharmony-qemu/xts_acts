@@ -33,6 +33,17 @@ import PhotoAccessHelperAlbumAssetsTest from './photoAccess/PhotoAccessHelperAlb
 import sendablePhotoAccessHelperGetObjectByPositionTest
   from './photoAccess/SendablePhotoAccessHelperGetObjectByPosition.test';
 import getThumbnailTestSupp from './photoAccess/PhotoAssetGetThumbnailSupp.test';
+import PhotoAccessHelperGetRecentPhotoInfo
+  from './photoAccess/PhotoAccessHelperGetRecentPhotoInfo.test';
+import PhotoAccessHelperGetPhotoAccessHelper
+  from './photoAccess/PhotoAccessHelperGetPhotoAccessHelper.test';
+import PhotoAssetImageGetThumbnail from './photoAccess/PhotoAssetImageGetThumbnail.test';
+import PhotoAccessHelperPhotoAlbumChange from './photoAccess/PhotoAccessHelperPhotoAlbumChange.test';
+import MediaAlbumChangeRequestSetAlbumName from './photoAccess/MediaAlbumChangeRequestSetAlbumName.test';
+import MediaAssetChangeRequestSaveCameraPhoto from './photoAccess/MediaAssetChangeRequestSaveCameraPhoto.test';
+import PhotoShowAssetsCreationDialogTest from './photoAccess/PhotoAccessHelperShowAssetsCreationDialog.test';
+import PhotoCreateAssetWithShortTermPermissionTest
+  from './photoAccess/PhotoAccessHelperCreateAssetWithShortTermPermission.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -68,4 +79,12 @@ export default function testsuite() {
   PhotoAccessHelperAlbumAssetsTest();
   sendablePhotoAccessHelperGetObjectByPositionTest();
   getThumbnailTestSupp();
+  PhotoAccessHelperGetPhotoAccessHelper();
+  PhotoAccessHelperGetRecentPhotoInfo();
+  PhotoAssetImageGetThumbnail();
+  PhotoAccessHelperPhotoAlbumChange();
+  MediaAlbumChangeRequestSetAlbumName();
+  MediaAssetChangeRequestSaveCameraPhoto();
+  PhotoShowAssetsCreationDialogTest();
+  PhotoCreateAssetWithShortTermPermissionTest();
 }
