@@ -304,11 +304,14 @@ export default function AVTransCoderNdkTest() {
       console.log('case testOhAvTransCoderNdkPrepareError0006 ret ' + JSON.stringify(ret));
       await closeFileFd(avFd.fd);
       let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
-      if (isSupport == -1) {
-        console.info(`AVCapabilityIsVideoSizeSupported Failed`);
+      console.info('isSupport:', isSupport)
+      let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(7680, 4320);
+      console.info('isSupportEncoder:', isSupportEncoder)
+      if ((isSupport == -1) || (isSupportEncoder == -1)) {
+        console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
       } else {
-        console.info(`AVCapabilityIsVideoSizeSupported Success`);
+        console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
       }
       done();
