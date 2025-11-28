@@ -1061,6 +1061,38 @@ static napi_value SUB_IMF_NDK_CursorInfo_Create_0100(napi_env env, napi_callback
     return result;
 }
 
+static napi_value SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100(napi_env env, napi_callback_info info)
+{
+    InputMethod_ErrorCode returnValue = OH_TextEditorProxy_SetCallbackInMainThread(NULL, true);
+    if (returnValue == InputMethod_ErrorCode::IME_ERR_NULL_POINTER) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0100 successful.");
+        return result;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0100 fail.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200(napi_env env, napi_callback_info info)
+{
+    g_txtEditProxy = OH_TextEditorProxy_Create();
+    InputMethod_ErrorCode returnValue = OH_TextEditorProxy_SetCallbackInMainThread(g_txtEditProxy, true);
+    OH_TextEditorProxy_Destroy(g_txtEditProxy);
+    if (returnValue == InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0200 successful.");
+        return result;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0200 fail.");
+    return result;
+}
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -1119,7 +1151,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH", nullptr,
          SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER", nullptr,
-         SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER, nullptr, nullptr, nullptr, napi_default, nullptr}};
+         SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100", nullptr,
+         SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200", nullptr,
+         SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

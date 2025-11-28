@@ -420,5 +420,35 @@ export default function abilityTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100
+     * @tc.number SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100
+     * @tc.desc   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100', Level.LEVEL2, (done: Function) => {
+      let result = testNapi.SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100();
+      console.info(`====>SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100 result: ${result}`)
+      expect(expResult).assertEqual(result)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200
+     * @tc.number SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200
+     * @tc.desc   SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200', Level.LEVEL2, (done: Function) => {
+      let result = testNapi.SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200();
+      console.info(`====>SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200 result: ${result}`)
+      expect(expResult).assertEqual(result)
+      done();
+    })
+
   })
 }
