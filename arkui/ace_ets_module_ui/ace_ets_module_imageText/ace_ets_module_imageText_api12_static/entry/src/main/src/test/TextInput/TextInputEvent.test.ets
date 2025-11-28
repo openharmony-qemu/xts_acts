@@ -75,30 +75,30 @@ export default function TextInputEvent() {
      * @tc.desc     TextInputEvent_static_001
      * @tc.level   Level.LEVEL0
      */
-    // it('TextInputEvent_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[TextInputEvent_001] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let driver = Driver.create();
-    //   let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
-    //   await text.inputText('9');
-    //   await CommonFunc.sleep(1000);
-	  //   await driver.triggerKey(2070);
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('TextInputEventText')
-    //   let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   let obj2 = JSON.parseJsonElement(strJson2);
-    //   console.info("[TextInputEvent_001] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
-    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
-    //   console.info('[TextInputEvent_001] END');
-    //   done();
-    //
-    // });
+    it('TextInputEvent_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[TextInputEvent_001] START');
+
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
+      await text.inputText('9');
+      await CommonFunc.sleep(1000);
+	    await driver.triggerKey(2070);
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('TextInputEventText')
+      let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info("[TextInputEvent_001] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
+      console.info('[TextInputEvent_001] END');
+      done();
+
+    });
 
     /*
      * @tc.number   TextInputEvent_static_002
@@ -106,31 +106,31 @@ export default function TextInputEvent() {
      * @tc.desc     TextInputEvent_static_002
      * @tc.level   Level.LEVEL0
      */
-    // it('TextInputEvent_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[TextInputEvent_002] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let driver = Driver.create();
-    //   let text = await (driver.findComponent(ON.id('TextInputEvent2')) as Promise<Component>);
-    //   let point:Point = await text.getBoundsCenter();
-    //   await driver.inputText(point,'9');
-    //   await CommonFunc.sleep(1000);
-	  //   await driver.triggerKey(2070);
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('TextInputEventText')
-    //   let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   let obj2 = JSON.parseJsonElement(strJson2);
-    //   console.info("[TextInputEvent_002] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
-    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
-    //   console.info('[TextInputEvent_002] END');
-    //   done();
-    //
-    // });
+    it('TextInputEvent_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[TextInputEvent_002] START');
+
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let text = await (driver.findComponent(ON.id('TextInputEvent2')) as Promise<Component>);
+      let point:Point = await text.getBoundsCenter();
+      await driver.inputText(point,'9');
+      await CommonFunc.sleep(1000);
+	    await driver.triggerKey(2070);
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('TextInputEventText')
+      let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info("[TextInputEvent_002] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
+      console.info('[TextInputEvent_002] END');
+      done();
+
+    });
 
     /*
      * @tc.number   TextInputEvent_static_003
@@ -138,31 +138,31 @@ export default function TextInputEvent() {
      * @tc.desc     TextInputEvent_static_003
      * @tc.level   Level.LEVEL0
      */
-    // it('TextInputEvent_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[TextInputEvent_003] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let driver = Driver.create();
-    //   let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
-    //   let point: Point = await text.getBoundsCenter();
-    //   await driver.inputText(point, '123');
-    //   await CommonFunc.sleep(1000);
-	  //   await driver.triggerKey(2070);
-    //   await CommonFunc.sleep(2000);
-    //   let strJson = inspector.getInspectorByKey('TextInputEventText')
-    //   let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   let obj2 = JSON.parseJsonElement(strJson2);
-    //   console.info("[TextInputEvent_003] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('11');
-    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('3');
-    //   console.info('[TextInputEvent_003] END');
-    //   done();
-    //
-    // });
+    it('TextInputEvent_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[TextInputEvent_003] START');
+
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
+      let point: Point = await text.getBoundsCenter();
+      await driver.inputText(point, '123');
+      await CommonFunc.sleep(1000);
+	    await driver.triggerKey(2070);
+      await CommonFunc.sleep(2000);
+      let strJson = inspector.getInspectorByKey('TextInputEventText')
+      let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info("[TextInputEvent_003] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('11');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('3');
+      console.info('[TextInputEvent_003] END');
+      done();
+
+    });
 
     /*
      * @tc.number   TextInputEvent_static_004
@@ -170,31 +170,31 @@ export default function TextInputEvent() {
      * @tc.desc     TextInputEvent_static_004
      * @tc.level   Level.LEVEL0
      */
-    // it('TextInputEvent_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[TextInputEvent_004] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let driver = Driver.create();
-    //   let text = await (driver.findComponent(ON.id('TextInputEvent2')) as Promise<Component>);
-    //   let point: Point  = await text.getBoundsCenter();
-    //   await driver.inputText(point, '3');
-    //   await CommonFunc.sleep(1000);
-	  //   await driver.triggerKey(2070);
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('TextInputEventText')
-    //   let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   let obj2 = JSON.parseJsonElement(strJson2);
-    //   console.info("[TextInputEvent_004] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
-    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('3');
-    //   console.info('[TextInputEvent_004] END');
-    //   done();
-    //
-    // });
+    it('TextInputEvent_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[TextInputEvent_004] START');
+
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let text = await (driver.findComponent(ON.id('TextInputEvent2')) as Promise<Component>);
+      let point: Point  = await text.getBoundsCenter();
+      await driver.inputText(point, '3');
+      await CommonFunc.sleep(1000);
+	    await driver.triggerKey(2070);
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('TextInputEventText')
+      let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info("[TextInputEvent_004] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('3');
+      console.info('[TextInputEvent_004] END');
+      done();
+
+    });
 
     /*
      * @tc.number   TextInputEvent_static_005
@@ -202,30 +202,30 @@ export default function TextInputEvent() {
      * @tc.desc     TextInputEvent_static_005
      * @tc.level   Level.LEVEL0
      */
-    // it('TextInputEvent_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[TextInputEvent_005] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let driver = Driver.create();
-    //   let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
-    //   await text.inputText('123');
-    //   await CommonFunc.sleep(1000);
-	  //   await driver.triggerKey(2070);
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('TextInputEventText3')
-    //   let strJson2 = inspector.getInspectorByKey('TextInputEventText4');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   let obj2 = JSON.parseJsonElement(strJson2);
-    //   console.info("[TextInputEvent_005] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
-    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('3');
-    //   console.info('[TextInputEvent_005] END');
-    //   done();
-    //
-    // });
+    it('TextInputEvent_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[TextInputEvent_005] START');
+
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
+      await text.inputText('123');
+      await CommonFunc.sleep(1000);
+	    await driver.triggerKey(2070);
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('TextInputEventText3')
+      let strJson2 = inspector.getInspectorByKey('TextInputEventText4');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info("[TextInputEvent_005] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('3');
+      console.info('[TextInputEvent_005] END');
+      done();
+
+    });
 
     /*
      * @tc.number   TextInputEvent_static_006
@@ -233,34 +233,34 @@ export default function TextInputEvent() {
      * @tc.desc     TextInputEvent_static_006
      * @tc.level   Level.LEVEL0
      */
-    // it('TextInputEvent_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[TextInputEvent_006] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let driver = Driver.create();
-    //   let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
-    //   await text.inputText('123');
-    //   await CommonFunc.sleep(1000);
-	  // await driver.triggerKey(2070);
-    //   await CommonFunc.sleep(1000);
-    //   await text.clearText();
-    //   await CommonFunc.sleep(1000);
-	  // await driver.triggerKey(2070);
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('TextInputEventText5')
-    //   let strJson2 = inspector.getInspectorByKey('TextInputEventText6');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   let obj2 = JSON.parseJsonElement(strJson2);
-    //   console.info("[TextInputEvent_006] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
-    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('1');
-    //   console.info('[TextInputEvent_006] END');
-    //   done();
-    //
-    // });
+    it('TextInputEvent_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[TextInputEvent_006] START');
+
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
+      await text.inputText('123');
+      await CommonFunc.sleep(1000);
+	  await driver.triggerKey(2070);
+      await CommonFunc.sleep(1000);
+      await text.clearText();
+      await CommonFunc.sleep(1000);
+	  await driver.triggerKey(2070);
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('TextInputEventText5')
+      let strJson2 = inspector.getInspectorByKey('TextInputEventText6');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info("[TextInputEvent_006] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('1');
+      console.info('[TextInputEvent_006] END');
+      done();
+
+    });
 
     /*
      * @tc.number   TextInputEvent_static_007
