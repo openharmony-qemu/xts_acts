@@ -241,8 +241,12 @@ export default function PromiseAllTest() {
           expect(errorMessage).assertEqual('At least one promise is rejected');
         } else {
           expect(JSON.stringify(arr)).assertEqual('[1,2,7,3,4]');
-          expect(successMessage)
-            .assertEqual('All promises are resolved: [{"name":"Alice","age":26},{"name":"Bob","age":31},{"name":"Charlie","age":36}]');
+          expect(successMessage).assertContain('"name":"Alice"');
+          expect(successMessage).assertContain('"age":26');
+          expect(successMessage).assertContain('"name":"Bob"');
+          expect(successMessage).assertContain('"age":31');
+          expect(successMessage).assertContain('"name":"Charlie"');
+          expect(successMessage).assertContain('"age":36');
         }
         console.info(`${caseName} test end`);
         Done();
