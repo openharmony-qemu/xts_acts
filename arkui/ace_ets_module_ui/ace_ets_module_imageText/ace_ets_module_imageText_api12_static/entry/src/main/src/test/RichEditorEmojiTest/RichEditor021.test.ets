@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +103,7 @@ export default function RichEditor021() {
       //KEYCODE_DEL
       await driver.triggerKey(2055);
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
       await point.click();
       await CommonFunc.sleep(1000);

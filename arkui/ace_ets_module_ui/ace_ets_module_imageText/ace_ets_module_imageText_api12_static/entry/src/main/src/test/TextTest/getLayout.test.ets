@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,104 +96,104 @@ export default function getLayout() {
      * @tc.desc     getLayout_static_002
      * @tc.level   Level.LEVEL0
      */
-    // it('getLayout_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[getLayout_002] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('getLayout2');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[getLayout_002] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
-    //   console.info('[getLayout_002] END');
-    //   done();
-    // });
-    //
-    // /*
-    //  * @tc.number   getLayout_static_003
-    //  * @tc.name     getLayout_static_003
-    //  * @tc.desc     getLayout_static_003
-    //  * @tc.level   Level.LEVEL0
-    //  */
-    // it('getLayout_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[getLayout_003] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('getLayout3');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[getLayout_003] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
-    //   console.info('[getLayout_003] END');
-    //   done();
-    // });
-    //
-    // /*
-    //  * @tc.number   getLayout_static_004
-    //  * @tc.name     getLayout_static_004
-    //  * @tc.desc     getLayout_static_004
-    //  * @tc.level   Level.LEVEL0
-    //  */
-    // it('getLayout_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[getLayout_004] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('getLayout4');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[getLayout_004] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
-    //   console.info('[getLayout_004] END');
-    //   done();
-    // });
-    //
-    // /*
-    //  * @tc.number   getLayout_static_005
-    //  * @tc.name     getLayout_static_005
-    //  * @tc.desc     getLayout_static_005
-    //  * @tc.level   Level.LEVEL0
-    //  */
-    // it('getLayout_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[getLayout_005] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('getLayout5');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[getLayout_005] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
-    //   console.info('[getLayout_005] END');
-    //   done();
-    // });
-    //
-    // /*
-    //  * @tc.number   getLayout_static_006
-    //  * @tc.name     getLayout_static_006
-    //  * @tc.desc     getLayout_static_006
-    //  * @tc.level   Level.LEVEL0
-    //  */
-    // it('getLayout_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[getLayout_006] START');
-    //
-    //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('getLayout6');
-    //   await CommonFunc.sleep(200);
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[getLayout_006] component obj is: " + JSON.stringify(obj));
-    //   await CommonFunc.sleep(1000);
-    //
-    //   expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
-    //   console.info('[getLayout_006] END');
-    //   done();
-    // });
+    it('getLayout_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[getLayout_002] START');
+
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('getLayout2');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[getLayout_002] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
+      console.info('[getLayout_002] END');
+      done();
+    });
+
+    /*
+     * @tc.number   getLayout_static_003
+     * @tc.name     getLayout_static_003
+     * @tc.desc     getLayout_static_003
+     * @tc.level   Level.LEVEL0
+     */
+    it('getLayout_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[getLayout_003] START');
+
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('getLayout3');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[getLayout_003] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
+      console.info('[getLayout_003] END');
+      done();
+    });
+
+    /*
+     * @tc.number   getLayout_static_004
+     * @tc.name     getLayout_static_004
+     * @tc.desc     getLayout_static_004
+     * @tc.level   Level.LEVEL0
+     */
+    it('getLayout_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[getLayout_004] START');
+
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('getLayout4');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[getLayout_004] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
+      console.info('[getLayout_004] END');
+      done();
+    });
+
+    /*
+     * @tc.number   getLayout_static_005
+     * @tc.name     getLayout_static_005
+     * @tc.desc     getLayout_static_005
+     * @tc.level   Level.LEVEL0
+     */
+    it('getLayout_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[getLayout_005] START');
+
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('getLayout5');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[getLayout_005] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
+      console.info('[getLayout_005] END');
+      done();
+    });
+
+    /*
+     * @tc.number   getLayout_static_006
+     * @tc.name     getLayout_static_006
+     * @tc.desc     getLayout_static_006
+     * @tc.level   Level.LEVEL0
+     */
+    it('getLayout_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[getLayout_006] START');
+
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('getLayout6');
+      await CommonFunc.sleep(200);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[getLayout_006] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+
+      expect(obj.getElement('$attrs').getString('content') != '').assertTrue();
+      console.info('[getLayout_006] END');
+      done();
+    });
 
   })
 }

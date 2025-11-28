@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,15 +61,20 @@ build() {
 
         Button('get Point Position').onClick((e: ClickEvent) => {
           this.pointPosition = this.controller!.getCaretOffset() as int;
-          console.log('this.point_position:' + this.pointPosition);
+          let add = this.controller!.getCaretOffset() as int
+          console.log('this.point_position111:' + this.pointPosition + add);
         }).id('get_position')
 
         Button('set select').onClick((e: ClickEvent) => {
           this.controller!.setSelection(2, 5);
+          let add = this.controller!.getCaretOffset() as int
+          console.log('this.point_position22:' + this.pointPosition + add);
         }).id('set_select')
 
         Button('set select image').onClick((e: ClickEvent) => {
           this.controller!.setSelection(7, 10);
+          let add = this.controller!.getCaretOffset() as int
+          console.log('this.point_position33:' + this.pointPosition + add);
         }).id('set_select_image')
       }
       .borderWidth(1)

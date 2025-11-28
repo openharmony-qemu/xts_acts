@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,9 +67,9 @@ export default function textInputEnterKeyTypeTest() {
     afterEach(async  ()=> {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({url: 'MainAbility/pages/index/index'});
-      await Utils.sleep(1000);
+      await Utils.sleep(3000);
       console.info("textInputEnterKeyType after each called");
-    }) 
+    })
 
     
     /*
@@ -128,7 +129,7 @@ export default function textInputEnterKeyTypeTest() {
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 811,
+          eventId: 810,
           priority: events_emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
@@ -167,7 +168,7 @@ export default function textInputEnterKeyTypeTest() {
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 812,
+          eventId: 810,
           priority: events_emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
@@ -206,7 +207,7 @@ export default function textInputEnterKeyTypeTest() {
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 813,
+          eventId: 810,
           priority: events_emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
@@ -245,7 +246,7 @@ export default function textInputEnterKeyTypeTest() {
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 814,
+          eventId: 810,
           priority: events_emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
