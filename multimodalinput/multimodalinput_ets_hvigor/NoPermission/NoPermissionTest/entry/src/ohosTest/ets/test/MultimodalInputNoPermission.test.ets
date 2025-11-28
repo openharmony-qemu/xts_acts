@@ -35,7 +35,6 @@ export default function MultimodalInputNoPermissionTest() {
       }
     }
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0500
      * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0500
      * @tc.desc   Test promise setFunctionKeyEnabled interface to set non-permission.
@@ -64,7 +63,6 @@ export default function MultimodalInputNoPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0900
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0900
      * @tc.desc   Test transmitInfrared interface to set non-permission.
@@ -89,7 +87,6 @@ export default function MultimodalInputNoPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0200
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0200
      * @tc.desc   Test getInfraredFrequencies interface to set non-permission.

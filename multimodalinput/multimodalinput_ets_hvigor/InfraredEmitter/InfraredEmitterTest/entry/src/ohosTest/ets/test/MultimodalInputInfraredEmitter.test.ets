@@ -34,7 +34,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level.
@@ -61,7 +60,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with 1024 pattern parameters.
@@ -91,7 +89,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with 1025 pattern parameters.
@@ -119,7 +116,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with error pattern(negative number).
@@ -144,7 +140,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with error infraredFrequency.
@@ -169,7 +164,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(length is odd number).
@@ -196,7 +190,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(non-incremental).
@@ -223,7 +216,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800
      * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(empty).
@@ -250,7 +242,6 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
      * @tc.desc   Test getInfraredFrequencies interface to query the frequency range of infrared signals supported by the phone.
