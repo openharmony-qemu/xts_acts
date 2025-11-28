@@ -20,7 +20,6 @@ import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import ndkTest from 'libentry.so';
 import common from '@ohos.app.ability.common';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
-import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
 import { PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { isSupportedCameras } from './common';
