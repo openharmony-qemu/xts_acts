@@ -47,12 +47,12 @@ export default function SecurityHuksCmacTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_CMAC_API12_Func_0010
      * @tc.number SUB_Security_HUKS_CMAC_API12_Func_0010
-     * @tc.name use CMAC key generation, returns specified error code
-     * @tc.desc abnormal test
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_CMAC_API12_Func_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = 'SUB_Security_HUKS_CMAC_API12_Func_0010';
@@ -68,12 +68,12 @@ export default function SecurityHuksCmacTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_CMAC_API12_Func_0020
      * @tc.number SUB_Security_HUKS_CMAC_API12_Func_0020
-     * @tc.name use CMAC, returns specified error code
-     * @tc.desc abnormal test
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_CMAC_API12_Func_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = 'SUB_Security_HUKS_CMAC_API12_Func_0020';

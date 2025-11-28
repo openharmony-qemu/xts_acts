@@ -74,12 +74,12 @@ export default function GlobalSwitchStaticTest() {
     })
     
     /**
+     * @tc.name   Test_requestGlobalSwitch_001
      * @tc.number Test_requestGlobalSwitch_001
-     * @tc.name Test_requestGlobalSwitch_001
-     * @tc.desc requestGlobalSwitch Permissions SwitchType.CAMERA.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   requestGlobalSwitch Permissions SwitchType.CAMERA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestGlobalSwitch_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_001 start ");
@@ -107,12 +107,12 @@ export default function GlobalSwitchStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestGlobalSwitch_002
      * @tc.number Test_requestGlobalSwitch_002
-     * @tc.name Test_requestGlobalSwitch_002
-     * @tc.desc requestGlobalSwitch Permissions SwitchType.MICROPHONE.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   requestGlobalSwitch Permissions SwitchType.MICROPHONE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestGlobalSwitch_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_002 start ");
@@ -140,12 +140,12 @@ export default function GlobalSwitchStaticTest() {
     })
 
     /**
+     * @tc.name   Test_requestGlobalSwitch_003
      * @tc.number Test_requestGlobalSwitch_003
-     * @tc.name Test_requestGlobalSwitch_003
-     * @tc.desc requestGlobalSwitch Permissions SwitchType.LOCATION.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   requestGlobalSwitch Permissions SwitchType.LOCATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestGlobalSwitch_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_003 start ");

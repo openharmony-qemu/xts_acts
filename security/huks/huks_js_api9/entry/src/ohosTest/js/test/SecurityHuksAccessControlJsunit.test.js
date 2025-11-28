@@ -122,6 +122,14 @@ export default function SecurityHuksAccessControlJsunit() {
             useSoftware = await checkSoftware();
             done();
         })
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0100
+         * @tc.number Security_HUKS_AccessControll_API9_0100
+         * @tc.desc   Security_HUKS_AccessControll_API9_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("Security_HUKS_AccessControll_API9_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0100";
             let HuksOptions = {
@@ -159,6 +167,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0200
+         * @tc.number Security_HUKS_AccessControll_API9_0200
+         * @tc.desc   Security_HUKS_AccessControll_API9_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0200";
             let HuksOptions = {
@@ -208,6 +224,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0300
+         * @tc.number Security_HUKS_AccessControll_API9_0300
+         * @tc.desc   Security_HUKS_AccessControll_API9_0300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0300";
             let HuksOptions = {
@@ -260,6 +284,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0400
+         * @tc.number Security_HUKS_AccessControll_API9_0400
+         * @tc.desc   Security_HUKS_AccessControll_API9_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0400";
             let HuksOptions = {
@@ -327,6 +359,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0500
+         * @tc.number Security_HUKS_AccessControll_API9_0500
+         * @tc.desc   Security_HUKS_AccessControll_API9_0500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0500";
             let HuksOptions = {
@@ -359,6 +399,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0600
+         * @tc.number Security_HUKS_AccessControll_API9_0600
+         * @tc.desc   Security_HUKS_AccessControll_API9_0600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0600";
             let HuksOptions = {
@@ -395,6 +443,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0700
+         * @tc.number Security_HUKS_AccessControll_API9_0700
+         * @tc.desc   Security_HUKS_AccessControll_API9_0700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0700";
             let HuksOptions = {
@@ -445,6 +501,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0800
+         * @tc.number Security_HUKS_AccessControll_API9_0800
+         * @tc.desc   Security_HUKS_AccessControll_API9_0800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0800";
             let HuksOptions = {
@@ -497,6 +561,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_0900
+         * @tc.number Security_HUKS_AccessControll_API9_0900
+         * @tc.desc   Security_HUKS_AccessControll_API9_0900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_0900";
             let HuksOptions = {
@@ -534,6 +606,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_1000
+         * @tc.number Security_HUKS_AccessControll_API9_1000
+         * @tc.desc   Security_HUKS_AccessControll_API9_1000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_AccessControll_API9_1000";
             let HuksOptions = {
@@ -566,6 +646,14 @@ export default function SecurityHuksAccessControlJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_AccessControll_API9_9000
+         * @tc.number Security_HUKS_AccessControll_API9_9000
+         * @tc.desc   Security_HUKS_AccessControll_API9_9000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_AccessControll_API9_9000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             expect(1).assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
             expect(2).assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);

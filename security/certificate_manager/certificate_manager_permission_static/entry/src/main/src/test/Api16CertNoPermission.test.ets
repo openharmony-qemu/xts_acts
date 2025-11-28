@@ -117,12 +117,12 @@ export default function api16CertNoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetAllUserTrustedCertificates_static_0010
      * @tc.number SUB_Security_CertManager_GetAllUserTrustedCertificates_static_0010
-     * @tc.name SUB_Security_CertManager_GetAllUserTrustedCertificates_static_0010
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_GetAllUserTrustedCertificates_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_GetAllUserTrustedCertificates_static_0010 start');
@@ -140,12 +140,12 @@ export default function api16CertNoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_static_0010
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_static_0010
-     * @tc.name SUB_Security_CertManager_InstallUserTrustedCertificates_static_0010
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_InstallUserTrustedCertificates_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_InstallUserTrustedCertificates_static_0010 start');
@@ -162,12 +162,12 @@ export default function api16CertNoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_static_0010
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_static_0010
-     * @tc.name SUB_Security_CertManager_UninstallUserTrustedCertificate_static_0010
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_UninstallUserTrustedCertificate_static_0010 start');

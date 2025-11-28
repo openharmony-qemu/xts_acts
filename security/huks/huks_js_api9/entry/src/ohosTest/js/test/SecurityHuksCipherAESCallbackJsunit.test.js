@@ -288,6 +288,14 @@ async function publicCipherFunc(srcKeyAlies, genHuksOptionsNONECBC, HuksOptions,
 
 export default function SecurityHuksCipherAESCallbackJsunit() {
     describe('SecurityHuksCipherAESCallbackJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_AES_001
+         * @tc.number Security_HUKS_Cipher_API9_AES_001
+         * @tc.desc   Security_HUKS_Cipher_API9_AES_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_AES_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias001';
             genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize128);
@@ -326,6 +334,14 @@ export default function SecurityHuksCipherAESCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_AES_002
+         * @tc.number Security_HUKS_Cipher_API9_AES_002
+         * @tc.desc   Security_HUKS_Cipher_API9_AES_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_AES_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias002';
             let HuksOptions = {
@@ -346,6 +362,14 @@ export default function SecurityHuksCipherAESCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_AES_003
+         * @tc.number Security_HUKS_Cipher_API9_AES_003
+         * @tc.desc   Security_HUKS_Cipher_API9_AES_003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_AES_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias003';
             let HuksOptions = {
@@ -381,6 +405,14 @@ export default function SecurityHuksCipherAESCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_AES_004
+         * @tc.number Security_HUKS_Cipher_API9_AES_004
+         * @tc.desc   Security_HUKS_Cipher_API9_AES_004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_AES_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias002';
             let HuksOptions = {
@@ -402,13 +434,12 @@ export default function SecurityHuksCipherAESCallbackJsunit() {
         });
 
         /**
+         * @tc.name   SUB_Security_HUKS_isPwdSet_0060
          * @tc.number SUB_Security_HUKS_isPwdSet_0060
-         * @tc.name Test generate key when password tag is true and password is not set;
-         * @tc.desc HuksOptions with AlgName AES
-         * @tc.desc Test generate key with Callback. Test fail
-         * @tc.size Medium
-         * @tc.type Func
-         * @tc.level Level2
+         * @tc.desc   Test generate key with Callback. Test fail
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Security_HUKS_isPwdSet_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'SUB_Security_HUKS_isPwdSet_0060';
@@ -458,12 +489,12 @@ export default function SecurityHuksCipherAESCallbackJsunit() {
         });
 
         /**
+         * @tc.name   SUB_Security_HUKS_hasKeyItem_0020
          * @tc.number SUB_Security_HUKS_hasKeyItem_0020
-         * @tc.name test has key by alias, Callback style, test success;
-         * @tc.desc HuksOptions with AlgName AES
-         * @tc.size Medium
-         * @tc.type Func
-         * @tc.level Level2
+         * @tc.desc   HuksOptions with AlgName AES
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Security_HUKS_hasKeyItem_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'SUB_Security_HUKS_hasKeyItem_0020';

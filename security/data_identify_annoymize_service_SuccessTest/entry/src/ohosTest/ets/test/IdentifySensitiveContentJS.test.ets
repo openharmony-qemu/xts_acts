@@ -27,13 +27,13 @@ export default function identifySensitiveContentTestUnit() {
       // This API supports only one parameter: clear action function.
     })
     
-      /**
+    /**
+     * @tc.name   scanfileInputnull
      * @tc.number PrivacyAssistant_JS_25.1_2_004
-     * @tc.name scanfileInputnull
-     * @tc.desc normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scanfileInputnull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       if (await dlpPermission.isDLPFeatureProvided() === true) {
@@ -75,13 +75,13 @@ export default function identifySensitiveContentTestUnit() {
 
     })
 
-  /**
+    /**
+     * @tc.name   scanfileTypeNotSupport
      * @tc.number PrivacyAssistant_JS_25.1_2_012
-     * @tc.name scanfileTypeNotSupport
-     * @tc.desc normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('scanfileTypeNotSupport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
       if (await dlpPermission.isDLPFeatureProvided() === true) {
@@ -110,13 +110,13 @@ export default function identifySensitiveContentTestUnit() {
 
     })
 
-     /**
+    /**
+     * @tc.name   scanfileSandboxDirtxt
      * @tc.number PrivacyAssistant_JS_25.1_2_001
-     * @tc.name scanfileSandboxDirtxt
-     * @tc.desc normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scanfileSandboxDirtxt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       if (await dlpPermission.isDLPFeatureProvided() === true) {
@@ -150,12 +150,12 @@ export default function identifySensitiveContentTestUnit() {
     })
 
     /**
+     * @tc.name   scanfileSandboxDirnull
      * @tc.number PrivacyAssistant_JS_25.1_2_000
-     * @tc.name scanfileSandboxDirnull
-     * @tc.desc normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scanfileSandboxDirnull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       if (await dlpPermission.isDLPFeatureProvided() === true) {
@@ -186,13 +186,13 @@ export default function identifySensitiveContentTestUnit() {
 
     })
 
-/**
+    /**
+     * @tc.name   scanfile1025policy
      * @tc.number PrivacyAssistant_JS_25.1_2_006
-     * @tc.name scanfile1025policy
-     * @tc.desc normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('scanfile1025policy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
       if(await dlpPermission.isDLPFeatureProvided() === true){

@@ -46,13 +46,12 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_SignVerify_SM2_Func_0100
      * @tc.number Security_CryptoFramework_SignVerify_SM2_Func_0100
-     * @tc.name Test signVerify with SM2|SM3, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName SM2
-     * @tc.desc 2. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   2. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_CryptoFramework_SignVerify_SM2_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.log("Security_CryptoFramework_SignVerify_SM2_Func_0100: started.");
@@ -72,13 +71,12 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_SignVerify_SM2_Func_0200
      * @tc.number Security_CryptoFramework_SignVerify_SM2_Func_0200
-     * @tc.name Test signVerify with SM2_256|SM3, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with Callback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   2. Test interface with Callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_CryptoFramework_SignVerify_SM2_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.log("Security_CryptoFramework_SignVerify_SM2_Func_0200: started.");
@@ -105,13 +103,12 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_SignVerify_SM2_Func_0300
      * @tc.number Security_CryptoFramework_SignVerify_SM2_Func_0300
-     * @tc.name Test signVerify with SM2_256|SM3, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   2. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_SignVerify_SM2_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_SignVerify_SM2_Func_0300: started.");
@@ -131,13 +128,12 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_SignVerify_SM2_Func_0400
      * @tc.number Security_CryptoFramework_SignVerify_SM2_Func_0400
-     * @tc.name Test signVerify with SM2_256|SM3, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName SM2
-     * @tc.desc 3. Test interface with Callback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_SignVerify_SM2_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_SignVerify_SM2_Func_0400: started.");
@@ -157,13 +153,12 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_SignVerify_SM2_Func_0500
      * @tc.number Security_CryptoFramework_SignVerify_SM2_Func_0500
-     * @tc.name Test signVerify with SM2_256|SM3, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_SignVerify_SM2_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_SignVerify_SM2_Func_0500: started.");
@@ -183,13 +178,12 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_SignVerify_SM2_Func_0600
      * @tc.number Security_CryptoFramework_SignVerify_SM2_Func_0600
-     * @tc.name Test signVerify with SM2_256|SM3, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_SignVerify_SM2_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_SignVerify_SM2_Func_0600: started.");
@@ -209,12 +203,12 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerify_SM2_Func_0800
      * @tc.number Security_CryptoFramework_SignVerify_SM2_Func_0800
-     * @tc.name Test signVerify algName with SM2_256. Promise style. Process success
-     * @tc.desc digest is SM3
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is SM3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SignVerify_SM2_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "Security_CryptoFramework_SignVerify_SM2_Func_0800";

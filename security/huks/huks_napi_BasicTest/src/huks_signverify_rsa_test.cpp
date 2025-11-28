@@ -65,9 +65,12 @@ static struct OH_Huks_Param g_verifyParamsTest071[] = {
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 /**
- * @tc.name: HuksSignVerifyRSATest.Security_HUKS_NAPI_SignVerify_RSA_0100
- * @tc.desc: alg-RSA pur-Sign pad-PKCS1_V1_5 digest-MD5.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_SignVerify_RSA_0100
+ * @tc.number Security_HUKS_NAPI_SignVerify_RSA_0100
+ * @tc.desc   alg-RSA pur-Sign pad-PKCS1_V1_5 digest-MD5.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HuksSignVerifyRSATest, Security_HUKS_NAPI_SignVerify_RSA_0100, TestSize.Level1)
 {

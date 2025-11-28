@@ -80,6 +80,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
                 inData: srcData63b,
             };
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_101
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_101
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias101';
             let HuksOptions = {
@@ -106,6 +114,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_102
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_102
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias102';
             let HuksOptions = {
@@ -122,6 +138,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_103
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias103';
             let HuksOptions = {
@@ -148,6 +172,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_104
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_104
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias104';
             let HuksOptions = {
@@ -164,6 +196,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1013
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1013
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1013
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1013';
             HuksOptions.properties.splice(1, 1, HuksSignVerifyDSA.HuksKeyDSAPurposeSIGN);
@@ -174,6 +214,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1014
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1014
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1014
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             HuksOptions.properties.splice(1, 1, HuksSignVerifyDSA.HuksKeyDSAPurposeSIGN);
             await publicUpdateFunc(HuksOptions, true, -13);
@@ -182,6 +230,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1015
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1015
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1015
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             HuksOptions.properties.splice(1, 1, HuksSignVerifyDSA.HuksKeyDSAPurposeSIGN);
             HuksOptions.inData = new Uint8Array(new Array());
@@ -189,6 +245,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1016
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1016
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1016
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             HuksOptions.properties.splice(1, 1, HuksSignVerifyDSA.HuksKeyDSAPurposeSIGN);
             HuksOptions.inData = new Uint8Array(new Array());
@@ -196,6 +260,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1017
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1017
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1017
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1017';
             if (useSoftware) {
@@ -214,6 +286,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1018
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1018
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1018
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1018';
             if (useSoftware) {
@@ -232,6 +312,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1019
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1019
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1019
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1019';
             if (useSoftware) {
@@ -249,6 +337,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1020
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1020
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1020
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1020';
             if (useSoftware) {
@@ -267,6 +363,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1021
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1021
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1021
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1021';
             if (useSoftware) {
@@ -285,6 +389,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1022
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1022
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1022
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1022';
             if (useSoftware) {
@@ -303,6 +415,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1023
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1023
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1023
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1023';
             if (useSoftware) {
@@ -320,6 +440,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1024
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1024
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1024
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1024';
             if (useSoftware) {
@@ -338,6 +466,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1025
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1025
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1025
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1025';
             if (useSoftware) {
@@ -356,6 +492,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1026
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1026
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1026
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1026';
             if (useSoftware) {
@@ -374,6 +518,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1027
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1027
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1027
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1027';
             if (useSoftware) {
@@ -390,6 +542,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1028
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1028
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1028
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1028';
             if (useSoftware) {
@@ -406,6 +566,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1029
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1029
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1029
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1029';
             if (useSoftware) {
@@ -423,6 +591,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1030
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1030
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1030
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1030';
             if (useSoftware) {
@@ -440,6 +616,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1031
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1031
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1031
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1031';
             if (useSoftware) {
@@ -457,6 +641,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1032
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1032
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1032
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1032';
             if (useSoftware) {
@@ -473,6 +665,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             }
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1033
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1033
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1033
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1033';
             if (useSoftware) {
@@ -493,6 +693,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1034
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1034
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1034
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1034';
             if (useSoftware) {
@@ -513,6 +721,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1035
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1035
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1035
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1035';
             if (useSoftware) {
@@ -532,6 +748,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1036
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1036
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1036
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1036';
             if (useSoftware) {
@@ -551,6 +775,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1038
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1038
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1038
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1038';
             if (useSoftware) {
@@ -567,6 +799,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1039
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1039
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1039
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1039';
             if (useSoftware) {
@@ -580,6 +820,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             }
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1040
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1040
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1040
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1040';
             if (useSoftware) {
@@ -594,6 +842,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1041
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1041
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1041
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1041';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1041';
@@ -618,6 +874,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1042
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1042
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1042
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1042';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1042';
@@ -641,6 +905,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1043
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1043
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1043
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1043';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1043';
@@ -660,6 +932,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1044
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1044
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1044
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1044';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1044';
@@ -680,6 +960,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1045
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1045
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1045
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1045';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1045';
@@ -700,6 +988,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1046
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1046
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1046
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1046';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1046';
@@ -720,6 +1016,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1047
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1047
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1047
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1047';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1047';
@@ -739,6 +1043,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1048
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1048
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1048
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1048';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1048';
@@ -759,6 +1071,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1049
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1049
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1049
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1049';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1049';
@@ -779,6 +1099,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1050
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1050
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1050
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1050';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1050';
@@ -799,6 +1127,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1051
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1051
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1051
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1051';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1051';
@@ -817,6 +1153,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1052
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1052
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1052
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1052';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1052';
@@ -835,6 +1179,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1053
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1053
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1053
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1053';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1053';
@@ -854,6 +1206,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1054
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1054
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1054
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1054';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1054';
@@ -873,6 +1233,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1055
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1055
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1055
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1055';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1055';
@@ -892,6 +1260,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1056
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1056
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1056
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1056';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1056';
@@ -911,6 +1287,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1057
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1057
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1057
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1057';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1057';
@@ -934,6 +1318,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1058
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1058
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1058
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1058';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1058';
@@ -957,6 +1349,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1059
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1059
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1059
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1059';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1059';
@@ -978,6 +1378,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1060
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1060
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1060
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1060';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1060';
@@ -1001,6 +1409,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1061
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1061
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1061
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1061';
             const newSrcKeyAlias = 'security_huks_third_abnormal_signVerify_new_1061';
@@ -1018,6 +1434,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1062
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1062
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1062
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1062';
             if (useSoftware) {
@@ -1033,6 +1457,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1063
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1063
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1063
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1063';
             if (useSoftware) {
@@ -1047,6 +1479,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_abnormal_1064
+         * @tc.number Security_HUKS_SignVerify_API8_abnormal_1064
+         * @tc.desc   Security_HUKS_SignVerify_API8_abnormal_1064
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_abnormal_1064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_SignVerify_API8_abnormal_1064';
             if (useSoftware) {
@@ -1061,6 +1501,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_102
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_102
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias102';
             let params = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA1);
@@ -1071,6 +1519,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_102
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_102
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA224KeyAlias102';
             let params = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA224);
@@ -1081,6 +1537,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1__104
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA1__104
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1__104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA1__104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias104';
             let params = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA1);
@@ -1091,6 +1555,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_104
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_104
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA224KeyAlias104';
             let params = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA224);
@@ -1101,6 +1573,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_101
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_101
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias101';
             let params1 = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA1);
@@ -1114,6 +1594,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_101
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_101
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA224KeyAlias101';
             let params1 = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA224);
@@ -1127,6 +1615,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_103
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA1KeyAlias103';
             let params1 = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA1);
@@ -1140,6 +1636,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_103
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA224KeyAlias103';
             let params1 = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA224);
@@ -1153,6 +1657,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA256_103
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA256_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA256KeyAlias103';
             let params1 = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA256);
@@ -1166,6 +1678,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA384_103
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA384_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA384KeyAlias103';
             let params1 = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA384);
@@ -1179,6 +1699,14 @@ export default function SecurityHuksSignVerifyDSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_DSA_SIGNSHA512_103
+         * @tc.number Security_HUKS_SignVerify_API8_DSA_SIGNSHA512_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_DSA_SIGNSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_DSA_SIGNSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyDSASIGNSHA512KeyAlias103';
             let params1 = new Array(HuksSignVerifyDSA.HuksTagDSADigestSHA512);
