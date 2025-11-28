@@ -11,6 +11,18 @@
     {
       "name": "TestAbility_label",
       "value": "test label"
+    },
+    {
+      "name": "StaticNotificationSubscriber_desc",
+      "value": "description"
+    },
+    {
+      "name": "StaticNotificationSubscriber_label",
+      "value": "label"
+    },
+    {
+      "name": "Blutooth_reason",
+      "value": "blutooth_reason"
     }
   ]
 }
