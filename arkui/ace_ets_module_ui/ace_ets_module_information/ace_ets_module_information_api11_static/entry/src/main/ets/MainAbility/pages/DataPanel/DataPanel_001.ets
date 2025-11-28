@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +37,7 @@ struct DatapanelTest {
   public color1: Array<ResourceColor | LinearGradient> = ["#FFFF0000", "#FF00FF00", "#FF0000FF", "#FF000000"] as Array<ResourceColor | LinearGradient>;
   public color2: Array<ResourceColor | LinearGradient> = ['rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(0,0,255)', 'rgb(0,0,0)'] as Array<ResourceColor | LinearGradient>
   public color3: Array<ResourceColor | LinearGradient> = [Color.Red, Color.Green, Color.Blue, Color.Black] as Array<ResourceColor | LinearGradient>
-  public color4: Array<ResourceColor | LinearGradient> = ["#FFFF0000", "#FF00FF00", "#FF0000FF", "#FF000000"] as Array<ResourceColor | LinearGradient>
+  public color4: Array<ResourceColor | LinearGradient> = new Array<ResourceColor | LinearGradient>("#FFFF0000", "#FF00FF00", "#FF0000FF", "#FF000000")
   public color5: Array<ResourceColor | LinearGradient> = ["#FF000000", "#FFFF0000", "#FF00FF00"] as Array<ResourceColor | LinearGradient>
   public color6: LinearGradient = new LinearGradient([{ color: "#FFA500", offset: 0 }, {
     color: "#FFFFFF00", offset: 1 }])

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,9 +23,9 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,State} from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { ResourceColor, Entry, Component,RichEditorController,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
+import { ResourceColor, Entry, Component,RichEditorController,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,SpanStyle,
   Search,Text,TextStyle,MutableStyledString,TextController,TextController,UrlStyle,TextController,StyledStringKey,Color,TextOptions,ColumnOptions,CopyOptions,
-  FontStyle,Margin,StyleOptions,SpanStyle
+  FontStyle,Margin,StyleOptions
 } from '@ohos.arkui.component';
 
 
@@ -67,7 +68,7 @@ struct styled_string_StyleString {
 
                 Button('查询文本样式').id('searchStyle')
                     .onClick((e:ClickEvent) => {
-                        let styles: Array<SpanStyle> = this.mutableStyledString2!.getStyles(0, this.mutableStyledString2.length) as Array<SpanStyle>;
+                        let styles = this.mutableStyledString2.getStyles(0, this.mutableStyledString2.length) as SpanStyle[]
                         this.styledKey1 = styles[0].styledKey
                     })
                     .margin({ top: 10 } as Margin)

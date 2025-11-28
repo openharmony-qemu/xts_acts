@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -94,7 +95,7 @@ it('SelectionMenuOptions_static_0003', Level.LEVEL1, async (done: () => void) =>
   try{
     await driver.assertComponentExist(ON.text('自定义菜单'));
   }catch(e:Error){
-    expect().assertFail();
+    expect().assertFail()
   }
       console.info("[SelectionMenuOptions0003] end");
       done();
@@ -126,9 +127,10 @@ it('SelectionMenuOptions_static_0006', Level.LEVEL1, async (done: () => void) =>
   await CommonFunc.sleep(2000);
   try{
     await driver.assertComponentExist(ON.text('自定义菜单'));
-  }catch(e:Error){}
+  }catch(e:Error){
+    expect().assertFail()
+  }
       console.info("[SelectionMenuOptions0006] end");
-      expect().assertFail();
       done();
     });
     /*
@@ -158,9 +160,10 @@ it('SelectionMenuOptions_static_0009', Level.LEVEL1, async (done: () => void) =>
   await CommonFunc.sleep(2000);
   try{
     await driver.assertComponentExist(ON.text('自定义菜单'));
-  }catch(e:Error){}
+  }catch(e:Error){
+    expect().assertFail()
+  }
       console.info("[SelectionMenuOptions0009] end");
-      expect().assertFail();
       done();
     });
   })

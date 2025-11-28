@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,CopyOptions,
   ClickEvent, Image,ImageFit,Color, TextAlign, CopyOptions, SearchController, Font, Search,ResourceColor } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-
+import events_emitter from '@ohos.events.emitter'
 @Entry
 @Component
 struct SearchPage {
@@ -28,7 +29,7 @@ struct SearchPage {
   @State pasteValue: string = ''
   @State positionValue: int = 1
   @State placeholder: string = 'Type to search...'
-  @State icon: string = ''
+  @State searchIcon: string = ''
   @State searchButton: string = 'SEARCH'
   @State placeholderColor: ResourceColor = Color.Grey
   @State placeholderFont: Font = { size: 14, weight: 400 } as Font
@@ -36,58 +37,51 @@ struct SearchPage {
   @State textAlign: TextAlign = TextAlign.Start
   @State copyOption: CopyOptions = CopyOptions.InApp
   controller: SearchController = new SearchController()
-  messageManager:MessageManager<string|int|Font|TextAlign|CopyOptions|ResourceColor> = new MessageManager<string|int|Font|TextAlign|CopyOptions|ResourceColor>()
-
-  onPageShow() {
-    console.info('SearchPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<string|int|Font|TextAlign|CopyOptions|ResourceColor>>("messageManager", this.messageManager);
-    let callback: (message: Message<string|int|Font|TextAlign|CopyOptions|ResourceColor>)=>void = (message: Message<string|int|Font|TextAlign|CopyOptions|ResourceColor>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'changeValue') {
-        this.changeValue = (message as Message<string>).value
+  private stateChangCallBack : (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
+    if (eventData != null) {
+      let eventD = eventData.data as Record<String,undefined|null|Object>
+      if (eventD!['searchIcon'] != null) {
+        console.info("[SearchPage page]" + eventD!['searchIcon']);
+        this.searchIcon =  eventD!['searchIcon'] as string;
       }
-      if (message.name == 'submitValue') {
-        this.submitValue = (message as Message<string>).value
+      if (eventD!['searchButton'] != null) {
+        console.info("[SearchPage page]" + eventD!['searchButton']);
+        this.searchButton =  eventD!['searchButton'] as string;
       }
-      if (message.name == 'copyValue') {
-        this.copyValue = (message as Message<string>).value
+      if (eventD!['placeholderColor'] != null) {
+        console.info("[SearchPage page]" + eventD!['placeholderColor']);
+        this.placeholderColor =  eventD!['placeholderColor'] as ResourceColor;
       }
-      if (message.name == 'cutValue') {
-        this.cutValue = (message as Message<string>).value
+      if (eventD!['changeValue'] != null) {
+        console.info("[SearchPage page]" + eventD!['changeValue']);
+        this.changeValue =  eventD!['changeValue'] as string;
+      }if (eventD!['placeholder'] != null) {
+        console.info("[SearchPage page]" + eventD!['placeholder']);
+        this.placeholder =  eventD!['placeholder'] as string;
+      }if (eventD!['textFont'] != null) {
+        console.info("[SearchPage page]" + eventD!['textFont']);
+        this.textFont =  eventD!['textFont'] as Font | undefined;
+      }if (eventD!['textAlign'] != null) {
+        console.info("[SearchPage page]" + eventD!['textAlign']);
+        this.textAlign =  eventD!['textAlign'] as TextAlign;
       }
-      if (message.name == 'pasteValue') {
-        this.pasteValue = (message as Message<string>).value
+      if (eventD!['copyOption'] != null) {
+        console.info("[SearchPage page]" + eventD!['copyOption']);
+        this.copyOption =  eventD!['copyOption'] as CopyOptions;
       }
-      if (message.name == 'positionValue') {
-        this.positionValue = (message as Message<int>).value
-      }
-      if (message.name == 'placeHolder') {
-        this.placeholder = (message as Message<string>).value
-      }
-      if (message.name == 'icon') {
-        this.icon = (message as Message<string>).value
-      }
-      if (message.name == 'searchButton') {
-        this.searchButton = (message as Message<string>).value
-      }
-      if (message.name == 'placeholderColor') {
-        console.log('(message as Message<ResourceColor>).value',(message as Message<ResourceColor>).value)
-        this.placeholderColor = (message as Message<ResourceColor>).value
-      }
-      if (message.name == 'placeholderFont') {
-        this.placeholderFont = (message as Message<Font>).value
-      }
-      if (message.name == 'textFont') {
-        this.textFont = (message as Message<Font>).value
-      }
-      if (message.name == 'textAlign') {
-        this.textAlign = (message as Message<TextAlign>).value
-      }
-      if (message.name == 'copyOption') {
-        this.copyOption = (message as Message<CopyOptions>).value
+      if (eventD!['placeholderFont'] != null) {
+        console.info("[SearchPage page]" + eventD!['placeholderFont']);
+        this.placeholderFont =  eventD!['placeholderFont'] as Font;
       }
     }
-    this.messageManager.registerCallback(callback)
+  }
+  onPageShow() {
+    console.info('SearchPage onPageShow')
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 811,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {
@@ -97,7 +91,7 @@ struct SearchPage {
       Text('onCopy:' + this.copyValue).fontSize(10).key('copy').height('5%').textAlign(TextAlign.Center)
       Text('onCut:' + this.cutValue).fontSize(10).key('cut').height('5%').textAlign(TextAlign.Center)
       Text('onPaste:' + this.pasteValue).fontSize(10).key('paste').height('5%').textAlign(TextAlign.Center)
-      Search({ value: this.changeValue, placeholder: this.placeholder, icon: this.icon, controller: this.controller })
+      Search({ value: this.changeValue, placeholder: this.placeholder, icon: this.searchIcon, controller: this.controller })
         .searchButton(this.searchButton, {fontSize: 10}).id("searchButton")
         .width('80%')
         .height('10%')

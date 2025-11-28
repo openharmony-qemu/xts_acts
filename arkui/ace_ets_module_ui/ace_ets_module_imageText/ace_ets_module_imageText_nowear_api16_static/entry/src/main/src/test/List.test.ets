@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,8 +20,8 @@ import SetMenuOptionsTest from './TextTest/setMenuOptions.test';
 import TextMenuItemId from './RichEditorTest/TextMenuItemId.test';
 
 export default function testsuite() {
-  // textAreaInputTest();
-  // editMenuOptions();
-  SetMenuOptionsTest(); //  Error: 5, Pass: 20  std.core.Null cannot be cast to @ohos.UiTest.UiWindow 可能是showMode: TextMenuShowMode.PREFER_WINDOW导致
-  // TextMenuItemId();
+  textAreaInputTest();
+  editMenuOptions();
+  // SetMenuOptionsTest(); //  Error: 5, Pass: 20  std.core.Null cannot be cast to @ohos.UiTest.UiWindow 可能是showMode: TextMenuShowMode.PREFER_WINDOW导致
+  TextMenuItemId();
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -85,7 +86,7 @@ it('testBadge_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('new Badge0 START');
       let strJson = inspector.getInspectorByKey('badge');
       let obj = JSON.parseJsonElement(strJson);
-      let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
+      let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
       expect(obj.getString('$type')).assertEqual('Badge');
       console.log(JSON.stringify(obj.getString('$type')));
       console.info("yr badge0 type: " + JSON.stringify(obj.getString('$type')));
@@ -102,7 +103,7 @@ it('testBadge_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
       expect(style.getString('color')).assertEqual('#FFFFFFFF');
       expect(style.getString('fontSize')).assertEqual('16.00fp');
       expect(style.getString('badgeSize')).assertEqual('20.00fp');
-      console.log("badge0 style : " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.log("badge0 style : " + JSON.stringify(obj.getElement('$attrs').getString('style')));
       console.info('testGetInspectorByKey END');
       done();
     });
@@ -118,7 +119,7 @@ it('testBadge_static_020', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('new Badge1 START');
       let strJson = inspector.getInspectorByKey('badge1');
       let obj = JSON.parseJsonElement(strJson);
-      let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
+      let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('position')).assertEqual('BadgePosition.RightTop');
       console.log("yr badge1 position-'BadgePosition.RightTop'" + JSON.stringify(obj.getElement('$attrs').getString('position')));

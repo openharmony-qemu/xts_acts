@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import events_emitter from '@ohos.events.emitter';
 import { Color,ResourceStr,ResourceColor,Resource } from '@ohos.arkui.component'
@@ -34,8 +34,6 @@ import { Color,ResourceStr,ResourceColor,Resource } from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-// const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function badge3Jsunit() {
   describe('badge3Jsunit', () => {
@@ -46,11 +44,7 @@ export default function badge3Jsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      //   console.info(`enable success`);
-      // }).catch((err: object) => {
-      //   console.error(`failed to enable, ${err}`);
-      // })
+
       console.info("badge beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Badge/badge3',
@@ -103,7 +97,7 @@ it('testBadge_static_03', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge03] START');
       await CommonFunc.sleep(1000);
       try {
-        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue',-1)
+        AppStorage.setOrCreate<number>('fontSizeValue',-1)
       } catch (err) {
         console.log("[testBadge03] change component data error: " + (err as BusinessError).message);
       }
@@ -125,7 +119,7 @@ it('testBadge_static_02', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge02] START');
       await CommonFunc.sleep(1000);
       try {
-        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue','30')
+        AppStorage.setOrCreate<string>('fontSizeValue','30')
       } catch (err) {
         console.log("[testBadge02] change component data error: " + (err as BusinessError).message);
       }
@@ -147,7 +141,7 @@ it('testBadge_static_04', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge04] START');
       await CommonFunc.sleep(1000);
       try {
-        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue','121212121')
+        AppStorage.setOrCreate<string>('fontSizeValue','121212121')
 
       } catch (err) {
         console.log("[testBadge04] change component data error: " + (err as BusinessError).message);
@@ -169,7 +163,7 @@ it('testBadge_static_05', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge05] START');
       await CommonFunc.sleep(1000);
       try {
-        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue','121212121vaas')
+        AppStorage.setOrCreate<string>('fontSizeValue','121212121vaas')
       } catch (err) {
         console.log("[testBadge05] change component data error: " + (err as BusinessError).message);
       }
@@ -267,7 +261,7 @@ it('testBadge_static_10', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge10] START');
       await CommonFunc.sleep(1000);
       try {
-        AppStorage.setOrCreate<ResourceColor | undefined>('colorValue',undefined)
+        AppStorage.setOrCreate<undefined>('colorValue',undefined)
 
       } catch (err) {
         console.log("[testBadge10] change component data error: " + (err as BusinessError).message);
@@ -275,7 +269,7 @@ it('testBadge_static_10', Level.LEVEL0, async (done: () => void): Promise<void> 
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('badge2');
       console.info("[testBadge10] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('color')).assertEqual('#FF0000FF');
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('color')).assertEqual('#FFFFFFFF');
       done();
     });
 

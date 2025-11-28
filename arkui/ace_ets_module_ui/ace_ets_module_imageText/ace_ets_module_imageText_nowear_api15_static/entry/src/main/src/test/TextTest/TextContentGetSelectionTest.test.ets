@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -89,8 +90,8 @@ it('TextContentGetSelectionTest_static_0001', Level.LEVEL1, async (done: () =>vo
       await CommonFunc.sleep(500);
 
 
-        let TextAreaSelectionStart = AppStorage.get<int|undefined>('TextAreaSelectionStart')
-        let TextAreaSelectionEnd = AppStorage.get<int|undefined>('TextAreaSelectionEnd')
+        let TextAreaSelectionStart = AppStorage.get<int>('TextAreaSelectionStart')
+        let TextAreaSelectionEnd = AppStorage.get<int>('TextAreaSelectionEnd')
         expect(TextAreaSelectionStart).assertEqual(0);
         expect(TextAreaSelectionEnd).assertEqual(7);
 
@@ -125,8 +126,8 @@ it('TextContentGetSelectionTest_static_0002', Level.LEVEL1, async (done: () =>vo
       await CommonFunc.sleep(500);
 
 
-        let SearchSelectionStart = AppStorage.get<int|undefined>('SearchSelectionStart')
-        let SearchSelectionEnd = AppStorage.get<int|undefined>('SearchSelectionEnd')
+        let SearchSelectionStart = AppStorage.get<int>('SearchSelectionStart')
+        let SearchSelectionEnd = AppStorage.get<int>('SearchSelectionEnd')
         expect(SearchSelectionStart).assertEqual(0);
         expect(SearchSelectionEnd).assertEqual(6);
 
@@ -161,8 +162,8 @@ it('TextContentGetSelectionTest_static_0003', Level.LEVEL1, async (done: () =>vo
       await CommonFunc.sleep(500);
 
 
-        let TextInputSelectionStart = AppStorage.get<int|undefined>('TextInputSelectionStart')
-        let TextInputSelectionEnd = AppStorage.get<int|undefined>('TextInputSelectionEnd')
+        let TextInputSelectionStart = AppStorage.get<int>('TextInputSelectionStart')
+        let TextInputSelectionEnd = AppStorage.get<int>('TextInputSelectionEnd')
         expect(TextInputSelectionStart).assertEqual(0);
         expect(TextInputSelectionEnd).assertEqual(8);
 

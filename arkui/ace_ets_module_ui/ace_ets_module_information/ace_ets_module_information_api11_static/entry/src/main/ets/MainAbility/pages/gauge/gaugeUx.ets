@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2025 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -466,7 +467,7 @@ struct gaugeuxTest {
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
                 .strokeWidth(20)
-                  // .trackShadow(null)
+                  .trackShadow(null)
                 .width(200)
                 .height(200)
                 Gauge({ value: 30, min: 0, max: 100 })

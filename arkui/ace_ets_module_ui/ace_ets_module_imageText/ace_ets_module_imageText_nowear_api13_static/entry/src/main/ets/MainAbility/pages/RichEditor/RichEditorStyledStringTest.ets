@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +16,9 @@
 
 import { LengthMetrics, LengthUnit } from '@ohos.arkui.node'
 
-import {Entry,Component,TextStyle,GestureStyle,Color,MutableStyledString,DecorationStyle,TextShadowStyle,BaselineOffsetStyle,LetterSpacingStyle,UrlStyle,
+import {Entry,Component,TextStyle,GestureStyle,Color,MutableStyledString,DecorationStyle,TextShadowStyle,BaselineOffsetStyle,LetterSpacingStyle,UrlStyle,SpanStyle,
   ResourceColor,RichEditorStyledStringController,RichEditorStyledStringOptions,ResourceColor,StyledStringKey,Column,Text,RichEditor,Button,
-  ColumnOptions,StyleOptions,TextDecorationType,ShadowOptions,ShadowType, Margin,SpanStyle
+  ColumnOptions,StyleOptions,TextDecorationType,ShadowOptions,ShadowType, Margin
 } from '@ohos.arkui.component';
 import { PromptAction } from '@ohos.arkui.UIContext';
 import { ClickEvent } from '@ohos.arkui.component';
@@ -112,7 +113,7 @@ struct RichEditorStyledStringTest {
           .borderColor(Color.Black)
         Button('SearchOtherTextStyles').id('searchStyle')
           .onClick((e:ClickEvent):void=> {
-            let styles: Array<SpanStyle> = this.mutableStyledString2!.getStyles(0, this.mutableStyledString2.length) as Array<SpanStyle>
+            let styles = this.mutableStyledString2.getStyles(0, this.mutableStyledString2.length) as Array<SpanStyle>
             this.styledKey1 = styles[0].styledKey
             this.styledKey2 = styles[1].styledKey
             this.styledKey3 = styles[2].styledKey

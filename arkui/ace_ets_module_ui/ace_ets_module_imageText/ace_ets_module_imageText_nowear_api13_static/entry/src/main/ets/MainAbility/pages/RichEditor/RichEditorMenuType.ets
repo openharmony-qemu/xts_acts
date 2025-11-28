@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -110,18 +111,6 @@ struct RichEditorMenuType1 {
   private theme: SelectionMenuTheme = defaultTheme;
 
   aboutToAppear() {
-    if (this.controller) {
-      let richEditorSelection = this.controller.getSelection()
-      if (richEditorSelection) {
-        let start = richEditorSelection.selection[0]
-        let end = richEditorSelection.selection[1]
-        if (start === 0 && this.controller!.getSpans({ start: end + 1, end: end + 1 })!.length === 0) {
-          this.visibilityValue = Visibility.None
-        } else {
-          this.visibilityValue = Visibility.Visible
-        }
-      }
-    }
     let sysBoard = pasteboard.getSystemPasteboard()
     if (sysBoard && sysBoard.hasDataSync()) {
       this.pasteEnable = true
@@ -230,8 +219,8 @@ struct RichEditorMenuType1 {
     let start = richEditorSelection.selection[0]
     let end = richEditorSelection.selection[1]
     if (start == end && this.controller) {
-      start = this.controller.getCaretOffset() as Int
-      end = this.controller.getCaretOffset() as Int
+      start = this.controller!.getCaretOffset()!
+      end = this.controller!.getCaretOffset()!
     }
     let moveOffset = 0
     let sysBoard = pasteboard.getSystemPasteboard()
@@ -328,9 +317,9 @@ struct RichEditorMenuType1 {
             if (index as number == 0) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller!.getSelection();
-                let spans = selection!.spans
-                spans!.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+                let selection = this.controller!.getSelection()!;
+                let spans = selection.spans
+                spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
                   if (typeof (item as RichEditorTextSpanResult).textStyle!= 'undefined') {
                     let span = item as RichEditorTextSpanResult
                     this.textStyle = span.textStyle as RichEditorTextStyle
@@ -342,7 +331,7 @@ struct RichEditorMenuType1 {
                     } else {
                       this.textStyle.fontWeight = FontWeight.Normal
                     }
-                    this.controller!.updateSpanStyle({
+                    this.controller.updateSpanStyle({
                       start: offset + start,
                       end: offset + end,
                       textStyle: this.textStyle
@@ -353,15 +342,15 @@ struct RichEditorMenuType1 {
             } else if (index as number == 1) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller!.getSelection();
-                let spans = selection!.spans
+                let selection = this.controller.getSelection()!;
+                let spans = selection.spans!
                 spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
                   if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
                     let span = item as RichEditorTextSpanResult
                     this.textStyle = span.textStyle as RichEditorTextStyle
-                    let start = span!.offsetInSpan[0]
-                    let end = span!.offsetInSpan[1]
-                    let offset = span.spanPosition!.spanRange[0]
+                    let start = span.offsetInSpan[0]
+                    let end = span.offsetInSpan[1]
+                    let offset = span.spanPosition.spanRange[0]
                     if (this.textStyle.fontStyle == FontStyle.Italic) {
                       this.textStyle.fontStyle = FontStyle.Normal
                     } else {
@@ -378,15 +367,15 @@ struct RichEditorMenuType1 {
             } else if (index as number == 2) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller.getSelection();
-                let spans = selection!.spans
+                let selection = this.controller!.getSelection()!;
+                let spans = selection.spans!
                 spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
                   if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
                     let span = item as RichEditorTextSpanResult
                     this.textStyle = span!.textStyle as RichEditorTextStyle
-                    let start = span.offsetInSpan[0]
-                    let end = span.offsetInSpan[1]
-                    let offset = span.spanPosition.spanRange[0]
+                    let start = span!.offsetInSpan[0]!
+                    let end = span!.offsetInSpan[1]!
+                    let offset = span!.spanPosition!.spanRange[0]!
                     if (this.textStyle!.decoration) {
                       if (this.textStyle!.decoration!.type == TextDecorationType.Underline) {
                         this.textStyle!.decoration!.type = TextDecorationType.None
@@ -412,14 +401,14 @@ struct RichEditorMenuType1 {
             } else if (index as number == 4) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller.getSelection();
-                let spans = selection!.spans
+                let selection = this.controller!.getSelection()!;
+                let spans = selection.spans!
                 spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
                   if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
                     let span = item as RichEditorTextSpanResult
                     this.textStyle = span.textStyle as RichEditorTextStyle
-                    let start = span!.offsetInSpan[0]
-                    let end = span!.offsetInSpan[1]
+                    let start = span.offsetInSpan[0]
+                    let end = span.offsetInSpan[1]
                     let offset = span.spanPosition!.spanRange[0]
                     if (this.textStyle.fontColor == Color.Orange || this.textStyle.fontColor == '#FFFFA500') {
                       this.textStyle.fontColor = Color.Black
@@ -473,42 +462,34 @@ struct RichEditorMenuType1 {
       Menu() {
         if (this.controller) {
           MenuItemGroup() {
-            MenuItem({ startIcon: this.theme.cutIcon, content: "剪切", labelInfo: "Ctrl+X" } as MenuItemOptions)
+            MenuItem({ startIcon: this.theme!.cutIcon!, content: "剪切", labelInfo: "Ctrl+X" } as MenuItemOptions)
               .onClick((e:ClickEvent)=> {
-                if (!this.controller) {
-                  return
-                }
-                let richEditorSelection:RichEditorSelection = this.controller!.getSelection() as RichEditorSelection
+
+                let richEditorSelection = this.controller.getSelection() as RichEditorSelection
                 this.PushDataToPasteboard(richEditorSelection);
-                this.controller!.deleteSpans({
+                this.controller.deleteSpans({
                   start: richEditorSelection.selection[0],
                   end: richEditorSelection.selection[1]
                 })
               })
-            MenuItem({ startIcon: this.theme.copyIcon, content: "复制", labelInfo: "Ctrl+C" } as MenuItemOptions)
+            MenuItem({ startIcon: this.theme!.copyIcon!, content: "复制", labelInfo: "Ctrl+C" } as MenuItemOptions)
               .onClick((e:ClickEvent) => {
-                if (!this.controller) {
-                  return
-                }
-                let richEditorSelection:RichEditorSelection = this.controller!.getSelection() as RichEditorSelection
+
+                let richEditorSelection = this.controller.getSelection() as RichEditorSelection
                 this.PushDataToPasteboard(richEditorSelection);
                 this.controller.closeSelectionMenu()
               })
-            MenuItem({ startIcon: this.theme.pasteIcon, content: "粘贴", labelInfo: "Ctrl+V" } as MenuItemOptions)
+            MenuItem({ startIcon: this.theme!.pasteIcon!, content: "粘贴", labelInfo: "Ctrl+V" } as MenuItemOptions)
               .enabled(this.pasteEnable)
               .onClick((e:ClickEvent) => {
-                if (!this.controller) {
-                  return
-                }
-                let richEditorSelection:RichEditorSelection = this.controller!.getSelection() as RichEditorSelection
+
+                let richEditorSelection = this.controller!.getSelection() as RichEditorSelection
                 this.PopDataFromPasteboard(richEditorSelection)
               })
             MenuItem({ startIcon: this.theme.selectAllIcon, content: "全选", labelInfo: "Ctrl+A" } as MenuItemOptions)
               .visibility(this.visibilityValue)
               .onClick((e:ClickEvent) => {
-                if (!this.controller) {
-                  return
-                }
+
                 this.controller.setSelection(-1, -1)
                 this.visibilityValue = Visibility.None
               })
@@ -526,8 +507,8 @@ struct RichEditorMenuType1 {
           return
         }
         let richEditorSelection = this.controller.getSelection()
-        let start = richEditorSelection!.selection[0]
-        let end = richEditorSelection!.selection[1]
+        let start = richEditorSelection!.selection[0]!
+        let end = richEditorSelection!.selection[1]!
         if (start === 0 && this.controller!.getSpans({ start: end + 1, end: end + 1 })!.length === 0) {
           this.visibilityValue = Visibility.None
         } else {
@@ -550,12 +531,12 @@ struct RichEditorMenuType1 {
           .width(210)
           .onChange((value: number, mode: SliderChangeMode) => {
             if (this.controller) {
-              let selection = this.controller.getSelection();
+              let selection = this.controller!.getSelection()!;
               if (mode == SliderChangeMode.End) {
                 if (this.textSize == undefined) {
                   this.textSize = 0
                 }
-                let spans = selection!.spans
+                let spans = selection.spans
                 spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
                   if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
                     this.textSize = Math.max(this.textSize, (item as RichEditorTextSpanResult).textStyle.fontSize)
@@ -563,10 +544,10 @@ struct RichEditorMenuType1 {
                 })
               }
               if (mode == SliderChangeMode.Moving || mode == SliderChangeMode.Click) {
-                this.start = selection!.selection[0]
-                this.end = selection!.selection[1]
+                this.start = selection!.selection[0]!
+                this.end = selection!.selection[1]!
                 this.textSize = value
-                this.controller!.updateSpanStyle({
+                this.controller.updateSpanStyle({
                   start: this.start,
                   end: this.end,
                   textStyle: { fontSize: this.textSize }

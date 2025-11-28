@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -592,8 +593,6 @@ it('SetMenuOptionsTest_static_0190', Level.LEVEL0, async (done: () =>void) : Pro
       await CommonFunc.sleep(2000);
       console.info('[SetMenuOptionsTest_0190] longClick succ');
       let window = await (driver.findWindow({ active: true }) as Promise<UiWindow>);
-
-
         let mode = await window.getWindowMode();
         console.info('[SetMenuOptionsTest_0190] mode: ' + JSON.stringify(mode));
         expect([0, 2, 3]).assertContain(mode);

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,11 +62,12 @@ export default function RichEditor01() {
       }
       console.info("RichEditor01 beforeEach end");
     });
-    
 
-    
-    
-    
+    afterEach(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
+      await CommonFunc.sleep(2000);
+    })
     /*
      * @tc.number   RichEditor01_static_001
      * @tc.name     RichEditor01_static_001

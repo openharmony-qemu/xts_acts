@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +25,7 @@ import { State } from '@ohos.arkui.stateManagement'
 struct getcomponentadd {
   private scroller: Scroller = new Scroller();
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
-  @State NumberArray: Array<String> = new Array<String>('0', '1', '2', '3', '4')
+  @State aryNum: Array<String> = new Array<String>('0', '1', '2', '3', '4')
   @State message: string = 'Hello World';
   build() {
     Row() {
@@ -114,8 +115,8 @@ struct getcomponentadd {
           .key('ArkUX_Get_component_add_0070')
 
         Grid() {
-          ForEach(this.NumberArray, (day: string) => {
-            ForEach(this.NumberArray, (day: string) => {
+          ForEach(this.aryNum, (day: string) => {
+            ForEach(this.aryNum, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

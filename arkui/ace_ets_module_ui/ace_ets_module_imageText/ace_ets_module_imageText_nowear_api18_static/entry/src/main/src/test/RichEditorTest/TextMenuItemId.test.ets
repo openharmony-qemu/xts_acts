@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -68,7 +69,6 @@ export default function TextMenuItemId() {
      */
 it('TextMenuItemId_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextMenuItemId0001] start");
-
   let driver = Driver.create();
   console.info('TextMenuItemId TextMenuItemId0001 START');
   await CommonFunc.sleep(500);
@@ -85,8 +85,9 @@ it('TextMenuItemId_static_0001', Level.LEVEL0, async (done: () => void): Promise
   try{
     await driver.assertComponentExist(ON.text('翻译'));
     await driver.assertComponentExist(ON.text('搜索'));
-  }catch(e: Error){}
-      expect().assertFail();
+  }catch(e: Error){
+    expect().assertFail()
+  }
       console.info('TextMenuItemId TextMenuItemId0001 START6');
       console.info("[TextMenuItemId0001] end");
       done();
@@ -114,9 +115,10 @@ it('TextMenuItemId_static_0002', Level.LEVEL0, async (done: () => void): Promise
   try{
     await driver.assertComponentExist(ON.text('翻译'));
     await driver.assertComponentExist(ON.text('搜索'));
-  }catch(e: Error){}
+  }catch(e: Error){
+    expect().assertFail()
+  }
       console.info("[TextMenuItemId0002] end");
-      expect().assertFail();
       done();
     });
 
@@ -142,11 +144,12 @@ it('TextMenuItemId_static_0003', Level.LEVEL0, async (done: () => void): Promise
   try{
     await driver.assertComponentExist(ON.text('翻译'));
     await driver.assertComponentExist(ON.text('搜索'));
-  }catch(e: Error){}
+  }catch(e: Error){
+    expect().assertFail()
+  }
       console.info("[TextMenuItemId0003] end");
-      expect().assertFail();
       done();
-  });
+    });
 
     
     /*
@@ -170,9 +173,10 @@ it('TextMenuItemId_static_0004', Level.LEVEL0, async (done: () => void): Promise
   try{
     await driver.assertComponentExist(ON.text('翻译'));
     await driver.assertComponentExist(ON.text('搜索'));
-  }catch(e: Error){}
+  }catch(e: Error){
+    expect().assertFail()
+  }
       console.info("[TextMenuItemId0004] end");
-      expect().assertFail();
       done();
     });
 
@@ -198,9 +202,10 @@ it('TextMenuItemId_static_0005', Level.LEVEL0, async (done: () => void): Promise
   try{
     await driver.assertComponentExist(ON.text('翻译'));
     await driver.assertComponentExist(ON.text('搜索'));
-  }catch(e: Error){}
+  }catch(e: Error){
+    expect().assertFail()
+  }
       console.info("[TextMenuItemId0005] end");
-      expect().assertFail();
       done();
     });
   })

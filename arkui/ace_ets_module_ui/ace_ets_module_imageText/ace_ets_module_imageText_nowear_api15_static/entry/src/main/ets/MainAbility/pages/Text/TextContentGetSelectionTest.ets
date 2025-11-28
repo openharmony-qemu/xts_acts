@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,17 +67,17 @@ struct TextContentGetSelectionTest {
         .borderWidth(1)
         .id('TextInput')
       Row(){
-        Button('getSelectionTextArea').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate<int|undefined>('TextAreaSelectionStart', this.controller1!.getSelection()!.start);
-          AppStorage.setOrCreate<int|undefined>('TextAreaSelectionEnd', this.controller1!.getSelection()!.end);
+        Button('getSelectionTextArea').onClick((e:ClickEvent) => {
+          AppStorage.setOrCreate<int>('TextAreaSelectionStart', this.controller1!.getSelection()!.start as int);
+          AppStorage.setOrCreate<int>('TextAreaSelectionEnd', this.controller1!.getSelection()!.end as int);
         }).id('getTextArea').width('30%')
-        Button('getSelectionSearch').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate<int|undefined>('SearchSelectionStart', this.controller2.getSelection()!.start);
-          AppStorage.setOrCreate<int|undefined>('SearchSelectionEnd', this.controller2.getSelection()!.end);
+        Button('getSelectionSearch').onClick((e:ClickEvent): void => {
+          AppStorage.setOrCreate<int>('SearchSelectionStart', this.controller2!.getSelection()!.start as int);
+          AppStorage.setOrCreate<int>('SearchSelectionEnd', this.controller2!.getSelection()!.end as int);
         }).id('getSearch').width('30%')
-        Button('getSelectionTextInput').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate<int|undefined>('TextInputSelectionStart', this.controller3.getSelection()!.start);
-          AppStorage.setOrCreate<int|undefined>('TextInputSelectionEnd', this.controller3.getSelection()!.end);
+        Button('getSelectionTextInput').onClick((e:ClickEvent): void => {
+          AppStorage.setOrCreate<int|undefined>('TextInputSelectionStart', this.controller3!.getSelection()!.start as int);
+          AppStorage.setOrCreate<int|undefined>('TextInputSelectionEnd', this.controller3!.getSelection()!.end as int);
         }).id('getTextInput').width('30%')
       }.height('5%').margin({top:25} as Margin)
     }.width('100%').height('100%')
