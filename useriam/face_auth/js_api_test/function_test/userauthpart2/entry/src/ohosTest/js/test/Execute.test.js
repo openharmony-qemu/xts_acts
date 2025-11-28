@@ -109,7 +109,6 @@ export default function signNormalAccessBiometricExecute() {
     }
     
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_getUserAuthInstance_Func_0043
      * @tc.number Security_IAM_getUserAuthInstance_Func_0043
      * @tc.desc   Security_IAM_getUserAuthInstance_Func_0043
@@ -236,7 +235,6 @@ export default function signNormalAccessBiometricExecute() {
     });
   
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_getUserAuthInstance_Func_0107
      * @tc.number Security_IAM_getUserAuthInstance_Func_0107
      * @tc.desc   Security_IAM_getUserAuthInstance_Func_0107
@@ -431,7 +429,6 @@ export default function signNormalAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_0004
      * @tc.number Security_IAM_UserAuthInstance_Func_0004
      * @tc.desc   Security_IAM_UserAuthInstance_Func_0004
@@ -485,7 +482,6 @@ export default function signNormalAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_0005
      * @tc.number Security_IAM_UserAuthInstance_Func_0005
      * @tc.desc   Security_IAM_UserAuthInstance_Func_0005
@@ -535,7 +531,6 @@ export default function signNormalAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_0007
      * @tc.number Security_IAM_UserAuthInstance_Func_0007
      * @tc.desc   Security_IAM_UserAuthInstance_Func_0007
@@ -562,7 +557,6 @@ export default function signNormalAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_0009
      * @tc.number Security_IAM_UserAuthInstance_Func_0009
      * @tc.desc   Security_IAM_UserAuthInstance_Func_0009
@@ -590,7 +584,6 @@ export default function signNormalAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_getUserAuthInstance_Func_0088
      * @tc.number Security_IAM_getUserAuthInstance_Func_0088
      * @tc.desc   Security_IAM_getUserAuthInstance_Func_0088
@@ -613,7 +606,6 @@ export default function signNormalAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_getUserAuthInstance_Func_0089
      * @tc.number Security_IAM_getUserAuthInstance_Func_0089
      * @tc.desc   Security_IAM_getUserAuthInstance_Func_0089

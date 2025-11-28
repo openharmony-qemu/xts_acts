@@ -59,7 +59,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_Func_Static_0102
      * @tc.number Security_IAM_Func_Static_0102
      * @tc.desc   Abnormal testing
@@ -123,7 +122,6 @@ export default function userauthTest_API9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_PIN_Kit_Func_Static_0104
      * @tc.number Security_IAM_PIN_Kit_Func_Static_0104
      * @tc.desc   Enumeration testing
@@ -144,7 +142,6 @@ export default function userauthTest_API9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_PIN_Kit_Func_Static_0106
      * @tc.number Security_IAM_PIN_Kit_Func_Static_0106
      * @tc.desc   Enumeration testing
@@ -161,7 +158,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_Func_Static_0107
      * @tc.number Security_IAM_Func_Static_0107
      * @tc.desc   Enumeration testing
@@ -188,7 +184,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_skip_Static_0190
      * @tc.number SUB_Security_userIam_authWidget_Func_skip_Static_0190
      * @tc.desc   authWidget
@@ -228,7 +223,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0031
      * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0031
      * @tc.desc   authWidget
@@ -250,7 +244,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0032
      * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0032
      * @tc.desc   authWidget
@@ -304,7 +297,6 @@ export default function userauthTest_API9() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_UserAuth_FUNC_Static_0110
      * @tc.number SUB_Security_IAM_UserAuth_FUNC_Static_0110
      * @tc.desc   getAuthLockState parameter validity check
