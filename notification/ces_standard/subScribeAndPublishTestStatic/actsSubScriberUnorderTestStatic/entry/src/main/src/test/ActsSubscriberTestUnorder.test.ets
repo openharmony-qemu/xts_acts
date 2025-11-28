@@ -52,9 +52,12 @@ export default function ActsSubscriberTestUnorder() {
     }
 
     /**
-     * @tc.number     Sub_Notification_Ans_Subscriber_Subscribe_Static_2700
-     * @tc.name       Sub_Notification_Ans_Subscriber_Subscribe_Static_2700
-     * @tc.desc       getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_2700
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_2700
+     * @tc.desc   getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_2700'
@@ -94,9 +97,12 @@ export default function ActsSubscriberTestUnorder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Subscriber_Subscribe_Static_2800
-     * @tc.name       Sub_Notification_Ans_Subscriber_Subscribe_Static_2800
-     * @tc.desc       getSubscribeInfo(): Promise<CommonEventSubscribeInfo>
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_2800
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_2800
+     * @tc.desc   getSubscribeInfo(): Promise<CommonEventSubscribeInfo>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_2800'
@@ -133,9 +139,12 @@ export default function ActsSubscriberTestUnorder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Subscriber_Subscribe_Static_2900
-     * @tc.name       Sub_Notification_Ans_Subscriber_Subscribe_Static_2900
-     * @tc.desc       getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_2900
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_2900
+     * @tc.desc   getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_2900'
@@ -175,9 +184,12 @@ export default function ActsSubscriberTestUnorder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Subscriber_Subscribe_Static_3000
-     * @tc.name       Sub_Notification_Ans_Subscriber_Subscribe_Static_3000
-     * @tc.desc       getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_3000
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_3000
+     * @tc.desc   getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_3000'
@@ -215,9 +227,12 @@ export default function ActsSubscriberTestUnorder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_0900
-     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_0900
-     * @tc.desc       isOrderedCommonEvent(callback: AsyncCallback<boolean>): void
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_Static_0900
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_Static_0900
+     * @tc.desc   isOrderedCommonEvent(callback: AsyncCallback<boolean>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Subscriber_Subscribe_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_0900'
@@ -285,9 +300,12 @@ export default function ActsSubscriberTestUnorder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Publish_CommonEvent_Static_8350
-     * @tc.name       Sub_Notification_Ces_Publish_CommonEvent_Static_8350
-     * @tc.desc       isOrderedCommonEvent(): Promise<boolean>
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_8350
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_8350
+     * @tc.desc   isOrderedCommonEvent(): Promise<boolean>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_8350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_8350'
@@ -354,9 +372,12 @@ export default function ActsSubscriberTestUnorder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Publish_CommonEvent_Static_8250
-     * @tc.name       Sub_Notification_Ces_Publish_CommonEvent_Static_8250
-     * @tc.desc       iisStickyCommonEvent(callback: AsyncCallback<boolean>): void
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_8250
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_8250
+     * @tc.desc   iisStickyCommonEvent(callback: AsyncCallback<boolean>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_8250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_8250'
@@ -424,9 +445,12 @@ export default function ActsSubscriberTestUnorder() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ces_Publish_CommonEvent_Static_8300
-     * @tc.name       Sub_Notification_Ces_Publish_CommonEvent_Static_8300
-     * @tc.desc       isStickyCommonEvent(): Promise<boolean>
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_8300
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_8300
+     * @tc.desc   isStickyCommonEvent(): Promise<boolean>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_8300'
@@ -492,9 +516,12 @@ export default function ActsSubscriberTestUnorder() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_0800
-     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_0800
-     * @tc.desc       CommonEventPublishData
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_Static_0800
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_Static_0800
+     * @tc.desc   CommonEventPublishData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Subscriber_Subscribe_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_0800'

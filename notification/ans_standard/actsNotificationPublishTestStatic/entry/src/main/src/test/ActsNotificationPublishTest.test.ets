@@ -104,10 +104,13 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-       * @tc.number  Sub_Notification_Ans_Enable_Query_Static_2700
-       * @tc.name    Sub_Notification_Ans_Enable_Query_Static_2700
-       * @tc.desc    OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
-       */
+     * @tc.name   Sub_Notification_Ans_Enable_Query_Static_2700
+     * @tc.number Sub_Notification_Ans_Enable_Query_Static_2700
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Enable_Query_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2700'
@@ -147,9 +150,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Enable_Query_Static_2800
-     * @tc.name    Sub_Notification_Ans_Enable_Query_Static_2800
-     * @tc.desc    OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.name   Sub_Notification_Ans_Enable_Query_Static_2800
+     * @tc.number Sub_Notification_Ans_Enable_Query_Static_2800
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -172,9 +178,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_8300
-     * @tc.name    Sub_Notification_Ans_Publish_Publish_Static_8300
-     * @tc.desc    Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_8300
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_8300
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -232,9 +241,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_8350
-     * @tc.name    Sub_Notification_Ans_Publish_Publish_Static_8350
-     * @tc.desc    Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_8350
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_8350
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8350'
@@ -289,9 +301,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_8400
-     * @tc.name    Sub_Notification_Ans_Publish_Publish_Static_8400
-     * @tc.desc    Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_8400
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_8400
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8400'
@@ -354,9 +369,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8450
-     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8450
-     * @tc.desc       Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_8450
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_8450
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8450'
@@ -418,9 +436,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8500
-     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8500
-     * @tc.desc       Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_8500
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_8500
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8500'
@@ -482,9 +503,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8550
-     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8550
-     * @tc.desc       Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_8550
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_8550
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8550'
@@ -546,9 +570,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8600
-     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8600
-     * @tc.desc       Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_8600
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_8600
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8600'
@@ -613,9 +640,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_0150
-     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_0150
-     * @tc.desc       Publishes a notification
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_0150
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_0150
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_0150'
@@ -680,9 +710,12 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
-     * @tc.name       SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
-     * @tc.desc       Publishes a notification
+     * @tc.name   SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
+     * @tc.number SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
+     * @tc.desc   Publishes a notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300'
@@ -738,10 +771,13 @@ export default function ActsNotificationPublishTest() {
     })
 
     /**
-      * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2850
-      * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2850
-      * @tc.desc       Cancels a notification with the specified label and ID
-      */
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_Static_2850
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_2850
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_2850'
@@ -763,9 +799,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2900
-     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2900
-     * @tc.desc       Cancels a notification with the specified label and ID
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_Static_2900
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_2900
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -796,9 +835,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2950
-     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2950
-     * @tc.desc       Cancels a notification with the specified ID
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_Static_2950
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_2950
+     * @tc.desc   Cancels a notification with the specified ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -820,10 +862,13 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-      * @tc.number     SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
-      * @tc.name       SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
-      * @tc.desc       Cancels a notification with the specified label and ID
-      */
+     * @tc.name   SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
+     * @tc.number SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500'
@@ -843,9 +888,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
-     * @tc.name       SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
-     * @tc.desc       Cancels a notification with the specified label and ID
+     * @tc.name   SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
+     * @tc.number SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -869,10 +917,13 @@ export default function ActsNotificationPublishTest() {
 
 
     /**
-    * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_3000
-    * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_3000
-    * @tc.desc       Cancels all notifications of the current application
-    */
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_Static_3000
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_3000
+     * @tc.desc   Cancels all notifications of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Publish_Cancel_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3000'
@@ -892,9 +943,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_3050
-     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_3050
-     * @tc.desc       Cancels all notifications of the current application
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_Static_3050
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_3050
+     * @tc.desc   Cancels all notifications of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_3050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -917,9 +971,12 @@ export default function ActsNotificationPublishTest() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2650
-     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2650
-     * @tc.desc       Cancel the notification of a specified group for this application
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_Static_2650
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_2650
+     * @tc.desc   Cancel the notification of a specified group for this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -941,9 +998,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2750
-     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2750
-     * @tc.desc       Cancel the notification of a specified group for this application
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_Static_2750
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_2750
+     * @tc.desc   Cancel the notification of a specified group for this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -965,9 +1025,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
-     * @tc.name       SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
-     * @tc.desc       Cancel the notification of a specified group for this application
+     * @tc.name   SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
+     * @tc.number SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
+     * @tc.desc   Cancel the notification of a specified group for this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -989,9 +1052,12 @@ export default function ActsNotificationPublishTest() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0600
-     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0600
-     * @tc.desc       Obtains the number of all active notifications
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_Static_0600
+     * @tc.number Sub_Notification_Ans_Distributed_Search_Static_0600
+     * @tc.desc   Obtains the number of all active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1012,9 +1078,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0700
-     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0700
-     * @tc.desc       Obtains the number of all active notifications
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_Static_0700
+     * @tc.number Sub_Notification_Ans_Distributed_Search_Static_0700
+     * @tc.desc   Obtains the number of all active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1033,10 +1102,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0800
-     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0800
-     * @tc.desc       Obtains an array of active notifications
-     * 
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_Static_0800
+     * @tc.number Sub_Notification_Ans_Distributed_Search_Static_0800
+     * @tc.desc   Obtains an array of active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1063,9 +1134,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0900
-     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0900
-     * @tc.desc       Obtains an array of active notifications
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_Static_0900
+     * @tc.number Sub_Notification_Ans_Distributed_Search_Static_0900
+     * @tc.desc   Obtains an array of active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1087,9 +1161,12 @@ export default function ActsNotificationPublishTest() {
 
 
     /**
-     * @tc.number     SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
-     * @tc.name       SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
-     * @tc.desc       Obtains whether the template is supported by the system
+     * @tc.name   SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
+     * @tc.number SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
+     * @tc.desc   Obtains whether the template is supported by the system
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1117,9 +1194,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Distributed_template_Static_0600
-     * @tc.name       Sub_Notification_Ans_Distributed_template_Static_0600
-     * @tc.desc       Obtains whether the template is supported by the system
+     * @tc.name   Sub_Notification_Ans_Distributed_template_Static_0600
+     * @tc.number Sub_Notification_Ans_Distributed_template_Static_0600
+     * @tc.desc   Obtains whether the template is supported by the system
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_template_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1139,9 +1219,12 @@ export default function ActsNotificationPublishTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
-     * @tc.name       SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
-     * @tc.desc       Obtains whether the template is supported by the system
+     * @tc.name   SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
+     * @tc.number SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
+     * @tc.desc   Obtains whether the template is supported by the system
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

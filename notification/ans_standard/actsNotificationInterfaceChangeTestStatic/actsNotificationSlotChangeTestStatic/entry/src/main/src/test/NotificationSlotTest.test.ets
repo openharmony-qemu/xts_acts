@@ -28,9 +28,12 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number  Acts_NotificationSlot_Static_0100
-     * @tc.name  Acts_NotificationSlot_Static_0100
-     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.name   Acts_NotificationSlot_Static_0100
+     * @tc.number Acts_NotificationSlot_Static_0100
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0100'
@@ -62,9 +65,12 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number  Acts_NotificationSlot_Static_0200
-     * @tc.name  Acts_NotificationSlot_Static_0200
-     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.name   Acts_NotificationSlot_Static_0200
+     * @tc.number Acts_NotificationSlot_Static_0200
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0200'
@@ -96,9 +102,12 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number  Acts_NotificationSlot_Static_0300
-     * @tc.name  Acts_NotificationSlot_Static_0300
-     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.name   Acts_NotificationSlot_Static_0300
+     * @tc.number Acts_NotificationSlot_Static_0300
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0300'
@@ -130,9 +139,12 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number  Acts_NotificationSlot_Static_0400
-     * @tc.name  Acts_NotificationSlot_Static_0400
-     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.name   Acts_NotificationSlot_Static_0400
+     * @tc.number Acts_NotificationSlot_Static_0400
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0400'

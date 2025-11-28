@@ -29,10 +29,13 @@ export default function ActsDenyTest() {
     let log = logGenerator(TAG);
     log('SUB_ACTS_DENY_TEST START');
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_0100
-     * @tc.name      : function requestEnableNotification(context): Promise<void>
-     * @tc.desc      : requestEnableNotification deny button is clicked
+    /**
+     * @tc.name   Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_0100
+     * @tc.number Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_0100
+     * @tc.desc   requestEnableNotification deny button is clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_0100', Level.LEVEL2,
       async (done: () => void) => {

@@ -17,13 +17,13 @@ function publishCB(err: BusinessError) {
 export default function ActsCommonEventSubscribeNDKTest() {
   describe('ActsCommonEventSubscribeNDKTest', () => {
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_NDK_0003
-     * @tc.name      : Verifying Parameters of the NDK Interface for Creating Subscribers.
-     * @tc.desc      : create_subscriber Interface parameter verification
-     * @tc.size      : Medium-sized Test
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0003
+     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0003
+     * @tc.desc   create_subscriber Interface parameter verification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Subscriber_NDK_0003', Level.LEVEL2,async (done: Function) => {
       try {
@@ -42,14 +42,13 @@ export default function ActsCommonEventSubscribeNDKTest() {
       }
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_NDK_0001
-     * @tc.name      : Creating a Subscriber Through the NDK Interface, Subscribing to an Event,
-     *                 and Unsubscribing from the Event
-     * @tc.desc      : Basic Function Flow
-     * @tc.size      : Medium-sized Test
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0001
+     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0001
+     * @tc.desc   Basic Function Flow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Subscriber_NDK_0001', Level.LEVEL0,async (done:Function) => {
       const arrayStr = ["123"];
@@ -106,13 +105,13 @@ export default function ActsCommonEventSubscribeNDKTest() {
       }
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_NDK_0006
-     * @tc.name      : Verifying Unsubscription Interface Parameters.
-     * @tc.desc      : common_event_unsubscribe Interface parameter verification
-     * @tc.size      : Medium-sized Test
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0006
+     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0006
+     * @tc.desc   common_event_unsubscribe Interface parameter verification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Subscriber_NDK_0006', Level.LEVEL2,async (done:Function) => {
       try {
@@ -127,13 +126,13 @@ export default function ActsCommonEventSubscribeNDKTest() {
       }
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_NDK_0005
-     * @tc.name      : Verifying NDK Subscription Event Interface Parameters.
-     * @tc.desc      : common_event_subscribe Interface parameter verification
-     * @tc.size      : Medium-sized Test
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0005
+     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0005
+     * @tc.desc   common_event_subscribe Interface parameter verification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Subscriber_NDK_0005', Level.LEVEL2,async (done:Function) => {
       try {

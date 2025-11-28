@@ -24,14 +24,14 @@ const TEST_SUITE_NAME = 'testNotificationEmitterNotification';
 
 export default function ActsNotificationEmitterTest() {
   describe('testNotificationEmitterNotification', () => {
-    /*
-      * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_0600
-      * @tc.name   : testEmitterOneventIdforstring
-      * @tc.desc   : test on interface success
-      * @tc.size   : Large-scaleTest
-      * @tc.type   : Interface
-      * @tc.level  : Level 3
-      */
+    /**
+     * @tc.name   testEmitterOneventIdforstring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_0600
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOneventIdforstring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdforstring';
       let eventId06 = 'eventId06'
@@ -56,13 +56,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_0700
-     * @tc.name   : testEmitterOneventIdfortwostring
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdfortwostring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_0700
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdfortwostring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdfortwostring';
@@ -89,13 +89,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_0800
-     * @tc.name   : testEmitterOneventIdforempty
-     * @tc.desc   : test on interface fail
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdforempty
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_0800
+     * @tc.desc   test on interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdforempty', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdforempty';
@@ -121,13 +121,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_0900
-     * @tc.name   : testEmitterOneventIdforwhitespace
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdforwhitespace
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_0900
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdforwhitespace', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdforwhitespace';
@@ -155,13 +155,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_1000
-     * @tc.name   : testEmitterOneventIdforstringfornumber
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdforstringfornumber
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_1000
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdforstringfornumber', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdforstringfornumber';
@@ -194,13 +194,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_1100
-     * @tc.name   : testEmitterOnoneEmitterone
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnoneEmitterone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_1100
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnoneEmitterone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnoneEmitterone';
@@ -233,13 +233,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_1800
-     * @tc.name   : testEmitterOnceeventIdforstring
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnceeventIdforstring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_1800
+     * @tc.desc   test once interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnceeventIdforstring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnceeventIdforstring';
@@ -273,13 +273,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_1900
-     * @tc.name   : testEmitterOnceeventIdfortwostring
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnceeventIdfortwostring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_1900
+     * @tc.desc   test once interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnceeventIdfortwostring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnceeventIdfortwostring';
@@ -314,13 +314,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_2000
-     * @tc.name   : testEmitterOnceeventIdforempty
-     * @tc.desc   : test once interface fail
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnceeventIdforempty
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_2000
+     * @tc.desc   test once interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnceeventIdforempty', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnceeventIdforempty';
@@ -346,13 +346,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_2100
-     * @tc.name   : testEmitterOnceeventIdforwhitespace
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnceeventIdforwhitespace
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_2100
+     * @tc.desc   test once interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnceeventIdforwhitespace', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnceeventIdforwhitespace';
@@ -386,13 +386,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_2200
-     * @tc.name   : testEmitterOncetwoEmittwo
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testEmitterOncetwoEmittwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_2200
+     * @tc.desc   test once interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEmitterOncetwoEmittwo', Level.LEVEL0, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOncetwoEmittwo';
@@ -434,13 +434,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_2300
-     * @tc.name   : testEmitterOnceoneEmitonenumber
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnceoneEmitonenumber
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_2300
+     * @tc.desc   test once interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnceoneEmitonenumber', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnceoneEmitonenumber';
@@ -484,13 +484,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_3000
-     * @tc.name   : testEmitterOnoneOffone
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnoneOffone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_3000
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnoneOffone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnoneOffone';
@@ -520,13 +520,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_3100
-     * @tc.name   : testEmitterOnthreeOfftwo
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnthreeOfftwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_3100
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnthreeOfftwo', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnthreeOfftwo';
@@ -564,13 +564,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_3200
-     * @tc.name   : testEmitterOneventIdforemptyOffeventIdforempty
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdforemptyOffeventIdforempty
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_3200
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdforemptyOffeventIdforempty', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdforemptyOffeventIdforempty';
@@ -598,13 +598,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_3300
-     * @tc.name   : testEmitterOneventIdforwhitespaceOffeventIdforwhitespace
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdforwhitespaceOffeventIdforwhitespace
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_3300
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdforwhitespaceOffeventIdforwhitespace', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdforwhitespaceOffeventIdforwhitespace';
@@ -635,13 +635,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_3400
-     * @tc.name   : testEmitterOntwoOfftwo
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testEmitterOntwoOfftwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_3400
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEmitterOntwoOfftwo', Level.LEVEL0, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwoOfftwo';
@@ -690,13 +690,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_3800
-     * @tc.name   : testEmitterOnoneEmitonenodata
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnoneEmitonenodata
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_3800
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnoneEmitonenodata', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnoneEmitonenodata';
@@ -722,13 +722,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit success');
       notificationemitter.emit(eventId38, option38)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_4300
-     * @tc.name   : testEmitterOnOneOffoneEmitone
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnOneOffoneEmitone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_4300
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnOneOffoneEmitone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnOneOffoneEmitone';
@@ -765,13 +765,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_4400
-     * @tc.name   : testEmitterOnOnenumberOffoneEmitone
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnOnenumberOffoneEmitone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_4400
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnOnenumberOffoneEmitone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnOnenumberOffoneEmitone';
@@ -817,13 +817,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_4500
-     * @tc.name   : testEmitterOnonenumberEmitone
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnonenumberEmitone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_4500
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnonenumberEmitone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnonenumberEmitone';
@@ -864,13 +864,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_4600
-     * @tc.name   : testEmitterOnceonenumberEmitone
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnceonenumberEmitone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_4600
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnceonenumberEmitone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnceonenumberEmitone';
@@ -911,13 +911,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5000
-     * @tc.name   : testEmitterOnoneGetListenerCountone
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnoneGetListenerCountone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5000
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnoneGetListenerCountone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnoneGetListenerCountone';
@@ -945,13 +945,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5100
-     * @tc.name   : testEmitterOntwonumberGetListenerCountone
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwonumberGetListenerCountone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5100
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwonumberGetListenerCountone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwonumberGetListenerCountone';
@@ -980,13 +980,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5200
-     * @tc.name   : testEmitterOntennumberGetListenerCountone
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntennumberGetListenerCountone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5200
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntennumberGetListenerCountone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntennumberGetListenerCountone';
@@ -1077,13 +1077,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5300
-     * @tc.name   : testEmitterOntenstringGetListenerCountone
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntenstringGetListenerCountone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5300
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntenstringGetListenerCountone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntenstringGetListenerCountone';
@@ -1172,13 +1172,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5400
-     * @tc.name   : testEmitterOntwentyOfftenGetListenerCounttwo
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwentyOfftenGetListenerCounttwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5400
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwentyOfftenGetListenerCounttwo', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwentyOfftenGetListenerCounttwo';
@@ -1311,13 +1311,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5500
-     * @tc.name   : testEmitterOntwentyGetListenerCounttwo
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwentyGetListenerCounttwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5500
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwentyGetListenerCounttwo', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwentyGetListenerCounttwo';
@@ -1430,13 +1430,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5600
-     * @tc.name   : testEmitterOnonestringEmitonenumber
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnonestringEmitonenumber
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5600
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnonestringEmitonenumber', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnonestringEmitonenumber';
@@ -1475,13 +1475,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5700
-     * @tc.name   : testEmitterOnonestringonenumber
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnonestringonenumber
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5700
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnonestringonenumber', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnonestringonenumber';
@@ -1514,13 +1514,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5800
-     * @tc.name   : testEmitterOntwocallback
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwocallback
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5800
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwocallback', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwocallback';
@@ -1553,13 +1553,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_5900
-     * @tc.name   : testEmitterOncetwocallbackEmitone
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOncetwocallbackEmitone
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_5900
+     * @tc.desc   test once interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOncetwocallbackEmitone', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOncetwocallbackEmitone';
@@ -1597,13 +1597,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_6000
-     * @tc.name   : testEmitterOntwoeventIdnumberstringEmittwo
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwoeventIdnumberstringEmittwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_6000
+     * @tc.desc   test once interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwoeventIdnumberstringEmittwo', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwoeventIdnumberstringEmittwo';
@@ -1648,13 +1648,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_6100
-     * @tc.name   : testEmitterOntwocallbackOfftwocallback
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwocallbackOfftwocallback
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_6100
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwocallbackOfftwocallback', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwocallbackOfftwocallback';
@@ -1697,13 +1697,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_6500
-     * @tc.name   : testEmitterOneventIdonestringOffeventIdonestring
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdonestringOffeventIdonestring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_6500
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdonestringOffeventIdonestring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdonestringOffeventIdonestring';
@@ -1738,13 +1738,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_6600
-     * @tc.name   : testEmitterOntwostringOfftwo
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwostringOfftwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_6600
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwostringOfftwo', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwostringOfftwo';
@@ -1795,13 +1795,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_6700
-     * @tc.name   : testEmitterOneventIdemptyOffeventIdonestring
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdemptyOffeventIdonestring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_6700
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdemptyOffeventIdonestring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdemptyOffeventIdonestring';
@@ -1836,13 +1836,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_6800
-     * @tc.name   : testEmitterOneventIdwhitespaceOffeventIdonestring
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdwhitespaceOffeventIdonestring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_6800
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdwhitespaceOffeventIdonestring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdwhitespaceOffeventIdonestring';
@@ -1877,13 +1877,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_6900
-     * @tc.name   : testEmitterOneventIdonestringonenumberOfftwo
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdonestringonenumberOfftwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_6900
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdonestringonenumberOfftwo', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdonestringonenumberOfftwo';
@@ -1926,13 +1926,13 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_7300
-     * @tc.name   : testEmitterOnoneEmitternodata
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOnoneEmitternodata
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_7300
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOnoneEmitternodata', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOnoneEmitternodata';
@@ -1962,13 +1962,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_7600
-     * @tc.name   : testEmitterOntwoEmittertwo
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOntwoEmittertwo
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_7600
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOntwoEmittertwo', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwoEmittertwo';
@@ -2011,13 +2011,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_7800
-     * @tc.name   : testEmitterOneventIdonestringonenumberEmitstring
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testEmitterOneventIdonestringonenumberEmitstring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_7800
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEmitterOneventIdonestringonenumberEmitstring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdonestringonenumberEmitstring';
@@ -2063,14 +2063,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8000
-    * @tc.name   : testEmitterOneventIdonestringonenumberEmitonestringonenumber
-    * @tc.desc   : test emit interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testEmitterOneventIdonestringonenumberEmitonestringonenumber
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8000
+     * @tc.desc   test emit interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOneventIdonestringonenumberEmitonestringonenumber', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdonestringonenumberEmitonestringonenumber';
       let j = 0
@@ -2119,14 +2119,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8100
-    * @tc.name   : testEmitterOntwocallbackGetListenerCounteventIdnumber
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testEmitterOntwocallbackGetListenerCounteventIdnumber
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8100
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOntwocallbackGetListenerCounteventIdnumber', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntwocallbackGetListenerCounteventIdnumber';
       let innerEvent81: notificationemitter.InnerEvent = {
@@ -2160,14 +2160,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8200
-    * @tc.name   : testEmitterOntennumberGetListenerCountnumber
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testEmitterOntennumberGetListenerCountnumber
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8200
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOntennumberGetListenerCountnumber', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntennumberGetListenerCountnumber';
       let innerEvent82: notificationemitter.InnerEvent = {
@@ -2257,14 +2257,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8300
-    * @tc.name   : testEmitterOntenGetListenerCountstring
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testEmitterOntenGetListenerCountstring
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8300
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOntenGetListenerCountstring', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntenGetListenerCountstring';
       let eventId83 = 'eventId83'
@@ -2298,14 +2298,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8400
-    * @tc.name   : testEmitterOntennumbertenstringGetListenerCountstrnum
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testEmitterOntennumbertenstringGetListenerCountstrnum
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8400
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOntennumbertenstringGetListenerCountstrnum', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntennumbertenstringGetListenerCountstrnum';
       let eventId84 = 'eventId84'
@@ -2355,14 +2355,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8500
-    * @tc.name   : testEmitterOntennumbertenstringOfffivestrfivenumGetListenerCountstrnum
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testEmitterOntennumbertenstringOfffivestrfivenumGetListenerCountstrnum
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8500
+     * @tc.desc   test getListenerCount interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOntennumbertenstringOfffivestrfivenumGetListenerCountstrnum', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOntennumbertenstringOfffivestrfivenumGetListenerCountstrnum';
       let eventId85 = 'eventId85'
@@ -2544,14 +2544,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8600
-    * @tc.name   : testEmitterOneventIdstrnumOffstrnum
-    * @tc.desc   : test off interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testEmitterOneventIdstrnumOffstrnum
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8600
+     * @tc.desc   test off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEmitterOneventIdstrnumOffstrnum', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testEmitterOneventIdstrnumOffstrnum';
       let eventId86 = 'eventId86'
@@ -2601,13 +2601,13 @@ export default function ActsNotificationEmitterTest() {
     })
 
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8700
-     * @tc.name   : testDeserializeEmitterCallbackNoPar
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   testDeserializeEmitterCallbackNoPar
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8700
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDeserializeEmitterCallbackNoPar', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterCallbackNoPar';
@@ -2628,14 +2628,14 @@ export default function ActsNotificationEmitterTest() {
       }
     })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8800
-    * @tc.name   : testDeserializeEmitterCallback
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testDeserializeEmitterCallback
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8800
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterCallback', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterCallback';
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
@@ -2689,14 +2689,14 @@ export default function ActsNotificationEmitterTest() {
       }
     })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_8900
-    * @tc.name   : testDeserializeEmitterTwoOnCallbackNoPar
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testDeserializeEmitterTwoCallbackNoPar
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_8900
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoCallbackNoPar', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoCallbackNoPar';
       let count: number = 0;
@@ -2726,14 +2726,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9000
-    * @tc.name   : testDeserializeEmitterTwoOnCallback
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnCallback
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9000
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnCallback', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnCallback';
       let count: number = 0;
@@ -2798,14 +2798,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9100
-    * @tc.name   : testDeserializeEmitterTwoOnTwoEmitNoEventData
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 0
-    */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitNoEventData
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9100
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDeserializeEmitterTwoOnTwoEmitNoEventData', Level.LEVEL0, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitNoEventData';
       let count: number = 0;
@@ -2838,14 +2838,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9200
-    * @tc.name   : testDeserializeEmitterTwoOnTwoEmitStrignAndArray
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitStrignAndArray
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9200
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnTwoEmitStrignAndArray', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitStrignAndArray';
       let count: number = 0;
@@ -2889,14 +2889,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9300
-    * @tc.name   : testDeserializeEmitterTwoOnTwoEmitNumberAndBoolean
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitNumberAndBoolean
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9300
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnTwoEmitNumberAndBoolean', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitNumberAndBoolean';
       let count: number = 0;
@@ -2940,14 +2940,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
-   * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9400
-   * @tc.name   : testDeserializeEmitterTwoOnTwoEmitArrayAndBuffer
-   * @tc.desc   : test on interface success
-   * @tc.size   : Large-scaleTest
-   * @tc.type   : Interface
-   * @tc.level  : Level 3
-   */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitArrayAndBuffer
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9400
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnTwoEmitArrayAndBuffer', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitArrayAndBuffer';
       let count: number = 0;
@@ -2992,14 +2992,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
-   * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9500
-   * @tc.name   : testDeserializeEmitterTwoOnTwoEmitDateAndDateView
-   * @tc.desc   : test on interface success
-   * @tc.size   : Large-scaleTest
-   * @tc.type   : Interface
-   * @tc.level  : Level 3
-   */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitDateAndDateView
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9500
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnTwoEmitDateAndDateView', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitDateAndDateView';
       let count: number = 0;
@@ -3046,14 +3046,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
-  * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9600
-  * @tc.name   : testDeserializeEmitterTwoOnTwoEmitMapAndSet
-  * @tc.desc   : test on interface success
-  * @tc.size   : Large-scaleTest
-  * @tc.type   : Interface
-  * @tc.level  : Level 3
-  */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitMapAndSet
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9600
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnTwoEmitMapAndSet', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitMapAndSet';
       let count: number = 0;
@@ -3101,14 +3101,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
- * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9700
- * @tc.name   : testDeserializeEmitterTwoOnTwoEmitErrorTypesAndTypedArray
- * @tc.desc   : test on interface success
- * @tc.size   : Large-scaleTest
- * @tc.type   : Interface
- * @tc.level  : Level 3
- */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitErrorTypesAndTypedArray
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9700
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnTwoEmitErrorTypesAndTypedArray', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitErrorTypesAndTypedArray';
       let count: number = 0;
@@ -3155,14 +3155,14 @@ export default function ActsNotificationEmitterTest() {
       }, 1000);
     })
 
-    /*
- * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_9800
- * @tc.name   : testDeserializeEmitterTwoOnTwoEmitRegExpAndPrimitivetypes
- * @tc.desc   : test on interface success
- * @tc.size   : Large-scaleTest
- * @tc.type   : Interface
- * @tc.level  : Level 3
- */
+    /**
+     * @tc.name   testDeserializeEmitterTwoOnTwoEmitRegExpAndPrimitivetypes
+     * @tc.number Sub_Notification_Emitter_Subscribe_Capabilities_9800
+     * @tc.desc   test on interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeEmitterTwoOnTwoEmitRegExpAndPrimitivetypes', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME = 'testDeserializeEmitterTwoOnTwoEmitRegExpAndPrimitivetypes';
       let count: number = 0;
