@@ -113,7 +113,11 @@ import SendableImagecreateImageSourceTest from './sendableImage/SendableImageCre
 import ImageCreatePixelMapPicture from './image/ImageCreatePixelMapPicture.test';
 import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.test';
 import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
+import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
+import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 
+import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
+import SendableImageTest from './image/SendableImageTest.test';
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -214,5 +218,8 @@ export default function testsuite() {
   ImageCreatePixelMapPicture();
   imagePackerPackingPictureTest();
   ImagePackerPackingToFilePictureTest();
-
+  ImagePictureSetAuxiliaryPictureTest();
+  ImagePixelMapCropTest();
+  UpdateDataTest();
+  SendableImageTest();
 }
