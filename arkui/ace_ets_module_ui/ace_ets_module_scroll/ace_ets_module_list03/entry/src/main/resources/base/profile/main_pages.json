@@ -28,6 +28,7 @@
         "MainAbility/pages/ListItemGroup/syncLoadGroup",
         "MainAbility/pages/ListItemGroup/groupStickyBoth",
         "MainAbility/pages/List/ContentOffset",
+        "MainAbility/pages/List/listDraggingFling",
         "MainAbility/pages/List/scrollSnapAnimationSpeedModifier",
         "MainAbility/pages/List/scrollSnapAnimationSpeed",
         "MainAbility/pages/ListItemGroup/listScrollbarColor",
