@@ -729,7 +729,10 @@ export default function BackgroundTaskManagerTest() {
         };
 
         let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017 try begin---');
+        let modeList: Array<number> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
+        continuousTaskRequest.backgroundTaskModes = modeList;
+        let subModeList: Array<number> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION];
+        continuousTaskRequest.backgroundTaskSubmodes = subModeList;
         wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
           let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           delegator.getCurrentTopAbility().then((ability: UIAbility) => {
