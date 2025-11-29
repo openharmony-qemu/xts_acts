@@ -24,10 +24,13 @@ export default function ActsNotificationSystemAPITest() {
     let TAG = 'SUB_NOTIFICATION_ANS_SYSTEM_API_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_SYSTEM_API_TEST START')
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4100
-     * @tc.name: publish
-     * @tc.desc: test function publish takes userId
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4100
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4100
+     * @tc.desc   test function publish takes userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4100', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4100 START`);
@@ -66,10 +69,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4200
-     * @tc.name: publishAsBundle 
-     * @tc.desc: test function publishAsBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4200
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4200
+     * @tc.desc   test function publishAsBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4200', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4200 START`);
@@ -101,10 +107,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4300
-     * @tc.name: publishAsBundle
-     * @tc.desc: test function publishAsBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4300
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4300
+     * @tc.desc   test function publishAsBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4300', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4300 START`);
@@ -138,10 +147,13 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4300 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Cancel_0150
-     * @tc.name: cancelAsBundle
-     * @tc.desc: test function cancelAsBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_0150
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_0150
+     * @tc.desc   test function cancelAsBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Cancel_0150', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0150 START`);
@@ -161,10 +173,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0150 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Cancel_0160
-     * @tc.name: cancelAsBundle
-     * @tc.desc: test function cancelAsBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_0160
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_0160
+     * @tc.desc   test function cancelAsBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Cancel_0160', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0160 START`);
@@ -186,10 +201,13 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0160 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_3550
-     * @tc.name: addSlot
-     * @tc.desc: test function addSlot
+    /**
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_3550
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_3550
+     * @tc.desc   test function addSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_3550', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3550 START`);
@@ -214,10 +232,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3550 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_0700
-     * @tc.name: setNotificationEnable
-     * @tc.desc: test function setNotificationEnable
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_0700
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_0700
+     * @tc.desc   test function setNotificationEnable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_0700', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_0700 START`);
@@ -241,10 +262,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_0700 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_Query_0100
-     * @tc.name: isNotificationEnabled
-     * @tc.desc: test function isNotificationEnabled
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_Query_0100
+     * @tc.number Sub_Notification_Ans_Enable_Query_0100
+     * @tc.desc   test function isNotificationEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_Query_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_0100 START`);
@@ -268,10 +292,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_Query_0200
-     * @tc.name: isNotificationEnabled
-     * @tc.desc: test function isNotificationEnabled no parameter
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_Query_0200
+     * @tc.number Sub_Notification_Ans_Enable_Query_0200
+     * @tc.desc   test function isNotificationEnabled no parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_Query_0200', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_0200 START`);
@@ -290,10 +317,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_0200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_Query_0300
-     * @tc.name: isNotificationEnabled
-     * @tc.desc: test function isNotificationEnabled take userId
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_Query_0300
+     * @tc.number Sub_Notification_Ans_Enable_Query_0300
+     * @tc.desc   test function isNotificationEnabled take userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_Query_0300', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_0300 START`);
@@ -313,10 +343,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_0300 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_Query_0100
-     * @tc.name: displayBadge
-     * @tc.desc: test function displayBadge
+    /**
+     * @tc.name   Sub_Notification_Ans_Corner_Query_0100
+     * @tc.number Sub_Notification_Ans_Corner_Query_0100
+     * @tc.desc   test function displayBadge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Corner_Query_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Corner_Query_0100 START`);
@@ -345,10 +378,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Corner_Query_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_3700
-     * @tc.name: isBadgeDisplayed
-     * @tc.desc: test function isBadgeDisplayed
+    /**
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_3700
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_3700
+     * @tc.desc   test function isBadgeDisplayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_3700', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3700 START`);
@@ -377,10 +413,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3700 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_3850
-     * @tc.name: setSlotByBundle
-     * @tc.desc: test function setSlotByBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_3850
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_3850
+     * @tc.desc   test function setSlotByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_3850', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3850 START`);
@@ -415,10 +454,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3850 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_GetSlot_0900
-     * @tc.name: getSlotsByBundle
-     * @tc.desc: test function getSlotsByBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_0900
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_0900
+     * @tc.desc   test function getSlotsByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Slot_GetSlot_0900', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_0900 START`);
@@ -448,10 +490,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_0900 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_GetSlot_1000
-     * @tc.name: getSlotNumByBundle
-     * @tc.desc: test function getSlotNumByBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_1000
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_1000
+     * @tc.desc   test function getSlotNumByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Slot_GetSlot_1000', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_1000 START`);
@@ -481,10 +526,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_1000 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Search_2000
-     * @tc.name: getAllActiveNotifications
-     * @tc.desc: test function getAllActiveNotifications
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_2000
+     * @tc.number Sub_Notification_Ans_Distributed_Search_2000
+     * @tc.desc   test function getAllActiveNotifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Distributed_Search_2000', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_2000 START`);
@@ -504,10 +552,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_2000 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_0100
-     * @tc.name: removeGroupByBundle
-     * @tc.desc: test function removeGroupByBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Delete_SpecifiedGroup_0100
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_0100
+     * @tc.desc   test function removeGroupByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0100 START`);
@@ -531,10 +582,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_SetTime_0100
-     * @tc.name: setDoNotDisturbDate
-     * @tc.desc: test function setDoNotDisturbDate
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_SetTime_0100
+     * @tc.number Sub_Notification_Ans_NoDistrub_SetTime_0100
+     * @tc.desc   test function setDoNotDisturbDate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_SetTime_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_0100 START`);
@@ -564,10 +618,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_SetTime_0200
-     * @tc.name: setDoNotDisturbDate
-     * @tc.desc: test function setDoNotDisturbDate take userId
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_SetTime_0200
+     * @tc.number Sub_Notification_Ans_NoDistrub_SetTime_0200
+     * @tc.desc   test function setDoNotDisturbDate take userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_SetTime_0200', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_0200 START`);
@@ -597,10 +654,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_0200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_0100
-     * @tc.name: getDoNotDisturbDate
-     * @tc.desc: test function getDoNotDisturbDate
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_GetTime_0100
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_0100
+     * @tc.desc   test function getDoNotDisturbDate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_GetTime_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_0100 START`);
@@ -625,10 +685,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_0200
-     * @tc.name: getDoNotDisturbDate
-     * @tc.desc: test function getDoNotDisturbDate take userId
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_GetTime_0200
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_0200
+     * @tc.desc   test function getDoNotDisturbDate take userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_GetTime_0200', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_0200 START`);
@@ -653,10 +716,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_0200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_Query_0100
-     * @tc.name: isSupportDoNotDisturbMode
-     * @tc.desc: test function isSupportDoNotDisturbMode
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_Query_0100
+     * @tc.number Sub_Notification_Ans_NoDistrub_Query_0100
+     * @tc.desc   test function isSupportDoNotDisturbMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_Query_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_Query_0100 START`);
@@ -681,10 +747,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_Query_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_4300
-     * @tc.name: setDistributedEnable
-     * @tc.desc: test function setDistributedEnable
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_4300
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_4300
+     * @tc.desc   test function setDistributedEnable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Distributed_Enable_4300', Level.LEVEL1, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4300 START`);
@@ -709,10 +778,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4300 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_4400
-     * @tc.name: setDistributedEnableByBundle
-     * @tc.desc: test function setDistributedEnableByBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_4400
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_4400
+     * @tc.desc   test function setDistributedEnableByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Distributed_Enable_4400', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4400 START`);
@@ -741,10 +813,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4400 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_4500
-     * @tc.name: isDistributedEnabledByBundle
-     * @tc.desc: test function isDistributedEnabledByBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_4500
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_4500
+     * @tc.desc   test function isDistributedEnabledByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Distributed_Enable_4500', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4500 START`);
@@ -773,10 +848,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4500 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_9500
-     * @tc.name: getDeviceRemindType
-     * @tc.desc: test function getDeviceRemindType
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_9500
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_9500
+     * @tc.desc   test function getDeviceRemindType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_9500', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9500 START`);
@@ -801,10 +879,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9500 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_9600
-     * @tc.name: setNotificationEnableSlot
-     * @tc.desc: test function setNotificationEnableSlot
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_9600
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_9600
+     * @tc.desc   test function setNotificationEnableSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_9600', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9600 START`);
@@ -834,10 +915,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9600 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_9700
-     * @tc.name: isNotificationSlotEnabled
-     * @tc.desc: test function isNotificationSlotEnabled
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_9700
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_9700
+     * @tc.desc   test function isNotificationSlotEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_9700', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9700 START`);
@@ -867,10 +951,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9700 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_0800
-     * @tc.name: setSyncNotificationEnabledWithoutApp
-     * @tc.desc: test function setSyncNotificationEnabledWithoutApp
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_0800
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_0800
+     * @tc.desc   test function setSyncNotificationEnabledWithoutApp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_0800', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_0800 START`);
@@ -895,10 +982,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_0800 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_9800
-     * @tc.name: getSyncNotificationEnabledWithoutApp
-     * @tc.desc: test function getSyncNotificationEnabledWithoutApp
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_9800
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_9800
+     * @tc.desc   test function getSyncNotificationEnabledWithoutApp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_9800', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9800 START`);
@@ -925,10 +1015,13 @@ export default function ActsNotificationSystemAPITest() {
       }
     };
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_0100
-     * @tc.name: subscribe
-     * @tc.desc: test function subscribe
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_0100
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_0100
+     * @tc.desc   test function subscribe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0100 START`);
@@ -948,10 +1041,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_0200
-     * @tc.name: subscribe
-     * @tc.desc: test function subscribe take NotificationSubscribeInfo
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_0200
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_0200
+     * @tc.desc   test function subscribe take NotificationSubscribeInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_0200', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0200 START`);
@@ -975,10 +1071,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_0300
-     * @tc.name: subscribe
-     * @tc.desc: test function subscribe take NotificationSubscribeInfo
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_0300
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_0300
+     * @tc.desc   test function subscribe take NotificationSubscribeInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_0300', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0300 START`);
@@ -1001,10 +1100,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0300 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Unsubscribe_0100
-     * @tc.name: unsubscribe
-     * @tc.desc: test function unsubscribe
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Unsubscribe_0100
+     * @tc.number Sub_Notification_Ans_Subscriber_Unsubscribe_0100
+     * @tc.desc   test function unsubscribe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Unsubscribe_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Unsubscribe_0100 START`);
@@ -1024,10 +1126,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Unsubscribe_0100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_0200
-     * @tc.name: remove
-     * @tc.desc: test function remove
+    /**
+     * @tc.name   Sub_Notification_Ans_Delete_SpecifiedGroup_0200
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_0200
+     * @tc.desc   test function remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_0200', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0200 START`);
@@ -1055,10 +1160,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_0300
-     * @tc.name: remove
-     * @tc.desc: test function remove
+    /**
+     * @tc.name   Sub_Notification_Ans_Delete_SpecifiedGroup_0300
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_0300
+     * @tc.desc   test function remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_0300', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0300 START`);
@@ -1078,10 +1186,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0300 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_0400
-     * @tc.name: removeAll
-     * @tc.desc: test function removeAll take bundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Delete_SpecifiedGroup_0400
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_0400
+     * @tc.desc   test function removeAll take bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_0400', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0400 START`);
@@ -1105,10 +1216,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0400 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_0500
-     * @tc.name: removeAll
-     * @tc.desc: test function removeAll
+    /**
+     * @tc.name   Sub_Notification_Ans_Delete_SpecifiedGroup_0500
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_0500
+     * @tc.desc   test function removeAll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_0500', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0500 START`);
@@ -1128,10 +1242,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0500 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_0600
-     * @tc.name: removeAll
-     * @tc.desc: test function removeAll take userId
+    /**
+     * @tc.name   Sub_Notification_Ans_Delete_SpecifiedGroup_0600
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_0600
+     * @tc.desc   test function removeAll take userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_0600', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0600 START`);
@@ -1151,13 +1268,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0600 END`);
     });
 
-        /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_Promise_0100
-     * @tc.name: getDoNotDisturbDate
-     * @tc.desc: test function getDoNotDisturbDate
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_GetTime_Promise_0100
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_Promise_0100
+     * @tc.desc   test function getDoNotDisturbDate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_GetTime_Promise_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_Promise_0100 START`);
@@ -1180,13 +1297,13 @@ export default function ActsNotificationSystemAPITest() {
     });
 
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_Promise_0200
-     * @tc.name: getDoNotDisturbDate
-     * @tc.desc: test function getDoNotDisturbDate take userId
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_GetTime_Promise_0200
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_Promise_0200
+     * @tc.desc   test function getDoNotDisturbDate take userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_GetTime_Promise_0200', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_Promise_0200 START`);
@@ -1213,13 +1330,13 @@ export default function ActsNotificationSystemAPITest() {
     });
 
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_GetSlot_Promise_1000
-     * @tc.name: getSlotNumByBundle
-     * @tc.desc: test function getSlotNumByBundle
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Promise_1000
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Promise_1000
+     * @tc.desc   test function getSlotNumByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Promise_1000', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_Promise_1000 START`);
@@ -1248,13 +1365,13 @@ export default function ActsNotificationSystemAPITest() {
     });
 
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_Promise_3700
-     * @tc.name: isBadgeDisplayed
-     * @tc.desc: test function isBadgeDisplayed
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Promise_3700
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Promise_3700
+     * @tc.desc   test function isBadgeDisplayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Promise_3700', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_Promise_3700 START`);
@@ -1283,14 +1400,14 @@ export default function ActsNotificationSystemAPITest() {
     });
 
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Promise_9700
-    * @tc.name: isNotificationSlotEnabled
-    * @tc.desc: test function isNotificationSlotEnabled
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level LEVEL3
-    */
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_Promise_9700
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Promise_9700
+     * @tc.desc   test function isNotificationSlotEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Notification_Ans_Enable_SetEnable_Promise_9700', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_Promise_9700 START`);
 
@@ -1319,13 +1436,13 @@ export default function ActsNotificationSystemAPITest() {
     });
 
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_Promise_4300
-     * @tc.name: setDistributedEnable
-     * @tc.desc: test function setDistributedEnable
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_Promise_4300
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Promise_4300
+     * @tc.desc   test function setDistributedEnable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Distributed_Enable_Promise_4300', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4300 START`);
@@ -1348,13 +1465,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4300 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_Promise_4400
-     * @tc.name: setDistributedEnableByBundle
-     * @tc.desc: test function setDistributedEnableByBundle
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_Promise_4400
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Promise_4400
+     * @tc.desc   test function setDistributedEnableByBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Distributed_Enable_Promise_4400', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4400 START`);
@@ -1383,13 +1500,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4400 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_SetTime_Promise_0200
-     * @tc.name: setDoNotDisturbDate
-     * @tc.desc: test function setDoNotDisturbDate take userId
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_SetTime_Promise_0200
+     * @tc.number Sub_Notification_Ans_NoDistrub_SetTime_Promise_0200
+     * @tc.desc   test function setDoNotDisturbDate take userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_SetTime_Promise_0200', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_Promise_0200 START`);
@@ -1418,13 +1535,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_Promise_0200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Promise_9600
-     * @tc.name: setNotificationEnableSlot
-     * @tc.desc: test function setNotificationEnableSlot
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_Promise_9600
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Promise_9600
+     * @tc.desc   test function setNotificationEnableSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_Promise_9600', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_Promise_9600 START`);
@@ -1454,13 +1571,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_Promise_9600 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_Query_Promise_0100
-     * @tc.name: isSupportDoNotDisturbMode
-     * @tc.desc: test function isSupportDoNotDisturbMode
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level LEVEL3
+    /**
+     * @tc.name   Sub_Notification_Ans_NoDistrub_Query_Promise_0100
+     * @tc.number Sub_Notification_Ans_NoDistrub_Query_Promise_0100
+     * @tc.desc   test function isSupportDoNotDisturbMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_Query_Promise_0100', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_Query_Promise_0100 START`);

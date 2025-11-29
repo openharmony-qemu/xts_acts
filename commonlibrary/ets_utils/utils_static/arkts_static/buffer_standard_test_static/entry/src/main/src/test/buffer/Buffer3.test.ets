@@ -36,12 +36,12 @@ export default function bufferTest3() {
       await Utils.msSleep(20);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_001
-     * @tc.name       : testBuffer3_001
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_001
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -49,12 +49,12 @@ export default function bufferTest3() {
       expect(buf.includes('be')).assertTrue;
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_002
-     * @tc.name       : testBuffer3_002
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_002
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -62,12 +62,12 @@ export default function bufferTest3() {
       expect(buf.includes('be', 0, "utf8" as buffer.BufferEncoding)).assertTrue;
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_003
-     * @tc.name       : testBuffer3_003
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_003
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -76,12 +76,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_004
-     * @tc.name       : testBuffer3_004
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_004
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -90,12 +90,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_005
-     * @tc.name       : testBuffer3_005
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_005
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -104,12 +104,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_006
-     * @tc.name       : testBuffer3_006
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_006
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -118,12 +118,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_007
-     * @tc.name       : testBuffer3_007
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_007
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -132,12 +132,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_008
-     * @tc.name       : testBuffer3_008
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_008
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this is a buffer');
@@ -147,12 +147,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_009
-     * @tc.name       : testBuffer3_009
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_009
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this buffer is a buffer');
@@ -161,12 +161,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_010
-     * @tc.name       : testBuffer3_010
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_010
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this buffer is a buffer');
@@ -176,12 +176,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_011
-     * @tc.name       : testBuffer3_011
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_011
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
@@ -191,12 +191,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_012
-     * @tc.name       : testBuffer3_012
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_012
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9]);
@@ -212,12 +212,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_013
-     * @tc.name       : testBuffer3_013
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_013
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
@@ -227,12 +227,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_014
-     * @tc.name       : testBuffer3_014
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_014
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9]);
@@ -248,12 +248,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_015
-     * @tc.name       : testBuffer3_015
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_015
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
@@ -263,12 +263,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_016
-     * @tc.name       : testBuffer3_016
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_016
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9]);
@@ -283,12 +283,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_017
-     * @tc.name       : testBuffer3_017
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_017
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5]);
@@ -297,12 +297,12 @@ export default function bufferTest3() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_018
-     * @tc.name       : testBuffer3_018
-     * @tc.desc       : Test the buffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffer3_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_018
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffer3_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from("abcdefg");

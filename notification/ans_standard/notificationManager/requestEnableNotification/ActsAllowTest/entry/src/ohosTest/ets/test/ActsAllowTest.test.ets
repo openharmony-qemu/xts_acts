@@ -84,10 +84,13 @@ export default function ActsAllowTest() {
       log('SUB_ACTS_ALLOW_TEST beforeAll end');
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_0100
-     * @tc.name      : function requestEnableNotification(context): Promise<void>
-     * @tc.desc      : requestEnableNotification allow button is clicked
+    /**
+     * @tc.name   Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_0100
+     * @tc.number Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_0100
+     * @tc.desc   requestEnableNotification allow button is clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_0100', Level.LEVEL2,
       async (done: () => void) => {
@@ -120,11 +123,14 @@ export default function ActsAllowTest() {
       }
     );
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_OpenNotification_Settings_0004
-    * @tc.name      : 【openNotificationSettings】非系统应用调用openNotificationSettings接口拉起设置页面
-    * @tc.desc      : 非系统应用调用openNotificationSettings接口拉起设置页面
-    */
+    /**
+     * @tc.name   Sub_Notification_Ans_OpenNotification_Settings_0004
+     * @tc.number Sub_Notification_Ans_OpenNotification_Settings_0004
+     * @tc.desc   非系统应用调用openNotificationSettings接口拉起设置页面
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_OpenNotification_Settings_0004', Level.LEVEL2,
       async (done: () => void) => {
         let fn = async (resolve: () => void, reject: (arg1: Error) => void): Promise<void> => {
@@ -162,14 +168,14 @@ export default function ActsAllowTest() {
     );
 
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Publish_updateOnly_0003
-    * @tc.name      : 更新一个不存在的通知，updateOnly传true
-    * @tc.desc      : updateOnly is true
-    * @tc.size      : Large-scaleTest
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_updateOnly_0003
+     * @tc.number Sub_Notification_Ans_Publish_updateOnly_0003
+     * @tc.desc   updateOnly is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Publish_updateOnly_0003', Level.LEVEL2, async (done: Function) => {
       // 通知Request对象
       let notificationRequest: notificationManager.NotificationRequest = {
@@ -212,14 +218,14 @@ export default function ActsAllowTest() {
       });
     })
 
-    /*
-    * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_08086
-    * @tc.name      : 调用 createSubscriber 接口，创建订阅者，调用 subscribe 接口，getSubscribeInfo获取订阅者信息，subscribeInfo.publisherBundleName为订阅者包名
-    * @tc.desc      : publisherBundleName test
-    * @tc.size      : Large-scaleTest
-    * @tc.type      : Function test
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_08086
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_08086
+     * @tc.desc   publisherBundleName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_Subscriber_Subscribe_08086', Level.LEVEL2, async (done: () => void) => {
 
       // 创建订阅者

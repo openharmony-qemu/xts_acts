@@ -42,12 +42,12 @@ export default function AtomicsAPIThirdlyTest() {
     })
 
     /**
+     * @tc.name   AtomicsAddApiThirdlyTest0100
      * @tc.number SUB_ATOMICS_API_THIRDLY_TEST_0100
-     * @tc.name AtomicsAddApiThirdlyTest0100
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiThirdlyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsAddApiThirdlyTest0100';
@@ -79,12 +79,12 @@ export default function AtomicsAPIThirdlyTest() {
 
 
     /**
+     * @tc.name   AtomicsAddApiThirdlyTest0200
      * @tc.number SUB_ATOMICS_API_THIRDLY_TEST_0200
-     * @tc.name AtomicsAddApiThirdlyTest0200
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiThirdlyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsAddApiThirdlyTest0200';
@@ -108,12 +108,12 @@ export default function AtomicsAPIThirdlyTest() {
 
 
     /**
+     * @tc.name   AtomicsAddApiThirdlyTest0300
      * @tc.number SUB_ATOMICS_API_THIRDLY_TEST_0300
-     * @tc.name AtomicsAddApiThirdlyTest0300
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiThirdlyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsAddApiThirdlyTest0300';
@@ -148,12 +148,12 @@ export default function AtomicsAPIThirdlyTest() {
     });
 
     /**
+     * @tc.name   AtomicsAddApiThirdlyTest0400
      * @tc.number SUB_ATOMICS_API_THIRDLY_TEST_0400
-     * @tc.name AtomicsAddApiThirdlyTest0400
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiThirdlyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsAddApiThirdlyTest0400';
@@ -196,12 +196,12 @@ export default function AtomicsAPIThirdlyTest() {
 
 
     /**
+     * @tc.name   AtomicsAddApiThirdlyTest0500
      * @tc.number SUB_ATOMICS_API_THIRDLY_TEST_0500
-     * @tc.name AtomicsAddApiThirdlyTest0500
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiThirdlyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsAddApiThirdlyTest0500';
@@ -228,12 +228,12 @@ export default function AtomicsAPIThirdlyTest() {
 
 
     /**
+     * @tc.name   AtomicsAddApiThirdlyTest0600
      * @tc.number SUB_ATOMICS_API_THIRDLY_TEST_0600
-     * @tc.name AtomicsAddApiThirdlyTest0600
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiThirdlyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsAddApiThirdlyTest0600';

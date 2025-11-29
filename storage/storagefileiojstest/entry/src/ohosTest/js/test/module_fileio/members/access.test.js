@@ -23,14 +23,12 @@ export default function fileioAccess() {
 describe('fileio_access', function () {
 
   /**
+   * @tc.name   fileio_test_access_sync_000
    * @tc.number SUB_DF_FILEIO_ACCESSSYNC_0000
-   * @tc.name fileio_test_access_sync_000
-   * @tc.desc Test accessSync() interface.
-   * This interface shall work properly in normal case
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_access_sync_000');
@@ -46,14 +44,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_sync_001
    * @tc.number SUB_DF_FILEIO_ACCESSSYNC_0100
-   * @tc.name fileio_test_access_sync_001
-   * @tc.desc Test accessSync() interface.
-   * Test that the current process has write permission.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_access_sync_001');
@@ -69,14 +65,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_sync_002
    * @tc.number SUB_DF_FILEIO_ACCESSSYNC_0200
-   * @tc.name fileio_test_access_sync_002
-   * @tc.desc Test accessSync() interface.
-   * Test that the current process has read permission.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_access_sync_002');
@@ -92,14 +86,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_sync_003
    * @tc.number SUB_DF_FILEIO_ACCESSSYNC_0300
-   * @tc.name fileio_test_access_sync_003
-   * @tc.desc Test accessSync() interface.
-   * Test that the current process has read and write permissions.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_access_sync_003');
@@ -115,14 +107,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_sync_004
    * @tc.number SUB_DF_FILEIO_ACCESSSYNC_0400
-   * @tc.name fileio_test_access_sync_004
-   * @tc.desc Test accessSync() interface.
-   * Test that the current process has executable permissions.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_sync_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_access_sync_004');
@@ -138,14 +128,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_sync_005
    * @tc.number SUB_DF_FILEIO_ACCESSSYNC_0500
-   * @tc.name fileio_test_access_sync_005
-   * @tc.desc Test accessSync() interface.
-   * The test file is not exist.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_sync_005', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_access_sync_005');
@@ -159,14 +147,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_sync_006
    * @tc.number SUB_DF_FILEIO_ACCESSSYNC_0600
-   * @tc.name fileio_test_access_sync_006
-   * @tc.desc Test accessSync() interface.
-   * Undefined option arguments, use default mode = 0(Is file exist).
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_access_sync_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_access_sync_006');
@@ -182,14 +168,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_000
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0000
-   * @tc.name fileio_test_access_async_000
-   * @tc.desc Test access() interface. Promise.
-   * This interface shall work properly in normal case.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_000');
@@ -206,14 +190,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_001
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0100
-   * @tc.name fileio_test_access_async_001
-   * @tc.desc Test access() interface. Promise.
-   * Use promise to test that the current process has read permission. Async method reads data from file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_001');
@@ -234,14 +216,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_002
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0200
-   * @tc.name fileio_test_access_async_002
-   * @tc.desc Test access() interface. Callback.
-   * Test file exists.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_002');
@@ -259,14 +239,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_003
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0300
-   * @tc.name fileio_test_access_async_003
-   * @tc.desc Test access() interface. Callback.
-   * Use callback to test that the current process has read permission. Async method reads data from file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_003');
@@ -288,14 +266,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_004
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0400
-   * @tc.name fileio_test_access_async_004
-   * @tc.desc Test access() interface. Promise.
-   * Use promises to test that the current process has executable permissions.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_004');
@@ -312,14 +288,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_005
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0500
-   * @tc.name fileio_test_access_async_005
-   * @tc.desc Test access() interface. Callback.
-   * Use callback to test that the current process has write permission.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_005');
@@ -337,14 +311,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_006
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0600
-   * @tc.name fileio_test_access_async_006
-   * @tc.desc Test access() interface. Promise.
-   * Async test file does not exist.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_access_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_006');
@@ -359,14 +331,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_007
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0700
-   * @tc.name fileio_test_access_async_007
-   * @tc.desc Test access() interface. Callback.
-   * Undefined option arguments, use default mode = 0(Is file exist).
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_access_async_007', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_007');
@@ -388,14 +358,12 @@ describe('fileio_access', function () {
   });
 
   /**
+   * @tc.name   fileio_test_access_async_008
    * @tc.number SUB_DF_FILEIO_ACCESSASYNC_0800
-   * @tc.name fileio_test_access_async_008
-   * @tc.desc Test access() interface. Promise.
-   * Undefined option arguments, use default mode = 0(Is file exist).
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_access_async_008', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_access_async_008');

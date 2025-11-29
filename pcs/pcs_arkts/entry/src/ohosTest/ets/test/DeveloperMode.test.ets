@@ -65,7 +65,6 @@ export default function developerModeTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportDebuggingConsole0100
      * @tc.number G-TOOLS-0100
      * @tc.desc   【G-TOOLS-0100】必须支持 OpenHarmony 调试命令控制台
@@ -107,7 +106,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportDebuggingCommand0100
      * @tc.number G-TOOLS-0101
      * @tc.desc   【G-TOOLS-0101】必须支持 OpenHarmony 调试命令集合
@@ -122,7 +120,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportDebuggingPermission0100
      * @tc.number G-TOOLS-0102
      * @tc.desc   【G-TOOLS-0102】必须支持 OpenHarmony 调试所需权限
@@ -148,7 +145,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testDebuggingNodesIntegrity0100
      * @tc.number G-TOOLS-0103
      * @tc.desc   【G-TOOLS-0103】必须支持 OpenHarmony 调试节点的完整性
@@ -171,7 +167,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testLogInputOutputRequirements0100
      * @tc.number G-TOOLS-0104
      * @tc.desc   【G-TOOLS-0104】必须满足 OpenHarmony 日志、trace 等格式输入输出要求
@@ -205,7 +200,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testTuningSystemDataAcquire0100
      * @tc.number STD-TOOLS-0105
      * @tc.desc   【STD-TOOLS-0105】必须满足 OpenHarmony 调试调优相关系统数据获取格式
@@ -232,7 +226,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testToolChainsNotChange0100
      * @tc.number G-TOOLS-0106
      * @tc.desc   【G-TOOLS-0106】必须满足 OpenHarmony 工具链 API 与工具行为不发生改变
@@ -255,7 +248,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testCommandAa0100
      * @tc.number C-STD-TOOLS-0107
      * @tc.desc   【C-STD-TOOLS-0107】如果设备支持 ability_runtime，必须支持 aa 工具命令行。
@@ -275,7 +267,6 @@ export default function developerModeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testCommandBm0100
      * @tc.number C-STD-TOOLS-0108
      * @tc.desc   【C-STD-TOOLS-0108】如果设备支持 bundle_framework，必须支持 bm 工具命令行。

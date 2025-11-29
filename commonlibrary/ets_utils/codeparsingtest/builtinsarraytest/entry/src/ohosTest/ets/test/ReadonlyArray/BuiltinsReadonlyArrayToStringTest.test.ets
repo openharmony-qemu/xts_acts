@@ -40,12 +40,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1001
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0100
-     * @tc.name builtinsReadonlyArrayToStringTest1001
-     * @tc.desc Test basic numeric ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test basic numeric ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsReadonlyArrayToStringTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let arr: readonly number[] = [1, 2, 3];
@@ -53,12 +53,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1002
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0200
-     * @tc.name builtinsReadonlyArrayToStringTest1002
-     * @tc.desc Test string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly string[] = ['apple', 'banana', 'cherry'];
@@ -67,12 +67,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1003
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0300
-     * @tc.name builtinsReadonlyArrayToStringTest1003
-     * @tc.desc Test empty ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly string[] = [];
@@ -80,12 +80,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1004
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0400
-     * @tc.name builtinsReadonlyArrayToStringTest1004
-     * @tc.desc Test single element ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test single element ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly number[] = [5];
@@ -93,12 +93,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1005
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0500
-     * @tc.name builtinsReadonlyArrayToStringTest1005
-     * @tc.desc Test sparse ReadonlyArray handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test sparse ReadonlyArray handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly (number | undefined)[] = [1, , 3];
@@ -106,12 +106,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1006
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0600
-     * @tc.name builtinsReadonlyArrayToStringTest1006
-     * @tc.desc Test null/undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test null/undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly (number | undefined | null)[] = [1, null, undefined, 3];
@@ -119,12 +119,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1007
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0700
-     * @tc.name builtinsReadonlyArrayToStringTest1007
-     * @tc.desc Test object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test object elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const e: Empty = {};
@@ -136,12 +136,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1008
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0800
-     * @tc.name builtinsReadonlyArrayToStringTest1008
-     * @tc.desc Test nested ReadonlyArrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test nested ReadonlyArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly (number[])[] = [[1, 2], [3, 4]];
@@ -149,12 +149,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1009
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_0900
-     * @tc.name builtinsReadonlyArrayToStringTest1009
-     * @tc.desc Test Date object handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Date object handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const date = new Date();
@@ -163,12 +163,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1010
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_1000
-     * @tc.name builtinsReadonlyArrayToStringTest1010
-     * @tc.desc Test numeric special values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test numeric special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       // 数值类型全集测试
@@ -208,12 +208,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1011
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_1100
-     * @tc.name builtinsReadonlyArrayToStringTest1011
-     * @tc.desc Test string special values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const testData: ToStringString[] = [
@@ -243,12 +243,12 @@ export default function builtinsReadonlyArrayToStringTest() {
     });
 
     /**
+     * @tc.name   builtinsReadonlyArrayToStringTest1012
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOSTRING_TEST_1200
-     * @tc.name builtinsReadonlyArrayToStringTest1012
-     * @tc.desc Test boolean values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test boolean values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayToStringTest1012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly boolean[] = [true, false, !'s', !0];

@@ -32,12 +32,12 @@ export default function GraphicTextParagraphBuilder() {
     })
 
     /**
-     * @tc.number    : testCreateParagraphBuilderStatic
-     * @tc.name      : testCreateParagraphBuilderStatic
-     * @tc.desc      : To test for create a paragraphBuilder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testCreateParagraphBuilderStatic
+     * @tc.number testCreateParagraphBuilderStatic
+     * @tc.desc   To test for create a paragraphBuilder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateParagraphBuilderStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

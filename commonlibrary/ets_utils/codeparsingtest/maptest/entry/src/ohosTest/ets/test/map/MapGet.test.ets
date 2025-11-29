@@ -81,12 +81,12 @@ export default function MapGetTest() {
     })
 
     /**
+     * @tc.name   testMapGet0001
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0001
-     * @tc.name testMapGet0001
-     * @tc.desc Verify Map.get returns correct value for existing string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns correct value for existing string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, number>();
@@ -95,12 +95,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0002
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0002
-     * @tc.name testMapGet0002
-     * @tc.desc Verify Map.get returns undefined for non-existing key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns undefined for non-existing key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, string>();
@@ -109,12 +109,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0003
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0003
-     * @tc.name testMapGet0003
-     * @tc.desc Verify Map.get returns correct value for number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns correct value for number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<number, string>();
@@ -123,12 +123,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0004
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0004
-     * @tc.name testMapGet0004
-     * @tc.desc Verify Map.get distinguishes between number and string keys with same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between number and string keys with same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number | string, boolean>();
@@ -139,12 +139,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0005
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0005
-     * @tc.name testMapGet0005
-     * @tc.desc Verify Map.get returns correct value for boolean key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns correct value for boolean key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<boolean, string>();
@@ -155,12 +155,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0006
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0006
-     * @tc.name testMapGet0006
-     * @tc.desc Verify Map.get works with object keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with object keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const keyObj: GeneratedObjectLiteralInterface_1 = { id: 1 };
@@ -170,12 +170,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0007
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0007
-     * @tc.name testMapGet0007
-     * @tc.desc Verify Map.get returns undefined for different object with same properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns undefined for different object with same properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<GeneratedObjectLiteralInterface_1, string>();
@@ -184,12 +184,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0008
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0008
-     * @tc.name testMapGet0008
-     * @tc.desc Verify Map.get works with Symbol keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with Symbol keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Get0008 = MapGetTest0008();
@@ -197,12 +197,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0009
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0009
-     * @tc.name testMapGet0009
-     * @tc.desc Verify Map.get distinguishes between different Symbol keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between different Symbol keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Get0009 = MapGetTest0009();
@@ -210,12 +210,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0010
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0010
-     * @tc.name testMapGet0010
-     * @tc.desc Verify Map.get works with Symbol.for keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with Symbol.for keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Get0010 = MapGetTest0010();
@@ -223,12 +223,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0011
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0011
-     * @tc.name testMapGet0011
-     * @tc.desc Verify Map.get returns correct value after key is updated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value after key is updated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number>();
@@ -238,12 +238,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0012
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0012
-     * @tc.name testMapGet0012
-     * @tc.desc Verify Map.get returns undefined after key is deleted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns undefined after key is deleted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>();
@@ -253,12 +253,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0013
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0013
-     * @tc.name testMapGet0013
-     * @tc.desc Verify Map.get works with null key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with null key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<null, string>();
@@ -267,12 +267,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0014
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0014
-     * @tc.name testMapGet0014
-     * @tc.desc Verify Map.get works with undefined key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<undefined, number>();
@@ -281,12 +281,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0015
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0015
-     * @tc.name testMapGet0015
-     * @tc.desc Verify Map.get distinguishes between null and undefined keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between null and undefined keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<null | undefined, string>();
@@ -297,12 +297,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0016
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0016
-     * @tc.name testMapGet0016
-     * @tc.desc Verify Map.get works with NaN as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with NaN as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>();
@@ -311,12 +311,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0017
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0017
-     * @tc.name testMapGet0017
-     * @tc.desc Verify Map.get returns correct value for large integer key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for large integer key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const largeKey = 9007199254740991n;
@@ -326,12 +326,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0018
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0018
-     * @tc.name testMapGet0018
-     * @tc.desc Verify Map.get works with Date objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with Date objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dateKey = new Date('2023-01-01');
@@ -341,12 +341,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0019
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0019
-     * @tc.name testMapGet0019
-     * @tc.desc Verify Map.get distinguishes between different Date objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between different Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<Date, string>();
@@ -355,12 +355,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0020
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0020
-     * @tc.name testMapGet0020
-     * @tc.desc Verify Map.get works with RegExp keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with RegExp keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const regKey = /pattern/;
@@ -370,12 +370,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0021
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0021
-     * @tc.name testMapGet0021
-     * @tc.desc Verify Map.get returns correct value for nested object key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for nested object key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Get0021 = MapGetTest0021();
@@ -383,12 +383,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0022
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0022
-     * @tc.name testMapGet0022
-     * @tc.desc Verify Map.get works with array keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with array keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arrKey = [1, 2, 3];
@@ -398,12 +398,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0023
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0023
-     * @tc.name testMapGet0023
-     * @tc.desc Verify Map.get distinguishes between different arrays with same elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between different arrays with same elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number[], string>();
@@ -412,12 +412,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0024
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0024
-     * @tc.name testMapGet0024
-     * @tc.desc Verify Map.get works with function keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with function keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const funcKey = () => 'hello';
@@ -427,12 +427,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0025
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0025
-     * @tc.name testMapGet0025
-     * @tc.desc Verify Map.get returns correct value for multiple keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns correct value for multiple keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, string>();
@@ -445,12 +445,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0026
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0026
-     * @tc.name testMapGet0026
-     * @tc.desc Verify Map.get works with empty string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number>();
@@ -459,12 +459,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0027
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0027
-     * @tc.name testMapGet0027
-     * @tc.desc Verify Map.get returns undefined for empty map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns undefined for empty map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<number, number>();
@@ -472,12 +472,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0028
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0028
-     * @tc.name testMapGet0028
-     * @tc.desc Verify Map.get works after clear
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works after clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>();
@@ -487,12 +487,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0029
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0029
-     * @tc.name testMapGet0029
-     * @tc.desc Verify Map.get works with large number of entries
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with large number of entries
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0029', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const map = new Map<number, number>();
@@ -508,12 +508,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0030
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0030
-     * @tc.name testMapGet0030
-     * @tc.desc Verify Map.get returns correct value for symbol key after many operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for symbol key after many operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0030 = MapGetTest0030();
@@ -521,12 +521,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0031
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0031
-     * @tc.name testMapGet0031
-     * @tc.desc Verify Map.get works with objects modified after being used as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with objects modified after being used as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Get0031 = MapGetTest0031();
@@ -534,12 +534,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0032
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0032
-     * @tc.name testMapGet0032
-     * @tc.desc Verify Map.get returns correct value for boolean true key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns correct value for boolean true key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<boolean, string>();
@@ -548,12 +548,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0033
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0033
-     * @tc.name testMapGet0033
-     * @tc.desc Verify Map.get returns correct value for boolean false key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns correct value for boolean false key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<boolean, string>();
@@ -562,12 +562,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0034
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0034
-     * @tc.name testMapGet0034
-     * @tc.desc Verify Map.get works with negative number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get works with negative number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<number, string>();
@@ -578,12 +578,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0035
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0035
-     * @tc.name testMapGet0035
-     * @tc.desc Verify Map.get works with float number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get works with float number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<number, string>();
@@ -594,12 +594,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0036
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0036
-     * @tc.name testMapGet0036
-     * @tc.desc Verify Map.get distinguishes between similar float keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between similar float keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>();
@@ -610,12 +610,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0037
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0037
-     * @tc.name testMapGet0037
-     * @tc.desc Verify Map.get works with string keys containing special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with string keys containing special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>();
@@ -626,12 +626,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0038
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0038
-     * @tc.name testMapGet0038
-     * @tc.desc Verify Map.get works with Unicode string keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with Unicode string keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>();
@@ -642,12 +642,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0039
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0039
-     * @tc.name testMapGet0039
-     * @tc.desc Verify Map.get works with Map objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with Map objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const keyMap = new Map<number, string>([[1, 'one']]);
@@ -657,12 +657,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0040
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0040
-     * @tc.name testMapGet0040
-     * @tc.desc Verify Map.get works with Set objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with Set objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const keySet = new Set<string>(['a', 'b']);
@@ -672,12 +672,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0041
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0041
-     * @tc.name testMapGet0041
-     * @tc.desc Verify Map.get returns correct value for class instance keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for class instance keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class Person {
@@ -696,12 +696,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0042
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0042
-     * @tc.name testMapGet0042
-     * @tc.desc Verify Map.get distinguishes between different class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between different class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class Person {
@@ -719,12 +719,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0045
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0045
-     * @tc.name testMapGet0045
-     * @tc.desc Verify Map.get works with ArrayBuffer keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with ArrayBuffer keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const bufferKey = new ArrayBuffer(8);
@@ -734,12 +734,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0046
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0046
-     * @tc.name testMapGet0046
-     * @tc.desc Verify Map.get works with DataView keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with DataView keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const buffer = new ArrayBuffer(16);
@@ -750,12 +750,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0047
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0047
-     * @tc.name testMapGet0047
-     * @tc.desc Verify Map.get works with typed array keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with typed array keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const typedKey = new Uint8Array([1, 2, 3]);
@@ -765,12 +765,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0048
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0048
-     * @tc.name testMapGet0048
-     * @tc.desc Verify Map.get returns correct value for null prototype object key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for null prototype object key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0048 = MapGetTest0048();
@@ -778,12 +778,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0049
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0049
-     * @tc.name testMapGet0049
-     * @tc.desc Verify Map.get works with frozen object keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with frozen object keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0049 = MapGetTest0049();
@@ -791,12 +791,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0050
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0050
-     * @tc.name testMapGet0050
-     * @tc.desc Verify Map.get works with sealed object keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with sealed object keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0050 = MapGetTest0050();
@@ -804,12 +804,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0051
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0051
-     * @tc.name testMapGet0051
-     * @tc.desc Verify Map.get returns correct value after re-adding key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value after re-adding key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number>();
@@ -820,12 +820,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0052
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0052
-     * @tc.name testMapGet0052
-     * @tc.desc Verify Map.get works with same key added multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with same key added multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>();
@@ -836,12 +836,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0053
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0053
-     * @tc.name testMapGet0053
-     * @tc.desc Verify Map.get returns correct value for key added in constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns correct value for key added in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, number>([
@@ -853,12 +853,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0054
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0054
-     * @tc.name testMapGet0054
-     * @tc.desc Verify Map.get works with keys that have valueOf method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with keys that have valueOf method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0054 = MapGetTest0054();
@@ -866,12 +866,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0055
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0055
-     * @tc.name testMapGet0055
-     * @tc.desc Verify Map.get works with keys that have Symbol.toPrimitive
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with keys that have Symbol.toPrimitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0055 = MapGetTest0055();
@@ -879,12 +879,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0056
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0056
-     * @tc.name testMapGet0056
-     * @tc.desc Verify Map.get returns correct value for key in nested Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for key in nested Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const innerMap = new Map<string, number>([['x', 10], ['y', 20]]);
@@ -895,12 +895,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0057
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0057
-     * @tc.name testMapGet0057
-     * @tc.desc Verify Map.get works with Error objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with Error objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const errorKey = new Error('test error');
@@ -910,12 +910,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0058
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0058
-     * @tc.name testMapGet0058
-     * @tc.desc Verify Map.get distinguishes between different Error objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get distinguishes between different Error objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map = new Map<Error, string>();
@@ -924,12 +924,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0059
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0059
-     * @tc.name testMapGet0059
-     * @tc.desc Verify Map.get works with Promise objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with Promise objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const promiseKey = Promise.resolve('test');
@@ -939,12 +939,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0060
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0060
-     * @tc.name testMapGet0060
-     * @tc.desc Verify Map.get returns correct value for function value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for function value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, () => number>();
@@ -955,12 +955,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0061
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0061
-     * @tc.name testMapGet0061
-     * @tc.desc Verify Map.get returns correct value for array value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for array value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number[]>();
@@ -971,12 +971,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0062
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0062
-     * @tc.name testMapGet0062
-     * @tc.desc Verify Map.get returns correct value for object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, GeneratedTypeLiteralInterface_1>();
@@ -987,12 +987,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0063
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0063
-     * @tc.name testMapGet0063
-     * @tc.desc Verify Map.get returns correct value for Map value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for Map value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const valueMap = new Map<number, string>([[1, 'one']]);
@@ -1003,12 +1003,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0064
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0064
-     * @tc.name testMapGet0064
-     * @tc.desc Verify Map.get returns correct value for Set value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for Set value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const valueSet = new Set<string>(['a', 'b']);
@@ -1019,12 +1019,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0065
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0065
-     * @tc.name testMapGet0065
-     * @tc.desc Verify Map.get returns correct value after map is copied
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value after map is copied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const originalMap = new Map<string, number>([['a', 1], ['b', 2]]);
@@ -1035,12 +1035,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0066
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0066
-     * @tc.name testMapGet0066
-     * @tc.desc Verify Map.get works with keys from other realms (theoretical)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with keys from other realms (theoretical)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       // This test is theoretical as it requires multiple JavaScript realms
@@ -1052,12 +1052,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0067
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0067
-     * @tc.name testMapGet0067
-     * @tc.desc Verify Map.get returns undefined for key that was never set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Map.get returns undefined for key that was never set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapGet0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, string>();
@@ -1066,12 +1066,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0068
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0068
-     * @tc.name testMapGet0068
-     * @tc.desc Verify Map.get works with very long string keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with very long string keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longKey = 'a'.repeat(1000);
@@ -1081,12 +1081,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0069
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0069
-     * @tc.name testMapGet0069
-     * @tc.desc Verify Map.get works with key that is a Map iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a Map iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>([[1, 'one']]);
@@ -1098,12 +1098,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0070
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0070
-     * @tc.name testMapGet0070
-     * @tc.desc Verify Map.get works with generator object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with generator object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0070 = MapGetTest0070();
@@ -1111,12 +1111,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0071
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0071
-     * @tc.name testMapGet0071
-     * @tc.desc Verify Map.get returns correct value for key added in loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for key added in loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, number>();
@@ -1129,12 +1129,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0072
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0072
-     * @tc.name testMapGet0072
-     * @tc.desc Verify Map.get works with key that is a WeakMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a WeakMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const weakMapKey = new WeakMap<object, string>();
@@ -1148,12 +1148,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0073
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0073
-     * @tc.name testMapGet0073
-     * @tc.desc Verify Map.get works with key that is a WeakSet
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a WeakSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const weakSetKey = new WeakSet<object>();
@@ -1167,12 +1167,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0074
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0074
-     * @tc.name testMapGet0074
-     * @tc.desc Verify Map.get returns correct value after map is modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value after map is modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>([['a', 'A'], ['b', 'B']]);
@@ -1186,12 +1186,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0075
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0075
-     * @tc.name testMapGet0075
-     * @tc.desc Verify Map.get works with key that is a RegExp with flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with key that is a RegExp with flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const regKey = /test/gi;
@@ -1201,12 +1201,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0076
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0076
-     * @tc.name testMapGet0076
-     * @tc.desc Verify Map.get distinguishes between RegExp with different flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between RegExp with different flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<RegExp, string>();
@@ -1215,12 +1215,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0077
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0077
-     * @tc.name testMapGet0077
-     * @tc.desc Verify Map.get works with key that is a Date with same time value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with key that is a Date with same time value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date1 = new Date(2023, 0, 1);
@@ -1232,12 +1232,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0078
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0078
-     * @tc.name testMapGet0078
-     * @tc.desc Verify Map.get works with key that is a BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get works with key that is a BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bigKey = 9007199254740991n;
@@ -1247,12 +1247,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0079
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0079
-     * @tc.name testMapGet0079
-     * @tc.desc Verify Map.get distinguishes between BigInt and Number with same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get distinguishes between BigInt and Number with same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<bigint | number, string>();
@@ -1265,12 +1265,12 @@ export default function MapGetTest() {
 
 
     /**
+     * @tc.name   testMapGet0081
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0081
-     * @tc.name testMapGet0081
-     * @tc.desc Verify Map.get returns correct value for key in large map
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for key in large map
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0081', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>();
@@ -1284,12 +1284,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0082
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0082
-     * @tc.name testMapGet0082
-     * @tc.desc Verify Map.get works with key that is a Proxy object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a Proxy object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0082 = MapGetTest0082();
@@ -1297,12 +1297,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0083
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0083
-     * @tc.name testMapGet0083
-     * @tc.desc Verify Map.get distinguishes between Proxy and target object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get distinguishes between Proxy and target object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0083 = MapGetTest0083();
@@ -1310,12 +1310,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0084
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0084
-     * @tc.name testMapGet0084
-     * @tc.desc Verify Map.get works with key that is a Reflect object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a Reflect object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0084 = MapGetTest0084();
@@ -1323,12 +1323,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0085
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0085
-     * @tc.name testMapGet0085
-     * @tc.desc Verify Map.get works with key that is a Math object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a Math object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0085 = MapGetTest0085();
@@ -1336,12 +1336,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0086
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0086
-     * @tc.name testMapGet0086
-     * @tc.desc Verify Map.get returns correct value for Symbol.iterator key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for Symbol.iterator key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0086 = MapGetTest0086();
@@ -1349,12 +1349,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0087
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0087
-     * @tc.name testMapGet0087
-     * @tc.desc Verify Map.get returns correct value for Symbol.toStringTag key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for Symbol.toStringTag key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0087 = MapGetTest0087();
@@ -1362,12 +1362,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0088
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0088
-     * @tc.name testMapGet0088
-     * @tc.desc Verify Map.get works with key that is a module object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a module object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0088 = MapGetTest0088();
@@ -1375,12 +1375,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0089
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0089
-     * @tc.name testMapGet0089
-     * @tc.desc Verify Map.get works with key that is a class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       class MyClass {
@@ -1392,12 +1392,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0090
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0090
-     * @tc.name testMapGet0090
-     * @tc.desc Verify Map.get works with key that is a derived class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a derived class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       class Parent {
@@ -1414,12 +1414,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0091
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0091
-     * @tc.name testMapGet0091
-     * @tc.desc Verify Map.get works with key that is a function with prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a function with prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0091 = MapGetTest0091();
@@ -1427,12 +1427,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0092
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0092
-     * @tc.name testMapGet0092
-     * @tc.desc Verify Map.get works with key that is an async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is an async function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0092 = MapGetTest0092();
@@ -1440,12 +1440,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0093
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0093
-     * @tc.name testMapGet0093
-     * @tc.desc Verify Map.get works with key that is a generator function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a generator function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0093 = MapGetTest0093();
@@ -1453,12 +1453,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0094
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0094
-     * @tc.name testMapGet0094
-     * @tc.desc Verify Map.get works with key that is a arrow function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a arrow function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0094 = MapGetTest0094();
@@ -1466,12 +1466,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0095
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0095
-     * @tc.name testMapGet0095
-     * @tc.desc Verify Map.get returns correct value for key in nested object structure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value for key in nested object structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0095 = MapGetTest0095();
@@ -1479,12 +1479,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0096
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0096
-     * @tc.name testMapGet0096
-     * @tc.desc Verify Map.get works with key that has circular reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that has circular reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Get0096 = MapGetTest0096();
@@ -1493,12 +1493,12 @@ export default function MapGetTest() {
 
 
     /**
+     * @tc.name   testMapGet0100
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0100
-     * @tc.name testMapGet0100
-     * @tc.desc Verify Map.get returns correct value for Symbol key in mixed key map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Map.get returns correct value for Symbol key in mixed key map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapGet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Get0100 = MapGetTest0100();
@@ -1507,12 +1507,12 @@ export default function MapGetTest() {
 
 
     /**
+     * @tc.name   testMapGet0106
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0106
-     * @tc.name testMapGet0106
-     * @tc.desc Verify Map.get works with key that is a Intl.DateTimeFormat object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a Intl.DateTimeFormat object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const formatterKey = new Intl.DateTimeFormat('en-US');
@@ -1523,12 +1523,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0107
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0107
-     * @tc.name testMapGet0107
-     * @tc.desc Verify Map.get works with key that is a Intl.NumberFormat object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get works with key that is a Intl.NumberFormat object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const formatterKey = new Intl.NumberFormat('en-US');
@@ -1539,12 +1539,12 @@ export default function MapGetTest() {
     });
 
     /**
+     * @tc.name   testMapGet0110
      * @tc.number SUB_COMMONLIBRARY_MAP_Get_0110
-     * @tc.name testMapGet0110
-     * @tc.desc Verify Map.get returns correct value after many key additions and deletions
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Map.get returns correct value after many key additions and deletions
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('testMapGet0110', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>();

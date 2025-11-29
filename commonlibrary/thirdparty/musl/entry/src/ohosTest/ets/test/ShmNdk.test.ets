@@ -25,12 +25,12 @@ export default function shmNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SHM_SHMGET_0100
-     * @tc.name       : testMuslShmShmget001
-     * @tc.desc       : test shmget
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslShmShmget001
+     * @tc.number SUB_THIRDPARTY_MUSL_SHM_SHMGET_0100
+     * @tc.desc   test shmget
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslShmShmget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a : number = shm.shmget();
@@ -39,12 +39,12 @@ export default function shmNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SHM_SHMCTL_0100
-     * @tc.name       : testMuslShmShmctl001
-     * @tc.desc       : test shmctl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslShmShmctl001
+     * @tc.number SUB_THIRDPARTY_MUSL_SHM_SHMCTL_0100
+     * @tc.desc   test shmctl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslShmShmctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a : number = shm.shmctl();
@@ -52,12 +52,12 @@ export default function shmNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SHM_SHMAT_0100
-     * @tc.name       : testMuslShmShmat001
-     * @tc.desc       : test shmat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslShmShmat001
+     * @tc.number SUB_THIRDPARTY_MUSL_SHM_SHMAT_0100
+     * @tc.desc   test shmat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslShmShmat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a : number = shm.shmat();
@@ -65,12 +65,12 @@ export default function shmNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SHM_SHMDT_0100
-     * @tc.name       : testMuslShmShmdt001
-     * @tc.desc       : test shmdt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslShmShmdt001
+     * @tc.number SUB_THIRDPARTY_MUSL_SHM_SHMDT_0100
+     * @tc.desc   test shmdt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslShmShmdt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a : number = shm.shmdt();

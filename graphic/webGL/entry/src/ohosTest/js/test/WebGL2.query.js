@@ -47,9 +47,12 @@ export default function webgl2_query() {
             hilog.info(0x0000, 'testTag', '%{public}s', 'webgl1_test_01 end');
         });
         /**
+         * @tc.name   webgl2_test_createQuery
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0001
-         * @tc.name webgl2_test_createQuery
-         * @tc.desc Test createQuery.
+         * @tc.desc   Test createQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_createQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_createQuery] createQuery");
@@ -74,9 +77,12 @@ export default function webgl2_query() {
             finish(gl.isQuery(query));
         }
         /**
+         * @tc.name   webgl2_test_deleteQuery
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0002
-         * @tc.name webgl2_test_deleteQuery
-         * @tc.desc Test deleteQuery.
+         * @tc.desc   Test deleteQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteQuery] deleteQuery");
@@ -93,9 +99,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl_test_deleteQuery_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0003
-         * @tc.name webgl_test_deleteQuery_1
-         * @tc.desc Test deleteQuery.
+         * @tc.desc   Test deleteQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteQuery_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteQuery_1] deleteQuery");
@@ -109,9 +118,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl_test_deleteQuery_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0004
-         * @tc.name webgl_test_deleteQuery_2
-         * @tc.desc Test deleteQuery.
+         * @tc.desc   Test deleteQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteQuery_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteQuery_2] deleteQuery");
@@ -125,9 +137,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl_test_deleteQuery_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0005
-         * @tc.name webgl_test_deleteQuery_3
-         * @tc.desc Test deleteQuery.
+         * @tc.desc   Test deleteQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteQuery_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteQuery_2] deleteQuery");
@@ -149,9 +164,12 @@ export default function webgl2_query() {
             gl.deleteQuery(query);
         }
         /**
+         * @tc.name   webgl2_test_isQuery
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0006
-         * @tc.name webgl2_test_isQuery
-         * @tc.desc Test isQuery.
+         * @tc.desc   Test isQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isQuery] isQuery");
@@ -168,9 +186,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isQuery_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0007
-         * @tc.name webgl2_test_isQuery_1
-         * @tc.desc Test isQuery.
+         * @tc.desc   Test isQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isQuery_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isQuery_1] isQuery");
@@ -183,9 +204,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isQuery_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0008
-         * @tc.name webgl2_test_isQuery_2
-         * @tc.desc Test isQuery.
+         * @tc.desc   Test isQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isQuery_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isQuery_2] isQuery");
@@ -206,9 +230,12 @@ export default function webgl2_query() {
             gl.deleteQuery(query);
         }
         /**
+         * @tc.name   webgl2_test_beginQuery
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0009
-         * @tc.name webgl2_test_beginQuery
-         * @tc.desc Test beginQuery.
+         * @tc.desc   Test beginQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_beginQuery] beginQuery");
@@ -228,9 +255,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginQuery_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0010
-         * @tc.name webgl2_test_beginQuery_1
-         * @tc.desc Test beginQuery.
+         * @tc.desc   Test beginQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginQuery_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_beginQuery] beginQuery");
@@ -243,9 +273,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginQuery_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0011
-         * @tc.name webgl2_test_beginQuery_2
-         * @tc.desc Test beginQuery.
+         * @tc.desc   Test beginQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginQuery_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_beginQuery] beginQuery");
@@ -258,9 +291,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginQuery_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0012
-         * @tc.name webgl2_test_beginQuery_3
-         * @tc.desc Test beginQuery.
+         * @tc.desc   Test beginQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginQuery_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_beginQuery] beginQuery");
@@ -284,9 +320,12 @@ export default function webgl2_query() {
             gl.deleteQuery(query2);
         }
         /**
+         * @tc.name   webgl2_test_endQuery
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0013
-         * @tc.name webgl2_test_endQuery
-         * @tc.desc Test endQuery.
+         * @tc.desc   Test endQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_endQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_endQuery] endQuery");
@@ -306,9 +345,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_endQuery_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0014
-         * @tc.name webgl2_test_endQuery_1
-         * @tc.desc Test endQuery.
+         * @tc.desc   Test endQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_endQuery_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_endQuery] endQuery");
@@ -321,9 +363,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_endQuery_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0015
-         * @tc.name webgl2_test_endQuery_2
-         * @tc.desc Test endQuery.
+         * @tc.desc   Test endQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_endQuery_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_endQuery] endQuery");
@@ -347,9 +392,12 @@ export default function webgl2_query() {
             gl.deleteQuery(query2);
         }
         /**
+         * @tc.name   webgl2_test_getQuery
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0016
-         * @tc.name webgl2_test_getQuery
-         * @tc.desc Test getQuery.
+         * @tc.desc   Test getQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getQuery] getQuery");
@@ -371,9 +419,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getQuery_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0017
-         * @tc.name webgl2_test_getQuery_1
-         * @tc.desc Test getQuery.
+         * @tc.desc   Test getQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getQuery_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getQuery] getQuery");
@@ -386,9 +437,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getQuery_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0018
-         * @tc.name webgl2_test_getQuery_2
-         * @tc.desc Test getQuery.
+         * @tc.desc   Test getQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getQuery_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getQuery] getQuery");
@@ -401,9 +455,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getQuery_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0019
-         * @tc.name webgl2_test_getQuery_3
-         * @tc.desc Test getQuery.
+         * @tc.desc   Test getQuery.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getQuery_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getQuery] getQuery");
@@ -425,9 +482,12 @@ export default function webgl2_query() {
             gl.deleteQuery(query);
         }
         /**
+         * @tc.name   webgl2_test_getQueryParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0020
-         * @tc.name webgl2_test_getQueryParameter
-         * @tc.desc Test getQueryParameter.
+         * @tc.desc   Test getQueryParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getQueryParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getQueryParameter] getQueryParameter");
@@ -448,9 +508,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getQueryParameter_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0021
-         * @tc.name webgl2_test_getQueryParameter_1
-         * @tc.desc Test getQueryParameter.
+         * @tc.desc   Test getQueryParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getQueryParameter_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -464,9 +527,12 @@ export default function webgl2_query() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getQueryParameter_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0022
-         * @tc.name webgl2_test_getQueryParameter_2
-         * @tc.desc Test getQueryParameter.
+         * @tc.desc   Test getQueryParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getQueryParameter_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {

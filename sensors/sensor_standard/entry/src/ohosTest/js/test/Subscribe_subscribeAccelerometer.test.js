@@ -59,13 +59,13 @@ describe("SensorJsTest_sensor_25", function () {
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0010
-     * @tc.name:subscribeAccelerometer_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("subscribeAccelerometer_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest001---------------------------');
@@ -102,13 +102,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-   /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0020
-     * @tc.name:subscribeAccelerometer_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest002---------------------------');
@@ -145,13 +145,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0030
-     * @tc.name:subscribeAccelerometer_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest003---------------------------');
@@ -188,13 +188,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0040
-     * @tc.name:subscribeAccelerometer_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest004---------------------------');
@@ -245,13 +245,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0050
-     * @tc.name:subscribeAccelerometer_SensorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest005---------------------------');
@@ -285,13 +285,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0060
-     * @tc.name:subscribeAccelerometer_SensorJsTest006
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest006---------------------------');
@@ -324,13 +324,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0070
-     * @tc.name:subscribeAccelerometer_SensorJsTest007
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest007---------------------------');
@@ -382,13 +382,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0080
-     * @tc.name:subscribeAccelerometer_SensorJsTest008
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest008---------------------------');
@@ -423,13 +423,13 @@ describe("SensorJsTest_sensor_25", function () {
         done();
     })
 
-   /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0090
-     * @tc.name:subscribeAccelerometer_SensorJsTest009
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest009---------------------------');
@@ -464,13 +464,13 @@ describe("SensorJsTest_sensor_25", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0100
-     * @tc.name:subscribeAccelerometer_SensorJsTest010
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest010
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest010---------------------------');
@@ -505,13 +505,13 @@ describe("SensorJsTest_sensor_25", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0110
-     * @tc.name:subscribeAccelerometer_SensorJsTest011
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest011
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest011---------------------------');
@@ -556,13 +556,13 @@ describe("SensorJsTest_sensor_25", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0120
-     * @tc.name:subscribeAccelerometer_SensorJsTest012
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest012
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest012---------------------------');
@@ -594,13 +594,13 @@ describe("SensorJsTest_sensor_25", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0130
-     * @tc.name:subscribeAccelerometer_SensorJsTest013
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest013---------------------------');
@@ -633,13 +633,13 @@ describe("SensorJsTest_sensor_25", function () {
         done();
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0140
-     * @tc.name:subscribeAccelerometer_SensorJsTest014
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeAccelerometer_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_SubscribeAccelerometer_JSTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeAccelerometer_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeAccelerometer_SensorJsTest014---------------------------');

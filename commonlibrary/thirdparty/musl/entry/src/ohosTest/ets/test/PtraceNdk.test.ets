@@ -25,12 +25,12 @@ export default function muslPtraceNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PTRACE_PTRACE_0100
-     * @tc.name       : testMuslPtracePtrace001
-     * @tc.desc       : ptrace
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslPtracePtrace001
+     * @tc.number SUB_THIRDPARTY_MUSL_PTRACE_PTRACE_0100
+     * @tc.desc   ptrace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPtracePtrace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = ptrace.ptrace();

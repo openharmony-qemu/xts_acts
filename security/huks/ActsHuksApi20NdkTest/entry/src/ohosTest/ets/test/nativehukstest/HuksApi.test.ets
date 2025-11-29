@@ -25,13 +25,13 @@ export default function HuksApiTest() {
       console.info("====>testHuksApiTest start====");
     });
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GetSdkVersion_0100
-       * @tc.name    testOH_Huks_GetSdkVersion0100
-       * @tc.desc    testing OH_Huks_GetSdkVersion interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GetSdkVersion0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GetSdkVersion_0100
+     * @tc.desc   testing OH_Huks_GetSdkVersion interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GetSdkVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -48,13 +48,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0100
-       * @tc.name    testOH_Huks_GenerateKeyItem0100
-       * @tc.desc    testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GenerateKeyItem0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0100
+     * @tc.desc   testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GenerateKeyItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -71,13 +71,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0200
-       * @tc.name    testOH_Huks_GenerateKeyItem0200
-       * @tc.desc    testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT (12000003)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GenerateKeyItem0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0200
+     * @tc.desc   testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT (12000003)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GenerateKeyItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -94,13 +94,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0300
-       * @tc.name    testOH_Huks_GenerateKeyItem0300
-       * @tc.desc    testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GenerateKeyItem0300
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0300
+     * @tc.desc   testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GenerateKeyItem0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -117,13 +117,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0400
-       * @tc.name    testOH_Huks_GenerateKeyItem0400
-       * @tc.desc    testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT (12000002)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GenerateKeyItem0400
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0400
+     * @tc.desc   testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT (12000002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GenerateKeyItem0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -140,13 +140,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0500
-       * @tc.name    testOH_Huks_GenerateKeyItem0500
-       * @tc.desc    testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET (12000016)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GenerateKeyItem0500
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0500
+     * @tc.desc   testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET (12000016)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GenerateKeyItem0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -163,13 +163,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0100
-       * @tc.name    testOH_Huks_ImportKeyItem0100
-       * @tc.desc    testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ImportKeyItem0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0100
+     * @tc.desc   testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ImportKeyItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -186,13 +186,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0200
-       * @tc.name    testOH_Huks_ImportKeyItem0200
-       * @tc.desc    testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT(12000002)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ImportKeyItem0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0200
+     * @tc.desc   testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT(12000002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ImportKeyItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -209,13 +209,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0300
-       * @tc.name    testOH_Huks_ImportKeyItem0300
-       * @tc.desc    testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT(12000003)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ImportKeyItem0300
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0300
+     * @tc.desc   testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT(12000003)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ImportKeyItem0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -232,13 +232,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0400
-       * @tc.name    testOH_Huks_ImportKeyItem0400
-       * @tc.desc    testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ImportKeyItem0400
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0400
+     * @tc.desc   testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ImportKeyItem0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -255,13 +255,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportWrappedKeyItem_0100
-       * @tc.name    testOH_Huks_ImportWrappedKeyItem0100
-       * @tc.desc    testing OH_Huks_ImportWrappedKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ImportWrappedKeyItem0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ImportWrappedKeyItem_0100
+     * @tc.desc   testing OH_Huks_ImportWrappedKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ImportWrappedKeyItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -278,13 +278,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportWrappedKeyItem_0200
-       * @tc.name    testOH_Huks_ImportWrappedKeyItem0200
-       * @tc.desc    testing OH_Huks_ImportWrappedKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ImportWrappedKeyItem0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ImportWrappedKeyItem_0200
+     * @tc.desc   testing OH_Huks_ImportWrappedKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ImportWrappedKeyItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -301,13 +301,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ExportPublicKeyItem_0100
-       * @tc.name    testOH_Huks_ExportPublicKeyItem0100
-       * @tc.desc    testing OH_Huks_ExportPublicKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ExportPublicKeyItem0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ExportPublicKeyItem_0100
+     * @tc.desc   testing OH_Huks_ExportPublicKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ExportPublicKeyItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -324,13 +324,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ExportPublicKeyItem_0200
-       * @tc.name    testOH_Huks_ExportPublicKeyItem0200
-       * @tc.desc    testing OH_Huks_ExportPublicKeyItem interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_ExportPublicKeyItem0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ExportPublicKeyItem_0200
+     * @tc.desc   testing OH_Huks_ExportPublicKeyItem interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ExportPublicKeyItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -347,13 +347,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_DeleteKeyItem_0100
-       * @tc.name    testOH_Huks_DeleteKeyItem0100
-       * @tc.desc    testing OH_Huks_DeleteKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_DeleteKeyItem0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_DeleteKeyItem_0100
+     * @tc.desc   testing OH_Huks_DeleteKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_DeleteKeyItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -370,13 +370,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_DeleteKeyItem_0200
-       * @tc.name    testOH_Huks_DeleteKeyItem0200
-       * @tc.desc    testing OH_Huks_DeleteKeyItem interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_DeleteKeyItem0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_DeleteKeyItem_0200
+     * @tc.desc   testing OH_Huks_DeleteKeyItem interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_DeleteKeyItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -393,13 +393,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GetKeyItemParamSet_0100
-       * @tc.name    testOH_Huks_GetKeyItemParamSet0100
-       * @tc.desc    testing OH_Huks_GetKeyItemParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GetKeyItemParamSet0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GetKeyItemParamSet_0100
+     * @tc.desc   testing OH_Huks_GetKeyItemParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GetKeyItemParamSet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -416,13 +416,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GetKeyItemParamSet_0200
-       * @tc.name    testOH_Huks_GetKeyItemParamSet0200
-       * @tc.desc    testing OH_Huks_GetKeyItemParamSet interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_GetKeyItemParamSet0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GetKeyItemParamSet_0200
+     * @tc.desc   testing OH_Huks_GetKeyItemParamSet interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GetKeyItemParamSet0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -439,13 +439,13 @@ export default function HuksApiTest() {
       })
 
     /**
-   * @tc.number  SUB_SECURITY_HUKS_OH_Huks_IsKeyItemExist_0100
-   * @tc.name    testOH_Huks_IsKeyItemExist0100
-   * @tc.desc    testing OH_Huks_IsKeyItemExist interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-   * @tc.size    MediumTest
-   * @tc.type    Function
-   * @tc.level   Level 1
-   */
+     * @tc.name   testOH_Huks_IsKeyItemExist0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_IsKeyItemExist_0100
+     * @tc.desc   testing OH_Huks_IsKeyItemExist interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_IsKeyItemExist0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -462,13 +462,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_IsKeyItemExist_0200
-       * @tc.name    testOH_Huks_IsKeyItemExist0200
-       * @tc.desc    testing OH_Huks_IsKeyItemExist interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_IsKeyItemExist0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_IsKeyItemExist_0200
+     * @tc.desc   testing OH_Huks_IsKeyItemExist interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_IsKeyItemExist0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -485,13 +485,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_AttestKeyItem_0100
-     * @tc.name    testOH_Huks_AttestKeyItem0100
-     * @tc.desc    testing OH_Huks_AttestKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-   */
+     * @tc.name   testOH_Huks_AttestKeyItem0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_AttestKeyItem_0100
+     * @tc.desc   testing OH_Huks_AttestKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_AttestKeyItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -508,13 +508,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_AnonAttestKeyItem_0100
-     * @tc.name    testOH_Huks_AnonAttestKeyItem0100
-     * @tc.desc    testing OH_Huks_AnonAttestKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-   */
+     * @tc.name   testOH_Huks_AnonAttestKeyItem0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_AnonAttestKeyItem_0100
+     * @tc.desc   testing OH_Huks_AnonAttestKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_AnonAttestKeyItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -531,13 +531,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_AnonAttestKeyItem_0200
-       * @tc.name    testOH_Huks_AnonAttestKeyItem0200
-       * @tc.desc    testing OH_Huks_AnonAttestKeyItem interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_AnonAttestKeyItem0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_AnonAttestKeyItem_0200
+     * @tc.desc   testing OH_Huks_AnonAttestKeyItem interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_AnonAttestKeyItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -554,13 +554,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_InitSession_0100
-     * @tc.name    testOH_Huks_InitSession0100
-     * @tc.desc    testing OH_Huks_InitSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-   */
+     * @tc.name   testOH_Huks_InitSession0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_InitSession_0100
+     * @tc.desc   testing OH_Huks_InitSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_InitSession0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -577,13 +577,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_InitSession_0200
-       * @tc.name    testOH_Huks_InitSession0200
-       * @tc.desc    testing OH_Huks_InitSession interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_InitSession0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_InitSession_0200
+     * @tc.desc   testing OH_Huks_InitSession interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_InitSession0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -600,13 +600,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_InitSession_0300
-       * @tc.name    testOH_Huks_InitSession0300
-       * @tc.desc    testing OH_Huks_InitSession interface OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT(12000003)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_InitSession0300
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_InitSession_0300
+     * @tc.desc   testing OH_Huks_InitSession interface OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT(12000003)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_InitSession0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -623,13 +623,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_UpdateSession_0100
-     * @tc.name    testOH_Huks_UpdateSession0100
-     * @tc.desc    testing OH_Huks_UpdateSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-   */
+     * @tc.name   testOH_Huks_UpdateSession0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_UpdateSession_0100
+     * @tc.desc   testing OH_Huks_UpdateSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_UpdateSession0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -646,13 +646,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_UpdateSession_0200
-       * @tc.name    testOH_Huks_UpdateSession0200
-       * @tc.desc    testing OH_Huks_UpdateSession interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_UpdateSession0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_UpdateSession_0200
+     * @tc.desc   testing OH_Huks_UpdateSession interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_UpdateSession0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -669,13 +669,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_FinishSession_0100
-     * @tc.name    testOH_Huks_FinishSession0100
-     * @tc.desc    testing OH_Huks_FinishSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-   */
+     * @tc.name   testOH_Huks_FinishSession0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_FinishSession_0100
+     * @tc.desc   testing OH_Huks_FinishSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_FinishSession0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -692,13 +692,13 @@ export default function HuksApiTest() {
       })
 
     /**
-       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_FinishSession_0200
-       * @tc.name    testOH_Huks_FinishSession0200
-       * @tc.desc    testing OH_Huks_FinishSession interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
+     * @tc.name   testOH_Huks_FinishSession0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_FinishSession_0200
+     * @tc.desc   testing OH_Huks_FinishSession interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_FinishSession0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -715,13 +715,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_AbortSession_0100
-     * @tc.name    testOH_Huks_AbortSession0100
-     * @tc.desc    testing OH_Huks_AbortSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_AbortSession0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_AbortSession_0100
+     * @tc.desc   testing OH_Huks_AbortSession interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_AbortSession0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -738,13 +738,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ListAliases_0100
-     * @tc.name    testOH_Huks_ListAliases0100
-     * @tc.desc    testing OH_Huks_ListAliases interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_ListAliases0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_ListAliases_0100
+     * @tc.desc   testing OH_Huks_ListAliases interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_ListAliases0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -761,13 +761,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_WrapKey_0200
-     * @tc.name    testOH_Huks_WrapKey0200
-     * @tc.desc    testing OH_Huks_WrapKey interface OH_HUKS_ERR_CODE_INVALID_ARGUMENT(12000018)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_WrapKey0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_WrapKey_0200
+     * @tc.desc   testing OH_Huks_WrapKey interface OH_HUKS_ERR_CODE_INVALID_ARGUMENT(12000018)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_WrapKey0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -784,13 +784,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_WrapKey_0300
-     * @tc.name    testOH_Huks_WrapKey0300
-     * @tc.desc    testing OH_Huks_WrapKey interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_WrapKey0300
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_WrapKey_0300
+     * @tc.desc   testing OH_Huks_WrapKey interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_WrapKey0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -807,13 +807,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_UnwrapKey_0200
-     * @tc.name    testOH_Huks_UnwrapKey0200
-     * @tc.desc    testing OH_Huks_UnwrapKey interface OH_HUKS_ERR_CODE_INVALID_ARGUMENT(12000018)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_UnwrapKey0200
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_UnwrapKey_0200
+     * @tc.desc   testing OH_Huks_UnwrapKey interface OH_HUKS_ERR_CODE_INVALID_ARGUMENT(12000018)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_UnwrapKey0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -830,13 +830,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_InitParamSet_0100
-     * @tc.name    testOH_Huks_InitParamSet0100
-     * @tc.desc    testing OH_Huks_InitParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_InitParamSet0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_InitParamSet_0100
+     * @tc.desc   testing OH_Huks_InitParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_InitParamSet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -853,13 +853,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_AddParams_0100
-     * @tc.name    testOH_Huks_AddParams0100
-     * @tc.desc    testing OH_Huks_AddParams interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_AddParams0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_AddParams_0100
+     * @tc.desc   testing OH_Huks_AddParams interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_AddParams0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -876,13 +876,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_BuildParamSet_0100
-     * @tc.name    testOH_Huks_BuildParamSet0100
-     * @tc.desc    testing OH_Huks_BuildParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_BuildParamSet0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_BuildParamSet_0100
+     * @tc.desc   testing OH_Huks_BuildParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_BuildParamSet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -899,13 +899,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_CopyParamSet_0100
-     * @tc.name    testOH_Huks_CopyParamSet0100
-     * @tc.desc    testing OH_Huks_CopyParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_CopyParamSet0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_CopyParamSet_0100
+     * @tc.desc   testing OH_Huks_CopyParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_CopyParamSet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -922,13 +922,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GetParam_0100
-     * @tc.name    testOH_Huks_GetParam0100
-     * @tc.desc    testing OH_Huks_GetParam interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_GetParam0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_GetParam_0100
+     * @tc.desc   testing OH_Huks_GetParam interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_GetParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -945,13 +945,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_FreshParamSet_0100
-     * @tc.name    testOH_Huks_FreshParamSet0100
-     * @tc.desc    testing OH_Huks_FreshParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_FreshParamSet0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_FreshParamSet_0100
+     * @tc.desc   testing OH_Huks_FreshParamSet interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_FreshParamSet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -968,13 +968,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_IsParamSetTagValid_0100
-     * @tc.name    testOH_Huks_IsParamSetTagValid0100
-     * @tc.desc    testing OH_Huks_IsParamSetTagValid interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_IsParamSetTagValid0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_IsParamSetTagValid_0100
+     * @tc.desc   testing OH_Huks_IsParamSetTagValid interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_IsParamSetTagValid0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -991,13 +991,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_IsParamSetValid_0100
-     * @tc.name    testOH_Huks_IsParamSetValid0100
-     * @tc.desc    testing OH_Huks_IsParamSetValid interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_IsParamSetValid0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_IsParamSetValid_0100
+     * @tc.desc   testing OH_Huks_IsParamSetValid interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_IsParamSetValid0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1014,13 +1014,13 @@ export default function HuksApiTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_CheckParamMatch_0100
-     * @tc.name    testOH_Huks_CheckParamMatch0100
-     * @tc.desc    testing OH_Huks_CheckParamMatch interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-    */
+     * @tc.name   testOH_Huks_CheckParamMatch0100
+     * @tc.number SUB_SECURITY_HUKS_OH_Huks_CheckParamMatch_0100
+     * @tc.desc   testing OH_Huks_CheckParamMatch interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_Huks_CheckParamMatch0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

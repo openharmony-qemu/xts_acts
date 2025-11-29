@@ -68,10 +68,13 @@ describe("SensorJsTest_sensor_50", function () {
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let invalid  = -1;
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0120
-     * @tc.name: newSignificant_Motion_SensorJsTest012
-     * @tc.desc: Functional Use Cases
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest012
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0120
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("newSignificant_Motion_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('---------newSignificant_Motion_SensorJsTest012--------------');
@@ -82,10 +85,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0130
-     * @tc.name: newSignificant_Motion_SensorJsTest013
-     * @tc.desc: Illegal ID passed in
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0130
+     * @tc.desc   Illegal ID passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newSignificant_Motion_SensorJsTest013--------------');
@@ -103,10 +109,13 @@ describe("SensorJsTest_sensor_50", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0140
-     * @tc.name: newSignificant_Motion_SensorJsTest014
-     * @tc.desc: For normal scenarios
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0140
+     * @tc.desc   For normal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newSignificant_Motion_SensorJsTest014--------------');
@@ -119,10 +128,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0150
-     * @tc.name: newSignificant_Motion_SensorJsTest015
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest015
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0150
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info('---------newSignificant_Motion_SensorJsTest015--------------');
@@ -146,10 +158,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0160
-     * @tc.name: newSignificant_Motion_SensorJsTest016
-     * @tc.desc: Once Normal Subscription Scenario Use Case
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0160
+     * @tc.desc   Once Normal Subscription Scenario Use Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.SIGNIFICANT_MOTION, callback);
@@ -159,10 +174,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0170
-     * @tc.name: newSignificant_Motion_SensorJsTest017
-     * @tc.desc: Use case of illegal parameter passed into once interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0170
+     * @tc.desc   Use case of illegal parameter passed into once interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onceSensorCallback(data) {
@@ -180,10 +198,13 @@ describe("SensorJsTest_sensor_50", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0180
-     * @tc.name: newSignificant_Motion_SensorJsTest018
-     * @tc.desc: Use case of illegal parameter passed into off interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0180
+     * @tc.desc   Use case of illegal parameter passed into off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -196,10 +217,13 @@ describe("SensorJsTest_sensor_50", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0190
-     * @tc.name: newSignificant_Motion_SensorJsTest019
-     * @tc.desc: Unsubscribe directly without waiting after starting subscription
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest019
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0190
+     * @tc.desc   Unsubscribe directly without waiting after starting subscription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onSensorCallback(data) {
@@ -215,10 +239,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0200
-     * @tc.name: newSignificant_Motion_SensorJsTest020
-     * @tc.desc:SensorId1000000 of incoming exception
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest020
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0200
+     * @tc.desc   SensorId1000000 of incoming exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onSensorCallback(data) {
@@ -235,10 +262,13 @@ describe("SensorJsTest_sensor_50", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0210
-     * @tc.name: newSignificant_Motion_SensorJsTest021
-     * @tc.desc:Call interface multiple times
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest021
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0210
+     * @tc.desc   Call interface multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.on(sensor.SensorId.SIGNIFICANT_MOTION, (data)=>{
@@ -259,10 +289,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0220
-     * @tc.name: newSignificant_Motion_SensorJsTest022
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest022
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0220
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         try {
@@ -275,10 +308,13 @@ describe("SensorJsTest_sensor_50", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0230
-     * @tc.name: newSignificant_Motion_SensorJsTest023
-     * @tc.desc:Call on interface and once interface respectively, and use an off interface to close
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest023
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0230
+     * @tc.desc   Call on interface and once interface respectively, and use an off interface to close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newSignificant_Motion_SensorJsTest023--------------');
@@ -300,10 +336,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0240
-     * @tc.name: newSignificant_Motion_SensorJsTest024
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest024
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0240
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newSignificant_Motion_SensorJsTest024--------------');
@@ -325,10 +364,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0250
-     * @tc.name: newSignificant_Motion_SensorJsTest025
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest025
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0250
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newSignificant_Motion_SensorJsTest025--------------');
@@ -358,10 +400,13 @@ describe("SensorJsTest_sensor_50", function () {
         }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0260
-     * @tc.name: newSignificant_Motion_SensorJsTest026
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest026
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0260
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newSignificant_Motion_SensorJsTest026--------------');
@@ -384,10 +429,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 1000);
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0270
-     * @tc.name: newSignificant_Motion_SensorJsTest027
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest027
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0270
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newSignificant_Motion_SensorJsTest027--------------');
@@ -411,13 +459,13 @@ describe("SensorJsTest_sensor_50", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0280
-     * @tc.name: newSignificant_Motion_SensorJsTest028
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newSignificant_Motion_SensorJsTest028
+     * @tc.number SUB_SensorsSystem_SIGNIFICANT_MOTION_JSTest_0280
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newSignificant_Motion_SensorJsTest028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newSignificant_Motion_SensorJsTest028--------------');

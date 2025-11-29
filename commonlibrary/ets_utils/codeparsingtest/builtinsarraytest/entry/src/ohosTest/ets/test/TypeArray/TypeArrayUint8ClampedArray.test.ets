@@ -60,12 +60,12 @@ export default function typeArrayUint8ClampedArrayTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0001
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0001
-     * @tc.name TypeArrayUint8ClampedArray0001
-     * @tc.desc Create Uint8ClampedArray from length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Uint8ClampedArray from length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray(5);
@@ -79,12 +79,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0002
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0002
-     * @tc.name TypeArrayUint8ClampedArray0002
-     * @tc.desc Create Uint8ClampedArray from regular array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Uint8ClampedArray from regular array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
@@ -96,12 +96,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0003
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0003
-     * @tc.name TypeArrayUint8ClampedArray0003
-     * @tc.desc Create Uint8ClampedArray from TypedArray
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Uint8ClampedArray from TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const source = new Int16Array([5, 15, 25]);
@@ -114,12 +114,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0004
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0004
-     * @tc.name TypeArrayUint8ClampedArray0004
-     * @tc.desc Create from ArrayBuffer (with default offset and length)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create from ArrayBuffer (with default offset and length)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
@@ -139,12 +139,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0005
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0005
-     * @tc.name TypeArrayUint8ClampedArray0005
-     * @tc.desc Create from ArrayBuffer (with specified offset)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create from ArrayBuffer (with specified offset)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(10);
@@ -162,12 +162,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0006
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0006
-     * @tc.name TypeArrayUint8ClampedArray0006
-     * @tc.desc Verify BYTES_PER_ELEMENT property
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BYTES_PER_ELEMENT property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(Uint8ClampedArray.BYTES_PER_ELEMENT).assertEqual(1);
@@ -178,12 +178,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0007
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0007
-     * @tc.name TypeArrayUint8ClampedArray0007
-     * @tc.desc Verify relationship between buffer property and original buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify relationship between buffer property and original buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(5);
@@ -199,12 +199,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0008
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0008
-     * @tc.name TypeArrayUint8ClampedArray0008
-     * @tc.desc Verify length property
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify length property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4]);
@@ -219,12 +219,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0009
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0009
-     * @tc.name TypeArrayUint8ClampedArray0009
-     * @tc.desc Check if is an Array instance
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check if is an Array instance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray(3);
@@ -237,12 +237,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0010
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0010
-     * @tc.name TypeArrayUint8ClampedArray0010
-     * @tc.desc Verify behavior of empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify behavior of empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray(0);
@@ -252,12 +252,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0011
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0011
-     * @tc.name TypeArrayUint8ClampedArray0011
-     * @tc.desc Access elements by index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Access elements by index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray([10, 20, 30, 40]);
@@ -270,12 +270,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0012
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0012
-     * @tc.name TypeArrayUint8ClampedArray0012
-     * @tc.desc Modify elements by index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Modify elements by index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
@@ -289,12 +289,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0013
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0013
-     * @tc.name TypeArrayUint8ClampedArray0013
-     * @tc.desc Access out-of-range indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Access out-of-range indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray(3);
@@ -307,12 +307,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0014
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0014
-     * @tc.name TypeArrayUint8ClampedArray0014
-     * @tc.desc Verify automatic clamping for values greater than 255
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify automatic clamping for values greater than 255
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(2);
@@ -324,12 +324,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0015
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0015
-     * @tc.name TypeArrayUint8ClampedArray0015
-     * @tc.desc Verify automatic clamping for values less than 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify automatic clamping for values less than 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(2);
@@ -341,12 +341,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0016
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0016
-     * @tc.name TypeArrayUint8ClampedArray0016
-     * @tc.desc Verify handling of NaN values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify handling of NaN values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(1);
@@ -356,12 +356,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0017
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0017
-     * @tc.name TypeArrayUint8ClampedArray0017
-     * @tc.desc Verify handling of Infinity values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify handling of Infinity values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(2);
@@ -373,12 +373,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0020
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0020
-     * @tc.name TypeArrayUint8ClampedArray0020
-     * @tc.desc Modify elements in batch
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modify elements in batch
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(5);
@@ -395,12 +395,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0021
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0021
-     * @tc.name TypeArrayUint8ClampedArray0021
-     * @tc.desc Multiple views sharing the same ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple views sharing the same ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(4);
@@ -422,12 +422,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0022
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0022
-     * @tc.name TypeArrayUint8ClampedArray0022
-     * @tc.desc Create different types of views from Uint8ClampedArray
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create different types of views from Uint8ClampedArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([0x00, 0xFF, 0x80, 0x40]);
@@ -437,12 +437,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0023
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0023
-     * @tc.name TypeArrayUint8ClampedArray0023
-     * @tc.desc Verify impact of view modification on original array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify impact of view modification on original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(8);
@@ -463,12 +463,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0024
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0024
-     * @tc.name TypeArrayUint8ClampedArray0024
-     * @tc.desc Create views with different offsets
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create views with different offsets
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(10);
@@ -485,12 +485,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0025
-     * @tc.name TypeArrayUint8ClampedArray0025
-     * @tc.desc Exception handling when view boundaries exceed buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Exception handling when view boundaries exceed buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(5);
@@ -500,12 +500,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0026
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0026
-     * @tc.name TypeArrayUint8ClampedArray0026
-     * @tc.desc Interaction with DataView sharing the same buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Interaction with DataView sharing the same buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(8);
@@ -534,12 +534,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0027
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0027
-     * @tc.name TypeArrayUint8ClampedArray0027
-     * @tc.desc Modify Uint8ClampedArray values via DataView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modify Uint8ClampedArray values via DataView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(4);
@@ -555,12 +555,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0028
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0028
-     * @tc.name TypeArrayUint8ClampedArray0028
-     * @tc.desc Interaction of multi-level nested views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Interaction of multi-level nested views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(16);
@@ -593,12 +593,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0029
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0029
-     * @tc.name TypeArrayUint8ClampedArray0029
-     * @tc.desc Verify byteLength consistency of shared buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify byteLength consistency of shared buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(10);
@@ -615,12 +615,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0030
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0030
-     * @tc.name TypeArrayUint8ClampedArray0030
-     * @tc.desc Verify clamping behavior across views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify clamping behavior across views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(4);
@@ -641,12 +641,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0031
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0031
-     * @tc.name TypeArrayUint8ClampedArray0031
-     * @tc.desc set method: copy from regular array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   set method: copy from regular array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(5);
@@ -661,12 +661,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0032
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0032
-     * @tc.name TypeArrayUint8ClampedArray0032
-     * @tc.desc set method: copy with offset
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   set method: copy with offset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(6);
@@ -683,12 +683,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0033
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0033
-     * @tc.name TypeArrayUint8ClampedArray0033
-     * @tc.desc set method: handle out-of-range values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   set method: handle out-of-range values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(3);
@@ -701,12 +701,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0034
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0034
-     * @tc.name TypeArrayUint8ClampedArray0034
-     * @tc.desc subarray method: create subarray
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   subarray method: create subarray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -720,12 +720,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0035
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0035
-     * @tc.name TypeArrayUint8ClampedArray0035
-     * @tc.desc slice method: create copy
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   slice method: create copy
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
@@ -738,12 +738,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0036
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0036
-     * @tc.name TypeArrayUint8ClampedArray0036
-     * @tc.desc fill method: fill with single value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   fill method: fill with single value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(4);
@@ -757,12 +757,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0037
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0037
-     * @tc.name TypeArrayUint8ClampedArray0037
-     * @tc.desc fill method: fill with out-of-range values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   fill method: fill with out-of-range values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(3);
@@ -775,12 +775,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0038
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0038
-     * @tc.name TypeArrayUint8ClampedArray0038
-     * @tc.desc map method: transform elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   map method: transform elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
@@ -793,12 +793,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0039
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0039
-     * @tc.name TypeArrayUint8ClampedArray0039
-     * @tc.desc map method: handle clamping
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   map method: handle clamping
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([50, 60, 70]);
@@ -811,12 +811,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0040
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0040
-     * @tc.name TypeArrayUint8ClampedArray0040
-     * @tc.desc filter method: filter elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   filter method: filter elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 100, 200, 255, 50]);
@@ -828,12 +828,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0041
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0041
-     * @tc.name TypeArrayUint8ClampedArray0041
-     * @tc.desc reduce method: calculate sum
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   reduce method: calculate sum
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30, 40]);
@@ -842,12 +842,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0042
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0042
-     * @tc.name TypeArrayUint8ClampedArray0042
-     * @tc.desc every method: check all elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   every method: check all elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([50, 100, 150]);
@@ -858,12 +858,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0043
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0043
-     * @tc.name TypeArrayUint8ClampedArray0043
-     * @tc.desc some method: check if any element exists
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   some method: check if any element exists
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([50, 100, 150]);
@@ -874,12 +874,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0044
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0044
-     * @tc.name TypeArrayUint8ClampedArray0044
-     * @tc.desc find method: find element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   find method: find element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([30, 70, 50, 90, 50]);
@@ -890,12 +890,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0045
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0045
-     * @tc.name TypeArrayUint8ClampedArray0045
-     * @tc.desc findIndex method: find index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   findIndex method: find index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([30, 70, 50, 90, 50]);
@@ -906,12 +906,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0046
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0046
-     * @tc.name TypeArrayUint8ClampedArray0046
-     * @tc.desc includes method: check if element exists
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   includes method: check if element exists
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30, 255]);
@@ -925,12 +925,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0047
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0047
-     * @tc.name TypeArrayUint8ClampedArray0047
-     * @tc.desc indexOf method: find index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   indexOf method: find index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([5, 10, 15, 10, 20]);
@@ -945,12 +945,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0048
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0048
-     * @tc.name TypeArrayUint8ClampedArray0048
-     * @tc.desc lastIndexOf method: find last index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   lastIndexOf method: find last index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([5, 10, 15, 10, 20]);
@@ -965,12 +965,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0049
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0049
-     * @tc.name TypeArrayUint8ClampedArray0049
-     * @tc.desc join method: concatenate into string
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   join method: concatenate into string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([255, 128, 0]);
@@ -983,12 +983,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0050
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0050
-     * @tc.name TypeArrayUint8ClampedArray0050
-     * @tc.desc values iterator: usage
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values iterator: usage
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
@@ -1001,12 +1001,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0051
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0051
-     * @tc.name TypeArrayUint8ClampedArray0051
-     * @tc.desc Convert to regular array (Array.from)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to regular array (Array.from)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([10, 20, 30]);
@@ -1017,12 +1017,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0052
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0052
-     * @tc.name TypeArrayUint8ClampedArray0052
-     * @tc.desc Convert to regular array (spread operator)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to regular array (spread operator)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([5, 15, 25]);
@@ -1033,12 +1033,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0053
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0053
-     * @tc.name TypeArrayUint8ClampedArray0053
-     * @tc.desc Convert to Uint8Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to Uint8Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([100, 200, 255]);
@@ -1049,12 +1049,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0054
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0054
-     * @tc.name TypeArrayUint8ClampedArray0054
-     * @tc.desc Convert to Int32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([10, 20, 30]);
@@ -1065,12 +1065,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0055
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0055
-     * @tc.name TypeArrayUint8ClampedArray0055
-     * @tc.desc Interaction with JSON.stringify
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Interaction with JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([1, 2, 3, 4]);
@@ -1079,12 +1079,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0057
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0057
-     * @tc.name TypeArrayUint8ClampedArray0057
-     * @tc.desc Convert to string (toString)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to string (toString)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([255, 0, 128]);
@@ -1093,12 +1093,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0058
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0058
-     * @tc.name TypeArrayUint8ClampedArray0058
-     * @tc.desc Convert to ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([5, 6, 7]);
@@ -1108,12 +1108,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0059
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0059
-     * @tc.name TypeArrayUint8ClampedArray0059
-     * @tc.desc Convert from Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert from Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const float32 = new Float32Array([-1.5, 128.3, 300.9]);
@@ -1123,12 +1123,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0060
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0060
-     * @tc.name TypeArrayUint8ClampedArray0060
-     * @tc.desc Convert to string (toLocaleString)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to string (toLocaleString)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([1000, 200, 300]);
@@ -1137,12 +1137,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0061
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0061
-     * @tc.name TypeArrayUint8ClampedArray0061
-     * @tc.desc Handling of maximum value (255)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handling of maximum value (255)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(1);
@@ -1152,12 +1152,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0062
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0062
-     * @tc.name TypeArrayUint8ClampedArray0062
-     * @tc.desc Handling of minimum value (0)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handling of minimum value (0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(1);
@@ -1167,12 +1167,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0063
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0063
-     * @tc.name TypeArrayUint8ClampedArray0063
-     * @tc.desc Clamping of values exceeding maximum (255)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clamping of values exceeding maximum (255)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const values = [256, 300, 1000, 2147483647];
@@ -1181,12 +1181,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0064
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0064
-     * @tc.name TypeArrayUint8ClampedArray0064
-     * @tc.desc Clamping of values below minimum (0)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clamping of values below minimum (0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const values = [-1, -50, -1000, -2147483648];
@@ -1195,12 +1195,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0065
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0065
-     * @tc.name TypeArrayUint8ClampedArray0065
-     * @tc.desc Handling of NaN values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handling of NaN values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(2);
@@ -1212,12 +1212,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0066
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0066
-     * @tc.name TypeArrayUint8ClampedArray0066
-     * @tc.desc Handling of Infinity values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handling of Infinity values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(2);
@@ -1229,12 +1229,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0069
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0069
-     * @tc.name TypeArrayUint8ClampedArray0069
-     * @tc.desc Very large array (close to maximum length)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Very large array (close to maximum length)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const maxLength = Math.pow(2, 28) - 1;
@@ -1247,12 +1247,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0071
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0071
-     * @tc.name TypeArrayUint8ClampedArray0071
-     * @tc.desc Pixel data processing (RGBA values)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Pixel data processing (RGBA values)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const pixels = new Uint8ClampedArray([255, 0, 0, 255,
@@ -1269,12 +1269,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0072
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0072
-     * @tc.name TypeArrayUint8ClampedArray0072
-     * @tc.desc Brightness adjustment in image processing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Brightness adjustment in image processing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const adjustBrightness = (pixels: Uint8ClampedArray, value: number) => {
@@ -1295,12 +1295,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0073
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0073
-     * @tc.name TypeArrayUint8ClampedArray0073
-     * @tc.desc Color channel separation (extract red channel)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Color channel separation (extract red channel)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const extractRedChannel = (pixels: Uint8ClampedArray) => {
@@ -1317,12 +1317,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0074
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0074
-     * @tc.name TypeArrayUint8ClampedArray0074
-     * @tc.desc Simple contrast adjustment in image processing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Simple contrast adjustment in image processing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const adjustContrast = (pixels: Uint8ClampedArray, factor: number) => {
@@ -1339,12 +1339,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0075
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0075
-     * @tc.name TypeArrayUint8ClampedArray0075
-     * @tc.desc Simple invert filter for images
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Simple invert filter for images
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const invertColors = (pixels: Uint8ClampedArray) => {
@@ -1362,12 +1362,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0076
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0076
-     * @tc.name TypeArrayUint8ClampedArray0076
-     * @tc.desc 8-bit audio sample data processing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   8-bit audio sample data processing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const normalizeAudio = (samples: Uint8ClampedArray) => {
@@ -1380,12 +1380,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0077
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0077
-     * @tc.name TypeArrayUint8ClampedArray0077
-     * @tc.desc Byte processing in data compression algorithms
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Byte processing in data compression algorithms
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const deltaEncode = (data: Uint8ClampedArray) => {
@@ -1403,12 +1403,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0078
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0078
-     * @tc.name TypeArrayUint8ClampedArray0078
-     * @tc.desc Network protocol packet construction
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Network protocol packet construction
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buildHeader = (version: number, length: number) => {
@@ -1426,12 +1426,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0079
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0079
-     * @tc.name TypeArrayUint8ClampedArray0079
-     * @tc.desc Data checksum calculation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Data checksum calculation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calculateChecksum = (data: Uint8ClampedArray) => {
@@ -1444,12 +1444,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0080
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0080
-     * @tc.name TypeArrayUint8ClampedArray0080
-     * @tc.desc Binary file read/write simulation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Binary file read/write simulation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const readFileHeader = (data: Uint8ClampedArray) => {
@@ -1465,12 +1465,12 @@ export default function typeArrayUint8ClampedArrayTest() {
       expect(header.version).assertEqual(3);
     })
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0081
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0081
-     * @tc.name TypeArrayUint8ClampedArray0081
-     * @tc.desc Verify iterator behavior with for...of loop
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator behavior with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
@@ -1483,12 +1483,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0082
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0082
-     * @tc.name TypeArrayUint8ClampedArray0082
-     * @tc.desc Verify keys iterator functionality
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify keys iterator functionality
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(3);
@@ -1497,12 +1497,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0083
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0083
-     * @tc.name TypeArrayUint8ClampedArray0083
-     * @tc.desc Verify entries iterator returns [index, value] pairs
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries iterator returns [index, value] pairs
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([5, 15]);
@@ -1511,12 +1511,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0084
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0084
-     * @tc.name TypeArrayUint8ClampedArray0084
-     * @tc.desc Verify copyWithin method basic functionality
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify copyWithin method basic functionality
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -1525,12 +1525,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0085
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0085
-     * @tc.name TypeArrayUint8ClampedArray0085
-     * @tc.desc Verify copyWithin with target, start and end parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify copyWithin with target, start and end parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -1539,12 +1539,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0086
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0086
-     * @tc.name TypeArrayUint8ClampedArray0086
-     * @tc.desc Verify handling of non-integer values during creation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify handling of non-integer values during creation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1.2, 2.9, 3.5]);
@@ -1552,12 +1552,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0087
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0087
-     * @tc.name TypeArrayUint8ClampedArray0087
-     * @tc.desc Verify reduceRight method functionality
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify reduceRight method functionality
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([2, 3, 4]);
@@ -1566,12 +1566,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0088
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0088
-     * @tc.name TypeArrayUint8ClampedArray0088
-     * @tc.desc Verify sort method with default comparator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify sort method with default comparator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([3, 1, 4, 2]);
@@ -1580,12 +1580,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0089
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0089
-     * @tc.name TypeArrayUint8ClampedArray0089
-     * @tc.desc Verify sort method with custom comparator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify sort method with custom comparator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([3, 1, 4, 2]);
@@ -1594,12 +1594,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0090
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0090
-     * @tc.name TypeArrayUint8ClampedArray0090
-     * @tc.desc Verify buffer transfer between TypedArrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify buffer transfer between TypedArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([10, 20, 30]);
@@ -1608,12 +1608,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0091
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0091
-     * @tc.name TypeArrayUint8ClampedArray0091
-     * @tc.desc Verify handling of large buffer with multiple views
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of large buffer with multiple views
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(100);
@@ -1628,12 +1628,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0092
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0092
-     * @tc.name TypeArrayUint8ClampedArray0092
-     * @tc.desc Verify behavior when setting values through parent buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify behavior when setting values through parent buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(4);
@@ -1645,12 +1645,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0094
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0094
-     * @tc.name TypeArrayUint8ClampedArray0094
-     * @tc.desc Verify handling of 0-length subarray
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify handling of 0-length subarray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
@@ -1660,12 +1660,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0097
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0097
-     * @tc.name TypeArrayUint8ClampedArray0097
-     * @tc.desc Verify handling of clamped values in multi-step operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of clamped values in multi-step operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const processData = (data: Uint8ClampedArray) => {
@@ -1681,12 +1681,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0098
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0098
-     * @tc.name TypeArrayUint8ClampedArray0098
-     * @tc.desc Verify compatibility with ArrayBuffer.isView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify compatibility with ArrayBuffer.isView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(1);
@@ -1696,12 +1696,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0099
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0099
-     * @tc.name TypeArrayUint8ClampedArray0099
-     * @tc.desc Verify interaction with DataView for multi-byte values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify interaction with DataView for multi-byte values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(4);
@@ -1715,12 +1715,12 @@ export default function typeArrayUint8ClampedArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0102
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0102
-     * @tc.name TypeArrayUint8ClampedArray0102
-     * @tc.desc Verify subarray updates reflect in original array (buffer sharing)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subarray updates reflect in original array (buffer sharing)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = new Uint8ClampedArray([10, 20, 30, 40]);
@@ -1739,12 +1739,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0103
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0103
-     * @tc.name TypeArrayUint8ClampedArray0103
-     * @tc.desc Verify slice creates independent copy (no buffer sharing)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify slice creates independent copy (no buffer sharing)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = new Uint8ClampedArray([5, 15, 25]);
@@ -1761,12 +1761,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0104
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0104
-     * @tc.name TypeArrayUint8ClampedArray0104
-     * @tc.desc Verify set method handles out-of-bounds source (truncates safely)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify set method handles out-of-bounds source (truncates safely)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const target = new Uint8ClampedArray(3);
@@ -1784,12 +1784,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0105
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0105
-     * @tc.name TypeArrayUint8ClampedArray0105
-     * @tc.desc Verify set method with offset (avoids overwriting early elements)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify set method with offset (avoids overwriting early elements)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const target = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -1806,12 +1806,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0106
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0106
-     * @tc.name TypeArrayUint8ClampedArray0106
-     * @tc.desc Verify includes method with clamped values (e.g., 300 → 255)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify includes method with clamped values (e.g., 300 → 255)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([100, 300, -50]);
@@ -1825,12 +1825,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0107
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0107
-     * @tc.name TypeArrayUint8ClampedArray0107
-     * @tc.desc Verify indexOf with duplicate clamped values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify indexOf with duplicate clamped values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([200, 280, 255, 300]);
@@ -1842,12 +1842,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0108
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0108
-     * @tc.name TypeArrayUint8ClampedArray0108
-     * @tc.desc Verify map returns Uint8ClampedArray (preserves type)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify map returns Uint8ClampedArray (preserves type)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = new Uint8ClampedArray([10, 20]);
@@ -1860,12 +1860,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0109
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0109
-     * @tc.name TypeArrayUint8ClampedArray0109
-     * @tc.desc Verify filter returns Uint8ClampedArray (preserves type)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify filter returns Uint8ClampedArray (preserves type)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = new Uint8ClampedArray([5, 15, 25, 35]);
@@ -1878,12 +1878,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0110
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0110
-     * @tc.name TypeArrayUint8ClampedArray0110
-     * @tc.desc Verify fill with negative offset (starts from end)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify fill with negative offset (starts from end)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -1898,12 +1898,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0111
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0111
-     * @tc.name TypeArrayUint8ClampedArray0111
-     * @tc.desc Verify copyWithin with negative indices (relative to end)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify copyWithin with negative indices (relative to end)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -1918,12 +1918,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0112
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0112
-     * @tc.name TypeArrayUint8ClampedArray0112
-     * @tc.desc Verify interaction with SharedArrayBuffer (basic read/write)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify interaction with SharedArrayBuffer (basic read/write)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       if (typeof SharedArrayBuffer !== 'function') {
@@ -1943,12 +1943,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0115
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0115
-     * @tc.name TypeArrayUint8ClampedArray0115
-     * @tc.desc Verify real-world: Grayscale image pixel normalization
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Grayscale image pixel normalization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const normalizeGrayscale = (floatPixels: number[]): Uint8ClampedArray => {
@@ -1966,12 +1966,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0122
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0122
-     * @tc.name TypeArrayUint8ClampedArray0122
-     * @tc.desc Verify every() method with clamping-aware predicate
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify every() method with clamping-aware predicate
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([100, 200, 300]);
@@ -1984,12 +1984,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0123
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0123
-     * @tc.name TypeArrayUint8ClampedArray0123
-     * @tc.desc Verify some() method with clamping-aware predicate
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify some() method with clamping-aware predicate
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([50, 150, -50]);
@@ -2000,12 +2000,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0124
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0124
-     * @tc.name TypeArrayUint8ClampedArray0124
-     * @tc.desc Verify find() method with clamping-aware predicate
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify find() method with clamping-aware predicate
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([250, 300, 200]);
@@ -2019,12 +2019,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0125
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0125
-     * @tc.name TypeArrayUint8ClampedArray0125
-     * @tc.desc Verify findIndex() method with clamping-aware predicate
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify findIndex() method with clamping-aware predicate
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([100, -50, 280]);
@@ -2036,12 +2036,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0126
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0126
-     * @tc.name TypeArrayUint8ClampedArray0126
-     * @tc.desc Verify join() with custom separator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify join() with custom separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([255, 0, 128]);
@@ -2055,12 +2055,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0127
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0127
-     * @tc.name TypeArrayUint8ClampedArray0127
-     * @tc.desc Verify conversion to Float64Array preserves clamped values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify conversion to Float64Array preserves clamped values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const clamped = new Uint8ClampedArray([300, -50, 128]);
@@ -2074,12 +2074,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0131
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0131
-     * @tc.name TypeArrayUint8ClampedArray0131
-     * @tc.desc Verify real-world: Image pixel inversion with alpha preservation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Image pixel inversion with alpha preservation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const invertImage = (pixels: Uint8ClampedArray) => {
@@ -2107,12 +2107,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0132
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0132
-     * @tc.name TypeArrayUint8ClampedArray0132
-     * @tc.desc Verify real-world: Color channel extraction (green channel)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Color channel extraction (green channel)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const extractGreenChannel = (pixels: Uint8ClampedArray) => {
@@ -2132,12 +2132,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0133
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0133
-     * @tc.name TypeArrayUint8ClampedArray0133
-     * @tc.desc Verify real-world: Simple encryption (XOR with key)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Simple encryption (XOR with key)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const xorEncrypt = (data: Uint8ClampedArray, key: number) => {
@@ -2156,12 +2156,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0134
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0134
-     * @tc.name TypeArrayUint8ClampedArray0134
-     * @tc.desc Verify real-world: Sensor data normalization
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Sensor data normalization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -2184,12 +2184,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0135
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0135
-     * @tc.name TypeArrayUint8ClampedArray0135
-     * @tc.desc Verify real-world: Network packet parsing (header fields)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Network packet parsing (header fields)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const parsePacketHeader = (buffer: Uint8ClampedArray) => {
@@ -2208,12 +2208,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0136
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0136
-     * @tc.name TypeArrayUint8ClampedArray0136
-     * @tc.desc Verify real-world: Canvas pixel manipulation simulation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Canvas pixel manipulation simulation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const adjustCanvasBrightness = (pixels: Uint8ClampedArray, factor: number) => {
@@ -2235,12 +2235,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0137
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0137
-     * @tc.name TypeArrayUint8ClampedArray0137
-     * @tc.desc Verify real-world: 8-bit audio sample processing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: 8-bit audio sample processing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -2261,12 +2261,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0138
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0138
-     * @tc.name TypeArrayUint8ClampedArray0138
-     * @tc.desc Verify real-world: Simple checksum calculation (XOR)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Simple checksum calculation (XOR)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calculateXorChecksum = (data: Uint8ClampedArray): number => {
@@ -2280,12 +2280,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0139
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0139
-     * @tc.name TypeArrayUint8ClampedArray0139
-     * @tc.desc Verify real-world: Binary file header creation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Binary file header creation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const createFileHeader = (fileType: string, version: number) => {
@@ -2311,12 +2311,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0140
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0140
-     * @tc.name TypeArrayUint8ClampedArray0140
-     * @tc.desc Verify real-world: Color palette generation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Color palette generation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const createGrayscalePalette = (): Uint8ClampedArray => {
@@ -2343,12 +2343,12 @@ export default function typeArrayUint8ClampedArrayTest() {
       expect(palette[764]).assertEqual(254);
     })
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0142
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0142
-     * @tc.name TypeArrayUint8ClampedArray0142
-     * @tc.desc Verify interaction between sort() and clamped values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify interaction between sort() and clamped values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([300, -50, 150, 200]);
@@ -2362,12 +2362,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0143
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0143
-     * @tc.name TypeArrayUint8ClampedArray0143
-     * @tc.desc Verify reduce() with initial value of different type
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify reduce() with initial value of different type
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
@@ -2381,12 +2381,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0144
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0144
-     * @tc.name TypeArrayUint8ClampedArray0144
-     * @tc.desc Verify subarray() with negative indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subarray() with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -2398,12 +2398,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0145
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0145
-     * @tc.name TypeArrayUint8ClampedArray0145
-     * @tc.desc Verify slice() with negative indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify slice() with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30, 40, 50]);
@@ -2416,12 +2416,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0146
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0146
-     * @tc.name TypeArrayUint8ClampedArray0146
-     * @tc.desc Verify indexOf() with fromIndex parameter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify indexOf() with fromIndex parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([50, 50, 50, 50]);
@@ -2430,12 +2430,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0147
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0147
-     * @tc.name TypeArrayUint8ClampedArray0147
-     * @tc.desc Verify lastIndexOf() with fromIndex parameter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify lastIndexOf() with fromIndex parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([50, 50, 50, 50]);
@@ -2444,12 +2444,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0148
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0148
-     * @tc.name TypeArrayUint8ClampedArray0148
-     * @tc.desc Verify includes() with fromIndex parameter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify includes() with fromIndex parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30, 20, 10]);
@@ -2458,12 +2458,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0149
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0149
-     * @tc.name TypeArrayUint8ClampedArray0149
-     * @tc.desc Verify fill() with start and end parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify fill() with start and end parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
@@ -2478,12 +2478,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0152
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0152
-     * @tc.name TypeArrayUint8ClampedArray0152
-     * @tc.desc Verify real-world: Gamma correction for image pixels
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Gamma correction for image pixels
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const applyGamma = (pixels: Uint8ClampedArray, gamma: number) => {
@@ -2505,12 +2505,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0154
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0154
-     * @tc.name TypeArrayUint8ClampedArray0154
-     * @tc.desc Verify real-world: Data chunking for network transmission
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Data chunking for network transmission
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const chunkData = (data: Uint8ClampedArray, chunkSize: number): Uint8ClampedArray[] => {
@@ -2530,12 +2530,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0155
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0155
-     * @tc.name TypeArrayUint8ClampedArray0155
-     * @tc.desc Verify real-world: Histogram calculation for image analysis
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Histogram calculation for image analysis
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calculateHistogram = (pixels: Uint8ClampedArray): Uint8ClampedArray => {
@@ -2553,12 +2553,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0156
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0156
-     * @tc.name TypeArrayUint8ClampedArray0156
-     * @tc.desc Verify real-world: Simple image thresholding (black & white)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Simple image thresholding (black & white)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const applyThreshold = (pixels: Uint8ClampedArray, threshold: number) => {
@@ -2577,12 +2577,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0157
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0157
-     * @tc.name TypeArrayUint8ClampedArray0157
-     * @tc.desc Verify real-world: 8-bit data compression (run-length encoding)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: 8-bit data compression (run-length encoding)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const encodeRLE = (data: Uint8ClampedArray): Uint8ClampedArray => {
@@ -2614,12 +2614,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0158
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0158
-     * @tc.name TypeArrayUint8ClampedArray0158
-     * @tc.desc Verify real-world: Battery level monitoring (normalization)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Battery level monitoring (normalization)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const normalizeBatteryLevels = (voltages: number[]): Uint8ClampedArray => {
@@ -2638,12 +2638,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0159
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0159
-     * @tc.name TypeArrayUint8ClampedArray0159
-     * @tc.desc Verify real-world: LED matrix control data formatting
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: LED matrix control data formatting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const formatLedData = (brightness: number[][]): Uint8ClampedArray => {
@@ -2661,12 +2661,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0160
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0160
-     * @tc.name TypeArrayUint8ClampedArray0160
-     * @tc.desc Verify real-world: Temperature sensor data conversion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Temperature sensor data conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const convertTemperatures = (temps: number[]): Uint8ClampedArray => {
@@ -2686,12 +2686,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0162
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0162
-     * @tc.name TypeArrayUint8ClampedArray0162
-     * @tc.desc Verify reduceRight() with non-numeric initial value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify reduceRight() with non-numeric initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
@@ -2701,12 +2701,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0163
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0163
-     * @tc.name TypeArrayUint8ClampedArray0163
-     * @tc.desc Verify handling of very large float values during assignment
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify handling of very large float values during assignment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray(2);
@@ -2719,12 +2719,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0164
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0164
-     * @tc.name TypeArrayUint8ClampedArray0164
-     * @tc.desc Verify buffer byteLength and byteOffset properties
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   Verify buffer byteLength and byteOffset properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint8ClampedArray0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(10);
@@ -2736,12 +2736,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0165
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0165
-     * @tc.name TypeArrayUint8ClampedArray0165
-     * @tc.desc Verify iterator behavior after array modification
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator behavior after array modification
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
@@ -2754,12 +2754,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0168
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0168
-     * @tc.name TypeArrayUint8ClampedArray0168
-     * @tc.desc Verify real-world: Medical image pixel windowing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Medical image pixel windowing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const applyWindow = (pixels: number[], windowCenter: number, windowWidth: number) => {
@@ -2780,12 +2780,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0169
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0169
-     * @tc.name TypeArrayUint8ClampedArray0169
-     * @tc.desc Verify real-world: Audio equalizer effect (gain per frequency)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Audio equalizer effect (gain per frequency)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const applyEqualizer = (samples: Uint8ClampedArray, gains: number[]) => {
@@ -2809,12 +2809,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0170
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0170
-     * @tc.name TypeArrayUint8ClampedArray0170
-     * @tc.desc Verify real-world: QR code module data encoding
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: QR code module data encoding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const encodeQrPixels = (modules: number[][]): Uint8ClampedArray => {
@@ -2849,12 +2849,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0171
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0171
-     * @tc.name TypeArrayUint8ClampedArray0171
-     * @tc.desc Verify real-world: Industrial sensor data aggregation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Industrial sensor data aggregation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const aggregateSensorData = (readings: number[][]): Uint8ClampedArray => {
@@ -2876,12 +2876,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0172
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0172
-     * @tc.name TypeArrayUint8ClampedArray0172
-     * @tc.desc Verify real-world: Color lookup table (LUT) application
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Color lookup table (LUT) application
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const applyLUT = (grayPixels: Uint8ClampedArray, lut: Uint8ClampedArray) => {
@@ -2914,12 +2914,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0173
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0173
-     * @tc.name TypeArrayUint8ClampedArray0173
-     * @tc.desc Verify real-world: GPS coordinate encoding (simple)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: GPS coordinate encoding (simple)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const encodeCoordinates = (lat: number, lon: number): Uint8ClampedArray => {
@@ -2935,12 +2935,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0174
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0174
-     * @tc.name TypeArrayUint8ClampedArray0174
-     * @tc.desc Verify real-world: Barcode data encoding (Code 128)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Barcode data encoding (Code 128)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const encodeBarcode = (modules: number[], height: number): Uint8ClampedArray => {
@@ -2973,12 +2973,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0175
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0175
-     * @tc.name TypeArrayUint8ClampedArray0175
-     * @tc.desc Verify real-world: LED display color blending
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: LED display color blending
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const blendColors = (
@@ -3004,12 +3004,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0176
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0176
-     * @tc.name TypeArrayUint8ClampedArray0176
-     * @tc.desc Verify real-world: Automotive sensor data normalization
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Automotive sensor data normalization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const normalizeCarSensors = (values: GeneratedTypeLiteralInterface_1): Uint8ClampedArray => {
@@ -3030,12 +3030,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0177
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0177
-     * @tc.name TypeArrayUint8ClampedArray0177
-     * @tc.desc Verify real-world: Text rendering (glyph bitmap generation)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Text rendering (glyph bitmap generation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -3060,12 +3060,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0178
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0178
-     * @tc.name TypeArrayUint8ClampedArray0178
-     * @tc.desc Verify real-world: Robotics motor speed calibration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Robotics motor speed calibration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calibrateSpeeds = (speeds: number[]): Uint8ClampedArray => {
@@ -3085,12 +3085,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0179
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0179
-     * @tc.name TypeArrayUint8ClampedArray0179
-     * @tc.desc Verify real-world: Weather station data encoding
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Weather station data encoding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const encodeWeatherData = (data: GeneratedTypeLiteralInterface_2): Uint8ClampedArray => {
@@ -3109,12 +3109,12 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint8ClampedArray0180
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0180
-     * @tc.name TypeArrayUint8ClampedArray0180
-     * @tc.desc Verify real-world: Security system motion detection
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify real-world: Security system motion detection
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint8ClampedArray0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const detectMotion = (

@@ -61,7 +61,6 @@ export default function usbCanIUseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbCanIUse001
      * @tc.number SUB_Driver_Ext_USBCanIUse_0100
      * @tc.desc   OH_Usb_CanIUse Interface testing

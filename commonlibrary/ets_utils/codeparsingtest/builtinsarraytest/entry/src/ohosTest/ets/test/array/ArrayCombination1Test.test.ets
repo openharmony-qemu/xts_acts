@@ -48,12 +48,12 @@ export default function ArrayConstructor1Test() {
     })
 
     /**
+     * @tc.name   ArrayConstructor1Test001
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0100
-     * @tc.name ArrayConstructor1Test001
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [];
@@ -63,12 +63,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test002
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0200
-     * @tc.name ArrayConstructor1Test002
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -78,12 +78,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test003
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0300
-     * @tc.name ArrayConstructor1Test003
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1]];
@@ -95,12 +95,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test004
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0400
-     * @tc.name ArrayConstructor1Test004
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -112,12 +112,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test005
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0500
-     * @tc.name ArrayConstructor1Test005
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [NaN, 2, 1];
@@ -136,12 +136,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test006
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0600
-     * @tc.name ArrayConstructor1Test006
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[], [1], []];
@@ -153,24 +153,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test007
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0700
-     * @tc.name ArrayConstructor1Test007
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test007()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test008
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0800
-     * @tc.name ArrayConstructor1Test008
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [10, 20, 30, 40];
@@ -182,12 +182,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test009
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST0900
-     * @tc.name ArrayConstructor1Test009
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [42];
@@ -198,12 +198,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test010
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1000
-     * @tc.name ArrayConstructor1Test010
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[Infinity], [-Infinity], [0]];
@@ -216,12 +216,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test011
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1100
-     * @tc.name ArrayConstructor1Test011
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -234,12 +234,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test012
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1200
-     * @tc.name ArrayConstructor1Test012
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -251,12 +251,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test013
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1300
-     * @tc.name ArrayConstructor1Test013
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[[1]], [[2]]];
@@ -268,12 +268,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test014
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1400
-     * @tc.name ArrayConstructor1Test014
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [5, 5, 5];
@@ -285,12 +285,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test015
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1500
-     * @tc.name ArrayConstructor1Test015
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1];
@@ -302,12 +302,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test016
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1600
-     * @tc.name ArrayConstructor1Test016
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2, 3]];
@@ -319,12 +319,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test017
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1700
-     * @tc.name ArrayConstructor1Test017
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, undefined, 3];
@@ -336,12 +336,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test018
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1800
-     * @tc.name ArrayConstructor1Test018
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [3, 1, 2];
@@ -355,12 +355,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test019
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST1900
-     * @tc.name ArrayConstructor1Test019
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [['a'], ['b']];
@@ -372,12 +372,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test020
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2000
-     * @tc.name ArrayConstructor1Test020
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -389,24 +389,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test021
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2100
-     * @tc.name ArrayConstructor1Test021
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test021()).assertDeepEquals([[1, -0, 0], true, [1, -0, 0], true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test022
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2200
-     * @tc.name ArrayConstructor1Test022
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[], [], []];
@@ -418,12 +418,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test023
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2300
-     * @tc.name ArrayConstructor1Test023
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -439,12 +439,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test024
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2400
-     * @tc.name ArrayConstructor1Test024
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [10, 20];
@@ -456,12 +456,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test025
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2500
-     * @tc.name ArrayConstructor1Test025
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ['ab'];
@@ -473,24 +473,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test026
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2600
-     * @tc.name ArrayConstructor1Test026
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test026()).assertDeepEquals([[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test027
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2700
-     * @tc.name ArrayConstructor1Test027
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -502,12 +502,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test028
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2800
-     * @tc.name ArrayConstructor1Test028
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2, 3]];
@@ -519,12 +519,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test029
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST2900
-     * @tc.name ArrayConstructor1Test029
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [3, 1, 4, 1, 5];
@@ -536,24 +536,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test030
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3000
-     * @tc.name ArrayConstructor1Test030
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test030()).assertDeepEquals([true, true, [0, 0]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test031
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3100
-     * @tc.name ArrayConstructor1Test031
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let caught = false;
@@ -572,24 +572,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test032
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3200
-     * @tc.name ArrayConstructor1Test032
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test032()).assertDeepEquals([[999, 999], [999, 999]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test033
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3300
-     * @tc.name ArrayConstructor1Test033
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ["hi"];
@@ -601,12 +601,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test034
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3400
-     * @tc.name ArrayConstructor1Test034
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const orig = [1, 2, 3];
@@ -621,12 +621,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test035
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3500
-     * @tc.name ArrayConstructor1Test035
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [3, 1, 2];
@@ -639,24 +639,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test036
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3600
-     * @tc.name ArrayConstructor1Test036
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test036()).assertDeepEquals([[1, undefined], [1, NaN]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test037
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3700
-     * @tc.name ArrayConstructor1Test037
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -668,12 +668,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test038
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3800
-     * @tc.name ArrayConstructor1Test038
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a = [10, 20, 30];
@@ -691,12 +691,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test039
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST3900
-     * @tc.name ArrayConstructor1Test039
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -708,12 +708,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test040
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4000
-     * @tc.name ArrayConstructor1Test040
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -725,12 +725,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test041
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4100
-     * @tc.name ArrayConstructor1Test041
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -752,12 +752,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test042
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4200
-     * @tc.name ArrayConstructor1Test042
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2]];
@@ -769,12 +769,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test043
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4300
-     * @tc.name ArrayConstructor1Test043
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let factor = -1;
@@ -788,36 +788,36 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test044
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4400
-     * @tc.name ArrayConstructor1Test044
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test044()).assertDeepEquals([{ "a": 1 }, { "a": 1 }, [999, 999]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test045
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4500
-     * @tc.name ArrayConstructor1Test045
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test045()).assertDeepEquals([['y', 'x'], [20, 10]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test046
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4600
-     * @tc.name ArrayConstructor1Test046
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4, 5];
@@ -833,12 +833,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test047
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4700
-     * @tc.name ArrayConstructor1Test047
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [true, false, true];
@@ -850,12 +850,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test048
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4800
-     * @tc.name ArrayConstructor1Test048
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2, 3, 4]];
@@ -867,12 +867,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test049
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4900
-     * @tc.name ArrayConstructor1Test049
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');
@@ -889,12 +889,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test050
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5000
-     * @tc.name ArrayConstructor1Test050
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -906,12 +906,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test051
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5100
-     * @tc.name ArrayConstructor1Test051
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[null], [2], [1]];
@@ -927,12 +927,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test052
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5200
-     * @tc.name ArrayConstructor1Test052
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -944,12 +944,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test053
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5300
-     * @tc.name ArrayConstructor1Test053
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [0, 1, "", "hello", null, 42];
@@ -961,12 +961,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test054
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5400
-     * @tc.name ArrayConstructor1Test054
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2]];
@@ -978,12 +978,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test055
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5500
-     * @tc.name ArrayConstructor1Test055
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [3, 1, 2];
@@ -995,12 +995,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test056
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5600
-     * @tc.name ArrayConstructor1Test056
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -1012,36 +1012,36 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test057
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5700
-     * @tc.name ArrayConstructor1Test057
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test057()).assertTrue();
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test058
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5800
-     * @tc.name ArrayConstructor1Test058
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test058()).assertDeepEquals([[10, 20, 10], [10, 20, 10]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test060
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6000
-     * @tc.name ArrayConstructor1Test060
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1], [2]];
@@ -1055,12 +1055,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test061
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6100
-     * @tc.name ArrayConstructor1Test061
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = new Int8Array([127, 128, -129]);
@@ -1069,12 +1069,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test062
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6200
-     * @tc.name ArrayConstructor1Test062
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = new Uint8ClampedArray([0, 0]);
@@ -1084,12 +1084,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test063
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6300
-     * @tc.name ArrayConstructor1Test063
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [new Float32Array([0.1 + 0.2])];
@@ -1099,12 +1099,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test064
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6400
-     * @tc.name ArrayConstructor1Test064
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const ta = new Int32Array([10, 20, 30]);
@@ -1117,36 +1117,36 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test065
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6500
-     * @tc.name ArrayConstructor1Test065
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test065()).assertDeepEquals([true, true, true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test067
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6700
-     * @tc.name ArrayConstructor1Test067
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test067()).assertDeepEquals([true, true, true, true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test068
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6800
-     * @tc.name ArrayConstructor1Test068
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4, 5];
@@ -1155,12 +1155,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test069
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST6900
-     * @tc.name ArrayConstructor1Test069
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[NaN], [NaN]];
@@ -1176,24 +1176,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test070
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7000
-     * @tc.name ArrayConstructor1Test070
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test070()).assertDeepEquals([[undefined, undefined], [0, 0], undefined]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test071
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7100
-     * @tc.name ArrayConstructor1Test071
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [new Number(1), new Number(0), new Number(2)];
@@ -1204,12 +1204,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test072
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7200
-     * @tc.name ArrayConstructor1Test072
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2]];
@@ -1218,38 +1218,38 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test073
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7300
-     * @tc.name ArrayConstructor1Test073
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test073()).assertTrue();
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test076
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7600
-     * @tc.name ArrayConstructor1Test076
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test076()).assertDeepEquals([[20, 20, 30], true]);
     });
 
-    /**
-     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7700
-     * @tc.name ArrayConstructor1Test077
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
    
+    /**
+     * @tc.name   ArrayConstructor1Test077
+     * @tc.number ArrayConstructor1Test077
+     * @tc.desc   ArrayConstructor1Test077
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArrayConstructor1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ["ab"];
       const r = arr.flatMap(x => x.split('')).sort();
@@ -1257,12 +1257,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test078
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7800
-     * @tc.name ArrayConstructor1Test078
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1], [2]];
@@ -1271,12 +1271,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test079
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7900
-     * @tc.name ArrayConstructor1Test079
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [/a/, /b/];
@@ -1286,12 +1286,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test080
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8000
-     * @tc.name ArrayConstructor1Test080
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -1302,12 +1302,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test081
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8100
-     * @tc.name ArrayConstructor1Test081
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ["ab"];
@@ -1316,24 +1316,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test082
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8200
-     * @tc.name ArrayConstructor1Test082
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test082()).assertDeepEquals([10, 888, 888]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test083
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8300
-     * @tc.name ArrayConstructor1Test083
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -1342,12 +1342,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test084
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8400
-     * @tc.name ArrayConstructor1Test084
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2, 3]];
@@ -1356,12 +1356,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test086
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8600
-     * @tc.name ArrayConstructor1Test086
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -1370,12 +1370,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test088
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8800
-     * @tc.name ArrayConstructor1Test088
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -1384,12 +1384,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test089
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8900
-     * @tc.name ArrayConstructor1Test089
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [NaN, Infinity, -Infinity, 0, -0];
@@ -1403,12 +1403,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test090
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9000
-     * @tc.name ArrayConstructor1Test090
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1], [2], [3]];
@@ -1418,12 +1418,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test091
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9100
-     * @tc.name ArrayConstructor1Test091
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -1434,24 +1434,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test093
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9300
-     * @tc.name ArrayConstructor1Test093
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test093()).assertDeepEquals([true, [99, 99]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test094
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9400
-     * @tc.name ArrayConstructor1Test094
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let caught = false;
@@ -1470,12 +1470,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test095
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9500
-     * @tc.name ArrayConstructor1Test095
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const ta = new Float64Array([3.1, 2.2]);
@@ -1486,36 +1486,36 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test096
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9600
-     * @tc.name ArrayConstructor1Test096
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test096()).assertDeepEquals([2,1]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test097
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9700
-     * @tc.name ArrayConstructor1Test097
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test097()).assertDeepEquals([true, true, true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test099
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9900
-     * @tc.name ArrayConstructor1Test099
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[Number.MAX_VALUE], [Number.MIN_VALUE]];
@@ -1526,12 +1526,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test100
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10000
-     * @tc.name ArrayConstructor1Test100
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -1540,12 +1540,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test101
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10100
-     * @tc.name ArrayConstructor1Test101
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [0, -0, NaN, 1];
@@ -1555,12 +1555,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test103
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10300
-     * @tc.name ArrayConstructor1Test103
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -1569,12 +1569,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test104
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10400
-     * @tc.name ArrayConstructor1Test104
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -1587,12 +1587,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test105
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10500
-     * @tc.name ArrayConstructor1Test105
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const f1 = () => {};
@@ -1604,24 +1604,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test106
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10600
-     * @tc.name ArrayConstructor1Test106
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test106()).assertDeepEquals([42, 42]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test107
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10700
-     * @tc.name ArrayConstructor1Test107
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4];
@@ -1630,24 +1630,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test108
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10800
-     * @tc.name ArrayConstructor1Test108
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test108()).assertDeepEquals([20, 10]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test109
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10900
-     * @tc.name ArrayConstructor1Test109
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ["1e2", "2e1", "30"];
@@ -1656,12 +1656,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test110
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11000
-     * @tc.name ArrayConstructor1Test110
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1];
@@ -1671,12 +1671,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test111
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11100
-     * @tc.name ArrayConstructor1Test111
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[[1, 2]], [[3, 4]]];
@@ -1686,12 +1686,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test112
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11200
-     * @tc.name ArrayConstructor1Test112
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let caught = false;
@@ -1704,12 +1704,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test113
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11300
-     * @tc.name ArrayConstructor1Test113
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -1719,36 +1719,36 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test114
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11400
-     * @tc.name ArrayConstructor1Test114
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test114()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test115
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11500
-     * @tc.name ArrayConstructor1Test115
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test115()).assertDeepEquals([20, 20]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test116
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11600
-     * @tc.name ArrayConstructor1Test116
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buf = new ArrayBuffer(8);
@@ -1762,12 +1762,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test117
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11700
-     * @tc.name ArrayConstructor1Test117
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -1776,24 +1776,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test118
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11800
-     * @tc.name ArrayConstructor1Test118
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test118()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test119
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11900
-     * @tc.name ArrayConstructor1Test119
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -1802,12 +1802,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test120
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12000
-     * @tc.name ArrayConstructor1Test120
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ["ab"];
@@ -1816,24 +1816,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test121
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12100
-     * @tc.name ArrayConstructor1Test121
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test121()).assertDeepEquals([[1, 2, 3],[3, 1, 2]]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test122
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12200
-     * @tc.name ArrayConstructor1Test122
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ["😀", "🌍", "🚀"];
@@ -1842,12 +1842,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test123
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12300
-     * @tc.name ArrayConstructor1Test123
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let count = 0;
@@ -1866,12 +1866,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test124
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12400
-     * @tc.name ArrayConstructor1Test124
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr: number[] = [];
@@ -1880,24 +1880,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test126
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12600
-     * @tc.name ArrayConstructor1Test126
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test126()).assertDeepEquals([ { "0": 10, "length": -5 } ]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test127
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12700
-     * @tc.name ArrayConstructor1Test127
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [100];
@@ -1906,12 +1906,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test128
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12800
-     * @tc.name ArrayConstructor1Test128
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -1920,24 +1920,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test129
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12900
-     * @tc.name ArrayConstructor1Test129
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test129()).assertDeepEquals([{ "val": 1 }, { "val": 1 }]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test131
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13100
-     * @tc.name ArrayConstructor1Test131
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const taInt = new Int32Array([NaN]);
@@ -1951,12 +1951,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test132
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13200
-     * @tc.name ArrayConstructor1Test132
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1]];
@@ -1967,12 +1967,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test133
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13300
-     * @tc.name ArrayConstructor1Test133
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [Infinity, -Infinity, 0];
@@ -1981,12 +1981,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test134
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13400
-     * @tc.name ArrayConstructor1Test134
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -1995,24 +1995,24 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test135
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13500
-     * @tc.name ArrayConstructor1Test135
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test135()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test136
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13600
-     * @tc.name ArrayConstructor1Test136
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -2022,12 +2022,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test137
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13700
-     * @tc.name ArrayConstructor1Test137
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [null, undefined, 1];
@@ -2036,36 +2036,36 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test138
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13800
-     * @tc.name ArrayConstructor1Test138
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test138()).assertDeepEquals([6, 5]);
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test139
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13900
-     * @tc.name ArrayConstructor1Test139
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Array1.ArrayConstructor1Test139()).assertFalse();
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test141
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14100
-     * @tc.name ArrayConstructor1Test141
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[42]];
@@ -2074,12 +2074,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test142
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14200
-     * @tc.name ArrayConstructor1Test142
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');
@@ -2090,12 +2090,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test143
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14300
-     * @tc.name ArrayConstructor1Test143
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -2104,12 +2104,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test144
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14400
-     * @tc.name ArrayConstructor1Test144
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
@@ -2119,12 +2119,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test145
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14500
-     * @tc.name ArrayConstructor1Test145
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ["ä", "z", "a"];
@@ -2140,12 +2140,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test146
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14600
-     * @tc.name ArrayConstructor1Test146
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -2154,12 +2154,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test147
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14700
-     * @tc.name ArrayConstructor1Test147
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1], [2]];
@@ -2169,12 +2169,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test148
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14800
-     * @tc.name ArrayConstructor1Test148
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [10, 20];
@@ -2183,12 +2183,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test149
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14900
-     * @tc.name ArrayConstructor1Test149
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [true, false, true];
@@ -2197,12 +2197,12 @@ export default function ArrayConstructor1Test() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test150
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST15000
-     * @tc.name ArrayConstructor1Test150
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[1, 2]];

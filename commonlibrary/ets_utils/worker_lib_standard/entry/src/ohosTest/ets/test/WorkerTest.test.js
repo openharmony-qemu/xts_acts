@@ -35,9 +35,12 @@ export default function WorkerTest() {
         }
 
         /**
-         * @tc.name: worker_constructor_test_001
-         * @tc.desc: worker constructor to Creates a worker instance.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_constructor_test_001
+         * @tc.number worker_constructor_test_001
+         * @tc.desc   worker constructor to Creates a worker instance.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_constructor_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -57,9 +60,12 @@ export default function WorkerTest() {
         })
 
         /**
-         * @tc.name: worker_constructor_test_002
-         * @tc.desc: worker constructor to Creates a worker instance.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_constructor_test_002
+         * @tc.number worker_constructor_test_002
+         * @tc.desc   worker constructor to Creates a worker instance.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_constructor_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js", {
@@ -81,9 +87,12 @@ export default function WorkerTest() {
         })
 
         /**
-         * @tc.name: worker_constructor_test_003
-         * @tc.desc: worker constructor to Creates a worker instance.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_constructor_test_003
+         * @tc.number worker_constructor_test_003
+         * @tc.desc   worker constructor to Creates a worker instance.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_constructor_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js", {
@@ -105,9 +114,12 @@ export default function WorkerTest() {
         })
 
         /**
-         * @tc.name: worker_constructor_test_004
-         * @tc.desc: worker constructor to Creates a worker instance.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_constructor_test_004
+         * @tc.number worker_constructor_test_004
+         * @tc.desc   worker constructor to Creates a worker instance.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_constructor_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js", {
@@ -129,8 +141,12 @@ export default function WorkerTest() {
         })
 
         /**
-         * @tc.name: worker_constructor_test_005
-         * @tc.desc: worker constructor to Creates a worker instance.
+         * @tc.name   worker_constructor_test_005
+         * @tc.number worker_constructor_test_005
+         * @tc.desc   worker constructor to Creates a worker instance.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_constructor_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("/entry/ets/workers/worker.js");
@@ -147,8 +163,12 @@ export default function WorkerTest() {
         })
 
         /**
-         * @tc.name: worker_constructor_test_006
-         * @tc.desc: worker constructor to Creates a worker instance.
+         * @tc.name   worker_constructor_test_006
+         * @tc.number worker_constructor_test_006
+         * @tc.desc   worker constructor to Creates a worker instance.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_constructor_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("@bundle:com.example.workertest/entry/ets/workers/worker.js");
@@ -167,9 +187,12 @@ export default function WorkerTest() {
         // check postMessage is ok
         // main post "hello world", will receive "hello world worker"
         /**
-         * @tc.name: worker_postMessage_test_001
-         * @tc.desc: Sends a message to the worker thread.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_postMessage_test_001
+         * @tc.number worker_postMessage_test_001
+         * @tc.desc   Sends a message to the worker thread.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_postMessage_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_002.js")
@@ -203,9 +226,12 @@ export default function WorkerTest() {
         // check postMessage is ok
         // main post 12 , will receive 12 * 2 + 1
         /**
-         * @tc.name: worker_postMessage_test_002
-         * @tc.desc: Sends a message to the worker thread.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_postMessage_test_002
+         * @tc.number worker_postMessage_test_002
+         * @tc.desc   Sends a message to the worker thread.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_postMessage_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_003.js")
@@ -238,9 +264,12 @@ export default function WorkerTest() {
 
         // check postMessage is ok
         /**
-         * @tc.name: worker_postMessage_test_003
-         * @tc.desc: Sends a message to the worker thread.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_postMessage_test_003
+         * @tc.number worker_postMessage_test_003
+         * @tc.desc   Sends a message to the worker thread.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_postMessage_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_004.js")
@@ -275,9 +304,12 @@ export default function WorkerTest() {
 
         // check worker name is ok
         /**
-         * @tc.name: worker_postMessage_test_004
-         * @tc.desc: Sends a message to the worker thread.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_postMessage_test_004
+         * @tc.number worker_postMessage_test_004
+         * @tc.desc   Sends a message to the worker thread.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_postMessage_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_005.js", {
@@ -314,9 +346,12 @@ export default function WorkerTest() {
 
         // check worker transfer buffer is ok
         /**
-         * @tc.name: worker_postMessage_test_005
-         * @tc.desc: Sends a message to the worker thread.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_postMessage_test_005
+         * @tc.number worker_postMessage_test_005
+         * @tc.desc   Sends a message to the worker thread.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_postMessage_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_006.js")
@@ -355,9 +390,12 @@ export default function WorkerTest() {
 
         // check worker handle error is ok
         /**
-         * @tc.name: worker_postMessage_test_006
-         * @tc.desc: Sends a message to the worker thread.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_postMessage_test_006
+         * @tc.number worker_postMessage_test_006
+         * @tc.desc   Sends a message to the worker thread.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_postMessage_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_007.js")
@@ -394,9 +432,12 @@ export default function WorkerTest() {
 
         // check worker terminate is ok
         /**
-         * @tc.name: worker_terminate_test_001
-         * @tc.desc: Terminates the worker thread to stop the worker from receiving messages.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_terminate_test_001
+         * @tc.number worker_terminate_test_001
+         * @tc.desc   Terminates the worker thread to stop the worker from receiving messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_terminate_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -419,9 +460,12 @@ export default function WorkerTest() {
 
         // check worker terminate is ok
         /**
-         * @tc.name: worker_terminate_test_002
-         * @tc.desc: Terminates the worker thread to stop the worker from receiving messages.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_terminate_test_002
+         * @tc.number worker_terminate_test_002
+         * @tc.desc   Terminates the worker thread to stop the worker from receiving messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_terminate_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -447,9 +491,12 @@ export default function WorkerTest() {
 
         // check worker terminate is ok
         /**
-         * @tc.name: worker_terminate_test_003
-         * @tc.desc: Terminates the worker thread to stop the worker from receiving messages.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_terminate_test_003
+         * @tc.number worker_terminate_test_003
+         * @tc.desc   Terminates the worker thread to stop the worker from receiving messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_terminate_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -478,9 +525,12 @@ export default function WorkerTest() {
 
         // check worker terminate is ok
         /**
-         * @tc.name: worker_terminate_test_004
-         * @tc.desc: Terminates the worker thread to stop the worker from receiving messages.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_terminate_test_004
+         * @tc.number worker_terminate_test_004
+         * @tc.desc   Terminates the worker thread to stop the worker from receiving messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_terminate_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_002.js")
@@ -501,9 +551,12 @@ export default function WorkerTest() {
         })
         // check worker on function is ok
         /**
-         * @tc.name: worker_on_test_001
-         * @tc.desc: Adds an event listener to the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_on_test_001
+         * @tc.number worker_on_test_001
+         * @tc.desc   Adds an event listener to the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_on_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -533,9 +586,12 @@ export default function WorkerTest() {
 
         // check worker on function is ok
         /**
-         * @tc.name: worker_on_test_002
-         * @tc.desc: Adds an event listener to the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_on_test_002
+         * @tc.number worker_on_test_002
+         * @tc.desc   Adds an event listener to the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_on_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -571,9 +627,12 @@ export default function WorkerTest() {
 
         // check worker on function is ok
         /**
-         * @tc.name: worker_on_test_003
-         * @tc.desc: Adds an event listener to the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_on_test_003
+         * @tc.number worker_on_test_003
+         * @tc.desc   Adds an event listener to the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_on_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -606,10 +665,12 @@ export default function WorkerTest() {
 
         // check worker once function is ok
         /**
-         * @tc.name: worker_once_test_001
-         * @tc.desc: Adds an event listener to the worker and removes the event listener automically
-         after it is invoked once.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_once_test_001
+         * @tc.number worker_once_test_001
+         * @tc.desc   Adds an event listener to the worker and removes the event listener automically
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_once_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -638,10 +699,12 @@ export default function WorkerTest() {
 
         // check worker once function is ok
         /**
-         * @tc.name: worker_once_test_002
-         * @tc.desc: Adds an event listener to the worker and removes the event listener automically
-         after it is invoked once.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_once_test_002
+         * @tc.number worker_once_test_002
+         * @tc.desc   Adds an event listener to the worker and removes the event listener automically
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('worker_once_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -672,10 +735,12 @@ export default function WorkerTest() {
         })
 
         /**
-         * @tc.name: worker_once_test_003
-         * @tc.desc: Adds an event listener to the worker and removes the event listener automically
-         after it is invoked once.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_once_test_003
+         * @tc.number worker_once_test_003
+         * @tc.desc   Adds an event listener to the worker and removes the event listener automically
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_once_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -712,9 +777,12 @@ export default function WorkerTest() {
 
         // check worker addEventListener function is ok
         /**
-         * @tc.name: worker_addEventListener_test_001
-         * @tc.desc: Add an event listener to the Worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_addEventListener_test_001
+         * @tc.number worker_addEventListener_test_001
+         * @tc.desc   Add an event listener to the Worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_addEventListener_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -747,9 +815,12 @@ export default function WorkerTest() {
 
         // check worker addEventListener function is ok
         /**
-         * @tc.name: worker_addEventListener_test_002
-         * @tc.desc: Add an event listener to the Worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_addEventListener_test_002
+         * @tc.number worker_addEventListener_test_002
+         * @tc.desc   Add an event listener to the Worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_addEventListener_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -785,9 +856,12 @@ export default function WorkerTest() {
 
         // check worker addEventListener function is ok
         /**
-         * @tc.name: worker_addEventListener_test_003
-         * @tc.desc: Add an event listener to the Worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_addEventListener_test_003
+         * @tc.number worker_addEventListener_test_003
+         * @tc.desc   Add an event listener to the Worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_addEventListener_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -819,9 +893,12 @@ export default function WorkerTest() {
 
         // check worker off function is ok
         /**
-         * @tc.name: worker_off_test_001
-         * @tc.desc: Removes an event listener to the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_off_test_001
+         * @tc.number worker_off_test_001
+         * @tc.desc   Removes an event listener to the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_off_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -861,9 +938,12 @@ export default function WorkerTest() {
 
         // check worker off function is ok
         /**
-         * @tc.name: worker_off_test_002
-         * @tc.desc: Removes an event listener to the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_off_test_002
+         * @tc.number worker_off_test_002
+         * @tc.desc   Removes an event listener to the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_off_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -905,9 +985,12 @@ export default function WorkerTest() {
 
         // check worker removeEventListener function is ok
         /**
-         * @tc.name: worker_removeListener_test_001
-         * @tc.desc: Removes an event defined for the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_removeListener_test_001
+         * @tc.number worker_removeListener_test_001
+         * @tc.desc   Removes an event defined for the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_removeListener_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -947,9 +1030,12 @@ export default function WorkerTest() {
 
         // check worker removeEventListener function is ok
         /**
-         * @tc.name: worker_removeListener_test_002
-         * @tc.desc: Removes an event defined for the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_removeListener_test_002
+         * @tc.number worker_removeListener_test_002
+         * @tc.desc   Removes an event defined for the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_removeListener_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -991,9 +1077,12 @@ export default function WorkerTest() {
 
         // check worker removeAllListener function is ok
         /**
-         * @tc.name: worker_removeListener_test_003
-         * @tc.desc: Removes an event defined for the worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_removeListener_test_003
+         * @tc.number worker_removeListener_test_003
+         * @tc.desc   Removes an event defined for the worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_removeListener_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker.js")
@@ -1056,9 +1145,12 @@ export default function WorkerTest() {
 
         // check parentPort.close is ok
         /**
-         * @tc.name: worker_parentPortClose_test_001
-         * @tc.desc: Close the worker thread to stop the worker from receiving messages.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_parentPortClose_test_001
+         * @tc.number worker_parentPortClose_test_001
+         * @tc.desc   Close the worker thread to stop the worker from receiving messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_parentPortClose_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_008.js")
@@ -1081,9 +1173,12 @@ export default function WorkerTest() {
 
         // check parentPort.close is ok
         /**
-         * @tc.name: worker_parentPortClose_test_002
-         * @tc.desc: Close the worker thread to stop the worker from receiving messages.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_parentPortClose_test_002
+         * @tc.number worker_parentPortClose_test_002
+         * @tc.desc   Close the worker thread to stop the worker from receiving messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_parentPortClose_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_008.js")
@@ -1111,10 +1206,12 @@ export default function WorkerTest() {
 
         // check onmessageerror is ok
         /**
-         * @tc.name: worker_onmessageerror_test_001
-         * @tc.desc: The onmessage attribute of the worker specifies the event handler when the worker receives
-         a message that cannot be serialized. The event handler is executed in the host thread
-         * @tc.author: hanyuqing
+         * @tc.name   worker_onmessageerror_test_001
+         * @tc.number worker_onmessageerror_test_001
+         * @tc.desc   The onmessage attribute of the worker specifies the event handler when the worker receives
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_onmessageerror_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_008.js")
@@ -1139,10 +1236,12 @@ export default function WorkerTest() {
 
         // check onmessageerror is ok
         /**
-         * @tc.name: worker_onmessageerror_test_002
-         * @tc.desc: The onmessage attribute of the worker specifies the event handler when the worker receives
-         a message that cannot be serialized. The event handler is executed in the host thread
-         * @tc.author: hanyuqing
+         * @tc.name   worker_onmessageerror_test_002
+         * @tc.number worker_onmessageerror_test_002
+         * @tc.desc   The onmessage attribute of the worker specifies the event handler when the worker receives
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_onmessageerror_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_008.js")
@@ -1175,9 +1274,12 @@ export default function WorkerTest() {
 
         // check new second worker is ok
         /**
-         * @tc.name: worker_new_second_worker_test_001
-         * @tc.desc: Create a second worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_new_second_worker_test_001
+         * @tc.number worker_new_second_worker_test_001
+         * @tc.desc   Create a second worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_new_second_worker_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_009.js")
@@ -1225,9 +1327,12 @@ export default function WorkerTest() {
 
         // check new third worker is ok
         /**
-         * @tc.name: worker_new_second_worker_test_002
-         * @tc.desc: Create a third worker.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_new_second_worker_test_002
+         * @tc.number worker_new_second_worker_test_002
+         * @tc.desc   Create a third worker.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_new_second_worker_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_012.js")
@@ -1278,9 +1383,12 @@ export default function WorkerTest() {
 
         // check second worker postMessage number is ok
         /**
-         * @tc.name: worker_second_worker_postMessage_test_001
-         * @tc.desc: Check if the postMessage function of the second worker is ok.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_second_worker_postMessage_test_001
+         * @tc.number worker_second_worker_postMessage_test_001
+         * @tc.desc   Check if the postMessage function of the second worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_second_worker_postMessage_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_010.js")
@@ -1331,9 +1439,12 @@ export default function WorkerTest() {
 
         // check second worker postMessage string is ok
         /**
-         * @tc.name: worker_second_worker_postMessage_test_002
-         * @tc.desc: Check if the postMessage function of the second worker is ok.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_second_worker_postMessage_test_002
+         * @tc.number worker_second_worker_postMessage_test_002
+         * @tc.desc   Check if the postMessage function of the second worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_second_worker_postMessage_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_013.js")
@@ -1384,9 +1495,12 @@ export default function WorkerTest() {
 
         // check second worker postMessage array is ok
         /**
-         * @tc.name: worker_second_worker_postMessage_test_003
-         * @tc.desc: Check if the postMessage function of the second worker is ok.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_second_worker_postMessage_test_003
+         * @tc.number worker_second_worker_postMessage_test_003
+         * @tc.desc   Check if the postMessage function of the second worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_second_worker_postMessage_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_014.js")
@@ -1438,9 +1552,12 @@ export default function WorkerTest() {
 
         // check third worker postMessage is ok
         /**
-         * @tc.name: worker_third_worker_postMessage_test_001
-         * @tc.desc: Check if the postMessage function of the third worker is ok.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_third_worker_postMessage_test_001
+         * @tc.number worker_third_worker_postMessage_test_001
+         * @tc.desc   Check if the postMessage function of the third worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_third_worker_postMessage_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_015.js")
@@ -1480,9 +1597,12 @@ export default function WorkerTest() {
 
         // check second worker terminate is ok
         /**
-         * @tc.name: worker_second_worker_terminate_test_001
-         * @tc.desc: Check if the terminate function of the second worker is ok.
-         * @tc.author: hanyuqing
+         * @tc.name   worker_second_worker_terminate_test_001
+         * @tc.number worker_second_worker_terminate_test_001
+         * @tc.desc   Check if the terminate function of the second worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_second_worker_terminate_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_011.js")
@@ -1562,8 +1682,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_001
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_001
+         * @tc.number worker_support_types_test_001
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_016.js");
@@ -1602,8 +1726,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_002
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_002
+         * @tc.number worker_support_types_test_002
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_017.js");
@@ -1633,8 +1761,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_003
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_003
+         * @tc.number worker_support_types_test_003
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_018.js");
@@ -1666,8 +1798,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_004
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_004
+         * @tc.number worker_support_types_test_004
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_019.js");
@@ -1697,8 +1833,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_005
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_005
+         * @tc.number worker_support_types_test_005
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_020.js");
@@ -1728,8 +1868,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_006
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_006
+         * @tc.number worker_support_types_test_006
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_021.js");
@@ -1759,8 +1903,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_007
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_007
+         * @tc.number worker_support_types_test_007
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_021.js");
@@ -1789,8 +1937,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_008
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_008
+         * @tc.number worker_support_types_test_008
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_022.js");
@@ -1829,8 +1981,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name: worker_support_types_test_009
-         * @tc.desc: Check the transmission types supported by Worker is ok.
+         * @tc.name   worker_support_types_test_009
+         * @tc.number worker_support_types_test_009
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_023.js");
@@ -1864,9 +2020,12 @@ export default function WorkerTest() {
 
         // Check the transmission types supported by Worker is ok.
         /**
-         * @tc.name worker_support_types_test_010
+         * @tc.name   worker_support_types_test_010
          * @tc.number worker_support_types_test_010
-         * @tc.desc Check the transmission types supported by Worker is ok.
+         * @tc.desc   Check the transmission types supported by Worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_support_types_test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_027.js");
@@ -1898,9 +2057,12 @@ export default function WorkerTest() {
 
         // Check the SharedArrayBuffer with worker.
         /**
-         * @tc.name: worker_SharedArrayBuffer_test_001
-         * @tc.number: worker_SharedArrayBuffer_test_001
-         * @tc.desc: Check the SharedArrayBuffer with worker is ok.
+         * @tc.name   worker_SharedArrayBuffer_test_001
+         * @tc.number worker_SharedArrayBuffer_test_001
+         * @tc.desc   Check the SharedArrayBuffer with worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_SharedArrayBuffer_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_024.js");
@@ -1928,8 +2090,12 @@ export default function WorkerTest() {
 
         // Check the listener of worker.
         /**
-         * @tc.name: worker_listener_test_001
-         * @tc.desc: Check the listener of worker is ok.
+         * @tc.name   worker_listener_test_001
+         * @tc.number worker_listener_test_001
+         * @tc.desc   Check the listener of worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_listener_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_025.js");
@@ -1958,8 +2124,12 @@ export default function WorkerTest() {
 
         // Check the listener of worker.
         /**
-         * @tc.name: worker_listener_test_002
-         * @tc.desc: Check the listener of worker is ok.
+         * @tc.name   worker_listener_test_002
+         * @tc.number worker_listener_test_002
+         * @tc.desc   Check the listener of worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_listener_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_025.js");
@@ -1994,8 +2164,12 @@ export default function WorkerTest() {
 
         // Check the listener of worker.
         /**
-         * @tc.name: worker_listener_test_003
-         * @tc.desc: Check the listener of worker is ok.
+         * @tc.name   worker_listener_test_003
+         * @tc.number worker_listener_test_003
+         * @tc.desc   Check the listener of worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_listener_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_007.js");
@@ -2021,8 +2195,12 @@ export default function WorkerTest() {
 
         // Check the listener of worker.
         /**
-         * @tc.name: worker_listener_test_004
-         * @tc.desc: Check the listener of worker is ok.
+         * @tc.name   worker_listener_test_004
+         * @tc.number worker_listener_test_004
+         * @tc.desc   Check the listener of worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_listener_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_007.js");
@@ -2048,8 +2226,12 @@ export default function WorkerTest() {
 
         // Check the listener of worker.
         /**
-         * @tc.name: worker_listener_test_005
-         * @tc.desc: Check the listener of worker is ok.
+         * @tc.name   worker_listener_test_005
+         * @tc.number worker_listener_test_005
+         * @tc.desc   Check the listener of worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_listener_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_025.js");
@@ -2089,8 +2271,12 @@ export default function WorkerTest() {
 
         // Check the listener of worker.
         /**
-         * @tc.name: worker_listener_test_006
-         * @tc.desc: Check the listener of worker is ok.
+         * @tc.name   worker_listener_test_006
+         * @tc.number worker_listener_test_006
+         * @tc.desc   Check the listener of worker is ok.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('worker_listener_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let ss = new worker.Worker("entry/ets/workers/worker_026.js");

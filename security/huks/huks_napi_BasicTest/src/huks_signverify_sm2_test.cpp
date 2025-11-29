@@ -310,9 +310,12 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob *keyAlia
 }
 
 /**
- * @tc.name: HuksSignVerifySM2Test.Security_HUKS_NAPI_SignVerify_SM2_0100
- * @tc.desc: normal parameter test case : alg-SM2, pur-Sign/Verify, keySize-256 and dig-SM3.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_SignVerify_SM2_0100
+ * @tc.number Security_HUKS_NAPI_SignVerify_SM2_0100
+ * @tc.desc   normal parameter test case : alg-SM2, pur-Sign/Verify, keySize-256 and dig-SM3.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksSignVerifySM2Test, Security_HUKS_NAPI_SignVerify_SM2_0100, TestSize.Level0)
 {

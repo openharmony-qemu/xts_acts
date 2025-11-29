@@ -113,13 +113,13 @@ void DrawingNativeSurFaceTest::TearDown()
     std::cout << "DrawingNativeSurFaceTest errorCodeReset after each test case." << std::endl;
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0100
- * @tc.name: testSurfaceCreateFromGpuContextNormal
- * @tc.desc: test for testSurfaceCreateFromGpuContextNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSurfaceCreateFromGpuContextNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0100
+ * @tc.desc   test for testSurfaceCreateFromGpuContextNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateFromGpuContextNormal, Function | SmallTest | Level0) {
     OH_Drawing_GpuContextOptions options{true};
@@ -141,13 +141,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateFromGpuContextNormal, Functi
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0101
- * @tc.name: testSurfaceCreateFromGpuContextNull
- * @tc.desc: test for testSurfaceCreateFromGpuContextNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceCreateFromGpuContextNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0101
+ * @tc.desc   test for testSurfaceCreateFromGpuContextNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateFromGpuContextNull, Function | SmallTest | Level3) {
     OH_Drawing_GpuContextOptions options{true};
@@ -167,13 +167,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateFromGpuContextNull, Function
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0102
- * @tc.name: testSurfaceCreateFromGpuContextBoundary
- * @tc.desc: test for testSurfaceCreateFromGpuContextBoundary.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSurfaceCreateFromGpuContextBoundary
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0102
+ * @tc.desc   test for testSurfaceCreateFromGpuContextBoundary.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateFromGpuContextBoundary, Function | SmallTest | Level0) {
     OH_Drawing_GpuContextOptions options{true};
@@ -191,13 +191,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateFromGpuContextBoundary, Func
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0200
- * @tc.name: testSurfaceDestroyNormal
- * @tc.desc: test for testSurfaceDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSurfaceDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0200
+ * @tc.desc   test for testSurfaceDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_GpuContextOptions options{true};
@@ -212,13 +212,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceDestroyNormal, Function | SmallTes
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0201
- * @tc.name: testSurfaceDestroyNull
- * @tc.desc: test for testSurfaceDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0201
+ * @tc.desc   test for testSurfaceDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceDestroyNull, Function | SmallTest | Level3) {
     // free
@@ -227,13 +227,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceDestroyNull, Function | SmallTest 
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0300
- * @tc.name: testSurfaceGetCanvasNormal
- * @tc.desc: test for testSurfaceGetCanvasNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSurfaceGetCanvasNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0300
+ * @tc.desc   test for testSurfaceGetCanvasNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceGetCanvasNormal, Function | SmallTest | Level0) {
     OH_Drawing_GpuContextOptions options{true};
@@ -256,13 +256,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceGetCanvasNormal, Function | SmallT
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0301
- * @tc.name: testSurfaceGetCanvasNull
- * @tc.desc: test for testSurfaceGetCanvasNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceGetCanvasNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0301
+ * @tc.desc   test for testSurfaceGetCanvasNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceGetCanvasNull, Function | SmallTest | Level3) {
     OH_Drawing_GpuContextOptions options{true};
@@ -281,13 +281,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceGetCanvasNull, Function | SmallTes
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0302
- * @tc.name: testSurfaceGetCanvasBoundary
- * @tc.desc: test for testSurfaceGetCanvasBoundary.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSurfaceGetCanvasBoundary
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0302
+ * @tc.desc   test for testSurfaceGetCanvasBoundary.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceGetCanvasBoundary, Function | SmallTest | Level0) {
     OH_Drawing_GpuContextOptions options{true};
@@ -308,13 +308,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceGetCanvasBoundary, Function | Smal
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0400
- * @tc.name: testSurfaceCreateOnScreenNormal
- * @tc.desc: test for testSurfaceCreateOnScreenNormal.window
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSurfaceCreateOnScreenNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0400
+ * @tc.desc   test for testSurfaceCreateOnScreenNormal.window
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateOnScreenNormal, Function | SmallTest | Level0) {
     // 1、OH_Drawing_SurfaceCreateOnScreen正常入参调用
@@ -331,13 +331,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateOnScreenNormal, Function | S
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0401
- * @tc.name: testSurfaceCreateOnScreenNull
- * @tc.desc: test for testSurfaceCreateOnScreenNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceCreateOnScreenNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0401
+ * @tc.desc   test for testSurfaceCreateOnScreenNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateOnScreenNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_SurfaceCreateOnScreen第一个参数传空
@@ -350,13 +350,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateOnScreenNull, Function | Sma
     OH_Drawing_SurfaceDestroy(surface_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0402
- * @tc.name: testSurfaceCreateOnScreenMultipleCalls
- * @tc.desc: test for testSurfaceCreateOnScreenMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceCreateOnScreenMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0402
+ * @tc.desc   test for testSurfaceCreateOnScreenMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateOnScreenMultipleCalls, Function | SmallTest | Level3) {
     gpuContext_ = OH_Drawing_GpuContextCreate();
@@ -391,13 +391,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceCreateOnScreenMultipleCalls, Funct
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0500
- * @tc.name: testSurfaceFlushNormal
- * @tc.desc: test for testSurfaceFlushNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSurfaceFlushNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0500
+ * @tc.desc   test for testSurfaceFlushNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushNormal, Function | SmallTest | Level0) {
     gpuContext_ = OH_Drawing_GpuContextCreate();
@@ -416,26 +416,26 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushNormal, Function | SmallTest 
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0501
- * @tc.name: testSurfaceFlushNull
- * @tc.desc: test for testSurfaceFlushNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceFlushNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0501
+ * @tc.desc   test for testSurfaceFlushNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushNull, Function | SmallTest | Level3) {
     OH_Drawing_ErrorCode errorCode = OH_Drawing_SurfaceFlush(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0502
- * @tc.name: testSurfaceFlushAbnormal
- * @tc.desc: test for testSurfaceFlushAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceFlushAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0502
+ * @tc.desc   test for testSurfaceFlushAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_GpuContextOptions options{true};
@@ -455,13 +455,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushAbnormal, Function | SmallTes
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0503
- * @tc.name: testSurfaceFlushMultipleCalls
- * @tc.desc: test for testSurfaceFlushMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceFlushMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0503
+ * @tc.desc   test for testSurfaceFlushMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushMultipleCalls, Function | SmallTest | Level3) {
     gpuContext_ = OH_Drawing_GpuContextCreate();
@@ -518,13 +518,13 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushMultipleCalls, Function | Sma
     OH_Drawing_GpuContextDestroy(gpuContext_);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0504
- * @tc.name: testSurfaceFlushTiming
- * @tc.desc: test for testSurfaceFlushTiming.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSurfaceFlushTiming
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0504
+ * @tc.desc   test for testSurfaceFlushTiming.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceFlushTiming, Function | SmallTest | Level3) {
     OH_Drawing_GpuContextOptions options{true};

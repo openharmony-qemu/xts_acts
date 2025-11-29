@@ -38,12 +38,12 @@ export default function EmojiUtilsTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
-     * @tc.name       : testUtilsRequest_0001
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\ude0a.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilsRequest_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\ude0a.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilsRequest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let TAG = 'testUtilsRequest_0001';
@@ -56,12 +56,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0200
-     * @tc.name       : testUtilsRequest_0002
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\udc64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUtilsRequest_0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0200
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\udc64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0002';
@@ -74,12 +74,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0300
-     * @tc.name       : testUtilsRequest_0003
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\udc6b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testUtilsRequest_0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0300
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\udc6b.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0003';
@@ -92,12 +92,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0400
-     * @tc.name       : testUtilsRequest_0004
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \u260e.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
+     * @tc.name   testUtilsRequest_0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0400
+     * @tc.desc   Test the Buffer interface includes request with input emoji \u260e.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0004';
@@ -110,12 +110,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0500
-     * @tc.name       : testUtilsRequest_0005
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\udc79.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 5
+     * @tc.name   testUtilsRequest_0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0500
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\udc79.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0005';
@@ -128,12 +128,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0600
-     * @tc.name       : testUtilsRequest_0006
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\udd5b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 6
+     * @tc.name   testUtilsRequest_0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0600
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\udd5b.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0006';
@@ -146,12 +146,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0700
-     * @tc.name       : testUtilsRequest_0007
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83c\udf4f.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 7
+     * @tc.name   testUtilsRequest_0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0700
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83c\udf4f.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0007';
@@ -164,12 +164,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0800
-     * @tc.name       : testUtilsRequest_0008
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\udd03.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 8
+     * @tc.name   testUtilsRequest_0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0800
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\udd03.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0008';
@@ -182,12 +182,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0900
-     * @tc.name       : testUtilsRequest_0009
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83c\udf41.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 9
+     * @tc.name   testUtilsRequest_0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0900
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83c\udf41.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_0009';
@@ -200,12 +200,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_01000
-     * @tc.name       : testUtilsRequest_00010
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \u2666.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 10
+     * @tc.name   testUtilsRequest_00010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_01000
+     * @tc.desc   Test the Buffer interface includes request with input emoji \u2666.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_00010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_00010';
@@ -218,12 +218,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_01100
-     * @tc.name       : testUtilsRequest_00011
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\udc48.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 11
+     * @tc.name   testUtilsRequest_00011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_01100
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\udc48.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_00011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_00011';
@@ -236,12 +236,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_01200
-     * @tc.name       : testUtilsRequest_00012
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 12
+     * @tc.name   testUtilsRequest_00012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_01200
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequest_00012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsRequest_00012';
@@ -254,12 +254,12 @@ export default function EmojiUtilsTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
-     * @tc.name       : testUtilsQuery_0001
-     * @tc.desc       : Test the Buffer interface includes request with input emoji \ud83d\ude0a.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilsQuery_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
+     * @tc.desc   Test the Buffer interface includes request with input emoji \ud83d\ude0a.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsQuery_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let TAG = 'testUtilsQuery_0001';

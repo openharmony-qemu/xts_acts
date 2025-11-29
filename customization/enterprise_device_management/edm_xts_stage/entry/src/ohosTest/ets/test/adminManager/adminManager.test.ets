@@ -15,7 +15,8 @@
 import { describe, expect, it, Level } from '@ohos/hypium';
 import Want from '@ohos.app.ability.Want'
 import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EVENTS,
-  BUNDLENAME1, INVALID_WANT, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS, INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND
+  BUNDLENAME1, INVALID_WANT, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS, INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND,
+  OTHER_WANT, NOT_EXIST_WANT
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -948,6 +949,207 @@ export default function adminManagerTest() {
       } catch (error) {
         expect(error.code == 401).assertTrue();
       } 
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ENABLEDEVICEADMIN_001
+     * @tc.name      : test_enableDeviceAdmin_001
+     * @tc.desc      : test enableDeviceAdmin method with a normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_enableDeviceAdmin_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableDeviceAdmin(OTHER_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log('test_enableDeviceAdmin_001 error code: ' + error.code);
+        expect(error.code == 801 || error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ENABLEDEVICEADMIN_002
+     * @tc.name      : test_enableDeviceAdmin_002
+     * @tc.desc      : test enableDeviceAdmin method with enable a not exist admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_enableDeviceAdmin_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.enableDeviceAdmin(NOT_EXIST_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log('test_enableDeviceAdmin_002 error code: ' + error.code);
+        expect(error.code == 801 || error.code == 9200003).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ENABLEDEVICEADMIN_003
+     * @tc.name      : test_enableDeviceAdmin_003
+     * @tc.desc      : test enableDeviceAdmin method with enable a byod admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_enableDeviceAdmin_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.enableAdmin(OTHER_WANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD)
+        await adminManager.enableDeviceAdmin(OTHER_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log('test_enableDeviceAdmin_003 error code: ' + error.code);
+        expect(error.code == 801 || error.code == 9200004).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(OTHER_WANT);
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ENABLEDEVICEADMIN_004
+     * @tc.name      : test_enableDeviceAdmin_004
+     * @tc.desc      : test enableDeviceAdmin method success
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_enableDeviceAdmin_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.enableDeviceAdmin(OTHER_WANT);
+        let isEnabled = await adminManager.isAdminEnabled(OTHER_WANT);
+        expect(isEnabled).assertTrue();
+        await adminManager.disableDeviceAdmin(OTHER_WANT);
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ENABLEDEVICEADMIN_005
+     * @tc.name      : test_enableDeviceAdmin_005
+     * @tc.desc      : test enableDeviceAdmin method with a not active admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_enableDeviceAdmin_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.disableAdmin(SELFWANT);
+        await adminManager.enableDeviceAdmin(OTHER_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log('test_enableDeviceAdmin_005 error code: ' + error.code);
+        expect(error.code == 801 || error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_DISABLEDEVICEADMIN_001
+     * @tc.name      : test_disableDeviceAdmin_001
+     * @tc.desc      : test disableDeviceAdmin method with a normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_disableDeviceAdmin_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(OTHER_WANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.disableDeviceAdmin(OTHER_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log('test_disableDeviceAdmin_001 error code: ' + error.code);
+        expect(error.code == 801 || error.code == 9200001).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(OTHER_WANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_DISABLEDEVICEADMIN_002
+     * @tc.name      : test_disableDeviceAdmin_002
+     * @tc.desc      : test disableDeviceAdmin method with disable a super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_disableDeviceAdmin_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.disableDeviceAdmin(NOT_EXIST_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log('test_disableDeviceAdmin_002 error code: ' + error.code);
+        expect(error.code == 801 || error.code == 9200005).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_DISABLEDEVICEADMIN_003
+     * @tc.name      : test_disableDeviceAdmin_003
+     * @tc.desc      : test disableDeviceAdmin method success
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_disableDeviceAdmin_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.enableDeviceAdmin(OTHER_WANT);
+        await adminManager.disableDeviceAdmin(OTHER_WANT);
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_DISABLEDEVICEADMIN_004
+     * @tc.name      : test_disableDeviceAdmin_004
+     * @tc.desc      : test disableDeviceAdmin method with a not active admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_disableDeviceAdmin_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(OTHER_WANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.disableDeviceAdmin(OTHER_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log('test_disableDeviceAdmin_004 error code: ' + error.code);
+        expect(error.code == 801 || error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+        await adminManager.disableAdmin(OTHER_WANT);
+      }
       done();
     })
     })

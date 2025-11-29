@@ -54,12 +54,12 @@ export default function taskPoolTaskMultipleUITest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskMultipleUITest0100
      * @tc.number TASKPOOL_TASK_MULTIPLE_UI_TEST_0100
-     * @tc.name taskPoolTaskMultipleUITest0100
-     * @tc.desc test task ui
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test task ui
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('taskPoolTaskMultipleUITest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -96,12 +96,12 @@ export default function taskPoolTaskMultipleUITest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskMultipleUITest0200
      * @tc.number TASKPOOL_TASK_MULTIPLE_UI_TEST_0200
-     * @tc.name taskPoolTaskMultipleUITest0200
-     * @tc.desc test task ui
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test task ui
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskMultipleUITest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

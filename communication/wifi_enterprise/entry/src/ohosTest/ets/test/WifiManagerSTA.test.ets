@@ -69,7 +69,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0037
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0037
          * @tc.desc   Test addDeviceConfig Sync API functionality.
@@ -133,7 +132,6 @@ export default function wifiSta() {
         })
 		
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0042
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0042
          * @tc.desc   Test addDeviceConfig Sync API functionality.
@@ -156,7 +154,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0043
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0043
          * @tc.desc   Test addDeviceConfig Sync API functionality.

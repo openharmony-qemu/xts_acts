@@ -58,12 +58,12 @@ export default function builtinsNumberConstructorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0100
-     * @tc.name      : builtinsNumberConstructorTest0200
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberConstructorTest0200
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberConstructorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -92,12 +92,12 @@ export default function builtinsNumberConstructorTest() {
       });
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0200
-     * @tc.name      : builtinsNumberIsFiniteTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberIsFiniteTest0100
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberIsFiniteTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -127,12 +127,12 @@ export default function builtinsNumberConstructorTest() {
 
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0300
-     * @tc.name      : builtinsNumberIsIntegerTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberIsIntegerTest0100
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberIsIntegerTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -161,12 +161,12 @@ export default function builtinsNumberConstructorTest() {
       });
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0400
-     * @tc.name      : builtinsNumberIsNaNTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberIsNaNTest0100
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberIsNaNTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -195,12 +195,12 @@ export default function builtinsNumberConstructorTest() {
       });
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0500
-     * @tc.name      : builtinsNumberIsSafeIntegerTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberIsSafeIntegerTest0100
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberIsSafeIntegerTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -229,12 +229,12 @@ export default function builtinsNumberConstructorTest() {
       });
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0600
-     * @tc.name      : builtinsNumberParseTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberParseTest0100
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberParseTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -263,12 +263,12 @@ export default function builtinsNumberConstructorTest() {
       });
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0700
-     * @tc.name      : builtinsNumberPropertyTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberPropertyTest0100
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberPropertyTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function builtinsNumberConstructorTest() {
       });
 
     /**
-     * @tc.number    : SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0800
-     * @tc.name      : builtinsNumberPrototypeTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsNumberPrototypeTest0100
+     * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsNumberPrototypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

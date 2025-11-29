@@ -51,14 +51,13 @@ export default function ThermalControlMgrTest() {
              console.info('afterEach called')
         })
     
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_001
-         * @tc.name: ThermalControlMgrTest001
-         * @tc.desc: test request On successful
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest001
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_001
+         * @tc.desc   test request On successful
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest001", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest001---------------------------');
@@ -78,14 +77,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_002
-         * @tc.name: ThermalControlMgrTest002
-         * @tc.desc: test request Off successful
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest002
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_002
+         * @tc.desc   test request Off successful
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest002", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest002---------------------------');
@@ -104,14 +102,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_003
-         * @tc.name: ThermalControlMgrTest003
-         * @tc.desc: test request getLevel successful
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest003
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_003
+         * @tc.desc   test request getLevel successful
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest003", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest003---------------------------');
@@ -126,14 +123,13 @@ export default function ThermalControlMgrTest() {
             })
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_004
-         * @tc.name: ThermalControlMgrTest004
-         * @tc.desc: test SystemLoadLevel is LOW
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest004
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_004
+         * @tc.desc   test SystemLoadLevel is LOW
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest004", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest004---------------------------');
@@ -143,14 +139,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_005
-         * @tc.name: ThermalControlMgrTest005
-         * @tc.desc: test SystemLoadLevel is NORMAL
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest005
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_005
+         * @tc.desc   test SystemLoadLevel is NORMAL
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest005", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest005---------------------------');
@@ -160,14 +155,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_006
-         * @tc.name: ThermalControlMgrTest006
-         * @tc.desc: test SystemLoadLevel is MEDIUM
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest006
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_006
+         * @tc.desc   test SystemLoadLevel is MEDIUM
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest006", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest006---------------------------');
@@ -177,14 +171,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_007
-         * @tc.name: ThermalControlMgrTest007
-         * @tc.desc: test SystemLoadLevel is HIGH
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest007
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_007
+         * @tc.desc   test SystemLoadLevel is HIGH
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest007", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest007---------------------------');
@@ -194,14 +187,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_008
-         * @tc.name: ThermalControlMgrTest008
-         * @tc.desc: test SystemLoadLevel is OVERHEATED
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest008
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_008
+         * @tc.desc   test SystemLoadLevel is OVERHEATED
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest008", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest008---------------------------');
@@ -211,14 +203,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_009
-         * @tc.name: ThermalControlMgrTest009
-         * @tc.desc: test SystemLoadLevel is WARNNING
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest009
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_009
+         * @tc.desc   test SystemLoadLevel is WARNNING
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest009", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest009---------------------------');
@@ -228,14 +219,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_010
-         * @tc.name: ThermalControlMgrTest010
-         * @tc.desc: test SystemLoadLevel is EMERGENCY
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest010
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_010
+         * @tc.desc   test SystemLoadLevel is EMERGENCY
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest010", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest010---------------------------');
@@ -245,14 +235,13 @@ export default function ThermalControlMgrTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_011
-         * @tc.name: ThermalControlMgrTest011
-         * @tc.desc: test SystemLoadLevel is RSCAPTE
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 0
-         * @tc.require
+        /**
+         * @tc.name   ThermalControlMgrTest011
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_011
+         * @tc.desc   test SystemLoadLevel is RSCAPTE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ThermalControlMgrTest011", Level.LEVEL0, async function (done) {
             console.info('----------------------ThermalControlMgrTest011---------------------------');

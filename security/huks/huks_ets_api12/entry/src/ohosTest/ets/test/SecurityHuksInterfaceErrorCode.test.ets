@@ -58,12 +58,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0100
-     * @tc.name   : test deleteKeyItem, error code 401
-     * @tc.desc   : generate key, delete
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0100
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0100
+     * @tc.desc   generate key, delete
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0100";
@@ -80,12 +80,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0200
-     * @tc.name   : test deleteKeyItem, error code 12000011
-     * @tc.desc   : generate key, delete
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0200
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0200
+     * @tc.desc   generate key, delete
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0200";
@@ -99,12 +99,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0110
-     * @tc.name   : test deleteKeyItem, error code 401
-     * @tc.desc   : generate key, delete
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0110
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0110
+     * @tc.desc   generate key, delete
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0110', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0110";
@@ -121,12 +121,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0210
-     * @tc.name   : test deleteKeyItem, error code 12000011
-     * @tc.desc   : generate key, delete
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0210
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0210
+     * @tc.desc   generate key, delete
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0210', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0210";
@@ -140,12 +140,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0300
-     * @tc.name   : test importKeyItem, error code 12000002
-     * @tc.desc   : import key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0300
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0300
+     * @tc.desc   import key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0300";
@@ -162,12 +162,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0310
-     * @tc.name   : test importKeyItem, error code 12000002
-     * @tc.desc   : import key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0310
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0310
+     * @tc.desc   import key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0310', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0310";
@@ -184,12 +184,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0400
-     * @tc.name   : test exportKeyItem, error code 401
-     * @tc.desc   : generate key, export key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0400
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0400
+     * @tc.desc   generate key, export key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0400";
@@ -208,12 +208,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0500
-     * @tc.name   : test exportKeyItem, error code 12000011
-     * @tc.desc   : export key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0500
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0500
+     * @tc.desc   export key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0500";
@@ -227,12 +227,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0410
-     * @tc.name   : test exportKeyItem, error code 401
-     * @tc.desc   : generate key, export key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0410
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0410
+     * @tc.desc   generate key, export key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0410', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0410";
@@ -251,12 +251,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0510
-     * @tc.name   : test exportKeyItem, error code 12000011
-     * @tc.desc   : export key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0510
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0510
+     * @tc.desc   export key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0510', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0510";
@@ -270,12 +270,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0600
-     * @tc.name   : test getKeyItemProperties, error code 401
-     * @tc.desc   : generate key, get key properties
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0600
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0600
+     * @tc.desc   generate key, get key properties
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0600', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0600";
@@ -292,12 +292,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0700
-     * @tc.name   : test getKeyItemProperties, error code 12000011
-     * @tc.desc   : get key properties
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0700
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0700
+     * @tc.desc   get key properties
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0700', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0700";
@@ -311,12 +311,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0610
-     * @tc.name   : test getKeyItemProperties, error code 401
-     * @tc.desc   : generate key, get key properties
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0610
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0610
+     * @tc.desc   generate key, get key properties
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0610', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0610";
@@ -333,12 +333,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0710
-     * @tc.name   : test getKeyItemProperties, error code 12000011
-     * @tc.desc   : get key properties
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0710
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0710
+     * @tc.desc   get key properties
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0710', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0710";
@@ -352,12 +352,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0800
-     * @tc.name   : test hasKeyItem, error code 401
-     * @tc.desc   : generate key, query Key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0800
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0800
+     * @tc.desc   generate key, query Key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0800', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0800";
@@ -374,12 +374,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0810
-     * @tc.name   : test hasKeyItem, error code 401
-     * @tc.desc   : generate key, query Key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0810
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0810
+     * @tc.desc   generate key, query Key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0810', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0810";
@@ -396,12 +396,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0900
-     * @tc.name   : test initSession, error code 12000011
-     * @tc.desc   : init session
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0900
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0900
+     * @tc.desc   init session
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0900', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0900";
@@ -417,12 +417,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_0910
-     * @tc.name   : test initSession, error code 12000011
-     * @tc.desc   : init session
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_0910
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_0910
+     * @tc.desc   init session
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_0910', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_0910";
@@ -438,12 +438,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1000
-     * @tc.name   : test updateSession, error code 401
-     * @tc.desc   : generate key, init, update
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1000
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1000
+     * @tc.desc   generate key, init, update
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1000', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1000";
@@ -461,12 +461,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1100
-     * @tc.name   : test updateSession, error code 12000011
-     * @tc.desc   : update
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1100
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1100
+     * @tc.desc   update
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1100";
@@ -483,12 +483,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1010
-     * @tc.name   : test updateSession, error code 401
-     * @tc.desc   : generate key, init, update
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1010
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1010
+     * @tc.desc   generate key, init, update
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1010', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1010";
@@ -506,12 +506,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1110
-     * @tc.name   : test updateSession, error code 12000011
-     * @tc.desc   : update
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1110
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1110
+     * @tc.desc   update
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1110', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1110";
@@ -528,12 +528,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1200
-     * @tc.name   : test finishSession, error code 401
-     * @tc.desc   : generate key, init, finish
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1200
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1200
+     * @tc.desc   generate key, init, finish
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1200";
@@ -551,12 +551,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1300
-     * @tc.name   : test finishSession, error code 12000011
-     * @tc.desc   : finish
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1300
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1300
+     * @tc.desc   finish
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1300";
@@ -573,12 +573,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1210
-     * @tc.name   : test finishSession, error code 401
-     * @tc.desc   : generate key, init, finish
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1210
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1210
+     * @tc.desc   generate key, init, finish
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1210', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1210";
@@ -596,12 +596,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1310
-     * @tc.name   : test finishSession, error code 12000011
-     * @tc.desc   : finish
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1310
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1310
+     * @tc.desc   finish
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1310', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1310";
@@ -618,12 +618,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1400
-     * @tc.name   : test abortSession, error code 401
-     * @tc.desc   : generate key, init, abort
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1400
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1400
+     * @tc.desc   generate key, init, abort
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1400";
@@ -641,12 +641,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1410
-     * @tc.name   : test abortSession, error code 401
-     * @tc.desc   : generate key, init, abort
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1410
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1410
+     * @tc.desc   generate key, init, abort
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1410', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1410";
@@ -664,12 +664,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1700
-     * @tc.name   : test anonAttestKeyItem, error code 12000011
-     * @tc.desc   : attest key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1700
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1700
+     * @tc.desc   attest key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1700', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1700";
@@ -686,12 +686,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_1710
-     * @tc.name   : test anonAttestKeyItem, error code 12000011
-     * @tc.desc   : attest key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_1710
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_1710
+     * @tc.desc   attest key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1710', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1710";
@@ -708,12 +708,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_2800
-     * @tc.name   : test importKeyItem, error code 12000013
-     * @tc.desc   : import key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_2800
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_2800
+     * @tc.desc   import key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_2800', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_2800";
@@ -731,12 +731,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_2810
-     * @tc.name   : test importKeyItem, error code 12000013
-     * @tc.desc   : import key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_2810
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_2810
+     * @tc.desc   import key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_2810', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_2810";
@@ -754,12 +754,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_2900
-     * @tc.name   : test isKeyItemExist, error code 12000011
-     * @tc.desc   : query key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_2900
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_2900
+     * @tc.desc   query key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_2900', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_2900";
@@ -775,12 +775,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_2910
-     * @tc.name   : test isKeyItemExist, error code 12000011
-     * @tc.desc   : query key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_2910
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_2910
+     * @tc.desc   query key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_2910', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_2910";
@@ -796,12 +796,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3000
-     * @tc.name   : test importWrappedKeyItem, error code 401
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3000
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3000
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3000', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3000";
@@ -828,12 +828,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3100
-     * @tc.name   : test importWrappedKeyItem, error code 12000002
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3100
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3100
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3100";
@@ -860,12 +860,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3200
-     * @tc.name   : test importWrappedKeyItem, error code 12000003
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3200
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3200
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3200";
@@ -892,12 +892,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3300
-     * @tc.name   : test importWrappedKeyItem, error code 12000011
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3300
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3300
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3300";
@@ -923,12 +923,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3400
-     * @tc.name   : test importWrappedKeyItem, error code 12000013
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3400
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3400
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3400";
@@ -955,12 +955,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3010
-     * @tc.name   : test importWrappedKeyItem, error code 401
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3010
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3010
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3010', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3010";
@@ -987,12 +987,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3110
-     * @tc.name   : test importWrappedKeyItem, error code 12000002
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3110
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3110
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3110', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3110";
@@ -1019,12 +1019,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3210
-     * @tc.name   : test importWrappedKeyItem, error code 12000003
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3210
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3210
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3210', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3210";
@@ -1051,12 +1051,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3310
-     * @tc.name   : test importWrappedKeyItem, error code 12000011
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3310
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3310
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3310', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3310";
@@ -1082,12 +1082,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3410
-     * @tc.name   : test importWrappedKeyItem, error code 12000013
-     * @tc.desc   : import wrapped key
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3410
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3410
+     * @tc.desc   import wrapped key
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3410', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3410";
@@ -1114,12 +1114,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3500
-     * @tc.name   : test update, error code 401
-     * @tc.desc   : generate key, init, update
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3500
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3500
+     * @tc.desc   generate key, init, update
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3500";
@@ -1135,12 +1135,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API16_Interface_3510
-     * @tc.name   : test update, error code 401
-     * @tc.desc   : generate key, init, update
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API16_Interface_3510
+     * @tc.number SUB_Security_HUKS_ErrorCode_API16_Interface_3510
+     * @tc.desc   generate key, init, update
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_3510', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_3510";
@@ -1156,12 +1156,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0100
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0100
-     * @tc.desc   : test wrap key, error code 12000018
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0100
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0100
+     * @tc.desc   test wrap key, error code 12000018
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0100";
@@ -1176,12 +1176,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0200
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0200
-     * @tc.desc   : test unwrap key, error code 12000018
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0200
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0200
+     * @tc.desc   test unwrap key, error code 12000018
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0200";
@@ -1197,12 +1197,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0300
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0300
-     * @tc.desc   : test generateKeyItem, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0300
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0300
+     * @tc.desc   test generateKeyItem, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0300";
@@ -1217,12 +1217,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0400
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0400
-     * @tc.desc   : test generateKeyItem with error param, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0400
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0400
+     * @tc.desc   test generateKeyItem with error param, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0400";
@@ -1237,12 +1237,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0500
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0500
-     * @tc.desc   : test generateKeyItem with no alg, error code 12000002
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0500
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0500
+     * @tc.desc   test generateKeyItem with no alg, error code 12000002
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0500";
@@ -1257,12 +1257,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0600
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0600
-     * @tc.desc   : test generateKeyItem with invalid alg, error code 12000003
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0600
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0600
+     * @tc.desc   test generateKeyItem with invalid alg, error code 12000003
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0600', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0600";
@@ -1277,12 +1277,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0700
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0700
-     * @tc.desc   : test generateKeyItem with no credential, error code 12000013
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0700
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0700
+     * @tc.desc   test generateKeyItem with no credential, error code 12000013
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0700', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0700";
@@ -1297,12 +1297,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0800
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0800
-     * @tc.desc   : test generateKeyItem when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0800
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0800
+     * @tc.desc   test generateKeyItem when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0800', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0800";
@@ -1318,12 +1318,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0900
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0900
-     * @tc.desc   : test importKeyItem with multi alg, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0900
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0900
+     * @tc.desc   test importKeyItem with multi alg, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0900', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0900";
@@ -1337,12 +1337,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1000
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1000
-     * @tc.desc   : test importKeyItem with invalid alg, error code 12000003
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1000
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1000
+     * @tc.desc   test importKeyItem with invalid alg, error code 12000003
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1000', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1000";
@@ -1356,12 +1356,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1100
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1100
-     * @tc.desc   : test importKeyItem with empty appid, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1100
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1100
+     * @tc.desc   test importKeyItem with empty appid, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1100";
@@ -1375,12 +1375,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1200
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1200
-     * @tc.desc   : test importKeyItem when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1200
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1200
+     * @tc.desc   test importKeyItem when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1200";
@@ -1396,12 +1396,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1300
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1300
-     * @tc.desc   : test anonAttestKeyItem with multi param, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1300
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1300
+     * @tc.desc   test anonAttestKeyItem with multi param, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1300";
@@ -1417,12 +1417,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1400
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1400
-     * @tc.desc   : test importWrappedKeyItem with empty appid, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1400
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1400
+     * @tc.desc   test importWrappedKeyItem with empty appid, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1400";
@@ -1448,12 +1448,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1500
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1500
-     * @tc.desc   : test importWrappedKeyItem when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1500
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1500
+     * @tc.desc   test importWrappedKeyItem when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1500";
@@ -1479,12 +1479,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1600
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1600
-     * @tc.desc   : test isKeyItemExist with multi alg, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1600
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1600
+     * @tc.desc   test isKeyItemExist with multi alg, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1600', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1600";
@@ -1499,12 +1499,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1700
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1700
-     * @tc.desc   : test initSession with multi alg, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1700
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1700
+     * @tc.desc   test initSession with multi alg, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1700', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1700";
@@ -1519,12 +1519,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1800
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1800
-     * @tc.desc   : test initSession with invalid mode, error code 12000002
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1800
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1800
+     * @tc.desc   test initSession with invalid mode, error code 12000002
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1800', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1800";
@@ -1539,12 +1539,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1900
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1900
-     * @tc.desc   : test initSession with invalid iv length, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1900
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1900
+     * @tc.desc   test initSession with invalid iv length, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1900', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1900";
@@ -1559,12 +1559,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_2000
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_2000
-     * @tc.desc   : test updateSession with empty inData, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_2000
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_2000
+     * @tc.desc   test updateSession with empty inData, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_2000', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_2000";
@@ -1580,12 +1580,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_2100
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_2100
-     * @tc.desc   : test finishSession with empty inData, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_2100
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_2100
+     * @tc.desc   test finishSession with empty inData, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_2100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_2100";
@@ -1601,12 +1601,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_2200
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_2200
-     * @tc.desc   : test deriveKey when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_2200
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_2200
+     * @tc.desc   test deriveKey when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_2200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_2200";
@@ -1628,12 +1628,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0310
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0310
-     * @tc.desc   : test generateKeyItem, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0310
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0310
+     * @tc.desc   test generateKeyItem, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0310', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0310";
@@ -1648,12 +1648,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0410
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0410
-     * @tc.desc   : test generateKeyItem with error param, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0410
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0410
+     * @tc.desc   test generateKeyItem with error param, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0410', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0410";
@@ -1668,12 +1668,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0510
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0510
-     * @tc.desc   : test generateKeyItem with no alg, error code 12000002
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0510
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0510
+     * @tc.desc   test generateKeyItem with no alg, error code 12000002
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0510', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0510";
@@ -1688,12 +1688,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0610
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0610
-     * @tc.desc   : test generateKeyItem with invalid alg, error code 12000003
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0610
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0610
+     * @tc.desc   test generateKeyItem with invalid alg, error code 12000003
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0610', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0610";
@@ -1708,12 +1708,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     )
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0710
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0710
-     * @tc.desc   : test generateKeyItem with no credential, error code 12000013
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0710
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0710
+     * @tc.desc   test generateKeyItem with no credential, error code 12000013
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0710', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0710";
@@ -1728,12 +1728,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0810
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0810
-     * @tc.desc   : test generateKeyItem when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0810
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0810
+     * @tc.desc   test generateKeyItem when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0810', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0810";
@@ -1749,12 +1749,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_0910
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_0910
-     * @tc.desc   : test importKeyItem with multi alg, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_0910
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_0910
+     * @tc.desc   test importKeyItem with multi alg, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_0910', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_0910";
@@ -1768,12 +1768,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1010
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1010
-     * @tc.desc   : test importKeyItem with invalid alg, error code 12000003
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1010
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1010
+     * @tc.desc   test importKeyItem with invalid alg, error code 12000003
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1010', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1010";
@@ -1787,12 +1787,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1110
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1110
-     * @tc.desc   : test importKeyItem with empty appid, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1110
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1110
+     * @tc.desc   test importKeyItem with empty appid, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1110', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1110";
@@ -1806,12 +1806,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1210
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1210
-     * @tc.desc   : test importKeyItem when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1210
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1210
+     * @tc.desc   test importKeyItem when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1210', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1210";
@@ -1827,12 +1827,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1310
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1310
-     * @tc.desc   : test anonAttestKeyItem with multi param, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1310
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1310
+     * @tc.desc   test anonAttestKeyItem with multi param, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1310', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1310";
@@ -1848,12 +1848,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1410
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1410
-     * @tc.desc   : test importWrappedKeyItem with empty appid, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1410
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1410
+     * @tc.desc   test importWrappedKeyItem with empty appid, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1410', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1410";
@@ -1879,12 +1879,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1510
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1510
-     * @tc.desc   : test importWrappedKeyItem when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1510
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1510
+     * @tc.desc   test importWrappedKeyItem when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1510', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1510";
@@ -1910,12 +1910,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1610
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1610
-     * @tc.desc   : test isKeyItemExist with multi alg, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1610
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1610
+     * @tc.desc   test isKeyItemExist with multi alg, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1610', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1610";
@@ -1930,12 +1930,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1710
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1710
-     * @tc.desc   : test initSession with multi alg, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1710
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1710
+     * @tc.desc   test initSession with multi alg, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1710', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1710";
@@ -1950,12 +1950,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1810
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1810
-     * @tc.desc   : test initSession with invalid mode, error code 12000002
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1810
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1810
+     * @tc.desc   test initSession with invalid mode, error code 12000002
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1810', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1810";
@@ -1970,12 +1970,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_1910
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_1910
-     * @tc.desc   : test initSession with invalid iv length, error code 401
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_1910
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_1910
+     * @tc.desc   test initSession with invalid iv length, error code 401
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1910', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1910";
@@ -1990,12 +1990,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_2010
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_2010
-     * @tc.desc   : test updateSession with empty inData, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_2010
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_2010
+     * @tc.desc   test updateSession with empty inData, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_2010', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_2010";
@@ -2011,12 +2011,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_2110
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_2110
-     * @tc.desc   : test finishSession with empty inData, error code 12000014
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_2110
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_2110
+     * @tc.desc   test finishSession with empty inData, error code 12000014
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_2110', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_2010";
@@ -2032,12 +2032,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API20_Interface_2210
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API20_Interface_2210
-     * @tc.desc   : test deriveKey when key exist, error code 12000017
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API20_Interface_2210
+     * @tc.number SUB_Security_HUKS_ErrorCode_API20_Interface_2210
+     * @tc.desc   test deriveKey when key exist, error code 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_2210', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_2210";
@@ -2059,12 +2059,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0100
      * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0100
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0100
      * @tc.desc   test registerProvider when no permission, error code 201
-     * @tc.type   Safety
-     * @tc.size   SmallTest
-     * @tc.level  Level3
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API22_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0100";
@@ -2087,12 +2087,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0200
      * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0200
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0200
      * @tc.desc   test unregisterProvider when no permission, error code 201
-     * @tc.type   Safety
-     * @tc.size   SmallTest
-     * @tc.level  Level3
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API22_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0200";
@@ -2115,12 +2115,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0300
      * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0300
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0300
      * @tc.desc   test abnormal authUkeyPin , error code 202
-     * @tc.type   Safety
-     * @tc.size   SmallTest
-     * @tc.level  Level3
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API22_Interface_0300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0400";
@@ -2143,12 +2143,12 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0500
      * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0500
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0500
      * @tc.desc   test abnormal getUkeyPinAuthState, error code 12000012
-     * @tc.type   Safety
-     * @tc.size   SmallTest
-     * @tc.level  Level3
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API22_Interface_0500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0500";

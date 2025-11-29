@@ -124,12 +124,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0100
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0100
-     * @tc.name taskPoolTaskGroupTask0100
-     * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Create two tasks with string parameters and string return values, and execute them 10 times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('taskPoolTaskGroupTask0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
@@ -171,12 +171,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0200
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0200
-     * @tc.name taskPoolTaskGroupTask0200
-     * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times,error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Create two tasks with string parameters and string return values, and execute them 10 times,error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('taskPoolTaskGroupTask0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
@@ -223,12 +223,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0300
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0300
-     * @tc.name taskPoolTaskGroupTask0300
-     * @tc.desc Create two tasks with number parameters and number return values, and execute them 10 times.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with number parameters and number return values, and execute them 10 times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -262,12 +262,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0400
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0400
-     * @tc.name taskPoolTaskGroupTask0400
-     * @tc.desc Create two tasks with number parameters and number return values, and execute them 10 times,error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with number parameters and number return values, and execute them 10 times,error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -312,12 +312,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0500
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0500
-     * @tc.name taskPoolTaskGroupTask0500
-     * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with boolean parameters and boolean return values, and execute them 10 times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -349,12 +349,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0600
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0600
-     * @tc.name taskPoolTaskGroupTask0600
-     * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times,error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with boolean parameters and boolean return values, and execute them 10 times,error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -399,12 +399,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0700
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0700
-     * @tc.name taskPoolTaskGroupTask0700
-     * @tc.desc Create two tasks with bigint parameters and bigint return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with bigint parameters and bigint return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -436,12 +436,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0800
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0800
-     * @tc.name taskPoolTaskGroupTask0800
-     * @tc.desc Create two tasks with bigint parameters and bigint return values, and execute them 10 times,error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with bigint parameters and bigint return values, and execute them 10 times,error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -486,12 +486,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask0900
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_0900
-     * @tc.name taskPoolTaskGroupTask0900
-     * @tc.desc Create two tasks with undefined parameters and undefined return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with undefined parameters and undefined return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -519,12 +519,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1000
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1000
-     * @tc.name taskPoolTaskGroupTask1000
-     * @tc.desc Create two tasks with undefined parameters and undefined return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with undefined parameters and undefined return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -569,12 +569,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1100
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1100
-     * @tc.name taskPoolTaskGroupTask1100
-     * @tc.desc Create two tasks with null parameters and null return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with null parameters and null return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -605,12 +605,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1200
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1200
-     * @tc.name taskPoolTaskGroupTask1200
-     * @tc.desc Create two tasks with null parameters and null return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with null parameters and null return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -653,12 +653,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1300
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1300
-     * @tc.name taskPoolTaskGroupTask1300
-     * @tc.desc Create two tasks with Array parameters and Array return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Array parameters and Array return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -690,12 +690,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1400
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1400
-     * @tc.name taskPoolTaskGroupTask1400
-     * @tc.desc Create two tasks with Array parameters and Array return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Array parameters and Array return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -742,12 +742,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1500
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_01500
-     * @tc.name taskPoolTaskGroupTask01500
-     * @tc.desc Create two tasks with Map parameters and Map return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Map parameters and Map return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -778,12 +778,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1600
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_01600
-     * @tc.name taskPoolTaskGroupTask01600
-     * @tc.desc Create two tasks with Map parameters and Map return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Map parameters and Map return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -830,12 +830,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1700
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1700
-     * @tc.name taskPoolTaskGroupTask1700
-     * @tc.desc Create two tasks with Set parameters and Set return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Set parameters and Set return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -868,12 +868,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1800
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1800
-     * @tc.name taskPoolTaskGroupTask1800
-     * @tc.desc Create two tasks with Set parameters and Set return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Set parameters and Set return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -920,12 +920,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask1900
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_1900
-     * @tc.name taskPoolTaskGroupTask1900
-     * @tc.desc Create two tasks with Int8Array parameters and Int8Array return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Int8Array parameters and Int8Array return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -957,12 +957,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2000
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2000
-     * @tc.name taskPoolTaskGroupTask2000
-     * @tc.desc Create two tasks with Int8Array parameters and Int8Array return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Int8Array parameters and Int8Array return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1009,12 +1009,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2100
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2100
-     * @tc.name taskPoolTaskGroupTask2100
-     * @tc.desc Create two tasks with Uint8Array parameters and Uint8Array return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Uint8Array parameters and Uint8Array return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1046,12 +1046,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2200
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2200
-     * @tc.name taskPoolTaskGroupTask2200
-     * @tc.desc Create two tasks with Uint8Array parameters and Uint8Array return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Uint8Array parameters and Uint8Array return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1098,12 +1098,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2300
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2300
-     * @tc.name taskPoolTaskGroupTask2300
-     * @tc.desc Create two tasks with Int16Array parameters and Int16Array return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Int16Array parameters and Int16Array return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1135,12 +1135,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2400
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2400
-     * @tc.name taskPoolTaskGroupTask2400
-     * @tc.desc Create two tasks with Int16Array parameters and Int16Array return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Int16Array parameters and Int16Array return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1187,12 +1187,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2500
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2500
-     * @tc.name taskPoolTaskGroupTask2500
-     * @tc.desc Create two tasks with Uint16Array parameters and Uint16Array return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Uint16Array parameters and Uint16Array return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1224,12 +1224,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2600
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2600
-     * @tc.name taskPoolTaskGroupTask2600
-     * @tc.desc Create two tasks with Uint16Array parameters and Uint16Array return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Uint16Array parameters and Uint16Array return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1276,12 +1276,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2700
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2700
-     * @tc.name taskPoolTaskGroupTask2700
-     * @tc.desc Create two tasks with Int32Array parameters and Int32Array return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Int32Array parameters and Int32Array return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1313,12 +1313,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2800
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2800
-     * @tc.name taskPoolTaskGroupTask2800
-     * @tc.desc Create two tasks with Int32Array parameters and Int32Array return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Int32Array parameters and Int32Array return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1365,12 +1365,12 @@ export default function TaskGroupAbilityTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskGroupTask2900
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_2900
-     * @tc.name taskPoolTaskGroupTask2900
-     * @tc.desc Create two tasks with Uint32Array parameters and Uint32Array return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Uint32Array parameters and Uint32Array return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1402,12 +1402,12 @@ export default function TaskGroupAbilityTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask3000
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_3000
-     * @tc.name taskPoolTaskGroupTask3000
-     * @tc.desc Create two tasks with Uint32Array parameters and Uint32Array return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with Uint32Array parameters and Uint32Array return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 

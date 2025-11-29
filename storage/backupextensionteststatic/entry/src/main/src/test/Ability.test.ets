@@ -39,12 +39,12 @@ export default function abilityTest() {
     describe("backupExtension", (): void => {
         hilog.info(domain, tag, '%{public}s', 'backupExtension start');
         /**
-         * @tc.number    : SUB_BACKUP_EXTENSION_CALL_0000
-         * @tc.name      : backup_extension_test_call_static_000
-         * @tc.desc      : select with option
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   backup_extension_test_call_static_000
+         * @tc.number SUB_BACKUP_EXTENSION_CALL_0000
+         * @tc.desc   select with option
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("backup_extension_test_call_static_000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {

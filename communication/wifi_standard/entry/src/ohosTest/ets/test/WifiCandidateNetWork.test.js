@@ -85,7 +85,6 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0001
          * @tc.number Communication_WiFi_XTS_UntrustedConfig_0001
          * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig Promise API functionality.
@@ -139,7 +138,6 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0002
          * @tc.number Communication_WiFi_XTS_UntrustedConfig_0002
          * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig callback API functionality.
@@ -187,7 +185,6 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0003
          * @tc.number Communication_WiFi_XTS_UntrustedConfig_0003
          * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig Promise API functionality.
@@ -230,7 +227,6 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0004
          * @tc.number Communication_WiFi_XTS_UntrustedConfig_0004
          * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig callback API functionality.

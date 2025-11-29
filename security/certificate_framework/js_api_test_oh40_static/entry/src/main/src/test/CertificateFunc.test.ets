@@ -41,9 +41,12 @@ export default function CertFrameworkFuncTestJSUnit() {
     });
 
     /**
+     * @tc.name   Security_CertificateFramework_Enum_Func_0100
      * @tc.number Security_CertificateFramework_Enum_Func_0100
-     * @tc.name Security_CertificateFramework_Enum_Func_0100
-     * @tc.desc X509 Cert Enum Type Test
+     * @tc.desc   X509 Cert Enum Type Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_Enum_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -57,9 +60,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertTest_Func_0100
      * @tc.number Security_CertificateFramework_CertTest_Func_0100
-     * @tc.name Security_CertificateFramework_CertTest_Func_0100
-     * @tc.desc Create Der Cert with Promise Style
+     * @tc.desc   Create Der Cert with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertTest_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -86,9 +92,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertTest_Func_0200
      * @tc.number Security_CertificateFramework_CertTest_Func_0200
-     * @tc.name Security_CertificateFramework_CertTest_Func_0200
-     * @tc.desc Create Der Cert with Callback Style
+     * @tc.desc   Create Der Cert with Callback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertTest_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -115,9 +124,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       })
 
     /**
+     * @tc.name   Security_CertificateFramework_CertTest_Func_0300
      * @tc.number Security_CertificateFramework_CertTest_Func_0300
-     * @tc.name Security_CertificateFramework_CertTest_Func_0300
-     * @tc.desc Create Der Cert with Promise Style
+     * @tc.desc   Create Der Cert with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertTest_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -148,9 +160,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertTest_Func_0400
      * @tc.number Security_CertificateFramework_CertTest_Func_0400
-     * @tc.name Security_CertificateFramework_CertTest_Func_0400
-     * @tc.desc Create Der Cert with Callback Style
+     * @tc.desc   Create Der Cert with Callback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertTest_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -181,9 +196,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertTest_Func_0500
      * @tc.number Security_CertificateFramework_CertTest_Func_0500
-     * @tc.name Security_CertificateFramework_CertTest_Func_0500
-     * @tc.desc Create Der Cert with Promise Style
+     * @tc.desc   Create Der Cert with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertTest_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -213,9 +231,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_0100
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0100
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0100
-     * @tc.desc Create Der CertExtension with Promise Style
+     * @tc.desc   Create Der CertExtension with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -243,10 +264,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_0200
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0200
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0200
-     * @tc.desc Create Der CertExtension with Callback Style
-     * @tc.desc ExtensionOidType is EXTENSION_OID_TYPE_ALL
+     * @tc.desc   ExtensionOidType is EXTENSION_OID_TYPE_ALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CertificateFramework_CertExtensionTest_Func_0200",
@@ -293,10 +316,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_0300
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0300
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0300
-     * @tc.desc Create Der CertExtension with Promise Style
-     * @tc.desc ExtensionOidType is EXTENSION_OID_TYPE_CRITICAL
+     * @tc.desc   ExtensionOidType is EXTENSION_OID_TYPE_CRITICAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -343,10 +368,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_0400
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0400
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0400
-     * @tc.desc Create Der CertExtension with Callback Style
-     * @tc.desc ExtensionOidType is EXTENSION_OID_TYPE_UNCRITICAL
+     * @tc.desc   ExtensionOidType is EXTENSION_OID_TYPE_UNCRITICAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CertificateFramework_CertExtensionTest_Func_0400",
@@ -397,9 +424,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_0500
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0500
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0500
-     * @tc.desc Use callback style
+     * @tc.desc   Use callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -420,9 +450,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_0600
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0600
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0600
-     * @tc.desc Create Der CertExtension with Promise Style
+     * @tc.desc   Create Der CertExtension with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CertificateFramework_CertExtensionTest_Func_0600",
@@ -446,9 +479,12 @@ export default function CertFrameworkFuncTestJSUnit() {
       });
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_1000
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1000
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1000
-     * @tc.desc Create Der CertExtension with Promise Style
+     * @tc.desc   Create Der CertExtension with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -478,9 +514,12 @@ export default function CertFrameworkFuncTestJSUnit() {
     );
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_1400
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1400
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1400
-     * @tc.desc Create Der CertExtension with Promise Style
+     * @tc.desc   Create Der CertExtension with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -511,9 +550,12 @@ export default function CertFrameworkFuncTestJSUnit() {
     );
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_1500
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1500
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1500
-     * @tc.desc Create Der CertExtension with Promise Style
+     * @tc.desc   Create Der CertExtension with Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -536,9 +578,12 @@ export default function CertFrameworkFuncTestJSUnit() {
     );
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_1600
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1600
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1600
-     * @tc.desc Use callback style
+     * @tc.desc   Use callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -561,9 +606,12 @@ export default function CertFrameworkFuncTestJSUnit() {
     );
 
     /**
+     * @tc.name   Security_CertificateFramework_CertExtensionTest_Func_1700
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1700
-     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1700
-     * @tc.desc Use callback style
+     * @tc.desc   Use callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {

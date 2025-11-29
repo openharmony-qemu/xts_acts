@@ -67,12 +67,12 @@ export default function SetDeleteTest() {
     })
 
     /**
+     * @tc.name   SetDeleteTest001
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0100
-     * @tc.name SetDeleteTest001
-     * @tc.desc Delete existing string value, verify return true and size decreases
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete existing string value, verify return true and size decreases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['apple', 'banana', 'cherry']);
@@ -84,12 +84,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest002
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0200
-     * @tc.name SetDeleteTest002
-     * @tc.desc Delete non-existing string value, verify return false and size unchanged
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete non-existing string value, verify return false and size unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['apple', 'banana']);
@@ -101,12 +101,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest003
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0300
-     * @tc.name SetDeleteTest003
-     * @tc.desc Delete existing number value, verify return true and size decreases
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete existing number value, verify return true and size decreases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([10, 20, 30]);
@@ -118,12 +118,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest004
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0400
-     * @tc.name SetDeleteTest004
-     * @tc.desc Delete non-existing number value, verify return false and size unchanged
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete non-existing number value, verify return false and size unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([10, 20]);
@@ -135,12 +135,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest005
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0500
-     * @tc.name SetDeleteTest005
-     * @tc.desc Delete existing boolean value, verify return true and size decreases
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete existing boolean value, verify return true and size decreases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([true, false, true]);
@@ -152,12 +152,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest006
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0600
-     * @tc.name SetDeleteTest006
-     * @tc.desc Delete the only element in Set, verify return true and size becomes 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete the only element in Set, verify return true and size becomes 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['only-element']);
@@ -169,12 +169,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest007
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0700
-     * @tc.name SetDeleteTest007
-     * @tc.desc Call delete() on empty Set, verify return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call delete() on empty Set, verify return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<string>();
@@ -185,12 +185,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest008
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0800
-     * @tc.name SetDeleteTest008
-     * @tc.desc Delete same value twice, verify only first returns true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete same value twice, verify only first returns true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1, 2, 3]);
@@ -203,12 +203,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest009
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_0900
-     * @tc.name SetDeleteTest009
-     * @tc.desc Delete null value, verify return true if exists
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete null value, verify return true if exists
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([null, 1, 2]);
@@ -220,12 +220,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest010
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1000
-     * @tc.name SetDeleteTest010
-     * @tc.desc Delete undefined value, verify return true if exists
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Delete undefined value, verify return true if exists
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetDeleteTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([undefined, 'a', 'b']);
@@ -237,12 +237,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest011
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1100
-     * @tc.name SetDeleteTest011
-     * @tc.desc Delete NaN (treated as equal to itself), verify return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete NaN (treated as equal to itself), verify return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([NaN, 1, 2]);
@@ -254,12 +254,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest012
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1200
-     * @tc.name SetDeleteTest012
-     * @tc.desc Delete 0 and -0 (treated as equal), verify delete both with one call
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete 0 and -0 (treated as equal), verify delete both with one call
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([0, -0, 100]);
@@ -272,12 +272,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest013
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1300
-     * @tc.name SetDeleteTest013
-     * @tc.desc Delete existing Symbol value, verify return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete existing Symbol value, verify return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetDeleteTest013();
@@ -288,12 +288,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest014
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1400
-     * @tc.name SetDeleteTest014
-     * @tc.desc Delete existing BigInt value, verify return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete existing BigInt value, verify return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const bigInt = 123n;
@@ -306,12 +306,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest015
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1500
-     * @tc.name SetDeleteTest015
-     * @tc.desc Delete object by same reference, verify return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete object by same reference, verify return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI {
@@ -329,12 +329,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest016
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1600
-     * @tc.name SetDeleteTest016
-     * @tc.desc Delete object by different reference, verify return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete object by different reference, verify return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI {
@@ -350,12 +350,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest018
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1800
-     * @tc.name SetDeleteTest018
-     * @tc.desc Delete Date object by same reference, verify return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete Date object by same reference, verify return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const date = new Date('2024-01-01');
@@ -369,12 +369,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest019
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_1900
-     * @tc.name SetDeleteTest019
-     * @tc.desc Delete RegExp object by same reference, verify return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete RegExp object by same reference, verify return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const regex = /test/;
@@ -388,12 +388,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest020
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2000
-     * @tc.name SetDeleteTest020
-     * @tc.desc Delete function by same reference, verify return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete function by same reference, verify return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const func = () => {
@@ -410,12 +410,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest021
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2100
-     * @tc.name SetDeleteTest021
-     * @tc.desc Delete element and re-add same value, verify normal addition
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and re-add same value, verify normal addition
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -428,12 +428,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest022
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2200
-     * @tc.name SetDeleteTest022
-     * @tc.desc Delete element and verify iterator has no deleted element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and verify iterator has no deleted element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -446,12 +446,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest023
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2300
-     * @tc.name SetDeleteTest023
-     * @tc.desc Multiple references to same Set, delete affects all references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Multiple references to same Set, delete affects all references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -467,12 +467,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest024
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2400
-     * @tc.name SetDeleteTest024
-     * @tc.desc Delete element from frozen Set (should throw TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from frozen Set (should throw TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetDeleteTest024();
@@ -483,12 +483,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest025
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2500
-     * @tc.name SetDeleteTest025
-     * @tc.desc Delete element from sealed Set (should throw TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from sealed Set (should throw TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -507,12 +507,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest026
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2600
-     * @tc.name SetDeleteTest026
-     * @tc.desc Modify object after deletion, verify no impact on delete result
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Modify object after deletion, verify no impact on delete result
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -531,12 +531,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest027
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2700
-     * @tc.name SetDeleteTest027
-     * @tc.desc Delete element and verify forEach has no deleted element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and verify forEach has no deleted element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -555,12 +555,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest028
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2800
-     * @tc.name SetDeleteTest028
-     * @tc.desc Delete element and verify for...of loop has no deleted element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and verify for...of loop has no deleted element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['x', 'y', 'z']);
@@ -579,12 +579,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest029
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_2900
-     * @tc.name SetDeleteTest029
-     * @tc.desc Delete element and verify spread operator has no deleted element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and verify spread operator has no deleted element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([true, false, null]);
@@ -597,12 +597,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest031
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3100
-     * @tc.name SetDeleteTest031
-     * @tc.desc Delete element during forEach iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element during forEach iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3, 4]);
@@ -622,12 +622,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest032
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3200
-     * @tc.name SetDeleteTest032
-     * @tc.desc Delete element during for...of iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element during for...of iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c', 'd']);
@@ -647,12 +647,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest033
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3300
-     * @tc.name SetDeleteTest033
-     * @tc.desc Delete elements in reverse order
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete elements in reverse order
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([10, 20, 30, 40]);
@@ -667,12 +667,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest034
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3400
-     * @tc.name SetDeleteTest034
-     * @tc.desc Delete element and check entries() iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check entries() iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['x', 'y', 'z']);
@@ -684,12 +684,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest035
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3500
-     * @tc.name SetDeleteTest035
-     * @tc.desc Delete element from Set created with Set constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element from Set created with Set constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const originalSet = new Set([1, 2, 3]);
@@ -703,12 +703,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest036
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3600
-     * @tc.name SetDeleteTest036
-     * @tc.desc Delete element from Set created with array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element from Set created with array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = ['a', 'b', 'c'];
@@ -722,12 +722,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest037
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3700
-     * @tc.name SetDeleteTest037
-     * @tc.desc Delete element with same value but different type
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element with same value but different type
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, '1', 2, '2']);
@@ -743,12 +743,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest038
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3800
-     * @tc.name SetDeleteTest038
-     * @tc.desc Delete element from large Set (1000 elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from large Set (1000 elements)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest038', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
@@ -765,12 +765,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest039
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_3900
-     * @tc.name SetDeleteTest039
-     * @tc.desc Delete all elements from large Set using delete()
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete all elements from large Set using delete()
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest039', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -788,12 +788,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest040
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4000
-     * @tc.name SetDeleteTest040
-     * @tc.desc Delete element from Set with mixed primitive types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element from Set with mixed primitive types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetDeleteTest040();
@@ -805,12 +805,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest041
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4100
-     * @tc.name SetDeleteTest041
-     * @tc.desc Delete Symbol with same description but different instance
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete Symbol with same description but different instance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetDeleteTest041();
@@ -821,12 +821,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest042
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4200
-     * @tc.name SetDeleteTest042
-     * @tc.desc Delete BigInt with same value but different instance
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete BigInt with same value but different instance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const bigInt1 = 123n;
@@ -841,12 +841,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest043
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4300
-     * @tc.name SetDeleteTest043
-     * @tc.desc Delete element from nested Set structure
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from nested Set structure
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const innerSet = new Set([1, 2, 3]);
@@ -862,12 +862,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest044
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4400
-     * @tc.name SetDeleteTest044
-     * @tc.desc Delete element and check with Array.from()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Array.from()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['p', 'q', 'r']);
@@ -881,12 +881,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest045
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4500
-     * @tc.name SetDeleteTest045
-     * @tc.desc Delete element from Set after mutation of the element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set after mutation of the element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -905,12 +905,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest046
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4600
-     * @tc.name SetDeleteTest046
-     * @tc.desc Delete element using a variable reference
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element using a variable reference
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const value = 'target';
@@ -924,12 +924,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest047
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4700
-     * @tc.name SetDeleteTest047
-     * @tc.desc Delete element and check with Set.prototype.keys()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Set.prototype.keys()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([10, 20, 30]);
@@ -942,12 +942,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest048
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4800
-     * @tc.name SetDeleteTest048
-     * @tc.desc Delete element and then clear the Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and then clear the Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['x', 'y', 'z']);
@@ -961,12 +961,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest049
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_4900
-     * @tc.name SetDeleteTest049
-     * @tc.desc Delete element from Set and check with Array.includes()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.includes()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([5, 10, 15]);
@@ -980,12 +980,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest050
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5000
-     * @tc.name SetDeleteTest050
-     * @tc.desc Delete element and check with Set.prototype.values() after delay
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Set.prototype.values() after delay
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -999,12 +999,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest051
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5100
-     * @tc.name SetDeleteTest051
-     * @tc.desc Delete element using delete() in a function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element using delete() in a function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2, 3]);
@@ -1017,12 +1017,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest052
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5200
-     * @tc.name SetDeleteTest052
-     * @tc.desc Delete element from Set in a class method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set in a class method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class SetManager {
@@ -1046,12 +1046,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest053
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5300
-     * @tc.name SetDeleteTest053
-     * @tc.desc Delete element from Set and check with JSON serialization
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with JSON serialization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1063,12 +1063,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest054
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5400
-     * @tc.name SetDeleteTest054
-     * @tc.desc Delete element and check with Set.prototype.has() after async operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Set.prototype.has() after async operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['p', 'q', 'r']);
@@ -1081,12 +1081,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest055
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5500
-     * @tc.name SetDeleteTest055
-     * @tc.desc Delete element and then add a different element with same string representation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element and then add a different element with same string representation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetDeleteTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([123, '123']);
@@ -1101,12 +1101,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest056
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5600
-     * @tc.name SetDeleteTest056
-     * @tc.desc Delete element using optional chaining operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element using optional chaining operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1121,12 +1121,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest057
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5700
-     * @tc.name SetDeleteTest057
-     * @tc.desc Delete element and check with spread operator in function call
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with spread operator in function call
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetDeleteTest057();
@@ -1136,12 +1136,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest058
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5800
-     * @tc.name SetDeleteTest058
-     * @tc.desc Delete element and check with Array.find()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Array.find()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1159,12 +1159,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest059
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_5900
-     * @tc.name SetDeleteTest059
-     * @tc.desc Delete element from Set and use with Map
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and use with Map
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1184,12 +1184,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest060
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6000
-     * @tc.name SetDeleteTest060
-     * @tc.desc Delete element and check with Set intersection operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Set intersection operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set1 = new Set([1, 2, 3, 4]);
@@ -1205,12 +1205,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest061
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6100
-     * @tc.name SetDeleteTest061
-     * @tc.desc Delete element from Set and check with Set difference operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Set difference operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const setA = new Set(['x', 'y', 'z']);
@@ -1225,12 +1225,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest062
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6200
-     * @tc.name SetDeleteTest062
-     * @tc.desc Delete element from Set with custom objects and check identity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set with custom objects and check identity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class MyClass {
@@ -1253,12 +1253,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest063
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6300
-     * @tc.name SetDeleteTest063
-     * @tc.desc Delete element and check with Array.filter()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Array.filter()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([10, 20, 30, 40]);
@@ -1270,12 +1270,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest064
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6400
-     * @tc.name SetDeleteTest064
-     * @tc.desc Delete element and check with Array.map()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Array.map()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -1287,12 +1287,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest065
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6500
-     * @tc.name SetDeleteTest065
-     * @tc.desc Delete element and check with Set union operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Set union operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const setX = new Set([1, 2, 3]);
@@ -1308,12 +1308,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest066
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6600
-     * @tc.name SetDeleteTest066
-     * @tc.desc Delete element from Set and check with Array.reduce()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.reduce()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3, 4]);
@@ -1325,12 +1325,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest067
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6700
-     * @tc.name SetDeleteTest067
-     * @tc.desc Delete element from Set and check with Array.every()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.every()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([2, 4, 6, 8, 9]);
@@ -1342,12 +1342,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest068
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6800
-     * @tc.name SetDeleteTest068
-     * @tc.desc Delete element from Set and check with Array.some()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.some()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['apple', 'banana', 'cherry', 'date']);
@@ -1359,12 +1359,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest069
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_6900
-     * @tc.name SetDeleteTest069
-     * @tc.desc Delete element from Set and check with Array.findIndex()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.findIndex()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c', 'd']);
@@ -1377,12 +1377,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest070
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7000
-     * @tc.name SetDeleteTest070
-     * @tc.desc Delete element from Set and check with Array.indexOf()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.indexOf()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([10, 20, 30, 40]);
@@ -1395,12 +1395,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest071
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7100
-     * @tc.name SetDeleteTest071
-     * @tc.desc Delete element from Set with Symbol.iterator modified
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set with Symbol.iterator modified
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetDeleteTest071() as (boolean | number[])[];
@@ -1410,36 +1410,36 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest072
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7200
-     * @tc.name SetDeleteTest072
-     * @tc.desc Delete element from Set and use with generator function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and use with generator function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetDeleteTest072()).assertDeepEquals(['x', 'z']);
     });
 
     /**
+     * @tc.name   SetDeleteTest073
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7300
-     * @tc.name SetDeleteTest073
-     * @tc.desc Delete element and check with Set.prototype.values() in a loop
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Set.prototype.values() in a loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetDeleteTest073()).assertDeepEquals([5, 15, 20]);
     });
 
     /**
+     * @tc.name   SetDeleteTest074
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7400
-     * @tc.name SetDeleteTest074
-     * @tc.desc Delete element and use with Array.flatMap()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and use with Array.flatMap()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['hello', 'world', 'test']);
@@ -1451,12 +1451,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest075
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7500
-     * @tc.name SetDeleteTest075
-     * @tc.desc Delete element and check with Array.includes() after transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Array.includes() after transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3, 4]);
@@ -1469,12 +1469,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest076
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7600
-     * @tc.name SetDeleteTest076
-     * @tc.desc Delete element from Set and check with JSON.parse and JSON.stringify
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with JSON.parse and JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1493,12 +1493,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest077
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7700
-     * @tc.name SetDeleteTest077
-     * @tc.desc Delete element and check with Set.prototype.forEach after mutation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element and check with Set.prototype.forEach after mutation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1519,12 +1519,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest078
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7800
-     * @tc.name SetDeleteTest078
-     * @tc.desc Delete element from Set and use with Promise.all
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and use with Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1540,12 +1540,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest079
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_7900
-     * @tc.name SetDeleteTest079
-     * @tc.desc Delete element from Set and check with Array.sort()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.sort()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([5, 2, 8, 1, 9]);
@@ -1557,12 +1557,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest080
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8000
-     * @tc.name SetDeleteTest080
-     * @tc.desc Delete element from Set and check with Array.reverse()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.reverse()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c', 'd']);
@@ -1574,12 +1574,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest081
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8100
-     * @tc.name SetDeleteTest081
-     * @tc.desc Delete element from Set and check with Array.slice()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.slice()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([10, 20, 30, 40, 50]);
@@ -1592,12 +1592,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest082
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8200
-     * @tc.name SetDeleteTest082
-     * @tc.desc Delete element from Set and check with Array.splice()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.splice()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['x', 'y', 'z', 'w']);
@@ -1610,12 +1610,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest083
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8300
-     * @tc.name SetDeleteTest083
-     * @tc.desc Delete element from Set and check with Array.join()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.join()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['Hello', 'world', 'test']);
@@ -1627,12 +1627,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest084
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8400
-     * @tc.name SetDeleteTest084
-     * @tc.desc Delete element from Set and check with Array.concat()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.concat()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set1 = new Set([1, 2, 3]);
@@ -1646,12 +1646,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest086
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8600
-     * @tc.name SetDeleteTest086
-     * @tc.desc Delete element from Set and check with Array.fill()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.fill()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3, 4]);
@@ -1664,12 +1664,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest087
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8700
-     * @tc.name SetDeleteTest087
-     * @tc.desc Delete element from Set and check with Array.copyWithin()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.copyWithin()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c', 'd']);
@@ -1682,12 +1682,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest088
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8800
-     * @tc.name SetDeleteTest088
-     * @tc.desc Delete element from Set and check with Array.includes() after filter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.includes() after filter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([10, 20, 30, 40, 50]);
@@ -1700,12 +1700,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest089
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_8900
-     * @tc.name SetDeleteTest089
-     * @tc.desc Delete element from Set and check with Array.indexOf() after map
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.indexOf() after map
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c', 'd']);
@@ -1718,12 +1718,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest090
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9000
-     * @tc.name SetDeleteTest090
-     * @tc.desc Delete element from Set and check with Array.lastIndexOf()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.lastIndexOf()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([5, 10, 15, 10, 20]);
@@ -1736,12 +1736,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest091
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9100
-     * @tc.name SetDeleteTest091
-     * @tc.desc Delete element from Set and check with Array.reduceRight()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.reduceRight()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -1753,12 +1753,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest092
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9200
-     * @tc.name SetDeleteTest092
-     * @tc.desc Delete element from Set and check with Array.every() after transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.every() after transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([2, 4, 6, 7, 8]);
@@ -1772,12 +1772,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest093
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9300
-     * @tc.name SetDeleteTest093
-     * @tc.desc Delete element from Set and check with Array.some() after transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.some() after transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['apple', 'banana', 'cherry', 'date']);
@@ -1791,24 +1791,24 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest094
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9400
-     * @tc.name SetDeleteTest094
-     * @tc.desc Delete element from Set and check with Array.find() after transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.find() after transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetDeleteTest094()).assertDeepEquals({ id: 3, value: 30 });
     });
 
     /**
+     * @tc.name   SetDeleteTest095
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9500
-     * @tc.name SetDeleteTest095
-     * @tc.desc Delete element from Set and check with Array.findIndex() after transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.findIndex() after transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([10, 20, 30, 40, 50]);
@@ -1822,12 +1822,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest096
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9600
-     * @tc.name SetDeleteTest096
-     * @tc.desc Delete element from Set and check with Array.filter() after transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.filter() after transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['a', 'B', 'c', 'D', 'e']);
@@ -1841,12 +1841,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest097
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9700
-     * @tc.name SetDeleteTest097
-     * @tc.desc Delete element from Set and check with Array.map() after filter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.map() after filter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3, 4, 5, 6]);
@@ -1860,12 +1860,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest098
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9800
-     * @tc.name SetDeleteTest098
-     * @tc.desc Delete element from Set and check with Array.reduce() after filter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.reduce() after filter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([10, 20, 30, 40, 50]);
@@ -1879,12 +1879,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest099
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_9900
-     * @tc.name SetDeleteTest099
-     * @tc.desc Delete element from Set and check with Array.sort() after filter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete element from Set and check with Array.sort() after filter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['orange', 'apple', 'banana', 'grape', 'cherry']);
@@ -1898,12 +1898,12 @@ export default function SetDeleteTest() {
     });
 
     /**
+     * @tc.name   SetDeleteTest100
      * @tc.number SUB_BUILTINS_SET_DELETE_TEST_10000
-     * @tc.name SetDeleteTest100
-     * @tc.desc Comprehensive test: multiple deletes, additions, and transformations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: multiple deletes, additions, and transformations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetDeleteTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetDeleteTest100() as (number | boolean | string[] | number[])[];

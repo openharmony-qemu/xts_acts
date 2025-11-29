@@ -27,12 +27,12 @@ export default function sceneTest() {
     let scene: Scene | null = null;
     let rf: scene3d.SceneResourceFactory;
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0010
-     * @tc.name      : testSceneLoad
-     * @tc.desc      : Used to load the resource through the incoming resource path
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneLoad_01
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0010
+     * @tc.desc   Used to load the resource through the incoming resource path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneLoad_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testSceneLoad_01";
@@ -50,12 +50,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0020
-     * @tc.name      : testGetNodeByPath
-     * @tc.desc      : Nodes are obtained from paths
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetNodeByPath
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0020
+     * @tc.desc   Nodes are obtained from paths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testGetNodeByPath";
@@ -82,12 +82,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0030
-     * @tc.name      : testGetResourceFactory
-     * @tc.desc      : Used to get the Scene Asset Factory object
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetResourceFactory
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0030
+     * @tc.desc   Used to get the Scene Asset Factory object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetResourceFactory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testGetResourceFactory";
@@ -105,12 +105,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0040
-     * @tc.name      : testDestroy
-     * @tc.desc      : Used to destroy the scene and release all scene resources
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDestroy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0040
+     * @tc.desc   Used to destroy the scene and release all scene resources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testDestroy";
@@ -131,12 +131,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0050
-     * @tc.name      : testSceneResourceParameters
-     * @tc.desc      : Used to provide the name of the scene asset and the path to the asset file required for the 3D scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneResourceParameters
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0050
+     * @tc.desc   Used to provide the name of the scene asset and the path to the asset file required for the 3D scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneResourceParameters', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
       let msg = "============================testSceneResourceParameters";
@@ -152,12 +152,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0060
-     * @tc.name      : testSceneNodeParameters
-     * @tc.desc      : A scene node parameter object, which is used to provide a name and path in the scene node hierarchy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneNodeParameters
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0060
+     * @tc.desc   A scene node parameter object, which is used to provide a name and path in the scene node hierarchy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneNodeParameters', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
       let msg = "============================testSceneNodeParameters";
@@ -173,12 +173,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0070
-     * @tc.name      : testSceneType
-     * @tc.desc      : SystemCapability.ArkUI.Graphics
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0070
+     * @tc.desc   SystemCapability.ArkUI.Graphics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
       let msg = "============================testSceneType";
@@ -198,12 +198,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0500
-     * @tc.name      : testSceneRenderFrame
-     * @tc.desc      : Used to see if the scene is single-frame
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneRenderFrame
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0500
+     * @tc.desc   Used to see if the scene is single-frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneRenderFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testSceneRenderFrame";
@@ -224,12 +224,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0510
-     * @tc.name      : testSceneRenderParameters
-     * @tc.desc      : Used to set if the scene is single-frame
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRenderParameters
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0510
+     * @tc.desc   Used to set if the scene is single-frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRenderParameters', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
       let msg = "============================testRenderParameters";
@@ -249,12 +249,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0520
-     * @tc.name      : testSphereGeometry
-     * @tc.desc      : Used to set the properties of the sphere
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSphereGeometry
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0520
+     * @tc.desc   Used to set the properties of the sphere
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSphereGeometry', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testSphereGeometry";
@@ -289,12 +289,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0530
-     * @tc.name      : testSphereGeometry
-     * @tc.desc      : Used to set the properties of the custom
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTRIANGLE_LIST
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0530
+     * @tc.desc   Used to set the properties of the custom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTRIANGLE_LIST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
       let msg = "============================testTRIANGLE_LIST";
@@ -318,12 +318,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0540
-     * @tc.name      : testSphereGeometry
-     * @tc.desc      : Used to set the properties of the custom
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTRIANGLE_STRIP
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0540
+     * @tc.desc   Used to set the properties of the custom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTRIANGLE_STRIP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
       let msg = "============================testTRIANGLE_STRIP";
@@ -347,12 +347,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0550
-     * @tc.name      : testSphereGeometry
-     * @tc.desc      : Used to set the properties of the custom
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCustomGeometry
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0550
+     * @tc.desc   Used to set the properties of the custom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomGeometry', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
       let msg = "============================testCustomGeometry";
@@ -384,12 +384,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0560
-     * @tc.name      : testSphereGeometry
-     * @tc.desc      : Used to create a scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateScene_01
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0560
+     * @tc.desc   Used to create a scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateScene_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testCreateScene_01";
@@ -405,12 +405,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0620
-     * @tc.name      : testSphereGeometry
-     * @tc.desc      : Used to create a scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateScene_02
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0620
+     * @tc.desc   Used to create a scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateScene_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testCreateScene_02";
@@ -426,12 +426,12 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0630
-     * @tc.name      : testSceneLoad
-     * @tc.desc      : Used to load the resource through the incoming resource path
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneLoad_02
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0630
+     * @tc.desc   Used to load the resource through the incoming resource path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneLoad_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testSceneLoad_02";
@@ -450,12 +450,12 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0640
-     * @tc.name      : testRaycastResult_node
-     * @tc.desc      : Verify raycast returns a valid hit node
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRaycastResult_node
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0640
+     * @tc.desc   Verify raycast returns a valid hit node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRaycastResult_node', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testRaycastResult_node";
@@ -487,12 +487,12 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0650
-     * @tc.name      : testRaycastResult_centerDistance
-     * @tc.desc      : Verify centerDistance is a valid positive number in raycast result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRaycastResult_centerDistance
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0650
+     * @tc.desc   Verify centerDistance is a valid positive number in raycast result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRaycastResult_centerDistance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testRaycastResult_centerDistance";
@@ -526,12 +526,12 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0660
-     * @tc.name      : testRaycastResult_hitPosition
-     * @tc.desc      : Verify hitPosition contains valid 3D coordinates
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRaycastResult_hitPosition
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0660
+     * @tc.desc   Verify hitPosition contains valid 3D coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRaycastResult_hitPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testRaycastResult_hitPosition";
@@ -566,12 +566,12 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0670
-     * @tc.name      : testRaycastResult_rootNode
-     * @tc.desc      : Verify rootNode in RaycastParameters filters raycast scope correctly
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRaycastResult_rootNode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0670
+     * @tc.desc   Verify rootNode in RaycastParameters filters raycast scope correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRaycastResult_rootNode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testRaycastResult_rootNode";
@@ -610,12 +610,12 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0680
-     * @tc.name      : testRenderResourceFactory_createSampler
-     * @tc.desc      : Verify createSampler correctly creates a Sampler with valid parameters
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRenderResourceFactory_createSampler
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0680
+     * @tc.desc   Verify createSampler correctly creates a Sampler with valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRenderResourceFactory_createSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testRenderResourceFactory_createSampler";
@@ -651,13 +651,12 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0690
-     * @tc.name      : testSceneComponent
-     * @tc.desc      : Verified whether the SceneComponent class can correctly set component names,
-     *                 store and access various types of properties.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneComponent
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0690
+     * @tc.desc   Verified whether the SceneComponent class can correctly set component names,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneComponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testSceneComponent";
@@ -715,12 +714,12 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0700
-     * @tc.name      : testRenderContext_getRenderResourceFactory
-     * @tc.desc      : Verify getRenderResourceFactory() returns a valid RenderResourceFactory instance
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRenderContext_getRenderResourceFactory
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0700
+     * @tc.desc   Verify getRenderResourceFactory() returns a valid RenderResourceFactory instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRenderContext_getRenderResourceFactory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -746,12 +745,12 @@ export default function sceneTest() {
       })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0710
-     * @tc.name      : testRenderContext_loadPlugin
-     * @tc.desc      : Verify loadPlugin() returns a valid boolean even when loading an empty or non-existent plugin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRenderContext_loadPlugin
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0710
+     * @tc.desc   Verify loadPlugin() returns a valid boolean even when loading an empty or non-existent plugin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRenderContext_loadPlugin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -778,12 +777,12 @@ export default function sceneTest() {
         }
       })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0720
-     * @tc.name      : testCreateComponent
-     * @tc.desc      : Verify whether the basic functional behavior of the CreateComponent method meets expectations
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateComponent
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0720
+     * @tc.desc   Verify whether the basic functional behavior of the CreateComponent method meets expectations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateComponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -816,12 +815,12 @@ export default function sceneTest() {
       })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0730
-     * @tc.name      : testgetComponent
-     * @tc.desc      : Verify whether the basic functional behavior of the getComponent method meets expectations
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testgetComponent
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0730
+     * @tc.desc   Verify whether the basic functional behavior of the getComponent method meets expectations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetComponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -861,12 +860,12 @@ export default function sceneTest() {
       })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0900
-     * @tc.name      : testRenderContext_registerResourcePath
-     * @tc.desc      : Verify registerResourcePath() returns a valid boolean indicates whether the registration was successful
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRenderContext_registerResourcePath
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0900
+     * @tc.desc   Verify registerResourcePath() returns a valid boolean indicates whether the registration was successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRenderContext_registerResourcePath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async  (done:Function)=> {
@@ -907,12 +906,12 @@ export default function sceneTest() {
         }
       })
     /**
-     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0910
-     * @tc.name        testCreateCamera
-     * @tc.desc        create a camera renderingPipeline
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   testCreateCamera
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0910
+     * @tc.desc   create a camera renderingPipeline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateCamera', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
         let msg = "============================testCreateCamera";
@@ -946,12 +945,12 @@ export default function sceneTest() {
         }
       })
     /**
-     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0920
-     * @tc.name        testCreateEffect
-     * @tc.desc        create a camera effect
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   testCreateEffect
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0920
+     * @tc.desc   create a camera effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateEffect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
         let msg = "============================testCreateEffect";
@@ -990,12 +989,12 @@ export default function sceneTest() {
         }
       })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0930
-     * @tc.name      : testSceneLoad
-     * @tc.desc      : Used to load the resource through the incoming resource path, load ext_meshopt_compress mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneLoad_03
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0930
+     * @tc.desc   Used to load the resource through the incoming resource path, load ext_meshopt_compress mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneLoad_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testSceneLoad_03";

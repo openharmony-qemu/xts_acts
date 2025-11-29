@@ -209,7 +209,6 @@ export default function nfcTagABFVTest() {
         })
             
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0100
          * @tc.number SUB_Communication_NFC_nfctage_js_0100
          * @tc.desc   This interface is used to obtain the NFC A tag object.
@@ -235,7 +234,6 @@ export default function nfcTagABFVTest() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0200
          * @tc.number SUB_Communication_NFC_nfctage_js_0200
          * @tc.desc   This interface is used to obtain the NFC B tag object.
@@ -261,7 +259,6 @@ export default function nfcTagABFVTest() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0300
          * @tc.number SUB_Communication_NFC_nfctage_js_0300
          * @tc.desc   This interface is used to obtain the NFC F tag object.
@@ -287,7 +284,6 @@ export default function nfcTagABFVTest() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0400
          * @tc.number SUB_Communication_NFC_nfctage_js_0400
          * @tc.desc   This interface is used to obtain the NFC V tag object.
@@ -313,7 +309,6 @@ export default function nfcTagABFVTest() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0500
          * @tc.number SUB_Communication_NFC_nfctage_js_0500
          * @tc.desc   Obtains the SAK value of the NFC-A tag.
@@ -339,7 +334,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0600
          * @tc.number SUB_Communication_NFC_nfctage_js_0600
          * @tc.desc   Obtains the Atqa value of the NFC-A tag.
@@ -370,7 +364,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0601
          * @tc.number SUB_Communication_NFC_nfctage_js_0601
          * @tc.desc   Obtains the Atqa value of the NFC-A tag.
@@ -401,7 +394,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0700
          * @tc.number SUB_Communication_NFC_nfctage_js_0700
          * @tc.desc   Obtains the AppData value of the NFC-B tag.
@@ -432,7 +424,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_0701
          * @tc.number SUB_Communication_NFC_nfctage_js_0701
          * @tc.desc   Obtains the AppData value of the NFC-B tag.
@@ -463,7 +454,6 @@ export default function nfcTagABFVTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_nfctage_js_0800
           * @tc.number SUB_Communication_NFC_nfctage_js_0800
           * @tc.desc   Obtains the Protocol value of the NFC-B tag.
@@ -494,7 +484,6 @@ export default function nfcTagABFVTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_nfctage_js_0801
           * @tc.number SUB_Communication_NFC_nfctage_js_0801
           * @tc.desc   Obtains the Protocol value of the NFC-B tag.
@@ -525,7 +514,6 @@ export default function nfcTagABFVTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_nfctage_js_0900
           * @tc.number SUB_Communication_NFC_nfctage_js_0900
           * @tc.desc   Obtains the SystemCode value of the NFC-F tag.
@@ -556,7 +544,6 @@ export default function nfcTagABFVTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_nfctage_js_0901
           * @tc.number SUB_Communication_NFC_nfctage_js_0901
           * @tc.desc   Obtains the SystemCode value of the NFC-F tag.
@@ -587,7 +574,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1000
          * @tc.number SUB_Communication_NFC_nfctage_js_1000
          * @tc.desc   Obtains the getPmm value of the NFC-F tag.
@@ -618,7 +604,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1001
          * @tc.number SUB_Communication_NFC_nfctage_js_1001
          * @tc.desc   Obtains the getPmm value of the NFC-F tag.
@@ -649,7 +634,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1100
          * @tc.number SUB_Communication_NFC_nfctage_js_1100
          * @tc.desc   Obtains the ResponseFlags value of the NFC-V tag.
@@ -675,7 +659,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1200
          * @tc.number SUB_Communication_NFC_nfctage_js_1200
          * @tc.desc   Obtains the DsfId value of the NFC-V tag.
@@ -701,7 +684,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1300
          * @tc.number SUB_Communication_NFC_nfctage_js_1300
          * @tc.desc   Obtains the DsfId value of the taginfo.
@@ -723,7 +705,6 @@ export default function nfcTagABFVTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_nfctage_js_1400
           * @tc.number SUB_Communication_NFC_nfctage_js_1400
           * @tc.desc   This interface is used to obtain the NFC A tag object.
@@ -745,7 +726,6 @@ export default function nfcTagABFVTest() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1500
          * @tc.number SUB_Communication_NFC_nfctage_js_1500
          * @tc.desc   This interface is used to obtain the NFC B tag object.
@@ -767,7 +747,6 @@ export default function nfcTagABFVTest() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1600
          * @tc.number SUB_Communication_NFC_nfctage_js_1600
          * @tc.desc   This interface is used to obtain the NFC F tag object.
@@ -789,7 +768,6 @@ export default function nfcTagABFVTest() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1700
          * @tc.number SUB_Communication_NFC_nfctage_js_1700
          * @tc.desc   This interface is used to obtain the NFC V tag object.
@@ -811,7 +789,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1800
          * @tc.number SUB_Communication_NFC_nfctage_js_1800
          * @tc.desc   This interface is used to obtain the isodep tag object.
@@ -833,7 +810,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_1900
          * @tc.number SUB_Communication_NFC_nfctage_js_1900
          * @tc.desc   This interface is used to obtain the getNdef tag object.
@@ -855,7 +831,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_2000
          * @tc.number SUB_Communication_NFC_nfctage_js_2000
          * @tc.desc   This interface is used to obtain the getMifareClassic tag object.
@@ -877,7 +852,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_2100
          * @tc.number SUB_Communication_NFC_nfctage_js_2100
          * @tc.desc   This interface is used to obtain the getMifareUltralight tag object.
@@ -899,7 +873,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_2200
          * @tc.number SUB_Communication_NFC_nfctage_js_2200
          * @tc.desc   This interface is used to obtain the getNdefFormatable tag object.
@@ -921,7 +894,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_2300
          * @tc.number SUB_Communication_NFC_nfctage_js_2300
          * @tc.desc   This interface registerForegroundDispatch.
@@ -952,7 +924,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_2400
          * @tc.number SUB_Communication_NFC_nfctage_js_2400
          * @tc.desc   This interface getBarcodeTag
@@ -977,7 +948,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_2500
          * @tc.number SUB_Communication_NFC_nfctage_js_2500
          * @tc.desc   This interface getBarcode
@@ -1004,7 +974,6 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfctage_js_2600
          * @tc.number SUB_Communication_NFC_nfctage_js_2600
          * @tc.desc   This interface getBarcode

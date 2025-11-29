@@ -142,7 +142,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0100
          * @tc.desc   Test  SppListen api10
@@ -176,7 +175,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0200
          * @tc.desc   Test SppAccept api10
@@ -212,7 +210,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0300
          * @tc.desc   Test SppConnect api10
@@ -253,7 +250,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0400
          * @tc.desc   Test On and Off api10
@@ -291,7 +287,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0800
          * @tc.desc   Test On and Off api10
@@ -329,7 +324,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0500
          * @tc.desc   Test sppCloseServerSocket api10 by callback.
@@ -362,7 +356,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0600
          * @tc.desc   Test sppCloseClientSocket api10 by callback.
@@ -399,7 +392,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0700
          * @tc.desc   Test sppWrite api10
@@ -439,7 +431,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0900
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0900
          * @tc.desc   Test SppConnect api10
@@ -471,7 +462,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1000
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1000
          * @tc.desc   Test sppCloseServerSocket api10 by callback.
@@ -490,7 +480,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1100
          * @tc.desc   Test sppWriteAsync api18
@@ -519,7 +508,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1200
          * @tc.desc   Test sppReadAsync api18
@@ -546,7 +534,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1300
          * @tc.desc   Test getDeviceId api17
@@ -567,7 +554,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1400
          * @tc.desc   Test getL2capPsm api20
@@ -588,7 +574,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1500
          * @tc.desc   Test SppType api20
@@ -615,7 +600,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1600
          * @tc.desc   Test psm api20
@@ -645,12 +629,12 @@ export default function btSocketTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100
-         * @tc.desc 20251113API22用例覆盖 getMaxReceiveDataSize 1-1.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.desc   20251113API22用例覆盖 getMaxReceiveDataSize 1-1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -665,12 +649,12 @@ export default function btSocketTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200
-         * @tc.desc 20251113API22用例覆盖 getMaxTransmitDataSize 1-1.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.desc   20251113API22用例覆盖 getMaxTransmitDataSize 1-1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -685,12 +669,12 @@ export default function btSocketTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
-         * @tc.desc 20251113API22用例覆盖 isConnected 2-1.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.desc   20251113API22用例覆盖 isConnected 2-1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -711,12 +695,12 @@ export default function btSocketTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200
-         * @tc.desc 20251113API22用例覆盖 isConnected 2-2.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.desc   20251113API22用例覆盖 isConnected 2-2.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {

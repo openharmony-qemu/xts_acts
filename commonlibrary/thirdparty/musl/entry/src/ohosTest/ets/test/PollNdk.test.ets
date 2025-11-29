@@ -25,12 +25,12 @@ export default function pollNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_POLL_POLL_0100
-     * @tc.name       : testMuslPollPoll001
-     * @tc.desc       : test poll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslPollPoll001
+     * @tc.number SUB_THIRDPARTY_MUSL_POLL_POLL_0100
+     * @tc.desc   test poll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPollPoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = poll.poll();

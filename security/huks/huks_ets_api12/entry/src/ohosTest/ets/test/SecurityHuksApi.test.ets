@@ -21,12 +21,12 @@ export default function SecurityHuksApiTest() {
   describe('SecurityHuksApiTest', () => {
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0100
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0100
-     * @tc.desc   : test huks.HuksExceptionErrCode api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0100
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0100
+     * @tc.desc   test huks.HuksExceptionErrCode api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PERMISSION_FAIL).assertEqual(201);
@@ -61,12 +61,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0200
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0200
-     * @tc.desc   : test huks.HuksErrorCode api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0200
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0200
+     * @tc.desc   test huks.HuksErrorCode api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0200', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksErrorCode.HUKS_SUCCESS).assertEqual(0);
@@ -139,12 +139,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0300
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0300
-     * @tc.desc   : test huks.HuksKeyPurpose api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0300
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0300
+     * @tc.desc   test huks.HuksKeyPurpose api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0300', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT).assertEqual(1);
@@ -159,12 +159,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0400
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0400
-     * @tc.desc   : test huks.HuksKeyDigest api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0400
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0400
+     * @tc.desc   test huks.HuksKeyDigest api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0400', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyDigest.HUKS_DIGEST_NONE).assertEqual(0);
@@ -178,12 +178,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0500
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0500
-     * @tc.desc   : test huks.HuksKeyPadding api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0500
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0500
+     * @tc.desc   test huks.HuksKeyPadding api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0500', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyPadding.HUKS_PADDING_NONE).assertEqual(0);
@@ -197,12 +197,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0600
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0600
-     * @tc.desc   : test huks.HuksCipherMode api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0600
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0600
+     * @tc.desc   test huks.HuksCipherMode api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0600', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksCipherMode.HUKS_MODE_ECB).assertEqual(1);
@@ -215,12 +215,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0700
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0700
-     * @tc.desc   : test huks.HuksKeySize api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0700
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0700
+     * @tc.desc   test huks.HuksKeySize api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0700', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeySize.HUKS_RSA_KEY_SIZE_512).assertEqual(512);
@@ -249,12 +249,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0800
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0800
-     * @tc.desc   : test huks.HuksKeyAlg api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0800
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0800
+     * @tc.desc   test huks.HuksKeyAlg api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0800', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyAlg.HUKS_ALG_RSA).assertEqual(1);
@@ -277,12 +277,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_0900
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_0900
-     * @tc.desc   : test huks.HuksUnwrapSuite api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_0900
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_0900
+     * @tc.desc   test huks.HuksUnwrapSuite api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_0900', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING).assertEqual(1);
@@ -290,12 +290,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1000
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1000
-     * @tc.desc   : test huks.HuksKeyGenerateType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1000
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1000
+     * @tc.desc   test huks.HuksKeyGenerateType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1000', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyGenerateType.HUKS_KEY_GENERATE_TYPE_DEFAULT).assertEqual(0);
@@ -304,12 +304,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1100
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1100
-     * @tc.desc   : test huks.HuksKeyFlag api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1100
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1100
+     * @tc.desc   test huks.HuksKeyFlag api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyFlag.HUKS_KEY_FLAG_IMPORT_KEY).assertEqual(1);
@@ -319,12 +319,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1200
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1200
-     * @tc.desc   : test huks.HuksKeyStorageType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1200
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1200
+     * @tc.desc   test huks.HuksKeyStorageType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1200', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyStorageType.HUKS_STORAGE_TEMP).assertEqual(0);
@@ -334,12 +334,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1300
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1300
-     * @tc.desc   : test huks.HuksImportKeyType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1300
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1300
+     * @tc.desc   test huks.HuksImportKeyType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1300', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksImportKeyType.HUKS_KEY_TYPE_PUBLIC_KEY).assertEqual(0);
@@ -348,12 +348,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1400
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1400
-     * @tc.desc   : test huks.HuksRsaPssSaltLenType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1400
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1400
+     * @tc.desc   test huks.HuksRsaPssSaltLenType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1400', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksRsaPssSaltLenType.HUKS_RSA_PSS_SALT_LEN_DIGEST).assertEqual(0);
@@ -361,12 +361,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1500
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1500
-     * @tc.desc   : test huks.HuksUserAuthType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1500
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1500
+     * @tc.desc   test huks.HuksUserAuthType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1500', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_FINGERPRINT).assertEqual(1 << 0);
@@ -376,12 +376,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1600
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1600
-     * @tc.desc   : test huks.HuksAuthAccessType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1600
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1600
+     * @tc.desc   test huks.HuksAuthAccessType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1600', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD).assertEqual(1 << 0);
@@ -390,12 +390,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1700
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1700
-     * @tc.desc   : test huks.HuksUserAuthMode api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1700
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1700
+     * @tc.desc   test huks.HuksUserAuthMode api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1700', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksUserAuthMode.HUKS_USER_AUTH_MODE_LOCAL).assertEqual(0);
@@ -403,12 +403,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1800
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1800
-     * @tc.desc   : test huks.HuksAuthStorageLevel api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1800
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1800
+     * @tc.desc   test huks.HuksAuthStorageLevel api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1800', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE).assertEqual(0);
@@ -417,12 +417,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_1900
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_1900
-     * @tc.desc   : test huks.HuksChallengeType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_1900
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_1900
+     * @tc.desc   test huks.HuksChallengeType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1900', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksChallengeType.HUKS_CHALLENGE_TYPE_NORMAL).assertEqual(0);
@@ -432,12 +432,12 @@ export default function SecurityHuksApiTest() {
 
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_2000
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_2000
-     * @tc.desc   : test huks.HuksChallengePosition api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_2000
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_2000
+     * @tc.desc   test huks.HuksChallengePosition api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2000', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksChallengePosition.HUKS_CHALLENGE_POS_0).assertEqual(0);
@@ -447,24 +447,24 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_2100
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_2100
-     * @tc.desc   : test huks.HuksSecureSignType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_2100
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_2100
+     * @tc.desc   test huks.HuksSecureSignType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksSecureSignType.HUKS_SECURE_SIGN_WITH_AUTHINFO).assertEqual(1);
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_2200
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_2200
-     * @tc.desc   : test huks.HuksSendType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_2200
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_2200
+     * @tc.desc   test huks.HuksSendType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2200', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksSendType.HUKS_SEND_TYPE_ASYNC).assertEqual(0);
@@ -472,24 +472,24 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_2300
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_2300
-     * @tc.desc   : test huks.HuksKeyWrapType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_2300
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_2300
+     * @tc.desc   test huks.HuksKeyWrapType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2300', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyWrapType.HUKS_KEY_WRAP_TYPE_HUK_BASED).assertEqual(2);
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_2400
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_2400
-     * @tc.desc   : test huks.HuksTagType api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_2400
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_2400
+     * @tc.desc   test huks.HuksTagType api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2400', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksTagType.HUKS_TAG_TYPE_INVALID).assertEqual(0 << 28);
@@ -501,12 +501,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Api_API20_Interface_2500
-     * @tc.name   : SUB_Security_HUKS_Api_API20_Interface_2500
-     * @tc.desc   : test huks.HuksTag api
-     * @tc.type   : Compatibility
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_2500
+     * @tc.number SUB_Security_HUKS_Api_API20_Interface_2500
+     * @tc.desc   test huks.HuksTag api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2500', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksTag.HUKS_TAG_INVALID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_INVALID | 0);
@@ -601,13 +601,13 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksTag.HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 20003);
     })
 
-        /**
-     * @tc.number SUB_Security_HUKS_Api_API22_Interface_2600
+    /**
      * @tc.name   SUB_Security_HUKS_Api_API22_Interface_2600
+     * @tc.number SUB_Security_HUKS_Api_API22_Interface_2600
      * @tc.desc   test huks.HuksKeyClassType api
-     * @tc.type   Compatibility
-     * @tc.size   SmallTest
-     * @tc.level  Level3
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API22_Interface_2600', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyClassType.HUKS_KEY_CLASS_DEFAULT).assertEqual(0);
@@ -615,12 +615,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Api_API22_Interface_0100
      * @tc.name   SUB_Security_HUKS_Api_API22_Interface_0100
+     * @tc.number SUB_Security_HUKS_Api_API22_Interface_0100
      * @tc.desc   test huksExternalCrypto.HuksExternalCryptoTagType api
-     * @tc.type   Compatibility
-     * @tc.size   SmallTest
-     * @tc.level  Level3
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API22_Interface_0100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT).assertEqual(1 << 28);
@@ -628,12 +628,12 @@ export default function SecurityHuksApiTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Api_API22_Interface_0200
      * @tc.name   SUB_Security_HUKS_Api_API22_Interface_0200
+     * @tc.number SUB_Security_HUKS_Api_API22_Interface_0200
      * @tc.desc   test huksExternalCrypto.HuksExternalCryptoTagType api
-     * @tc.type   Compatibility
-     * @tc.size   SmallTest
-     * @tc.level  Level3
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API22_Interface_0200', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UKEY_PIN).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200001);

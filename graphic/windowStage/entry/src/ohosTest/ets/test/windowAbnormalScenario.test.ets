@@ -41,12 +41,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1840
-     * @tc.name      : testSetAspectRatio_NullValue_Promise
-     * @tc.desc      : Set the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_NullValue_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1840
+     * @tc.desc   Set the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_NullValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_NullValue_Promise';
@@ -68,12 +68,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1850
-     * @tc.name      : testSetAspectRatio_NullValue_Callback
-     * @tc.desc      : Set the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_NullValue_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1850
+     * @tc.desc   Set the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_NullValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetAspectRatio_NullValue_Callback';
@@ -101,12 +101,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2070
-     * @tc.name      : testSetAspectRatio_UndefinedValue_Promise
-     * @tc.desc      : Set the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_UndefinedValue_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2070
+     * @tc.desc   Set the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_UndefinedValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_UndefinedValue_Promise';
@@ -128,12 +128,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2080
-     * @tc.name      : testSetAspectRatio_UndefinedValue_Callback
-     * @tc.desc      : Set the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_UndefinedValue_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2080
+     * @tc.desc   Set the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_UndefinedValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetAspectRatio_UndefinedValue_Callback';
@@ -161,12 +161,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3860
-     * @tc.name      : testShowWindow_WindowStateAbnormal_Callback
-     * @tc.desc      : show window windowStateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShowWindow_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3860
+     * @tc.desc   show window windowStateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShowWindow_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testShowWindow_WindowStateAbnormal_Callback';
@@ -195,12 +195,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3870
-     * @tc.name      : testDestroyWindow_WindowStateAbnormal_Promise
-     * @tc.desc      : destroy window windowStateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDestroyWindow_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3870
+     * @tc.desc   destroy window windowStateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDestroyWindow_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testDestroyWindow_WindowStateAbnormal_Promise';
@@ -223,12 +223,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2390
-     * @tc.name      : testMoveWindowTo_WindowStateAbnormal_Promise
-     * @tc.desc      : Move window windowStateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2390
+     * @tc.desc   Move window windowStateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testDestroyWindow_WindowStateAbnormal_Promise';
@@ -256,12 +256,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
-     * @tc.name      : testMoveWindowTo_WindowStateAbnormal_Callback
-     * @tc.desc      : Move window windowStateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
+     * @tc.desc   Move window windowStateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_WindowStateAbnormal_Callback';
@@ -296,12 +296,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4520
-     * @tc.name      : testMoveWindowToAsync_WindowStateAbnormal
-     * @tc.desc      : Move window windowStateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowToAsync_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4520
+     * @tc.desc   Move window windowStateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToAsync_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowToAsync_WindowStateAbnormal';
@@ -329,12 +329,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2410
-     * @tc.name      : testMoveWindowTo_DecimalScene_ParamesOne_Callback
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_DecimalScene_ParamesOne_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2410
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_DecimalScene_ParamesOne_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_DecimalScene_ParamesOne_Callback';
@@ -389,12 +389,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2420
-     * @tc.name      : testMoveWindowTo_DecimalScene_ParamesTwo_Callback
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_DecimalScene_ParamesTwo_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2420
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_DecimalScene_ParamesTwo_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_DecimalScene_ParamesTwo_Callback';
@@ -449,12 +449,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2430
-     * @tc.name      : testMoveWindowTo_DecimalScene_ParamesThree_Callback
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_DecimalScene_ParamesThree_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2430
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_DecimalScene_ParamesThree_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_DecimalScene_ParamesThree_Callback';
@@ -508,12 +508,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2440
-     * @tc.name      : testMoveWindowTo_DecimalScene_ParamesOne_Promise
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_DecimalScene_ParamesOne_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2440
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_DecimalScene_ParamesOne_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowTo_DecimalScene_ParamesOne_Promise';
@@ -557,12 +557,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2450
-     * @tc.name      : testMoveWindowTo_DecimalScene_ParamesTwo_Promise
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_DecimalScene_ParamesTwo_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2450
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_DecimalScene_ParamesTwo_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowTo_DecimalScene_ParamesTwo_Promise';
@@ -606,12 +606,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2460
-     * @tc.name      : testMoveWindowTo_DecimalScene_ParamesThree_Promise
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowTo_DecimalScene_ParamesThree_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2460
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_DecimalScene_ParamesThree_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowTo_DecimalScene_ParamesThree_Promise';
@@ -655,12 +655,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4530
-     * @tc.name      : testMoveWindowToAsync_DecimalScene_ParamesOne
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowToAsync_DecimalScene_ParamesOne
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4530
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToAsync_DecimalScene_ParamesOne', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowToAsync_DecimalScene_ParamesOne';
@@ -715,12 +715,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4540
-     * @tc.name      : testMoveWindowToAsync_DecimalScene_ParamesTwo
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowToAsync_DecimalScene_ParamesTwo
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4540
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToAsync_DecimalScene_ParamesTwo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowToAsync_DecimalScene_ParamesTwo';
@@ -775,12 +775,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4550
-     * @tc.name      : testMoveWindowToAsync_DecimalScene_ParamesThree
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowToAsync_DecimalScene_ParamesThree
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4550
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToAsync_DecimalScene_ParamesThree', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowToAsync_DecimalScene_ParamesThree';
@@ -835,12 +835,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2470
-     * @tc.name      : testResize_WindowStateAbnormal_Promise
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2470
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_WindowStateAbnormal_Promise';
@@ -873,12 +873,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2480
-     * @tc.name      : testResize_WindowStateAbnormal_Callback
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2480
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_WindowStateAbnormal_Callback';
@@ -913,12 +913,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4560
-     * @tc.name      : testresizeAsync_WindowStateAbnormal
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testresizeAsync_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4560
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testresizeAsync_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testresizeAsync_WindowStateAbnormal';
@@ -946,12 +946,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2490
-     * @tc.name      : testResize_DecimalScene_ParamesOne_Promise
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_DecimalScene_ParamesOne_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2490
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_DecimalScene_ParamesOne_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_DecimalScene_ParamesOne_Promise';
@@ -995,12 +995,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2750
-     * @tc.name      : testResize_DecimalScene_ParamesTwo_Promise
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_DecimalScene_ParamesTwo_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2750
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_DecimalScene_ParamesTwo_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_DecimalScene_ParamesTwo_Promise';
@@ -1044,12 +1044,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2760
-     * @tc.name      : testResize_DecimalScene_ParamesThree_Promise
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_DecimalScene_ParamesThree_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2760
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_DecimalScene_ParamesThree_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_DecimalScene_ParamesThree_Promise';
@@ -1094,12 +1094,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4570
-     * @tc.name      : testResizeAsync_DecimalScene_ParamesOne
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResizeAsync_DecimalScene_ParamesOne
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4570
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResizeAsync_DecimalScene_ParamesOne', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResizeAsync_DecimalScene_ParamesOne';
@@ -1154,12 +1154,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4580
-     * @tc.name      : testResizeAsync_DecimalScene_ParamesTwo
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResizeAsync_DecimalScene_ParamesTwo
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4580
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResizeAsync_DecimalScene_ParamesTwo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResizeAsync_DecimalScene_ParamesTwo';
@@ -1214,12 +1214,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4590
-     * @tc.name      : testResizeAsync_DecimalScene_ParamesThree
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResizeAsync_DecimalScene_ParamesThree
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4590
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResizeAsync_DecimalScene_ParamesThree', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResizeAsync_DecimalScene_ParamesThree';
@@ -1273,12 +1273,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2770
-     * @tc.name      : testResize_DecimalScene_ParamesOne_Callback
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_DecimalScene_ParamesOne_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2770
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_DecimalScene_ParamesOne_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_DecimalScene_ParamesOne_Callback';
@@ -1332,12 +1332,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2780
-     * @tc.name      : testResize_DecimalScene_ParamesTwo_Callback
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_DecimalScene_ParamesTwo_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2780
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_DecimalScene_ParamesTwo_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_DecimalScene_ParamesTwo_Callback';
@@ -1391,12 +1391,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2790
-     * @tc.name      : testResize_DecimalScene_ParamesThree_Callback
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_DecimalScene_ParamesThree_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2790
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_DecimalScene_ParamesThree_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_DecimalScene_ParamesThree_Callback';
@@ -1449,12 +1449,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2800
-     * @tc.name      : testGetWindowProperties_WindowStateAbnormal
-     * @tc.desc      : Gets the properties of the current window Window State Abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetWindowProperties_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2800
+     * @tc.desc   Gets the properties of the current window Window State Abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowProperties_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowProperties_WindowStateAbnormal';
@@ -1476,12 +1476,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2810
-     * @tc.name      : testGetWindowAvoidArea_WindowStateAbnormal
-     * @tc.desc      : Gets the area where the window content is avoided
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetWindowAvoidArea_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2810
+     * @tc.desc   Gets the area where the window content is avoided
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowAvoidArea_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowAvoidArea_WindowStateAbnormal';
@@ -1504,12 +1504,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2820
-     * @tc.name      : testSetWindowSystemBarProperties_WinAbnormal_Call
-     * @tc.desc      : Set the properties of the navigation bar and status bar in the window in full screen mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowSystemBarProperties_WinAbnormal_Call
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2820
+     * @tc.desc   Set the properties of the navigation bar and status bar in the window in full screen mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarProperties_WinAbnormal_Call', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowSystemBarProperties_WinAbnormal_Call';
@@ -1550,12 +1550,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2830
-     * @tc.name      : testSetWindowSystemBarProperties_WinAbnormal_Promise
-     * @tc.desc      : Set the properties of the navigation bar and status bar in the window in full screen mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowSystemBarProperties_WinAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2830
+     * @tc.desc   Set the properties of the navigation bar and status bar in the window in full screen mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarProperties_WinAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowSystemBarProperties_WinAbnormal_Promise';
@@ -1589,12 +1589,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
-     * @tc.name      : testSetPreferredOrientation_WinAbnormal_Promise
-     * @tc.desc      : Set the display direction property of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetPreferredOrientation_WinAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
+     * @tc.desc   Set the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_WinAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetPreferredOrientation_WinAbnormal_Promise';
@@ -1623,12 +1623,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2850
-     * @tc.name      : testSetPreferredOrientation_WinAbnormal_Call
-     * @tc.desc      : Set the display direction property of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetPreferredOrientation_WinAbnormal_Call
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2850
+     * @tc.desc   Set the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_WinAbnormal_Call', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetPreferredOrientation_WinAbnormal_Call';
@@ -1664,12 +1664,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2860
-     * @tc.name      : testGetUIContext_WindowStateAbnormal
-     * @tc.desc      : Get the UIContext instance
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetUIContext_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2860
+     * @tc.desc   Get the UIContext instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetUIContext_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetUIContext_WindowStateAbnormal';
@@ -1694,12 +1694,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2870
-     * @tc.name      : testSetUIContent_WindowStateAbnormal
-     * @tc.desc      : Load the specific page content for the current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetUIContent_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2870
+     * @tc.desc   Load the specific page content for the current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetUIContent_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetUIContent_WindowStateAbnormal';
@@ -1727,12 +1727,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2880
-     * @tc.name      : testLoadContent_WindowStateAbnormal_Callback
-     * @tc.desc      : Loads the specific page content associated with LocalStorage for the current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLoadContent_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2880
+     * @tc.desc   Loads the specific page content associated with LocalStorage for the current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testLoadContent_WindowStateAbnormal_Callback';
@@ -1769,12 +1769,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2890
-     * @tc.name      : testLoadContent_WindowStateAbnormal_Promise
-     * @tc.desc      : Loads the specific page content associated with LocalStorage for the current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLoadContent_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2890
+     * @tc.desc   Loads the specific page content associated with LocalStorage for the current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testLoadContent_WindowStateAbnormal_Promise';
@@ -1805,12 +1805,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2910
-     * @tc.name      : testIsWindowSupportWideGamut_WindowStateAbnormal_Callback
-     * @tc.desc      : Check whether the current window supports the wide color gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testIsWindowSupportWideGamut_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2910
+     * @tc.desc   Check whether the current window supports the wide color gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsWindowSupportWideGamut_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testIsWindowSupportWideGamut_WindowStateAbnormal_Callback';
@@ -1846,12 +1846,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2920
-     * @tc.name      : testIsWindowSupportWideGamut_WindowStateAbnormal_Promise
-     * @tc.desc      : Check whether the current window supports the wide color gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testIsWindowSupportWideGamut_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2920
+     * @tc.desc   Check whether the current window supports the wide color gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsWindowSupportWideGamut_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testIsWindowSupportWideGamut_WindowStateAbnormal_Promise';
@@ -1880,12 +1880,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2930
-     * @tc.name      : testGetWindowColorSpace_WindowStateAbnormal
-     * @tc.desc      : Gets the current window gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetWindowColorSpace_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2930
+     * @tc.desc   Gets the current window gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowColorSpace_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowColorSpace_WindowStateAbnormal';
@@ -1908,12 +1908,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2940
-     * @tc.name      : testSetWindowColorSpace_WindowStateAbnormal_Callback
-     * @tc.desc      : Set the current window to wide gamut mode or default gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowColorSpace_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2940
+     * @tc.desc   Set the current window to wide gamut mode or default gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowColorSpace_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowColorSpace_WindowStateAbnormal_Callback';
@@ -1948,12 +1948,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
-     * @tc.name      : testSetWindowColorSpace_WindowStateAbnormal_Promise
-     * @tc.desc      : Set the current window to wide gamut mode or default gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowColorSpace_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
+     * @tc.desc   Set the current window to wide gamut mode or default gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowColorSpace_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowColorSpace_WindowStateAbnormal_Promise';
@@ -1981,12 +1981,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2960
-     * @tc.name      : testSetWindowBackgroundColor_WindowStateAbnormal
-     * @tc.desc      : Set the background color of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowBackgroundColor_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2960
+     * @tc.desc   Set the background color of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowBackgroundColor_WindowStateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowBackgroundColor_WindowStateAbnormal';
@@ -2010,12 +2010,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2970
-     * @tc.name      : testSetWindowBrightness_WindowStateAbnormal_Callback
-     * @tc.desc      : Set the screen brightness value Window State Abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowBrightness_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2970
+     * @tc.desc   Set the screen brightness value Window State Abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowBrightness_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowBrightness_WindowStateAbnormal_Callback';
@@ -2051,12 +2051,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2980
-     * @tc.name      : testSetWindowBrightness_WindowStateAbnormal_Promise
-     * @tc.desc      : Set the screen brightness value Window State Abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowBrightness_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2980
+     * @tc.desc   Set the screen brightness value Window State Abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowBrightness_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowBrightness_WindowStateAbnormal_Promise';
@@ -2085,12 +2085,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2990
-     * @tc.name      : testSetWindowFocusable_WindowStateAbnormal_Callback
-     * @tc.desc      : Set whether to switch focus window when clicking
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowFocusable_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2990
+     * @tc.desc   Set whether to switch focus window when clicking
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowFocusable_WindowStateAbnormal_Callback';
@@ -2125,12 +2125,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
-     * @tc.name      : testSetWindowFocusable_WindowStateAbnormal_Promise
-     * @tc.desc      : Set whether to switch focus window when clicking
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowFocusable_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
+     * @tc.desc   Set whether to switch focus window when clicking
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowFocusable_WindowStateAbnormal_Promise';
@@ -2158,12 +2158,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3010
-     * @tc.name      : testSetWindowKeepScreenOn_WindowStateAbnormal_Callback
-     * @tc.desc      : Set whether the screen is steady on
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowKeepScreenOn_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3010
+     * @tc.desc   Set whether the screen is steady on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowKeepScreenOn_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowKeepScreenOn_WindowStateAbnormal_Callback';
@@ -2198,12 +2198,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3020
-     * @tc.name      : testSetWindowTouchable_WindowStateAbnormal_Callback
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowTouchable_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3020
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTouchable_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowTouchable_WindowStateAbnormal_Callback';
@@ -2238,12 +2238,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3030
-     * @tc.name      : testSnapshot_WindowStateAbnormal_Callback
-     * @tc.desc      : get window snapshot
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSnapshot_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3030
+     * @tc.desc   get window snapshot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshot_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSnapshot_WindowStateAbnormal_Callback';
@@ -2279,12 +2279,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3040
-     * @tc.name      : testSnapshot_WindowStateAbnormal_Promise
-     * @tc.desc      : get window snapshot
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSnapshot_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3040
+     * @tc.desc   get window snapshot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshot_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSnapshot_WindowStateAbnormal_Promise';
@@ -2313,12 +2313,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3050
-     * @tc.name      : testShow_WindowStateAbnormal_Callback
-     * @tc.desc      : Show current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShow_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3050
+     * @tc.desc   Show current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShow_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testShow_WindowStateAbnormal_Callback';
@@ -2353,12 +2353,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3060
-     * @tc.name      : testShow_WindowStateAbnormal_Promise
-     * @tc.desc      : Show current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShow_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3060
+     * @tc.desc   Show current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShow_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testShow_WindowStateAbnormal_Promise';
@@ -2386,12 +2386,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3070
-     * @tc.name      : testDestroy_WindowStateAbnormal_Callback
-     * @tc.desc      : destroy current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDestroy_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3070
+     * @tc.desc   destroy current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDestroy_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testDestroy_WindowStateAbnormal_Callback';
@@ -2426,12 +2426,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3080
-     * @tc.name      : testDestroy_WindowStateAbnormal_Promise
-     * @tc.desc      : destroy current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDestroy_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3080
+     * @tc.desc   destroy current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDestroy_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testDestroy_WindowStateAbnormal_Promise';
@@ -2459,12 +2459,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3090
-     * @tc.name      : testMoveTo_WindowStateAbnormal_Promise
-     * @tc.desc      : Move window windowStateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3090
+     * @tc.desc   Move window windowStateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveTo_WindowStateAbnormal_Promise';
@@ -2492,12 +2492,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3100
-     * @tc.name      : testMoveTo_WindowStateAbnormal_Callback
-     * @tc.desc      : Move window windowStateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3100
+     * @tc.desc   Move window windowStateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveTo_WindowStateAbnormal_Callback';
@@ -2532,12 +2532,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3110
-     * @tc.name      : testMoveTo_DecimalScene_ParamesOne_Callback
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_DecimalScene_ParamesOne_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3110
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_DecimalScene_ParamesOne_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveTo_DecimalScene_ParamesOne_Callback';
@@ -2591,12 +2591,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3120
-     * @tc.name      : testMoveTo_DecimalScene_ParamesTwo_Callback
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_DecimalScene_ParamesTwo_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3120
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_DecimalScene_ParamesTwo_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveTo_DecimalScene_ParamesTwo_Callback';
@@ -2650,12 +2650,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3130
-     * @tc.name      : testMoveTo_DecimalScene_ParamesThree_Callback
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_DecimalScene_ParamesThree_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3130
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_DecimalScene_ParamesThree_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveTo_DecimalScene_ParamesThree_Callback';
@@ -2709,12 +2709,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3140
-     * @tc.name      : testMoveTo_DecimalScene_ParamesOne_Promise
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_DecimalScene_ParamesOne_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3140
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_DecimalScene_ParamesOne_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveTo_DecimalScene_ParamesOne_Promise';
@@ -2758,12 +2758,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3150
-     * @tc.name      : testMoveTo_DecimalScene_ParamesTwo_Promise
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_DecimalScene_ParamesTwo_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3150
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_DecimalScene_ParamesTwo_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveTo_DecimalScene_ParamesTwo_Promise';
@@ -2807,12 +2807,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3160
-     * @tc.name      : testMoveTo_DecimalScene_ParamesThree_Promise
-     * @tc.desc      : Move window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveTo_DecimalScene_ParamesThree_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3160
+     * @tc.desc   Move window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveTo_DecimalScene_ParamesThree_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveTo_DecimalScene_ParamesThree_Promise';
@@ -2856,12 +2856,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3170
-     * @tc.name      : testResetSize_WindowStateAbnormal_Promise
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_WindowStateAbnormal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3170
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_WindowStateAbnormal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetSize_WindowStateAbnormal_Promise';
@@ -2889,12 +2889,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3180
-     * @tc.name      : testResetSize_WindowStateAbnormal_Callback
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3180
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResetSize_WindowStateAbnormal_Callback';
@@ -2929,12 +2929,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3190
-     * @tc.name      : testResetSize_DecimalScene_ParamesOne_Promise
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_DecimalScene_ParamesOne_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3190
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_DecimalScene_ParamesOne_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetSize_DecimalScene_ParamesOne_Promise';
@@ -2979,12 +2979,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3200
-     * @tc.name      : testResetSize_DecimalScene_ParamesTwo_Promise
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_DecimalScene_ParamesTwo_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3200
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_DecimalScene_ParamesTwo_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetSize_DecimalScene_ParamesTwo_Promise';
@@ -3029,12 +3029,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3210
-     * @tc.name      : testResetSize_DecimalScene_ParamesThree_Promise
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_DecimalScene_ParamesThree_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3210
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_DecimalScene_ParamesThree_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetSize_DecimalScene_ParamesThree_Promise';
@@ -3076,12 +3076,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3220
-     * @tc.name      : testResetSize_DecimalScene_ParamesOne_Callback
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_DecimalScene_ParamesOne_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3220
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_DecimalScene_ParamesOne_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResetSize_DecimalScene_ParamesOne_Callback';
@@ -3136,12 +3136,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3230
-     * @tc.name      : testResetSize_DecimalScene_ParamesTwo_Callback
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_DecimalScene_ParamesTwo_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3230
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_DecimalScene_ParamesTwo_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResetSize_DecimalScene_ParamesTwo_Callback';
@@ -3196,12 +3196,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3240
-     * @tc.name      : testResetSize_DecimalScene_ParamesThree_Callback
-     * @tc.desc      : resize window Verify decimal scene
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResetSize_DecimalScene_ParamesThree_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3240
+     * @tc.desc   resize window Verify decimal scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetSize_DecimalScene_ParamesThree_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResetSize_DecimalScene_ParamesThree_Callback';
@@ -3252,12 +3252,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3250
-     * @tc.name      : testGetAvoidArea_WindowStateAbnormal_Callback
-     * @tc.desc      : Gets the area where the window content is avoided
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetAvoidArea_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3250
+     * @tc.desc   Gets the area where the window content is avoided
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetAvoidArea_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetAvoidArea_WindowStateAbnormal_Callback';
@@ -3293,12 +3293,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3260
-     * @tc.name      : testSetFullScreen_WindowStateAbnormal_Callback
-     * @tc.desc      : Sets whether the window layout is full-screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetFullScreen_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3260
+     * @tc.desc   Sets whether the window layout is full-screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetFullScreen_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetFullScreen_WindowStateAbnormal_Callback';
@@ -3333,12 +3333,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3270
-     * @tc.name      : testSetLayoutFullScreen_WindowStateAbnormal_Callback
-     * @tc.desc      : Sets whether the window layout is full-screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetLayoutFullScreen_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3270
+     * @tc.desc   Sets whether the window layout is full-screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetLayoutFullScreen_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetLayoutFullScreen_WindowStateAbnormal_Callback';
@@ -3373,12 +3373,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3280
-     * @tc.name      : testSetSystemBarEnable_WindowStateAbnormal_Callback
-     * @tc.desc      : Set the visibility mode of the navigation bar and status bar when the window is in full-screen mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetSystemBarEnable_WindowStateAbnormal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3280
+     * @tc.desc   Set the visibility mode of the navigation bar and status bar when the window is in full-screen mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_WindowStateAbnormal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSystemBarEnable_WindowStateAbnormal_Callback';
@@ -3413,12 +3413,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3290
-     * @tc.name      : testSetSystemBarProperties_WinStateAb_Callback
-     * @tc.desc      : Set the properties of the navigation bar and status bar in the window in full screen mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetSystemBarProperties_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3290
+     * @tc.desc   Set the properties of the navigation bar and status bar in the window in full screen mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarProperties_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSystemBarProperties_WinStateAb_Callback';
@@ -3459,12 +3459,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
-     * @tc.name      : testSetSystemBarProperties_WinStateAb_Promise
-     * @tc.desc      : Set the properties of the navigation bar and status bar in the window in full screen mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetSystemBarProperties_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
+     * @tc.desc   Set the properties of the navigation bar and status bar in the window in full screen mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarProperties_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetSystemBarProperties_WinStateAb_Promise';
@@ -3498,12 +3498,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3310
-     * @tc.name      : testIsShowing_WinStateAb_Promise
-     * @tc.desc      : Check whether the current window is displayed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testIsShowing_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3310
+     * @tc.desc   Check whether the current window is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsShowing_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testIsShowing_WinStateAb_Promise';
@@ -3531,12 +3531,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3320
-     * @tc.name      : testIsShowing_WinStateAb_Callback
-     * @tc.desc      : Check whether the current window is displayed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testIsShowing_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3320
+     * @tc.desc   Check whether the current window is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsShowing_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testIsShowing_WinStateAb_Callback';
@@ -3571,12 +3571,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3330
-     * @tc.name      : testIsSupportWideGamut_WinStateAb_Callback
-     * @tc.desc      : Check whether the current window supports the wide color gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testIsSupportWideGamut_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3330
+     * @tc.desc   Check whether the current window supports the wide color gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsSupportWideGamut_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testIsSupportWideGamut_WinStateAb_Callback';
@@ -3611,12 +3611,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3340
-     * @tc.name      : testIsSupportWideGamut_WinStateAb_Promise
-     * @tc.desc      : Check whether the current window supports the wide color gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testIsSupportWideGamut_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3340
+     * @tc.desc   Check whether the current window supports the wide color gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsSupportWideGamut_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testIsSupportWideGamut_WinStateAb_Promise';
@@ -3644,12 +3644,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3350
-     * @tc.name      : testSetColorSpace_WinStateAb_Promise
-     * @tc.desc      : Set the current window to wide gamut mode or default gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetColorSpace_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3350
+     * @tc.desc   Set the current window to wide gamut mode or default gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetColorSpace_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetColorSpace_WinStateAb_Promise';
@@ -3677,12 +3677,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3360
-     * @tc.name      : testSetColorSpace_WinStateAb_Callback
-     * @tc.desc      : Set the current window to wide gamut mode or default gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetColorSpace_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3360
+     * @tc.desc   Set the current window to wide gamut mode or default gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetColorSpace_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetColorSpace_WinStateAb_Callback';
@@ -3717,12 +3717,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3370
-     * @tc.name      : testGetColorSpace_WinStateAb_Callback
-     * @tc.desc      : Gets the current window gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetColorSpace_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3370
+     * @tc.desc   Gets the current window gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetColorSpace_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetColorSpace_WinStateAb_Callback';
@@ -3757,12 +3757,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3380
-     * @tc.name      : testGetColorSpace_WinStateAb_Promise
-     * @tc.desc      : Gets the current window gamut mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetColorSpace_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3380
+     * @tc.desc   Gets the current window gamut mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetColorSpace_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetColorSpace_WinStateAb_Promise';
@@ -3790,12 +3790,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3390
-     * @tc.name      : testSetFocusable_WinStateAb_Promise
-     * @tc.desc      : Set whether to switch focus window when clicking
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetFocusable_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3390
+     * @tc.desc   Set whether to switch focus window when clicking
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetFocusable_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetFocusable_WinStateAb_Promise';
@@ -3823,12 +3823,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3400
-     * @tc.name      : testSetFocusable_WinStateAb_Callback
-     * @tc.desc      : Set whether to switch focus window when clicking
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetFocusable_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3400
+     * @tc.desc   Set whether to switch focus window when clicking
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetFocusable_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetFocusable_WinStateAb_Callback';
@@ -3863,12 +3863,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3410
-     * @tc.name      : testSetKeepScreenOn_WinStateAb_Callback
-     * @tc.desc      : Set whether the screen is steady on
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetKeepScreenOn_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3410
+     * @tc.desc   Set whether the screen is steady on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetKeepScreenOn_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetKeepScreenOn_WinStateAb_Callback';
@@ -3903,12 +3903,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3420
-     * @tc.name      : testSetKeepScreenOn_WinStateAb_Promise
-     * @tc.desc      : Set whether the screen is steady on
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetKeepScreenOn_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3420
+     * @tc.desc   Set whether the screen is steady on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetKeepScreenOn_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetKeepScreenOn_WinStateAb_Promise';
@@ -3936,12 +3936,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3430
-     * @tc.name      : testSetOutsideTouchable_WinStateAb_Promise
-     * @tc.desc      : Sets whether to allow areas outside of clickable subwindows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetOutsideTouchable_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3430
+     * @tc.desc   Sets whether to allow areas outside of clickable subwindows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetOutsideTouchable_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetOutsideTouchable_WinStateAb_Promise';
@@ -3969,12 +3969,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3440
-     * @tc.name      : testSetOutsideTouchable_WinStateAb_Callback
-     * @tc.desc      : Sets whether to allow areas outside of clickable subwindows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetOutsideTouchable_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3440
+     * @tc.desc   Sets whether to allow areas outside of clickable subwindows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetOutsideTouchable_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetOutsideTouchable_WinStateAb_Callback';
@@ -4009,12 +4009,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3450
-     * @tc.name      : testSetPrivacyMode_WinStateAb_Callback
-     * @tc.desc      : Sets whether the window is in private mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetPrivacyMode_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3450
+     * @tc.desc   Sets whether the window is in private mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPrivacyMode_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetPrivacyMode_WinStateAb_Callback';
@@ -4049,12 +4049,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3460
-     * @tc.name      : testSetPrivacyMode_WinStateAb_Promise
-     * @tc.desc      : Sets whether the window is in private mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetPrivacyMode_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3460
+     * @tc.desc   Sets whether the window is in private mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPrivacyMode_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetPrivacyMode_WinStateAb_Promise';
@@ -4082,12 +4082,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3470
-     * @tc.name      : testSetTouchable_WinStateAb_Promise
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetTouchable_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3470
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetTouchable_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetTouchable_WinStateAb_Promise';
@@ -4115,12 +4115,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3480
-     * @tc.name      : testSetTouchable_WinStateAb_Callback
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetTouchable_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3480
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetTouchable_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetTouchable_WinStateAb_Callback';
@@ -4155,12 +4155,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3490
-     * @tc.name      : testSetDimBehind_WinStateAb_Callback
-     * @tc.desc      : When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDimBehind_WinStateAb_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3490
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDimBehind_WinStateAb_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetDimBehind_WinStateAb_Callback';
@@ -4195,12 +4195,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3500
-     * @tc.name      : testSetDimBehind_WinStateAb_Promise
-     * @tc.desc      : When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDimBehind_WinStateAb_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3500
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDimBehind_WinStateAb_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetDimBehind_WinStateAb_Promise';
@@ -4228,12 +4228,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3510
-     * @tc.name      : testSetDimBehind_InvalidValue_Promise
-     * @tc.desc      : When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDimBehind_InvalidValue_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3510
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDimBehind_InvalidValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetDimBehind_InvalidValueOne_Promise';
@@ -4262,12 +4262,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3520
-     * @tc.name      : testSetDimBehind_BoundaryValue_Promise
-     * @tc.desc      : When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDimBehind_BoundaryValue_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3520
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDimBehind_BoundaryValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetDimBehind_BoundaryValue_Promise';
@@ -4296,12 +4296,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3530
-     * @tc.name      : testSetDimBehind_InvalidValue_Callback
-     * @tc.desc      : When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDimBehind_InvalidValue_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3530
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDimBehind_InvalidValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetDimBehind_InvalidValue_Callback';
@@ -4338,12 +4338,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3540
-     * @tc.name      : testSetDimBehind_BoundaryValue_Callback
-     * @tc.desc      : When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDimBehind_BoundaryValue_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3540
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDimBehind_BoundaryValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetDimBehind_BoundaryValue_Callback';
@@ -4379,12 +4379,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3550
-     * @tc.name      : testWindowOffWindowSizeChange_RepeatOff
-     * @tc.desc      : Turn off listening for window size changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffWindowSizeChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3550
+     * @tc.desc   Turn off listening for window size changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffWindowSizeChange_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffWindowSizeChange_RepeatOff';
@@ -4421,12 +4421,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3560
-     * @tc.name      : testWindowOffWindowSizeChange_UnregisteredOff
-     * @tc.desc      : Turn off listening for window size changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffWindowSizeChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3560
+     * @tc.desc   Turn off listening for window size changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffWindowSizeChange_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffWindowSizeChange_UnregisteredOff';
@@ -4449,12 +4449,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3570
-     * @tc.name      : testWindowOffAvoidAreaChange_RepeatOff
-     * @tc.desc      : Disable listening for system circumvention zone changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffAvoidAreaChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3570
+     * @tc.desc   Disable listening for system circumvention zone changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffAvoidAreaChange_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffAvoidAreaChange_RepeatOff';
@@ -4492,12 +4492,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3580
-     * @tc.name      : testWindowOffAvoidAreaChange_UnregisteredOff
-     * @tc.desc      : Disable listening for system circumvention zone changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffAvoidAreaChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3580
+     * @tc.desc   Disable listening for system circumvention zone changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffAvoidAreaChange_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffAvoidAreaChange_UnregisteredOff';
@@ -4520,12 +4520,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3590
-     * @tc.name      : testWindowOffKeyboardHeightChange_RepeatOff
-     * @tc.desc      : Disable listening for the height change of the soft keyboard in the fixed state input method window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffKeyboardHeightChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3590
+     * @tc.desc   Disable listening for the height change of the soft keyboard in the fixed state input method window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffKeyboardHeightChange_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffKeyboardHeightChange_RepeatOff';
@@ -4562,12 +4562,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
-     * @tc.name      : testWindowOffKeyboardHeightChange_UnregisteredOff
-     * @tc.desc      : Disable listening for the height change of the soft keyboard in the fixed state input method window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffKeyboardHeightChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
+     * @tc.desc   Disable listening for the height change of the soft keyboard in the fixed state input method window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffKeyboardHeightChange_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffKeyboardHeightChange_UnregisteredOff';
@@ -4590,12 +4590,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3610
-     * @tc.name      : testWindowOffTouchOutside_RepeatOff
-     * @tc.desc      : Turn off listening for click events outside this window area
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffTouchOutside_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3610
+     * @tc.desc   Turn off listening for click events outside this window area
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffTouchOutside_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffTouchOutside_RepeatOff';
@@ -4634,12 +4634,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3620
-     * @tc.name      : testWindowOffTouchOutside_UnregisteredOff
-     * @tc.desc      : Turn off listening for click events outside this window area
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffTouchOutside_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3620
+     * @tc.desc   Turn off listening for click events outside this window area
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffTouchOutside_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffTouchOutside_UnregisteredOff';
@@ -4662,12 +4662,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3630
-     * @tc.name      : testWindowOffScreenshot_RepeatOff
-     * @tc.desc      : Disable the monitoring of screenshot events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffScreenshot_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3630
+     * @tc.desc   Disable the monitoring of screenshot events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffScreenshot_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffScreenshot_RepeatOff';
@@ -4706,12 +4706,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3640
-     * @tc.name      : testWindowOffScreenshot_UnregisteredOff
-     * @tc.desc      : Disable the monitoring of screenshot events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffScreenshot_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3640
+     * @tc.desc   Disable the monitoring of screenshot events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffScreenshot_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffScreenshot_UnregisteredOff';
@@ -4734,12 +4734,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3650
-     * @tc.name      : testWindowOffDialogTargetTouch_RepeatOff
-     * @tc.desc      : Turns off listening for click events on the target window of the modal window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffDialogTargetTouch_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3650
+     * @tc.desc   Turns off listening for click events on the target window of the modal window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffDialogTargetTouch_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffDialogTargetTouch_RepeatOff';
@@ -4778,12 +4778,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3660
-     * @tc.name      : testWindowOffDialogTargetTouch_UnregisteredOff
-     * @tc.desc      : Turns off listening for click events on the target window of the modal window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffDialogTargetTouch_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3660
+     * @tc.desc   Turns off listening for click events on the target window of the modal window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffDialogTargetTouch_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffDialogTargetTouch_UnregisteredOff';
@@ -4811,12 +4811,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3680
-     * @tc.name      : testWindowOffWindowEvent_UnregisteredOff
-     * @tc.desc      : Disable the monitoring of window life cycle changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffWindowEvent_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3680
+     * @tc.desc   Disable the monitoring of window life cycle changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffWindowEvent_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffWindowEvent_UnregisteredOff';
@@ -4839,12 +4839,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3690
-     * @tc.name      : testWindowOffSystemAvoidAreaChange_RepeatOff
-     * @tc.desc      : Disable listening for system circumvention zone changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffSystemAvoidAreaChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3690
+     * @tc.desc   Disable listening for system circumvention zone changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffSystemAvoidAreaChange_RepeatOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffSystemAvoidAreaChange_RepeatOff';
@@ -4883,12 +4883,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3700
-     * @tc.name      : testWindowOffSystemAvoidAreaChange_UnregisteredOff
-     * @tc.desc      : Disable listening for system circumvention zone changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffSystemAvoidAreaChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3700
+     * @tc.desc   Disable listening for system circumvention zone changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffSystemAvoidAreaChange_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testWindowOffSystemAvoidAreaChange_UnregisteredOff';
@@ -4912,12 +4912,12 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3720
-     * @tc.name      : testOffWindowStageEvent_UnregisteredOff
-     * @tc.desc      : Turn off listening for Windows Stage lifecycle changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testOffWindowStageEvent_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3720
+     * @tc.desc   Turn off listening for Windows Stage lifecycle changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffWindowStageEvent_UnregisteredOff', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testOffWindowStageEvent_UnregisteredOff';

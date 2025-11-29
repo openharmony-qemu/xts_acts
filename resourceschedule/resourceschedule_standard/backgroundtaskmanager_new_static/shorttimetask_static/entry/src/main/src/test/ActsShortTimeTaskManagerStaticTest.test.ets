@@ -26,13 +26,13 @@ let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 export default function ActsShortTimeTaskManagerStaticTest() {
   describe('ActsShortTimeTaskManagerStaticTest', () => {
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001
-     * @tc.desc:Test that the requestSuspendDelay function normal call and cancelSuspendDelay function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001
+     * @tc.desc   Test that the requestSuspendDelay function normal call and cancelSuspendDelay function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -72,13 +72,13 @@ export default function ActsShortTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002
-     * @tc.desc:Test that the getRemainingDelayTime callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002
+     * @tc.desc   Test that the getRemainingDelayTime callback function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -132,13 +132,13 @@ export default function ActsShortTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
-     * @tc.desc:Test that the getRemainingDelayTime promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
+     * @tc.desc   Test that the getRemainingDelayTime promise function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

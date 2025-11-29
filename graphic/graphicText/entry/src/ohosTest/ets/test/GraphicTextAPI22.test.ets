@@ -28,12 +28,12 @@ export default function GraphicTextAPI22() {
     });
 
     /**
-     * @tc.number     GraphicTextAPI22Test_0100
-     * @tc.name       GraphicTextAPI22Test_0100
-     * @tc.desc       text newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   GraphicTextAPI22Test_0100
+     * @tc.number GraphicTextAPI22Test_0100
+     * @tc.desc   text newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPI22Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let fontCollection = text.FontCollection.getLocalInstance();
@@ -72,12 +72,12 @@ export default function GraphicTextAPI22() {
     })
 
     /**
-     * @tc.number     GetFontDescriptorsFromPath_0100
-     * @tc.name       GetFontDescriptorsFromPath_0100
-     * @tc.desc       test getFontDescriptorsFromPath
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   GetFontDescriptorsFromPath_0100
+     * @tc.number GetFontDescriptorsFromPath_0100
+     * @tc.desc   test getFontDescriptorsFromPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFontDescriptorsFromPath_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       text.getFontDescriptorsFromPath("file:///system/fonts/HarmonyOS_Sans.ttf").then((fontFullDescriptors) => {
@@ -89,12 +89,12 @@ export default function GraphicTextAPI22() {
     })
 
     /**
-     * @tc.number     GetFontDescriptorsFromPath_0200
-     * @tc.name       GetFontDescriptorsFromPath_0200
-     * @tc.desc       test getFontDescriptorsFromPath
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   GetFontDescriptorsFromPath_0200
+     * @tc.number GetFontDescriptorsFromPath_0200
+     * @tc.desc   test getFontDescriptorsFromPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFontDescriptorsFromPath_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       text.getFontDescriptorsFromPath("file:///system/fonts/HarmonyOS_Sans123.ttf").then((fontFullDescriptors) => {

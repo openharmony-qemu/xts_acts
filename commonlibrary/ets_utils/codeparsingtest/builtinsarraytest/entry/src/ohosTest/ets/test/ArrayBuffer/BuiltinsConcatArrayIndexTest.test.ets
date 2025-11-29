@@ -43,252 +43,252 @@ export default function builtinsConcatArrayIndexTest() {
     const emptyArr = new ConcatArrayTest([]);
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1001
      * @tc.number SUB_ConcatArray_INDEX_TEST_0100
-     * @tc.name builtinsConcatArrayIndexTest1001
-     * @tc.desc Test index 0 access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test index 0 access
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayIndexTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(arr.index(0)).assertEqual(1);
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1002
      * @tc.number SUB_ConcatArray_INDEX_TEST_0200
-     * @tc.name builtinsConcatArrayIndexTest1002
-     * @tc.desc Test index 1 access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test index 1 access
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayIndexTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(arr.index(1)).assertEqual(2);
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1003
      * @tc.number SUB_ConcatArray_INDEX_TEST_0300
-     * @tc.name builtinsConcatArrayIndexTest1003
-     * @tc.desc Test negative index -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test negative index -1
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(-1)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1004
      * @tc.number SUB_ConcatArray_INDEX_TEST_0400
-     * @tc.name builtinsConcatArrayIndexTest1004
-     * @tc.desc Test out-of-bound index 5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test out-of-bound index 5
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(5)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1005
      * @tc.number SUB_ConcatArray_INDEX_TEST_0500
-     * @tc.name builtinsConcatArrayIndexTest1005
-     * @tc.desc Test fractional index 0.5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test fractional index 0.5
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(0.5)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1006
      * @tc.number SUB_ConcatArray_INDEX_TEST_0600
-     * @tc.name builtinsConcatArrayIndexTest1006
-     * @tc.desc Test empty array index 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty array index 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(emptyArr.index(0)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1007
      * @tc.number SUB_ConcatArray_INDEX_TEST_0700
-     * @tc.name builtinsConcatArrayIndexTest1007
-     * @tc.desc Test number 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(0)).assertEqual(1);
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1008
      * @tc.number SUB_ConcatArray_INDEX_TEST_0800
-     * @tc.name builtinsConcatArrayIndexTest1008
-     * @tc.desc Test number -0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number -0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(-0)).assertEqual(1);
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1009
      * @tc.number SUB_ConcatArray_INDEX_TEST_0900
-     * @tc.name builtinsConcatArrayIndexTest1009
-     * @tc.desc Test number NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number NaN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(NaN)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1010
      * @tc.number SUB_ConcatArray_INDEX_TEST_1000
-     * @tc.name builtinsConcatArrayIndexTest1009
-     * @tc.desc Test number Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(Infinity)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1011
      * @tc.number SUB_ConcatArray_INDEX_TEST_1100
-     * @tc.name builtinsConcatArrayIndexTest1011
-     * @tc.desc Test number -Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number -Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(-Infinity)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1012
      * @tc.number SUB_ConcatArray_INDEX_TEST_1200
-     * @tc.name builtinsConcatArrayIndexTest1012
-     * @tc.desc Test number Math
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number Math
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(Math.floor(1.5))).assertEqual(2);
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1013
      * @tc.number SUB_ConcatArray_INDEX_TEST_1300
-     * @tc.name builtinsConcatArrayIndexTest1013
-     * @tc.desc Test number max
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number max
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(Number.MAX_VALUE)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1014
      * @tc.number SUB_ConcatArray_INDEX_TEST_1400
-     * @tc.name builtinsConcatArrayIndexTest1014
-     * @tc.desc Test number min
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number min
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(Number.MIN_VALUE)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1015
      * @tc.number SUB_ConcatArray_INDEX_TEST_1500
-     * @tc.name builtinsConcatArrayIndexTest1015
-     * @tc.desc Test number EPSILON
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number EPSILON
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(Number.EPSILON)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1016
      * @tc.number SUB_ConcatArray_INDEX_TEST_1600
-     * @tc.name builtinsConcatArrayIndexTest1016
-     * @tc.desc Test number 123.456
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number 123.456
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(123.456)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1017
      * @tc.number SUB_ConcatArray_INDEX_TEST_1700
-     * @tc.name builtinsConcatArrayIndexTest1017
-     * @tc.desc Test number 0xcafebabe
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number 0xcafebabe
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(0xcafebabe)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1018
      * @tc.number SUB_ConcatArray_INDEX_TEST_1800
-     * @tc.name builtinsConcatArrayIndexTest1018
-     * @tc.desc Test number 0x0102
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number 0x0102
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(0x0102)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1019
      * @tc.number SUB_ConcatArray_INDEX_TEST_1900
-     * @tc.name builtinsConcatArrayIndexTest1019
-     * @tc.desc Test number 0x01020304
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number 0x01020304
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(0x01020304)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1020
      * @tc.number SUB_ConcatArray_INDEX_TEST_2000
-     * @tc.name builtinsConcatArrayIndexTest1020
-     * @tc.desc Test number 0x3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number 0x3
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(0x3)).assertEqual(4);
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1021
      * @tc.number SUB_ConcatArray_INDEX_TEST_2100
-     * @tc.name builtinsConcatArrayIndexTest1021
-     * @tc.desc Test special characters index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test special characters index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const index = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
@@ -296,36 +296,36 @@ export default function builtinsConcatArrayIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1022
      * @tc.number SUB_ConcatArray_INDEX_TEST_2200
-     * @tc.name builtinsConcatArrayIndexTest1022
-     * @tc.desc Test undefined index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test undefined index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(undefined)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1023
      * @tc.number SUB_ConcatArray_INDEX_TEST_2300
-     * @tc.name builtinsConcatArrayIndexTest1023
-     * @tc.desc Test null index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test null index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index(null)).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1024
      * @tc.number SUB_ConcatArray_INDEX_TEST_2400
-     * @tc.name builtinsConcatArrayIndexTest1024
-     * @tc.desc Test string "0" & "NaN" index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string "0" & "NaN" index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index("0")).assertEqual(1);
@@ -333,48 +333,48 @@ export default function builtinsConcatArrayIndexTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1025
      * @tc.number SUB_ConcatArray_INDEX_TEST_2500
-     * @tc.name builtinsConcatArrayIndexTest1025
-     * @tc.desc Test empty string index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty string index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index("")).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1026
      * @tc.number SUB_ConcatArray_INDEX_TEST_2600
-     * @tc.name builtinsConcatArrayIndexTest1026
-     * @tc.desc Test Unicode index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Unicode index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index("\uD83D\uDC46")).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1027
      * @tc.number SUB_ConcatArray_INDEX_TEST_2700
-     * @tc.name builtinsConcatArrayIndexTest1027
-     * @tc.desc Test invalid Unicode index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test invalid Unicode index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index("\uDC04")).assertUndefined();
     });
 
     /**
+     * @tc.name   builtinsConcatArrayIndexTest1028
      * @tc.number SUB_ConcatArray_INDEX_TEST_2800
-     * @tc.name builtinsConcatArrayIndexTest1028
-     * @tc.desc Test "\a" index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test "\a" index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr.index("\a")).assertUndefined();

@@ -39,13 +39,13 @@ namespace OHOS {
     {
     }
 
-    /*
-     * @tc.number: TestVulkanFastlinkedLibraryTestCase003
-     * @tc.name  : TestVulkanFastlinkedLibraryTestCase003
-     * @tc.desc  : test vulkan xts
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   TestVulkanFastlinkedLibraryTestCase003
+     * @tc.number TestVulkanFastlinkedLibraryTestCase003
+     * @tc.desc   test vulkan xts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     HWTEST_F(ActsVulkanFastlinkedLibrary3Test, TestVulkanFastlinkedLibraryTestCase003, Function | MediumTest | Level2)
     {

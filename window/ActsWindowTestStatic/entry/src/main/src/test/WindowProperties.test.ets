@@ -34,7 +34,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
     return new Promise<window.WindowStage>((resolve, reject) => {
         let want: Want = {
-            bundleName: "com.example.helloworld",
+            bundleName: "com.example.actswindowtest.static",
             abilityName: 'StartAbility'
         };
         if (options) {

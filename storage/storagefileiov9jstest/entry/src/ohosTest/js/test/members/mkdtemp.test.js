@@ -20,14 +20,12 @@ export default function fileIOMkdtemp() {
 describe('fileIO_fs_mkdtemp', function () {
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_sync_000
    * @tc.number SUB_DF_FILEIO_MKDTEMP_SYNC_0000
-   * @tc.name fileIO_test_mkdtemp_sync_000
-   * @tc.desc Test mkdtempSync() interface.
-   * Create a temporary directory, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdtempSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_sync_000', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_mkdtemp_sync_000');
@@ -44,14 +42,12 @@ describe('fileIO_fs_mkdtemp', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_sync_001
    * @tc.number SUB_DF_FILEIO_MKDTEMP_SYNC_0100
-   * @tc.name fileIO_test_mkdtemp_sync_001
-   * @tc.desc Test mkdtempSync() interface.
-   * The directory should end in XXXXXX.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdtempSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_sync_001', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_mkdtemp_sync_000');
@@ -66,14 +62,12 @@ describe('fileIO_fs_mkdtemp', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_sync_002
    * @tc.number SUB_DF_FILEIO_MKDTEMP_SYNC_0200
-   * @tc.name fileIO_test_mkdtemp_sync_002
-   * @tc.desc Test mkdtempSync() interface.
-   * Missing parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdtempSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_sync_002', Level.LEVEL0, async function () {
 
@@ -87,14 +81,12 @@ describe('fileIO_fs_mkdtemp', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_async_000
    * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0000
-   * @tc.name fileIO_test_mkdtemp_async_000
-   * @tc.desc Test mkdtemp() interface. Promise.
-   * Create a temporary directory, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdtemp() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_async_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_mkdtemp_async_000');
@@ -112,14 +104,12 @@ describe('fileIO_fs_mkdtemp', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_async_001
    * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0100
-   * @tc.name fileIO_test_mkdtemp_async_001
-   * @tc.desc Test mkdtemp() interface. Callback.
-   * Create a temporary directory, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdtemp() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_async_001', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_mkdtemp_async_001');
@@ -142,14 +132,12 @@ describe('fileIO_fs_mkdtemp', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_async_002
    * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0200
-   * @tc.name fileIO_test_mkdtemp_async_002
-   * @tc.desc Test mkdtemp() interface. Promise.
-   * The directory should end in XXXXXX.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdtemp() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_async_002', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_mkdtemp_async_002');
@@ -165,14 +153,12 @@ describe('fileIO_fs_mkdtemp', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_async_003
    * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0300
-   * @tc.name fileIO_test_mkdtemp_async_003
-   * @tc.desc Test mkdtemp() interface. Callback.
-   * The directory should end in XXXXXX.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdtemp() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_async_003', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_mkdtemp_async_003');
@@ -192,14 +178,12 @@ describe('fileIO_fs_mkdtemp', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdtemp_async_004
    * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0400
-   * @tc.name fileIO_test_mkdtemp_async_004
-   * @tc.desc Test mkdtemp() interface. Promise.
-   * Missing parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdtemp() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdtemp_async_004', Level.LEVEL0, async function (done) {
 

@@ -35,7 +35,6 @@ export default function MultimodalMouseEventTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100
      * @tc.number SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100
      * @tc.desc   Test ACTION_DOWN.
@@ -58,7 +57,6 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100
      * @tc.number SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100
      * @tc.desc   Test ACTION_UP.
@@ -81,7 +79,6 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100
      * @tc.number SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100
      * @tc.desc   Test ToolType.UNKNOWN.
@@ -104,7 +101,6 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100
      * @tc.number SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100
      * @tc.desc   Test ToolType.JOYSTICK.
@@ -127,7 +123,6 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100
      * @tc.number SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100
      * @tc.desc   Test ToolType.TOUCHPAD.

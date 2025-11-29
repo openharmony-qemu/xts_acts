@@ -51,14 +51,6 @@ int g_randomLen[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkRandomNapiTest, RANDOM_TEST, ::testing::ValuesIn(g_randomLen));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0100
-* @tc.name OHCryptoFrameworkRandomNapiTest/RANDOM_TEST.SUB_Security_CryptoFramework_NAPI_Random_Test_0100/x
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(RANDOM_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0100, TestSize.Level0)
 {
     int len = GetParam();
@@ -79,14 +71,6 @@ HWTEST_P(RANDOM_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0100, TestSi
     OH_Crypto_FreeDataBlob(&out);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0500
-* @tc.name OHCryptoFrameworkRandomNapiTest/RANDOM_TEST.SUB_Security_CryptoFramework_NAPI_Random_Test_0500/x
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(RANDOM_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0500, TestSize.Level0)
 {
     int len = GetParam();
@@ -110,14 +94,6 @@ HWTEST_P(RANDOM_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0500, TestSi
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkRandomNapiTest, RANDOM_SEED_TEST, ::testing::ValuesIn(g_randomLen));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0600
-* @tc.name OHCryptoFrameworkRandomNapiTest/RANDOM_SEED_TEST.SUB_Security_CryptoFramework_NAPI_Random_Test_0600/x
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(RANDOM_SEED_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0600, TestSize.Level0)
 {
     int len = GetParam();
@@ -144,14 +120,6 @@ HWTEST_P(RANDOM_SEED_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0600, T
     OH_Crypto_FreeDataBlob(&out);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0200
-* @tc.name OHCryptoFrameworkRandomNapiTest/RANDOM_SEED_TEST.SUB_Security_CryptoFramework_NAPI_Random_Test_0200/x
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(RANDOM_SEED_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0200, TestSize.Level0)
 {
     int len = GetParam();
@@ -178,13 +146,13 @@ HWTEST_P(RANDOM_SEED_TEST, SUB_Security_CryptoFramework_NAPI_Random_Test_0200, T
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0300
-* @tc.name OHCryptoFrameworkRandomNapiTest.SUB_Security_CryptoFramework_NAPI_Random_Test_0300
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Random_Test_0300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0300
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkRandomNapiTest, SUB_Security_CryptoFramework_NAPI_Random_Test_0300, TestSize.Level0)
 {
     int len = -1;
@@ -200,13 +168,13 @@ HWTEST_F(OHCryptoFrameworkRandomNapiTest, SUB_Security_CryptoFramework_NAPI_Rand
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0400
-* @tc.name OHCryptoFrameworkRandomNapiTest.SUB_Security_CryptoFramework_NAPI_Random_Test_0400
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Random_Test_0400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Random_Test_0400
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkRandomNapiTest, SUB_Security_CryptoFramework_NAPI_Random_Test_0400, TestSize.Level0)
 {
     int len = 0;

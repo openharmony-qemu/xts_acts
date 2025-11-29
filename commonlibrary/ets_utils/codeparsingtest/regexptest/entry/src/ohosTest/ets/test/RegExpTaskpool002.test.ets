@@ -45,12 +45,12 @@ export default function RegExpTaskpoolTest002() {
     })
 
     /**
+     * @tc.name   testRegMatch0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_TASKPOOL_0001
-     * @tc.name testRegMatch0001
-     * @tc.desc Test match() with global regex returning all matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test match() with global regex returning all matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegMatch0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const str = 'apple banana apple';
@@ -61,12 +61,12 @@ export default function RegExpTaskpoolTest002() {
     });
 
     /**
+     * @tc.name   testRegMatch0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_TASKPOOL_0002
-     * @tc.name testRegMatch0002
-     * @tc.desc Test match() with regex without global flag returning match info
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test match() with regex without global flag returning match info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegMatch0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const str = 'apple banana apple';

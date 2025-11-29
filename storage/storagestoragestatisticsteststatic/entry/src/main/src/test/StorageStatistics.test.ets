@@ -31,14 +31,12 @@ export default function storageStatistics_test() {
     hilog.info(domain, tag, '%{public}s', 'storageStatistics_test start');
  
     /**
+     * @tc.name   storage_statistics_test_get_current_bundle_stats_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0000
-     * @tc.name storage_statistics_test_get_current_bundle_stats_async_static_000
-     * @tc.desc Test getCurrentBundleStats() interfaces
-     * Test getCurrentBundleStats().
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getCurrentBundleStats() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storage_statistics_test_get_current_bundle_stats_async_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -66,14 +64,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storage_statistics_test_get_current_bundle_stats_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0001
-     * @tc.name storage_statistics_test_get_current_bundle_stats_async_static_001
-     * @tc.desc Test getCurrentBundleStats() interfaces
-     * Test getCurrentBundleStats(callback: AsyncCallback<BundleStats>).
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getCurrentBundleStats() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storage_statistics_test_get_current_bundle_stats_async_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -106,14 +102,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0000
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_000
-     * @tc.desc Test getUserStorageStats() interfaces
-     * Test getUserStorageStats().
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getUserStorageStats() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storage_statistics_test_get_user_storage_stats_async_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -136,14 +130,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0001
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_001
-     * @tc.desc Test getUserStorageStats() interfaces
-     * Test getUserStorageStats(callback: AsyncCallback<StorageStats>).
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getUserStorageStats() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storage_statistics_test_get_user_storage_stats_async_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -177,14 +169,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_002
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0002
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_002
-     * @tc.desc Test getCurrentBundleStats() interfaces
-     * Test getCurrentBundleStats(userId: long).
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getCurrentBundleStats() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storage_statistics_test_get_user_storage_stats_async_static_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -208,14 +198,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storage_statistics_test_get_user_storage_stats_async_static_003
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0003
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_003
-     * @tc.desc Test getUserStorageStats() interfaces
-     * Test getUserStorageStats(userId: long, callback: AsyncCallback<StorageStats>).
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getUserStorageStats() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storage_statistics_test_get_user_storage_stats_async_static_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -250,13 +238,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storageStatistics_test_get_free_size_sync_static_000
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_SYNC_0000
-     * @tc.name storageStatistics_test_get_free_size_sync_static_000
-     * @tc.desc Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_free_size_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -276,13 +263,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storageStatistics_test_get_free_size_sync_static_001
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_SYNC_0100
-     * @tc.name storageStatistics_test_get_free_size_sync_static_001
-     * @tc.desc Test getFreeSize() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_free_size_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -301,14 +287,13 @@ export default function storageStatistics_test() {
         }
       });
  
-        /**
+    /**
+     * @tc.name   storageStatistics_test_get_total_size_sync_static_000
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_SYNC_0000
-     * @tc.name storageStatistics_test_get_total_size_sync_static_000
-     * @tc.desc Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_total_size_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -328,13 +313,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storageStatistics_test_get_total_size_sync_static_001
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_SYNC_0100
-     * @tc.name storageStatistics_test_get_total_size_sync_static_001
-     * @tc.desc Test getTotalSize() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_total_size_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,14 +338,13 @@ export default function storageStatistics_test() {
       });
  
     
-        /**
+    /**
+     * @tc.name   storageStatistics_test_get_free_size_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_0000
-     * @tc.name storageStatistics_test_get_free_size_async_static_000
-     * @tc.desc Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_free_size_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -381,13 +364,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storageStatistics_test_get_free_size_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_0100
-     * @tc.name storageStatistics_test_get_free_size_async_static_001
-     * @tc.desc Test getFreeSize() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_free_size_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -413,14 +395,13 @@ export default function storageStatistics_test() {
         }
       });
  
-        /**
+    /**
+     * @tc.name   storageStatistics_test_get_total_size_async_static_000
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_0000
-     * @tc.name storageStatistics_test_get_total_size_async_static_000
-     * @tc.desc Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_total_size_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -439,13 +420,12 @@ export default function storageStatistics_test() {
       });
  
     /**
+     * @tc.name   storageStatistics_test_get_total_size_async_static_001
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_0100
-     * @tc.name storageStatistics_test_get_total_size_async_static_001
-     * @tc.desc Test getTotalSize() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageStatistics_test_get_total_size_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

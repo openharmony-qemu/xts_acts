@@ -55,6 +55,8 @@
     "MainAbility/pages/consumer/Consumer0130",
     "MainAbility/pages/consumer/Consumer0140",
     "MainAbility/pages/consumer/Consumer0170",
+    "MainAbility/pages/env/Env001",
+    "MainAbility/pages/env/SubWindow",
     "MainAbility/pages/index/index"
   ]
 }

@@ -53,12 +53,12 @@ export default function taskPoolAsyncRunnerMultipleTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleTest0100
      * @tc.number TASKPOOL_TASK_MULTIPLE_TEST_0100
-     * @tc.name taskPoolAsyncRunnerMultipleTest0100
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleTest0100';
@@ -95,12 +95,12 @@ export default function taskPoolAsyncRunnerMultipleTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleTest0200
      * @tc.number TASKPOOL_TASK_MULTIPLE_TEST_0200
-     * @tc.name taskPoolAsyncRunnerMultipleTest0200
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -137,12 +137,12 @@ export default function taskPoolAsyncRunnerMultipleTest() {
         Done();
       })
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleTest0300
      * @tc.number TASKPOOL_TASK_MULTIPLE_TEST_0300
-     * @tc.name taskPoolAsyncRunnerMultipleTest0300
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -179,12 +179,12 @@ export default function taskPoolAsyncRunnerMultipleTest() {
         Done();
       })
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleTest0400
      * @tc.number TASKPOOL_TASK_MULTIPLE_TEST_0400
-     * @tc.name taskPoolAsyncRunnerMultipleTest0400
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleTest0400'
@@ -220,12 +220,12 @@ export default function taskPoolAsyncRunnerMultipleTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleTest0500
      * @tc.number TASKPOOL_TASK_MULTIPLE_TEST_0500
-     * @tc.name taskPoolAsyncRunnerMultipleTest0500
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleTest0500'

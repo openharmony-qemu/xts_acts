@@ -20,5 +20,5 @@ import HasAxisTest from './HasAxisTest/HasAxisTest.test'
 export default function testsuite() {
   AxisEvent();
   getPinchAxisScaleValue();
-  // HasAxisTest();
+  HasAxisTest();
 }

@@ -15,7 +15,8 @@
 import { describe, expect, it, Level } from '@ohos/hypium';
 import Want from '@ohos.app.ability.Want'
 import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EVENTS,
-  BUNDLENAME1, INVALID_WANT, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS, INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND
+  BUNDLENAME1, INVALID_WANT, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS, INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND,
+  OTHER_WANT
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -172,6 +173,50 @@ export default function adminManagerTest() {
         console.log('test_startadminprovision_001 ' + error.code);
         console.log('test_startadminprovision_001 ' + error.message);
         expect(error.code == 201).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ENABLEDEVICEADMIN_001
+     * @tc.name      : test_enableDeviceAdmin_001
+     * @tc.desc      : test enableDeviceAdmin method without permission
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_enableDeviceAdmin_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.enableDeviceAdmin(OTHER_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_DISABLEDEVICEADMIN_001
+     * @tc.name      : test_disableDeviceAdmin_001
+     * @tc.desc      : test disableDeviceAdmin method without permission
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_disableDeviceAdmin_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.enableAdmin(OTHER_WANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.disableDeviceAdmin(OTHER_WANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(OTHER_WANT);
+        await adminManager.disableAdmin(SELFWANT);
       }
       done();
     })

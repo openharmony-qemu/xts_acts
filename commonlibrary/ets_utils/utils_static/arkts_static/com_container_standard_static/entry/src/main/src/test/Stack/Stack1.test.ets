@@ -40,12 +40,12 @@ export default function StackTest1() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0100
-     * @tc.name       : testStackPush0001
-     * @tc.desc       : Testing Stack push by number.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackPush0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0100
+     * @tc.desc   Testing Stack push by number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackPush0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackPush0001";
@@ -60,12 +60,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0200
-     * @tc.name       : testStackPush0002
-     * @tc.desc       : Testing Stack push by string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackPush0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0200
+     * @tc.desc   Testing Stack push by string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackPush0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStack0002";
@@ -80,12 +80,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0300
-     * @tc.name       : testStackPush0003
-     * @tc.desc       : Testing Stack push by object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackPush0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0300
+     * @tc.desc   Testing Stack push by object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackPush0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackPush0003";
@@ -103,12 +103,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0400
-     * @tc.name       : testStackPush0004
-     * @tc.desc       : Testing Stack push by object or string or number.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackPush0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0400
+     * @tc.desc   Testing Stack push by object or string or number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackPush0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackPush0004";
@@ -139,6 +139,14 @@ export default function StackTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testStackpop0005
+     * @tc.number testStackpop0005
+     * @tc.desc   testStackpop0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testStackpop0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testStackpop0005";
     //   try {
@@ -153,12 +161,12 @@ export default function StackTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0600
-     * @tc.name       : testStackpop0006
-     * @tc.desc       : Testing Stack pop by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackpop0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0600
+     * @tc.desc   Testing Stack pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackpop0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackpop0006";
@@ -182,12 +190,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0700
-     * @tc.name       : testStackpop0007
-     * @tc.desc       : Testing Stack pop by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackpop0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0700
+     * @tc.desc   Testing Stack pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackpop0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackpop0007";
@@ -202,12 +210,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0800
-     * @tc.name       : testStackpop0008
-     * @tc.desc       : Testing Stack pop by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackpop0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0800
+     * @tc.desc   Testing Stack pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackpop0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackpop0008";
@@ -222,12 +230,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0900
-     * @tc.name       : testStackPeek0009
-     * @tc.desc       : Testing Stack pop by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackPeek0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0900
+     * @tc.desc   Testing Stack pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackPeek0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackPeek0009";
@@ -251,12 +259,12 @@ export default function StackTest1() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0100
-     * @tc.name       : testStackPeek0010
-     * @tc.desc       : Testing Stack pop by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackPeek0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0100
+     * @tc.desc   Testing Stack pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackPeek0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackPeek0010";
@@ -271,12 +279,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_01100
-     * @tc.name       : testStackLocate0011
-     * @tc.desc       : Testing Stack locate by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackLocate0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_01100
+     * @tc.desc   Testing Stack locate by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackLocate0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackLocate0011";
@@ -300,12 +308,12 @@ export default function StackTest1() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_1200
-     * @tc.name       : testStackLocate0012
-     * @tc.desc       : Testing Stack locate by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackLocate0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_1200
+     * @tc.desc   Testing Stack locate by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackLocate0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackLocate0012";
@@ -323,12 +331,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_1300
-     * @tc.name       : testStackLocate0013
-     * @tc.desc       : Testing Stack locate by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackLocate0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_1300
+     * @tc.desc   Testing Stack locate by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackLocate0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackLocate0013";
@@ -347,12 +355,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1400
-     * @tc.name       : testStackForEach0014
-     * @tc.desc       : Testing Stack forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackForEach0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1400
+     * @tc.desc   Testing Stack forEach by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackForEach0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackForEach0014";
@@ -375,12 +383,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_ISEMPTY_1500
-     * @tc.name       : testStackIsEmpty0015
-     * @tc.desc       : Testing isEmpty forEach by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackIsEmpty0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_ISEMPTY_1500
+     * @tc.desc   Testing isEmpty forEach by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackIsEmpty0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackIsEmpty0015";
@@ -399,12 +407,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_1500
-     * @tc.name       : testStackLength0016
-     * @tc.desc       : Testing isEmpty push by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackLength0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_1500
+     * @tc.desc   Testing isEmpty push by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackLength0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStack0016";
@@ -423,12 +431,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1500
-     * @tc.name       : testStackForEach0015
-     * @tc.desc       : Testing Stack forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackForEach0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1500
+     * @tc.desc   Testing Stack forEach by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackForEach0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackForEach0015";
@@ -447,12 +455,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1600
-     * @tc.name       : testStackForEach0016
-     * @tc.desc       : Testing Stack forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackForEach0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1600
+     * @tc.desc   Testing Stack forEach by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackForEach0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackForEach0016";
@@ -469,12 +477,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1700
-     * @tc.name       : testStackForEach0017
-     * @tc.desc       : Testing Stack forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackForEach0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1700
+     * @tc.desc   Testing Stack forEach by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackForEach0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackForEach0017";
@@ -491,12 +499,12 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1800
-     * @tc.name       : testStackForEach0018
-     * @tc.desc       : Testing Stack forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStackForEach0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1800
+     * @tc.desc   Testing Stack forEach by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackForEach0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testStackForEach0018";
@@ -514,12 +522,12 @@ export default function StackTest1() {
     });
 
     /**
+     * @tc.name   testUtil3_012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_012
-     * @tc.name testUtil3_012
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let res = 0;

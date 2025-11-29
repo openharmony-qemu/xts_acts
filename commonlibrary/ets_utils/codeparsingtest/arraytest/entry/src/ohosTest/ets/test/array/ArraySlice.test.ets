@@ -43,12 +43,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_001
-     * @tc.name testArraySlice001
-     * @tc.desc Verify slice() returns a shallow copy of the original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns a shallow copy of the original array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -58,12 +58,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_002
-     * @tc.name testArraySlice002
-     * @tc.desc Verify slice(start) returns array from start index to end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice(start) returns array from start index to end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -72,12 +72,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_003
-     * @tc.name testArraySlice003
-     * @tc.desc Verify slice(start, end) returns array from start to end-1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice(start, end) returns array from start to end-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -86,12 +86,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_004
-     * @tc.name testArraySlice004
-     * @tc.desc Verify slice(start, end) returns empty array when start > end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice(start, end) returns empty array when start > end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -100,12 +100,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_005
-     * @tc.name testArraySlice005
-     * @tc.desc Verify slice() on empty array returns empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on empty array returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -114,12 +114,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_006
-     * @tc.name testArraySlice006
-     * @tc.desc Verify slice(start) with negative index counts from end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice(start) with negative index counts from end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -128,12 +128,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_007
-     * @tc.name testArraySlice007
-     * @tc.desc Verify slice(start, end) with negative indices counts from end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice(start, end) with negative indices counts from end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -142,12 +142,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_008
-     * @tc.name testArraySlice008
-     * @tc.desc Verify slice(start) with start index beyond array length returns empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice(start) with start index beyond array length returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -156,12 +156,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_009
-     * @tc.name testArraySlice009
-     * @tc.desc Verify slice() returns shallow copy for nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns shallow copy for nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { val: number }
@@ -173,12 +173,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_010
-     * @tc.name testArraySlice010
-     * @tc.desc Verify slice() on array of strings returns correct subarray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings returns correct subarray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -187,12 +187,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice011
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_011
-     * @tc.name testArraySlice011
-     * @tc.desc Verify slice() on array of boolean values returns correct subarray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of boolean values returns correct subarray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -201,12 +201,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice012
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_012
-     * @tc.name testArraySlice012
-     * @tc.desc Verify slice() returns shallow copy for array of functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns shallow copy for array of functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = (x: number) => number;
@@ -219,12 +219,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice013
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_013
-     * @tc.name testArraySlice013
-     * @tc.desc Verify slice() on array of objects returns shallow copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of objects returns shallow copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { val: number }
@@ -236,12 +236,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice014
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_014
-     * @tc.name testArraySlice014
-     * @tc.desc Verify slice() on nested arrays returns shallow copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on nested arrays returns shallow copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -251,12 +251,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice015
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_015
-     * @tc.name testArraySlice015
-     * @tc.desc Verify slice() with end index larger than array length returns up to end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() with end index larger than array length returns up to end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -265,12 +265,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice016
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_016
-     * @tc.name testArraySlice016
-     * @tc.desc Verify slice() on array after push and pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after push and pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -281,12 +281,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice017
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_017
-     * @tc.name testArraySlice017
-     * @tc.desc Verify slice() on array of strings with negative indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -295,12 +295,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice018
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_018
-     * @tc.name testArraySlice018
-     * @tc.desc Verify slice() on array of class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -318,12 +318,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice019
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_019
-     * @tc.name testArraySlice019
-     * @tc.desc Verify slice() on array of Maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of Maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const m1: Map<string, number> = new Map([['a', 1]]);
@@ -335,12 +335,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice020
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_020
-     * @tc.name testArraySlice020
-     * @tc.desc Verify slice() on array of Sets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of Sets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const s1: Set<number> = new Set([1]);
@@ -352,12 +352,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice021
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_021
-     * @tc.name testArraySlice021
-     * @tc.desc Verify slice() on array of optional numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: number }
@@ -369,12 +369,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice022
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_022
-     * @tc.name testArraySlice022
-     * @tc.desc Verify slice() on array after fill method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 0, 0];
@@ -384,12 +384,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice023
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_023
-     * @tc.name testArraySlice023
-     * @tc.desc Verify slice() on array after reverse method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after reverse method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -399,12 +399,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice024
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_024
-     * @tc.name testArraySlice024
-     * @tc.desc Verify slice() on nested tuples
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on nested tuples
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, string][] = [[1, 'a'], [2, 'b'], [3, 'c']];
@@ -413,12 +413,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice025
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_025
-     * @tc.name testArraySlice025
-     * @tc.desc Verify slice() on array after concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: number[] = [1, 2];
@@ -429,12 +429,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice026
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_026
-     * @tc.name testArraySlice026
-     * @tc.desc Verify slice() returns shallow copy for array after map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns shallow copy for array after map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -444,12 +444,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice027
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_027
-     * @tc.name testArraySlice027
-     * @tc.desc Verify slice() on array after sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4, 2];
@@ -459,12 +459,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice028
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_028
-     * @tc.name testArraySlice028
-     * @tc.desc Verify slice() on array of nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Inner { x: number };
@@ -476,12 +476,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice029
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_029
-     * @tc.name testArraySlice029
-     * @tc.desc Verify slice() returns shallow copy on array of mixed types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns shallow copy on array of mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string | boolean)[] = [1, 'a', true];
@@ -490,12 +490,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice030
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_030
-     * @tc.name testArraySlice030
-     * @tc.desc Verify slice() on array after multiple operations push/pop/shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple operations push/pop/shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -507,12 +507,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice031
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_031
-     * @tc.name testArraySlice031
-     * @tc.desc Verify slice() on array after unshift elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after unshift elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [2, 3];
@@ -522,12 +522,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice032
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_032
-     * @tc.name testArraySlice032
-     * @tc.desc Verify slice() on array after push multiple elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after push multiple elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1];
@@ -537,12 +537,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice033
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_033
-     * @tc.name testArraySlice033
-     * @tc.desc Verify slice() on array of optional objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: number }
@@ -554,12 +554,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice034
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_034
-     * @tc.name testArraySlice034
-     * @tc.desc Verify slice() on array after pop and shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after pop and shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -570,12 +570,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice035
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_035
-     * @tc.name testArraySlice035
-     * @tc.desc Verify slice() on array of nested tuples
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested tuples
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, string][] = [[1, 'a'], [2, 'b'], [3, 'c']];
@@ -584,12 +584,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice036
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_036
-     * @tc.name testArraySlice036
-     * @tc.desc Verify slice() returns empty array when start equals end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns empty array when start equals end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -598,12 +598,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice037
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_037
-     * @tc.name testArraySlice037
-     * @tc.desc Verify slice() on array after fill with objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill with objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { val: number }
@@ -615,12 +615,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice038
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_038
-     * @tc.name testArraySlice038
-     * @tc.desc Verify slice() on array of functions returns shallow copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of functions returns shallow copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = (x: number) => number;
@@ -633,12 +633,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice039
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_039
-     * @tc.name testArraySlice039
-     * @tc.desc Verify slice() on array of class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -656,12 +656,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice040
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_040
-     * @tc.name testArraySlice040
-     * @tc.desc Verify slice() on array after reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -671,12 +671,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice041
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_041
-     * @tc.name testArraySlice041
-     * @tc.desc Verify slice() on array of nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -685,12 +685,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice042
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_042
-     * @tc.name testArraySlice042
-     * @tc.desc Verify slice() on array after multiple push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1];
@@ -700,12 +700,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice043
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_043
-     * @tc.name testArraySlice043
-     * @tc.desc Verify slice() on array of strings with negative end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings with negative end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -714,12 +714,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice044
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_044
-     * @tc.name testArraySlice044
-     * @tc.desc Verify slice() returns empty array on empty original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns empty array on empty original array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -728,12 +728,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice045
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_045
-     * @tc.name testArraySlice045
-     * @tc.desc Verify slice() on array after fill and reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill and reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [0, 0, 0];
@@ -744,12 +744,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice046
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_046
-     * @tc.name testArraySlice046
-     * @tc.desc Verify slice() on array of mixed types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string | boolean)[] = [1, 'a', true, false];
@@ -758,12 +758,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice047
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_047
-     * @tc.name testArraySlice047
-     * @tc.desc Verify slice() on array of optional booleans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: boolean }
@@ -775,12 +775,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice048
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_048
-     * @tc.name testArraySlice048
-     * @tc.desc Verify slice() on array after concat and push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after concat and push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: number[] = [1, 2];
@@ -792,12 +792,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice049
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_049
-     * @tc.name testArraySlice049
-     * @tc.desc Verify slice() on array after map returns correct subarray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after map returns correct subarray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -807,12 +807,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice051
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_051
-     * @tc.name testArraySlice051
-     * @tc.desc Verify slice() on array of optional strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: string }
@@ -824,12 +824,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice052
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_052
-     * @tc.name testArraySlice052
-     * @tc.desc Verify slice() on array after multiple fill operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple fill operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 0, 0, 0];
@@ -840,12 +840,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice053
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_053
-     * @tc.name testArraySlice053
-     * @tc.desc Verify slice() on array of objects with nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of objects with nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { vals: number[] }
@@ -857,12 +857,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice054
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_054
-     * @tc.name testArraySlice054
-     * @tc.desc Verify slice() on array of class instances after modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances after modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -880,12 +880,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice055
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_055
-     * @tc.name testArraySlice055
-     * @tc.desc Verify slice() returns empty array when start index beyond array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns empty array when start index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -894,12 +894,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice056
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_056
-     * @tc.name testArraySlice056
-     * @tc.desc Verify slice() with negative start beyond array length returns full array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() with negative start beyond array length returns full array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -908,12 +908,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice057
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_057
-     * @tc.name testArraySlice057
-     * @tc.desc Verify slice() on array after map with object transformation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after map with object transformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { val: number }
@@ -925,12 +925,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice058
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_058
-     * @tc.name testArraySlice058
-     * @tc.desc Verify slice() on array of functions with multiple args
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of functions with multiple args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = (x: number, y: number) => number;
@@ -943,12 +943,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice059
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_059
-     * @tc.name testArraySlice059
-     * @tc.desc Verify slice() on array of nested optional objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested optional objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Inner { n: number }
@@ -962,12 +962,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice060
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_060
-     * @tc.name testArraySlice060
-     * @tc.desc Verify slice() on array after sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4, 2];
@@ -977,12 +977,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice061
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_061
-     * @tc.name testArraySlice061
-     * @tc.desc Verify slice() on array of booleans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -991,12 +991,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice062
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_062
-     * @tc.name testArraySlice062
-     * @tc.desc Verify slice() on array of strings with start > end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings with start > end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -1005,12 +1005,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice063
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_063
-     * @tc.name testArraySlice063
-     * @tc.desc Verify slice() returns shallow copy for nested array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns shallow copy for nested array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -1020,12 +1020,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice064
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_064
-     * @tc.name testArraySlice064
-     * @tc.desc Verify slice() on array after push, pop, shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after push, pop, shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -1037,12 +1037,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice065
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_065
-     * @tc.name testArraySlice065
-     * @tc.desc Verify slice() on array of Maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of Maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const m1: Map<string, number> = new Map([['a', 1]]);
@@ -1054,12 +1054,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice066
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_066
-     * @tc.name testArraySlice066
-     * @tc.desc Verify slice() on array of Sets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of Sets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const s1: Set<number> = new Set([1, 2]);
@@ -1071,12 +1071,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice067
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_067
-     * @tc.name testArraySlice067
-     * @tc.desc Verify slice() on array of optional class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1089,12 +1089,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice068
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_068
-     * @tc.name testArraySlice068
-     * @tc.desc Verify slice() on array after repeated slice calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after repeated slice calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1104,12 +1104,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice069
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_069
-     * @tc.name testArraySlice069
-     * @tc.desc Verify slice() on array of mixed optional types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of mixed optional types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number | string }
@@ -1120,15 +1120,15 @@ export default function ArraySliceTest() {
       expect(sliced[0].n === undefined).assertEqual(true);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_070
-     * @tc.name testArraySlice070
-     * @tc.desc Verify slice() on array after concat of arrays with different types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
     // 问题？
+    /**
+     * @tc.name   testArraySlice070
+     * @tc.number testArraySlice070
+     * @tc.desc   testArraySlice070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testArraySlice070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const arr1:number[]=[1,2];
     //   const arr2:string[]=['a','b'];
@@ -1138,12 +1138,12 @@ export default function ArraySliceTest() {
     // });
 
     /**
+     * @tc.name   testArraySlice071
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_071
-     * @tc.name testArraySlice071
-     * @tc.desc Verify slice() on array after repeated push and pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after repeated push and pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1154,12 +1154,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice072
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_072
-     * @tc.name testArraySlice072
-     * @tc.desc Verify slice() on array of nested optional arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested optional arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { vals?: number[] }
@@ -1171,12 +1171,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice073
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_073
-     * @tc.name testArraySlice073
-     * @tc.desc Verify slice() returns shallow copy of nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() returns shallow copy of nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { a: number };
@@ -1187,12 +1187,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice074
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_074
-     * @tc.name testArraySlice074
-     * @tc.desc Verify slice() on array of functions with default parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of functions with default parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = (x?: number) => number;
@@ -1204,12 +1204,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice075
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_075
-     * @tc.name testArraySlice075
-     * @tc.desc Verify slice() with negative end index beyond array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() with negative end index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1218,12 +1218,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice076
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_076
-     * @tc.name testArraySlice076
-     * @tc.desc Verify slice() on array after multiple slice calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple slice calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1233,12 +1233,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice077
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_077
-     * @tc.name testArraySlice077
-     * @tc.desc Verify slice() on array of class instances with optional fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances with optional fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1251,12 +1251,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice078
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_078
-     * @tc.name testArraySlice078
-     * @tc.desc Verify slice() on array of nested arrays after modifying nested elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays after modifying nested elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -1266,12 +1266,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice079
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_079
-     * @tc.name testArraySlice079
-     * @tc.desc Verify slice() on array after sort with custom comparator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after sort with custom comparator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 3, 4, 1];
@@ -1281,12 +1281,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice080
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_080
-     * @tc.name testArraySlice080
-     * @tc.desc Verify slice() on array of boolean values with negative start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of boolean values with negative start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true, false];
@@ -1295,12 +1295,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice081
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_081
-     * @tc.name testArraySlice081
-     * @tc.desc Verify slice() on array of strings after unshift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after unshift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['b', 'c'];
@@ -1310,12 +1310,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice082
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_082
-     * @tc.name testArraySlice082
-     * @tc.desc Verify slice() on array after concat with nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after concat with nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: number[] = [1, 2];
@@ -1326,12 +1326,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice083
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_083
-     * @tc.name testArraySlice083
-     * @tc.desc Verify slice() on array of optional function elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional function elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = (x: number) => number;
@@ -1345,12 +1345,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice084
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_084
-     * @tc.name testArraySlice084
-     * @tc.desc Verify slice() on array after multiple shift operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple shift operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -1361,12 +1361,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice085
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_085
-     * @tc.name testArraySlice085
-     * @tc.desc Verify slice() on array of objects with nested optional fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of objects with nested optional fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Inner { n: number };
@@ -1379,12 +1379,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice086
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_086
-     * @tc.name testArraySlice086
-     * @tc.desc Verify slice() on array of numbers after repeated push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after repeated push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1394,12 +1394,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice087
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_087
-     * @tc.name testArraySlice087
-     * @tc.desc Verify slice() on array of class instances with method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances with method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1420,12 +1420,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice088
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_088
-     * @tc.name testArraySlice088
-     * @tc.desc Verify slice() on array of numbers after pop and unshift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after pop and unshift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1436,12 +1436,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice089
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_089
-     * @tc.name testArraySlice089
-     * @tc.desc Verify slice() on array of nested arrays after modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays after modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -1451,12 +1451,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice091
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_091
-     * @tc.name testArraySlice091
-     * @tc.desc Verify slice() on array of strings with negative start and positive end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings with negative start and positive end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -1465,12 +1465,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice092
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_092
-     * @tc.name testArraySlice092
-     * @tc.desc Verify slice() on array of boolean values after reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of boolean values after reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -1480,12 +1480,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice093
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_093
-     * @tc.name testArraySlice093
-     * @tc.desc Verify slice() on array of numbers after fill
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after fill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 0];
@@ -1495,12 +1495,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice094
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_094
-     * @tc.name testArraySlice094
-     * @tc.desc Verify slice() on array of optional objects with nested fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional objects with nested fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Inner { n: number };
@@ -1512,12 +1512,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice095
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_095
-     * @tc.name testArraySlice095
-     * @tc.desc Verify slice() on array of functions with closure state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of functions with closure state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = () => number;
@@ -1531,12 +1531,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice096
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_096
-     * @tc.name testArraySlice096
-     * @tc.desc Verify slice() on array of numbers after splice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after splice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1546,12 +1546,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice097
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_097
-     * @tc.name testArraySlice097
-     * @tc.desc Verify slice() on array of class instances after property modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances after property modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1569,12 +1569,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice098
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_098
-     * @tc.name testArraySlice098
-     * @tc.desc Verify slice() on array after concat with optional objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after concat with optional objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -1587,12 +1587,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice099
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_099
-     * @tc.name testArraySlice099
-     * @tc.desc Verify slice() on array of nested arrays with negative indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -1601,12 +1601,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_100
-     * @tc.name testArraySlice100
-     * @tc.desc Verify slice() on array of numbers with start equals end returns empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers with start equals end returns empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1615,12 +1615,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_101
-     * @tc.name testArraySlice101
-     * @tc.desc Verify slice() on array of optional numbers with undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional numbers with undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -1632,12 +1632,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_102
-     * @tc.name testArraySlice102
-     * @tc.desc Verify slice() on array after push and shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after push and shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1648,12 +1648,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_103
-     * @tc.name testArraySlice103
-     * @tc.desc Verify slice() on array of strings after reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -1663,12 +1663,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_104
-     * @tc.name testArraySlice104
-     * @tc.desc Verify slice() on array of booleans after fill
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of booleans after fill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [false, false, false];
@@ -1678,12 +1678,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_105
-     * @tc.name testArraySlice105
-     * @tc.desc Verify slice() on array of nested arrays after modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays after modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -1693,12 +1693,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_106
-     * @tc.name testArraySlice106
-     * @tc.desc Verify slice() on array of class instances with method modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances with method modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1720,12 +1720,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_107
-     * @tc.name testArraySlice107
-     * @tc.desc Verify slice() on array of optional functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { fn?: (x: number) => number }
@@ -1737,12 +1737,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_108
-     * @tc.name testArraySlice108
-     * @tc.desc Verify slice() on array after splice with optional elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after splice with optional elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: number }
@@ -1755,12 +1755,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_109
-     * @tc.name testArraySlice109
-     * @tc.desc Verify slice() on array of nested optional arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested optional arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { vals?: number[] }
@@ -1772,12 +1772,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_110
-     * @tc.name testArraySlice110
-     * @tc.desc Verify slice() on array of numbers after unshift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after unshift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [2, 3, 4];
@@ -1787,12 +1787,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_111
-     * @tc.name testArraySlice111
-     * @tc.desc Verify slice() on array of strings after concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: string[] = ['a', 'b'];
@@ -1803,12 +1803,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_112
-     * @tc.name testArraySlice112
-     * @tc.desc Verify slice() on array of booleans after pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of booleans after pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -1818,12 +1818,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_113
-     * @tc.name testArraySlice113
-     * @tc.desc Verify slice() on array after reverse and slice with negative indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after reverse and slice with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1833,12 +1833,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_114
-     * @tc.name testArraySlice114
-     * @tc.desc Verify slice() on array of optional numbers with start greater than length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional numbers with start greater than length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -1849,12 +1849,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_115
-     * @tc.name testArraySlice115
-     * @tc.desc Verify slice() on array after multiple pop and push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple pop and push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1865,12 +1865,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_116
-     * @tc.name testArraySlice116
-     * @tc.desc Verify slice() on array of class instances after push and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances after push and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1888,12 +1888,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_117
-     * @tc.name testArraySlice117
-     * @tc.desc Verify slice() on array of nested arrays after push and pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays after push and pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -1904,12 +1904,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_118
-     * @tc.name testArraySlice118
-     * @tc.desc Verify slice() on array after fill and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 0];
@@ -1919,12 +1919,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_119
-     * @tc.name testArraySlice119
-     * @tc.desc Verify slice() on array of optional functions with undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional functions with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { fn?: () => number }
@@ -1936,12 +1936,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_120
-     * @tc.name testArraySlice120
-     * @tc.desc Verify slice() on array of numbers with start < 0 and end > length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers with start < 0 and end > length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -1950,12 +1950,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_121
-     * @tc.name testArraySlice121
-     * @tc.desc Verify slice() on array of strings with start > end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings with start > end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -1964,12 +1964,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_122
-     * @tc.name testArraySlice122
-     * @tc.desc Verify slice() on array of numbers with start negative and end zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers with start negative and end zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1978,12 +1978,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_123
-     * @tc.name testArraySlice123
-     * @tc.desc Verify slice() on array of class instances with method call in slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances with method call in slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -2005,12 +2005,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_124
-     * @tc.name testArraySlice124
-     * @tc.desc Verify slice() on array of optional numbers with all undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional numbers with all undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -2022,12 +2022,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_125
-     * @tc.name testArraySlice125
-     * @tc.desc Verify slice() on array of numbers after push and pop sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after push and pop sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -2038,12 +2038,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_126
-     * @tc.name testArraySlice126
-     * @tc.desc Verify slice() on array of nested arrays with slice start > 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays with slice start > 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -2052,12 +2052,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_127
-     * @tc.name testArraySlice127
-     * @tc.desc Verify slice() on array after fill and slice with negative start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill and slice with negative start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 0];
@@ -2067,12 +2067,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice128
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_128
-     * @tc.name testArraySlice128
-     * @tc.desc Verify slice() on array of strings after map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -2082,12 +2082,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_129
-     * @tc.name testArraySlice129
-     * @tc.desc Verify slice() on array after reverse, push and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after reverse, push and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -2098,12 +2098,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_130
-     * @tc.name testArraySlice130
-     * @tc.desc Verify slice() on array of optional objects after concat and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional objects after concat and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -2117,12 +2117,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice131
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_131
-     * @tc.name testArraySlice131
-     * @tc.desc Verify slice() on array of booleans after unshift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of booleans after unshift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false];
@@ -2132,12 +2132,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice132
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_132
-     * @tc.name testArraySlice132
-     * @tc.desc Verify slice() on array of numbers after multiple fill and pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after multiple fill and pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 0];
@@ -2148,12 +2148,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice133
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_133
-     * @tc.name testArraySlice133
-     * @tc.desc Verify slice() on array of class instances with multiple elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances with multiple elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -2171,12 +2171,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice134
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_134
-     * @tc.name testArraySlice134
-     * @tc.desc Verify slice() on array of optional arrays with nested slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional arrays with nested slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { vals?: number[] }
@@ -2187,12 +2187,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice135
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_135
-     * @tc.name testArraySlice135
-     * @tc.desc Verify slice() on array of numbers with start negative beyond length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers with start negative beyond length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -2201,12 +2201,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice136
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_136
-     * @tc.name testArraySlice136
-     * @tc.desc Verify slice() on array after push and slice with end exceeding length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after push and slice with end exceeding length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2];
@@ -2216,12 +2216,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice137
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_137
-     * @tc.name testArraySlice137
-     * @tc.desc Verify slice() on array of optional functions with closures
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional functions with closures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { fn?: (x: number) => number }
@@ -2235,12 +2235,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice138
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_138
-     * @tc.name testArraySlice138
-     * @tc.desc Verify slice() on array of nested arrays after reverse and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays after reverse and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -2250,12 +2250,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice139
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_139
-     * @tc.name testArraySlice139
-     * @tc.desc Verify slice() on array of numbers with start=0 and end=length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers with start=0 and end=length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -2264,12 +2264,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice140
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_140
-     * @tc.name testArraySlice140
-     * @tc.desc Verify slice() on array after multiple operations push, pop, reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple operations push, pop, reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -2281,12 +2281,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice141
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_141
-     * @tc.name testArraySlice141
-     * @tc.desc Verify slice() on array of objects with optional properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of objects with optional properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -2298,12 +2298,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_142
-     * @tc.name testArraySlice142
-     * @tc.desc Verify slice() on array of nested arrays with negative end exceeding
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays with negative end exceeding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -2312,12 +2312,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice143
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_143
-     * @tc.name testArraySlice143
-     * @tc.desc Verify slice() on array of class instances after multiple modifications
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances after multiple modifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -2335,12 +2335,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice144
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_144
-     * @tc.name testArraySlice144
-     * @tc.desc Verify slice() on array of optional numbers after reverse and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional numbers after reverse and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -2353,12 +2353,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice145
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_145
-     * @tc.name testArraySlice145
-     * @tc.desc Verify slice() on array of strings with map and slice combined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings with map and slice combined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -2368,12 +2368,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice146
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_146
-     * @tc.name testArraySlice146
-     * @tc.desc Verify slice() on array after push, pop and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after push, pop and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -2384,12 +2384,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice147
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_147
-     * @tc.name testArraySlice147
-     * @tc.desc Verify slice() on array of optional functions after push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional functions after push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { fn?: () => number }
@@ -2401,12 +2401,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice148
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_148
-     * @tc.name testArraySlice148
-     * @tc.desc Verify slice() on array of nested arrays with start and end exceeding bounds
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays with start and end exceeding bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -2415,12 +2415,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice149
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_149
-     * @tc.name testArraySlice149
-     * @tc.desc Verify slice() on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -2429,12 +2429,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice150
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_150
-     * @tc.name testArraySlice150
-     * @tc.desc Verify slice() on array after multiple operations with negative indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple operations with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4, 5];
@@ -2446,12 +2446,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice151
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_151
-     * @tc.name testArraySlice151
-     * @tc.desc Verify slice() on array of nested objects with optional fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested objects with optional fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Item {
@@ -2466,12 +2466,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_152
-     * @tc.name testArraySlice152
-     * @tc.desc Verify slice() on array after fill, reverse, and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill, reverse, and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -2482,12 +2482,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_153
-     * @tc.name testArraySlice153
-     * @tc.desc Verify slice() on array of class instances with method calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances with method calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -2509,12 +2509,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_154
-     * @tc.name testArraySlice154
-     * @tc.desc Verify slice() on array after pop and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after pop and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -2524,12 +2524,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice155
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_155
-     * @tc.name testArraySlice155
-     * @tc.desc Verify slice() on array after unshift and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after unshift and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [2, 3];
@@ -2539,12 +2539,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice156
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_156
-     * @tc.name testArraySlice156
-     * @tc.desc Verify slice() on array of arrays after flatMap and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of arrays after flatMap and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -2554,12 +2554,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice157
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_157
-     * @tc.name testArraySlice157
-     * @tc.desc Verify slice() on array of strings after map and reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after map and reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -2569,12 +2569,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice158
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_158
-     * @tc.name testArraySlice158
-     * @tc.desc Verify slice() on array after multiple push and pop operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple push and pop operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2];
@@ -2585,12 +2585,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice159
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_159
-     * @tc.name testArraySlice159
-     * @tc.desc Verify slice() on array of boolean values with negative indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of boolean values with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -2599,12 +2599,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice160
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_160
-     * @tc.name testArraySlice160
-     * @tc.desc Verify slice() on array of optional objects with some undefined fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional objects with some undefined fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { x?: number }
@@ -2616,12 +2616,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_161
-     * @tc.name testArraySlice161
-     * @tc.desc Verify slice() on array of nested arrays after multiple reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays after multiple reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -2632,12 +2632,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_162
-     * @tc.name testArraySlice162
-     * @tc.desc Verify slice() on array of class instances with optional property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances with optional property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -2654,12 +2654,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_163
-     * @tc.name testArraySlice163
-     * @tc.desc Verify slice() on array after fill and slice with end exceeding length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill and slice with end exceeding length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 0];
@@ -2669,12 +2669,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice164
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_164
-     * @tc.name testArraySlice164
-     * @tc.desc Verify slice() on array of strings after concat and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after concat and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: string[] = ['a', 'b'];
@@ -2685,12 +2685,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_165
-     * @tc.name testArraySlice165
-     * @tc.desc Verify slice() on array of numbers with negative start exceeding length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers with negative start exceeding length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -2699,12 +2699,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_166
-     * @tc.name testArraySlice166
-     * @tc.desc Verify slice() on array of optional functions with undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional functions with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { fn?: () => number }
@@ -2716,12 +2716,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_167
-     * @tc.name testArraySlice167
-     * @tc.desc Verify slice() on array after multiple reverse and push operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple reverse and push operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -2732,12 +2732,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_168
-     * @tc.name testArraySlice168
-     * @tc.desc Verify slice() on array of numbers after map and slice with negative end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after map and slice with negative end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -2747,12 +2747,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_169
-     * @tc.name testArraySlice169
-     * @tc.desc Verify slice() on array of nested arrays with slice start beyond length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays with slice start beyond length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -2761,12 +2761,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_170
-     * @tc.name testArraySlice170
-     * @tc.desc Verify slice() on array after fill, reverse and multiple slice calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after fill, reverse and multiple slice calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -2779,12 +2779,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_171
-     * @tc.name testArraySlice171
-     * @tc.desc Verify slice() on empty array multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on empty array multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -2795,12 +2795,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_172
-     * @tc.name testArraySlice172
-     * @tc.desc Verify slice() on array of booleans after pop and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of booleans after pop and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -2810,12 +2810,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_173
-     * @tc.name testArraySlice173
-     * @tc.desc Verify slice() on array of strings after reverse, push and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after reverse, push and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: string[] = ['x', 'y'];
@@ -2826,12 +2826,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_174
-     * @tc.name testArraySlice174
-     * @tc.desc Verify slice() on array of optional objects after pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional objects after pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -2844,12 +2844,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_175
-     * @tc.name testArraySlice175
-     * @tc.desc Verify slice() on array after map and reverse with nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after map and reverse with nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -2859,12 +2859,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_176
-     * @tc.name testArraySlice176
-     * @tc.desc Verify slice() on array of optional functions with some undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional functions with some undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { fn?: (x: number) => number }
@@ -2876,12 +2876,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_177
-     * @tc.name testArraySlice177
-     * @tc.desc Verify slice() on array after multiple push, pop, and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple push, pop, and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -2893,12 +2893,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_178
-     * @tc.name testArraySlice178
-     * @tc.desc Verify slice() on array of objects after map and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of objects after map and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj {
@@ -2913,12 +2913,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_179
-     * @tc.name testArraySlice179
-     * @tc.desc Verify slice() on array after reverse and slice with negative indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after reverse and slice with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -2928,12 +2928,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice180
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_180
-     * @tc.name testArraySlice180
-     * @tc.desc Verify slice() on array of nested arrays after flatMap and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays after flatMap and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -2943,12 +2943,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice181
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_181
-     * @tc.name testArraySlice181
-     * @tc.desc Verify slice() on array after multiple pop and push operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple pop and push operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -2961,12 +2961,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice182
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_182
-     * @tc.name testArraySlice182
-     * @tc.desc Verify slice() on array of booleans after map and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of booleans after map and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -2976,12 +2976,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice183
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_183
-     * @tc.name testArraySlice183
-     * @tc.desc Verify slice() on array of strings after fill and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after fill and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -2991,12 +2991,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice184
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_184
-     * @tc.name testArraySlice184
-     * @tc.desc Verify slice() on array of numbers after concat and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of numbers after concat and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: number[] = [1, 2];
@@ -3007,12 +3007,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice185
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_185
-     * @tc.name testArraySlice185
-     * @tc.desc Verify slice() on array of objects after reverse and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of objects after reverse and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { k: number }
@@ -3024,12 +3024,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice186
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_186
-     * @tc.name testArraySlice186
-     * @tc.desc Verify slice() on array of optional numbers after pop and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of optional numbers after pop and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { n?: number }
@@ -3042,12 +3042,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice187
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_187
-     * @tc.name testArraySlice187
-     * @tc.desc Verify slice() on array after multiple push, fill, and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple push, fill, and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -3058,12 +3058,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice188
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_188
-     * @tc.name testArraySlice188
-     * @tc.desc Verify slice() on array after map, pop, and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after map, pop, and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -3074,12 +3074,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice189
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_189
-     * @tc.name testArraySlice189
-     * @tc.desc Verify slice() on array of nested optional objects after slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested optional objects after slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt {
@@ -3093,12 +3093,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice190
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_190
-     * @tc.name testArraySlice190
-     * @tc.desc Verify slice() on array of class instances after push and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances after push and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -3116,12 +3116,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice191
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_191
-     * @tc.name testArraySlice191
-     * @tc.desc Verify slice() on array after reverse, fill and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after reverse, fill and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -3132,12 +3132,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice192
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_192
-     * @tc.name testArraySlice192
-     * @tc.desc Verify slice() on array of strings after multiple map and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of strings after multiple map and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -3147,12 +3147,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice193
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_193
-     * @tc.name testArraySlice193
-     * @tc.desc Verify slice() on array after multiple slice calls with overlapping ranges
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple slice calls with overlapping ranges
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -3162,12 +3162,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice194
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_194
-     * @tc.name testArraySlice194
-     * @tc.desc Verify slice() on array after concat, reverse, and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after concat, reverse, and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: number[] = [1, 2];
@@ -3178,12 +3178,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice195
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_195
-     * @tc.name testArraySlice195
-     * @tc.desc Verify slice() on array of nested arrays with negative indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of nested arrays with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -3192,12 +3192,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice196
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_196
-     * @tc.name testArraySlice196
-     * @tc.desc Verify slice() on array of booleans after reverse and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of booleans after reverse and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -3207,12 +3207,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice197
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_197
-     * @tc.name testArraySlice197
-     * @tc.desc Verify slice() on array after multiple push and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple push and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2];
@@ -3222,12 +3222,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice198
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_198
-     * @tc.name testArraySlice198
-     * @tc.desc Verify slice() on array of objects after multiple map and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of objects after multiple map and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj {
@@ -3242,12 +3242,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice199
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_199
-     * @tc.name testArraySlice199
-     * @tc.desc Verify slice() on array after multiple pop and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array after multiple pop and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4, 5];
@@ -3258,12 +3258,12 @@ export default function ArraySliceTest() {
     });
 
     /**
+     * @tc.name   testArraySlice200
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_200
-     * @tc.name testArraySlice200
-     * @tc.desc Verify slice() on array of class instances after multiple operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify slice() on array of class instances after multiple operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySlice200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {

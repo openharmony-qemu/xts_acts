@@ -36,7 +36,17 @@ const SELFWANT: Want = {
 
 const INVALID_WANT: Want = {
   bundleName: 'com.example.myapplication'
-}
+};
+
+const OTHER_WANT: Want = {
+  bundleName: "com.example.extensionzerotest",
+  abilityName: "com.example.extensionzerotest.EnterpriseAdminAbility"
+};
+
+const NOT_EXIST_WANT: Want = {
+  bundleName: "not.exitst.bundle",
+  abilityName: "not.exitst.ability"
+};
 
 const AUTOSTARTAPP1: Want = {
   bundleName: "com.edm.acts.normal",
@@ -249,5 +259,6 @@ export {
   INVALID_BUNDLE_NAME, CURRENT_USER_ID, getCurrentUserId, DEFAULT_APP_INDEX, INVALID_APP_INDEX,
   bundleNamesInit, BUNDLE_NAME_200, BUNDLE_NAME_201, TEST_PERMISSION_MANAGED_STATE_GRANTED,
   TEST_PERMISSION_MANAGED_STATE_DENIED, TEST_PERMISSION_MANAGED_STATE_DEFAULT, TEST_APP_INSTANCE,
-  TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1
+  TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
+  OTHER_WANT, NOT_EXIST_WANT
 }

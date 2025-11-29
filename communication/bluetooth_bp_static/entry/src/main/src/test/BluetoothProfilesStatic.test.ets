@@ -68,7 +68,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   createA2dpSrcProfileTest
          * @tc.number createA2dpSrcProfileTest
          * @tc.desc   Test createA2dpSrcProfileTest API functionality
@@ -94,7 +93,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   createHfpAgProfileTest
          * @tc.number createHfpAgProfileTest
          * @tc.desc   Test createHfpAgProfileTest API functionality
@@ -120,7 +118,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   createHidHostProfileTest
          * @tc.number createHidHostProfileTest
          * @tc.desc   Test createHidHostProfileTest API functionality

@@ -45,9 +45,12 @@ export default function ActsCommonEventManagerSubscribeTest() {
     })
 
     /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_1900
      * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_1900
-     * @tc.name Sub_Notification_Ans_Subscriber_Subscribe_Static_1900
-     * @tc.desc verify the callback function
+     * @tc.desc   verify the callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1900'
@@ -168,9 +171,12 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Subscriber_Subscribe_Static_2000
-     * @tc.name  Sub_Notification_Ans_Subscriber_Subscribe_Static_2000
-     * @tc.desc  verify the promise function
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_2000
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_2000
+     * @tc.desc   verify the promise function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_2000'
@@ -276,9 +282,12 @@ export default function ActsCommonEventManagerSubscribeTest() {
     })
 
     /**
-     * @tc.number  SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100
-     * @tc.name  SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100
-     * @tc.desc  verify the callback function
+     * @tc.name   SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100
+     * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100
+     * @tc.desc   verify the callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100'
@@ -431,9 +440,12 @@ export default function ActsCommonEventManagerSubscribeTest() {
     })
 
     /**
-     * @tc.number  SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200
-     * @tc.name  SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200
-     * @tc.desc  verify the callback function
+     * @tc.name   SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200
+     * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200
+     * @tc.desc   verify the callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200'

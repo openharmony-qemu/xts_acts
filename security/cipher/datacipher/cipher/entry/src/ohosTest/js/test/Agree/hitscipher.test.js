@@ -53,11 +53,14 @@ describe('hitscipher_test', function () {
   beforeEach(function () {console.log('xxx')});
   afterEach(function () {});
   
-  /**
-   * @tc.number     SUB_Security_DataPro_cipher_2400
-   * @tc.name       Pressure test on the RSA algorithm encryption and decryption interface
-   * @tc.desc       [C-SECURITY-1800]
-   */
+   /**
+    * @tc.name   SUB_Security_DataPro_cipher_2400
+    * @tc.number SUB_Security_DataPro_cipher_2400
+    * @tc.desc   [C-SECURITY-1800]
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL4
+    */
    it('SUB_Security_DataPro_cipher_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, function () {
 	   for (var j = 0; j < 1000; j++)
 	   {
@@ -94,11 +97,14 @@ describe('hitscipher_test', function () {
 	   }
    });
    
-  /**
-   * @tc.number     SUB_Security_DataPro_cipher_2500
-   * @tc.name       Pressure test on the RSA algorithm encryption and decryption interface
-   * @tc.desc       [C-SECURITY-1800]
-   */
+   /**
+    * @tc.name   SUB_Security_DataPro_cipher_2500
+    * @tc.number SUB_Security_DataPro_cipher_2500
+    * @tc.desc   [C-SECURITY-1800]
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL4
+    */
    it('SUB_Security_DataPro_cipher_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, function () {
 	   for (var i = 0; i < 1000; i++)
 	   {
@@ -141,11 +147,14 @@ describe('hitscipher_test', function () {
 	   }
    });
    
-  /**
-   * @tc.number     SUB_Security_DataPro_cipher_2600
-   * @tc.name       Pressure test on the RSA algorithm encryption and decryption interface
-   * @tc.desc       [C-SECURITY-1800]
-   */
+   /**
+    * @tc.name   SUB_Security_DataPro_cipher_2600
+    * @tc.number SUB_Security_DataPro_cipher_2600
+    * @tc.desc   [C-SECURITY-1800]
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('SUB_Security_DataPro_cipher_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
 	   var timestamp1 = new Date().getTime();
 	   for (var j = 0; j < 10; j++)
@@ -187,11 +196,14 @@ describe('hitscipher_test', function () {
 	   console.log(`cipher.rsa performance time: ${timestamp2-timestamp1}`);
    });
    
-  /**
-   * @tc.number     SUB_Security_DataPro_cipher_2700
-   * @tc.name       Pressure test on the RSA algorithm encryption and decryption interface
-   * @tc.desc       [C-SECURITY-1800]
-   */
+   /**
+    * @tc.name   SUB_Security_DataPro_cipher_2700
+    * @tc.number SUB_Security_DataPro_cipher_2700
+    * @tc.desc   [C-SECURITY-1800]
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('SUB_Security_DataPro_cipher_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
 	   var timestamp1 = new Date().getTime();
 	   for (var i = 0; i < 10; i++)

@@ -51,12 +51,12 @@ export default function fontPart3Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2000
-     * @tc.name      : testFontTextToGlyphsNormalStatic
-     * @tc.desc      : Test for testFontTextToGlyphsNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontTextToGlyphsNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2000
+     * @tc.desc   Test for testFontTextToGlyphsNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontTextToGlyphsNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testFontTextToGlyphsNormalStatic';
@@ -104,12 +104,12 @@ export default function fontPart3Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2001
-     * @tc.name      : testFontTextToGlyphsNullStatic
-     * @tc.desc      : Test for testFontTextToGlyphsNullStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontTextToGlyphsNullStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2001
+     * @tc.desc   Test for testFontTextToGlyphsNullStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontTextToGlyphsNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testFontTextToGlyphsNullStatic';
@@ -124,12 +124,12 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2003
-     * @tc.name      : testFontTextToGlyphsMultipleCallsStatic
-     * @tc.desc      : Test for testFontTextToGlyphsMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontTextToGlyphsMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2003
+     * @tc.desc   Test for testFontTextToGlyphsMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontTextToGlyphsMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testFontTextToGlyphsMultipleCallsStatic';
@@ -158,12 +158,12 @@ export default function fontPart3Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2004
-     * @tc.name      : testFontTextToGlyphsAbNormalStatic
-     * @tc.desc      : Test for testFontTextToGlyphsAbNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontTextToGlyphsAbNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2004
+     * @tc.desc   Test for testFontTextToGlyphsAbNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontTextToGlyphsAbNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testFontTextToGlyphsAbNormalStatic';
@@ -198,12 +198,12 @@ export default function fontPart3Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2100
-     * @tc.name      : testFontGetWidthsNormalStatic
-     * @tc.desc      : Test for testFontGetWidthsNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetWidthsNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2100
+     * @tc.desc   Test for testFontGetWidthsNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetWidthsNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testFontGetWidthsNormalStatic';
@@ -233,12 +233,12 @@ export default function fontPart3Test() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2103
-     * @tc.name      : testFontGetWidthsMultipleCallsStatic
-     * @tc.desc      : Test for testFontGetWidthsMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontGetWidthsMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2103
+     * @tc.desc   Test for testFontGetWidthsMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontGetWidthsMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testFontGetWidthsMultipleCallsStatic';
@@ -257,12 +257,12 @@ export default function fontPart3Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2200
-     * @tc.name      : testFontGetBoundsNormalStatic
-     * @tc.desc      : Test for testFontGetBoundsNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontGetBoundsNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2200
+     * @tc.desc   Test for testFontGetBoundsNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontGetBoundsNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testFontGetWidthsNormalStatic';
@@ -313,12 +313,12 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2203
-     * @tc.name      : testFontGetBoundsMultipleCallsStatic
-     * @tc.desc      : Test for testFontGetBoundsMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontGetBoundsMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2203
+     * @tc.desc   Test for testFontGetBoundsMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontGetBoundsMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testFontGetBoundsMultipleCallsStatic';
@@ -339,12 +339,12 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2300
-     * @tc.name      : testFontCreatePathForGlyphNormalStatic
-     * @tc.desc      : Test for testFontCreatePathForGlyphNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFontCreatePathForGlyphNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2300
+     * @tc.desc   Test for testFontCreatePathForGlyphNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontCreatePathForGlyphNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testFontCreatePathForGlyphNormalStatic';
@@ -412,12 +412,12 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2303
-     * @tc.name      : testFontCreatePathForGlyphMultipleCallsStatic
-     * @tc.desc      : Test for testFontCreatePathForGlyphMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontCreatePathForGlyphMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2303
+     * @tc.desc   Test for testFontCreatePathForGlyphMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontCreatePathForGlyphMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testFontCreatePathForGlyphMultipleCallsStatic';
@@ -436,12 +436,12 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2400
-     * @tc.name      : testFontSetAndIsThemeFontFollowedNormalStatic
-     * @tc.desc      : Test for testFontSetAndIsThemeFontFollowedNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsThemeFontFollowedNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2400
+     * @tc.desc   Test for testFontSetAndIsThemeFontFollowedNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsThemeFontFollowedNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testFontSetAndIsThemeFontFollowedNormalStatic';
@@ -459,12 +459,12 @@ export default function fontPart3Test() {
       expect(followed2).assertEqual(false);
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2403
-     * @tc.name      : testFontSetAndIsThemeFontFollowedMultipleCallsStatic
-     * @tc.desc      : Test for testFontSetAndIsThemeFontFollowedMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontSetAndIsThemeFontFollowedMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2403
+     * @tc.desc   Test for testFontSetAndIsThemeFontFollowedMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFontSetAndIsThemeFontFollowedMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testFontSetAndIsThemeFontFollowedMultipleCallsStatic';

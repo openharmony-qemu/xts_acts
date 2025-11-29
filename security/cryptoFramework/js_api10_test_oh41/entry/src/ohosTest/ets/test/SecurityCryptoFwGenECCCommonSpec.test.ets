@@ -50,12 +50,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0100
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0100
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0100: started.`);
@@ -73,12 +73,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0200
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0200
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP160t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0200: started.`);
@@ -96,12 +96,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0300
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0300
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP192r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0300: started.`);
@@ -119,12 +119,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0400
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0400
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP192t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0400: started.`);
@@ -142,12 +142,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0500
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0500
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP224r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0500: started.`);
@@ -165,12 +165,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0600
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0600
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP224t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0600: started.`);
@@ -188,12 +188,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0700
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0700
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP256r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0700: started.`);
@@ -211,12 +211,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0800
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0800
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0800: started.`);
@@ -234,12 +234,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_0900
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0900
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP320r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_0900: started.`);
@@ -257,12 +257,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1000
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1000
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP320t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1000: started.`);
@@ -280,12 +280,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1100
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1100
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP384r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1100: started.`);
@@ -303,12 +303,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1200
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1200
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP384t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1200: started.`);
@@ -326,12 +326,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1300
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1300
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP512r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1300: started.`);
@@ -349,12 +349,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1400
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1400
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1400: started.`);
@@ -372,12 +372,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1500
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1500
-     * @tc.name Test genECCCommonParamSpec with ecc, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp224r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_secp224r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1500: started.`);
@@ -395,12 +395,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1600
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1600
-     * @tc.name Test genECCCommonParamSpec with ecc, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp384r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_secp384r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1600: started.`);
@@ -418,12 +418,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1700
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1700
-     * @tc.name Test genECCCommonParamSpec with ecc, process is successful
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp521r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_secp521r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1700 started.`);
@@ -441,12 +441,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_1800
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1800
-     * @tc.name Test genECCCommonParamSpec with rsa, process is failed
-     * @tc.desc 1. genECCCommonParamSpec with error curveName 'RSA512'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. genECCCommonParamSpec with error curveName 'RSA512'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_1800 started.`);
@@ -465,12 +465,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2000
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2000
-     * @tc.name Test cipher with 'SM2_256', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_sm2'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2000 started.`);
@@ -490,12 +490,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2100
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2100
-     * @tc.name Test signVerify with 'SM2_256', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_sm2'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2100 started.`);
@@ -515,12 +515,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2200
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2200
-     * @tc.name Test signVerify with 'ECC_brainpoolP256t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2200: started.`);
@@ -540,12 +540,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2300
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2300
-     * @tc.name Test agreement with 'ECC_brainpoolP512t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2300 started.`);
@@ -565,12 +565,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2400
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2400
-     * @tc.name Test agreement with 'ECC256', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_X9_62_prime256v1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_X9_62_prime256v1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2400 started.`);
@@ -591,12 +591,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2500
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2500
-     * @tc.name Test params diff with 'SM2256', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_sm2'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2500 started.`);
@@ -617,12 +617,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2600
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2600
-     * @tc.name Test params diff with 'ECC384', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp384r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_secp384r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2600 started.`);
@@ -642,12 +642,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2700
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2700
-     * @tc.name Test params diff with 'ECC_BrainPoolP160r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2700 started.`);
@@ -668,12 +668,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2800
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2800
-     * @tc.name Test params diff with 'ECC_BrainPoolP192t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP192t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2800 started.`);
@@ -694,12 +694,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_2900
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2900
-     * @tc.name Test params diff with 'ECC_BrainPoolP224r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP224r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_2900 started.`);
@@ -720,12 +720,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3000
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3000
-     * @tc.name Test params diff with 'ECC_BrainPoolP256t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3000 started.`);
@@ -746,12 +746,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3100
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3100
-     * @tc.name Test params diff with 'ECC_BrainPoolP320r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP320r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3100 started.`);
@@ -772,12 +772,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3200
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3200
-     * @tc.name Test params diff with 'ECC_BrainPoolP384t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP384t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3200 started.`);
@@ -798,12 +798,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3300
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3300
-     * @tc.name Test params diff with 'ECC_BrainPoolP512r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP512r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3300 started.`);
@@ -824,12 +824,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3400
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3400
-     * @tc.name Test params diff with 'ECC_BrainPoolP160t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP160t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3400 started.`);
@@ -850,12 +850,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3500
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3500
-     * @tc.name Test params diff with 'ECC_BrainPoolP192r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP192r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3500 started.`);
@@ -876,12 +876,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3600
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3600
-     * @tc.name Test params diff with 'ECC_BrainPoolP224t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP224t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3600 started.`);
@@ -902,12 +902,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3700
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3700
-     * @tc.name Test params diff with 'ECC_BrainPoolP256r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP256r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3700 started.`);
@@ -928,12 +928,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3800
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3800
-     * @tc.name Test params diff with 'ECC_BrainPoolP320t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP320t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3800 started.`);
@@ -954,12 +954,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_3900
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3900
-     * @tc.name Test params diff with 'ECC_BrainPoolP384r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP384r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_3900 started.`);
@@ -980,12 +980,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_4000
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4000
-     * @tc.name Test params diff with 'ECC_BrainPoolP512t1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_4000 started.`);
@@ -1006,12 +1006,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_4100
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4100
-     * @tc.name Test params diff with 'ECC_BrainPoolP160r1', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_4100 started.`);
@@ -1031,12 +1031,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_4200
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4200
-     * @tc.name Test keyPair params diff with 'ECC', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp224r1'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_secp224r1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_4200 started.`);
@@ -1056,12 +1056,12 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_genECCCommonSpec_Func_4300
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4300
-     * @tc.name Test keyPair params diff with 'SM256', process is success
-     * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   1. genECCCommonParamSpec with curveName 'NID_sm2'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_genECCCommonSpec_Func_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log(`>>Security_CryptoFramework_genECCCommonSpec_Func_4300 started.`);

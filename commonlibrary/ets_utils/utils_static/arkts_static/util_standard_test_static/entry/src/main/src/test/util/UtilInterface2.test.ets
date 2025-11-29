@@ -56,12 +56,12 @@ export default function Util2Test() {
       await Utils.msSleep(20);
     })
     /**
+     * @tc.name   testUtilTest_001
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_001
-     * @tc.name testUtilTest_001
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let num = 10.5;
@@ -70,24 +70,24 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_002
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_002
-     * @tc.name testUtilTest_002
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let formattedString = util.format('The number is');
       expect(formattedString).assertEqual("The number is");
     })
     /**
+     * @tc.name   testUtilTest_003
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_003
-     * @tc.name testUtilTest_003
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uuid = util.generateRandomUUID(true);
@@ -95,12 +95,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_004
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_004
-     * @tc.name testUtilTest_004
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uuid = util.generateRandomUUID();
@@ -108,12 +108,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_005
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_005
-     * @tc.name testUtilTest_005
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(util.Type.BASIC).assertEqual(0);
@@ -123,12 +123,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_006
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_006
-     * @tc.name testUtilTest_006
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -138,12 +138,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_007
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_007
-     * @tc.name testUtilTest_007
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -153,12 +153,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_008
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_008
-     * @tc.name testUtilTest_008
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -167,12 +167,12 @@ export default function Util2Test() {
       expect(result.toString()).assertEqual("99,122,69,122");
     })
     /**
+     * @tc.name   testUtilTest_009
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_009
-     * @tc.name testUtilTest_009
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -193,12 +193,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_010
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_010
-     * @tc.name testUtilTest_010
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -224,12 +224,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_011
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_011
-     * @tc.name testUtilTest_011
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -253,12 +253,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_012
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_012
-     * @tc.name testUtilTest_012
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -283,12 +283,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_013
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_013
-     * @tc.name testUtilTest_013
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -314,12 +314,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_014
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_014
-     * @tc.name testUtilTest_014
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -345,12 +345,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_015
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_015
-     * @tc.name testUtilTest_015
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -361,12 +361,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_016
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_016
-     * @tc.name testUtilTest_016
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -377,12 +377,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_017
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_017
-     * @tc.name testUtilTest_017
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -393,12 +393,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_018
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_018
-     * @tc.name testUtilTest_018
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -419,12 +419,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_019
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_019
-     * @tc.name testUtilTest_019
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -445,12 +445,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtilTest_020
      * @tc.number SUB_COMMONLIBRARY_UTIL_TEST_020
-     * @tc.name testUtilTest_020
-     * @tc.desc Util interface testcase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Util interface testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilTest_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -470,12 +470,12 @@ export default function Util2Test() {
       })
     })
     /**
+     * @tc.name   testUtil_021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_021
-     * @tc.name testUtil_021
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -496,12 +496,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_022
-     * @tc.name testUtil_022
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -522,12 +522,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_023
-     * @tc.name testUtil_023
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -548,12 +548,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_024
-     * @tc.name testUtil_024
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -569,12 +569,12 @@ export default function Util2Test() {
       })
     })
     /**
+     * @tc.name   testUtil_025
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_025
-     * @tc.name testUtil_025
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -591,12 +591,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_026
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_026
-     * @tc.name testUtil_026
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -612,12 +612,12 @@ export default function Util2Test() {
       })
     })
     /**
+     * @tc.name   testUtil_027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_027
-     * @tc.name testUtil_027
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -633,12 +633,12 @@ export default function Util2Test() {
       })
     })
     /**
+     * @tc.name   testUtil_028
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_028
-     * @tc.name testUtil_028
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -655,12 +655,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_029
-     * @tc.name testUtil_029
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -671,12 +671,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_030
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_030
-     * @tc.name testUtil_030
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -690,12 +690,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_031
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_031
-     * @tc.name testUtil_031
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -708,12 +708,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_032
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_032
-     * @tc.name testUtil_032
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -725,12 +725,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_033
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_033
-     * @tc.name testUtil_033
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -741,12 +741,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_034
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_034
-     * @tc.name testUtil_034
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -759,12 +759,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_035
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_035
-     * @tc.name testUtil_035
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -779,12 +779,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_036
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_036
-     * @tc.name testUtil_036
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -796,12 +796,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_037
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_037
-     * @tc.name testUtil_037
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -813,12 +813,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_038
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_038
-     * @tc.name testUtil_038
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -832,12 +832,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_039
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_039
-     * @tc.name testUtil_039
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let tempLower = new Temperature(30);
@@ -849,12 +849,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_040
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_040
-     * @tc.name testUtil_040
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -864,12 +864,12 @@ export default function Util2Test() {
       expect(result).assertEqual(2);
     })
     /**
+     * @tc.name   testUtil_041
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_041
-     * @tc.name testUtil_041
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -881,12 +881,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_042
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_042
-     * @tc.name testUtil_042
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -897,12 +897,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_043
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_043
-     * @tc.name testUtil_043
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -914,12 +914,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_044
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_044
-     * @tc.name testUtil_044
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -928,12 +928,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_045
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_045
-     * @tc.name testUtil_045
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -946,12 +946,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_046
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_046
-     * @tc.name testUtil_046
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lru = new ChildLRUCache();
@@ -963,12 +963,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_047
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_047
-     * @tc.name testUtil_047
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -979,12 +979,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_048
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_048
-     * @tc.name testUtil_048
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -996,12 +996,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_049
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_049
-     * @tc.name testUtil_049
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1012,12 +1012,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_050
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_050
-     * @tc.name testUtil_050
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1027,12 +1027,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_051
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_051
-     * @tc.name testUtil_051
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1042,12 +1042,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_052
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_052
-     * @tc.name testUtil_052
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1057,12 +1057,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_053
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_053
-     * @tc.name testUtil_053
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1072,12 +1072,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_054
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_054
-     * @tc.name testUtil_054
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1086,12 +1086,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_055
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_055
-     * @tc.name testUtil_055
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number | string, number | string>();
@@ -1103,12 +1103,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_056
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_056
-     * @tc.name testUtil_056
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1119,12 +1119,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_057
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_057
-     * @tc.name testUtil_057
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1134,12 +1134,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_058
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_058
-     * @tc.name testUtil_058
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = new util.LRUCache<number, number>(21.0);
@@ -1148,12 +1148,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_059
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_059
-     * @tc.name testUtil_059
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1163,12 +1163,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_060
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_060
-     * @tc.name testUtil_060
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1177,12 +1177,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_061
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_061
-     * @tc.name testUtil_061
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1196,12 +1196,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_062
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_062
-     * @tc.name testUtil_062
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1216,12 +1216,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_063
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_063
-     * @tc.name testUtil_063
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
@@ -1236,12 +1236,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_064
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_064
-     * @tc.name testUtil_064
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let textDecode = util.TextDecoder.create('utf-8');
@@ -1252,12 +1252,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_065
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_065
-     * @tc.name testUtil_065
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let textDecoderOptions: util.TextDecoderOptions = {
@@ -1270,12 +1270,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_066
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_066
-     * @tc.name testUtil_066
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let textDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: false });
@@ -1286,12 +1286,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_067
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_067
-     * @tc.name testUtil_067
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let enc = new util.TextEncoder()
@@ -1309,12 +1309,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_068
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_068
-     * @tc.name testUtil_068
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let enc = new util.TextEncoder('utf-16be');
@@ -1330,12 +1330,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_069
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_069
-     * @tc.name testUtil_069
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let textDecoderOptions: util.TextDecoderOptions = {
@@ -1363,12 +1363,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_070
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_070
-     * @tc.name testUtil_070
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let enc = new util.TextEncoder('utf-16le');
@@ -1380,12 +1380,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_071
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_071
-     * @tc.name testUtil_071
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let enc = new util.TextEncoder()
@@ -1404,12 +1404,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_072
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_072
-     * @tc.name testUtil_072
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let enc = new util.TextEncoder('ISO-8859-3');
@@ -1421,12 +1421,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_073
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_073
-     * @tc.name testUtil_073
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
@@ -1434,12 +1434,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_074
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_074
-     * @tc.name testUtil_074
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rational = util.RationalNumber.createRationalFromString("3/4");
@@ -1447,12 +1447,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_075
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_075
-     * @tc.name testUtil_075
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
@@ -1462,12 +1462,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_076
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_076
-     * @tc.name testUtil_076
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(10, 2);
@@ -1476,12 +1476,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_077
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_077
-     * @tc.name testUtil_077
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let result = util.RationalNumber.getCommonFactor(4, 6);
@@ -1489,12 +1489,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_078
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_078
-     * @tc.name testUtil_078
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
@@ -1503,12 +1503,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_079
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_079
-     * @tc.name testUtil_079
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2)
@@ -1517,12 +1517,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_080
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_080
-     * @tc.name testUtil_080
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
@@ -1530,12 +1530,12 @@ export default function Util2Test() {
       expect(result).assertEqual(false);
     })
     /**
+     * @tc.name   testUtil_081
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_081
-     * @tc.name testUtil_081
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
@@ -1544,12 +1544,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_082
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_082
-     * @tc.name testUtil_082
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
@@ -1558,12 +1558,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_083
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_083
-     * @tc.name testUtil_083
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
@@ -1572,12 +1572,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil_084
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_084
-     * @tc.name testUtil_084
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let type = new util.types();
@@ -1587,12 +1587,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil3_001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_001
-     * @tc.name testUtil3_001
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let base64Helper = new util.Base64Helper();
@@ -1605,12 +1605,12 @@ export default function Util2Test() {
     })
 
     /**
+     * @tc.name   testUtil3_002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_002
-     * @tc.name testUtil3_002
-     * @tc.desc Test the util
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtil3_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lru = new ChildLRUCache4();

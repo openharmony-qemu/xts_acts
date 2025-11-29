@@ -51,12 +51,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0100
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0100
      * @tc.desc   test aes ccm noPadding cipher
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0100";
@@ -74,12 +74,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0200
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0200
      * @tc.desc   test aes ccm noPadding cipher, 1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0200";
@@ -97,12 +97,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0300
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0300
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0300";
@@ -120,12 +120,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0400
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0400
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0400";
@@ -143,12 +143,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0500
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0500
      * @tc.desc   test aes ccm noPadding cipher
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0500";
@@ -166,12 +166,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0600
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0600
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0600";
@@ -189,12 +189,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0700
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0700
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0700";
@@ -212,12 +212,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0800
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0800
      * @tc.desc   test aes ccm noPadding cipher, 1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0800";
@@ -235,12 +235,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0900
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_0900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_0900
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_0900";
@@ -258,12 +258,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1000
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1000
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1000";
@@ -281,12 +281,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1100
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1100
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1100";
@@ -304,12 +304,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1200
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1200
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1200";
@@ -327,12 +327,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1300
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1300
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1300";
@@ -350,12 +350,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1400
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1400
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1400";
@@ -372,12 +372,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1500
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1500
      * @tc.desc   test aes ccm noPadding cipher, 1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1500";
@@ -394,12 +394,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1600
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1600
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1600";
@@ -432,12 +432,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1700
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1700
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1700";
@@ -470,12 +470,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1800
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1800
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1800";
@@ -492,12 +492,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1900
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_1900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_1900
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_1900";
@@ -514,12 +514,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2000
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2000
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2000";
@@ -536,12 +536,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2100
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2100
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2100";
@@ -558,12 +558,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2200
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2200
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2200";
@@ -580,12 +580,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2300
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2300
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2300";
@@ -602,12 +602,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2400
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2400
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2400";
@@ -624,12 +624,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2500
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2500
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2500";
@@ -646,12 +646,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2600
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2600
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2600";
@@ -668,12 +668,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2700
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2700
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2700";
@@ -690,12 +690,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2800
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2800
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2800";
@@ -712,12 +712,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2900
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_2900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_2900
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_2900";
@@ -744,12 +744,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3000
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3000
      * @tc.desc   test aes ccm noPadding cipher with inconsistent ae tag length, error code 401
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3000";
@@ -782,12 +782,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3100
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3100
      * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000018
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3100";
@@ -811,12 +811,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3200
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3200
      * @tc.desc   test aes ccm noPadding cipher with inconsistent ae tag length, error code 12000018
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3200";
@@ -842,12 +842,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3300
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3300
      * @tc.desc   test aes ccm noPadding cipher with inconsistent ae tag length, error code 401
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3300";
@@ -882,12 +882,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3400
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3400
      * @tc.desc   test aes ccm noPadding cipher with duplicate ae tag length
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3400";
@@ -904,12 +904,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3500
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3500
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3500";
@@ -929,12 +929,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3600
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3600
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3600";
@@ -954,12 +954,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3700
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3700
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3700";
@@ -979,12 +979,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3800
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3800
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3800";
@@ -1004,12 +1004,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3900
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3900
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3900";
@@ -1029,12 +1029,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4000
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4000
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4000";
@@ -1054,12 +1054,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4100
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4100
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4100";
@@ -1079,12 +1079,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4200
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4200
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4200";
@@ -1103,12 +1103,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4300
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4300
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4300";
@@ -1127,12 +1127,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4400
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4400
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4400";
@@ -1151,12 +1151,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4500
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4500
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4500";
@@ -1176,12 +1176,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4600
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4600
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4600";
@@ -1201,12 +1201,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4700
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4700
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4700";
@@ -1226,12 +1226,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4800
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4800
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4800";
@@ -1251,12 +1251,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4900
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_4900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_4900
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_4900";
@@ -1276,12 +1276,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5000
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5000
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5000";
@@ -1301,12 +1301,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5100
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5100
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5100";
@@ -1326,12 +1326,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5200
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5200
      * @tc.desc   test aes ccm noPadding cipher, 64B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5200";
@@ -1350,12 +1350,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5300
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5300
      * @tc.desc   test aes ccm noPadding cipher, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5300";
@@ -1374,12 +1374,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5400
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5400
      * @tc.desc   test aes ccm noPadding cipher, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5400";
@@ -1398,12 +1398,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5500
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5500
      * @tc.desc   test aes ccm noPadding cipher without necessary padding tag, error code 12000002
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5500";
@@ -1419,12 +1419,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5600
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5600
      * @tc.desc   test aes ccm noPadding cipher with inconsistent mode key property, error code 401
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5600";
@@ -1440,13 +1440,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5700
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5700
-    * @tc.desc   test aes gcm noPadding cipher with ae tag length, 64B
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level2
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5700
+     * @tc.desc   test aes gcm noPadding cipher with ae tag length, 64B
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5700";
       cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
@@ -1464,12 +1464,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5800
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5800
      * @tc.desc   test aes gcm noPadding cipher with ae tag length, 1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5800";
@@ -1488,12 +1488,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5900
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_5900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_5900
      * @tc.desc   test aes gcm noPadding cipher with ae tag length, 31+32B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5900";
@@ -1525,12 +1525,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6000
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6000
      * @tc.desc   test aes gcm noPadding cipher with ae tag length, 32+32+1B
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6000";
@@ -1562,12 +1562,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6100
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6100
      * @tc.desc   test aes gcm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6100";
@@ -1585,12 +1585,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6200
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6200
      * @tc.desc   test aes gcm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6200";
@@ -1608,12 +1608,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6300
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6300
      * @tc.desc   test aes gcm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6300";
@@ -1631,12 +1631,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6400
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6400
      * @tc.desc   test aes gcm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6400";
@@ -1654,12 +1654,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6500
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6500
      * @tc.desc   test aes gcm noPadding cipher with unsupported ae tag length, error code 12000003
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6500";
@@ -1687,13 +1687,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6600
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6600
-    * @tc.desc   test aes gcm noPadding cipher with ae tag length, 64B
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6600
+     * @tc.desc   test aes gcm noPadding cipher with ae tag length, 64B
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6600";
       cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
@@ -1713,13 +1713,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6700
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6700
-    * @tc.desc   test aes gcm noPadding cipher with ae tag length, 64B
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6700
+     * @tc.desc   test aes gcm noPadding cipher with ae tag length, 64B
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6700";
       cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
@@ -1739,13 +1739,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6800
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6800
-    * @tc.desc   test aes gcm noPadding cipher without necessary padding tag, error code 12000002
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6800
+     * @tc.desc   test aes gcm noPadding cipher without necessary padding tag, error code 12000002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6800";
       cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
@@ -1761,12 +1761,12 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6900
      * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_6900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_6900
      * @tc.desc   test aes gcm noPadding cipher with inconsistent mode key property, error code 401
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6900";
@@ -1783,13 +1783,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7000
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7000
-    * @tc.desc   test aes ccm noPadding cipher without unnecessary aad, 64B
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7000
+     * @tc.desc   test aes ccm noPadding cipher without unnecessary aad, 64B
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7000";
       let cipherData: CipherData = BuildCipherData([64]);
@@ -1807,13 +1807,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7100
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7100
-    * @tc.desc   test aes ccm noPadding cipher with inconsistent aad, error code 401
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7100
+     * @tc.desc   test aes ccm noPadding cipher with inconsistent aad, error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7100";
       let cipherData: CipherData = BuildCipherData([64]);
@@ -1846,13 +1846,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7200
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7200
-    * @tc.desc   test aes ccm noPadding cipher
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7200
+     * @tc.desc   test aes ccm noPadding cipher
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7200";
       let cipherData: CipherData = BuildCipherData([64 * 1024 - 1]);
@@ -1871,13 +1871,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7300
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7300
-    * @tc.desc   test aes ccm noPadding cipher with unsupported data length
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7300
+     * @tc.desc   test aes ccm noPadding cipher with unsupported data length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7300";
       let cipherData: CipherData = BuildCipherData([64 * 1024]);
@@ -1901,13 +1901,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7400
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7400
-    * @tc.desc   test aes ccm noPadding cipher with unsupported nonce length 6
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7400
+     * @tc.desc   test aes ccm noPadding cipher with unsupported nonce length 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7400";
       let cipherData: CipherData = BuildCipherData([64]);
@@ -1931,13 +1931,13 @@ export default function SecurityHuksCipherAesTest() {
     })
 
     /**
-    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7500
-    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7500
-    * @tc.desc   test aes ccm noPadding cipher with unsupported nonce length 14
-    * @tc.size   SmallTest
-    * @tc.type   Function
-    * @tc.level  Level3
-    */
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7500
+     * @tc.desc   test aes ccm noPadding cipher with unsupported nonce length 14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7500";
       let cipherData: CipherData = BuildCipherData([64]);

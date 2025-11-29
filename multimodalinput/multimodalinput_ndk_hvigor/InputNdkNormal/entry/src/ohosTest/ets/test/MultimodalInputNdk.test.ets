@@ -36,7 +36,6 @@ export default function MultimodalInputNdkTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_CreateKeyState_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_CreateKeyState_0100
      * @tc.desc   OH_Input_CreateKeyState Interface testing, verify the create of key states.
@@ -61,7 +60,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_DestroyKeyState_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_DestroyKeyState_0100
      * @tc.desc   OH_Input_DestroyKeyState Interface testing, verify the destroy of key states.
@@ -86,7 +84,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_SetKeyCode_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_SetKeyCode_0100
      * @tc.desc   OH_Input_SetKeyCode Interface testing, verify the set and get of key states.
@@ -111,7 +108,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_SetKeyPressed_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_SetKeyPressed_0100
      * @tc.desc   OH_Input_SetKeyPressed Interface testing, verify the set and get of key states.
@@ -136,7 +132,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_SetKeySwitch_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_SetKeySwitch_0100
      * @tc.desc   OH_Input_SetKeySwitch Interface testing, verify the set and get of key switch.
@@ -161,7 +156,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyPressed_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyPressed_0100
      * @tc.desc   OH_Input_GetKeyPressed Interface testing, verify the set and get of key pressed.
@@ -186,7 +180,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeySwitch_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeySwitch_0100
      * @tc.desc   OH_Input_GetKeySwitch Interface testing, verify the set and get of key switch.
@@ -211,7 +204,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyState_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyState_0100
      * @tc.desc   OH_Input_GetKeyState Interface testing, verify the get of key state.
@@ -236,7 +228,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyState_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyState_0200
      * @tc.desc   OH_Input_GetKeyState Interface testing, verify the get of key state fail(number 1).
@@ -261,7 +252,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyState_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyState_0300
      * @tc.desc   OH_Input_GetKeyState Interface testing, verify the get of key state fail(letter A).
@@ -286,7 +276,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyState_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyState_0400
      * @tc.desc   OH_Input_GetKeyState Interface testing, verify the get of key state fail(@).
@@ -311,7 +300,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_CreateKeyEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_CreateKeyEvent_0100
      * @tc.desc   OH_Input_CreateKeyEvent Interface testing, verify the create of key event.
@@ -336,7 +324,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_InjectKeyEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_InjectKeyEvent_0100
      * @tc.desc   OH_Input_InjectKeyEvent Interface testing, verify the inject of key event.
@@ -361,7 +348,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_DestroyKeyEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_DestroyKeyEvent_0100
      * @tc.desc   OH_Input_DestroyKeyEvent Interface testing, verify the destroy of key event.
@@ -386,7 +372,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyEventAction_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyEventAction_0100
      * @tc.desc   OH_Input_GetKeyEventAction Interface testing, verify the set and get of keyEvent action.
@@ -411,7 +396,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyEventAction_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyEventAction_0200
      * @tc.desc   OH_Input_GetKeyEventAction Interface testing, verify the destroy of keyEvent action.
@@ -437,7 +421,6 @@ export default function MultimodalInputNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyEventKeyCode_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyEventKeyCode_0100
      * @tc.desc   OH_Input_GetKeyEventKeyCode Interface testing, verify the set and get of keyEvent code.
@@ -462,7 +445,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyEventKeyCode_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyEventKeyCode_0200
      * @tc.desc   OH_Input_GetKeyEventKeyCode Interface testing, verify the destroy of keyEvent code.
@@ -487,7 +469,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyEventActionTime_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyEventActionTime_0100
      * @tc.desc   OH_Input_GetKeyEventActionTime Interface testing, verify the set and get of keyEvent time.
@@ -512,7 +493,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyEventActionTime_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyEventActionTime_0200
      * @tc.desc   OH_Input_GetKeyEventActionTime Interface testing, verify the destroy of keyEvent time.
@@ -537,7 +517,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_CreateTouchEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_CreateTouchEvent_0100
      * @tc.desc   OH_Input_CreateTouchEvent Interface testing
@@ -562,7 +541,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_DestroyTouchEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_DestroyTouchEvent_0100
      * @tc.desc   OH_Input_DestroyTouchEvent Interface testing
@@ -594,7 +572,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_TouchEventAction_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_TouchEventAction_0100
      * @tc.desc   OH_Input_GetTouchEventAction Interface testing, verify the set and get of touchEvent action
@@ -626,7 +603,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_TouchEventFingerId_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_TouchEventFingerId_0100
      * @tc.desc   OH_Input_GetTouchEventFingerId Interface testing, verify the set and get of touchEvent id
@@ -651,7 +627,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_TouchEventDisplayX_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_TouchEventDisplayX_0100
      * @tc.desc   OH_Input_GetTouchEventDisplayX Interface testing, verify the set and get of touchEvent displayX
@@ -676,7 +651,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_TouchEventDisplayY_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_TouchEventDisplayY_0100
      * @tc.desc   OH_Input_GetTouchEventDisplayY Interface testing, verify the set and get of touchEvent displayY
@@ -701,7 +675,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_TouchEventActionTime_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_TouchEventActionTime_0100
      * @tc.desc   OH_Input_GetTouchEventActionTime Interface testing, verify the set and get of touchEvent actionTime
@@ -726,7 +699,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_InjectTouchEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_InjectTouchEvent_0100
      * @tc.desc   OH_Input_InjectTouchEvent Interface testing
@@ -751,7 +723,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_CreateMouseEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_CreateMouseEvent_0100
      * @tc.desc   OH_Input_CreateMouseEvent Interface testing
@@ -776,7 +747,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_DestroyMouseEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_DestroyMouseEvent_0100
      * @tc.desc   OH_Input_DestroyMouseEvent Interface testing
@@ -801,7 +771,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_MouseEventAction_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_MouseEventAction_0100
      * @tc.desc   OH_Input_GetMouseEventAction Interface testing, verify the set and get of mouseEvent action
@@ -826,7 +795,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_MouseEventDisplayX_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_MouseEventDisplayX_0100
      * @tc.desc   OH_Input_GetMouseEventDisplayX Interface testing, verify the set and get of mouseEvent displayX
@@ -851,7 +819,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_MouseEventDisplayY_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_MouseEventDisplayY_0100
      * @tc.desc   OH_Input_GetMouseEventDisplayY Interface testing, verify the set and get of mouseEvent displayY
@@ -876,7 +843,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_MouseEventButton_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_MouseEventButton_0100
      * @tc.desc   OH_Input_GetMouseEventButton Interface testing, verify the set and get of mouseEvent button
@@ -901,7 +867,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_MouseEventAxisType_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_MouseEventAxisType_0100
      * @tc.desc   OH_Input_GetMouseEventAxisType Interface testing, verify the set and get of mouseEvent axisType
@@ -926,7 +891,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_MouseEventAxisValue_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_MouseEventAxisValue_0100
      * @tc.desc   OH_Input_GetMouseEventAxisValue Interface testing, verify the set and get of mouseEvent axisValue
@@ -951,7 +915,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_MouseEventActionTime_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_MouseEventActionTime_0100
      * @tc.desc   OH_Input_GetMouseEventActionTime Interface testing, verify the set and get of mouseEvent actionTime
@@ -976,7 +939,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_InjectMouseEvent_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_InjectMouseEvent_0100
      * @tc.desc   OH_Input_InjectMouseEvent Interface testing
@@ -1001,7 +963,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_InjectMouseEvent_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_InjectMouseEvent_0200
      * @tc.desc   OH_Input_InjectMouseEvent Interface testing
@@ -1026,7 +987,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0100
      * @tc.desc   OH_Input_RegisterDeviceListener Interface testing
@@ -1051,7 +1011,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0100
      * @tc.desc   OH_Input_UnregisterDeviceListener Interface testing
@@ -1076,7 +1035,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0200
      * @tc.desc   OH_Input_RegisterDeviceListener Interface testing
@@ -1101,7 +1059,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0200
      * @tc.desc   OH_Input_UnregisterDeviceListener Interface testing
@@ -1126,7 +1083,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_UnregisterDeviceListeners_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_UnregisterDeviceListeners_0100
      * @tc.desc   OH_Input_UnregisterDeviceListeners Interface testing
@@ -1151,7 +1107,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0300
      * @tc.desc   OH_Input_RegisterDeviceListener Interface testing
@@ -1176,7 +1131,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0300
      * @tc.desc   OH_Input_UnregisterDeviceListener Interface testing
@@ -1201,7 +1155,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0400
      * @tc.desc   OH_Input_RegisterDeviceListener Interface testing
@@ -1226,7 +1179,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0400
      * @tc.desc   OH_Input_UnregisterDeviceListener Interface testing
@@ -1251,7 +1203,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0500
      * @tc.number SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0500
      * @tc.desc   OH_Input_RegisterDeviceListener Interface testing
@@ -1276,7 +1227,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0500
      * @tc.number SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0500
      * @tc.desc   OH_Input_UnregisterDeviceListener Interface testing
@@ -1301,7 +1251,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0600
      * @tc.number SUB_MMI_Input_Api_Ndk_RegisterDeviceListener_0600
      * @tc.desc   OH_Input_RegisterDeviceListener Interface testing
@@ -1326,7 +1275,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0600
      * @tc.number SUB_MMI_Input_Api_Ndk_UnregisterDeviceListener_0600
      * @tc.desc   OH_Input_UnregisterDeviceListener Interface testing
@@ -1351,7 +1299,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceIds_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceIds_0100
      * @tc.desc   OH_Input_GetDeviceIds Interface testing
@@ -1376,7 +1323,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceIds_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceIds_0200
      * @tc.desc   OH_Input_GetDeviceIds Interface testing
@@ -1401,7 +1347,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceIds_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceIds_0300
      * @tc.desc   OH_Input_GetDeviceIds Interface testing
@@ -1426,7 +1371,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceIds_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceIds_0400
      * @tc.desc   OH_Input_GetDeviceIds Interface testing
@@ -1451,7 +1395,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceIds_0500
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceIds_0500
      * @tc.desc   OH_Input_GetDeviceIds Interface testing
@@ -1476,7 +1419,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyboardType_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyboardType_0100
      * @tc.desc   OH_Input_GetKeyboardType Interface testing
@@ -1501,7 +1443,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyboardType_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyboardType_0200
      * @tc.desc   OH_Input_GetKeyboardType Interface testing
@@ -1526,7 +1467,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyboardType_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyboardType_0300
      * @tc.desc   OH_Input_GetKeyboardType Interface testing
@@ -1551,7 +1491,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetKeyboardType_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetKeyboardType_0400
      * @tc.desc   OH_Input_GetKeyboardType Interface testing
@@ -1576,7 +1515,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDevice_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDevice_0100
      * @tc.desc   OH_Input_GetDevice Interface testing
@@ -1601,7 +1539,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDevice_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDevice_0200
      * @tc.desc   OH_Input_GetDevice Interface testing
@@ -1626,7 +1563,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDevice_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDevice_0300
      * @tc.desc   OH_Input_GetDevice Interface testing
@@ -1651,7 +1587,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDevice_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDevice_0400
      * @tc.desc   OH_Input_GetDevice Interface testing
@@ -1676,7 +1611,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceName_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceName_0100
      * @tc.desc   OH_Input_GetDeviceName Interface testing
@@ -1701,7 +1635,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceName_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceName_0200
      * @tc.desc   OH_Input_GetDeviceName Interface testing
@@ -1726,7 +1659,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceName_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceName_0300
      * @tc.desc   OH_Input_GetDeviceName Interface testing
@@ -1751,7 +1683,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceName_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceName_0400
      * @tc.desc   OH_Input_GetDeviceName Interface testing
@@ -1776,7 +1707,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0100
      * @tc.desc   OH_Input_GetDeviceAddress Interface testing
@@ -1801,7 +1731,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0200
      * @tc.desc   OH_Input_GetDeviceAddress Interface testing
@@ -1826,7 +1755,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0300
      * @tc.desc   OH_Input_GetDeviceAddress Interface testing
@@ -1851,7 +1779,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceAddress_0400
      * @tc.desc   OH_Input_GetDeviceAddress Interface testing
@@ -1876,7 +1803,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceId_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceId_0100
      * @tc.desc   OH_Input_GetDeviceId Interface testing
@@ -1901,7 +1827,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceId_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceId_0200
      * @tc.desc   OH_Input_GetDeviceId Interface testing
@@ -1926,7 +1851,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceId_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceId_0300
      * @tc.desc   OH_Input_GetDeviceId Interface testing
@@ -1951,7 +1875,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetCapabilities_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetCapabilities_0100
      * @tc.desc   OH_Input_GetCapabilities Interface testing
@@ -1976,7 +1899,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetCapabilities_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetCapabilities_0200
      * @tc.desc   OH_Input_GetCapabilities Interface testing
@@ -2001,7 +1923,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetCapabilities_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetCapabilities_0300
      * @tc.desc   OH_Input_GetCapabilities Interface testing
@@ -2026,7 +1947,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetCapabilities_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetCapabilities_0400
      * @tc.desc   OH_Input_GetCapabilities Interface testing
@@ -2051,7 +1971,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0100
      * @tc.desc   OH_Input_GetDeviceVersion Interface testing
@@ -2076,7 +1995,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0200
      * @tc.desc   OH_Input_GetDeviceVersion Interface testing
@@ -2101,7 +2019,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0300
      * @tc.desc   OH_Input_GetDeviceVersion Interface testing
@@ -2126,7 +2043,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVersion_0400
      * @tc.desc   OH_Input_GetDeviceVersion Interface testing
@@ -2151,7 +2067,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0100
      * @tc.desc   OH_Input_GetDeviceProduct Interface testing
@@ -2176,7 +2091,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0200
      * @tc.desc   OH_Input_GetDeviceProduct Interface testing
@@ -2201,7 +2115,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0300
      * @tc.desc   OH_Input_GetDeviceProduct Interface testing
@@ -2226,7 +2139,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceProduct_0400
      * @tc.desc   OH_Input_GetDeviceProduct Interface testing
@@ -2251,7 +2163,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0100
      * @tc.desc   OH_Input_GetDeviceVendor Interface testing
@@ -2276,7 +2187,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0200
      * @tc.desc   OH_Input_GetDeviceVendor Interface testing
@@ -2301,7 +2211,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0300
      * @tc.desc   OH_Input_GetDeviceVendor Interface testing
@@ -2326,7 +2235,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetDeviceVendor_0400
      * @tc.desc   OH_Input_GetDeviceVendor Interface testing
@@ -2351,7 +2259,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_DestroyDeviceInfo_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_DestroyDeviceInfo_0100
      * @tc.desc   OH_Input_DestroyDeviceInfo Interface testing
@@ -2376,7 +2283,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetAllSystemHotkeys_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetAllSystemHotkeys_0100
      * @tc.desc   OH_Input_GetAllSystemHotkeys Interface testing
@@ -2401,7 +2307,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_CreateAllSystemHotkeys_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_CreateAllSystemHotkeys_0100
      * @tc.desc   OH_Input_CreateAllSystemHotkeys Interface testing
@@ -2435,7 +2340,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetAllSystemHotkeys_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetAllSystemHotkeys_0200
      * @tc.desc   OH_Input_GetAllSystemHotkeys Interface testing
@@ -2461,7 +2365,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetAllSystemHotkeys_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetAllSystemHotkeys_0300
      * @tc.desc   OH_Input_GetAllSystemHotkeys Interface testing
@@ -2486,7 +2389,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_CreateAllSystemHotkeys_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_CreateAllSystemHotkeys_0200
      * @tc.desc   OH_Input_CreateAllSystemHotkeys Interface testing
@@ -2511,7 +2413,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetIntervalSinceLastInput_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetIntervalSinceLastInput_0100
      * @tc.desc   OH_Input_GetIntervalSinceLastInput Interface testing
@@ -2536,7 +2437,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_CreateHotkey_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_CreateHotkey_0100
      * @tc.desc   OH_Input_CreateHotkey Interface testing
@@ -2561,7 +2461,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0100
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Z
@@ -2586,7 +2485,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0200
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Alt + Z
@@ -2611,7 +2509,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0300
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Shift + Alt + Z
@@ -2636,7 +2533,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0400
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Alt + Z
@@ -2661,7 +2557,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0500
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0500
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Shift + C
@@ -2686,7 +2581,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0600
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0600
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + 9
@@ -2711,7 +2605,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0700
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0700
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + �?     * @tc.level 2
@@ -2736,7 +2629,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0800
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0800
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + �?     * @tc.level 2
@@ -2761,7 +2653,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0900
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_0900
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + F1
@@ -2786,7 +2677,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1000
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1000
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Home
@@ -2811,7 +2701,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1100
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1100
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Enter
@@ -2836,7 +2725,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1200
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1200
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + P
@@ -2861,7 +2749,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1300
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1300
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Alt + D + C
@@ -2886,7 +2773,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1400
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1400
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Alt + D + C
@@ -2911,7 +2797,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1500
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1500
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe 9 + D
@@ -2936,7 +2821,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1600
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1600
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe F + D
@@ -2961,7 +2845,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1700
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1700
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Meta
@@ -2986,7 +2869,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1800
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1800
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Right_Ctrl
@@ -3011,7 +2893,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1900
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_1900
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Scroll Lock
@@ -3036,7 +2917,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2000
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2000
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing
@@ -3061,7 +2941,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2100
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2100
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing
@@ -3086,7 +2965,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2200
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2200
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Ctrl + Table
@@ -3111,7 +2989,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2300
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2300
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Alt + Table
@@ -3137,7 +3014,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2400
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2400
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe Alt + Table again
@@ -3162,7 +3038,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2500
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2500
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to set HotkeyCallback as nullptr
@@ -3187,7 +3062,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2600
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2600
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe a nonexistent preKeys
@@ -3212,7 +3086,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2700
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2700
      * @tc.desc   OH_Input_AddHotkeyMonitor Interface testing to subscribe a nonexistent finalKey
@@ -3237,7 +3110,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2800
      * @tc.number SUB_MMI_Input_Api_Ndk_AddHotkeyMonitor_2800
      * @tc.desc   OH_Input_RemoveHotkeyMonitor Interface testing to set HotkeyCallback as nullptr
@@ -3262,7 +3134,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0100
      * @tc.number SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0100
      * @tc.desc   OH_Input_GetFunctionKeyState Interface testing.
@@ -3287,7 +3158,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0200
      * @tc.number SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0200
      * @tc.desc   OH_Input_GetFunctionKeyState Interface testing to set error keyCode(10000).
@@ -3312,7 +3182,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0300
      * @tc.number SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0300
      * @tc.desc   OH_Input_GetFunctionKeyState Interface testing to set error keyCode(-1).
@@ -3337,7 +3206,6 @@ export default function MultimodalInputNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0400
      * @tc.number SUB_MMI_Input_Api_Ndk_GetFunctionKeyState_0400
      * @tc.desc   OH_Input_GetFunctionKeyState Interface testing to set state as nullptr.

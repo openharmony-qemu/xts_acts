@@ -22,14 +22,12 @@ export default function fileIOMkdir() {
 describe('fileIO_fs_mkdir', function () {
 
   /**
+   * @tc.name   fileIO_test_mkdir_sync_000
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0000
-   * @tc.name fileIO_test_mkdir_sync_000
-   * @tc.desc Test mkdirSync() interfaces.
-   * Create a directory, verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_sync_000', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_mkdir_sync_000') + 'd';
@@ -45,14 +43,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_sync_001
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0100
-   * @tc.name fileIO_test_mkdir_sync_001
-   * @tc.desc Test mkdirSync() interfaces.
-   * The directory has been existed.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_sync_001', Level.LEVEL0, async function () {
 
@@ -66,14 +62,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_sync_002
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0200
-   * @tc.name fileIO_test_mkdir_sync_002
-   * @tc.desc Test mkdirSync() interfaces.
-   * The path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_sync_002', Level.LEVEL0, async function () {
 
@@ -87,14 +81,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_sync_003
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0300
-   * @tc.name fileIO_test_mkdir_sync_003
-   * @tc.desc Test mkdirSync() interfaces.
-   * The path has pointed to a file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_mkdir_sync_003');
@@ -110,14 +102,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_async_000
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0000
-   * @tc.name fileIO_test_mkdir_async_000
-   * @tc.desc Test mkdir() interfaces. Promise.
-   * Create a directory, verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdir() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_async_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_mkdir_async_000') + 'd';
@@ -134,14 +124,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_async_001
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0100
-   * @tc.name fileIO_test_mkdir_async_001
-   * @tc.desc Test mkdir() interfaces. Callback.
-   * Create a directory, verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdir() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_async_001', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_mkdir_async_001') + 'd';
@@ -163,14 +151,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_async_002
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0200
-   * @tc.name fileIO_test_mkdir_async_002
-   * @tc.desc Test mkdir() interfaces. Promise.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdir() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_async_002', Level.LEVEL0, async function (done) {
 
@@ -185,14 +171,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_async_003
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0300
-   * @tc.name fileIO_test_mkdir_async_003
-   * @tc.desc Test mkdir() interfaces. Callback.
-   * The directory has been existed.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdir() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_async_003', Level.LEVEL0, async function (done) {
 
@@ -211,14 +195,12 @@ describe('fileIO_fs_mkdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_mkdir_async_004
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0400
-   * @tc.name fileIO_test_mkdir_async_004
-   * @tc.desc Test mkdir() interfaces. Promise.
-   * The path has pointed to a file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test mkdir() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_mkdir_async_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_mkdir_async_004');

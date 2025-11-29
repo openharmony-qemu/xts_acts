@@ -200,12 +200,12 @@ export default function TextLineParagraphTest() {
     })
 
     /**
-     * @tc.number     testCreateLineParagraphStatic
-     * @tc.name       testCreateLineParagraphStatic
-     * @tc.desc       To test metchod create line paragraph for paragraph.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      LEVEL1
+     * @tc.name   testCreateLineParagraphStatic
+     * @tc.number testCreateLineParagraphStatic
+     * @tc.desc   To test metchod create line paragraph for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateLineParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -244,6 +244,7 @@ export default function TextLineParagraphTest() {
           let textRange: text.Range = textLine.getTextRange();
           expect(textRange.start).assertEqual(textLineExpectData.textRange.start);
           expect(textRange.end).assertEqual(textLineExpectData.textRange.end);
+          textLine.paint(globalCanvas,0,0);
           textLine.createTruncatedLine(4, text.EllipsisMode.START, "...");
           let bounds: text.TypographicBounds = textLine.getTypographicBounds();
           expect(Math.round(bounds.ascent * 100) / 100).assertEqual(textLineExpectData.typographicBounds.ascent);

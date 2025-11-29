@@ -37,7 +37,6 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
     describe('ActsStageAppContextTest', () => {
 
         beforeAll(async () => {
-            TestUiAbility = await abilityDelegator.getCurrentTopAbility();
             let allowed: Component | undefined;
             try {
                 allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
@@ -47,6 +46,8 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             if (allowed) {
                 await allowed.click();
             }
+            await sleep(300);
+            TestUiAbility = await abilityDelegator.getCurrentTopAbility();
         })
 
         afterEach(async () => {

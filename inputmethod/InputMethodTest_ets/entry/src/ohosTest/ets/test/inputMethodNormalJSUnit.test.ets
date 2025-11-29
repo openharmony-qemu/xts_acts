@@ -52,7 +52,6 @@ export default function inputMethodNormalJSUnit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethodNomal_test_switchInputMethod_001
      * @tc.number inputmethodNomal_test_switchInputMethod_001
      * @tc.desc   Function test
@@ -86,7 +85,6 @@ export default function inputMethodNormalJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethodNomal_test_switchInputMethod_002
      * @tc.number inputmethodNomal_test_switchInputMethod_002
      * @tc.desc   Function test
@@ -125,7 +123,6 @@ export default function inputMethodNormalJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethodNomal_test_showSoftKeyboard_001
      * @tc.number inputmethodNomal_test_showSoftKeyboard_001
      * @tc.desc   Function test
@@ -156,7 +153,6 @@ export default function inputMethodNormalJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethodNomal_test_showSoftKeyboard_002
      * @tc.number inputmethodNomal_test_showSoftKeyboard_002
      * @tc.desc   Function test
@@ -182,7 +178,6 @@ export default function inputMethodNormalJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethodNomal_test_hideSoftKeyboard_001
      * @tc.number inputmethodNomal_test_hideSoftKeyboard_001
      * @tc.desc   Function test
@@ -213,7 +208,6 @@ export default function inputMethodNormalJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethodNomal_test_hideSoftKeyboard_002
      * @tc.number inputmethodNomal_test_hideSoftKeyboard_002
      * @tc.desc   Function test

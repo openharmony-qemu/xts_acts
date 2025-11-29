@@ -49,12 +49,12 @@ export default function SecurityHuksQueryKeyJsunit() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0100
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0100
-     * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0100
-     * @tc.desc test isKeyExist
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   test isKeyExist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async function (done) {
@@ -71,12 +71,12 @@ export default function SecurityHuksQueryKeyJsunit() {
       });
 
     /**
+     * @tc.name   SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0110
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0110
-     * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0110
-     * @tc.desc test isKeyExist
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test isKeyExist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -93,12 +93,12 @@ export default function SecurityHuksQueryKeyJsunit() {
       });
 
     /**
+     * @tc.name   SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0200
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0200
-     * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0200
-     * @tc.desc test isKeyExist, key not exist, return false
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   test isKeyExist, key not exist, return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async function (done) {
@@ -114,12 +114,12 @@ export default function SecurityHuksQueryKeyJsunit() {
       });
 
     /**
+     * @tc.name   SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210
-     * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210
-     * @tc.desc test isKeyExist, key not exist, err.code -13
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test isKeyExist, key not exist, err.code -13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -135,12 +135,12 @@ export default function SecurityHuksQueryKeyJsunit() {
       });
 
     /**
+     * @tc.name   SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300
-     * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300
-     * @tc.desc test isKeyExist, key not exist, err.code -13
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test isKeyExist, key not exist, err.code -13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {

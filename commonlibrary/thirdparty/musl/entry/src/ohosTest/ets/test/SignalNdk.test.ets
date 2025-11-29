@@ -26,12 +26,12 @@ export default function signalNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGHOLD_0100
-     * @tc.name       : testMuslSignalSighold001
-     * @tc.desc       : test sighold
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSighold001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGHOLD_0100
+     * @tc.desc   test sighold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSighold001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sighold(0,0);
@@ -40,12 +40,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGHOLD_0200
-     * @tc.name       : testMuslSignalSighold002
-     * @tc.desc       : test sighold
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSighold002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGHOLD_0200
+     * @tc.desc   test sighold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSighold002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sighold(-1, 99999);
@@ -54,12 +54,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGHOLD_0300
-     * @tc.name       : testMuslSignalSighold003
-     * @tc.desc       : test sighold
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSighold003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGHOLD_0300
+     * @tc.desc   test sighold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSighold003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sighold(-1, 0);
@@ -68,12 +68,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGRELSE_0100
-     * @tc.name       : testMuslSignalSigrelse001
-     * @tc.desc       : test sigrelse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigrelse001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGRELSE_0100
+     * @tc.desc   test sigrelse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigrelse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigrelse(0,0);
@@ -82,12 +82,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGRELSE_0200
-     * @tc.name       : testMuslSignalSigrelse002
-     * @tc.desc       : test sigrelse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigrelse002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGRELSE_0200
+     * @tc.desc   test sigrelse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigrelse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigrelse(-1, 99999);
@@ -96,12 +96,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGRELSE_0300
-     * @tc.name       : testMuslSignalSigrelse003
-     * @tc.desc       : test sigrelse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigrelse003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGRELSE_0300
+     * @tc.desc   test sigrelse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigrelse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigrelse(-1, 0);
@@ -110,12 +110,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGDELSET_0100
-     * @tc.name       : testMuslSignalSigdelset001
-     * @tc.desc       : test sigdelset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigdelset001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGDELSET_0100
+     * @tc.desc   test sigdelset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigdelset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigdelset(0,0);
@@ -124,12 +124,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGDELSET_0200
-     * @tc.name       : testMuslSignalSigdelset002
-     * @tc.desc       : test sigdelset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigdelset002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGDELSET_0200
+     * @tc.desc   test sigdelset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigdelset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigdelset(-1, 99999);
@@ -138,12 +138,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGDELSET_0300
-     * @tc.name       : testMuslSignalSigdelset003
-     * @tc.desc       : test sigdelset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigdelset003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGDELSET_0300
+     * @tc.desc   test sigdelset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigdelset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigdelset(-1, 0);
@@ -152,12 +152,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGEMPTYSET_0100
-     * @tc.name       : testMuslSignalSigemptyset001
-     * @tc.desc       : test sigemptyset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigemptyset001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGEMPTYSET_0100
+     * @tc.desc   test sigemptyset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigemptyset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigemptyset();
@@ -166,12 +166,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGFILLSET_0100
-     * @tc.name       : testMuslSignalSigfillset001
-     * @tc.desc       : test sigfillset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigfillset001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGFILLSET_0100
+     * @tc.desc   test sigfillset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigfillset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigfillset();
@@ -180,12 +180,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGADDSET_0100
-     * @tc.name       : testMuslSignalSigaddset001
-     * @tc.desc       : test sigaddset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaddset001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGADDSET_0100
+     * @tc.desc   test sigaddset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaddset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaddset(0,0);
@@ -194,12 +194,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGADDSET_0200
-     * @tc.name       : testMuslSignalSigaddset002
-     * @tc.desc       : test sigaddset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaddset002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGADDSET_0200
+     * @tc.desc   test sigaddset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaddset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaddset(-1, 99999);
@@ -208,12 +208,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGADDSET_0300
-     * @tc.name       : testMuslSignalSigaddset003
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaddset003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGADDSET_0300
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaddset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaddset(-1, 0);
@@ -222,12 +222,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGACTION_0100
-     * @tc.name       : testMuslSignalSigaction001
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaction001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGACTION_0100
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaction(0,0);
@@ -236,12 +236,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGACTION_0200
-     * @tc.name       : testMuslSignalSigaction002
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaction002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGACTION_0200
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaction(-1, 99999);
@@ -250,12 +250,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGACTION_0300
-     * @tc.name       : testMuslSignalSigaction003
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaction003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGACTION_0300
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaction(-1, 0);
@@ -264,12 +264,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGALTSTACK_0100
-     * @tc.name       : testMuslSignalSigaltstack001
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaltstack001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGALTSTACK_0100
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaltstack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaltstack(0);
@@ -278,12 +278,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGALTSTACK_0200
-     * @tc.name       : testMuslSignalSigaltstack002
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigaltstack002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGALTSTACK_0200
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigaltstack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigaltstack(-1);
@@ -292,12 +292,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGIGNORE_0100
-     * @tc.name       : testMuslSignalSigignore001
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigignore001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGIGNORE_0100
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigignore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigignore(0,0);
@@ -306,12 +306,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGIGNORE_0200
-     * @tc.name       : testMuslSignalSigignore002
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigignore002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGIGNORE_0200
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigignore002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigignore(-1, 99999);
@@ -320,12 +320,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGIGNORE_0300
-     * @tc.name       : testMuslSignalSigignore003
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigignore003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGIGNORE_0300
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigignore003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigignore(-1, 0);
@@ -334,12 +334,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGPAUSE_0100
-     * @tc.name       : testMuslSignalSigpause001
-     * @tc.desc       : test SignalTest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigpause001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGPAUSE_0100
+     * @tc.desc   test SignalTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigpause001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigpause();
@@ -348,12 +348,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGPENDING_0100
-     * @tc.name       : testMuslSignalSigpending001
-     * @tc.desc       : test sigpending
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigpending001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGPENDING_0100
+     * @tc.desc   test sigpending
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigpending001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigpending();
@@ -362,12 +362,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGPROCMASK_0100
-     * @tc.name       : testMuslSignalSigprocmask001
-     * @tc.desc       : test sigprocmask
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigprocmask001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGPROCMASK_0100
+     * @tc.desc   test sigprocmask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigprocmask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigprocmask(0,0);
@@ -376,12 +376,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGPROCMASK_0200
-     * @tc.name       : testMuslSignalSigprocmask002
-     * @tc.desc       : test sigprocmask
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigprocmask002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGPROCMASK_0200
+     * @tc.desc   test sigprocmask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigprocmask002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigprocmask(-1, 99999);
@@ -390,12 +390,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGPROCMASK_0300
-     * @tc.name       : testMuslSignalSigprocmask003
-     * @tc.desc       : test sigprocmask
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigprocmask003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGPROCMASK_0300
+     * @tc.desc   test sigprocmask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigprocmask003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigprocmask(-1, -1);
@@ -404,12 +404,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0100
-     * @tc.name       : testMuslSignalSigismember001
-     * @tc.desc       : test sigismember
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigismember001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0100
+     * @tc.desc   test sigismember
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigismember001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigismember(0,0);
@@ -418,12 +418,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0200
-     * @tc.name       : testMuslSignalSigismember002
-     * @tc.desc       : test sigismember
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigismember002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0200
+     * @tc.desc   test sigismember
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigismember002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigismember(-1, 99999);
@@ -432,12 +432,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGWAIT_0100
-     * @tc.name       : testMuslSignalSigwait001
-     * @tc.desc       : test sigwait
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigwait001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGWAIT_0100
+     * @tc.desc   test sigwait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigwait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigwait();
@@ -446,12 +446,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGWAITINFO_0100
-     * @tc.name       : testMuslSignalSigwaitinfo001
-     * @tc.desc       : test sigwaitinfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigwaitinfo001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGWAITINFO_0100
+     * @tc.desc   test sigwaitinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigwaitinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigwaitinfo();
@@ -459,12 +459,12 @@ export default function signalNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0300
-     * @tc.name       : testMuslSignalSigismember003
-     * @tc.desc       : test sigismember
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigismember003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0300
+     * @tc.desc   test sigismember
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigismember003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigismember(-1, 0);
@@ -473,12 +473,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0400
-     * @tc.name       : testMuslSignalSigismember004
-     * @tc.desc       : test sigismember
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigismember004
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGISMEMBER_0400
+     * @tc.desc   test sigismember
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigismember004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigismember(1,0);
@@ -487,12 +487,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGNAL_0100
-     * @tc.name       : testMuslSignalSignal001
-     * @tc.desc       : test signal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSignal001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGNAL_0100
+     * @tc.desc   test signal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.signal();
@@ -501,12 +501,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGNALFD_0100
-     * @tc.name       : testMuslSignalSignalfd001
-     * @tc.desc       : test signalfd
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSignalfd001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGNALFD_0100
+     * @tc.desc   test signalfd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSignalfd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.signalfd();
@@ -515,12 +515,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGINTERRUPT_0100
-     * @tc.name       : testMuslSignalSiginterrupt001
-     * @tc.desc       : test siginterrupt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSiginterrupt001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGINTERRUPT_0100
+     * @tc.desc   test siginterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSiginterrupt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.siginterrupt();
@@ -529,12 +529,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGSET_0100
-     * @tc.name       : testMuslSignalSigset001
-     * @tc.desc       : test sigset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigset001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGSET_0100
+     * @tc.desc   test sigset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigset(0);
@@ -543,12 +543,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGSET_0200
-     * @tc.name       : testMuslSignalSigset002
-     * @tc.desc       : test sigset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSignalSigset002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGSET_0200
+     * @tc.desc   test sigset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigset(1);
@@ -557,12 +557,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGTIMEDWAIT_0100
-     * @tc.name       : testMuslSignalSigtimedwait001
-     * @tc.desc       : test sigtimedwait
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigtimedwait001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGTIMEDWAIT_0100
+     * @tc.desc   test sigtimedwait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigtimedwait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.sigtimedwait();
@@ -571,12 +571,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SIGNAL_KILL_0100
-     * @tc.name     : testMuslSignalKill001
-     * @tc.desc     : test kill
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSignalKill001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_KILL_0100
+     * @tc.desc   test kill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalKill001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.kill();
@@ -585,12 +585,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SIGNAL_KILLPG_0100
-     * @tc.name     : testMuslSignalKillpg001
-     * @tc.desc     : test killpg
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSignalKillpg001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_KILLPG_0100
+     * @tc.desc   test killpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalKillpg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.killpg();
@@ -600,12 +600,12 @@ export default function signalNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_PSIGNAL_0100
-     * @tc.name       : testMuslSignalPsignal001
-     * @tc.desc       : test psignal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalPsignal001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_PSIGNAL_0100
+     * @tc.desc   test psignal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalPsignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 10, b = "SIGUSR1";
@@ -616,12 +616,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_PSIGNAL_0200
-     * @tc.name       : testMuslSignalPsignal002
-     * @tc.desc       : test psignal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalPsignal002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_PSIGNAL_0200
+     * @tc.desc   test psignal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalPsignal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 10, b = " ";
@@ -632,12 +632,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_PSIGNAL_0300
-     * @tc.name       : testMuslSignalPsignal003
-     * @tc.desc       : test psignal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalPsignal003
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_PSIGNAL_0300
+     * @tc.desc   test psignal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalPsignal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = -1, b = " ";
@@ -648,12 +648,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_PSIGINFO_0100
-     * @tc.name       : testMuslSignalPsiginfo001
-     * @tc.desc       : test psigInfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalPsiginfo001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_PSIGINFO_0100
+     * @tc.desc   test psigInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalPsiginfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = signal.pSigInfo();
@@ -663,12 +663,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SIGNAL_RAISE_0100
-     * @tc.name     : testMuslSignalRaise001
-     * @tc.desc     : test raise
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSignalRaise001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_RAISE_0100
+     * @tc.desc   test raise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalRaise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.raise();
@@ -677,12 +677,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_BSD_SIGNAL_0100
-     * @tc.name       : testMuslSignalBsdSignal001
-     * @tc.desc       : test bsd_signal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalBsdSignal001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_BSD_SIGNAL_0100
+     * @tc.desc   test bsd_signal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalBsdSignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number= signal.bsdSignal();
@@ -691,12 +691,12 @@ export default function signalNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGSUSPEND_0100
-     * @tc.name       : testMuslSignalSigsuspend001
-     * @tc.desc       : test sigsuspend
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigsuspend001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGSUSPEND_0100
+     * @tc.desc   test sigsuspend
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigsuspend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number= signal.sigsuspend();

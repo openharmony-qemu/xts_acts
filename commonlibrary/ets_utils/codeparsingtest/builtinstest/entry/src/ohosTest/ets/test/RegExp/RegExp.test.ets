@@ -36,12 +36,12 @@ export default function RegExpTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0100
-     * @tc.name       : testRegExpPrototypeExec0001
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testRegExpPrototypeExec0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0100
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegExpPrototypeExec0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testRegExpPrototypeExec0001";
@@ -69,12 +69,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0200
-     * @tc.name       : testRegExpPrototypeExec0002
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0200
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0002";
@@ -112,12 +112,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0300
-     * @tc.name       : testRegExpPrototypeExec0003
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0300
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0003";
@@ -132,12 +132,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0400
-     * @tc.name       : testRegExpPrototypeExec0004
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0400
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0004";
@@ -152,12 +152,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0500
-     * @tc.name       : testRegExpPrototypeExec0005
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0500
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0005";
@@ -172,12 +172,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0600
-     * @tc.name       : testRegExpPrototypeExec0006
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0600
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0006";
@@ -192,12 +192,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0700
-     * @tc.name       : testRegExpPrototypeExec0007
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0700
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0007";
@@ -212,12 +212,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0800
-     * @tc.name       : testRegExpPrototypeExec0008
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0800
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0008";
@@ -243,12 +243,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0900
-     * @tc.name       : testRegExpPrototypeExec0009
-     * @tc.desc       : Test the function of the interface RegExpPrototypeExec.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeExec0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_0900
+     * @tc.desc   Test the function of the interface RegExpPrototypeExec.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeExec0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeExec0009";
@@ -266,12 +266,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1000
-     * @tc.name       : testRegExpPrototypeTest0001
-     * @tc.desc       : Test the function of the interface RegExpPrototypeTest.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeTest0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1000
+     * @tc.desc   Test the function of the interface RegExpPrototypeTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeTest0001";
@@ -287,12 +287,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1100
-     * @tc.name       : testRegExpPrototypeTest0002
-     * @tc.desc       : Test the function of the interface RegExpPrototypeTest.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeTest0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1100
+     * @tc.desc   Test the function of the interface RegExpPrototypeTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeTest0002";
@@ -309,12 +309,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1200
-     * @tc.name       : testRegExpPrototypeTest0003
-     * @tc.desc       : Test the function of the interface RegExpPrototypeTest.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeTest0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1200
+     * @tc.desc   Test the function of the interface RegExpPrototypeTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeTest0003";
@@ -332,12 +332,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1300
-     * @tc.name       : testRegExpPrototypeTest0004
-     * @tc.desc       : Test the function of the interface RegExpPrototypeTest.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeTest0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1300
+     * @tc.desc   Test the function of the interface RegExpPrototypeTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeTest0004";
@@ -357,12 +357,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1400
-     * @tc.name       : testRegExpPrototypeTest0005
-     * @tc.desc       : Test the function of the interface RegExpPrototypeTest.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeTest0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1400
+     * @tc.desc   Test the function of the interface RegExpPrototypeTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeTest0005";
@@ -382,12 +382,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1500
-     * @tc.name       : testRegExpPrototypeTest0006
-     * @tc.desc       : Test the function of the interface RegExpPrototypeTest.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeTest0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1500
+     * @tc.desc   Test the function of the interface RegExpPrototypeTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeTest0006";
@@ -401,12 +401,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1600
-     * @tc.name       : testRegExpPrototypeTest0007
-     * @tc.desc       : Test the function of the interface RegExpPrototypeTest.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeTest0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1600
+     * @tc.desc   Test the function of the interface RegExpPrototypeTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeTest0007";
@@ -426,12 +426,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1700
-     * @tc.name       : testRegExpPrototypeToString0001
-     * @tc.desc       : Test the function of the interface RegExpPrototypeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeToString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1700
+     * @tc.desc   Test the function of the interface RegExpPrototypeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeToString0001";
@@ -445,12 +445,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1800
-     * @tc.name       : testRegExpPrototypeToString0002
-     * @tc.desc       : Test the function of the interface RegExpPrototypeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeToString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1800
+     * @tc.desc   Test the function of the interface RegExpPrototypeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeToString0002";
@@ -464,12 +464,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1900
-     * @tc.name       : testRegExpPrototypeToString0003
-     * @tc.desc       : Test the function of the interface RegExpPrototypeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeToString0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_1900
+     * @tc.desc   Test the function of the interface RegExpPrototypeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeToString0003";
@@ -483,12 +483,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_2000
-     * @tc.name       : testRegExpPrototypeToString0004
-     * @tc.desc       : Test the function of the interface RegExpPrototypeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeToString0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_2000
+     * @tc.desc   Test the function of the interface RegExpPrototypeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeToString0004";
@@ -502,12 +502,12 @@ export default function RegExpTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_2100
-     * @tc.name       : testRegExpPrototypeToString0005
-     * @tc.desc       : Test the function of the interface RegExpPrototypeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeToString0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_2100
+     * @tc.desc   Test the function of the interface RegExpPrototypeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeToString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeToString0005";
@@ -520,12 +520,12 @@ export default function RegExpTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_2300
-     * @tc.name       : testRegExpPrototypeToString0007
-     * @tc.desc       : Test the function of the interface RegExpPrototypeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRegExpPrototypeToString0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_2300
+     * @tc.desc   Test the function of the interface RegExpPrototypeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExpPrototypeToString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRegExpPrototypeToString0007";

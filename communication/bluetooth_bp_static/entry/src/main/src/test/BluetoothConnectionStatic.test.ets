@@ -65,7 +65,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   getRemoteDeviceNameTest
      * @tc.number getRemoteDeviceNameTest
      * @tc.desc   Test getRemoteDeviceNameTest API functionality
@@ -91,7 +90,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   getRemoteDeviceNameAliasTest
      * @tc.number getRemoteDeviceNameAliasTest
      * @tc.desc   Test getRemoteDeviceNameAliasTest API functionality
@@ -119,7 +117,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   getRemoteDeviceClassTest
      * @tc.number getRemoteDeviceClassTest
      * @tc.desc   Test getRemoteDeviceClassTest API functionality
@@ -147,7 +144,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   setBluetoothScanModeTest
      * @tc.number setBluetoothScanModeTest
      * @tc.desc   Test setBluetoothScanModeTest API functionality
@@ -172,7 +168,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   getPairedDevicesTest
      * @tc.number getPairedDevicesTest
      * @tc.desc   Test getPairedDevicesTest API functionality
@@ -199,7 +194,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   connectionConstantTest
      * @tc.number connectionConstantTest
      * @tc.desc   Test connectionConstantTest API functionality
@@ -224,7 +218,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   bluetoothDeviceFindTest
      * @tc.number bluetoothDeviceFindTest
      * @tc.desc   Test bluetoothDeviceFindTest API functionality
@@ -263,7 +256,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   bluetoothDeviceFindTest2
      * @tc.number bluetoothDeviceFindTest2
      * @tc.desc   Test bluetoothDeviceFindTest API functionality
@@ -302,7 +294,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   discoveryResultTest
      * @tc.number discoveryResultTest
      * @tc.desc   Test discoveryResultTest API functionality
@@ -342,7 +333,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   discoveryResultTest2
      * @tc.number discoveryResultTest2
      * @tc.desc   Test discoveryResultTest API functionality
@@ -381,7 +371,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   bondStateChangeTest
      * @tc.number bondStateChangeTest
      * @tc.desc   Test bondStateChangeTest API functionality
@@ -422,7 +411,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   bondStateChangeTest2
      * @tc.number bondStateChangeTest2
      * @tc.desc   Test bondStateChangeTest API functionality
@@ -461,7 +449,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   pinRequiredTest
      * @tc.number pinRequiredTest
      * @tc.desc   Test pinRequiredTest API functionality
@@ -501,7 +488,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   pinRequiredTest2
      * @tc.number pinRequiredTest2
      * @tc.desc   Test pinRequiredTest API functionality
@@ -540,7 +526,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   batteryChangeTest
      * @tc.number batteryChangeTest
      * @tc.desc   Test batteryChangeTest API functionality
@@ -580,7 +565,6 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   batteryChangeTest2
      * @tc.number batteryChangeTest2
      * @tc.desc   Test batteryChangeTest API functionality

@@ -36,12 +36,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_Static_0100
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_Static_0100
-     * @tc.name SUB_Security_CertManager_PriCertJsApi_Func_Static_0100
-     * @tc.desc use promise type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PriCertJsApi_Func_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keystore: Uint8Array = new Uint8Array();
@@ -60,12 +60,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_Static_0101
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_Static_0101
-     * @tc.name SUB_Security_CertManager_PriCertJsApi_Func_Static_0101
-     * @tc.desc use callback type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PriCertJsApi_Func_Static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keystore: Uint8Array = new Uint8Array();
@@ -94,12 +94,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_Static_0102
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_Static_0102
-     * @tc.name SUB_Security_CertManager_PriCertJsApi_Func_Static_0102
-     * @tc.desc use promise type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PriCertJsApi_Func_Static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keystore: Uint8Array = priRsaCredData;
@@ -117,12 +117,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_Static_0103
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_Static_0103
-     * @tc.name SUB_Security_CertManager_PriCertJsApi_Func_Static_0103
-     * @tc.desc use callback type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PriCertJsApi_Func_Static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keystore: Uint8Array = priRsaCredData;
@@ -151,12 +151,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_Static_0104
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_Static_0104
-     * @tc.name SUB_Security_CertManager_PriCertJsApi_Func_Static_0104
-     * @tc.desc use promise type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PriCertJsApi_Func_Static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyUri: string | undefined = "";
@@ -177,12 +177,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_Static_0105
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_Static_0105
-     * @tc.name SUB_Security_CertManager_PriCertJsApi_Func_Static_0105
-     * @tc.desc use callback type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PriCertJsApi_Func_Static_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyUri: string | undefined = "";
@@ -205,12 +205,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SignThree_Func_Static_0100
      * @tc.number SUB_Security_CertManager_SignThree_Func_Static_0100
-     * @tc.name SUB_Security_CertManager_SignThree_Func_Static_0100
-     * @tc.desc use promise type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SignThree_Func_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array([
@@ -234,12 +234,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SignThree_Func_Static_0101
      * @tc.number SUB_Security_CertManager_SignThree_Func_Static_0101
-     * @tc.name SUB_Security_CertManager_SignThree_Func_Static_0101
-     * @tc.desc use callback type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SignThree_Func_Static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array([
@@ -265,12 +265,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SignThree_Func_Static_0102
      * @tc.number SUB_Security_CertManager_SignThree_Func_Static_0102
-     * @tc.name SUB_Security_CertManager_SignThree_Func_Static_0102
-     * @tc.desc use promise type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SignThree_Func_Static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array([
@@ -294,12 +294,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SignThree_Func_Static_0103
      * @tc.number SUB_Security_CertManager_SignThree_Func_Static_0103
-     * @tc.name SUB_Security_CertManager_SignThree_Func_Static_0103
-     * @tc.desc use callback type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SignThree_Func_Static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array([
@@ -325,12 +325,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SignThree_Func_Static_0104
      * @tc.number SUB_Security_CertManager_SignThree_Func_Static_0104
-     * @tc.name SUB_Security_CertManager_SignThree_Func_Static_0104
-     * @tc.desc use callback type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SignThree_Func_Static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array();
@@ -358,12 +358,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SignThree_Func_Static_0105
      * @tc.number SUB_Security_CertManager_SignThree_Func_Static_0105
-     * @tc.name SUB_Security_CertManager_SignThree_Func_Static_0105
-     * @tc.desc use promise type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SignThree_Func_Static_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array();
@@ -384,12 +384,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SignThree_Func_Static_0106
      * @tc.number SUB_Security_CertManager_SignThree_Func_Static_0106
-     * @tc.name SUB_Security_CertManager_SignThree_Func_Static_0106
-     * @tc.desc use callback type
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SignThree_Func_Static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array();

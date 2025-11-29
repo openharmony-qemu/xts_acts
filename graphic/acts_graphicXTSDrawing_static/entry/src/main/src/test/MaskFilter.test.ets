@@ -40,12 +40,12 @@ export default function maskFilterTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_STATIC_0100
-     * @tc.name      : testCreateBlurMaskFilterNormalStatic
-     * @tc.desc      : Test for testCreateBlurMaskFilterNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCreateBlurMaskFilterNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_STATIC_0100
+     * @tc.desc   Test for testCreateBlurMaskFilterNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateBlurMaskFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCreateBlurMaskFilterNormalStatic';
@@ -72,12 +72,12 @@ export default function maskFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_STATIC_0103
-     * @tc.name      : testCreateBlurMaskFilterMultipleCallsStatic
-     * @tc.desc      : Test for testCreateBlurMaskFilterMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateBlurMaskFilterMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_STATIC_0103
+     * @tc.desc   Test for testCreateBlurMaskFilterMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateBlurMaskFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCreateBlurMaskFilterMultipleCallsStatic';

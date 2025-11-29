@@ -24,12 +24,12 @@ export default function FontPart4() {
     })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100
-     * @tc.desc       test for FontMetricsFlags EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100
+     * @tc.desc   test for FontMetricsFlags EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -62,12 +62,12 @@ export default function FontPart4() {
     })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0200
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0200
-     * @tc.desc       test for FontMetricsFlags EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0200
+     * @tc.desc   test for FontMetricsFlags EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {

@@ -45,12 +45,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   RegExpDefaultSymbolSearchTest001
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_001
-     * @tc.name RegExpDefaultSymbolSearchTest001
-     * @tc.desc Verify RegExp's default [Symbol.search] returns first match index (ignores 'g' flag)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify RegExp's default [Symbol.search] returns first match index (ignores 'g' flag)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpDefaultSymbolSearchTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test001_RegExpDefaultSymbolSearch();
@@ -60,12 +60,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   SymbolSearchReceivesTargetTest004
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_004
-     * @tc.name SymbolSearchReceivesTargetTest004
-     * @tc.desc Verify [Symbol.search] method receives target string as argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.search] method receives target string as argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolSearchReceivesTargetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test004_SymbolSearchReceivesTarget();
@@ -73,12 +73,12 @@ export default function symbolSearchTestTest() {
     });
 
     /**
+     * @tc.name   NoMatchReturnsMinusOneTest005
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_005
-     * @tc.name NoMatchReturnsMinusOneTest005
-     * @tc.desc Verify [Symbol.search] returns -1 when no match (consistent with RegExp)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.search] returns -1 when no match (consistent with RegExp)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NoMatchReturnsMinusOneTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test005_NoMatchReturnsMinusOne();
@@ -88,12 +88,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   InheritedSymbolSearchTest007
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_007
-     * @tc.name InheritedSymbolSearchTest007
-     * @tc.desc Verify [Symbol.search] can be inherited via prototype chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.search] can be inherited via prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InheritedSymbolSearchTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test007_InheritedSymbolSearch();
@@ -104,12 +104,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   EmptyStringTargetSearchTest010
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_010
-     * @tc.name EmptyStringTargetSearchTest010
-     * @tc.desc Verify [Symbol.search] correctly handles empty target string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.search] correctly handles empty target string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EmptyStringTargetSearchTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test010_EmptyStringTargetSearch();
@@ -118,12 +118,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   ErrorPropagationInSearchTest012
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_012
-     * @tc.name ErrorPropagationInSearchTest012
-     * @tc.desc Verify errors in [Symbol.search] are propagated to caller
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify errors in [Symbol.search] are propagated to caller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ErrorPropagationInSearchTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test012_ErrorPropagationInSearch();
@@ -131,12 +131,12 @@ export default function symbolSearchTestTest() {
     });
 
     /**
+     * @tc.name   FrozenSearcherSymbolSearchTest013
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_013
-     * @tc.name FrozenSearcherSymbolSearchTest013
-     * @tc.desc Verify frozen searcher objects support [Symbol.search]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify frozen searcher objects support [Symbol.search]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenSearcherSymbolSearchTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test013_FrozenSearcherSymbolSearch();
@@ -145,12 +145,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   DynamicSearcherPropertyTest015
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_015
-     * @tc.name DynamicSearcherPropertyTest015
-     * @tc.desc Verify dynamic searcher properties influence [Symbol.search] behavior
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify dynamic searcher properties influence [Symbol.search] behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DynamicSearcherPropertyTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test015_DynamicSearcherProperty();
@@ -158,12 +158,12 @@ export default function symbolSearchTestTest() {
     });
 
     /**
+     * @tc.name   UnicodeCharacterSearchTest016
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_016
-     * @tc.name UnicodeCharacterSearchTest016
-     * @tc.desc Verify [Symbol.search] calculates Unicode character indices correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.search] calculates Unicode character indices correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UnicodeCharacterSearchTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test016_UnicodeCharacterSearch();
@@ -176,12 +176,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   RegexMetacharactersRawTextTest022
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_022
-     * @tc.name RegexMetacharactersRawTextTest022
-     * @tc.desc Verify custom [Symbol.search] treats regex metacharacters as raw text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom [Symbol.search] treats regex metacharacters as raw text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegexMetacharactersRawTextTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test022_RegexMetacharactersRawText();
@@ -189,12 +189,12 @@ export default function symbolSearchTestTest() {
     });
 
     /**
+     * @tc.name   MultipleMatchesReturnFirstTest023
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_023
-     * @tc.name MultipleMatchesReturnFirstTest023
-     * @tc.desc Verify [Symbol.search] returns only first index (even with multiple matches)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.search] returns only first index (even with multiple matches)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleMatchesReturnFirstTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test023_MultipleMatchesReturnFirst();
@@ -204,12 +204,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   RegExpSubclassInheritedSearchTest025
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_025
-     * @tc.name RegExpSubclassInheritedSearchTest025
-     * @tc.desc Verify RegExp subclass can override and inherit [Symbol.search]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify RegExp subclass can override and inherit [Symbol.search]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpSubclassInheritedSearchTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test025_RegExpSubclassInheritedSearch();
@@ -219,12 +219,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   EmptyMatchAtStringEndTest027
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_027
-     * @tc.name EmptyMatchAtStringEndTest027
-     * @tc.desc Verify [Symbol.search] returns correct index for empty match at string end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.search] returns correct index for empty match at string end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EmptyMatchAtStringEndTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test027_EmptyMatchAtStringEnd();
@@ -232,12 +232,12 @@ export default function symbolSearchTestTest() {
     });
 
     /**
+     * @tc.name   OverrideRegExpPrototypeSearchTest028
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_028
-     * @tc.name OverrideRegExpPrototypeSearchTest028
-     * @tc.desc Verify overriding RegExp.prototype[Symbol.search] affects all RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify overriding RegExp.prototype[Symbol.search] affects all RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OverrideRegExpPrototypeSearchTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test028_OverrideRegExpPrototypeSearch();
@@ -246,12 +246,12 @@ export default function symbolSearchTestTest() {
 
 
     /**
+     * @tc.name   SymbolSearchThisBindingTest030
      * @tc.number SUB_SYMBOL_SEARCH_STANDALONE_TEST_030
-     * @tc.name SymbolSearchThisBindingTest030
-     * @tc.desc Verify `this` in custom [Symbol.search] points to the searcher object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify `this` in custom [Symbol.search] points to the searcher object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolSearchThisBindingTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolSearchStandaloneTestUtils.test030_SymbolSearchThisBinding();
