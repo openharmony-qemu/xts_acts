@@ -72,7 +72,6 @@ export default function arkTSUtilsLockTest() {
       await sleep(20);
     })
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQueryAll_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1200
      * @tc.desc   The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
@@ -95,7 +94,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQueryAll_static_0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1300
      * @tc.desc   The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
@@ -118,7 +116,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQueryAll_static_0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1400
      * @tc.desc   The queryAll operation of AsyncLock creates multiple asynchronous locks,
@@ -145,7 +142,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksConstructor_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0100
      * @tc.desc   The request operation of AsyncLock, which had not been created before,
@@ -168,7 +164,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQuery_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0700
      * @tc.desc   The request operation of AsyncLock has not been created before, resulting in an error.
@@ -191,7 +186,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQuery_static_0005
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1100
      * @tc.desc   The query operation of AsyncLock has not been created before, error.
@@ -214,7 +208,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksRequest_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0200
      * @tc.desc   The request operation of AsyncLock, which had not been created before,
@@ -238,7 +231,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksRequest_static_0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0300
      * @tc.desc   The request operation of AsyncLock has already been created earlier.
@@ -263,7 +255,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksRequest_static_0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0400
      * @tc.desc   The request operation of AsyncLock has not been created before.
@@ -287,7 +278,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksRequest_static_0004
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0500
      * @tc.desc   The request operation of AsyncLock has already been created before.
@@ -312,7 +302,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksRequest_static_0005
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0600
      * @tc.desc   The request operation of AsyncLock had already been created.
@@ -338,7 +327,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQuery_static_0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0800
      * @tc.desc   The request operation of AsyncLock has already been created.
@@ -366,7 +354,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQuery_static_0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0900
      * @tc.desc   The query operation of AsyncLock was previously created with the specified name.
@@ -394,7 +381,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testTaskLocksQuery_static_0004
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1_static_000
      * @tc.desc   The query operation of AsyncLock was previously created with the specified name.
@@ -419,7 +405,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1500
      * @tc.desc   Test the function of the interface LockAsync.
@@ -444,7 +429,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0006
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1600
      * @tc.desc   Test the function of the interface LockAsync.
@@ -492,7 +476,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0007
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1700
      * @tc.desc   Test the function of the interface LockAsync.
@@ -524,7 +507,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0008
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1800
      * @tc.desc   Test the function of the interface LockAsync.
@@ -563,7 +545,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0009
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1900
      * @tc.desc   Test the function of the interface LockAsync.
@@ -610,7 +591,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0010
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2_static_000
      * @tc.desc   Test the function of the interface LockAsync.
@@ -644,7 +624,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0011
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2100
      * @tc.desc   Test the function of the interface LockAsync.
@@ -680,7 +659,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0012
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2200
      * @tc.desc   Test the function of the interface LockAsync.
@@ -723,7 +701,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0013
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2300
      * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
@@ -771,7 +748,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0014
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2400
      * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
@@ -817,7 +793,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0015
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2500
      * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
@@ -861,7 +836,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0016
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2600
      * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
@@ -905,7 +879,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0017
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2700
      * @tc.desc   Test the function of the interface LockAsync.
@@ -967,7 +940,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0018
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2800
      * @tc.desc   Test the function of the interface LockAsync.
@@ -1012,7 +984,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0019
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2900
      * @tc.desc   Test the function of the interface LockAsync.
@@ -1057,7 +1028,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0020
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3_static_000
      * @tc.desc   Test the function of the interface LockAsync.
@@ -1096,7 +1066,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0021
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3100
      * @tc.desc   Test the function of the interface LockAsync.
@@ -1164,7 +1133,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0022
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3200
      * @tc.desc   Test the function of the interface LockAsync.
@@ -1196,7 +1164,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0023
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3300
      * @tc.desc   Test the function of the interface LockAsync.
@@ -1236,7 +1203,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testLockAsync_static_0024
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3400
      * @tc.desc   Test the function of the interface LockAsync.
@@ -1276,7 +1242,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockMode_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3500
      * @tc.desc   Test the function of the interface LockAsyncMode.
@@ -1316,7 +1281,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockMode_static_0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3600
      * @tc.desc   Test the function of the interface LockAsyncMode.
@@ -1359,7 +1323,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3700
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1385,7 +1348,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3800
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1425,7 +1387,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3900
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1455,7 +1416,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0004
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4_static_000
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1485,7 +1445,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0005
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4100
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1518,7 +1477,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0006
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4200
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1551,7 +1509,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0007
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4300
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1581,7 +1538,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockOptions_static_0008
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4400
      * @tc.desc   Test the function of the interface LockAsyncOptions.
@@ -1611,7 +1567,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4500
      * @tc.desc   Test the function of the interface LockAsyncState.
@@ -1645,7 +1600,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4600
      * @tc.desc   Test the function of the interface LockAsyncState.
@@ -1679,7 +1633,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4700
      * @tc.desc   Test the function of the interface LockAsyncState.
@@ -1713,7 +1666,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0004
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4800
      * @tc.desc   Test the function of the interface LockAsyncState.
@@ -1747,7 +1699,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0005
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4900
      * @tc.desc   Test the function of the interface LockAsyncState.
@@ -1783,7 +1734,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0006
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5_static_000
      * @tc.desc   Test the function of the interface LockAsyncState.
@@ -1819,7 +1769,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0007
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5100
      * @tc.desc   Test the function of the interface LockAsyncState.
@@ -1855,7 +1804,6 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testAsyncLockState_static_0008
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5200
      * @tc.desc   Test the function of the interface LockAsyncState.

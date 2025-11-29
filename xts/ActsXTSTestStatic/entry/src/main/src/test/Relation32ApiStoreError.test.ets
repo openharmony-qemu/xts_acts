@@ -102,12 +102,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name       RelationStoreError00Test0001
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error00Test_0100
-     * @tc.desc       RdbStore insert
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   RelationStoreError00Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error00Test_0100
+     * @tc.desc   RdbStore insert
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError00Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0001 start *************');
@@ -131,12 +131,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError32Test0001
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0100
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0100
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0001 start *************");
@@ -162,12 +162,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name       RelationalStoreEnumerateTest001
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0100
-     * @tc.desc       getColumnIndex normal test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   RelationalStoreEnumerateTest001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0100
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationalStoreEnumerateTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0001 start *************');
@@ -191,12 +191,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError32Test0002
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0200
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0200
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0002 start *************");
@@ -222,12 +222,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name       RelationStoreError10Test0001
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error10Test_2300
-     * @tc.desc       Transaction goTo
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   RelationStoreError10Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error10Test_2300
+     * @tc.desc   Transaction goTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelationStoreError10Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 start *************");
@@ -261,12 +261,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name        RelationStoreError32Test0003
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0300
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0300
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0003 start *************");
@@ -292,12 +292,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name       RelationStoreError11Test0001
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error11Test_0100
-     * @tc.desc       Transaction getLong
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   RelationStoreError11Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error11Test_0100
+     * @tc.desc   Transaction getLong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError11Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0001 start *************');
@@ -319,12 +319,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name        RelationStoreError32Test0017
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1700
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0017
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1700
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0017 start *************');
@@ -361,12 +361,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError32Test0004
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0400
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0004
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0400
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0004 start *************");
@@ -392,12 +392,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name       RelationStoreError12Test0001
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error12Test_0100
-     * @tc.desc       Transaction getBlob
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   RelationStoreError12Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error12Test_0100
+     * @tc.desc   Transaction getBlob
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError12Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -425,12 +425,12 @@ export default function RelationStoreError32Test() {
       })
 	  
     /**
-     * @tc.name        RelationStoreError32Test0005
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0500
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0005
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0500
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0005 start *************");
@@ -465,12 +465,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name       RelationStoreError14Test0001
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error14Test_0100
-     * @tc.desc       Transaction getLong
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   RelationStoreError14Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error14Test_0100
+     * @tc.desc   Transaction getLong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError14Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0001 start *************');
@@ -489,12 +489,12 @@ export default function RelationStoreError32Test() {
 
 
     /**
-     * @tc.name        RelationStoreError32Test0006
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0600
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0006
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0600
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0006 start *************");
@@ -529,12 +529,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name        RelationStoreError17Test0001
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error17Test_0100
-     * @tc.desc        Transaction goTo
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError17Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error17Test_0100
+     * @tc.desc   Transaction goTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError17Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -559,12 +559,12 @@ export default function RelationStoreError32Test() {
       })
 
     /**
-     * @tc.name        RelationStoreError32Test0007
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0700
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0007
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0700
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0007 start *************");
@@ -599,12 +599,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name        RelationStoreError21Test0001
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error21Test_0100
-     * @tc.desc        insert
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError21Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error21Test_0100
+     * @tc.desc   insert
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError21Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError21Test0001 start *************');
@@ -630,12 +630,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError32Test0008
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0800
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0008
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0800
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0008 start *************");
@@ -671,12 +671,12 @@ export default function RelationStoreError32Test() {
 
 
     /**
-     * @tc.name        RelationStoreError32Test0009
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_0900
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0009
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_0900
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0009 start *************");
@@ -711,12 +711,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError24Test0001
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0100
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError24Test0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error24Test_0100
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError24Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0001 start *************');
@@ -750,12 +750,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name        RelationStoreError32Test0018
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1800
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0018
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1800
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0018 start *************');
@@ -792,12 +792,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name        RelationStoreError32Test0010
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1000
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0010
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1000
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0010 start *************");
@@ -832,12 +832,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name relationalStoreTest001
+     * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc relationalStoreTest001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   relationalStoreTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -860,12 +860,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError32Test0011
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1100
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0011
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1100
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0011 start *************");
@@ -900,13 +900,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
+     * @tc.name   ReadonlyErrCode001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0100
-     * @tc.name testReadOnly0100
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -975,12 +974,12 @@ export default function RelationStoreError32Test() {
       })
 
     /**
-     * @tc.name        RelationStoreError32Test0012
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1200
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0012
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1200
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0012 start *************');
@@ -1017,12 +1016,12 @@ export default function RelationStoreError32Test() {
     })
 	
     /**
-     * @tc.name        RelationStoreError32Test0019
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1900
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0019
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1900
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0019 start *************');
@@ -1059,12 +1058,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError32Test0013
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1300
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0013
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1300
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0013 start *************');
@@ -1101,12 +1100,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError21Test0003
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error21Test_0300
-     * @tc.desc        insert
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError21Test0003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error21Test_0300
+     * @tc.desc   insert
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError21Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError21Test0003 start *************');
@@ -1135,12 +1134,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError32Test0014
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1400
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0014
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1400
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0014 start *************');
@@ -1177,12 +1176,12 @@ export default function RelationStoreError32Test() {
     })
 
     /**
-     * @tc.name        RelationStoreError17Test0002
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error17Test_0200
-     * @tc.desc        Transaction goTo
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError17Test0002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error17Test_0200
+     * @tc.desc   Transaction goTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError17Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1208,12 +1207,12 @@ export default function RelationStoreError32Test() {
       })
 
     /**
-     * @tc.name        RelationStoreError32Test0016
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error32Test_1600
-     * @tc.desc        getColumnIndex normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   RelationStoreError32Test0016
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Error32Test_1600
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationStoreError32Test0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0016 start *************');
