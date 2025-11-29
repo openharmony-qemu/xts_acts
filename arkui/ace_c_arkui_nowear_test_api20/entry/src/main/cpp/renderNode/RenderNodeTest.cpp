@@ -114,7 +114,7 @@ static napi_value TestRenderNode009(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result18=%{public}d", result18);
     auto result19 = OH_ArkUI_RenderNodeUtils_GetFirstChild(rootRender, nullptr);
     ASSERT_EQ(result19, ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager","TestRenderNode009 result19=%{public}d", result19);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result19=%{public}d", result19);
     auto result20 = OH_ArkUI_RenderNodeUtils_GetChild(rootRender, 1, nullptr);
     ASSERT_EQ(result20, ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result20=%{public}d", result20);
