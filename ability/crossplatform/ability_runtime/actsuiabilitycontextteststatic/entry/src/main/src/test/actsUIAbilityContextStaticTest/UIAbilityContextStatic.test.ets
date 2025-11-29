@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../../hypium/index";
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
@@ -25,6 +25,7 @@ import { BusinessError, RecordData } from '@ohos.base';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
 import wantConstant from '@ohos.app.ability.wantConstant';
+import wifiManager from '@ohos.wifiManager';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -40,7 +41,16 @@ export default function UIAbilityContextStatic() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.uiabilitycontexttest.static")
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      hilog.info(domain, tag, 'wifiManager end');
+      wifiManager.disableWifi();
+      hilog.info(domain, tag, 'wifiManager end');
       hilog.info(domain, tag, 'beforeAll end');
+    })
+
+    afterAll(() => {
+      hilog.info(domain, tag, 'afterAll start');
+      wifiManager.enableWifi();
+      hilog.info(domain, tag, 'afterAll end');
     })
 
     /**
