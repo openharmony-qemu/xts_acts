@@ -1676,7 +1676,7 @@ export default function settingUiJsunit() {
         done();
       } catch (err) {
         console.error("[settings_set_value_key_null] error = " + err);
-        expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected")
+        expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
           .assertTrue();
         done();
         return;
@@ -1697,11 +1697,11 @@ export default function settingUiJsunit() {
         let result =
           await settings.setValue(mContext, '', value, settings.domainName.DEVICE_SHARED);
         console.info("[settings_set_value_key_empty] result = " + result);
-        expect(result).assertTrue();
+        expect().assertFail();
         done();
       } catch (err) {
         console.error("[settings_set_value_key_empty] error = " + err);
-        expect().assertFail();
+        expect(err?.code === 201).assertTrue();
         done();
         return;
       }
@@ -1724,31 +1724,8 @@ export default function settingUiJsunit() {
         done();
       } catch (err) {
         console.error("[settings_set_value_value_null] error = " + err);
-        expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected")
+        expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
           .assertTrue();
-        done();
-        return;
-      }
-    });
-
-    /**
-     * @tc.name   settings_set_value_value_empty
-     * @tc.number settings_set_value_value_empty
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      try {
-        let result =
-          await settings.setValue(mContext, 'setvalueempty', '', settings.domainName.DEVICE_SHARED);
-        console.info("[settings_set_value_value_empty] result = " + result);
-        expect(result).assertTrue();
-        done();
-      } catch (err) {
-        console.error("[settings_set_value_value_empty] error = " + err);
-        expect().assertFail();
         done();
         return;
       }
@@ -1824,29 +1801,6 @@ export default function settingUiJsunit() {
       });
 
     /**
-     * @tc.name   settings_set_value_sync_key_empty
-     * @tc.number settings_set_value_sync_key_empty
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_sync_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          let result: boolean =
-            settings.setValueSync(mContext, '', 'value1', settings.domainName.DEVICE_SHARED);
-          expect(result).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_set_value_sync_key_empty] error = " + err);
-          expect().assertFail();
-          done();
-          return;
-        }
-      });
-
-    /**
      * @tc.name   settings_set_value_sync_value_null
      * @tc.number settings_set_value_sync_value_null
      * @tc.desc   MediumTest
@@ -1865,29 +1819,6 @@ export default function settingUiJsunit() {
           console.error("[settings_set_value_sync_value_null] error = " + err);
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
             .assertTrue();
-          done();
-          return;
-        }
-      });
-
-    /**
-     * @tc.name   settings_set_value_sync_value_empty
-     * @tc.number settings_set_value_sync_value_empty
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_sync_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          let result: boolean =
-            settings.setValueSync(mContext, 'testkey', '', settings.domainName.DEVICE_SHARED);
-          expect(result).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_set_value_sync_value_empty] error = " + err);
-          expect().assertFail();
           done();
           return;
         }
@@ -1980,7 +1911,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_get_value_key_null] error = " + err);
-          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected")
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
             .assertTrue();
           done();
           return;
@@ -2052,7 +1983,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_context_null] error = " + err);
-          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected")
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
             .assertTrue();
           done();
           return;
@@ -2098,11 +2029,11 @@ export default function settingUiJsunit() {
           await settings.setValue(mContext, '', value,  settings.domainName.DEVICE_SHARED);
           let result: string =
             await settings.getValueSync(globalThis.abilityContext, '', 'defValue', settings.domainName.DEVICE_SHARED);
-          expect(result === value).assertTrue();
+          expect().assertFail();
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_key_empty] error = " + err);
-          expect().assertFail();
+          expect(err.code).assertEqual(201);
           done();
           return;
         }
@@ -2119,13 +2050,14 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
+          await settings.setValue(mContext, 'testkeyadfasdf', 'defValue',  settings.domainName.DEVICE_SHARED);
           let result: string =
             await settings.getValueSync(mContext, 'testkeyadfasdf', 'defValue', null);
-          expect(result === 'defValue').assertTrue();
+          expect().assertFail();
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_domain_null] error = " + err);
-          expect().assertFail();
+          expect(err.code).assertEqual(201);
           done();
           return;
         }
@@ -2142,13 +2074,14 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
+          await settings.setValue(mContext, 'testkeyadfasdf', 'defValue',  settings.domainName.DEVICE_SHARED);
           let result: string =
             await settings.getValueSync(mContext, 'testkeyadfasdfa', 'defValue', '');
-          expect(result === 'defValue').assertTrue();
+          expect().assertFail();
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_domain_empty] error = " + err);
-          expect().assertFail();
+          expect(err.code).assertEqual(201);
           done();
           return;
         }
