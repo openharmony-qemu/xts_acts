@@ -73,7 +73,7 @@ static napi_value TestRenderNode001(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result22=%{public}d", result22);
     auto result21 = OH_ArkUI_RenderNodeUtils_InsertChildAfter(nullptr, rsNodeSecondChild, rsNodeSecondChild);
     ASSERT_EQ(result21, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager" "TestRenderNode009 result21=%{public}d", result21);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result21=%{public}d", result21);
     NAPI_END;
 }
 
