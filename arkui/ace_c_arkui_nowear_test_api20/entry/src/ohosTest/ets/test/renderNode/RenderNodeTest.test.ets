@@ -38,6 +38,19 @@ export default function RenderNodeTest(){
       done();
     })
 
+    /*
+     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0900
+     * @tc.name       : testRenderNode009
+     * @tc.desc       : Test InitModuleForArkTSEnv
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testRenderNode009', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNode009()).assertEqual(0)
+      done();
+    })
+
     /**
      * @tc.name   testRenderNode002
      * @tc.number SUB_ARKUI_CAPI_testRenderNode_0200
