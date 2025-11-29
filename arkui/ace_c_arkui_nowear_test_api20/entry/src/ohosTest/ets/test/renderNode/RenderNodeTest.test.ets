@@ -39,8 +39,8 @@ export default function RenderNodeTest(){
     })
 
     /*
-     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0900
-     * @tc.name       : testRenderNode009
+     * @tc.number     : testRenderNode009
+     * @tc.name       : SUB_ARKUI_CAPI_testRenderNode_0900
      * @tc.desc       : Test InitModuleForArkTSEnv
      * @tc.size       : MediumTest
      * @tc.type       : Function
