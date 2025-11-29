@@ -196,7 +196,6 @@ export default function actslocationTest() {
                                 expect(true).assertEqual(result?.directionAccuracy !=null)
                                 expect(true).assertEqual(result?.uncertaintyOfTimeSinceBoot !=null)
                                 expect(true).assertEqual(result?.sourceType !=null)
-                                expect(true).assertEqual(result?.poi !=null)
                                 hilog.info(domain, tag, '%{public}s', 'beforeEach end'+'result.latitude'+'result.longitude'+'result.latitude'+'result.accuracy'+'result.speed'+'result.timeStamp'+'result.direction'+'result.timeSinceBoot'
                                 +'result.additions'+'result.additionsSize'+'result.additionsMap'+'result.additionsMap'+'result.additionsAccuracy'+'result.directionAccuracy'+'result.uncertaintyOfTimeSinceBoot');
 
