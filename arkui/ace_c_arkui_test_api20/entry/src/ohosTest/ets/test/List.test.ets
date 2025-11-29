@@ -46,6 +46,7 @@ import RelativeContainerCNodeTest from './RelativeContainer/RelativeContainerCNo
 import CapiPostAsyncUITask from './capi/CapiPostAsyncUITask.test'
 import CapiPostUITask from './capi/CapiPostUITask.test'
 import CapiPostUITaskAndWait from './capi/CapiPostUITaskAndWait.test'
+import ScrollZoomSampleTest from './scroll/ScrollZoomSampleTest.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -82,4 +83,5 @@ export default function testsuite() {
   CapiPostAsyncUITask();
   CapiPostUITask();
   CapiPostUITaskAndWait();
+  ScrollZoomSampleTest();
 }

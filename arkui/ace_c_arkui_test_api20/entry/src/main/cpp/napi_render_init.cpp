@@ -37,6 +37,7 @@
 #include "RelativeContainer/RelativeContainerCrossLanguageTest.h"
 #include "napi/native_api.h"
 #include "node/NodeCreatorTest.h"
+#include "scroll/ScrollZoomSampleTest.h"
 
 namespace ArkUICapiTest
 {
@@ -100,7 +101,13 @@ namespace ArkUICapiTest
 			{ "CreateNodeTreeOnUIThread", nullptr,
 				NativeModule::CreateNodeTreeOnUIThread, nullptr, nullptr, nullptr, napi_default, nullptr },
 			{ "DisposeNodeTree", nullptr,
-				NativeModule::DisposeNodeTree, nullptr, nullptr, nullptr, napi_default, nullptr }
+				NativeModule::DisposeNodeTree, nullptr, nullptr, nullptr, napi_default, nullptr },
+            {"scrollZoomStartTest", nullptr, ScrollZoomSampleTest::ScrollZoomStartTest, nullptr,
+             nullptr, nullptr, napi_default, nullptr},,
+            {"scrollZoomDidTest", nullptr, ScrollZoomSampleTest::ScrollZoomDidTest, nullptr,
+             nullptr, nullptr, napi_default, nullptr},,
+            {"scrollZoomStopTest", nullptr, ScrollZoomSampleTest::ScrollZoomStopTest, nullptr,
+             nullptr, nullptr, napi_default, nullptr},
 			};
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
