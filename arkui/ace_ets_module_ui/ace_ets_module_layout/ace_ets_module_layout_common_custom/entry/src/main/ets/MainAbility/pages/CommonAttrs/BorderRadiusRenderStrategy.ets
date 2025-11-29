@@ -16,21 +16,21 @@
 @Entry
 @Component
 struct BorderRadiusRenderStrategy {
-  @State Render: RenderStrategy|undefined|null = 10
+  @State render: RenderStrategy|undefined|null = 10
   @State str : string = '10'
   build() {
     NavDestination() {
       Column({ space: 2 }) {
         Row(){
           Button('NULL').onClick(() => {
-            this.Render = null
+            this.render = null
             this.str = 'null'
           })
             .id('RenderStrategyNull')
             .width(60)
             .height(25)
           Button('UNDEFINED').onClick(() => {
-            this.Render = undefined
+            this.render = undefined
             this.str = 'undefined'
           })
             .id('RenderStrategyUndefined')
@@ -39,14 +39,14 @@ struct BorderRadiusRenderStrategy {
         }
         Row(){
           Button('FAST').onClick(() => {
-            this.Render  = RenderStrategy.FAST  
+            this.render  = RenderStrategy.FAST  
             this.str = this.Render.toString()
           })
             .id('RenderStrategyFast')
             .width(60)
             .height(25)
           Button('OFFSCREEN').onClick(() => {
-            this.Render  = RenderStrategy.OFFSCREEN 
+            this.render  = RenderStrategy.OFFSCREEN 
             this.str = this.Render.toString()
           })
             .id('RenderStrategyOffscreen')
@@ -73,7 +73,7 @@ struct BorderRadiusRenderStrategy {
           .width(180)
           .height(100)
           .backgroundColor(Color.Pink)
-          .borderRadius(50, this.Render)
+          .borderRadius(50, this.render)
           .clip(true)
         }
       }
