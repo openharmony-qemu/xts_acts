@@ -1933,11 +1933,11 @@ export default function settingUiJsunit() {
           await settings.setValue(mContext, '', value,  settings.domainName.DEVICE_SHARED);
           let result =
             await settings.getValue(globalThis.abilityContext, '', settings.domainName.DEVICE_SHARED);
-          expect(result === value).assertTrue();
+          expect().assertFail();
           done();
         } catch (err) {
           console.error("[settings_get_value_key_empty] error = " + err);
-          expect().assertFail();
+          expect(err.code).assertEqual(201);
           done();
           return;
         }
