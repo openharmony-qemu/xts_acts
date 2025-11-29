@@ -43,16 +43,16 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: beforeAll: Prerequisites at the test suite level`);
     })
 
-    beforeEach(async () => {
+    beforeEach(() => {
       console.info(`${TagFrmwkRender}: beforeEach: Prerequisites at the test case level`);
-      await Utils.msSleep(1000);
     })
 
     afterEach(() => {
       console.info(`${TagFrmwkRender}: afterEach: Test case-level clearance conditions`);
+      await Utils.msSleep(1000);
     })
 
-    afterAll(async () => {
+    afterAll(() => {
       console.info(`${TagFrmwkRender}: afterAll: Test suite-level cleanup condition`);
     })
 
