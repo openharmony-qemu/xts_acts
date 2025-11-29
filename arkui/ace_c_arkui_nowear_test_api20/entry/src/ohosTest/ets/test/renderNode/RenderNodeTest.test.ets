@@ -25,13 +25,13 @@ export default function RenderNodeTest(){
       done();
     });
 
-    /**
-     * @tc.name   testRenderNode001
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0100
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+    /*
+     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0100
+     * @tc.name       : testRenderNode001
+     * @tc.desc       : Test InitModuleForArkTSEnv
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testRenderNode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode001()).assertEqual(0)
@@ -39,8 +39,8 @@ export default function RenderNodeTest(){
     })
 
     /*
-     * @tc.number     : testRenderNode009
-     * @tc.name       : SUB_ARKUI_CAPI_testRenderNode_0900
+     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0900
+     * @tc.name       : testRenderNode009
      * @tc.desc       : Test InitModuleForArkTSEnv
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -51,92 +51,92 @@ export default function RenderNodeTest(){
       done();
     })
 
-    /**
-     * @tc.name   testRenderNode002
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0200
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+    /*
+    * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0200
+    * @tc.name       : testRenderNode002
+    * @tc.desc       : Test InitModuleForArkTSEnv
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
     it('testRenderNode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode002()).assertEqual(0)
       done();
     })
 
-    /**
-     * @tc.name   testRenderNode003
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0300
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+    /*
+    * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0300
+    * @tc.name       : testRenderNode003
+    * @tc.desc       : Test InitModuleForArkTSEnv
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
     it('testRenderNode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode003()).assertEqual(0)
       done();
     })
 
-    /**
-     * @tc.name   testRenderNode004
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0400
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+        /*
+    * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0400
+    * @tc.name       : testRenderNode004
+    * @tc.desc       : Test InitModuleForArkTSEnv
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
     it('testRenderNode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode004()).assertEqual(0)
       done();
     })
 
-    /**
-     * @tc.name   testRenderNode005
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0500
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+        /*
+    * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0500
+    * @tc.name       : testRenderNode005
+    * @tc.desc       : Test InitModuleForArkTSEnv
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
     it('testRenderNode005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode005()).assertEqual(0)
       done();
     })
 
-    /**
-     * @tc.name   testRenderNode006
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0600
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+        /*
+    * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0600
+    * @tc.name       : testRenderNode006
+    * @tc.desc       : Test InitModuleForArkTSEnv
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
     it('testRenderNode006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode006()).assertEqual(0)
       done();
     })
 
-    /**
-     * @tc.name   testRenderNode007
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0700
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+        /*
+    * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0700
+    * @tc.name       : testRenderNode007
+    * @tc.desc       : Test InitModuleForArkTSEnv
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
     it('testRenderNode007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode007()).assertEqual(0)
       done();
     })
 
-    /**
-     * @tc.name   testRenderNode008
-     * @tc.number SUB_ARKUI_CAPI_testRenderNode_0800
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+        /*
+    * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0800
+    * @tc.name       : testRenderNode008
+    * @tc.desc       : Test InitModuleForArkTSEnv
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
     it('testRenderNode008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRenderNode008()).assertEqual(0)
       done();
