@@ -106,7 +106,7 @@ export default function GlobalResMgrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('GlobalResMgrTest_getOverrideResourceManager_0100', Level.LEVEL2, () => {
+    it('GlobalResMgrTest_getSysResourceManager_0100', Level.LEVEL2, () => {
       try {
         let sysResMgr = resourceManager.getSysResourceManager();
         expect(sysResMgr.getStringSync($r('sys.string.general_next_year').id))
@@ -117,8 +117,8 @@ export default function GlobalResMgrTest() {
           .assertEqual(res.getSymbol($r('sys.symbol.message').id))
         expect(sysResMgr.getColor($r('sys.color.alert').id))
           .assertEqual(res.getColor($r('sys.color.alert').id))
-        expect(sysResMgr.getMediaContentBase64Sync($r('sys.media.ic_grid_log').id))
-          .assertEqual(res.getMediaContentBase64Sync($r('sys.media.ic_grid_log').id))
+        expect(sysResMgr.getMediaContentBase64Sync($r('sys.media.Copy_Drag').id))
+          .assertEqual(res.getMediaContentBase64Sync($r('sys.media.Copy_Drag').id))
       } catch(error) {
         expect(JSON.stringify(error)).assertFail();
       }
