@@ -65,15 +65,15 @@ static napi_value TestRenderNode001(napi_env env, napi_callback_info info)
     ASSERT_EQ(result9, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_RenderNodeUtils_GetChildrenCount(rootRenderNode, &count);
     ASSERT_EQ(count, 0);
-    auto result10 = OH_ArkUI_RenderNodeUtils_DisposeNode(rootRenderNode);
-    ASSERT_EQ(result10, ARKUI_ERROR_CODE_NO_ERROR);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result10=%{public}d", result10);
-    auto result11 = OH_ArkUI_RenderNodeUtils_ClearChildren(nullptr);
-    ASSERT_EQ(result11, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result11=%{public}d", result11);
     auto result12 = OH_ArkUI_RenderNodeUtils_RemoveChild(nullptr, rsNodeSecondChild);
     ASSERT_EQ(result12, ARKUI_ERROR_CODE_PARAM_INVALID);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result12=%{public}d", result12);
+    auto result22 = OH_ArkUI_RenderNodeUtils_AddChild(nullptr, rsNodeFirstChild);
+    ASSERT_EQ(result22, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result22=%{public}d", result22);
+    auto result21 = OH_ArkUI_RenderNodeUtils_InsertChildAfter(nullptr, rsNodeSecondChild, rsNodeSecondChild);
+    ASSERT_EQ(result21, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager" "TestRenderNode009 result21=%{public}d", result21);
     NAPI_END;
 }
 
@@ -119,10 +119,11 @@ static napi_value TestRenderNode009(napi_env env, napi_callback_info info)
     ASSERT_EQ(result20, ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result20=%{public}d", result20);
     ASSERT_EQ(ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST, NUMBER_106404);
-    auto result21 = OH_ArkUI_RenderNodeUtils_InsertChildAfter(nullptr, rsNodeSecondChild, rsNodeSecondChild);
-    ASSERT_EQ(result21, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager" "TestRenderNode009 result21=%{public}d", result21);
-    auto result22 = OH_ArkUI_RenderNodeUtils_AddChild(nullptr, rsNodeFirstChild);
+
+    auto result21 = OH_ArkUI_RenderNodeUtils_DisposeNode(rootRenderNode);
+    ASSERT_EQ(result21, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result21=%{public}d", result21);
+    auto result22 = OH_ArkUI_RenderNodeUtils_ClearChildren(nullptr);
     ASSERT_EQ(result22, ARKUI_ERROR_CODE_PARAM_INVALID);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result22=%{public}d", result22);
     auto result23 = OH_ArkUI_RenderNodeUtils_DisposeNode(nullptr);
