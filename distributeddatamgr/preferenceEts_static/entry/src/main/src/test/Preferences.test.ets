@@ -1284,7 +1284,7 @@ export default function preferenceTest() {
       hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, ret:" + ret);
       expect(baseInt).assertEqual(ret);
       hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, typeof(ret):" + typeof(ret));
-      // expect(typeof(ret)).assertEqual("int");
+      expect(typeof(ret)).assertEqual("number");
       await dataPreferences.deletePreferences(context, 'test_preferences_base_int');
       done();
     })
