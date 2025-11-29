@@ -40,14 +40,14 @@ struct BorderRadiusRenderStrategy {
         Row(){
           Button('FAST').onClick(() => {
             this.render  = RenderStrategy.FAST  
-            this.str = this.Render.toString()
+            this.str = this.render.toString()
           })
             .id('RenderStrategyFast')
             .width(60)
             .height(25)
           Button('OFFSCREEN').onClick(() => {
             this.render  = RenderStrategy.OFFSCREEN 
-            this.str = this.Render.toString()
+            this.str = this.render.toString()
           })
             .id('RenderStrategyOffscreen')
             .width(85)
