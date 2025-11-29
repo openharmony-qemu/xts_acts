@@ -45,6 +45,43 @@ const OH_AudioFormat audioFormatOutput = {.samplingRate = OH_Audio_SampleRate::S
                                           .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
                                           .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE};
 
+std::vector<OH_AudioNode_Type> audioNodeTypeTest = {
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_NOISE_REDUCTION_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SOUND_FIELD_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_VOICE_BEAUTIFIER_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_ENVIRONMENT_EFFECT_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST),
+};
+
+std::vector<OH_Audio_SampleFormat> audioSampleFormatTest = {
+    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_U8_TEST),
+    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S16LE_TEST),
+    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S24LE_TEST),
+    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S32LE_TEST),
+    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_F32LE_TEST),
+};
+
+std::vector<OH_Audio_SampleRate> audioSampleRateTest = {
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_8000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_11025_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_12000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_16000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_22050_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_24000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_32000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_44100_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_48000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_64000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_88200_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_96000_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_176400_TEST),
+    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_192000_TEST),
+};
+
 std::vector<char> audioData(g_frameSize);
 bool g_finishedFlag = false;
 OH_EqualizerFrequencyBandGains frequencyBandGains[]{
@@ -177,18 +214,6 @@ static napi_value AudioSuiteEngineDestroyTest_0003(napi_env env, napi_callback_i
     return res;
 }
 
-std::vector<OH_AudioNode_Type> audioNodeTypeTest = {
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_NOISE_REDUCTION_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SOUND_FIELD_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_VOICE_BEAUTIFIER_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_ENVIRONMENT_EFFECT_TEST),
-    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST),
-};
-
 static napi_value AudioSuiteNodeBuilderSetNodeTypeTest_0001(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -240,31 +265,6 @@ static napi_value AudioSuiteNodeBuilderSetNodeTypeTest_0002(napi_env env, napi_c
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
     return res;
 }
-
-std::vector<OH_Audio_SampleFormat> audioSampleFormatTest = {
-    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_U8_TEST),
-    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S16LE_TEST),
-    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S24LE_TEST),
-    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S32LE_TEST),
-    static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_F32LE_TEST),
-};
-
-std::vector<OH_Audio_SampleRate> audioSampleRateTest = {
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_8000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_11025_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_12000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_16000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_22050_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_24000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_32000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_44100_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_48000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_64000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_88200_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_96000_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_176400_TEST),
-    static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_192000_TEST),
-};
 
 static napi_value AudioSuiteNodeBuilderSetFormatTest_0001(napi_env env, napi_callback_info info)
 {
@@ -498,6 +498,7 @@ static napi_value AudioSuiteNodeBuilderSetFormatTest_0007(napi_env env, napi_cal
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
     return res;
 }
+
 static napi_value AudioSuiteNodeBuilderSetFormatTest_0008(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -529,6 +530,7 @@ static napi_value AudioSuiteNodeBuilderSetFormatTest_0008(napi_env env, napi_cal
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
     return res;
 }
+
 static napi_value InputNodeRequestDataCallbackTest_0001(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -557,6 +559,7 @@ static napi_value InputNodeRequestDataCallbackTest_0001(napi_env env, napi_callb
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
     return res;
 }
+
 static napi_value InputNodeRequestDataCallbackTest_0002(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -4040,12 +4043,12 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_001(napi_env env, napi_ca
     audioDataArray->audioDataArray = audioDataPtr;
     audioDataArray->arraySize = NUM_TWO;
     audioDataArray->requestFrameSize = REQUEST_FRAME_SIZE;
-
+    bool isSupported = IsNodeTypeSupported(EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
     AudioSuiteRAII audioSuite;
     do {
         OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
                                                                         &responseSize, &g_finishedFlag);
-        if (res != AUDIOSUITE_SUCCESS) {
+        if (isSupported && res != AUDIOSUITE_SUCCESS) {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
             LOG("AudioSuiteEngine_MultiRenderFrame001 fail, result is: %{public}d", res);
             return result;
@@ -4158,7 +4161,7 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_005(napi_env env, napi_ca
     audioDataArray->audioDataArray = audioDataPtr;
     audioDataArray->arraySize = NUM_TWO;
     audioDataArray->requestFrameSize = REQUEST_FRAME_SIZE;
-
+    bool isSupported = IsNodeTypeSupported(EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
     AudioSuiteRAII audioSuite;
     do {
         OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray, &responseSize,
@@ -4166,7 +4169,7 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_005(napi_env env, napi_ca
     } while (!g_finishedFlag);
     OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
                                                                     &responseSize, &g_finishedFlag);
-    if (res != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+    if (isSupported && res != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
         LOG("OH_AudioSuiteEngine_MultiRenderFrame_005 fail, result is: %{public}d", res);
         return result;
