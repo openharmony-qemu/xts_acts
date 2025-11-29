@@ -55,7 +55,10 @@
 #define NUMBER_106204 106204
 #define NUMBER_106106 106106
 #define NUMBER_500 500
-
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_3 3
+#define NUMBER_4 4
 namespace ArkUICapiTest {
 
 static napi_value RenderNodeUtils_001(napi_env env, napi_callback_info info)
@@ -217,11 +220,11 @@ static napi_value RenderNodeUtils_005(napi_env env, napi_callback_info info)
     OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_64,
         ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT);
 
-    ASSERT_EQ(ARKUI_CORNER_DIRECTION_TOP_LEFT, 1); 
-    ASSERT_EQ(ARKUI_CORNER_DIRECTION_TOP_RIGHT, 2); 
-    ASSERT_EQ(ARKUI_CORNER_DIRECTION_BOTTOM_LEFT, 3); 
-    ASSERT_EQ(ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT, 4); 
-    
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_TOP_LEFT, NUMBER_1);
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_TOP_RIGHT, NUMBER_2);
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_BOTTOM_LEFT, NUMBER_3);
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT, NUMBER_4);
+
     auto result5_2 = OH_ArkUI_RenderNodeUtils_SetBorderRadius(rsNodeRoot, radiusOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "OH_ArkUI_RenderNodeUtils_SetBorderStyle RenderNodeUtils_005 result=%{public}d", result5_2);
