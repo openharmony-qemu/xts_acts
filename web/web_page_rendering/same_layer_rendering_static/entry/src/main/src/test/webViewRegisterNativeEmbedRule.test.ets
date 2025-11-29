@@ -52,14 +52,14 @@ export default function webViewRegisterNativeEmbedRule() {
       await Utils.msSleep(1000);
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERNATIVEEMBEDRULE_API_0500
-    * @tc.name       : testWebViewRegisterNativeEmbedRule_static_001
-    * @tc.desc       : test registerNativeEmbedRule
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testWebViewRegisterNativeEmbedRule_static_001
+     * @tc.number SUB_ACE_WEB_REGISTERNATIVEEMBEDRULE_API_0500
+     * @tc.desc   test registerNativeEmbedRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebViewRegisterNativeEmbedRule_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewRegisterNativeEmbedRule', 10)
       await Utils.msSleep(2000);

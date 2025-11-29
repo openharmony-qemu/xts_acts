@@ -41,14 +41,14 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEDATAEX_RETURN_STRING_0001
-    * @tc.name       : testGetResponseDataExReturnString
-    * @tc.desc       : test getResponseDataEx return string type
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testGetResponseDataExReturnString
+     * @tc.number SUB_WEB_GETRESPONSEDATAEX_RETURN_STRING_0001
+     * @tc.desc   test getResponseDataEx return string type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResponseDataExReturnString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "testGetResponseDataExReturnString"
       Utils.emitEvent("testGetResponseDataExReturnString", 124601)
@@ -61,14 +61,14 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
 
    
 
-   /*
-    * @tc.number     : SUB_WEB_GETRESPONSEISREADY_RETURN_TRUE_0005
-    * @tc.name       : testGetResponseIsReadyReturnTrue
-    * @tc.desc       : test getResponseIsReady return true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetResponseIsReadyReturnTrue
+     * @tc.number SUB_WEB_GETRESPONSEISREADY_RETURN_TRUE_0005
+     * @tc.desc   test getResponseIsReady return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetResponseIsReadyReturnTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testGetResponseIsReadyReturnTrue"
       Utils.emitEvent("testGetResponseIsReadyReturnTrue", 124601)

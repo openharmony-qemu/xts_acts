@@ -56,10 +56,13 @@ export default function webTwoJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_001                                                                                                                                                                     
-     *tc.name GetCertificate                                                                                                                                                                                                                 
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.name   GetCertificate
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_001
+     * @tc.desc   GetCertificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetCertificate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetCertificate", 160830);

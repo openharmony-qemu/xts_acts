@@ -56,14 +56,14 @@ export default function webViewContJavaScriptError() {
       console.info(' beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEBVIEWERROR_2700
-    * @tc.name       : testRunJavaScriptCallbackInitErrStatic
-    * @tc.desc       : test interface of runJavaScript (callback) with not been associated with specific Web Components
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testRunJavaScriptCallbackInitErrStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2700
+     * @tc.desc   test interface of runJavaScript (callback) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRunJavaScriptCallbackInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitRunJavaScriptCallbackInitErr';
       Utils.emitEvent(emitKey, 10)
@@ -75,14 +75,14 @@ export default function webViewContJavaScriptError() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEBVIEWERROR_2800
-    * @tc.name       : testRunJavaScriptPromiseInitErrStatic
-    * @tc.desc       : interface of runJavaScript (promise) with not been associated with specific Web Components
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testRunJavaScriptPromiseInitErrStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2800
+     * @tc.desc   interface of runJavaScript (promise) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRunJavaScriptPromiseInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitRunJavaScriptPromiseInitErr';
       Utils.emitEvent(emitKey, 10)
@@ -94,14 +94,14 @@ export default function webViewContJavaScriptError() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_WEBVIEWERROR_2900
-    * @tc.name       : testRunJavaScriptExtCallbackInitErrStatic
-    * @tc.desc       : test interface of runJavaScriptExt (callback) with not been associated with specific Web Components
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testRunJavaScriptExtCallbackInitErrStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2900
+     * @tc.desc   test interface of runJavaScriptExt (callback) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRunJavaScriptExtCallbackInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitRunJavaScriptExtCallbackInitErr';
       Utils.emitEvent(emitKey, 10)
@@ -113,14 +113,14 @@ export default function webViewContJavaScriptError() {
       done();
     })
 
-    /*
-   * @tc.number     : SUB_ACE_BASIC_ETS_WEBVIEWERROR_3000
-   * @tc.name       : testRunJavaScriptExtPromiseInitErrStatic
-   * @tc.desc       : test interface of runJavaScriptExt (promise) with not been associated with specific Web Components
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
+    /**
+     * @tc.name   testRunJavaScriptExtPromiseInitErrStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3000
+     * @tc.desc   test interface of runJavaScriptExt (promise) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRunJavaScriptExtPromiseInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitRunJavaScriptExtPromiseInitErr';
       Utils.emitEvent(emitKey, 10)

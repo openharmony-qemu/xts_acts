@@ -59,14 +59,14 @@ export default function WebResourceTypeTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_MAIN_FRAME
-    * @tc.name       : testWebResourceTypeMainFrame
-    * @tc.desc       : test WebResourceTypeMainFrame
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebResourceTypeMainFrame
+     * @tc.number SUB_WEBVIEW_WebResourceType_MAIN_FRAME
+     * @tc.desc   test WebResourceTypeMainFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebResourceTypeMainFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeMainFrame", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeMainFrame", 0, 25110700, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -75,14 +75,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_STYLE_SHEET
-    * @tc.name       : testWebResourceTypeStyleSheet
-    * @tc.desc       : test WebResourceTypeStyleSheet
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeStyleSheet
+     * @tc.number SUB_WEBVIEW_WebResourceType_STYLE_SHEET
+     * @tc.desc   test WebResourceTypeStyleSheet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeStyleSheet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeStyleSheet", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeStyleSheet", 0, 25110702, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -91,14 +91,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_SCRIPT
-    * @tc.name       : testWebResourceTypeScript
-    * @tc.desc       : test WebResourceTypeScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeScript
+     * @tc.number SUB_WEBVIEW_WebResourceType_SCRIPT
+     * @tc.desc   test WebResourceTypeScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeScript', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeScript", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeScript", 0, 25110703, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -107,14 +107,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_IMAGE
-    * @tc.name       : testWebResourceTypeImage
-    * @tc.desc       : test WebResourceTypeImage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeImage
+     * @tc.number SUB_WEBVIEW_WebResourceType_IMAGE
+     * @tc.desc   test WebResourceTypeImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeImage", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeImage", 0, 25110704, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -123,14 +123,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_FONT_RESOURCE
-    * @tc.name       : testWebResourceTypeFontResource
-    * @tc.desc       : test WebResourceTypeFontResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeFontResource
+     * @tc.number SUB_WEBVIEW_WebResourceType_FONT_RESOURCE
+     * @tc.desc   test WebResourceTypeFontResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeFontResource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeFontResource", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeFontResource", 0, 25110705, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -139,14 +139,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_FAVICON
-    * @tc.name       : testWebResourceFavicon
-    * @tc.desc       : test tWebResourceFavicon
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceFavicon
+     * @tc.number SUB_WEBVIEW_WebResourceType_FAVICON
+     * @tc.desc   test tWebResourceFavicon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceFavicon', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceFavicon", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceFavicon", 0, 25110712, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -155,14 +155,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_XHR
-    * @tc.name       : testWebResourceTypeXhr
-    * @tc.desc       : test WebResourceTypeXhr
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeXhr
+     * @tc.number SUB_WEBVIEW_WebResourceType_XHR
+     * @tc.desc   test WebResourceTypeXhr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeXhr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeXhr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeXhr", 0, 25110713, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -171,14 +171,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_SERVICE_WORKER
-    * @tc.name       : testWebResourceTypeServiceWorker
-    * @tc.desc       : test WebResourceTypeServiceWorker
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeServiceWorker
+     * @tc.number SUB_WEBVIEW_WebResourceType_SERVICE_WORKER
+     * @tc.desc   test WebResourceTypeServiceWorker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeServiceWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeServiceWorker", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeServiceWorker", 0, 25110715, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -187,14 +187,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_SUB_FRAME
-    * @tc.name       : testWebResourceTypeSubFrame
-    * @tc.desc       : test WebResourceTypeSubFrame
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeSubFrame
+     * @tc.number SUB_WEBVIEW_WebResourceType_SUB_FRAME
+     * @tc.desc   test WebResourceTypeSubFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeSubFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeSubFrame", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeSubFrame", 0, 25110701, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -203,14 +203,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_OBJECT
-    *@tc.name    : testWebResourceTypeObject
-    *@tc.desc    : test WebResourceType OBJECT
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeObject
+     * @tc.number SUB_WEBVIEW_WebResourceType_OBJECT
+     * @tc.desc   test WebResourceType OBJECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
      Utils.emitEvent("testWebResourceTypeObject", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeObject", 0, 25110707, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -220,14 +220,14 @@ export default function WebResourceTypeTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_MEDIA
-    * @tc.name       : testWebResourceTypeMedia
-    * @tc.desc       : test WebResourceTypeMedia
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeMedia
+     * @tc.number SUB_WEBVIEW_WebResourceType_MEDIA
+     * @tc.desc   test WebResourceTypeMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeMedia', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeMedia", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeMedia", 0, 25110708, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -236,14 +236,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_PING
-    * @tc.name       : testWebResourceTypePing
-    * @tc.desc       : test WebResourceTypePing
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypePing
+     * @tc.number SUB_WEBVIEW_WebResourceType_PING
+     * @tc.desc   test WebResourceTypePing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypePing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypePing", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypePing", 0, 25110714, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -252,14 +252,14 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_PREFETCH
-    * @tc.name       : testWebResourceTypePrefetch
-    * @tc.desc       : test WebResourceType PREFETCH
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypePrefetch
+     * @tc.number SUB_WEBVIEW_WebResourceType_PREFETCH
+     * @tc.desc   test WebResourceType PREFETCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypePrefetch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypePrefetch", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypePrefetch", 0, 25110711, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -269,14 +269,14 @@ export default function WebResourceTypeTest() {
     })
 
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_SUB_RESOURCE
-    *@tc.name    : testWebResourceTypeSubResource
-    *@tc.desc    : test WebResourceType SUB_RESOURCE
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeSubResource
+     * @tc.number SUB_WEBVIEW_WebResourceType_SUB_RESOURCE
+     * @tc.desc   test WebResourceType SUB_RESOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeSubResource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebResourceTypeSubResource start')
         try {
@@ -291,14 +291,14 @@ export default function WebResourceTypeTest() {
 
 
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_WORKER
-    *@tc.name    : testWebResourceTypeWorker
-    *@tc.desc    : test WebResourceType WORKER
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeWorker
+     * @tc.number SUB_WEBVIEW_WebResourceType_WORKER
+     * @tc.desc   test WebResourceType WORKER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebResourceTypeWorker start')
         try {
@@ -311,14 +311,14 @@ export default function WebResourceTypeTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_SHARED_WORKER
-    *@tc.name    : testWebResourceTypeSharedWorker
-    *@tc.desc    : test WebResourceType SHARED_WORKER
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeSharedWorker
+     * @tc.number SUB_WEBVIEW_WebResourceType_SHARED_WORKER
+     * @tc.desc   test WebResourceType SHARED_WORKER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeSharedWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebResourceTypeSharedWorker start')
         try {
@@ -331,14 +331,14 @@ export default function WebResourceTypeTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_CSP_REPORT
-    *@tc.name    : testWebResourceTypeCspReport
-    *@tc.desc    : test WebResourceType CSP_REPORT
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeCspReport
+     * @tc.number SUB_WEBVIEW_WebResourceType_CSP_REPORT
+     * @tc.desc   test WebResourceType CSP_REPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeCspReport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebResourceTypeCspReport start')
         try {
@@ -351,14 +351,14 @@ export default function WebResourceTypeTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_PLUGIN_RESOURCE
-    *@tc.name    : testWebResourceTypePluginResource
-    *@tc.desc    : test WebResourceType PLUGIN_RESOURCE
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypePluginResource
+     * @tc.number SUB_WEBVIEW_WebResourceType_PLUGIN_RESOURCE
+     * @tc.desc   test WebResourceType PLUGIN_RESOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypePluginResource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebResourceTypePluginResource start')
         try {
@@ -371,14 +371,14 @@ export default function WebResourceTypeTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_NAVIGATION_PRELOAD_MAIN_FRAME
-    *@tc.name    : testWebResourceTypeNavigationPreloadMainFrame
-    *@tc.desc    : test WebResourceType NAVIGATION_PRELOAD_MAIN_FRAME
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeNavigationPreloadMainFrame
+     * @tc.number SUB_WEBVIEW_WebResourceType_NAVIGATION_PRELOAD_MAIN_FRAME
+     * @tc.desc   test WebResourceType NAVIGATION_PRELOAD_MAIN_FRAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeNavigationPreloadMainFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebResourceTypeNavigationPreloadMainFrame start')
         try {
@@ -391,14 +391,14 @@ export default function WebResourceTypeTest() {
         done()
     })
 
-   /*
-    *@tc.number  : SUB_WEBVIEW_WebResourceType_NAVIGATION_PRELOAD_SUB_FRAME
-    *@tc.name    : testWebResourceTypeNavigationPreloadSubFrame
-    *@tc.desc    : test WebResourceType NAVIGATION_PRELOAD_SUB_FRAME
-    *@tc.size    : MediumTest
-    *@tc.type    : Function
-    *@tc.level   : Level 2
-    */
+    /**
+     * @tc.name   testWebResourceTypeNavigationPreloadSubFrame
+     * @tc.number SUB_WEBVIEW_WebResourceType_NAVIGATION_PRELOAD_SUB_FRAME
+     * @tc.desc   test WebResourceType NAVIGATION_PRELOAD_SUB_FRAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebResourceTypeNavigationPreloadSubFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testWebResourceTypeNavigationPreloadSubFrame start')
         try {

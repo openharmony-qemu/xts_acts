@@ -53,13 +53,13 @@ export default function ActsAceWebViewSetConnectionTimeout() {
 
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_SETCONNECTIONTIMEOUT_API_0001
-     *@tc.name testWebViewSetConnectionTimeoutZeroSecondsStatic
-     *@tc.desc test setConnectionTimeout
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSetConnectionTimeoutZeroSecondsStatic
+     * @tc.number SUB_ACE_WEB_SETCONNECTIONTIMEOUT_API_0001
+     * @tc.desc   test setConnectionTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSetConnectionTimeoutZeroSecondsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -75,13 +75,13 @@ export default function ActsAceWebViewSetConnectionTimeout() {
 
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_SETCONNECTIONTIMEOUT_API_0003
-     *@tc.name testWebViewSetConnectionTimeoutNegativeOneSecondsStatic
-     *@tc.desc test setConnectionTimeout_negative_one
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSetConnectionTimeoutNegativeOneSecondsStatic
+     * @tc.number SUB_ACE_WEB_SETCONNECTIONTIMEOUT_API_0003
+     * @tc.desc   test setConnectionTimeout_negative_one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSetConnectionTimeoutNegativeOneSecondsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

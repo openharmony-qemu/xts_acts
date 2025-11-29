@@ -57,14 +57,14 @@ export default function WebViewEnumAndSetWebController() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONTOUCHICONURLRECEIVED_0100
-    * @tc.name       : testOnTouchIconUrlReceived001
-    * @tc.desc       : test onTouchIconUrlReceived
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testOnTouchIconUrlReceived001
+     * @tc.number SUB_WEB_ONTOUCHICONURLRECEIVED_0100
+     * @tc.desc   test onTouchIconUrlReceived
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnTouchIconUrlReceived001',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("emitOnTouchIconUrlReceived", 10)

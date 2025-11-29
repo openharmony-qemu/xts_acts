@@ -49,14 +49,14 @@ export default function webViewControllerDownloadTest() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-    * @tc.number      : SUB_WEB_WEBVIEWCONTROLLER_SETDOWNLOADDELEGATE_GROUP_0100
-    * @tc.name        : testSetDownloadDelegateGroup001
-    * @tc.desc        : test setDownloadDelegate
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testSetDownloadDelegateGroup001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETDOWNLOADDELEGATE_GROUP_0100
+     * @tc.desc   test setDownloadDelegate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetDownloadDelegateGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -69,14 +69,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBVIEWCONTROLLER_STARTDOWNLOAD_GROUP_0100
-    * @tc.name        : testStartDownloadGroup001
-    * @tc.desc        : test startDownload
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testStartDownloadGroup001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STARTDOWNLOAD_GROUP_0100
+     * @tc.desc   test startDownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testStartDownloadGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -89,14 +89,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0100
-    * @tc.name        : testWebDownloadStateGroup001
-    * @tc.desc        : test WebDownloadState.IN_PROGRESS
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0100
+     * @tc.desc   test WebDownloadState.IN_PROGRESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebDownloadStateGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -109,14 +109,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0200
-    * @tc.name        : testWebDownloadStateGroup002
-    * @tc.desc        : test WebDownloadState.COMPLETED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0200
+     * @tc.desc   test WebDownloadState.COMPLETED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebDownloadStateGroup002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -129,14 +129,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0300
-    * @tc.name        : testWebDownloadStateGroup003
-    * @tc.desc        : test WebDownloadState.CANCELED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup003
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0300
+     * @tc.desc   test WebDownloadState.CANCELED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebDownloadStateGroup003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -149,14 +149,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0400
-    * @tc.name        : testWebDownloadStateGroup004
-    * @tc.desc        : test WebDownloadState.INTERRUPTED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup004
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0400
+     * @tc.desc   test WebDownloadState.INTERRUPTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebDownloadStateGroup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -169,14 +169,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0500
-    * @tc.name        : testWebDownloadStateGroup005
-    * @tc.desc        : test WebDownloadState.PENDING
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup005
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0500
+     * @tc.desc   test WebDownloadState.PENDING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebDownloadStateGroup005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -189,14 +189,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0600
-    * @tc.name        : testWebDownloadStateGroup006
-    * @tc.desc        : test WebDownloadState.PENDING
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup006
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0600
+     * @tc.desc   test WebDownloadState.PENDING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebDownloadStateGroup006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
         await Utils.msSleep(2000);
@@ -210,14 +210,14 @@ export default function webViewControllerDownloadTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0100
-    * @tc.name        : testGetGuidGroup001
-    * @tc.desc        : test WebDownloadItem.getGuid
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetGuidGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetGuidGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -230,14 +230,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0200
-    * @tc.name        : testGetGuidGroup002
-    * @tc.desc        : test WebDownloadItem.getGuid when download two files
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetGuidGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0200
+     * @tc.desc   test WebDownloadItem.getGuid when download two files
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetGuidGroup002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -250,14 +250,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETCURRENTSPEED_GROUP_0100
-    * @tc.name        : testGetCurrentSpeedGroup001
-    * @tc.desc        : test WebDownloadItem.getCurrentSpeed
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetCurrentSpeedGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETCURRENTSPEED_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getCurrentSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetCurrentSpeedGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -270,14 +270,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0100
-    * @tc.name        : testGetPercentCompleteGroup001
-    * @tc.desc        : test WebDownloadItem.getPercentComplete
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetPercentCompleteGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getPercentComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetPercentCompleteGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -290,14 +290,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0200
-    * @tc.name        : testGetPercentCompleteGroup002
-    * @tc.desc        : test WebDownloadItem.getPercentComplete when download finish
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetPercentCompleteGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0200
+     * @tc.desc   test WebDownloadItem.getPercentComplete when download finish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetPercentCompleteGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -310,14 +310,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETTOTALBYTES_GROUP_0100
-    * @tc.name        : testGetTotalBytesGroup001
-    * @tc.desc        : test WebDownloadItem.getTotalBytes
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetTotalBytesGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETTOTALBYTES_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getTotalBytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetTotalBytesGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -330,14 +330,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMETHOD_GROUP_0100
-    * @tc.name        : testGetMethodGroup001
-    * @tc.desc        : test WebDownloadItem.getMethod
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetMethodGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMETHOD_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getMethod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetMethodGroup001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -350,14 +350,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0100
-    * @tc.name        : testGetMimeTypeGroup001
-    * @tc.desc        : test WebDownloadItem.getMimeType image/png
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetMimeTypeGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getMimeType image/png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetMimeTypeGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -370,14 +370,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0200
-    * @tc.name        : testGetMimeTypeGroup002
-    * @tc.desc        : test WebDownloadItem.getMimeType video/mp4
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetMimeTypeGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0200
+     * @tc.desc   test WebDownloadItem.getMimeType video/mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetMimeTypeGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -390,14 +390,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0300
-    * @tc.name        : testGetMimeTypeGroup003
-    * @tc.desc        : test WebDownloadItem.getMimeType application/x-msdownload
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetMimeTypeGroup003
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0300
+     * @tc.desc   test WebDownloadItem.getMimeType application/x-msdownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetMimeTypeGroup003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -410,14 +410,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETURL_GROUP_0100
-    * @tc.name        : testGetUrlGroup001
-    * @tc.desc        : test WebDownloadItem.getUrl
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetUrlGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETURL_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetUrlGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -430,14 +430,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETSUGGESTEDFILENAME_GROUP_0100
-    * @tc.name        : testGetSuggestedFileNameGroup001
-    * @tc.desc        : test WebDownloadItem.getSuggestedFileName
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetSuggestedFileNameGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETSUGGESTEDFILENAME_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getSuggestedFileName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetSuggestedFileNameGroup001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -450,14 +450,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETRECEIVEDBYTES_GROUP_0100
-    * @tc.name        : testGetReceivedBytesGroup001
-    * @tc.desc        : test WebDownloadItem.getReceivedBytes
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetReceivedBytesGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETRECEIVEDBYTES_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getReceivedBytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetReceivedBytesGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -470,14 +470,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETFULLPATH_GROUP_0100
-    * @tc.name        : testGetFullPathGroup001
-    * @tc.desc        : test WebDownloadItem.getFullPath
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetFullPathGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETFULLPATH_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getFullPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetFullPathGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -490,14 +490,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_SERIALIZE_GROUP_0100
-    * @tc.name        : testSerializeGroup001
-    * @tc.desc        : test WebDownloadItem.serialize
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testSerializeGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_SERIALIZE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.serialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSerializeGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -510,14 +510,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_DESERIALIZE_GROUP_0100
-    * @tc.name        : testDeserializeGroup001
-    * @tc.desc        : test WebDownloadItem.deserialize
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testDeserializeGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_DESERIALIZE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.deserialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeserializeGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -530,14 +530,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_RESUME_GROUP_0100
-    * @tc.name        : testResume001
-    * @tc.desc        : test WebDownloadItem.deserialize
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testResume001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_RESUME_GROUP_0100
+     * @tc.desc   test WebDownloadItem.deserialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testResume001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
         await Utils.msSleep(2000);
@@ -551,14 +551,14 @@ export default function webViewControllerDownloadTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADDELEGATE_ONBEFOREDOWNLOAD_GROUP_0100
-    * @tc.name        : testOnBeforeDownloadGroup001
-    * @tc.desc        : test WebDownloadDelegate.onBeforeDownload
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnBeforeDownloadGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADDELEGATE_ONBEFOREDOWNLOAD_GROUP_0100
+     * @tc.desc   test WebDownloadDelegate.onBeforeDownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnBeforeDownloadGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -571,14 +571,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADUPDATED_GROUP_0100
-    * @tc.name        : testOnDownloadUpdatedGroup001
-    * @tc.desc        : test WebDownloadDelegate.onDownloadUpdated
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnDownloadUpdatedGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADUPDATED_GROUP_0100
+     * @tc.desc   test WebDownloadDelegate.onDownloadUpdated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnDownloadUpdatedGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -591,14 +591,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADFINISH_GROUP_0100
-    * @tc.name        : testOnDownloadFinishGroup001
-    * @tc.desc        : test WebDownloadDelegate.onDownloadFinish
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnDownloadFinishGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADFINISH_GROUP_0100
+     * @tc.desc   test WebDownloadDelegate.onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnDownloadFinishGroup001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -611,14 +611,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADMANAGER_SETDOWNLOADDELEGATE_GROUP_0100
-    * @tc.name        : testWebDownloadManagerSetDownloadDelegateGroup001
-    * @tc.desc        : test WebDownloadManager.setDownloadDelegate
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testWebDownloadManagerSetDownloadDelegateGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADMANAGER_SETDOWNLOADDELEGATE_GROUP_0100
+     * @tc.desc   test WebDownloadManager.setDownloadDelegate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebDownloadManagerSetDownloadDelegateGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
@@ -631,14 +631,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADMANAGER_RESUMEDOWNLOAD_GROUP_0100
-    * @tc.name        : testResumeDownload001
-    * @tc.desc        : test WebDownloadManager.ResumeDownload
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testResumeDownload001
+     * @tc.number SUB_WEB_WEBDOWNLOADMANAGER_RESUMEDOWNLOAD_GROUP_0100
+     * @tc.desc   test WebDownloadManager.ResumeDownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testResumeDownload001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
         await Utils.msSleep(2000);

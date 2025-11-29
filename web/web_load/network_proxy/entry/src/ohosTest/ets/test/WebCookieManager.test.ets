@@ -59,28 +59,28 @@ export default function webCookieManager() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_SAVECOOKIESYNC_0100
-    * @tc.name       : testSaveCookieSync001
-    * @tc.desc       : test saveCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSaveCookieSync001
+     * @tc.number SUB_WEB_SAVECOOKIESYNC_0100
+     * @tc.desc   test saveCookieSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSaveCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testSaveCookieSync001', EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent('testSaveCookieSync001', 'success', 200020, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_REMOVEALLCACHE_0100
-    * @tc.name       : testRemoveAllCache001
-    * @tc.desc       : test removeAllCache
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRemoveAllCache001
+     * @tc.number SUB_WEB_REMOVEALLCACHE_0100
+     * @tc.desc   test removeAllCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRemoveAllCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testRemoveAllCache001', EVENT_ID_SET_EMIT_KEY)
       Utils.registerEvent('testRemoveAllCache001', 'success', 200030, done);

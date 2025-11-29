@@ -39,13 +39,13 @@ export default function webJsunit() {
 
 
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_API_060
-     * @tc.name       : javaScriptAccessStatic
-     * @tc.desc       : test runJavaScriptAccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   javaScriptAccessStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_060
+     * @tc.desc   test runJavaScriptAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('javaScriptAccessStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -59,13 +59,13 @@ export default function webJsunit() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_API_070
-     * @tc.name       : javaScriptAccessStatic02
-     * @tc.desc       : test runJavaScriptAccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_070
+     * @tc.desc   test runJavaScriptAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

@@ -59,13 +59,13 @@ export default function webViewController() {
     })
 
     /**
-    * @tc.number       SUB_WEB_SECUREDNSMODE_OFF_0100
-    * @tc.name         testSecureDnsModeOFF001
-    * @tc.desc         test SecureDnsMode OFF
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testSecureDnsModeOFF001
+     * @tc.number SUB_WEB_SECUREDNSMODE_OFF_0100
+     * @tc.desc   test SecureDnsMode OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSecureDnsModeOFF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testSecureDnsModeOFF001";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
@@ -77,13 +77,13 @@ export default function webViewController() {
     })
 
     /**
-    * @tc.number       SUB_WEB_SECUREDNSMODE_AUTO_0100
-    * @tc.name         testSecureDnsModeAUTO001
-    * @tc.desc         test SecureDnsMode AUTO
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testSecureDnsModeAUTO001
+     * @tc.number SUB_WEB_SECUREDNSMODE_AUTO_0100
+     * @tc.desc   test SecureDnsMode AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSecureDnsModeAUTO001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testSecureDnsModeAUTO001";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
@@ -95,13 +95,13 @@ export default function webViewController() {
     })
 
     /**
-    * @tc.number       SUB_WEB_SECUREDNSMODE_SECURE_ONLY_0100
-    * @tc.name         testSecureDnsModeSECURE_ONLY001
-    * @tc.desc         test SecureDnsMode SECURE_ONLY
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testSecureDnsModeSECURE_ONLY001
+     * @tc.number SUB_WEB_SECUREDNSMODE_SECURE_ONLY_0100
+     * @tc.desc   test SecureDnsMode SECURE_ONLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSecureDnsModeSECURE_ONLY001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testSecureDnsModeSECURE_ONLY001";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);

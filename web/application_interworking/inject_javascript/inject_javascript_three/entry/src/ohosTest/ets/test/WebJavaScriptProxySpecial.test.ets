@@ -62,13 +62,13 @@ export default function ActsWebJavaScriptProxySpecial() {
     })
 
     /**
-    * @tc.number SUB_ACE_WEB_JAVASCRIPTPROXY_NULL_API_0001
-    * @tc.name testWebJavaScriptProxySetNull
-    * @tc.desc test javaScriptProxy set null
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
-    */
+     * @tc.name   testWebJavaScriptProxySetNull
+     * @tc.number SUB_ACE_WEB_JAVASCRIPTPROXY_NULL_API_0001
+     * @tc.desc   test javaScriptProxy set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebJavaScriptProxySetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptProxySetNull", 150)
       Utils.registerBaseEvent('testWebJavaScriptProxySetNull', 'null', 25112605, done,
@@ -78,12 +78,12 @@ export default function ActsWebJavaScriptProxySpecial() {
       sendEventByKey('WebJavaScriptProxySpecialButton', 10, '');
     })
     /**
+     * @tc.name   testWebJavaScriptProxySetUndefined
      * @tc.number SUB_ACE_WEB_JAVASCRIPTPROXY_UNDEFINED_API_0001
-     * @tc.name testWebJavaScriptProxySetUndefined
-     * @tc.desc test javaScriptProxy set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test javaScriptProxy set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebJavaScriptProxySetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptProxySetUndefined", 150)

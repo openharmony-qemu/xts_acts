@@ -51,12 +51,12 @@ export default function ActsWebViewTest2() {
 
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0017
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0017
-     * @tc.name testWebView_getAccessibleGeolocation0003
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,   async (done: Function) => {
       Utils.emitEvent("getAccessibleGeolocation1", 160260)
@@ -71,12 +71,12 @@ export default function ActsWebViewTest2() {
 
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0018
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0018
-     * @tc.name testWebView_getAccessibleGeolocation0004
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("getAccessibleGeolocation2", 160260)
@@ -89,12 +89,12 @@ export default function ActsWebViewTest2() {
     });
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0019
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0019
-     * @tc.name testWebView_getStoredGeolocation0003
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("getStoredGeolocation1", 160260)
@@ -107,12 +107,12 @@ export default function ActsWebViewTest2() {
     });
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0020
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0020
-     * @tc.name testWebView_getStoredGeolocation0004
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("getStoredGeolocation2", 160260)

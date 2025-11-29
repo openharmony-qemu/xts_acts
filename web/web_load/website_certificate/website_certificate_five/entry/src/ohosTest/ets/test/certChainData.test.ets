@@ -57,10 +57,13 @@ export default function certChainDataTest() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_CERTCHAINDATA_API_001
-     *tc.name certChainData01
-     *tc.desic test certChainData01 interface when choose callback mode.
+    /**
+     * @tc.name   certChainData01
+     * @tc.number SUB_ACE_CERTCHAINDATA_API_001
+     * @tc.desc   certChainData01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('certChainData01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("certChainData01", EVENT_ID_SET_EMIT_KEY);

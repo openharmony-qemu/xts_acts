@@ -48,14 +48,14 @@ export default function ActsAceWebSafeBrowsing() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-         *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0001
-         *@tc.name testEnableSafeBrowsingTrueStatic
-         *@tc.desc test EnableSafeBrowsingTrue
-         *@tc.size MediumTest
-         *@tc.type Function
-         *@tc.level Level 3
-         */
+    /**
+     * @tc.name   testEnableSafeBrowsingTrueStatic
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0001
+     * @tc.desc   test EnableSafeBrowsingTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEnableSafeBrowsingTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -68,13 +68,13 @@ export default function ActsAceWebSafeBrowsing() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0002
-     *@tc.name testEnableSafeBrowsingFalseStatic
-     *@tc.desc test EnableSafeBrowsingFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testEnableSafeBrowsingFalseStatic
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0002
+     * @tc.desc   test EnableSafeBrowsingFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEnableSafeBrowsingFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -88,13 +88,13 @@ export default function ActsAceWebSafeBrowsing() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0003
-     *@tc.name testIsSafeBrowsingEnabledTrueStatic
-     *@tc.desc test IsSafeBrowsingEnabledTrue
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testIsSafeBrowsingEnabledTrueStatic
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0003
+     * @tc.desc   test IsSafeBrowsingEnabledTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsSafeBrowsingEnabledTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -108,13 +108,13 @@ export default function ActsAceWebSafeBrowsing() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0004
-     *@tc.name testIsSafeBrowsingEnabledFalseStatic
-     *@tc.desc test IsSafeBrowsingEnabledFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testIsSafeBrowsingEnabledFalseStatic
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0004
+     * @tc.desc   test IsSafeBrowsingEnabledFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsSafeBrowsingEnabledFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

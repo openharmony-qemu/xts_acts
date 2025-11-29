@@ -61,14 +61,14 @@ export default function WebViewContextMenuMediaType() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0100
-    * @tc.name       : testContextMenuMediaTypeVideo
-    * @tc.desc       : test getContextMenuMediaType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testContextMenuMediaTypeVideo
+     * @tc.number SUB_WEB_GETCONTEXTMENUMEDIATYPE_0100
+     * @tc.desc   test getContextMenuMediaType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuMediaTypeVideo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeVideo", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -78,15 +78,15 @@ export default function WebViewContextMenuMediaType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0200
-    * @tc.name       : testContextMenuMediaTypeText
-    * @tc.desc       : test getContextMenuMediaType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
 
+    /**
+     * @tc.name   testContextMenuMediaTypeText
+     * @tc.number testContextMenuMediaTypeText
+     * @tc.desc   testContextMenuMediaTypeText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuMediaTypeText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeText", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -96,15 +96,15 @@ export default function WebViewContextMenuMediaType() {
       done();
     })
 
-    /*
-      * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0300
-      * @tc.name       : testContextMenuMediaTypeImage
-      * @tc.desc       : test getContextMenuMediaType
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
 
+    /**
+     * @tc.name   testContextMenuMediaTypeImage
+     * @tc.number testContextMenuMediaTypeImage
+     * @tc.desc   testContextMenuMediaTypeImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuMediaTypeImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeImage", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -114,15 +114,15 @@ export default function WebViewContextMenuMediaType() {
       done();
     })
 
-    /*
-      * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0400
-      * @tc.name       : testContextMenuMediaTypeAudio
-      * @tc.desc       : test getContextMenuMediaType
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
 
+    /**
+     * @tc.name   testContextMenuMediaTypeAudio
+     * @tc.number testContextMenuMediaTypeAudio
+     * @tc.desc   testContextMenuMediaTypeAudio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuMediaTypeAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeAudio", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -132,15 +132,15 @@ export default function WebViewContextMenuMediaType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0500
-    * @tc.name       : testContextMenuMediaTypeCanvas
-    * @tc.desc       : test getContextMenuMediaType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
 
+    /**
+     * @tc.name   testContextMenuMediaTypeCanvas
+     * @tc.number testContextMenuMediaTypeCanvas
+     * @tc.desc   testContextMenuMediaTypeCanvas
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuMediaTypeCanvas', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeCanvas", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;

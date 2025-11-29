@@ -37,14 +37,14 @@ export default function webJsunitTwo() {
       console.info("componentLifeCycleTestOne beforeEach start");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONFULLSCREENENTER_0100
-    * @tc.name        : testOnFullScreenEnterStatic001
-    * @tc.desc        : test onFullScreenEnter
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnFullScreenEnterStatic001
+     * @tc.number SUB_WEB_ONFULLSCREENENTER_0100
+     * @tc.desc   test onFullScreenEnter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnFullScreenEnterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);
       Utils.emitEvent("emitOnFullScreenEnter", 10)

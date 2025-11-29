@@ -56,14 +56,14 @@ export default function jsMessageExt() {
       console.info('jsMessageExt beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETTYPE_0100
-    * @tc.name       : testJsMessageExtGetTypeStatic001
-    * @tc.desc       : test JsMessageExtGetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetTypeStatic001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETTYPE_0100
+     * @tc.desc   test JsMessageExtGetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetType001', 10)
       await Utils.msSleep(2000);
@@ -74,14 +74,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETTYPE_0200
-    * @tc.name       : testJsMessageExtGetTypeStatic002
-    * @tc.desc       : test JsMessageExtGetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetTypeStatic002
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETTYPE_0200
+     * @tc.desc   test JsMessageExtGetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetType002', 10)
       await Utils.msSleep(2000);
@@ -92,14 +92,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETTYPE_0300
-    * @tc.name       : testJsMessageExtGetTypeStatic003
-    * @tc.desc       : test JsMessageExtGetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetTypeStatic003
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETTYPE_0300
+     * @tc.desc   test JsMessageExtGetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetTypeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetType003', 10)
       await Utils.msSleep(2000);
@@ -110,14 +110,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETTYPE_0400
-    * @tc.name       : testJsMessageExtGetTypeStatic004
-    * @tc.desc       : test JsMessageExtGetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetTypeStatic004
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETTYPE_0400
+     * @tc.desc   test JsMessageExtGetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetTypeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetType004', 10)
       await Utils.msSleep(2000);
@@ -128,14 +128,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETTYPE_0500
-    * @tc.name       : testJsMessageExtGetTypeStatic005
-    * @tc.desc       : test JsMessageExtGetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetTypeStatic005
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETTYPE_0500
+     * @tc.desc   test JsMessageExtGetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetTypeStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetType005', 10)
       await Utils.msSleep(2000);
@@ -146,14 +146,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0100
-    * @tc.name       : testJsMessageExtJsMessageTypeStatic001
-    * @tc.desc       : test JsMessageType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtJsMessageTypeStatic001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0100
+     * @tc.desc   test JsMessageType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtJsMessageTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtJsMessageType001', 10)
       await Utils.msSleep(2000);
@@ -164,14 +164,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0200
-    * @tc.name       : testJsMessageExtJsMessageTypeStatic002
-    * @tc.desc       : test JsMessageType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtJsMessageTypeStatic002
+     * @tc.number SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0200
+     * @tc.desc   test JsMessageType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtJsMessageTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtJsMessageType002', 10)
       await Utils.msSleep(2000);
@@ -182,14 +182,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0300
-    * @tc.name       : testJsMessageExtJsMessageTypeStatic003
-    * @tc.desc       : test JsMessageType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtJsMessageTypeStatic003
+     * @tc.number SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0300
+     * @tc.desc   test JsMessageType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtJsMessageTypeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtJsMessageType003', 10)
       await Utils.msSleep(2000);
@@ -200,14 +200,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0400
-    * @tc.name       : testJsMessageExtJsMessageTypeStatic004
-    * @tc.desc       : test JsMessageType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtJsMessageTypeStatic004
+     * @tc.number SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0400
+     * @tc.desc   test JsMessageType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtJsMessageTypeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtJsMessageType004', 10)
       await Utils.msSleep(2000);
@@ -218,14 +218,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0500
-    * @tc.name       : testJsMessageExtJsMessageTypeStatic005
-    * @tc.desc       : test JsMessageType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtJsMessageTypeStatic005
+     * @tc.number SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0500
+     * @tc.desc   test JsMessageType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtJsMessageTypeStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtJsMessageType005', 10)
       await Utils.msSleep(2000);
@@ -236,14 +236,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0600
-    * @tc.name       : testJsMessageExtJsMessageTypeStatic006
-    * @tc.desc       : test JsMessageType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtJsMessageTypeStatic006
+     * @tc.number SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0600
+     * @tc.desc   test JsMessageType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtJsMessageTypeStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtJsMessageType006', 10)
       await Utils.msSleep(2000);
@@ -254,14 +254,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETSTRING_0100
-    * @tc.name       : testJsMessageExtGetString001
-    * @tc.desc       : test JsMessageExtGetString
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetStringStatic001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETSTRING_0100
+     * @tc.desc   test JsMessageExtGetString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetStringStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetString001', 10)
       await Utils.msSleep(2000);
@@ -272,14 +272,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETNUMBER_0100
-    * @tc.name       : testJsMessageExtGetNumberStatic001
-    * @tc.desc       : test JsMessageExtGetNumber
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetNumberStatic001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETNUMBER_0100
+     * @tc.desc   test JsMessageExtGetNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetNumberStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetNumber001', 10)
       await Utils.msSleep(2000);
@@ -292,14 +292,14 @@ export default function jsMessageExt() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETBOOLEAN_0200
-    * @tc.name       : testJsMessageExtGetBooleanStatic002
-    * @tc.desc       : test JsMessageExtGetBoolean
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetBooleanStatic002
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETBOOLEAN_0200
+     * @tc.desc   test JsMessageExtGetBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetBooleanStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetBoolean002', 10)
       await Utils.msSleep(2000);
@@ -310,14 +310,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETARRAYBUFFER_0100
-    * @tc.name       : testJsMessageExtGetArrayBufferStatic001
-    * @tc.desc       : test JsMessageExtGetArrayBuffer
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetArrayBufferStatic001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAYBUFFER_0100
+     * @tc.desc   test JsMessageExtGetArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayBufferStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayBuffer001', 10)
       await Utils.msSleep(2000);
@@ -328,14 +328,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETARRAY_0100
-    * @tc.name       : testJsMessageExtGetArrayStatic001
-    * @tc.desc       : test JsMessageExtGetArray
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testJsMessageExtGetArrayStatic001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAY_0100
+     * @tc.desc   test JsMessageExtGetArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArray001', 10)
       await Utils.msSleep(2000);
@@ -346,14 +346,14 @@ export default function jsMessageExt() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JSMESSAGEEXT_GETARRAY_0200
-    * @tc.name       : testJsMessageExtGetArrayStatic002
-    * @tc.desc       : test JsMessageExtGetArray
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAY_0200
+     * @tc.desc   test JsMessageExtGetArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

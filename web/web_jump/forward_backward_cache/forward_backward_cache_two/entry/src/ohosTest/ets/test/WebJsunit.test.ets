@@ -45,9 +45,12 @@ export default function webJsunit() {
     })
 
     /**
-     * @tc.number     SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_003
-     * @tc.name       Backward
-     * @tc.desic      back to the old page
+     * @tc.name   Backward
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_003
+     * @tc.desc   Backward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Backward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitBackward', 135300)
@@ -56,9 +59,12 @@ export default function webJsunit() {
     })
 
     /**
-     * @tc.number     SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_004
-     * @tc.name       Forward
-     * @tc.desic      go to the new page
+     * @tc.name   Forward
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_004
+     * @tc.desc   Forward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Forward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitForward', 135300)
@@ -67,9 +73,12 @@ export default function webJsunit() {
     })
 
     /**
+     * @tc.name   AccessBackward
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_005
-     * @tc.name AccessBackward
-     * @tc.desic return whether there is a old page
+     * @tc.desc   AccessBackward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AccessBackward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessBackward', 135300)
@@ -78,9 +87,12 @@ export default function webJsunit() {
     })
 
     /**
+     * @tc.name   AccessForward
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_006
-     * @tc.name AccessForward
-     * @tc.desic return whether there is a new page
+     * @tc.desc   AccessForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AccessForward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessForward', 135300)
@@ -89,9 +101,12 @@ export default function webJsunit() {
     })
 
     /**
+     * @tc.name   AccessStep
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_010
-     * @tc.name AccessStep
-     * @tc.desic return whether steps can be operated
+     * @tc.desc   AccessStep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AccessStep', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessStep', 135300)
@@ -100,9 +115,12 @@ export default function webJsunit() {
     })
 
     /**
+     * @tc.name   ClearHistory
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_011
-     * @tc.name ClearHistory
-     * @tc.desic clear the browsing history
+     * @tc.desc   ClearHistory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ClearHistory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearHistory', 135300)
@@ -111,9 +129,12 @@ export default function webJsunit() {
     })
 
     /**
+     * @tc.name   Once
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_031
-     * @tc.name Once
-     * @tc.desic Save current page
+     * @tc.desc   Once
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Once', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnce', 135300)
@@ -121,9 +142,12 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
     /**
+     * @tc.name   GetItemAtIndex
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_032
-     * @tc.name GetItemAtIndex
-     * @tc.desic Save current page
+     * @tc.desc   GetItemAtIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetItemAtIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetItemAtIndex', 135300)

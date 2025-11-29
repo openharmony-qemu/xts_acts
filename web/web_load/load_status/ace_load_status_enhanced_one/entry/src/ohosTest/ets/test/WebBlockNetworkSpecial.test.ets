@@ -63,13 +63,13 @@ export default function WebBlockNetworkSpecial() {
     })
 
     /**
-    * @tc.number SUB_ACE_WEB_BLOCKNETWORK_NULL_API_0100
-    * @tc.name testWebBlockNetworkSetNull
-    * @tc.desc test blockNetwork set null
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
-    */
+     * @tc.name   testWebBlockNetworkSetNull
+     * @tc.number SUB_ACE_WEB_BLOCKNETWORK_NULL_API_0100
+     * @tc.desc   test blockNetwork set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebBlockNetworkSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebBlockNetworkSetNull', 152);
       Utils.registerBaseEvent('testWebBlockNetworkSetNull', true, 25112609, done,
@@ -79,12 +79,12 @@ export default function WebBlockNetworkSpecial() {
       sendEventByKey('WebBlockNetworkSpecialButton', 10, '');
     })
     /**
+     * @tc.name   testWebBlockNetworkSetUndefined
      * @tc.number SUB_ACE_WEB_BLOCKNETWORK_UNDEFINED_API_0100
-     * @tc.name testWebBlockNetworkSetUndefined
-     * @tc.desc test blockNetwork set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test blockNetwork set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebBlockNetworkSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebBlockNetworkSetUndefined', 152);

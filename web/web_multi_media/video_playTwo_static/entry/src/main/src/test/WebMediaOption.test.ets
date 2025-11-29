@@ -52,14 +52,14 @@ export default function webMediaOption(){
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_MEDIAOPTIONS_0100
-    * @tc.name        : testMediaOptionsStatic001
-    * @tc.desc        : test mediaOptions single instance
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testMediaOptionsStatic001
+     * @tc.number SUB_WEB_MEDIAOPTIONS_0100
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMediaOptionsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);
       Utils.emitEvent('emitMediaOptions001', 10)
@@ -71,14 +71,14 @@ export default function webMediaOption(){
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_MEDIAOPTIONS_0200
-    * @tc.name        : testMediaOptionsStatic002
-    * @tc.desc        : test mediaOptions single instance
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SUB_WEB_MEDIAOPTIONS_0200
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

@@ -57,14 +57,14 @@ export default function WebEmulateTouchFromMouseEventTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_EMULATETOUCHFROMMOUSEEVENT_0300
-    * @tc.name        : testWebEmulateTouchFromMouseEvent001
-    * @tc.desc        : emulateTouchFromMouseEvent
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebEmulateTouchFromMouseEvent001
+     * @tc.number SUB_WEB_EMULATETOUCHFROMMOUSEEVENT_0300
+     * @tc.desc   emulateTouchFromMouseEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebEmulateTouchFromMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebEmulateTouchFromMouseEvent001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -74,14 +74,14 @@ export default function WebEmulateTouchFromMouseEventTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_EMULATETOUCHFROMMOUSEEVENT_0400
-    * @tc.name        : testWebEmulateTouchFromMouseEvent002
-    * @tc.desc        : emulateTouchFromMouseEvent
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebEmulateTouchFromMouseEvent002
+     * @tc.number SUB_WEB_EMULATETOUCHFROMMOUSEEVENT_0400
+     * @tc.desc   emulateTouchFromMouseEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebEmulateTouchFromMouseEvent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebEmulateTouchFromMouseEvent002", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

@@ -61,14 +61,14 @@ export default function declarativeCreationOne() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETWEBCONTROLLER_0100
-    * @tc.name       : testSetWebController001
-    * @tc.desc       : test setWebController
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSetWebController001
+     * @tc.number SUB_WEB_SETWEBCONTROLLER_0100
+     * @tc.desc   test setWebController
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSetWebController001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitSetWebController', 138400)
       Utils.registerEvent('testSetWebController001', true, 138410, done);

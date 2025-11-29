@@ -56,28 +56,28 @@ export default function webViewSupportCssDisplayChange() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SUPPORTCSSDISPLAYCHANGE_API_0100
-    * @tc.name       : emitSupportCssDisplayChange0100
-    * @tc.desc       : emitSupportCssDisplayChange0100
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSupportCssDisplayChange0100
+     * @tc.number SUB_ACE_WEB_SUPPORTCSSDISPLAYCHANGE_API_0100
+     * @tc.desc   emitSupportCssDisplayChange0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSupportCssDisplayChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSupportCssDisplayChange0100", 153940)
       Utils.registerEvent("emitSupportCssDisplayChange0100", 'Hidden', 153950, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SUPPORTCSSDISPLAYCHANGE_API_0200
-    * @tc.name       : emitSupportCssDisplayChange0200
-    * @tc.desc       : emitSupportCssDisplayChange0200
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSupportCssDisplayChange0200
+     * @tc.number SUB_ACE_WEB_SUPPORTCSSDISPLAYCHANGE_API_0200
+     * @tc.desc   emitSupportCssDisplayChange0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSupportCssDisplayChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSupportCssDisplayChange0200", 153940)
       Utils.registerEvent("emitSupportCssDisplayChange0200", 'visible', 153960, done);

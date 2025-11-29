@@ -56,14 +56,14 @@ export default function webViewGetCertificate() {
       console.info("web beforeEach start");
 
     })
-    /*
-    * @tc.number      : SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0100
-    * @tc.name        : testGetCertificateCallbackStatic
-    * @tc.desc        : test interface of getCertificate with callback
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetCertificateCallbackStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0100
+     * @tc.desc   test interface of getCertificate with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetCertificateCallbackStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       emitKey="emitGetCertificateCallback";
@@ -75,14 +75,14 @@ export default function webViewGetCertificate() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0200
-    * @tc.name        : testGetCertificatePromiseStatic
-    * @tc.desc        : test interface of getCertificate with promise
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testGetCertificatePromiseStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0200
+     * @tc.desc   test interface of getCertificate with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetCertificatePromiseStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       emitKey="emitGetCertificatePromise";

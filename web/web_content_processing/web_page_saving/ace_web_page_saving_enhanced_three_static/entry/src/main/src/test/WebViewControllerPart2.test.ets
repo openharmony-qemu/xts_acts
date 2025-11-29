@@ -56,14 +56,14 @@ export default function webViewControllerPart2() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SEARCHALLASYNC_0100
-    * @tc.name       : testSearchAllAsync001
-    * @tc.desc       : test searchAllAsync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSearchAllAsyncStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHALLASYNC_0100
+     * @tc.desc   test searchAllAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSearchAllAsyncStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent('testSearchAllAsync001', 10)
@@ -75,14 +75,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-     /*
-     * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SEARCHNEXT_0100
-     * @tc.name       : testSearchNextStatic002
-     * @tc.desc       : test searchNext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+     /**
+      * @tc.name   testSearchNextStatic001
+      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHNEXT_0100
+      * @tc.desc   test searchNext
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testSearchNextStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
        await Utils.msSleep(2000);
        Utils.emitEvent('testSearchNext001', 10)
@@ -94,14 +94,14 @@ export default function webViewControllerPart2() {
        done();
      })
 
-    /*
-       * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETCUSTOMUSERAGENT_0100
-       * @tc.name       : testSetCustomUserAgentStatic001
-       * @tc.desc       : test setCustomUserAgent
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
+    /**
+     * @tc.name   testSetCustomUserAgentStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETCUSTOMUSERAGENT_0100
+     * @tc.desc   test setCustomUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetCustomUserAgentStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testSetCustomUserAgent001', 10)
       await Utils.msSleep(2000);

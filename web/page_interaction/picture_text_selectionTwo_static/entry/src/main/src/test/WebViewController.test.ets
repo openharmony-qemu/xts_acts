@@ -52,14 +52,14 @@ export default function webViewController() {
     });
 
 
-    /*
-    * @tc.number     : SUB_WEB_HISTORYITEM_ICON_0100
-    * @tc.name       : testHistoryItemIconStatic001
-    * @tc.desc       : test HistoryItem icon
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testHistoryItemIconStatic001
+     * @tc.number SUB_WEB_HISTORYITEM_ICON_0100
+     * @tc.desc   test HistoryItem icon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHistoryItemIconStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -72,14 +72,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HISTORYITEM_HISTORYURL_0100
-    * @tc.name       : testHistoryItemHistoryUrlStatic001
-    * @tc.desc       : test HistoryItem historyUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testHistoryItemHistoryUrlStatic001
+     * @tc.number SUB_WEB_HISTORYITEM_HISTORYURL_0100
+     * @tc.desc   test HistoryItem historyUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHistoryItemHistoryUrlStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -92,14 +92,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HISTORYITEM_HISTORYRAWURL_0100
-    * @tc.name       : testHistoryRawUrlStatic001
-    * @tc.desc       : test HistoryItem historyRawUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testHistoryRawUrlStatic001
+     * @tc.number SUB_WEB_HISTORYITEM_HISTORYRAWURL_0100
+     * @tc.desc   test HistoryItem historyRawUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHistoryRawUrlStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -112,14 +112,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HISTORYITEM_TITLE_0100
-    * @tc.name       : testHistoryItemTitleStatic001
-    * @tc.desc       : test HistoryItem title
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testHistoryItemTitleStatic001
+     * @tc.number SUB_WEB_HISTORYITEM_TITLE_0100
+     * @tc.desc   test HistoryItem title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHistoryItemTitleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);

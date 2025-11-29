@@ -48,13 +48,13 @@ export default function DNSHostIP() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-     * @tc.number     : Acts_setHostIP_0100
-     * @tc.name       : testSetHostIPStatic001
-     * @tc.desc       : test DNSHostIP
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SetHostIPStatic001
+     * @tc.number Acts_setHostIP_0100
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetHostIPStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

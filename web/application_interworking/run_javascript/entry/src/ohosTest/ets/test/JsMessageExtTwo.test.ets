@@ -57,13 +57,13 @@ export default function jsMessageExtTwo() {
     })
 
     /**
-    * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_0100
-    * @tc.name testPromiseJsMessageExtGetErrorDescription001
-    * @tc.desc test Promise JsMessageExt getErrorDescription exception length < 2048
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 0
-    */
+     * @tc.name   testPromiseJsMessageExtGetErrorDescription001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_0100
+     * @tc.desc   test Promise JsMessageExt getErrorDescription exception length < 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPromiseJsMessageExtGetErrorDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJsMessageExtGetErrorDescription001", 142)
       Utils.registerBaseEvent("testPromiseJsMessageExtGetErrorDescription001", true, 25112105, done,
@@ -73,12 +73,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseJsMessageExtGetErrorDescription002
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_0200
-     * @tc.name testPromiseJsMessageExtGetErrorDescription002
-     * @tc.desc test Promise JsMessageExt getErrorDescription exception length = 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise JsMessageExt getErrorDescription exception length = 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseJsMessageExtGetErrorDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJsMessageExtGetErrorDescription002", 142)
@@ -89,12 +89,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseJsMessageExtGetErrorDescription003
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_0300
-     * @tc.name testPromiseJsMessageExtGetErrorDescription003
-     * @tc.desc test Promise JsMessageExt getErrorDescription exception length > 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise JsMessageExt getErrorDescription exception length > 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseJsMessageExtGetErrorDescription003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJsMessageExtGetErrorDescription003", 142)
@@ -105,12 +105,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseJsMessageExtGetErrorDescription004
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_0400
-     * @tc.name testPromiseJsMessageExtGetErrorDescription004
-     * @tc.desc test Promise JsMessageExt getErrorDescription object length < 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise JsMessageExt getErrorDescription object length < 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseJsMessageExtGetErrorDescription004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJsMessageExtGetErrorDescription004", 142)
@@ -121,12 +121,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseJsMessageExtGetErrorDescription005
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_0500
-     * @tc.name testPromiseJsMessageExtGetErrorDescription005
-     * @tc.desc test Promise JsMessageExt getErrorDescription object length = 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise JsMessageExt getErrorDescription object length = 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseJsMessageExtGetErrorDescription005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJsMessageExtGetErrorDescription005", 142)
@@ -137,12 +137,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseJsMessageExtGetErrorDescription006
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_0600
-     * @tc.name testPromiseJsMessageExtGetErrorDescription006
-     * @tc.desc test Promise JsMessageExt getErrorDescription object length > 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise JsMessageExt getErrorDescription object length > 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseJsMessageExtGetErrorDescription006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJsMessageExtGetErrorDescription006", 142)
@@ -154,12 +154,12 @@ export default function jsMessageExtTwo() {
     })
 
     /**
+     * @tc.name   testCallbackJsMessageExtGetErrorDescription001
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_0100
-     * @tc.name testCallbackJsMessageExtGetErrorDescription001
-     * @tc.desc test Callback JsMessageExt getErrorDescription exception length < 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback JsMessageExt getErrorDescription exception length < 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJsMessageExtGetErrorDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJsMessageExtGetErrorDescription001", 142)
@@ -170,12 +170,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJsMessageExtGetErrorDescription002
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_0200
-     * @tc.name testCallbackJsMessageExtGetErrorDescription002
-     * @tc.desc test Callback JsMessageExt getErrorDescription exception length = 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback JsMessageExt getErrorDescription exception length = 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJsMessageExtGetErrorDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJsMessageExtGetErrorDescription002", 142)
@@ -186,12 +186,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJsMessageExtGetErrorDescription003
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_0300
-     * @tc.name testCallbackJsMessageExtGetErrorDescription003
-     * @tc.desc test Callback JsMessageExt getErrorDescription exception length > 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback JsMessageExt getErrorDescription exception length > 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJsMessageExtGetErrorDescription003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJsMessageExtGetErrorDescription003", 142)
@@ -202,12 +202,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJsMessageExtGetErrorDescription004
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_0400
-     * @tc.name testCallbackJsMessageExtGetErrorDescription004
-     * @tc.desc test Callback JsMessageExt getErrorDescription object length < 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback JsMessageExt getErrorDescription object length < 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJsMessageExtGetErrorDescription004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJsMessageExtGetErrorDescription004", 142)
@@ -218,12 +218,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJsMessageExtGetErrorDescription005
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_0500
-     * @tc.name testCallbackJsMessageExtGetErrorDescription005
-     * @tc.desc test Callback JsMessageExt getErrorDescription object length = 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback JsMessageExt getErrorDescription object length = 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJsMessageExtGetErrorDescription005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJsMessageExtGetErrorDescription005", 142)
@@ -234,12 +234,12 @@ export default function jsMessageExtTwo() {
       sendEventByKey('JsMessageExtTwoButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJsMessageExtGetErrorDescription006
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_0600
-     * @tc.name testCallbackJsMessageExtGetErrorDescription006
-     * @tc.desc test Callback JsMessageExt getErrorDescription object length > 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback JsMessageExt getErrorDescription object length > 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJsMessageExtGetErrorDescription006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJsMessageExtGetErrorDescription006", 142)

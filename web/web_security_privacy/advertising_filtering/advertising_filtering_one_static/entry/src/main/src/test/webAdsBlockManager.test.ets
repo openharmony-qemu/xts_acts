@@ -50,13 +50,13 @@ export default function ActsAceWebAdsBlockManager() {
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
     });
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0001
-     *@tc.name testEnableAdsBlockStatic
-     *@tc.desc test EnableAdsBlock
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testEnableAdsBlockStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0001
+     * @tc.desc   test EnableAdsBlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEnableAdsBlockStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -70,13 +70,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0002
-     *@tc.name testIsAdsBlockEnabledStatic
-     *@tc.desc test IsAdsBlockEnabled
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testIsAdsBlockEnabledStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0002
+     * @tc.desc   test IsAdsBlockEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsAdsBlockEnabledStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -90,13 +90,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0003
-     *@tc.name testIsAdsBlockEnabledForCurPageStatic
-     *@tc.desc test IsAdsBlockEnabledForCurPage
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testIsAdsBlockEnabledForCurPageStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0003
+     * @tc.desc   test IsAdsBlockEnabledForCurPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsAdsBlockEnabledForCurPageStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -110,13 +110,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0004
-     *@tc.name testSetAdsBlockRulesStatic
-     *@tc.desc test SetAdsBlockRules
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testSetAdsBlockRulesStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0004
+     * @tc.desc   test SetAdsBlockRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAdsBlockRulesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
       await Utils.msSleep(2000);
@@ -130,13 +130,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0005
-     *@tc.name testSetAdsBlockRulesFalseStatic
-     *@tc.desc test SetAdsBlockRulesFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testSetAdsBlockRulesFalseStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0005
+     * @tc.desc   test SetAdsBlockRulesFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAdsBlockRulesFalseStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
       await Utils.msSleep(2000);
@@ -150,13 +150,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0006
-     *@tc.name testAddAdsBlockDisallowedListStatic
-     *@tc.desc test AddAdsBlockDisallowedList
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testAddAdsBlockDisallowedListStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0006
+     * @tc.desc   test AddAdsBlockDisallowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAddAdsBlockDisallowedListStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
       await Utils.msSleep(2000);
@@ -170,13 +170,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0007
-     *@tc.name testRemoveAdsBlockDisallowedListStatic
-     *@tc.desc test RemoveAdsBlockDisallowedList
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testRemoveAdsBlockDisallowedListStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0007
+     * @tc.desc   test RemoveAdsBlockDisallowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRemoveAdsBlockDisallowedListStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -190,13 +190,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0008
-     *@tc.name testClearAdsBlockDisallowedListStatic
-     *@tc.desc test ClearAdsBlockDisallowedList
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testClearAdsBlockDisallowedListStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0008
+     * @tc.desc   test ClearAdsBlockDisallowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClearAdsBlockDisallowedListStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -210,13 +210,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0009
-     *@tc.name testAddAdsBlockAllowedListStatic
-     *@tc.desc test AddAdsBlockAllowedList
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testAddAdsBlockAllowedListStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0009
+     * @tc.desc   test AddAdsBlockAllowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAddAdsBlockAllowedListStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -230,13 +230,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0010
-     *@tc.name testRemoveAdsBlockAllowedListStatic
-     *@tc.desc test RemoveAdsBlockAllowedList
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testRemoveAdsBlockAllowedListStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0010
+     * @tc.desc   test RemoveAdsBlockAllowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRemoveAdsBlockAllowedListStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -250,13 +250,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0011
-     *@tc.name testClearAdsBlockAllowedListStatic
-     *@tc.desc test ClearAdsBlockAllowedList
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testClearAdsBlockAllowedListStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0011
+     * @tc.desc   test ClearAdsBlockAllowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClearAdsBlockAllowedListStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
       await Utils.msSleep(2000);
@@ -271,13 +271,13 @@ export default function ActsAceWebAdsBlockManager() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0013
-     *@tc.name testEnableAdsBlockFalseStatic
-     *@tc.desc test EnableAdsBlockFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testEnableAdsBlockFalseStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0013
+     * @tc.desc   test EnableAdsBlockFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEnableAdsBlockFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -291,13 +291,13 @@ export default function ActsAceWebAdsBlockManager() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0014
-     *@tc.name testIsAdsBlockEnabledCheckStatic
-     *@tc.desc test IsAdsBlockEnabledCheck
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testIsAdsBlockEnabledCheckStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0014
+     * @tc.desc   test IsAdsBlockEnabledCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsAdsBlockEnabledCheckStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);

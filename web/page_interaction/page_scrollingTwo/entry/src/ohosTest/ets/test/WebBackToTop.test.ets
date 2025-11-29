@@ -57,14 +57,14 @@ export default function WebBackToTopTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_BACKTOTOP_0100
-    * @tc.name        : testBackToTop001
-    * @tc.desc        : backtotop
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testBackToTop001
+     * @tc.number SUB_WEB_BACKTOTOP_0100
+     * @tc.desc   backtotop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBackToTop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitBackToTop001';
       tcName = 'testBackToTop001'
@@ -76,14 +76,14 @@ export default function WebBackToTopTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_BACKTOTOP_0200
-    * @tc.name        : testBackToTop002
-    * @tc.desc        : backtotop
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testBackToTop002
+     * @tc.number SUB_WEB_BACKTOTOP_0200
+     * @tc.desc   backtotop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBackToTop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitBackToTop002';
       tcName = 'testBackToTop002'

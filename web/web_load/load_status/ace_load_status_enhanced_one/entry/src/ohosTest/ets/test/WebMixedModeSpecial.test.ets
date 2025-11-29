@@ -63,13 +63,13 @@ export default function WebMixedModeSpecial() {
     })
 
     /**
-    * @tc.number SUB_ACE_WEB_MIXEDMODE_NULL_API_0100
-    * @tc.name testWebMixedModeSetNull
-    * @tc.desc test mixedMode set null
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
-    */
+     * @tc.name   testWebMixedModeSetNull
+     * @tc.number SUB_ACE_WEB_MIXEDMODE_NULL_API_0100
+     * @tc.desc   test mixedMode set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebMixedModeSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebMixedModeSetNull', 153);
       Utils.registerBaseEvent('testWebMixedModeSetNull', 3, 25112611, done,
@@ -79,12 +79,12 @@ export default function WebMixedModeSpecial() {
       sendEventByKey('WebMixedModeSpecialButton', 10, '');
     })
     /**
+     * @tc.name   testWebMixedModeSetUndefined
      * @tc.number SUB_ACE_WEB_MIXEDMODE_UNDEFINED_API_0100
-     * @tc.name testWebMixedModeSetUndefined
-     * @tc.desc test mixedMode set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test mixedMode set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebMixedModeSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebMixedModeSetUndefined', 153);

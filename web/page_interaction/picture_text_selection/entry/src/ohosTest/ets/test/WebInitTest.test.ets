@@ -44,10 +44,13 @@ export default function webInitTest() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_016                                                                                                                                                          
-     *tc.name SearchAllAsync                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   SearchAllAsync
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_016
+     * @tc.desc   SearchAllAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchAllAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitSearchAllAsync';
@@ -59,10 +62,13 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_033                                                                                                                                                                  
-     *tc.name ContextMenuMediaType                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   ContextMenuMediaType
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_033
+     * @tc.desc   ContextMenuMediaType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ContextMenuMediaType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitContextMenuMediaType';
@@ -74,10 +80,13 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_034                                                                                                                                                                 
-     *tc.name ContextMenuInputFieldType                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   ContextMenuInputFieldType
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_034
+     * @tc.desc   ContextMenuInputFieldType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ContextMenuInputFieldType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitContextMenuInputFieldType';
@@ -91,10 +100,13 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_035                                                                                                                                                                 
-     *tc.name ContextMenuEditStateFlags                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   ContextMenuEditStateFlags
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_035
+     * @tc.desc   ContextMenuEditStateFlags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ContextMenuEditStateFlags', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitContextMenuEditStateFlags';
@@ -110,10 +122,13 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0800
-     *tc.name testGetFavicon
-     *tc.desc test for getFavicon
+    /**
+     * @tc.name   testGetFavicon
+     * @tc.number SUB_ACE_BASIC_ETS_API_0800
+     * @tc.desc   test for getFavicon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFavicon',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitGetFavicon';
@@ -125,10 +140,13 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0900
-     *tc.name testGetFaviconAgain
-     *tc.desc test for getFavicon again
+    /**
+     * @tc.name   testGetFaviconAgain
+     * @tc.number SUB_ACE_BASIC_ETS_API_0900
+     * @tc.desc   test for getFavicon again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFaviconAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitGetFaviconAgain';
@@ -140,14 +158,14 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number      : SUB_WEB_ONSEARCHRESULTRECEIVE_0100
-    * @tc.name        : testOnSearchResultReceive001
-    * @tc.desc        : test onSearchResultReceive when have results
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnSearchResultReceive001
+     * @tc.number SUB_WEB_ONSEARCHRESULTRECEIVE_0100
+     * @tc.desc   test onSearchResultReceive when have results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnSearchResultReceive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitOnSearchResultReceive001';
       tcName = 'testOnSearchResultReceive001'
@@ -159,14 +177,14 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONSEARCHRESULTRECEIVE_0200
-    * @tc.name        : testOnSearchResultReceive002
-    * @tc.desc        : test onSearchResultReceive when have no results
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnSearchResultReceive002
+     * @tc.number SUB_WEB_ONSEARCHRESULTRECEIVE_0200
+     * @tc.desc   test onSearchResultReceive when have no results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnSearchResultReceive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitOnSearchResultReceive002';
       tcName = 'testOnSearchResultReceive002'

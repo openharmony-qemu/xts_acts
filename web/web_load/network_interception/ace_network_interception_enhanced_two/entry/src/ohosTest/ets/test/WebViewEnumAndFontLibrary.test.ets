@@ -56,14 +56,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HASIMAGE_0100
-    * @tc.name       : testHasImage001
-    * @tc.desc       : test hasImage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testHasImage001
+     * @tc.number SUB_WEB_HASIMAGE_0100
+     * @tc.desc   test hasImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHasImage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitHasImage", EVENT_ID_SET_EIMIT_KEY);
       // await Utils.sleep(2000);

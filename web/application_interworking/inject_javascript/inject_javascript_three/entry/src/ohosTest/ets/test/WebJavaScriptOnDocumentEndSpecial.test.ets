@@ -62,13 +62,13 @@ export default function ActsWebJavaScriptOnDocumentEndSpecial() {
     })
 
     /**
-    * @tc.number SUB_ACE_WEB_JAVASCRIPTONDOCUMENTEND_NULL_API_0001
-    * @tc.name testWebJavaScriptOnDocumentEndSetNull
-    * @tc.desc test javaScriptOnDocumentEnd set null
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
-    */
+     * @tc.name   testWebJavaScriptOnDocumentEndSetNull
+     * @tc.number SUB_ACE_WEB_JAVASCRIPTONDOCUMENTEND_NULL_API_0001
+     * @tc.desc   test javaScriptOnDocumentEnd set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebJavaScriptOnDocumentEndSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptOnDocumentEndSetNull", 149)
       Utils.registerBaseEvent('testWebJavaScriptOnDocumentEndSetNull', true, 25112603, done,
@@ -78,12 +78,12 @@ export default function ActsWebJavaScriptOnDocumentEndSpecial() {
       sendEventByKey('WebJavaScriptOnDocumentEndSpecialButton', 10, '');
     })
     /**
+     * @tc.name   testWebJavaScriptOnDocumentEndSetUndefined
      * @tc.number SUB_ACE_WEB_JAVASCRIPTONDOCUMENTEND_UNDEFINED_API_0001
-     * @tc.name testWebJavaScriptOnDocumentEndSetUndefined
-     * @tc.desc test javaScriptOnDocumentEnd set undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test javaScriptOnDocumentEnd set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebJavaScriptOnDocumentEndSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptOnDocumentEndSetUndefined", 149)

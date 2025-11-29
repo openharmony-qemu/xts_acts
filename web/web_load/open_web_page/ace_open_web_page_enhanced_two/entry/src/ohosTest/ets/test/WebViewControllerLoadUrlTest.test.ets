@@ -59,14 +59,14 @@ export default function webViewControllerLoadUrlTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0500
-    * @tc.name       : testLoadUrl005
-    * @tc.desc       : test loadUrl with headers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testLoadUrl005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0500
+     * @tc.desc   test loadUrl with headers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLoadUrl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testLoadUrl005", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -77,14 +77,14 @@ export default function webViewControllerLoadUrlTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0600
-    * @tc.name       : testLoadUrl006
-    * @tc.desc       : test loadUrl with headers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrl006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0600
+     * @tc.desc   test loadUrl with headers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrl006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl006", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -95,14 +95,14 @@ export default function webViewControllerLoadUrlTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0700
-    * @tc.name       : testLoadUrl007
-    * @tc.desc       : test loadUrl with headers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrl007
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0700
+     * @tc.desc   test loadUrl with headers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrl007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl007", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -113,14 +113,14 @@ export default function webViewControllerLoadUrlTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0800
-    * @tc.name       : testLoadUrl008
-    * @tc.desc       : test loadUrl with headers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrl008
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0800
+     * @tc.desc   test loadUrl with headers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrl008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl008", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
