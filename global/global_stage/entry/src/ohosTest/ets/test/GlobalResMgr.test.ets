@@ -110,15 +110,15 @@ export default function GlobalResMgrTest() {
       try {
         let sysResMgr = resourceManager.getSysResourceManager();
         expect(sysResMgr.getStringSync($r('sys.string.general_next_year').id))
-          .assertEqual(res.getStringSync($r('sys.string.general_next_year').id))
+          .assertEqual(res.getStringSync($r('sys.string.general_next_year').id));
         expect(sysResMgr.getNumber($r('sys.float.Body_L').id))
-          .assertEqual(res.getNumber($r('sys.float.Body_L').id))
+          .assertEqual(res.getNumber($r('sys.float.Body_L').id));
         expect(sysResMgr.getSymbol($r('sys.symbol.message').id))
-          .assertEqual(res.getSymbol($r('sys.symbol.message').id))
+          .assertEqual(res.getSymbol($r('sys.symbol.message').id));
         expect(sysResMgr.getColor($r('sys.color.alert').id))
-          .assertEqual(res.getColor($r('sys.color.alert').id))
+          .assertEqual(res.getColor($r('sys.color.alert').id));
         expect(sysResMgr.getMediaContentBase64Sync($r('sys.media.Copy_Drag').id))
-          .assertEqual(res.getMediaContentBase64Sync($r('sys.media.Copy_Drag').id))
+          .assertEqual(res.getMediaContentBase64Sync($r('sys.media.Copy_Drag').id));
       } catch(error) {
         expect(JSON.stringify(error)).assertFail();
       }
