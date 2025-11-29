@@ -81,10 +81,12 @@ export default function ClientAPITest3() {
     })
 
     /**
-     * @tc.number          : InvokeCommand_WithoutOperation
-     * @tc.name            : InvokeCommand_WithoutOperation
-     * @tc.desc            : call TEEC_InvokeCommand Without operation
-     * @tc.expect          : return TEEC_SUCCESS
+     * @tc.name   InvokeCommand_WithoutOperation
+     * @tc.number InvokeCommand_WithoutOperation
+     * @tc.desc   call TEEC_InvokeCommand Without operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithoutOperation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.InvokeCommand_WithoutOperation();
@@ -94,10 +96,12 @@ export default function ClientAPITest3() {
     });
 
     /**
-     * @tc.number          : InvokeCommand_WithoutSession
-     * @tc.name            : InvokeCommand_WithoutSession
-     * @tc.desc            : call TEEC_InvokeCommand Without session
-     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.name   InvokeCommand_WithoutSession
+     * @tc.number InvokeCommand_WithoutSession
+     * @tc.desc   call TEEC_InvokeCommand Without session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithoutSession', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -107,10 +111,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithOperationIsValue
-     * @tc.name            : InvokeCommand_WithOperationIsValue
-     * @tc.desc            : call TEEC_InvokeCommand With paramtype is value
-     * @tc.expect          : return TEEC_SUCCESS, TA can modify input value and return to CA
+     * @tc.name   InvokeCommand_WithOperationIsValue
+     * @tc.number InvokeCommand_WithOperationIsValue
+     * @tc.desc   call TEEC_InvokeCommand With paramtype is value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationIsValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -128,10 +134,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithOperationIsTempMem
-     * @tc.name            : InvokeCommand_WithOperationIsTempMem
-     * @tc.desc            : call TEEC_InvokeCommand With paramtype is TempMem
-     * @tc.expect          : return TEEC_SUCCESS, TA can modify input tempmem and return to CA
+     * @tc.name   InvokeCommand_WithOperationIsTempMem
+     * @tc.number InvokeCommand_WithOperationIsTempMem
+     * @tc.desc   call TEEC_InvokeCommand With paramtype is TempMem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationIsTempMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -150,10 +158,12 @@ export default function ClientAPITest3() {
       });
 
     /**
-     * @tc.number          : InvokeCommand_WithOperationIsPartialMem
-     * @tc.name            : InvokeCommand_WithOperationIsPartialMem
-     * @tc.desc            : call TEEC_InvokeCommand With paramtype is PartialMem
-     * @tc.expect          : return TEEC_SUCCESS, TA can modify input PartialMem and return to CA
+     * @tc.name   InvokeCommand_WithOperationIsPartialMem
+     * @tc.number InvokeCommand_WithOperationIsPartialMem
+     * @tc.desc   call TEEC_InvokeCommand With paramtype is PartialMem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationIsPartialMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -172,10 +182,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithOperationIsTempMemIsNULL
-     * @tc.name            : InvokeCommand_WithOperationIsTempMemIsNULL
-     * @tc.desc            : call TEEC_InvokeCommand With tempMem is null
-     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.name   InvokeCommand_WithOperationIsTempMemIsNULL
+     * @tc.number InvokeCommand_WithOperationIsTempMemIsNULL
+     * @tc.desc   call TEEC_InvokeCommand With tempMem is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationIsTempMemIsNULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -185,10 +197,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithOperationNotStart
-     * @tc.name            : InvokeCommand_WithOperationNotStart
-     * @tc.desc            : call TEEC_InvokeCommand With Operation is Not Start
-     * @tc.expect          : return TEEC_ERROR_NOT_IMPLEMENTED
+     * @tc.name   InvokeCommand_WithOperationNotStart
+     * @tc.number InvokeCommand_WithOperationNotStart
+     * @tc.desc   call TEEC_InvokeCommand With Operation is Not Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationNotStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -198,10 +212,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithOperationTypePartialUseTemp
-     * @tc.name            : InvokeCommand_WithOperationTypePartialUseTemp
-     * @tc.desc            : call TEEC_InvokeCommand With ParamType is partial while operation is tmpref
-     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.name   InvokeCommand_WithOperationTypePartialUseTemp
+     * @tc.number InvokeCommand_WithOperationTypePartialUseTemp
+     * @tc.desc   call TEEC_InvokeCommand With ParamType is partial while operation is tmpref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationTypePartialUseTemp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -211,10 +227,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithOperationTypePartialSizeIsExceed
-     * @tc.name            : InvokeCommand_WithOperationTypePartialSizeIsExceed
-     * @tc.desc            : call TEEC_InvokeCommand With ParamType is partial while memref offset+size > sharedMem.size
-     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.name   InvokeCommand_WithOperationTypePartialSizeIsExceed
+     * @tc.number InvokeCommand_WithOperationTypePartialSizeIsExceed
+     * @tc.desc   call TEEC_InvokeCommand With ParamType is partial while memref offset+size > sharedMem.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationTypePartialSizeIsExceed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -224,10 +242,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithOperationTypePartialSizeIsZero
-     * @tc.name            : InvokeCommand_WithOperationTypePartialSizeIsZero
-     * @tc.desc            : call TEEC_InvokeCommand With ParamType is partial while memref.size = 0
-     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.name   InvokeCommand_WithOperationTypePartialSizeIsZero
+     * @tc.number InvokeCommand_WithOperationTypePartialSizeIsZero
+     * @tc.desc   call TEEC_InvokeCommand With ParamType is partial while memref.size = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithOperationTypePartialSizeIsZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -237,10 +257,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithMemrefTempInoutExceed1024k
-     * @tc.name            : InvokeCommand_WithMemrefTempInoutExceed1024k
-     * @tc.desc            : call TEEC_InvokeCommand With paramType is TEMP_INOUT and size is 1024k + 1
-     * @tc.expect          : return TEEC_ERROR_ACCESS_DENIED
+     * @tc.name   InvokeCommand_WithMemrefTempInoutExceed1024k
+     * @tc.number InvokeCommand_WithMemrefTempInoutExceed1024k
+     * @tc.desc   call TEEC_InvokeCommand With paramType is TEMP_INOUT and size is 1024k + 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithMemrefTempInoutExceed1024k', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -250,10 +272,12 @@ export default function ClientAPITest3() {
         done();
       });
     /**
-     * @tc.number          : InvokeCommand_WithMemrefWholeExceed2048k
-     * @tc.name            : InvokeCommand_WithMemrefWholeExceed2048k
-     * @tc.desc            : call TEEC_InvokeCommand With paramType is WHOLE and sharedMem.size is 2048k + 1
-     * @tc.expect          : return TEEC_ERROR_OUT_OF_MEMORY
+     * @tc.name   InvokeCommand_WithMemrefWholeExceed2048k
+     * @tc.number InvokeCommand_WithMemrefWholeExceed2048k
+     * @tc.desc   call TEEC_InvokeCommand With paramType is WHOLE and sharedMem.size is 2048k + 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InvokeCommand_WithMemrefWholeExceed2048k', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
