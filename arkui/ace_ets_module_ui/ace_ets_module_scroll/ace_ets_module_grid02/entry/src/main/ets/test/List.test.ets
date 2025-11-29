@@ -31,6 +31,7 @@ import canOverGrid from './Grid/canOverGrid.test';
 import gridStopDrag from './Grid/gridStopDrag.test';
 import syncLoadGrid from './Grid/syncLoadGrid.test';
 import ModifierDraggingFling from './Grid/ModifierDraggingFling.test';
+import gridDraggingFling from './Grid/gridDraggingFling.test';
 import gridScrollbarColor from './Grid/gridScrollbarColor.test';
 import GridContentSize from './Grid/GridContentSize.test';
 import GridFillPolicy from './Grid/GridFillPolicy.test';
@@ -54,6 +55,7 @@ export default function testsuite() {
   gridStopDrag()
   syncLoadGrid()
   ModifierDraggingFling()
+  gridDraggingFling()
   gridScrollbarColor()
   GridContentSize()
   GridFillPolicy()

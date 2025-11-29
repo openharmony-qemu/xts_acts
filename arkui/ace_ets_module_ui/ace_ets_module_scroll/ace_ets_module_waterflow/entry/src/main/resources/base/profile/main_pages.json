@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/WaterflowDemo",
         "MainAbility/pages/Waterflow_add",
-        "MainAbility/pages/WaterFlowFrictionPage"
+        "MainAbility/pages/WaterFlowFrictionPage",
+        "MainAbility/pages/WaterFlow/waterFlowDraggingFling"
     ]
 }

@@ -40,6 +40,7 @@ import syncLoadList from './List/syncLoadList.test';
 import syncLoadGroup from './ListItemGroup/syncLoadGroup.test';
 import groupStickyBoth from './ListItemGroup/groupStickyBoth.test';
 import ContentOffset from './List/ContentOffset.test';
+import listDraggingFling from './List/listDraggingFling.test';
 import scrollSnapAnimationSpeedModifier from './List/scrollSnapAnimationSpeedModifier.test';
 import scrollSnapAnimationSpeed from './List/scrollSnapAnimationSpeed.test';
 import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
@@ -74,6 +75,7 @@ export default function testsuite() {
   syncLoadGroup()
   groupStickyBoth()
   ContentOffset()
+  listDraggingFling()
   scrollSnapAnimationSpeedModifier()
   scrollSnapAnimationSpeed()
   listScrollbarColor()
