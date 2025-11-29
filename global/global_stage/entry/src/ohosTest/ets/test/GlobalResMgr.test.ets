@@ -109,16 +109,17 @@ export default function GlobalResMgrTest() {
     it('GlobalResMgrTest_getSysResourceManager_0100', Level.LEVEL2, () => {
       try {
         let sysResMgr = resourceManager.getSysResourceManager();
+        let appResMgr = resContext.getApplicationContext().resourceManager
         expect(sysResMgr.getStringSync($r('sys.string.general_next_year').id))
-          .assertEqual(res.getStringSync($r('sys.string.general_next_year').id));
+          .assertEqual(appResMgr.getStringSync($r('sys.string.general_next_year').id));
         expect(sysResMgr.getNumber($r('sys.float.Body_L').id))
-          .assertEqual(res.getNumber($r('sys.float.Body_L').id));
+          .assertEqual(appResMgr.getNumber($r('sys.float.Body_L').id));
         expect(sysResMgr.getSymbol($r('sys.symbol.message').id))
-          .assertEqual(res.getSymbol($r('sys.symbol.message').id));
+          .assertEqual(appResMgr.getSymbol($r('sys.symbol.message').id));
         expect(sysResMgr.getColor($r('sys.color.alert').id))
-          .assertEqual(res.getColor($r('sys.color.alert').id));
-        expect(sysResMgr.getMediaContentBase64Sync($r('sys.media.Copy_Drag').id))
-          .assertEqual(res.getMediaContentBase64Sync($r('sys.media.Copy_Drag').id));
+          .assertEqual(appResMgr.getColor($r('sys.color.alert').id));
+        expect(sysResMgr.getMediaContentBase64Sync($r('sys.media.ic_due_control_picture').id))
+          .assertEqual(appResMgr.getMediaContentBase64Sync($r('sys.media.ic_due_control_picture').id));
       } catch(error) {
         expect(JSON.stringify(error)).assertFail();
       }
