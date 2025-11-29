@@ -25,7 +25,6 @@ namespace ArkUICapiTest {
 
 static napi_value TestRenderNode001(napi_env env, napi_callback_info info)
 {
-    // 节点初始化
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     auto rootRenderNode = OH_ArkUI_RenderNodeUtils_CreateNode();
     auto result1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom, rootRenderNode);
@@ -37,7 +36,7 @@ static napi_value TestRenderNode001(napi_env env, napi_callback_info info)
     // 节点结构初始化
     auto result2 = OH_ArkUI_RenderNodeUtils_AddChild(rootRenderNode, rsNodeFirstChild);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
-    auto result =OH_ArkUI_RenderNodeUtils_InsertChildAfter(rootRenderNode, rsNodeSecondChild, rsNodeSecondChild);
+    auto result = OH_ArkUI_RenderNodeUtils_InsertChildAfter(rootRenderNode, rsNodeSecondChild, rsNodeSecondChild);
     ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
 
     // 节点结构验证
@@ -60,7 +59,6 @@ static napi_value TestRenderNode001(napi_env env, napi_callback_info info)
     ASSERT_EQ(count, 2); // expect 2 children
     ASSERT_EQ(result7, ARKUI_ERROR_CODE_NO_ERROR);
 
-    // 节点结构验证结束，开始销毁
     auto result8 = OH_ArkUI_RenderNodeUtils_RemoveChild(rootRenderNode, rsNodeSecondChild);
     ASSERT_EQ(result8, ARKUI_ERROR_CODE_NO_ERROR);
     auto result9 = OH_ArkUI_RenderNodeUtils_ClearChildren(rootRenderNode);
@@ -69,35 +67,18 @@ static napi_value TestRenderNode001(napi_env env, napi_callback_info info)
     ASSERT_EQ(count, 0);
     auto result10 = OH_ArkUI_RenderNodeUtils_DisposeNode(rootRenderNode);
     ASSERT_EQ(result10, ARKUI_ERROR_CODE_NO_ERROR);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode001 result10=%{public}d", result10);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result10=%{public}d", result10);
     auto result11 = OH_ArkUI_RenderNodeUtils_ClearChildren(nullptr);
     ASSERT_EQ(result11, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode001 result11=%{public}d", result11);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result11=%{public}d", result11);
     auto result12 = OH_ArkUI_RenderNodeUtils_RemoveChild(nullptr, rsNodeSecondChild);
     ASSERT_EQ(result12, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode001 result12=%{public}d", result12);
-    auto result13 =OH_ArkUI_RenderNodeUtils_InsertChildAfter(nullptr, rsNodeSecondChild, rsNodeSecondChild);
-    ASSERT_EQ(result13, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode001 result13=%{public}d", result13);
-    auto result14 = OH_ArkUI_RenderNodeUtils_AddChild(nullptr, rsNodeFirstChild);
-    ASSERT_EQ(result14, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode001 result14=%{public}d", result14);
-    auto result15 = OH_ArkUI_RenderNodeUtils_DisposeNode(nullptr);
-    ASSERT_EQ(result15, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode001 result15=%{public}d", result15);
-    
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode001 result12=%{public}d", result12);
     NAPI_END;
 }
 
 static napi_value TestRenderNode009(napi_env env, napi_callback_info info)
 {
-    // 节点初始化
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     auto rootRenderNode = OH_ArkUI_RenderNodeUtils_CreateNode();
     auto rootRender = OH_ArkUI_RenderNodeUtils_CreateNode();
@@ -108,47 +89,45 @@ static napi_value TestRenderNode009(napi_env env, napi_callback_info info)
     ArkUI_RenderNodeHandle* nodeList;
     auto result11 = OH_ArkUI_RenderNodeUtils_GetChildrenCount(nullptr, &count);
     ASSERT_EQ(result11, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result11=%{public}d", result11);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result11=%{public}d", result11);
     auto result12 = OH_ArkUI_RenderNodeUtils_GetChildren(nullptr, &nodeList, &count);
     ASSERT_EQ(result12, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result12=%{public}d", result12);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result12=%{public}d", result12);
     auto result13 = OH_ArkUI_RenderNodeUtils_GetPreviousSibling(nullptr, &nodeTemp);
     ASSERT_EQ(result13, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result13=%{public}d", result13);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result13=%{public}d", result13);
     auto result14 = OH_ArkUI_RenderNodeUtils_GetNextSibling(nullptr, &nodeTemp);
     ASSERT_EQ(result14, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result14=%{public}d", result14);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result14=%{public}d", result14);
     auto result15 = OH_ArkUI_RenderNodeUtils_GetFirstChild(nullptr, &nodeTemp);
     ASSERT_EQ(result15, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result15=%{public}d", result15);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result15=%{public}d", result15);
     auto result16 = OH_ArkUI_RenderNodeUtils_GetChild(nullptr, 1, &nodeTemp);
     ASSERT_EQ(result16, ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result16=%{public}d", result16);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result16=%{public}d", result16);
     
     auto result17 = OH_ArkUI_RenderNodeUtils_GetPreviousSibling(rootRender, nullptr);
     ASSERT_EQ(result17, ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result17=%{public}d", result17);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result17=%{public}d", result17);
     auto result18 = OH_ArkUI_RenderNodeUtils_GetNextSibling(rootRender, nullptr);
     ASSERT_EQ(result18, ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result18=%{public}d", result18);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result18=%{public}d", result18);
     auto result19 = OH_ArkUI_RenderNodeUtils_GetFirstChild(rootRender, nullptr);
     ASSERT_EQ(result19, ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result19=%{public}d", result19);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager","TestRenderNode009 result19=%{public}d", result19);
     auto result20 = OH_ArkUI_RenderNodeUtils_GetChild(rootRender, 1, nullptr);
     ASSERT_EQ(result20, ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk TestRenderNode009 result20=%{public}d", result20);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result20=%{public}d", result20);
     ASSERT_EQ(ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST, NUMBER_106404);
-    
+    auto result21 = OH_ArkUI_RenderNodeUtils_InsertChildAfter(nullptr, rsNodeSecondChild, rsNodeSecondChild);
+    ASSERT_EQ(result21, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager" "TestRenderNode009 result21=%{public}d", result21);
+    auto result22 = OH_ArkUI_RenderNodeUtils_AddChild(nullptr, rsNodeFirstChild);
+    ASSERT_EQ(result22, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result22=%{public}d", result22);
+    auto result23 = OH_ArkUI_RenderNodeUtils_DisposeNode(nullptr);
+    ASSERT_EQ(result23, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestRenderNode009 result23=%{public}d", result23);
     NAPI_END;
 }
 
@@ -209,7 +188,7 @@ static napi_value TestRenderNode003(napi_env env, napi_callback_info info)
     // 节点初始化
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     ArkUI_RenderContentModifierHandle modifier = OH_ArkUI_RenderNodeUtils_CreateContentModifier();
-    ArkUI_Vector2PropertyHandle property = OH_ArkUI_RenderNodeUtils_CreateVector2Property(0.5f, 0.5f);  // set x, y=0.5f
+    ArkUI_Vector2PropertyHandle property = OH_ArkUI_RenderNodeUtils_CreateVector2Property(0.5f, 0.5f);
 
     // 测试 Vector2Property
     float x = 0.0f;
@@ -304,7 +283,7 @@ static napi_value TestRenderNode005(napi_env env, napi_callback_info info)
     uint32_t value = 0;
     auto result1 = OH_ArkUI_RenderNodeUtils_GetColorPropertyValue(property, &value);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
-    auto result2 = OH_ArkUI_RenderNodeUtils_SetColorPropertyValue(property, 0xFF00FF00);  // set value=0xFF00FF00
+    auto result2 = OH_ArkUI_RenderNodeUtils_SetColorPropertyValue(property, 0xFF00FF00);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
     auto result3 = OH_ArkUI_RenderNodeUtils_GetColorPropertyValue(property, &value);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
@@ -345,7 +324,7 @@ static napi_value TestRenderNode006(napi_env env, napi_callback_info info)
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(x, 0.5f);  // expect x equals to 0.5f
     ASSERT_EQ(y, 0.5f);  // expect y equals to 0.5f
-    auto result2 = OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue(property, 1.5f, 1.5f);  // set x, y=1.5f
+    auto result2 = OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue(property, 1.5f, 1.5f);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
     auto result3 = OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(property, &x, &y);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
@@ -385,7 +364,7 @@ static napi_value TestRenderNode007(napi_env env, napi_callback_info info)
     uint32_t value = 0;
     auto result1 = OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue(property, &value);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
-    auto result2 = OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue(property, 0xFF00FF00);  // set value=0xFF00FF00
+    auto result2 = OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue(property, 0xFF00FF00);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
     auto result3 = OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue(property, &value);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
