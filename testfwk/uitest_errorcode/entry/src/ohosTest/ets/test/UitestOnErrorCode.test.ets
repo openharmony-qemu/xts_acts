@@ -17,11 +17,14 @@ function sleep(nm: number) {
 export default function uitestOnErrorTest() {
   describe('uitestOnErrorTest', () => {
 
-    /*
-     * @tc.number: uitestOnErrorTest_001
-     * @tc.name: test_belongingDisplay_17000007
-     * @tc.desc: belongingDisplay 17000007 test.
-    */
+    /**
+     * @tc.name   test_belongingDisplay_17000007
+     * @tc.number uitestOnErrorTest_001
+     * @tc.desc   belongingDisplay 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_belongingDisplay_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_belongingDisplay_17000007, start`);
       try {
@@ -48,11 +51,14 @@ export default function uitestOnErrorTest() {
       console.log(`${TestTag}, test_belongingDisplay_17000007 end`);
     })
 
-    /*
-     * @tc.number: uitestOnErrorTest_002
-     * @tc.name: test_originalText_17000007
-     * @tc.desc: originalText 17000007 test.
-    */
+    /**
+     * @tc.name   test_originalText_17000007
+     * @tc.number uitestOnErrorTest_002
+     * @tc.desc   originalText 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_originalText_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_originalText_17000007, start`);
       try {

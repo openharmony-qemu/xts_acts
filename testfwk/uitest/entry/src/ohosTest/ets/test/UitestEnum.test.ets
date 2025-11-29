@@ -8,11 +8,14 @@ const TestTag = 'uitestEnumTest';
 export default function uitestEnumTest() {
   describe('uitestEnumTest', () => {
 
-    /*
-   * @tc.number: uitestEnumTest_001
-   * @tc.name: test_UiWindow_getBundleName_17000002
-   * @tc.desc: MatchPattern test.
-   */
+    /**
+     * @tc.name   test_MatchPattern
+     * @tc.number uitestEnumTest_001
+     * @tc.desc   MatchPattern test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_MatchPattern', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_MatchPattern start`);
       expect(MatchPattern.EQUALS).assertEqual(0);
@@ -24,11 +27,14 @@ export default function uitestEnumTest() {
       console.log(`${TestTag}, test_MatchPattern end`);
     })
 
-    /*
-   * @tc.number: uitestEnumTest_002
-   * @tc.name: test_WindowMode
-   * @tc.desc: WindowMode test.
-   */
+    /**
+     * @tc.name   test_WindowMode
+     * @tc.number uitestEnumTest_002
+     * @tc.desc   WindowMode test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_WindowMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_WindowMode start`);
       expect(WindowMode.FULLSCREEN).assertEqual(0);
@@ -38,11 +44,14 @@ export default function uitestEnumTest() {
       console.log(`${TestTag}, test_WindowMode end`);
     })
 
-    /*
-   * @tc.number: uitestEnumTest_003
-   * @tc.name: test_ResizeDirection
-   * @tc.desc: ResizeDirection test.
-   */
+    /**
+     * @tc.name   test_ResizeDirection
+     * @tc.number uitestEnumTest_003
+     * @tc.desc   ResizeDirection test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_ResizeDirection', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_ResizeDirection start`);
       expect(ResizeDirection.LEFT).assertEqual(0);
@@ -56,11 +65,14 @@ export default function uitestEnumTest() {
       console.log(`${TestTag}, test_ResizeDirection end`);
     })
 
-    /*
-   * @tc.number: uitestEnumTest_004
-   * @tc.name: test_DisplayRotation
-   * @tc.desc: DisplayRotation test.
-   */
+    /**
+     * @tc.name   test_DisplayRotation
+     * @tc.number uitestEnumTest_004
+     * @tc.desc   DisplayRotation test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_DisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_DisplayRotation start`);
       expect(DisplayRotation.ROTATION_0).assertEqual(0);
@@ -70,11 +82,14 @@ export default function uitestEnumTest() {
       console.log(`${TestTag}, test_DisplayRotation end`);
     })
 
-    /*
-   * @tc.number: uitestEnumTest_005
-   * @tc.name: test_DisplayRotation
-   * @tc.desc: UiDirection test.
-   */
+    /**
+     * @tc.name   test_UiDirection
+     * @tc.number uitestEnumTest_005
+     * @tc.desc   UiDirection test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiDirection', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiDirection start`);
       expect(UiDirection.LEFT).assertEqual(0);
@@ -84,11 +99,14 @@ export default function uitestEnumTest() {
       console.log(`${TestTag}, test_UiDirection end`);
     })
 
-    /*
-   * @tc.number: uitestEnumTest_006
-   * @tc.name: test_MouseButton
-   * @tc.desc: MouseButton test.
-   */
+    /**
+     * @tc.name   test_MouseButton
+     * @tc.number uitestEnumTest_006
+     * @tc.desc   MouseButton test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_MouseButton', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_MouseButton start`);
       expect(MouseButton.MOUSE_BUTTON_LEFT).assertEqual(0);
