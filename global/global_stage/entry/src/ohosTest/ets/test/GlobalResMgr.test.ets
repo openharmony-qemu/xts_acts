@@ -108,16 +108,16 @@ export default function GlobalResMgrTest() {
      */
     it('GlobalResMgrTest_getOverrideResourceManager_0100', Level.LEVEL2, () => {
       try {
-        let sysResMgr = res.getSysResourceManager();
-        except(sysResMgr.getStringSync($r('sys.string.general_nex_year').id))
-          .assertEqual(res.getStringSync($r('sys.string.general_nex_year').id))
-        except(sysResMgr.getNumber($r('sys.float.Body_L').id))
+        let sysResMgr = resourceManager.getSysResourceManager();
+        expect(sysResMgr.getStringSync($r('sys.string.general_next_year').id))
+          .assertEqual(res.getStringSync($r('sys.string.general_next_year').id))
+        expect(sysResMgr.getNumber($r('sys.float.Body_L').id))
           .assertEqual(res.getNumber($r('sys.float.Body_L').id))
-        except(sysResMgr.getSymbol($r('sys.symbol.message').id))
+        expect(sysResMgr.getSymbol($r('sys.symbol.message').id))
           .assertEqual(res.getSymbol($r('sys.symbol.message').id))
-        except(sysResMgr.getColor($r('sys.color.alert').id))
+        expect(sysResMgr.getColor($r('sys.color.alert').id))
           .assertEqual(res.getColor($r('sys.color.alert').id))
-        except(sysResMgr.getMediaContentBase64Sync($r('sys.media.ic_grid_log').id))
+        expect(sysResMgr.getMediaContentBase64Sync($r('sys.media.ic_grid_log').id))
           .assertEqual(res.getMediaContentBase64Sync($r('sys.media.ic_grid_log').id))
       } catch(error) {
         expect(JSON.stringify(error)).assertFail();
