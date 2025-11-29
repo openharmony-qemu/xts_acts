@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,29 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-//
-// Created on 2025/11/3.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
 
 #ifndef NATIVEBUFFER_NATIVEBUFFER_H
 #define NATIVEBUFFER_NATIVEBUFFER_H
+
 #include "napi/native_api.h"
-#include <GLES2/gl2.h>
-#include <bits/alltypes.h>
-#include <cstddef>
-#include <native_buffer/buffer_common.h>
 #include <native_buffer/native_buffer.h>
-#include <climits>
-#include <native_image/native_image.h>
-#include <sys/types.h>
-#include <thread>
-#include <chrono>
-#include <unistd.h>
-#include <vector>
-#include <hilog/log.h>
-#include "common/log_common.h"
 
 napi_value OHNativeBufferAlloc(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferAllocAbnormal(napi_env env, napi_callback_info info);
@@ -103,5 +86,22 @@ napi_value OHNativeBufferMapWaitFenceNullptr(napi_env env, napi_callback_info in
 napi_value OHNativeBufferMapWaitFenceAbnormal(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferSetMetadataValueREGION(napi_env env, napi_callback_info info);
-
+napi_value OHNativeBufferIsSupportedNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferIsSupportedNull01(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferIsSupportedNull02(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferIsSupportedAbnormal01(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferIsSupportedAbnormal02(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferIsSupportedMultipleCalls(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferMapAndGetConfilgNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferMapAndGetConfilgNull(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferMapAndGetConfilgMultipleCalls01(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferMapAll(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferMapAndUnmap(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferWriteToParcelNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferWriteToParcelNull(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferReadFromParcelNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferReadFromParcelNull(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferReadFromParcelAbnnormal(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferWriteAndReadParcelMultipleCalls(napi_env env, napi_callback_info info);
 #endif //NATIVEBUFFER_NATIVEBUFFER_H

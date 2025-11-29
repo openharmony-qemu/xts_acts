@@ -21,12 +21,12 @@ export default function nativeBufferTest() {
   describe('NativeBufferTest', () => {
     let deviceTypeInfo: string = deviceInfo.deviceType;
     /**
-     * @tc.name   testOHNativeBufferAlloc001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_ALLOC_0100
-     * @tc.desc   test OH_NativeBuffer_Alloc
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_ALLOC_0100
+     * @tc.name       : testOHNativeBufferAlloc001
+     * @tc.desc       : test OH_NativeBuffer_Alloc
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferAlloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferAlloc();
@@ -35,12 +35,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferReference001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_REFERENCE_0100
-     * @tc.desc   test OH_NativeBuffer_Reference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_REFERENCE_0100
+     * @tc.name       : testOHNativeBufferReference001
+     * @tc.desc       : test OH_NativeBuffer_Reference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferReference001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -50,12 +50,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferUnreference001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNREFERENCE_0100
-     * @tc.desc   test OH_NativeBuffer_Unreference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNREFERENCE_0100
+     * @tc.name       : testOHNativeBufferUnreference001
+     * @tc.desc       : test OH_NativeBuffer_Unreference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferUnreference001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -65,12 +65,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferGetConfig001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_GETCONFIG_0100
-     * @tc.desc   test OH_NativeBuffer_GetConfig
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_GETCONFIG_0100
+     * @tc.name       : testOHNativeBufferGetConfig001
+     * @tc.desc       : test OH_NativeBuffer_GetConfig
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferGetConfig001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -80,12 +80,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferMap001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_MAP_0100
-     * @tc.desc   test OH_NativeBuffer_Map
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_MAP_0100
+     * @tc.name       : testOHNativeBufferMap001
+     * @tc.desc       : test OH_NativeBuffer_Map
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferMap();
@@ -94,12 +94,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferUnmap001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNMAP_0100
-     * @tc.desc   test OH_NativeBuffer_Unmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNMAP_0100
+     * @tc.name       : testOHNativeBufferUnmap001
+     * @tc.desc       : test OH_NativeBuffer_Unmap
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferUnmap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferUnmap();
@@ -108,12 +108,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferGetSeqNum001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_GETSEQNUM_0100
-     * @tc.desc   test OH_NativeBuffer_GetSeqNum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_GETSEQNUM_0100
+     * @tc.name       : testOHNativeBufferGetSeqNum001
+     * @tc.desc       : test OH_NativeBuffer_GetSeqNum
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferGetSeqNum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -124,12 +124,12 @@ export default function nativeBufferTest() {
 
 
     /**
-     * @tc.name   testOHNativeBufferAlloc002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_ALLOC_0200
-     * @tc.desc   test OH_NativeBuffer_Alloc
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_ALLOC_0200
+     * @tc.name       : testOHNativeBufferAlloc002
+     * @tc.desc       : test OH_NativeBuffer_Alloc
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferAlloc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferAllocAbnormal();
@@ -138,12 +138,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferReference002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_REFERENCE_0200
-     * @tc.desc   test OH_NativeBuffer_Reference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_REFERENCE_0200
+     * @tc.name       : testOHNativeBufferReference002
+     * @tc.desc       : test OH_NativeBuffer_Reference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferReference002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -153,12 +153,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferUnreference002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNREFERENCE_0200
-     * @tc.desc   test OH_NativeBuffer_Unreference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNREFERENCE_0200
+     * @tc.name       : testOHNativeBufferUnreference002
+     * @tc.desc       : test OH_NativeBuffer_Unreference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferUnreference002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -168,12 +168,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferMap002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_MAP_0200
-     * @tc.desc   test OH_NativeBuffer_Map
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_MAP_0200
+     * @tc.name       : testOHNativeBufferMap002
+     * @tc.desc       : test OH_NativeBuffer_Map
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferMapAbnormal();
@@ -182,12 +182,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferUnmap002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNMAP_0200
-     * @tc.desc   test OH_NativeBuffer_Unmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_UNMAP_0200
+     * @tc.name       : testOHNativeBufferUnmap002
+     * @tc.desc       : test OH_NativeBuffer_Unmap
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferUnmap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferUnmapAbnormal();
@@ -196,12 +196,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testOHNativeBufferGetSeqNum002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_GETSEQNUM_0200
-     * @tc.desc   test OH_NativeBuffer_GetSeqNum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_GETSEQNUM_0200
+     * @tc.name       : testOHNativeBufferGetSeqNum002
+     * @tc.desc       : test OH_NativeBuffer_GetSeqNum
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testOHNativeBufferGetSeqNum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -212,12 +212,12 @@ export default function nativeBufferTest() {
 
 
     /**
-     * @tc.name   testNativeBufferAllocNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0100
-     * @tc.desc   test OH_NativeBuffer_Alloc
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0100
+     * @tc.name       : testNativeBufferAllocNullptr
+     * @tc.desc       : test OH_NativeBuffer_Alloc
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferAllocNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferAllocNullptr();
@@ -227,12 +227,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferAllocNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0101
-     * @tc.desc   test OH_NativeBuffer_Alloc
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0101
+     * @tc.name       : testNativeBufferAllocNormal
+     * @tc.desc       : test OH_NativeBuffer_Alloc
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferAllocNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Array<number> = nativebuffer.oHNativeBufferAllocNormal();
@@ -244,12 +244,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferAllocAbormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0102
-     * @tc.desc   test OH_NativeBuffer_Alloc
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0102
+     * @tc.name       : testNativeBufferAllocAbormal
+     * @tc.desc       : test OH_NativeBuffer_Alloc
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
      */
     it('testNativeBufferAllocAbormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Array<number> = nativebuffer.oHNativeBufferAllocAbormal();
@@ -261,12 +261,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferAllocMuch
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0103
-     * @tc.desc   test OH_NativeBuffer_Alloc
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0103
+     * @tc.name       : testNativeBufferAllocMuch
+     * @tc.desc       : test OH_NativeBuffer_Alloc
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferAllocMuch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferAllocMuch();
@@ -276,12 +276,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferFromNativeWindowBufferNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0200
-     * @tc.desc   test OH_NativeBuffer_FromNativeWindowBuffer
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0200
+     * @tc.name       : testNativeBufferFromNativeWindowBufferNullptr
+     * @tc.desc       : test OH_NativeBuffer_FromNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferFromNativeWindowBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -293,12 +293,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferFromNativeWindowBufferNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0201
-     * @tc.desc   test OH_NativeBuffer_FromNativeWindowBuffer
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0201
+     * @tc.name       : testNativeBufferFromNativeWindowBufferNormal
+     * @tc.desc       : test OH_NativeBuffer_FromNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferFromNativeWindowBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -311,12 +311,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetConfigNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0300
-     * @tc.desc   test OH_NativeBuffer_GetConfig
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0300
+     * @tc.name       : testNativeBufferGetConfigNullptr
+     * @tc.desc       : test OH_NativeBuffer_GetConfig
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferGetConfigNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -327,12 +327,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetConfigNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0301
-     * @tc.desc   test OH_NativeBuffer_GetConfig
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0301
+     * @tc.name       : testNativeBufferGetConfigNormal
+     * @tc.desc       : test OH_NativeBuffer_GetConfig
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferGetConfigNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -343,12 +343,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetSeqNumNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0400
-     * @tc.desc   test OH_NativeBuffer_GetSeqNum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0400
+     * @tc.name       : testNativeBufferGetSeqNumNullptr
+     * @tc.desc       : test OH_NativeBuffer_GetSeqNum
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferGetSeqNumNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -359,12 +359,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetSeqNumNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0401
-     * @tc.desc   test OH_NativeBuffer_GetSeqNum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0401
+     * @tc.name       : testNativeBufferGetSeqNumNormal
+     * @tc.desc       : test OH_NativeBuffer_GetSeqNum
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferGetSeqNumNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -375,12 +375,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBuffeMapNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0500
-     * @tc.desc   test OH_NativeBuffer_Map
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0500
+     * @tc.name       : testNativeBuffeMapNullptr
+     * @tc.desc       : test OH_NativeBuffer_Map
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBuffeMapNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBuffeMapNullptr();
@@ -390,12 +390,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferMapNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0501
-     * @tc.desc   test OH_NativeBuffer_Map
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0501
+     * @tc.name       : testNativeBufferMapNormal
+     * @tc.desc       : test OH_NativeBuffer_Map
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferMapNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferMapNormal();
@@ -405,12 +405,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBuffeMapPlanesNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0600
-     * @tc.desc   test OH_NativeBuffer_MapPlanes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0600
+     * @tc.name       : testNativeBuffeMapPlanesNullptr
+     * @tc.desc       : test OH_NativeBuffer_MapPlanes
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBuffeMapPlanesNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -422,12 +422,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferMapPlanesAbNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0601
-     * @tc.desc   test OH_NativeBuffer_MapPlanes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0601
+     * @tc.name       : testNativeBufferMapPlanesAbNormal
+     * @tc.desc       : test OH_NativeBuffer_MapPlanes
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferMapPlanesAbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -438,12 +438,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferMapPlanesNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0602
-     * @tc.desc   test OH_NativeBuffer_MapPlanes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0602
+     * @tc.name       : testNativeBufferMapPlanesNormal
+     * @tc.desc       : test OH_NativeBuffer_MapPlanes
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferMapPlanesNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -459,12 +459,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBuffeReferenceNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0700
-     * @tc.desc   test OH_NativeBuffer_Reference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0700
+     * @tc.name       : testNativeBuffeReferenceNullptr
+     * @tc.desc       : test OH_NativeBuffer_Reference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBuffeReferenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -475,12 +475,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBuffeUnreferenceNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0701
-     * @tc.desc   test OH_NativeBuffer_Unreference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0701
+     * @tc.name       : testNativeBuffeUnreferenceNullptr
+     * @tc.desc       : test OH_NativeBuffer_Unreference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBuffeUnreferenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -491,12 +491,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferReferenceNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0702
-     * @tc.desc   test OH_NativeBuffer_Reference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0702
+     * @tc.name       : testNativeBufferReferenceNormal
+     * @tc.desc       : test OH_NativeBuffer_Reference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferReferenceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -507,12 +507,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferReferenceMax
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0703
-     * @tc.desc   test OH_NativeBuffer_Reference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0703
+     * @tc.name       : testNativeBufferReferenceMax
+     * @tc.desc       : test OH_NativeBuffer_Reference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferReferenceMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferReferenceMax();
@@ -522,12 +522,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferUnreferenceNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0704
-     * @tc.desc   test OH_NativeBuffer_Unreference
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0704
+     * @tc.name       : testNativeBufferUnreferenceNormal
+     * @tc.desc       : test OH_NativeBuffer_Unreference
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferUnreferenceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -538,12 +538,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBuffeUnmapNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0800
-     * @tc.desc   test OH_NativeBuffer_Unmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0800
+     * @tc.name       : testNativeBuffeUnmapNullptr
+     * @tc.desc       : test OH_NativeBuffer_Unmap
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBuffeUnmapNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBuffeUnmapNullptr();
@@ -553,12 +553,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferUnmapNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0801
-     * @tc.desc   test OH_NativeBuffer_Unmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0801
+     * @tc.name       : testNativeBufferUnmapNormal
+     * @tc.desc       : test OH_NativeBuffer_Unmap
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferUnmapNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativebuffer.oHNativeBufferUnmapNormal();
@@ -568,12 +568,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetColorSpaceFirst
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0900
-     * @tc.desc   test OH_NativeBuffer_GetColorSpace
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0900
+     * @tc.name       : testNativeBufferGetColorSpaceFirst
+     * @tc.desc       : test OH_NativeBuffer_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferGetColorSpaceFirst', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -589,12 +589,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetColorSpaceNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0901
-     * @tc.desc   test OH_NativeBuffer_GetColorSpace
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0901
+     * @tc.name       : testNativeBufferSetColorSpaceNormal
+     * @tc.desc       : test OH_NativeBuffer_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferSetColorSpaceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -610,12 +610,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetColorSpaceNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0902
-     * @tc.desc   test OH_NativeBuffer_GetColorSpace
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0902
+     * @tc.name       : testNativeBufferSetColorSpaceNullptr
+     * @tc.desc       : test OH_NativeBuffer_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferSetColorSpaceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -631,12 +631,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetColorSpaceAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0903
-     * @tc.desc   test OH_NativeBuffer_GetColorSpace
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0903
+     * @tc.name       : testNativeBufferSetColorSpaceAbnormal
+     * @tc.desc       : test OH_NativeBuffer_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 4
      */
     it('testNativeBufferSetColorSpaceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -652,12 +652,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetColorSpaceNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0904
-     * @tc.desc   test OH_NativeBuffer_GetColorSpace
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0904
+     * @tc.name       : testNativeBufferGetColorSpaceNullptr
+     * @tc.desc       : test OH_NativeBuffer_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferGetColorSpaceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -676,12 +676,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetMetadataValueFirst
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0905
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0905
+     * @tc.name       : testNativeBufferGetMetadataValueFirst
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferGetMetadataValueFirst', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -697,12 +697,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetDynamicMetadataValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0906
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0906
+     * @tc.name       : testNativeBufferSetDynamicMetadataValue
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferSetDynamicMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -718,12 +718,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetMetadataValueTimes
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0907
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0907
+     * @tc.name       : testNativeBufferSetMetadataValueTimes
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferSetMetadataValueTimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -739,12 +739,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetStaticMetadataValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0908
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0908
+     * @tc.name       : testNativeBufferSetStaticMetadataValue
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testNativeBufferSetStaticMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -760,12 +760,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetMetadataValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0909
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0909
+     * @tc.name       : testNativeBufferSetMetadataValue
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testNativeBufferSetMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -781,12 +781,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetNullMetadataValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0910
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0910
+     * @tc.name       : testNativeBufferSetNullMetadataValue
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 4
      */
     it('testNativeBufferSetNullMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -802,12 +802,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferSetMetadataValueNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0911
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0911
+     * @tc.name       : testNativeBufferSetMetadataValueNullptr
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferSetMetadataValueNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -824,12 +824,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetMetadataValueAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0912
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0912
+     * @tc.name       : testNativeBufferGetMetadataValueAbnormal
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 4
      */
     it('testNativeBufferGetMetadataValueAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -846,12 +846,12 @@ export default function nativeBufferTest() {
     });
 
     /**
-     * @tc.name   testNativeBufferGetMetadataValueNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0913
-     * @tc.desc   test OH_NativeBuffer_GetMetadataValue
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0913
+     * @tc.name       : testNativeBufferGetMetadataValueNullptr
+     * @tc.desc       : test OH_NativeBuffer_GetMetadataValue
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testNativeBufferGetMetadataValueNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -865,13 +865,14 @@ export default function nativeBufferTest() {
         done();
       }
     });
+
     /**
-     * @tc.name   testNativeBufferY8Y16USAGEandAlloc
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0914
-     * @tc.desc   test NATIVEBUFFER_PIXEL_FMT_Y8 NATIVEBUFFER_PIXEL_FMT_Y16 NATIVEBUFFER_USAGE_MEM_MMZ_CACHE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0914
+     * @tc.name       : testNativeBufferY8Y16USAGEandAlloc
+     * @tc.desc       : test NATIVEBUFFER_PIXEL_FMT_Y8 NATIVEBUFFER_PIXEL_FMT_Y16 NATIVEBUFFER_USAGE_MEM_MMZ_CACHE
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testNativeBufferY8Y16USAGEandAlloc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -885,13 +886,14 @@ export default function nativeBufferTest() {
         done();
       }
     });
+
     /**
-     * @tc.name   testNativeBufferMapWaitFence0ms
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1000
-     * @tc.desc   test OH_NativeBuffer_MapWaitFence
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1000
+     * @tc.name       : testNativeBufferMapWaitFence0ms
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testNativeBufferMapWaitFence0ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -900,73 +902,78 @@ export default function nativeBufferTest() {
           expect(result).assertEqual(0);
           done();
       });
+
     /**
-     * @tc.name   testNativeBufferMapWaitFence100ms
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1001
-     * @tc.desc   test OH_NativeBuffer_MapWaitFence
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1001
+     * @tc.name       : testNativeBufferMapWaitFence100ms
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('testNativeBufferMapWaitFence100ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testNativeBufferMapWaitFence100ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
           let result: number = nativebuffer.oHNativeBufferMapWaitFence100ms();
           console.info("testNativeBufferMapWaitFence100ms result: " + result)
           expect(result).assertEqual(0);
           done();
       });
+
     /**
-     * @tc.name   testNativeBufferMapWaitFence5000ms
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1002
-     * @tc.desc   test OH_NativeBuffer_MapWaitFence
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1002
+     * @tc.name       : testNativeBufferMapWaitFence5000ms
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
      */
-    it('testNativeBufferMapWaitFence5000ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testNativeBufferMapWaitFence5000ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
           let result: number = nativebuffer.oHNativeBufferMapWaitFence5000ms();
           console.info("testNativeBufferMapWaitFence5000ms result: " + result)
           expect(result).assertEqual(0);
           done();
       });
+
     /**
-     * @tc.name   testNativeBufferMapWaitFenceNullptr
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1003
-     * @tc.desc   test OH_NativeBuffer_MapWaitFence
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1003
+     * @tc.name       : testNativeBufferMapWaitFenceNullptr
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
-    it('testNativeBufferMapWaitFenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testNativeBufferMapWaitFenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
           let result: number = nativebuffer.oHNativeBufferMapWaitFenceNullptr();
           console.info("testNativeBufferMapWaitFenceNullptr result: " + result)
           expect(result).assertEqual(0);
           done();
       });
+
     /**
-     * @tc.name   testNativeBufferMapWaitFenceAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1004
-     * @tc.desc   test OH_NativeBuffer_MapWaitFence
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1004
+     * @tc.name       : testNativeBufferMapWaitFenceAbnormal
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
-    it('testNativeBufferMapWaitFenceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testNativeBufferMapWaitFenceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
           let result: number = nativebuffer.oHNativeBufferMapWaitFenceAbnormal();
           console.info("testNativeBufferMapWaitFenceAbnormal result: " + result)
           expect(result).assertEqual(0);
           done();
       });
+
     /**
-     * @tc.name   testOHNativeBufferMetadataTypeEnumTraversal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1100
-     * @tc.desc   test OH_NativeBuffer_MetadataType
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1100
+     * @tc.name       : testOHNativeBufferMetadataTypeEnumTraversal
+     * @tc.desc       : test OH_NativeBuffer_MetadataType
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
     it('testOHNativeBufferMetadataTypeEnumTraversal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -980,13 +987,14 @@ export default function nativeBufferTest() {
           done();
         }
       });
+
     /**
-     * @tc.name   testNativeBufferSetMetadataValueREGION
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1200
-     * @tc.desc   test OH_REGION_OF_INTEREST_METADATA
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1200
+     * @tc.name       : testNativeBufferSetMetadataValueREGION
+     * @tc.desc       : test OH_REGION_OF_INTEREST_METADATA
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     it('testNativeBufferSetMetadataValueREGION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -999,6 +1007,294 @@ export default function nativeBufferTest() {
           expect(result).assertEqual(0);
           done();
         }
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1300
+     * @tc.name       : testNativeBufferIsSupportedNormal
+     * @tc.desc       : test OH_NativeBuffer_IsSupported
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeBufferIsSupportedNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+          let result: number = nativebuffer.oHNativeBufferIsSupportedNormal();
+          console.info("testNativeBufferIsSupportedNormal result: " + result)
+          expect(result).assertEqual(0);
+          done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1301
+     * @tc.name       : testNativeBufferIsSupportedNull01
+     * @tc.desc       : test OH_NativeBuffer_IsSupported
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferIsSupportedNull01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferIsSupportedNull01();
+        console.info("testNativeBufferIsSupportedNull01 result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1302
+     * @tc.name       : testNativeBufferIsSupportedNull02
+     * @tc.desc       : test OH_NativeBuffer_IsSupported
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferIsSupportedNull02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferIsSupportedNull02();
+        console.info("testNativeBufferIsSupportedNull02 result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1303
+     * @tc.name       : testNativeBufferIsSupportedAbnormal01
+     * @tc.desc       : test OH_NativeBuffer_IsSupported
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferIsSupportedAbnormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal01();
+        console.info("testNativeBufferIsSupportedAbnormal01 result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1304
+     * @tc.name       : testNativeBufferIsSupportedAbnormal02
+     * @tc.desc       : test OH_NativeBuffer_IsSupported
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferIsSupportedAbnormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal02();
+        console.info("testNativeBufferIsSupportedAbnormal02 result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1305
+     * @tc.name       : testNativeBufferIsSupportedMultipleCalls
+     * @tc.desc       : test OH_NativeBuffer_IsSupported
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferIsSupportedMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferIsSupportedMultipleCalls();
+        console.info("testNativeBufferIsSupportedMultipleCalls result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1400
+     * @tc.name       : testNativeBufferMapAndGetConfilgNormal
+     * @tc.desc       : test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeBufferMapAndGetConfilgNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNormal();
+        console.info("testNativeBufferMapAndGetConfilgNormal result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1401
+     * @tc.name       : testNativeBufferMapAndGetConfilgNull
+     * @tc.desc       : test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferMapAndGetConfilgNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNull();
+        console.info("testNativeBufferMapAndGetConfilgNull result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1402
+     * @tc.name       : testNativeBufferMapAndGetConfilgMultipleCalls01
+     * @tc.desc       : test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferMapAndGetConfilgMultipleCalls01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls01();
+        console.info("testNativeBufferMapAndGetConfilgMultipleCalls01 result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1403
+     * @tc.name       : testNativeBufferMapAndGetConfilgMultipleCalls02
+     * @tc.desc       : test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferMapAndGetConfilgMultipleCalls02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls02();
+        console.info("testNativeBufferMapAndGetConfilgMultipleCalls02 result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1404
+     * @tc.name       : testNativeBufferMapAll
+     * @tc.desc       : test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferMapAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferMapAll();
+        console.info("testNativeBufferMapAll result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1405
+     * @tc.name       : testNativeBufferMapAndUnmap
+     * @tc.desc       : test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferMapAndUnmap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferMapAndUnmap();
+        console.info("testNativeBufferMapAndUnmap result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1500
+     * @tc.name       : testNativeBufferWriteToParcelNormal
+     * @tc.desc       : test OH_NativeBuffer_WriteToParcel
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeBufferWriteToParcelNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferWriteToParcelNormal();
+        console.info("testNativeBufferWriteToParcelNormal result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1501
+     * @tc.name       : testNativeBufferWriteToParcelNull
+     * @tc.desc       : test OH_NativeBuffer_WriteToParcel
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferWriteToParcelNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferWriteToParcelNull();
+        console.info("testNativeBufferWriteToParcelNull result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1600
+     * @tc.name       : testNativeBufferReadFromParcelNormal
+     * @tc.desc       : test OH_NativeBuffer_WriteToParcel
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeBufferReadFromParcelNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferReadFromParcelNormal();
+        console.info("testNativeBufferReadFromParcelNormal result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1601
+     * @tc.name       : testNativeBufferReadFromParcelNull
+     * @tc.desc       : test OH_NativeBuffer_WriteToParcel
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferReadFromParcelNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferReadFromParcelNull();
+        console.info("testNativeBufferReadFromParcelNull result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1602
+     * @tc.name       : testNativeBufferReadFromParcelAbnnormal
+     * @tc.desc       : test OH_NativeBuffer_WriteToParcel
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferReadFromParcelAbnnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferReadFromParcelAbnnormal();
+        console.info("testNativeBufferReadFromParcelAbnnormal result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1604
+     * @tc.name       : testNativeBufferWriteAndReadParcelMultipleCalls
+     * @tc.desc       : test OH_NativeBuffer_WriteToParcel
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeBufferWriteAndReadParcelMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferWriteAndReadParcelMultipleCalls();
+        console.info("testNativeBufferWriteAndReadParcelMultipleCalls result: " + result)
+        expect(result).assertEqual(0);
+        done();
       });
   });
 }

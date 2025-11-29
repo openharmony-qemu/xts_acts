@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,27 +14,12 @@
  */
 
 #include "napi/native_api.h"
-#include <GLES2/gl2.h>
-#include <bits/alltypes.h>
-#include <cstddef>
-#include <native_buffer/buffer_common.h>
-#include <native_buffer/native_buffer.h>
-#include <climits>
-#include <native_image/native_image.h>
-#include <sys/types.h>
-#include <thread>
-#include <chrono>
-#include <unistd.h>
-#include <vector>
-#include <hilog/log.h>
-#include "common/log_common.h"
-#include "nativebuffer.h"
+#include "NativeBufferTest.h"
 
 napi_property_descriptor desc[] = {
     {"oHNativeBufferAlloc", nullptr, OHNativeBufferAlloc, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferReference", nullptr, OHNativeBufferReference, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"oHNativeBufferUnreference", nullptr, OHNativeBufferUnreference, nullptr, nullptr, nullptr, napi_default,
-     nullptr},
+    {"oHNativeBufferUnreference", nullptr, OHNativeBufferUnreference, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferGetConfig", nullptr, OHNativeBufferGetConfig, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferMap", nullptr, OHNativeBufferMap, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferUnmap", nullptr, OHNativeBufferUnmap, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -53,8 +38,7 @@ napi_property_descriptor desc[] = {
      napi_default, nullptr},
     {"oHNativeBufferAllocNullptr", nullptr, OHNativeBufferAllocNullptr, nullptr, nullptr, nullptr, napi_default,
      nullptr},
-    {"oHNativeBufferAllocNormal", nullptr, OHNativeBufferAllocNormal, nullptr, nullptr, nullptr, napi_default,
-     nullptr},
+    {"oHNativeBufferAllocNormal", nullptr, OHNativeBufferAllocNormal, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferMapWaitFence0ms", nullptr, OHNativeBufferMapWaitFence0ms, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHNativeBufferMapWaitFence100ms", nullptr, OHNativeBufferMapWaitFence100ms, nullptr, nullptr, nullptr,
@@ -63,10 +47,10 @@ napi_property_descriptor desc[] = {
      napi_default, nullptr},
     {"oHNativeBufferMapWaitFenceNullptr", nullptr, OHNativeBufferMapWaitFenceNullptr, nullptr, nullptr, nullptr,
      napi_default, nullptr},
-    {"oHNativeBufferMapWaitFenceAbnormal", nullptr, OHNativeBufferMapWaitFenceAbnormal,
-     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"oHNativeBufferSetMetadataValueEnumTraversal", nullptr, OHNativeBufferSetMetadataValueEnumTraversal,
-     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeBufferMapWaitFenceAbnormal", nullptr, OHNativeBufferMapWaitFenceAbnormal, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHNativeBufferSetMetadataValueEnumTraversal", nullptr, OHNativeBufferSetMetadataValueEnumTraversal, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferAllocAbormal", nullptr, OHNativeBufferAllocAbormal, nullptr, nullptr, nullptr, napi_default,
      nullptr},
     {"oHNativeBufferAllocMuch", nullptr, OHNativeBufferAllocMuch, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -100,10 +84,8 @@ napi_property_descriptor desc[] = {
      nullptr},
     {"oHNativeBufferUnreferenceNormal", nullptr, OHNativeBufferUnreferenceNormal, nullptr, nullptr, nullptr,
      napi_default, nullptr},
-    {"oHNativeBuffeUnmapNullptr", nullptr, OHNativeBuffeUnmapNullptr, nullptr, nullptr, nullptr, napi_default,
-     nullptr},
-    {"oHNativeBufferUnmapNormal", nullptr, OHNativeBufferUnmapNormal, nullptr, nullptr, nullptr, napi_default,
-     nullptr},
+    {"oHNativeBuffeUnmapNullptr", nullptr, OHNativeBuffeUnmapNullptr, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeBufferUnmapNormal", nullptr, OHNativeBufferUnmapNormal, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferGetColorSpaceFirst", nullptr, OHNativeBufferGetColorSpaceFirst, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHNativeBufferSetColorSpaceNormal", nullptr, OHNativeBufferSetColorSpaceNormal, nullptr, nullptr, nullptr,
@@ -136,7 +118,42 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"oHNativeBufferSetMetadataValueREGION", nullptr, OHNativeBufferSetMetadataValueREGION, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"oHNativeBufferIsSupportedNormal", nullptr, OHNativeBufferIsSupportedNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferIsSupportedNull01", nullptr, OHNativeBufferIsSupportedNull01, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferIsSupportedNull02", nullptr, OHNativeBufferIsSupportedNull02, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferIsSupportedAbnormal01", nullptr, OHNativeBufferIsSupportedAbnormal01, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferIsSupportedAbnormal02", nullptr, OHNativeBufferIsSupportedAbnormal02, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferIsSupportedMultipleCalls", nullptr, OHNativeBufferIsSupportedMultipleCalls, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferMapAndGetConfilgNormal", nullptr, OHNativeBufferMapAndGetConfilgNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferMapAndGetConfilgNull", nullptr, OHNativeBufferMapAndGetConfilgNull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferMapAndGetConfilgMultipleCalls01", nullptr, OHNativeBufferMapAndGetConfilgMultipleCalls01, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeBufferMapAndGetConfilgMultipleCalls02", nullptr, OHNativeBufferMapAndGetConfilgMultipleCalls02, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeBufferMapAll", nullptr, OHNativeBufferMapAll, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeBufferMapAndUnmap", nullptr, OHNativeBufferMapAndUnmap, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeBufferWriteToParcelNormal", nullptr, OHNativeBufferWriteToParcelNormal, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHNativeBufferWriteToParcelNull", nullptr, OHNativeBufferWriteToParcelNull, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHNativeBufferReadFromParcelNormal", nullptr, OHNativeBufferReadFromParcelNormal, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHNativeBufferReadFromParcelNull", nullptr, OHNativeBufferReadFromParcelNull, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHNativeBufferReadFromParcelAbnnormal", nullptr, OHNativeBufferReadFromParcelAbnnormal, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHNativeBufferWriteAndReadParcelMultipleCalls", nullptr, OHNativeBufferWriteAndReadParcelMultipleCalls, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
 };
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
