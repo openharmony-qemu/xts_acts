@@ -3269,6 +3269,69 @@ Camera_ErrorCode NDKCamera::GetCameraConcurrentInfos(int useCaseCode)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::GetCameraDevices(int useCaseCode)
+{
+    cameraDevices_ = nullptr;
+    cameraSize_ = 0;
+    OH_CameraManager_GetSupportedCameras(cameraManager_, &cameraDevices_, &cameraSize_);
+    if (isDeviceQueryInfoInvalid_) {
+        deviceQueryInfo_ = new Camera_DeviceQueryInfo;
+        deviceQueryInfo_->cameraPosition = CAMERA_POSITION_UNSPECIFIED;
+        deviceQueryInfo_->connectionType = CAMERA_CONNECTION_BUILT_IN;
+        deviceQueryInfo_->cameraTypeSize = 0;
+        Camera_Type* types = new Camera_Type[1];
+        types[0] = CAMERA_TYPE_DEFAULT;
+        deviceQueryInfo_->cameraType = types;
+    } else {
+        deviceQueryInfo_ = new Camera_DeviceQueryInfo;
+        deviceQueryInfo_->cameraPosition = cameraDevices_[0].cameraPosition;
+        deviceQueryInfo_->connectionType = cameraDevices_[0].connectionType;
+        deviceQueryInfo_->cameraTypeSize = 1;
+        Camera_Type* types = new Camera_Type[1];
+        types[0] = cameraDevices_[0].cameraType;
+        deviceQueryInfo_->cameraType = types;
+    }
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CameraManager_GetCameraDevices(cameraManager_, deviceQueryInfo_, &cameraSize_, &cameraDevices_);
+        if (ret_ == CAMERA_OK) {
+            LOG("camera getCameraDevices success");
+        }
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CameraManager_GetCameraDevices(nullptr, deviceQueryInfo_, &cameraSize_, &cameraDevices_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CameraManager_GetCameraDevices(cameraManager_, nullptr, &cameraSize_, &cameraDevices_);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CameraManager_GetCameraDevices(cameraManager_, deviceQueryInfo_, nullptr, &cameraDevices_);
+    } else if (useCaseCode == PARAMETER4_ERROR) {
+        ret_ = OH_CameraManager_GetCameraDevices(cameraManager_, deviceQueryInfo_, &cameraSize_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("ndkXTS OH_CameraManager_GetCameraDevices failed : %{public}d", ret_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::DeleteCameraDevices(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CameraManager_DeleteCameraDevices(cameraManager_, cameraDevices_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CameraManager_DeleteCameraDevices(nullptr, cameraDevices_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CameraManager_DeleteCameraDevices(cameraManager_, nullptr);
+    }
+    if (cameras_ != nullptr || ret_ != CAMERA_OK) {
+        LOG("ndkXTS OH_CameraManager_DeleteCameraDevices failed : %{public}d", ret_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetInvalidDeviceQueryInfo(bool isDeviceQueryInfoInvalid)
+{
+    isDeviceQueryInfoInvalid_ = isDeviceQueryInfoInvalid;
+    return CAMERA_OK;
+}
+
 Camera_ErrorCode NDKCamera::SessionIsMacroSupported(int useCaseCode)
 {
     LOG("isMacroSupported begin.");

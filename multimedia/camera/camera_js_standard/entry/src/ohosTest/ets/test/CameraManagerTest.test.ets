@@ -1140,5 +1140,43 @@ export default function cameraManagerTest() {
       });
       done();
     })
+
+    /**
+     * @tc.number : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100
+     * @tc.name : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100
+     * @tc.desc : test getCameraDevices api with valid parameters
+     * @tc.size : MEDIUM
+     * @tc.type : Function
+     * @tc.level : Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100--------------");
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100 mCameraManager == null || undefined");
+        expect().assertFail();
+        done();
+      }
+      let camerasArray = mCameraDevicesArray;
+      if (isEmpty(camerasArray)) {
+        console.info(TAG + "No cameras available to test parameters");
+        done();
+        return;
+      }
+      camerasArray.forEach(cameraDevice => {
+        try {
+          let position = cameraDevice.cameraPosition;
+          let types: Array<cameraObj.CameraType> = [cameraDevice.cameraType];
+          let connectionType = cameraDevice.connectionType;
+          console.info(TAG + `Testing getCameraDevices with pos:${position}, type:${types[0]}, conn:${connectionType}`);
+          let devices = mCameraManager.getCameraDevices(position, types, connectionType);
+          expect(devices.length).assertLarger(0);
+          console.info(TAG + "getCameraDevices returned devices length: " + devices.length);
+        } catch (error) {
+          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100 failed with error: " + JSON.stringify(error));
+          expect().assertFail();
+        }
+      });
+      done();
+    })
   })
 }

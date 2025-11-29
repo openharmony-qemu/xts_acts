@@ -28,6 +28,7 @@ const TAG = "CAMERA_LOGTAG_JS ";
 const CAMERA_OK = 0;
 const CAMERA_INVALID_ARGUMENT = 7400101;
 const CAMERA_OPERATION_NOT_ALLOWED = 7400102;
+const CAMERA_SERVICE_FATAL_ERROR = 7400201;
 
 
 
@@ -1417,6 +1418,164 @@ export default function CameraManagerTest() {
       let ret = cameraObj.oHCameraManagerGetCameraConcurrentInfos(0)
       console.log(TAG+"testOHCameraManagerGetCameraConcurrentInfos0100:"+ret);
       expect(ret).assertEqual(CAMERA_OK);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevices0100
+     * @tc.name       : testOHCameraManagerGetCameraDevices0100
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_GetCameraDevices in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerGetCameraDevices0100', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      let ret = cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
+      console.log(TAG+"testOHCameraManagerGetCameraDevices0100:"+ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+    
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevices0200
+     * @tc.name       : testOHCameraManagerGetCameraDevices0200
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_GetCameraDevices in abnormal condition, the first parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerGetCameraDevices0200', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      let ret = cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.FIRST_PARAMETER_ERROR);
+      console.log(TAG+"testOHCameraManagerGetCameraDevices0200:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevices0300
+     * @tc.name       : testOHCameraManagerGetCameraDevices0300
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_GetCameraDevices in abnormal condition, the second parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerGetCameraDevices0300', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      let ret = cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.log(TAG+"testOHCameraManagerGetCameraDevices0300:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevices0400
+     * @tc.name       : testOHCameraManagerGetCameraDevices0400
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_GetCameraDevices in abnormal condition, the third parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerGetCameraDevices0400', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      let ret = cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.log(TAG+"testOHCameraManagerGetCameraDevices0400:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevices0500
+     * @tc.name       : testOHCameraManagerGetCameraDevices0500
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_GetCameraDevices in abnormal condition, the fourth parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerGetCameraDevices0500', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      let ret = cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.log(TAG+"testOHCameraManagerGetCameraDevices0500:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevices0600
+     * @tc.name       : testOHCameraManagerGetCameraDevices0600
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_GetCameraDevices in abnormal condition, fatal error.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerGetCameraDevices0600', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(true);
+      let ret = cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
+      console.log(TAG+"testOHCameraManagerGetCameraDevices0600:"+ret);
+      expect(ret).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteCameraDevices0100
+     * @tc.name       : testOHCameraManagerDeleteCameraDevices0100
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_DeleteCameraDevices in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerDeleteCameraDevices0100', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
+      let ret = cameraObj.oHCameraManagerDeleteCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG+"testOHCameraManagerDeleteCameraDevices0100:"+ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteCameraDevices0200
+     * @tc.name       : testOHCameraManagerDeleteCameraDevices0200
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_DeleteCameraDevices in abnormal condition, the first parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerDeleteCameraDevices0200', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
+      let ret = cameraObj.oHCameraManagerDeleteCameraDevices(Parameter_Setting.FIRST_PARAMETER_ERROR);
+      console.info(TAG+"testOHCameraManagerDeleteCameraDevices0200:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+      cameraObj.oHCameraManagerDeleteCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
+    })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteCameraDevices0300
+     * @tc.name       : testOHCameraManagerDeleteCameraDevices0300
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CameraManager_DeleteCameraDevices in abnormal condition, the second parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCameraManagerDeleteCameraDevices0300', Level.LEVEL3, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      cameraObj.setInvalidDeviceQueryInfo(false);
+      cameraObj.oHCameraManagerGetCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
+      let ret = cameraObj.oHCameraManagerDeleteCameraDevices(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG+"testOHCameraManagerDeleteCameraDevices0300:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+      cameraObj.oHCameraManagerDeleteCameraDevices(Parameter_Setting.ALL_PARAMETER_OK);
     })
   })
 }

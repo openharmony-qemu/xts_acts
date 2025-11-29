@@ -1025,5 +1025,38 @@ export default function cameraManagerTest() {
     //   }
     //   done();
     // })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100
+     * @tc.desc      : test getCameraDevices api
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100--------------");
+      if (isEmpty01(mCameraManager)) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100 mCameraManager == null || undefined")
+        expect().assertFail();
+        done();
+      }
+      let camerasArray = mCameraDevicesArray;
+      if (!isEmpty02(camerasArray)) {
+        camerasArray.forEach(cameraDevice => {
+          try {
+            let types: Array<cameraObj.CameraType> = [cameraDevice.cameraType];
+            let devices = mCameraManager.getCameraDevices(cameraDevice.cameraPosition, types, cameraDevice.connectionType);
+            console.info(TAG + "getCameraDevices success, length: " + devices.length);
+            expect(devices.length).assertLarger(0);
+          } catch (error) {
+            let err = error as BusinessError;
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100 failed: " + err.message);
+            expect().assertFail();
+          }
+        });
+      }
+      done();
+    })
   })
 }
