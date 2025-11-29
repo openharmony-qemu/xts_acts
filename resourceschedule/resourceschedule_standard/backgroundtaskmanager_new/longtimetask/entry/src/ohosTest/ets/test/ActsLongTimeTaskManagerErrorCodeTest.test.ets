@@ -882,13 +882,22 @@ export default function LongTimeTaskManagerErrorCodeTest() {
 
         try {
           let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
-          continuousTaskRequest.checkSpecialScenarioAuth().then((res: backgroundTaskManager.UserAuthResult) => {
-            console.info("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth succeeded. data: " + JSON.stringify(res));
-          }).catch((error: BusinessError) => {
-            console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth failed. code is ${error.code} message is ${error.message}`);
-            expect(error.code).assertEqual(9800005);
-            done();
-          });
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              continuousTaskRequest.checkSpecialScenarioAuth(ability.context).then((res: backgroundTaskManager.UserAuthResult) => {
+                console.info("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth succeeded. data: " + JSON.stringify(res));
+              }).catch((error: BusinessError) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code).assertEqual(9800005);
+                done();
+            });
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            });
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 getWantAgent error: %{public}s', JSON.stringify(error));
+        })
         } catch (error) {
           console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
@@ -911,15 +920,25 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         };
 
         let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
-        try {
-          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 try begin---');
-          await continuousTaskRequest.requestAuthFromUser(callbackAuth);
-          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 try end---');
-        } catch (error) {
-          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-          expect(error.code == 9800005).assertTrue();
-          done();
-        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 try begin---');
+        wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            try {
+              hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 requestAuthFromUser try begin---');
+              continuousTaskRequest.requestAuthFromUser(ability.context, callbackAuth);
+            } catch (error) {
+              console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+              expect(error.code == 9800005).assertTrue();
+              done();
+              hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 requestAuthFromUser try end---');
+            }
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+          });
+        }).catch((error: BusinessError) => {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 getWantAgent error: %{public}s', JSON.stringify(error));
+        })
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 end---');
       })
