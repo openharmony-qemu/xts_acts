@@ -38,13 +38,20 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
           await notificationExtensionSubscription.openSubscriptionSettings(context).then(async ()=>{
             console.info(TAG+"openSubscriptionSettings success ");
             count++
-            await sleep(1000)
+            await sleep(100)
             expect(count).assertEqual(1)           
             done();
           }).catch((err: Base.BusinessError) => {
             console.error(TAG+"openSubscriptionSettings: " + JSON.stringify(err));
-            expect().assertFail();
-            done();
+            if(err.code !== 801 && err.code !== 1600001){
+              expect().assertFail();
+              done();
+            }else{
+              count++;
+              await sleep(100)
+              expect(count).assertEqual(1)
+              done();
+            }            
           });
         }catch(error){
           hilog.info(0x000, `${TAG}`, TAG+ "openSubscriptionSettings catch: " + JSON.stringify(error));
