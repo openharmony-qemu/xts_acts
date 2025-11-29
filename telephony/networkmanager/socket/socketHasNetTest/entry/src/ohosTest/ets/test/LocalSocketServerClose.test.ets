@@ -41,12 +41,12 @@ export default function LocalSocketServerCloseTest() {
   describe("LocalSocketServerCloseTest", () => {
 
     /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0100
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0100
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0100
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0100
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0100';
@@ -102,12 +102,12 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0200
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0200
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0200
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0200
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0200';
@@ -176,13 +176,13 @@ export default function LocalSocketServerCloseTest() {
         done();
       }
     });
-   /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0300
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0300
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0300
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0300
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0300';
@@ -250,13 +250,13 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-        /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0400
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0400
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0400
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0400
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0400';
@@ -319,13 +319,13 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-        /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0500
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0500
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0500
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0500
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0500';
@@ -384,13 +384,13 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-        /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0600
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0600
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0600
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0600
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0600';
@@ -448,13 +448,13 @@ export default function LocalSocketServerCloseTest() {
         done();
       }
     });
-        /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0700
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0700
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0700
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0700
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0700';
@@ -493,13 +493,13 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-   /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0800
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0800
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0800
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0800
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0800';
@@ -545,13 +545,13 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-   /**
-     * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0900
-     * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0900
-     * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MEDIUMTEST
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose0900
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_0900
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketServerClose0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0900';

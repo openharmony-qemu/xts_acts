@@ -42,14 +42,14 @@ export default function webSocketCreateTest() {
   describe("WebSocketCreateTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-      /* *
-      * @tc.number: SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0100
-      * @tc.name  : testNetworkMgrWebSocketCreateWebSocketCallback_static_0100
-      * @tc.desc  : Create a WebSocket
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testNetworkMgrWebSocketCreateWebSocketCallback_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0100
+     * @tc.desc   Create a WebSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testNetworkMgrWebSocketCreateWebSocketCallback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketCreateWebSocketCallback_static_0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -67,13 +67,13 @@ export default function webSocketCreateTest() {
       }
     })
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0200
-     * @tc.name  : testNetworkMgrWebSocketCreateWebSocketCallback_static_0200
-     * @tc.desc  : Create a WebSocket
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketCreateWebSocketCallback_static_0200
+     * @tc.number SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0200
+     * @tc.desc   Create a WebSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrWebSocketCreateWebSocketCallback_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketCreateWebSocketCallback_static_0200';

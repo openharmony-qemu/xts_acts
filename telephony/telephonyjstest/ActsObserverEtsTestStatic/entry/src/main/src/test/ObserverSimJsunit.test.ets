@@ -22,10 +22,13 @@ export default function ObserverSimJsunit() {
   describe('ObserverSimJsunit', ()=>{
     console.log("************* Observer Test start *************");
 
-    /*
-     * @tc.number    : Telephony_observer_observer_on_simStateChange_0200
-     * @tc.name      : on_simStateChange
-     * @tc.desc      : call the on method of simStateChange
+    /**
+     * @tc.name   Telephony_observer_observer_on_simStateChange_0200
+     * @tc.number Telephony_observer_observer_on_simStateChange_0200
+     * @tc.desc   call the on method of simStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_observer_on_simStateChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_observer_on_simStateChange_0200 Test start *************");
@@ -46,10 +49,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_observer_on_simStateChange_0200 Test end *************")
     })
 
-    /*
-     * @tc.number    : Telephony_observer_observer_off_simStateChange_0100
-     * @tc.name      : off_simStateChange
-     * @tc.desc      : call the off method of simStateChange
+    /**
+     * @tc.name   Telephony_observer_observer_off_simStateChange_0100
+     * @tc.number Telephony_observer_observer_off_simStateChange_0100
+     * @tc.desc   call the off method of simStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_observer_off_simStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_observer_off_simStateChange_0100 Test start *************");
@@ -72,10 +78,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_observer_off_simStateChange_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_NONE_0100
-     * @tc.name      : SIM_NONE
-     * @tc.desc      : check the SIM_NONE property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_NONE_0100
+     * @tc.number Telephony_observer_LockReason_SIM_NONE_0100
+     * @tc.desc   check the SIM_NONE property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_NONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_NONE_0100 Test start *************")
@@ -84,10 +93,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_NONE_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PIN_0100
-     * @tc.name      : SIM_PIN
-     * @tc.desc      : check the SIM_PIN property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PIN_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PIN_0100
+     * @tc.desc   check the SIM_PIN property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PIN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PIN_0100 Test start *************");
@@ -96,10 +108,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PIN_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PUK_0100
-     * @tc.name      : SIM_PUK
-     * @tc.desc      : check the SIM_PUK property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PUK_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PUK_0100
+     * @tc.desc   check the SIM_PUK property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PUK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PUK_0100 Test start *************");
@@ -108,21 +123,27 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PUK_0100 Test end *************");
     })
 
-    /*
-    * @tc.number    : Telephony_observer_LockReason_SIM_PN_PIN_0100
-    * @tc.name      : SIM_PN_PIN
-    * @tc.desc      : check the SIM_PN_PIN property of LockReason
-    */
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PN_PIN_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PN_PIN_0100
+     * @tc.desc   check the SIM_PN_PIN property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Telephony_observer_LockReason_SIM_PN_PIN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PN_PIN_0100 Test start *************");
       expect(3).assertEqual(observer.LockReason.SIM_PN_PIN);
       done();
       console.log("************* Telephony_observer_LockReason_SIM_PN_PIN_0100 Test end *************");
     })
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PN_PUK_0100
-     * @tc.name      : SIM_PN_PUK
-     * @tc.desc      : check the SIM_PN_PUK property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PN_PUK_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PN_PUK_0100
+     * @tc.desc   check the SIM_PN_PUK property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PN_PUK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PN_PUK_0100 Test start *************");
@@ -131,10 +152,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PN_PUK_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PU_PIN_0100
-     * @tc.name      : SIM_PU_PIN
-     * @tc.desc      : check the SIM_PU_PIN property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PU_PIN_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PU_PIN_0100
+     * @tc.desc   check the SIM_PU_PIN property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PU_PIN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PU_PIN_0100 Test start *************");
@@ -143,10 +167,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PU_PIN_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PU_PUK_0100
-     * @tc.name      : SIM_PU_PUK
-     * @tc.desc      : check the SIM_PU_PUK property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PU_PUK_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PU_PUK_0100
+     * @tc.desc   check the SIM_PU_PUK property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PU_PUK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PU_PUK_0100 Test start *************");
@@ -155,10 +182,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PU_PUK_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PP_PIN_0100
-     * @tc.name      : SIM_PP_PIN
-     * @tc.desc      : check the SIM_PP_PIN property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PP_PIN_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PP_PIN_0100
+     * @tc.desc   check the SIM_PP_PIN property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PP_PIN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PP_PIN_0100 Test start *************");
@@ -167,10 +197,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PP_PIN_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PP_PUK_0100
-     * @tc.name      : SIM_PP_PUK
-     * @tc.desc      : check the SIM_PP_PUK property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PP_PUK_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PP_PUK_0100
+     * @tc.desc   check the SIM_PP_PUK property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PP_PUK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PP_PUK_0100 Test start *************");
@@ -179,10 +212,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PP_PUK_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PC_PIN_0100
-     * @tc.name      : SIM_PC_PIN
-     * @tc.desc      : check the SIM_PC_PIN property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PC_PIN_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PC_PIN_0100
+     * @tc.desc   check the SIM_PC_PIN property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PC_PIN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PC_PIN_0100 Test start *************");
@@ -191,10 +227,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PC_PIN_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_PC_PUK_0100
-     * @tc.name      : SIM_PC_PUK
-     * @tc.desc      : check the SIM_PC_PUK property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_PC_PUK_0100
+     * @tc.number Telephony_observer_LockReason_SIM_PC_PUK_0100
+     * @tc.desc   check the SIM_PC_PUK property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_PC_PUK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_PC_PUK_0100 Test start *************");
@@ -203,10 +242,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_PC_PUK_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_SIM_PIN_0100
-     * @tc.name      : SIM_SIM_PIN
-     * @tc.desc      : check the SIM_SIM_PIN property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_SIM_PIN_0100
+     * @tc.number Telephony_observer_LockReason_SIM_SIM_PIN_0100
+     * @tc.desc   check the SIM_SIM_PIN property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_SIM_PIN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_SIM_PIN_0100 Test start *************");
@@ -215,10 +257,13 @@ export default function ObserverSimJsunit() {
       console.log("************* Telephony_observer_LockReason_SIM_SIM_PIN_0100 Test end *************");
     })
 
-    /*
-     * @tc.number    : Telephony_observer_LockReason_SIM_SIM_PUK_0100
-     * @tc.name      : SIM_SIM_PUK
-     * @tc.desc      : check the SIM_SIM_PUK property of LockReason
+    /**
+     * @tc.name   Telephony_observer_LockReason_SIM_SIM_PUK_0100
+     * @tc.number Telephony_observer_LockReason_SIM_SIM_PUK_0100
+     * @tc.desc   check the SIM_SIM_PUK property of LockReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_observer_LockReason_SIM_SIM_PUK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log("************* Telephony_observer_LockReason_SIM_SIM_PUK_0100 Test start *************");

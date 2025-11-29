@@ -43,12 +43,12 @@ export default function HttpCreateHttpResponseCacheTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_CreateHttpResponseCache_0200
-         * @tc.name   : testNetworkMgrHttpCreateHttpResponseCache_static_0200
-         * @tc.desc   : Create a default object to store the response of HTTP access requests.
-         * @tc.level  : Level 0
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpCreateHttpResponseCache_static_0200
+         * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0200
+         * @tc.desc   Create a default object to store the response of HTTP access requests.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNetworkMgrHttpCreateHttpResponseCache_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache_static_0200';
@@ -67,12 +67,12 @@ export default function HttpCreateHttpResponseCacheTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_CreateHttpResponseCache_0300
-         * @tc.name   : testNetworkMgrHttpCreateHttpResponseCache0300
-         * @tc.desc   : Create a default object to store the response of HTTP access requests.
-         * @tc.level  : Level 0
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0300
+         * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0300
+         * @tc.desc   Create a default object to store the response of HTTP access requests.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNetworkMgrHttpCreateHttpResponseCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0300';

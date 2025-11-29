@@ -63,12 +63,12 @@ export default function eapNoPTest() {
   describe('eapNoPTest', () => {
 
     /**
+     * @tc.name   testCommunicationEapRegCustomEapHandlerNop0100
      * @tc.number SUB_Communication_Eap_RegCustomEapHandler_Nop_0100
-     * @tc.name  testCommunicationEapRegCustomEapHandlerNop0100
-     * @tc.desc test whether the interface permission takes effect
-     * @tc.level Level 0
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   test whether the interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCommunicationEapRegCustomEapHandlerNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = "testCommunicationEapRegCustomEapHandlerNop0100";
@@ -88,12 +88,12 @@ export default function eapNoPTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapUnregCustomEapHandlerNop0200
      * @tc.number SUB_Communication_Eap_UnregCustomEapHandler_Nop_0200
-     * @tc.name  testCommunicationEapUnregCustomEapHandlerNop0200
-     * @tc.desc test whether the interface permission takes effect
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   test whether the interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapUnregCustomEapHandlerNop0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapUnregCustomEapHandlerNop0200";
@@ -113,12 +113,12 @@ export default function eapNoPTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapStartEthEapNop0300
      * @tc.number SUB_Communication_Eap_StartEthEap_Nop_0300
-     * @tc.name testCommunicationEapStartEthEapNop0300
-     * @tc.desc test whether the interface permission takes effect
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   test whether the interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapStartEthEapNop0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapStartEthEapNop0300";
@@ -138,12 +138,12 @@ export default function eapNoPTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapLogOffEthEapNop0400
      * @tc.number SUB_Communication_Eap_LogOffEthEap_Nop_0400
-     * @tc.name testCommunicationEapLogOffEthEapNop0400
-     * @tc.desc test whether the interface permission takes effect
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   test whether the interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapLogOffEthEapNop0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapLogOffEthEapNop0400";
@@ -163,12 +163,12 @@ export default function eapNoPTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapReplyCustomEapDataNop0500
      * @tc.number SUB_Communication_Eap_ReplyCustomEapData_Nop_0500
-     * @tc.name testCommunicationEapReplyCustomEapDataNop0500
-     * @tc.desc test whether the interface permission takes effect
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   test whether the interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapReplyCustomEapDataNop0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapReplyCustomEapDataNop0500";

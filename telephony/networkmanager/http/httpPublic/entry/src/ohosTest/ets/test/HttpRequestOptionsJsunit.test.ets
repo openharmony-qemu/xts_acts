@@ -35,12 +35,12 @@ function expectTrue(n:boolean) {
 export default function HttpRequestOptionsJsunit() {
   describe("HttpRequestOptionsJsunitTest", () => {
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_Method_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsMethod0100
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsMethod0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_Method_0100
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsMethod0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsMethod0100';
@@ -68,12 +68,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_Method_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsMethod0200
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsMethod0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_Method_0200
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsMethod0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsMethod0200';
@@ -106,12 +106,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_ExtraData_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsExtraData0100
-     * @tc.desc Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsExtraData0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_ExtraData_0100
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsExtraData0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsExtraData0100';
@@ -147,12 +147,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_ExtraData_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsExtraData0200
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsExtraData0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_ExtraData_0200
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsExtraData0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsExtraData0200';
@@ -193,12 +193,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_Header_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsHeader0100
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsHeader0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_Header_0100
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsHeader0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsHeader0100';
@@ -233,12 +233,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_Header_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsHeader0200
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsHeader0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_Header_0200
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsHeader0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsHeader0200';
@@ -278,12 +278,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_Header_0300
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsHeader0300
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsHeader0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_Header_0300
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsHeader0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsHeader0300';
@@ -318,12 +318,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_Header_0400
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsHeader0400
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsHeader0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_Header_0400
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsHeader0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsHeader0400';
@@ -363,12 +363,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_ReadTimeout_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsReadTimeout0100
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsReadTimeout0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_ReadTimeout_0100
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsReadTimeout0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsReadTimeout0100';
@@ -401,12 +401,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_ReadTimeout_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsReadTimeout0200
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsReadTimeout0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_ReadTimeout_0200
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsReadTimeout0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsReadTimeout0200';
@@ -444,12 +444,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_ConnectTimeout_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsConnectTimeout0100
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsConnectTimeout0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_ConnectTimeout_0100
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsConnectTimeout0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsConnectTimeout0100';
@@ -482,12 +482,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_ConnectTimeout_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsConnectTimeout0200
-     * @tc.desc: Test Test HttpRequestOptions property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsConnectTimeout0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_ConnectTimeout_0200
+     * @tc.desc   Test Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsConnectTimeout0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsConnectTimeout0200';
@@ -525,12 +525,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_UsingProxy_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsUsingProxy0100
-     * @tc.desc: Test HttpRequestOptions usingProxy property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsUsingProxy0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_UsingProxy_0100
+     * @tc.desc   Test HttpRequestOptions usingProxy property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsUsingProxy0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsUsingProxy0100';
@@ -563,12 +563,12 @@ export default function HttpRequestOptionsJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestOptions_UsingProxy_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestOptionsUsingProxy0200
-     * @tc.desc: Test HttpRequestOptions usingProxy 2300005 property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsUsingProxy0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptions_UsingProxy_0200
+     * @tc.desc   Test HttpRequestOptions usingProxy 2300005 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpRequestOptionsUsingProxy0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestOptionsUsingProxy0200';
