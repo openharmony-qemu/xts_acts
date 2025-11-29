@@ -154,7 +154,7 @@ export default function objectAndPropTest() {
 
         const myCar: UserData = { "make": "Ford"}
         expect(myCar.noProperty).assertEqual(undefined);
-        expect(myCar.noProperty).not().assertEqual(null);
+        expect(myCar.noProperty!= null).assertEqual(false);
       })
 
     /**

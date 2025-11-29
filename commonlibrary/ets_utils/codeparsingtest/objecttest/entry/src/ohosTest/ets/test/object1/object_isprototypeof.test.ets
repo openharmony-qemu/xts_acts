@@ -686,7 +686,7 @@ export default function ObjectIsPrototypeOfTest() {
     /**
      * @tc.number SUB_ISPROTOTYPEOF_GET_0310
      * @tc.name ObjectIsPrototypeofTest031
-     * @desc Test prototype query of BigInt vs Number wrapper objects
+     * @tc.desc Test prototype query of BigInt vs Number wrapper objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1368,7 +1368,7 @@ export default function ObjectIsPrototypeOfTest() {
     /**
      * @tc.number SUB_ISPROTOTYPEOF_GET_0650
      * @tc.name ObjectIsPrototypeofTest065
-     * @desc Test prototype query of mixed chain: ordinary object → null-prototype object
+     * @tc.desc Test prototype query of mixed chain: ordinary object → null-prototype object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
