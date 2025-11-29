@@ -97,5 +97,23 @@ export default function GlobalResMgrTest() {
       }
     })
 
+    /**
+     * @generated.time 2025-11-29
+     * @tc.name   GlobalResMgrTest_getSysResourceManager_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_SysResourceManager_0100
+     * @tc.desc   resmgr which getSysResourceManager return and config of resourcemanager in context is the same
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GlobalResMgrTest_getOverrideResourceManager_0100', Level.LEVEL2, () => {
+      try {
+        let sysResMgr = res.getSysResourceManager();
+        except(sysResMgr.getStringSync()).assertEqual(res.getStringSync())
+      } catch(error) {
+        expect(JSON.stringify(error)).assertFail();
+      }
+    })
+
   })
 }
