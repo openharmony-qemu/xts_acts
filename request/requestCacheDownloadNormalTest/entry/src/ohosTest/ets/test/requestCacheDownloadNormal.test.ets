@@ -22,12 +22,12 @@ export default function requestCacheDownloadNormalUnitTest() {
     console.info('====>requestCacheDownloadNormalJSTest Test start');
 
     /**
+     * @tc.name   SUB_Request_cacheDownloadNormal_0100
      * @tc.number SUB_Request_cacheDownloadNormal_0100
-     * @tc.name SUB_Request_cacheDownloadNormal_0100
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Request_cacheDownloadNormal_0100', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownloadNormal_0100 is starting-----------------------");
@@ -49,12 +49,12 @@ export default function requestCacheDownloadNormalUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_maintenance_0100
      * @tc.number SUB_Request_cacheDownload_maintenance_0100
-     * @tc.name SUB_Request_cacheDownload_maintenance_0100
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Request_cacheDownload_maintenance_0100', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0100 is starting-----------------------");
