@@ -42,6 +42,20 @@ import Object34Test from './objectplus/Object34.test';
 import Object35Test from './objectplus/Object35.test';
 import Object36Test from './objectplus/Object36.test';
 import Object27Test from './objectplus/Object27Test.test';
+import objectAllPropTest from './object2/ObjectAllProp.test';
+import objectAndPropTest from './object2/ObjectAndProp.test';
+import objectCompareTest from './object2/ObjectCompare.test';
+import objectExtendsTest from './object2/ObjectExtends.test';
+import objectFunctionTest from './object2/ObjectFunction.test';
+import objectGetSetTest from './object2/ObjectGetSet.test';
+import objectIndexTest from './object2/ObjectIndex.test';
+import objectProChangeTest from './object2/ObjectProChange.test';
+import ObjectGetPrototypeOfTest from './object1/object_getprototypeof.test';
+import ObjectIsPrototypeOfTest from './object1/object_isprototypeof.test';
+import ObjectProtoTest from './object1/object_proto.test';
+import ObjectSetPrototypeOfTest from './object1/object_setprototypeof.test';
+import ReflectSetPrototypeOfTest from './object1/reflect_setprototypeof.test';
+import prototypeChangeTest from './object1/prototypeChange.test';
 
 export default function testsuite() {
 
@@ -74,5 +88,19 @@ export default function testsuite() {
   Object34Test();
   Object35Test();
   Object36Test();
+  objectAllPropTest();
+  objectAndPropTest();
+  objectCompareTest();objectExtendsTest();
+  objectFunctionTest();
+  objectGetSetTest();
+  objectIndexTest();
+  objectProChangeTest();
+  ObjectGetPrototypeOfTest();
+  ObjectIsPrototypeOfTest();
+  ObjectProtoTest();
+  ObjectSetPrototypeOfTest();
+  prototypeChangeTest();
+  ReflectSetPrototypeOfTest();
+
 };
 
