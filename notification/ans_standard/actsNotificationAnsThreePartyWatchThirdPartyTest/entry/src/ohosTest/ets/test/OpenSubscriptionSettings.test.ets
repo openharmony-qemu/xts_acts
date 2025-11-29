@@ -41,16 +41,14 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
             await sleep(100)
             expect(count).assertEqual(1)           
             done();
-          }).catch((err: Base.BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(TAG+"openSubscriptionSettings: " + JSON.stringify(err));
-            if(err.code !== 801 && err.code !== 1600001){
-              expect().assertFail();
+            if(err.code == 1600001){
+              expect(count).assertEqual(0)
               done();
             }else{
-              count++;
-              await sleep(100)
-              expect(count).assertEqual(1)
-              done();
+              expect(false).assertTrue()
+              done()
             }            
           });
         }catch(error){
