@@ -578,9 +578,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0100 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
@@ -604,9 +602,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0200 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
@@ -630,9 +626,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0300 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
@@ -655,7 +649,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
+                    expect(Number(error.code)).assertEqual(801);
                 }else{
                     expect(Number(error.code)).assertEqual(401);
                 }
