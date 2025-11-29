@@ -91,7 +91,7 @@ class TestStub extends rpc.RemoteObject {
 
 
 class MyDeathRecipient implements rpc.DeathRecipient {
-    onRemoteDied(): void {
+    onRemoteDied: () => void = () => {
         hilog.info(domain, tag, '%{public}s', 'into onRemoteDied');
     }
 }
