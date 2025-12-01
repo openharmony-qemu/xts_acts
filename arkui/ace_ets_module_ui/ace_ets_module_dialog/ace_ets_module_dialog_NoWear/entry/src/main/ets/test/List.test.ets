@@ -52,8 +52,8 @@ import selectJsunit2 from './select/SelectJsunit.test'
 export default function testsuite() {
 	SelectJsunit01();
     selectApi1();
-    triggerSelect()
-    selectJsunit2()
+    triggerSelect();
+    selectJsunit2();
     primary();
 	PopupOptionsTest();
 	DismissReasonTest();
