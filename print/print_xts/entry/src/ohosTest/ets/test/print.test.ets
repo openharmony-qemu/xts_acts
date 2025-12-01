@@ -808,6 +808,56 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1100
+     * @tc.number print_function_1100
+     * @tc.desc   check the getAddedPrinters function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_1100', Level.LEVEL1, async (done: Function) => {
+      // Permissions required: ohos.permission.PRINT
+      let testPageSize : print.PrintPageSize = {
+        id : 'ISO_A4',
+        name : 'iso_a4_210x297mm',
+        width : 8268,
+        height : 11692
+      };
+      let testCapability : print.PrinterCapabilities = {
+        supportedPageSizes : [testPageSize],
+        supportedColorModes : [print.PrintColorMode.COLOR_MODE_MONOCHROME],
+        supportedDuplexModes : [print.PrintDuplexMode.DUPLEX_MODE_NONE],
+        supportedMediaTypes : ['stationery'],
+        supportedQualities : [print.PrintQuality.QUALITY_NORMAL],
+        supportedOrientations : [print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT],
+        options : 'testOptions'
+      };
+      let printerInformation : print.PrinterInformation = {
+        printerId : 'testPrinterId',
+        printerName : 'testPrinterName',
+        printerStatus : 0,
+        description : 'testDesc',
+        capability : testCapability,
+        uri : 'file:/dev/null',
+        printerMake : 'raw',
+        options : 'testOptions'
+      };
+      await AddPrinterToDiscovery(printerInformation);
+      await UpdatePrinterInDiscovery(printerInformation);
+
+      await print.getAddedPrinters().then((printers : Array<string>) => {
+        console.log('getAddedPrinters expect succeed, data: ' + JSON.stringify(printers));
+        expect(printers.length > 0).assertTrue();
+        expect(!!printers).assertTrue();
+        done();
+      }).catch((error: BusinessError) => {
+        console.log('getAddedPrinters failed, error: ' + JSON.stringify(error));
+        expect().assertFalse();
+        done();
+      })
+    })
+
+    /**
      * @tc.name   print_function_1200
      * @tc.number print_function_1200
      * @tc.desc   check the printerChange event registration and unregistration functions
@@ -867,28 +917,6 @@ export default function printTest() {
         expect().assertFalse();
         done();
       }
-    })
-
-    /**
-     * @tc.name   print_function_1100
-     * @tc.number print_function_1100
-     * @tc.desc   check the getAddedPrinters function
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('print_function_1100', Level.LEVEL1, async (done: Function) => {
-      // Permissions required: ohos.permission.PRINT
-      await print.getAddedPrinters().then((printers : Array<string>) => {
-        console.log('getAddedPrinters expect succeed, data: ' + JSON.stringify(printers));
-        expect(!printers.length).assertFalse();
-        expect(!!printers).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
-        console.log('getAddedPrinters failed, error: ' + JSON.stringify(error));
-        expect().assertFalse();
-        done();
-      })
     })
 
     /**
