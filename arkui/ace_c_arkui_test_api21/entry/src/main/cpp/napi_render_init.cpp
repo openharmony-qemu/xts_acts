@@ -21,6 +21,8 @@
 #include "Column/ColumnMatchParentTest.h"
 #include "Column/ColumnWrapContentTest.h"
 #include "Column/ColumnFixAtiDealSizeTest.h"
+#include "list/ListDraggingEventTest.h"
+#include "list/ListFlingEventTest.h"
 
 namespace ArkUICapiTest
 {
@@ -70,6 +72,16 @@ namespace ArkUICapiTest
             {"createColumnMatchParentNativeRoot", nullptr, ColumnMatchParentTest::CreateColumnMatchParentNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createColumnWrapContentNativeRoot", nullptr, ColumnWrapContentTest::CreateColumnWrapContentNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createColumnFixAtiDealSizeNativeRoot", nullptr, ColumnFixAtiDealSizeTest::CreateColumnFixAtiDealSizeNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"listWillStopDraggingTest", nullptr, ListDraggingEventTest::ListWillStopDraggingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listWillStartDraggingTest", nullptr, ListDraggingEventTest::ListWillStartDraggingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listDidStopDraggingTest", nullptr, ListDraggingEventTest::ListDidStopDraggingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listWillStartFlingTest", nullptr, ListFlingEventTest::ListWillStartFlingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listDidStopFlingTest", nullptr, ListFlingEventTest::ListDidStopFlingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
