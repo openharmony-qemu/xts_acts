@@ -329,12 +329,12 @@ export default function AudioSuiteEngineTest() {
     })
 
     /**
-     * @tc.number    : AudioSuiteEngineBypassEffectNodeTest_0001
-     * @tc.name      : AudioSuiteEngineBypassEffectNodeTest_0001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      AudioSuiteEngineBypassEffectNodeTest_0001
+     * @tc.name        AudioSuiteEngineBypassEffectNodeTest_0001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 0
      */
     it('AudioSuiteEngineBypassEffectNodeTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -345,12 +345,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineBypassEffectNodeTest_0002
-     * @tc.name      : AudioSuiteEngineBypassEffectNodeTest_0002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      AudioSuiteEngineBypassEffectNodeTest_0002
+     * @tc.name        AudioSuiteEngineBypassEffectNodeTest_0002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 0
      */
     it('AudioSuiteEngineBypassEffectNodeTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -361,12 +361,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineBypassEffectNodeTest_0003
-     * @tc.name      : AudioSuiteEngineBypassEffectNodeTest_0003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineBypassEffectNodeTest_0003
+     * @tc.name        AudioSuiteEngineBypassEffectNodeTest_0003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineBypassEffectNodeTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -377,12 +377,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineBypassEffectNodeTest_0004
-     * @tc.name      : AudioSuiteEngineBypassEffectNodeTest_0004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineBypassEffectNodeTest_0004
+     * @tc.name        AudioSuiteEngineBypassEffectNodeTest_0004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineBypassEffectNodeTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -393,12 +393,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineBypassEffectNodeTest_0005
-     * @tc.name      : AudioSuiteEngineBypassEffectNodeTest_0005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.number      AudioSuiteEngineBypassEffectNodeTest_0005
+     * @tc.name        AudioSuiteEngineBypassEffectNodeTest_0005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 3
      */
     it('AudioSuiteEngineBypassEffectNodeTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -409,12 +409,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0001
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0001
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -425,12 +425,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0002
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0002
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -441,12 +441,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0003
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0003
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -457,12 +457,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0004
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0004
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -473,12 +473,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0005
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0005
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -489,12 +489,12 @@ export default function AudioSuiteEngineTest() {
     })
 
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0006
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0006
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0006
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0006
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -505,12 +505,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0007
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0007
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0007
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0007
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -521,12 +521,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0008
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0008
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0008
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0008
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -537,12 +537,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0009
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0009
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0009
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0009
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -553,12 +553,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0010
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0010
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0010
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0010
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -569,12 +569,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0011
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0011
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0011
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0011
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -585,12 +585,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0012
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0012
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0012
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0012
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -601,12 +601,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0013
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0013
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0013
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0013
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -617,12 +617,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0014
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0014
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0014
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0014
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -633,12 +633,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0015
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0015
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0015
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0015
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -649,12 +649,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0016
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0016
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0016
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0016
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -665,12 +665,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0017
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0017
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0017
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0017
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -681,12 +681,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0018
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0018
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0018
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0018
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -697,12 +697,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineConnectNodesTest_0019
-     * @tc.name      : AudioSuiteEngineConnectNodesTest_0019
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineConnectNodesTest_0019
+     * @tc.name        AudioSuiteEngineConnectNodesTest_0019
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineConnectNodesTest_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -713,12 +713,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0001
-     * @tc.name      : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0001
+     * @tc.name        AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -729,12 +729,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0002
-     * @tc.name      : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0002
+     * @tc.name        AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -745,12 +745,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0003
-     * @tc.name      : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0003
+     * @tc.name        AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -761,12 +761,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0004
-     * @tc.name      : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0004
+     * @tc.name        AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -777,12 +777,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0005
-     * @tc.name      : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0005
+     * @tc.name        AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -793,12 +793,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0006
-     * @tc.name      : AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0006
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0006
+     * @tc.name        AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0006
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetEqualizerFrequencyBandGainsTest_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -809,12 +809,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0001
-     * @tc.name      : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0001
+     * @tc.name        AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -825,12 +825,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0002
-     * @tc.name      : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0002
+     * @tc.name        AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -841,12 +841,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0003
-     * @tc.name      : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0003
+     * @tc.name        AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -857,12 +857,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0004
-     * @tc.name      : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0004
+     * @tc.name        AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -873,12 +873,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0005
-     * @tc.name      : AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0005
+     * @tc.name        AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetEqualizerFrequencyBandGainsTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -889,12 +889,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetVoiceBeautifierTypeTest_0001
-     * @tc.name      : AudioSuiteEngineSetVoiceBeautifierTypeTest_0001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetVoiceBeautifierTypeTest_0001
+     * @tc.name        AudioSuiteEngineSetVoiceBeautifierTypeTest_0001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetVoiceBeautifierTypeTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -905,12 +905,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetVoiceBeautifierTypeTest_0002
-     * @tc.name      : AudioSuiteEngineSetVoiceBeautifierTypeTest_0002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetVoiceBeautifierTypeTest_0002
+     * @tc.name        AudioSuiteEngineSetVoiceBeautifierTypeTest_0002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetVoiceBeautifierTypeTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -921,12 +921,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetVoiceBeautifierTypeTest_0003
-     * @tc.name      : AudioSuiteEngineSetVoiceBeautifierTypeTest_0003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetVoiceBeautifierTypeTest_0003
+     * @tc.name        AudioSuiteEngineSetVoiceBeautifierTypeTest_0003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetVoiceBeautifierTypeTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -937,12 +937,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetVoiceBeautifierTypeTest_0004
-     * @tc.name      : AudioSuiteEngineSetVoiceBeautifierTypeTest_0004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetVoiceBeautifierTypeTest_0004
+     * @tc.name        AudioSuiteEngineSetVoiceBeautifierTypeTest_0004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetVoiceBeautifierTypeTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -953,12 +953,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetVoiceBeautifierTypeTest_0001
-     * @tc.name      : AudioSuiteEngineGetVoiceBeautifierTypeTest_0001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetVoiceBeautifierTypeTest_0001
+     * @tc.name        AudioSuiteEngineGetVoiceBeautifierTypeTest_0001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetVoiceBeautifierTypeTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -969,12 +969,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetVoiceBeautifierTypeTest_0002
-     * @tc.name      : AudioSuiteEngineGetVoiceBeautifierTypeTest_0002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetVoiceBeautifierTypeTest_0002
+     * @tc.name        AudioSuiteEngineGetVoiceBeautifierTypeTest_0002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetVoiceBeautifierTypeTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -985,12 +985,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetVoiceBeautifierTypeTest_0003
-     * @tc.name      : AudioSuiteEngineGetVoiceBeautifierTypeTest_0003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetVoiceBeautifierTypeTest_0003
+     * @tc.name        AudioSuiteEngineGetVoiceBeautifierTypeTest_0003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetVoiceBeautifierTypeTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1001,12 +1001,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetVoiceBeautifierTypeTest_0004
-     * @tc.name      : AudioSuiteEngineGetVoiceBeautifierTypeTest_0004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetVoiceBeautifierTypeTest_0004
+     * @tc.name        AudioSuiteEngineGetVoiceBeautifierTypeTest_0004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetVoiceBeautifierTypeTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1017,12 +1017,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetVoiceBeautifierTypeTest_0005
-     * @tc.name      : AudioSuiteEngineGetVoiceBeautifierTypeTest_0005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetVoiceBeautifierTypeTest_0005
+     * @tc.name        AudioSuiteEngineGetVoiceBeautifierTypeTest_0005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetVoiceBeautifierTypeTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1033,12 +1033,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteNodeBuilder_Create
-     * @tc.name      : AudioSuiteNodeBuilder_Create
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteNodeBuilder_Create
+     * @tc.name        AudioSuiteNodeBuilder_Create
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteNodeBuilder_Create', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1049,12 +1049,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteNodeBuilder_Create_001
-     * @tc.name      : AudioSuiteNodeBuilder_Create_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteNodeBuilder_Create_001
+     * @tc.name        AudioSuiteNodeBuilder_Create_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteNodeBuilder_Create_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1065,12 +1065,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteNodeBuilder_Destory
-     * @tc.name      : AudioSuiteNodeBuilder_Destory
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteNodeBuilder_Destory
+     * @tc.name        AudioSuiteNodeBuilder_Destory
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteNodeBuilder_Destory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1081,12 +1081,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteNodeBuilder_Destory_001
-     * @tc.name      : AudioSuiteNodeBuilder_Destory_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteNodeBuilder_Destory_001
+     * @tc.name        AudioSuiteNodeBuilder_Destory_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteNodeBuilder_Destory_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1097,12 +1097,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteNodeBuilder_Reset
-     * @tc.name      : AudioSuiteNodeBuilder_Reset
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteNodeBuilder_Reset
+     * @tc.name        AudioSuiteNodeBuilder_Reset
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteNodeBuilder_Reset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1113,12 +1113,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteNodeBuilder_Reset_001
-     * @tc.name      : AudioSuiteNodeBuilder_Reset_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteNodeBuilder_Reset_001
+     * @tc.name        AudioSuiteNodeBuilder_Reset_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteNodeBuilder_Reset_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1129,12 +1129,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetSoundFieldType_001
-     * @tc.name      : AudioSuiteEngineSetSoundFieldType_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetSoundFieldType_001
+     * @tc.name        AudioSuiteEngineSetSoundFieldType_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetSoundFieldType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1145,12 +1145,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetSoundFieldType_002
-     * @tc.name      : AudioSuiteEngineSetSoundFieldType_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetSoundFieldType_002
+     * @tc.name        AudioSuiteEngineSetSoundFieldType_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetSoundFieldType_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1161,12 +1161,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetSoundFieldType_003
-     * @tc.name      : AudioSuiteEngineSetSoundFieldType_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetSoundFieldType_003
+     * @tc.name        AudioSuiteEngineSetSoundFieldType_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetSoundFieldType_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1177,12 +1177,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineSetSoundFieldType_004
-     * @tc.name      : AudioSuiteEngineSetSoundFieldType_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineSetSoundFieldType_004
+     * @tc.name        AudioSuiteEngineSetSoundFieldType_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineSetSoundFieldType_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1193,12 +1193,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetSoundFieldType_001
-     * @tc.name      : AudioSuiteEngineGetSoundFieldType_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetSoundFieldType_001
+     * @tc.name        AudioSuiteEngineGetSoundFieldType_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetSoundFieldType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1209,12 +1209,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetSoundFieldType_002
-     * @tc.name      : AudioSuiteEngineGetSoundFieldType_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetSoundFieldType_002
+     * @tc.name        AudioSuiteEngineGetSoundFieldType_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetSoundFieldType_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1225,12 +1225,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetSoundFieldType_003
-     * @tc.name      : AudioSuiteEngineGetSoundFieldType_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetSoundFieldType_003
+     * @tc.name        AudioSuiteEngineGetSoundFieldType_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetSoundFieldType_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1241,12 +1241,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngineGetSoundFieldType_004
-     * @tc.name      : AudioSuiteEngineGetSoundFieldType_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngineGetSoundFieldType_004
+     * @tc.name        AudioSuiteEngineGetSoundFieldType_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngineGetSoundFieldType_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1257,12 +1257,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_SetEnvironmentType_001
-     * @tc.name      : AudioSuiteEngine_SetEnvironmentType_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_SetEnvironmentType_001
+     * @tc.name        AudioSuiteEngine_SetEnvironmentType_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_SetEnvironmentType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1273,12 +1273,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_SetEnvironmentType_002
-     * @tc.name      : AudioSuiteEngine_SetEnvironmentType_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_SetEnvironmentType_002
+     * @tc.name        AudioSuiteEngine_SetEnvironmentType_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_SetEnvironmentType_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1289,12 +1289,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_SetEnvironmentType_003
-     * @tc.name      : AudioSuiteEngine_SetEnvironmentType_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_SetEnvironmentType_003
+     * @tc.name        AudioSuiteEngine_SetEnvironmentType_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_SetEnvironmentType_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1305,12 +1305,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_SetEnvironmentType_004
-     * @tc.name      : AudioSuiteEngine_SetEnvironmentType_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_SetEnvironmentType_004
+     * @tc.name        AudioSuiteEngine_SetEnvironmentType_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_SetEnvironmentType_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1321,12 +1321,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetEnvironmentType_001
-     * @tc.name      : AudioSuiteEngine_GetEnvironmentType_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetEnvironmentType_001
+     * @tc.name        AudioSuiteEngine_GetEnvironmentType_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetEnvironmentType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1337,12 +1337,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetEnvironmentType_002
-     * @tc.name      : AudioSuiteEngine_GetEnvironmentType_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetEnvironmentType_002
+     * @tc.name        AudioSuiteEngine_GetEnvironmentType_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetEnvironmentType_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1353,12 +1353,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetEnvironmentType_003
-     * @tc.name      : AudioSuiteEngine_GetEnvironmentType_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetEnvironmentType_003
+     * @tc.name        AudioSuiteEngine_GetEnvironmentType_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetEnvironmentType_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1369,12 +1369,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetEnvironmentType_004
-     * @tc.name      : AudioSuiteEngine_GetEnvironmentType_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetEnvironmentType_004
+     * @tc.name        AudioSuiteEngine_GetEnvironmentType_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetEnvironmentType_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1385,12 +1385,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetNodeBypassStatus_001
-     * @tc.name      : AudioSuiteEngine_GetNodeBypassStatus_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetNodeBypassStatus_001
+     * @tc.name        AudioSuiteEngine_GetNodeBypassStatus_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetNodeBypassStatus_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1401,12 +1401,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetNodeBypassStatus_002
-     * @tc.name      : AudioSuiteEngine_GetNodeBypassStatus_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetNodeBypassStatus_002
+     * @tc.name        AudioSuiteEngine_GetNodeBypassStatus_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetNodeBypassStatus_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1417,12 +1417,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetNodeBypassStatus_003
-     * @tc.name      : AudioSuiteEngine_GetNodeBypassStatus_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetNodeBypassStatus_003
+     * @tc.name        AudioSuiteEngine_GetNodeBypassStatus_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetNodeBypassStatus_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1433,12 +1433,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetNodeBypassStatus_004
-     * @tc.name      : AudioSuiteEngine_GetNodeBypassStatus_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetNodeBypassStatus_004
+     * @tc.name        AudioSuiteEngine_GetNodeBypassStatus_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetNodeBypassStatus_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1449,12 +1449,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetNodeBypassStatus_005
-     * @tc.name      : AudioSuiteEngine_GetNodeBypassStatus_005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetNodeBypassStatus_005
+     * @tc.name        AudioSuiteEngine_GetNodeBypassStatus_005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetNodeBypassStatus_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1465,12 +1465,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetNodeBypassStatus_006
-     * @tc.name      : AudioSuiteEngine_GetNodeBypassStatus_006
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetNodeBypassStatus_006
+     * @tc.name        AudioSuiteEngine_GetNodeBypassStatus_006
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetNodeBypassStatus_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1481,12 +1481,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetNodeBypassStatus_007
-     * @tc.name      : AudioSuiteEngine_GetNodeBypassStatus_007
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetNodeBypassStatus_007
+     * @tc.name        AudioSuiteEngine_GetNodeBypassStatus_007
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetNodeBypassStatus_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1497,12 +1497,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_setAudioFormat_001
-     * @tc.name      : AudioSuiteEngine_setAudioFormat_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_setAudioFormat_001
+     * @tc.name        AudioSuiteEngine_setAudioFormat_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_setAudioFormat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1513,12 +1513,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_setAudioFormat_002
-     * @tc.name      : AudioSuiteEngine_setAudioFormat_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_setAudioFormat_002
+     * @tc.name        AudioSuiteEngine_setAudioFormat_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_setAudioFormat_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1529,12 +1529,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_setAudioFormat_003
-     * @tc.name      : AudioSuiteEngine_setAudioFormat_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_setAudioFormat_003
+     * @tc.name        AudioSuiteEngine_setAudioFormat_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_setAudioFormat_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1545,12 +1545,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_setAudioFormat_004
-     * @tc.name      : AudioSuiteEngine_setAudioFormat_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_setAudioFormat_004
+     * @tc.name        AudioSuiteEngine_setAudioFormat_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_setAudioFormat_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1561,12 +1561,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_setAudioFormat_005
-     * @tc.name      : AudioSuiteEngine_setAudioFormat_005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_setAudioFormat_005
+     * @tc.name        AudioSuiteEngine_setAudioFormat_005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_setAudioFormat_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1577,12 +1577,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_setAudioFormat_006
-     * @tc.name      : AudioSuiteEngine_setAudioFormat_006
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_setAudioFormat_006
+     * @tc.name        AudioSuiteEngine_setAudioFormat_006
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_setAudioFormat_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1593,12 +1593,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_DestroyNode_001
-     * @tc.name      : AudioSuiteEngine_DestroyNode_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_DestroyNode_001
+     * @tc.name        AudioSuiteEngine_DestroyNode_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_DestroyNode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1609,12 +1609,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_DestroyNode_002
-     * @tc.name      : AudioSuiteEngine_DestroyNode_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_DestroyNode_002
+     * @tc.name        AudioSuiteEngine_DestroyNode_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_DestroyNode_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1625,12 +1625,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_DestroyNode_003
-     * @tc.name      : AudioSuiteEngine_DestroyNode_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_DestroyNode_003
+     * @tc.name        AudioSuiteEngine_DestroyNode_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_DestroyNode_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1641,12 +1641,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_DestroyNode_004
-     * @tc.name      : AudioSuiteEngine_DestroyNode_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_DestroyNode_004
+     * @tc.name        AudioSuiteEngine_DestroyNode_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_DestroyNode_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1657,12 +1657,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_DestroyNode_006
-     * @tc.name      : AudioSuiteEngine_DestroyNode_006
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_DestroyNode_006
+     * @tc.name        AudioSuiteEngine_DestroyNode_006
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_DestroyNode_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1673,12 +1673,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_001
-     * @tc.name      : AudioSuiteEngine_CreateNode_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_001
+     * @tc.name        AudioSuiteEngine_CreateNode_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1689,12 +1689,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_002
-     * @tc.name      : AudioSuiteEngine_CreateNode_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_002
+     * @tc.name        AudioSuiteEngine_CreateNode_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1705,12 +1705,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_003
-     * @tc.name      : AudioSuiteEngine_CreateNode_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_003
+     * @tc.name        AudioSuiteEngine_CreateNode_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1721,12 +1721,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_004
-     * @tc.name      : AudioSuiteEngine_CreateNode_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_004
+     * @tc.name        AudioSuiteEngine_CreateNode_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1737,12 +1737,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_005
-     * @tc.name      : AudioSuiteEngine_CreateNode_005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_005
+     * @tc.name        AudioSuiteEngine_CreateNode_005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1753,12 +1753,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_006
-     * @tc.name      : AudioSuiteEngine_CreateNode_006
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_006
+     * @tc.name        AudioSuiteEngine_CreateNode_006
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1769,12 +1769,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_007
-     * @tc.name      : AudioSuiteEngine_CreateNode_007
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_007
+     * @tc.name        AudioSuiteEngine_CreateNode_007
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1785,12 +1785,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_008
-     * @tc.name      : AudioSuiteEngine_CreateNode_008
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_008
+     * @tc.name        AudioSuiteEngine_CreateNode_008
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1801,12 +1801,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_009
-     * @tc.name      : AudioSuiteEngine_CreateNode_009
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_009
+     * @tc.name        AudioSuiteEngine_CreateNode_009
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1817,12 +1817,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_010
-     * @tc.name      : AudioSuiteEngine_CreateNode_010
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_010
+     * @tc.name        AudioSuiteEngine_CreateNode_010
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1833,12 +1833,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_011
-     * @tc.name      : AudioSuiteEngine_CreateNode_011
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_011
+     * @tc.name        AudioSuiteEngine_CreateNode_011
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1849,12 +1849,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_CreateNode_012
-     * @tc.name      : AudioSuiteEngine_CreateNode_012
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_CreateNode_012
+     * @tc.name        AudioSuiteEngine_CreateNode_012
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_CreateNode_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1865,12 +1865,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetPipelineState001
-     * @tc.name      : AudioSuiteEngine_GetPipelineState001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetPipelineState001
+     * @tc.name        AudioSuiteEngine_GetPipelineState001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetPipelineState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1881,12 +1881,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetPipelineState002
-     * @tc.name      : AudioSuiteEngine_GetPipelineState002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetPipelineState002
+     * @tc.name        AudioSuiteEngine_GetPipelineState002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetPipelineState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1897,12 +1897,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_GetPipelineState003
-     * @tc.name      : AudioSuiteEngine_GetPipelineState003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_GetPipelineState003
+     * @tc.name        AudioSuiteEngine_GetPipelineState003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_GetPipelineState003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1913,12 +1913,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_RenderFrame001
-     * @tc.name      : AudioSuiteEngine_RenderFrame001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_RenderFrame001
+     * @tc.name        AudioSuiteEngine_RenderFrame001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_RenderFrame001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1929,12 +1929,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_RenderFrame002
-     * @tc.name      : AudioSuiteEngine_RenderFrame002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_RenderFrame002
+     * @tc.name        AudioSuiteEngine_RenderFrame002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_RenderFrame002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1945,12 +1945,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_RenderFrame003
-     * @tc.name      : AudioSuiteEngine_RenderFrame003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_RenderFrame003
+     * @tc.name        AudioSuiteEngine_RenderFrame003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_RenderFrame003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1961,12 +1961,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_RenderFrame004
-     * @tc.name      : AudioSuiteEngine_RenderFrame004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_RenderFrame004
+     * @tc.name        AudioSuiteEngine_RenderFrame004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_RenderFrame004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1977,12 +1977,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : AudioSuiteEngine_RenderFrame005
-     * @tc.name      : AudioSuiteEngine_RenderFrame005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      AudioSuiteEngine_RenderFrame005
+     * @tc.name        AudioSuiteEngine_RenderFrame005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('AudioSuiteEngine_RenderFrame005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1993,12 +1993,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : OH_AudioSuiteEngine_MultiRenderFrame_001
-     * @tc.name      : OH_AudioSuiteEngine_MultiRenderFrame_001
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      OH_AudioSuiteEngine_MultiRenderFrame_001
+     * @tc.name        OH_AudioSuiteEngine_MultiRenderFrame_001
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('OH_AudioSuiteEngine_MultiRenderFrame_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2009,12 +2009,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : OH_AudioSuiteEngine_MultiRenderFrame_002
-     * @tc.name      : OH_AudioSuiteEngine_MultiRenderFrame_002
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      OH_AudioSuiteEngine_MultiRenderFrame_002
+     * @tc.name        OH_AudioSuiteEngine_MultiRenderFrame_002
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('OH_AudioSuiteEngine_MultiRenderFrame_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2025,12 +2025,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : OH_AudioSuiteEngine_MultiRenderFrame_003
-     * @tc.name      : OH_AudioSuiteEngine_MultiRenderFrame_003
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      OH_AudioSuiteEngine_MultiRenderFrame_003
+     * @tc.name        OH_AudioSuiteEngine_MultiRenderFrame_003
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('OH_AudioSuiteEngine_MultiRenderFrame_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2041,12 +2041,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : OH_AudioSuiteEngine_MultiRenderFrame_004
-     * @tc.name      : OH_AudioSuiteEngine_MultiRenderFrame_004
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      OH_AudioSuiteEngine_MultiRenderFrame_004
+     * @tc.name        OH_AudioSuiteEngine_MultiRenderFrame_004
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('OH_AudioSuiteEngine_MultiRenderFrame_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2057,12 +2057,12 @@ export default function AudioSuiteEngineTest() {
     })
     
     /**
-     * @tc.number    : OH_AudioSuiteEngine_MultiRenderFrame_005
-     * @tc.name      : OH_AudioSuiteEngine_MultiRenderFrame_005
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      OH_AudioSuiteEngine_MultiRenderFrame_005
+     * @tc.name        OH_AudioSuiteEngine_MultiRenderFrame_005
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
      */
     it('OH_AudioSuiteEngine_MultiRenderFrame_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
