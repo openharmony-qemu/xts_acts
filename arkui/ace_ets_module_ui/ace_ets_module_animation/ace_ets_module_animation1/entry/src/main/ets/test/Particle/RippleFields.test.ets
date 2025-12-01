@@ -75,17 +75,17 @@ export default function RippleFields() {
       console.info("InspectorLayoutCallback001 component obj is: " + JSON.stringify(obj));
       let rippleFields: [] = obj?.$attrs?.rippleFields;
       console.log('RippleFields_001 rippleFields is : ',  JSON.stringify(rippleFields))
-      let amplitude: number | undefined = velocityFields[0]?.amplitude;
+      let amplitude: number | undefined = rippleFields[0]?.amplitude;
       expect(amplitude).assertEqual(120)
-      let wavelength: number | undefined = velocityFields[0]?.wavelength;
+      let wavelength: number | undefined = rippleFields[0]?.wavelength;
       expect(wavelength).assertEqual(500)
-      let attenuation: number | undefined = velocityFields[0]?.attenuation;
+      let attenuation: number | undefined = rippleFields[0]?.attenuation;
       expect(attenuation).assertEqual(0)
-      let waveSpeed: number | undefined = velocityFields[0]?.waveSpeed;
+      let waveSpeed: number | undefined = rippleFields[0]?.waveSpeed;
       expect(waveSpeed).assertEqual(220)
-      let center: PositionT<number> | undefined = velocityFields[0]?.center;
+      let center: PositionT<number> | undefined = rippleFields[0]?.center;
       expect(JSON.stringify(center)).assertEqual('{"x":"150.00vp","y":"150.00vp"}');
-      let region: FieldRegion | undefined = velocityFields[0]?.region;
+      let region: FieldRegion | undefined = rippleFields[0]?.region;
       expect(JSON.stringify(region)).assertEqual('{"shape":"RECT","size":{"width":"300.00vp","height":"300.00vp"},"position":{"x":"150.00vp","y":"150.00vp"}}');
       console.info("[RippleFields_001] END");
       done();
