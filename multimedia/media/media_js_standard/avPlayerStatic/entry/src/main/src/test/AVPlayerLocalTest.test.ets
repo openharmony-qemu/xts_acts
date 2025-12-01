@@ -631,8 +631,8 @@ async function testSetPlaybackStrategy(src: string | media.AVFileDescriptor, avP
     if (video) {
       console.info('case createAVPlayer success');
       avPlayer = video;
-      setPlaybackStrategy(avPlayer!, done, playbackStrategy)
       setSource(avPlayer!, src);
+      setPlaybackStrategy(avPlayer!, done, playbackStrategy)
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -649,8 +649,8 @@ async function testSetPlaybackStrategyDASH(src: string | media.AVFileDescriptor,
     if (video) {
       console.info('case createAVPlayer success');
       avPlayer = video;
-      setPlaybackStrategyDASH(avPlayer!, done)
       setSource(avPlayer!, src);
+      setPlaybackStrategyDASH(avPlayer!, done)
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
