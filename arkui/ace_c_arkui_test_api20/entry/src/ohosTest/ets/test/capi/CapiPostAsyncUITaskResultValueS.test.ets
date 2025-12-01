@@ -30,8 +30,8 @@ import {
 } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 
-export default function CapiPostAsyncUITask() {
-  describe('CapiPostAsyncUITask', () => {
+export default function CapiPostAsyncUITaskS() {
+  describe('CapiPostAsyncUITaskS', () => {
     beforeEach(async (done: Function) => {
       console.info("ListCNode beforeEach start");
       let options: router.RouterOptions = {

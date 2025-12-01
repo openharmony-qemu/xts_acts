@@ -30,8 +30,8 @@ import {
 } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 
-export default function CapiPostUITaskAndWait() {
-  describe('CapiPostUITaskAndWait', () => {
+export default function CapiPostUITaskAndWaitS() {
+  describe('CapiPostUITaskAndWaitS', () => {
     
     beforeEach(async (done: Function) => {
       console.info("ListCNode beforeEach start");
