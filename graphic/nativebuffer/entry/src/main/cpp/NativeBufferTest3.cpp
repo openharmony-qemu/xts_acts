@@ -178,21 +178,21 @@ napi_value OHNativeBufferIsSupportedAbnormal01(napi_env env, napi_callback_info 
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != false) {
-        napi_create_int32(env, FAIL, &result);
+        napi_create_int32(env, 1, &result);
         return result;
     }
     config.width = 0x100;
     config.height = -1;
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != false) {
-        napi_create_int32(env, FAIL, &result);
+        napi_create_int32(env, 2, &result);
         return result;
     }
     config.height = 0x100;
     config.format = static_cast<int32_t>(-1);
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
-    if (ret != 0 || isSupported != true) {
-        napi_create_int32(env, FAIL, &result);
+    if (ret != 0 || isSupported != false) {
+        napi_create_int32(env, 3, &result);
         return result;
     }
     napi_create_int32(env, SUCCESS, &result);
@@ -205,10 +205,11 @@ napi_value OHNativeBufferIsSupportedAbnormal02(napi_env env, napi_callback_info 
     OH_NativeBuffer_Config config;
     config.width = 0x100;
     config.height = 0x100;
-    config.format = static_cast<int32_t>(NUMBER_100);
+     // NATIVEBUFFER_PIXEL_FMT_BUTT = 0X7FFFFFFF 非法值的起点
+    config.format = static_cast<int32_t>(NATIVEBUFFER_PIXEL_FMT_BUTT);
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, &isSupported);
-    if (ret != 0 || isSupported != true) {
+    if (ret != 0 || isSupported != false) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
