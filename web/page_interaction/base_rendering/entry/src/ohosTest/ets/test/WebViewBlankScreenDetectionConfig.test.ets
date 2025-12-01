@@ -60,7 +60,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
     })
 
 
-    /*
+    /** 
     * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0100
     * @tc.name       : testWebViewBlankScreenDetectionConfig
     * @tc.desc       : DetectedBlankScreenReason
@@ -74,7 +74,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
       await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton","testWebViewBlankScreenDetectionConfig");
     })
 
-    /*
+    /** 
     * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0200
     * @tc.name       : testDetectedBlankScreenReason01
     * @tc.desc       : DetectedBlankScreenReason
@@ -88,7 +88,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
       await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton","testDetectedBlankScreenReason01");
     })
 
-    /*
+    /** 
     * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0300
     * @tc.name       : testDetectedBlankScreenReason02
     * @tc.desc       : DetectedBlankScreenReason
