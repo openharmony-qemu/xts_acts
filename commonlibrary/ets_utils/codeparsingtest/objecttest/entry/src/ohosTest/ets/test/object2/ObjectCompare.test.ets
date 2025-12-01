@@ -252,7 +252,7 @@ export default function objectCompareTest() {
 
     /**
      * @tc.number SUB_OBJECT_COMPARE_TEST_0900
-     * @tc.name objectCompareTest0800
+     * @tc.name objectCompareTest0900
      * @tc.desc Comparison of objects with different prototypes
      * @tc.size MediumTest
      * @tc.type Function
