@@ -33,6 +33,8 @@ const int32_t NUM_THREE = 3;
 const int32_t NUM_FOUR = 4;
 const int32_t NUM_FIVE = 5;
 const int32_t NUM_SIX = 6;
+const int32_t NUM_TEN = 10;
+const int32_t NUM_ELEVEN = 11;
 const int32_t REQUEST_FRAME_SIZE = 4096;
 const OH_AudioFormat audioFormatInput = {.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
                                          .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
@@ -4178,6 +4180,692 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_005(napi_env env, napi_ca
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
     return result;
 }
+
+static napi_value AudioSuiteEngine_CreatePipeline_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr ;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    if (result == OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    } else {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_CreatePipeline_0001 fail, result is: %{public}d", result);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_CreatePipeline_0002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    if (result == OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    return res;
+    } else {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_CreatePipeline_0002 fail, result is: %{public}d", result);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_CreatePipeline_0003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, nullptr,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    if (result == OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    } else {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_CreatePipeline_0003 fail, result is: %{public}d", result);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_CreatePipeline_0004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    if (result == OH_AudioSuite_Result::AUDIOSUITE_ERROR_ENGINE_NOT_EXIST) {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    } else {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_CreatePipeline_0004 fail, result is: %{public}d", result);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_CreatePipeline_0005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline[11];
+    OH_AudioSuite_Result result;
+    for (int i = 0; i < NUM_ELEVEN; ++i) {
+        audioSuitePipeline[i] = nullptr;
+        result = OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline[i],
+            static_cast<OH_AudioSuite_PipelineWorkMode>(
+                AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+        if (i < NUM_TEN) {
+            if (result != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
+                printf("FAILED:第%d个管线创建失败, result: %d", i + 1, static_cast<int>(result));
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+                LOG("AudioSuiteEngine_CreatePipeline_0005 fail, result is: %{public}d", result);
+                OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+                return res;
+            }
+            printf("SUCCESS:第%d个管线创建成功",  i + 1);
+        } else {
+            if (result == OH_AudioSuite_Result::AUDIOSUITE_ERROR_CREATED_EXCEED_SYSTEM_LIMITS) {
+                printf("SUCCESS:第%d个管线不应该创建成功, result: %d",  i + 1, result);
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+                OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+                return res;
+            } else {
+                printf("FAILED: 第 %d 个管线不应该创建成功, 但创建成功了", i + 1);
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+                LOG("AudioSuiteEngine_CreatePipeline_0005 fail, result is: %{public}d", result);
+                OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+                return res;
+            }
+        }
+    }
+    return res;
+}
+
+static napi_value AudioSuiteEngine_DestroyPipeline_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    if (result != AUDIOSUITE_SUCCESS) {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    }
+    OH_AudioSuite_Result destroypipelineresult = OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    if (destroypipelineresult != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_DestroyPipeline_0001 fail, result is: %{public}d", destroypipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_DestroyPipeline_0002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    if (result != AUDIOSUITE_SUCCESS) {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_DestroyPipeline_0002 fail, result is: %{public}d", result);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    }
+    OH_AudioSuite_Result destroypipelineresult = OH_AudioSuiteEngine_DestroyPipeline(nullptr);
+    if (destroypipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_DestroyPipeline_0003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    if (result != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_DestroyPipeline_0003 fail, result is: %{public}d", result);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    return res;
+    }
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuite_Result destroypipelineresult = OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    if (destroypipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_DestroyPipeline_0003 fail, result is: %{public}d", destroypipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_DestroyPipeline_0004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuite_Result destroypipelineresult = OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    if (destroypipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_DestroyPipeline_0004 fail, result is: %{public}d", destroypipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StartPipeline_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    if (startpipelineresult != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StartPipeline_0001 fail, result is: %{public}d", startpipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StartPipeline_0002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(nullptr);
+    if (startpipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StartPipeline_0002 fail, result is: %{public}d", startpipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StartPipeline_0003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    if (startpipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StartPipeline_0003 fail, result is: %{public}d", startpipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StartPipeline_0004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
+    OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    if (startpipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_STATE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StartPipeline_0004 fail, result is: %{public}d", startpipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StartPipeline_0005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    if (startpipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_STATE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StartPipeline_0005 fail, result is: %{public}d", startpipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StartPipeline_0006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(outputNode, inputNode);
+    OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    if (startpipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_STATE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StartPipeline_0006 fail, result is: %{public}d", startpipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StopPipeline_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuite_Result stoppipelineresult = OH_AudioSuiteEngine_StopPipeline(audioSuitePipeline);
+    if (stoppipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StopPipeline_0001 fail, result is: %{public}d", stoppipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StopPipeline_0002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result stoppipelineresult = OH_AudioSuiteEngine_StopPipeline(audioSuitePipeline);
+    if (stoppipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StopPipeline_0002 fail, result is: %{public}d", stoppipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+
+static napi_value AudioSuiteEngine_StopPipeline_0003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    OH_AudioSuite_Result stoppipelineresult = OH_AudioSuiteEngine_StopPipeline(audioSuitePipeline);
+    if (stoppipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_STATE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StopPipeline_0003 fail, result is: %{public}d", stoppipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
+static napi_value AudioSuiteEngine_StopPipeline_0004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result createEngineresult = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
+        audioSuiteEngine, &audioSuitePipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
+    );
+    OH_AudioFormat audioFormatBuilder;
+    audioFormatBuilder.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000;
+    audioFormatBuilder.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    audioFormatBuilder.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE;
+    audioFormatBuilder.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatBuilder.channelCount = NUM_TWO;
+    OH_AudioNodeBuilder* inputBuilder;
+    OH_AudioSuite_Result createInputresult = OH_AudioSuiteNodeBuilder_Create(&inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(inputBuilder, audioFormatBuilder);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioNode *inputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, inputBuilder, &inputNode);
+    OH_AudioNodeBuilder* outputBuilder;
+    OH_AudioSuite_Result createOutputresult = OH_AudioSuiteNodeBuilder_Create(&outputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(
+        outputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(outputBuilder, audioFormatBuilder);
+    OH_AudioNode *outputNode;
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
+    OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
+    OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_RenderFrame(audioSuitePipeline, audioData.data(), g_frameSize, &g_writeSize, &g_finishedFlag);
+    OH_AudioSuite_Result stoppipelineresult = OH_AudioSuiteEngine_StopPipeline(audioSuitePipeline);
+    if (stoppipelineresult != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+        LOG("AudioSuiteEngine_StopPipeline_0004 fail, result is: %{public}d", stoppipelineresult);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    } else {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        return res;
+    }
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4440,6 +5128,44 @@ static napi_value Init(napi_env env, napi_value exports)
           nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_AudioSuiteEngine_MultiRenderFrame_005", nullptr, OH_AudioSuiteEngine_MultiRenderFrame_005,
           nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_CreatePipeline_0001", nullptr, AudioSuiteEngine_CreatePipeline_0001,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_CreatePipeline_0002", nullptr, AudioSuiteEngine_CreatePipeline_0002,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_CreatePipeline_0003", nullptr, AudioSuiteEngine_CreatePipeline_0003,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_CreatePipeline_0004", nullptr, AudioSuiteEngine_CreatePipeline_0004,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_CreatePipeline_0005", nullptr, AudioSuiteEngine_CreatePipeline_0005,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_DestroyPipeline_0001", nullptr, AudioSuiteEngine_DestroyPipeline_0001,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_DestroyPipeline_0002", nullptr, AudioSuiteEngine_DestroyPipeline_0002,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_DestroyPipeline_0003", nullptr, AudioSuiteEngine_DestroyPipeline_0003,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_DestroyPipeline_0004", nullptr, AudioSuiteEngine_DestroyPipeline_0004,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StartPipeline_0001", nullptr, AudioSuiteEngine_StartPipeline_0001,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StartPipeline_0002", nullptr, AudioSuiteEngine_StartPipeline_0002,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StartPipeline_0003", nullptr, AudioSuiteEngine_StartPipeline_0003,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StartPipeline_0004", nullptr, AudioSuiteEngine_StartPipeline_0004,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StartPipeline_0005", nullptr, AudioSuiteEngine_StartPipeline_0005,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StartPipeline_0006", nullptr, AudioSuiteEngine_StartPipeline_0006,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StopPipeline_0001", nullptr, AudioSuiteEngine_StopPipeline_0001,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StopPipeline_0002", nullptr, AudioSuiteEngine_StopPipeline_0002,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StopPipeline_0003", nullptr, AudioSuiteEngine_StopPipeline_0003,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_StopPipeline_0004", nullptr, AudioSuiteEngine_StopPipeline_0004,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
